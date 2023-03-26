@@ -1,0 +1,89 @@
+.benefits {
+  background-color: darken(getColor(white), 1%);
+
+  &-title {
+    @include section-titles();
+  }
+
+  &-subtitle {
+    @include section-subtitles();
+  }
+
+  &-cards {
+    padding-top: 8rem;
+    @include flex(
+      $direction: column,
+      $justify: center,
+      $align: center,
+      $gap: 7rem
+    );
+
+    @include response(xl) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 7rem;
+      grid-row-gap: 7rem;
+    }
+
+    &-card {
+      &-image {
+        @include card();
+        @include response(xl) {
+          width: 40%;
+          height: 30rem;
+          padding: 5rem;
+        }
+        width: 100%;
+        height: 30rem;
+        padding: 5rem;
+      }
+
+      @include response(xl) {
+        @include flex($direction: row, $justify: flex-start, $align: center);
+        padding-left: 10rem;
+      }
+
+      @include flex($direction: column, $justify: flex-start, $align: center);
+
+      &-text {
+        @include response(xl) {
+          @include flex(
+            $direction: column,
+            $justify: flex-start,
+            $align: flex-start,
+            $gap: 2rem
+          );
+          padding-left: 5rem;
+        }
+
+        @include flex(
+          $direction: column,
+          $justify: center,
+          $align: center,
+          $gap: 2rem
+        );
+
+        &-title {
+          font-size: getFontSize(xl);
+          font-family: $font-family-title;
+          font-weight: getFontWeight(bold);
+          transition: $transition;
+          color: getColor(intense-violet);
+        }
+
+        &-description {
+          font-size: getFontSize(md);
+          font-family: $font-family-text;
+          font-weight: getFontWeight(normal);
+          transition: $transition;
+          color: getColor(black);
+          @include response(xl) {
+            text-align: left;
+          }
+          text-align: center;
+        }
+      }
+    }
+  }
+}

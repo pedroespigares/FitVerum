@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fitverum": {
+      "hosting": {
+        "FitVerum": [
+          "fitverum"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fitverum"
+  }
+}

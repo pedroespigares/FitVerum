@@ -1,0 +1,199 @@
+@import "../../../scss/base.scss";
+@import "../../../scss/mixin.scss";
+@import "../../../scss/variables.scss";
+
+.content {
+  @include flex($direction: column, $justify: center, $align: center, $gap: 0);
+  height: calc(95vh - 116px);
+  width: 100%;
+  background-color: getColor(white);
+  padding: 0 2rem;
+  @include response(xl) {
+    padding: 0 5rem;
+  }
+}
+
+.login {
+  animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  width: 30%;
+  @include flex($direction: column, $justify: center, $align: center, $gap: 0);
+  box-shadow: 0px 0px 27px -3px rgba(0, 0, 0, 0.75);
+
+  &-logo-presentation {
+    padding-top: 5rem;
+    @include flex(
+      $direction: row,
+      $justify: center,
+      $align: center,
+      $gap: 0.5rem
+    );
+
+    &-img {
+      width: 9rem;
+      transition: $transition;
+    }
+
+    &-text {
+      @include response(xl) {
+        font-size: getFontSize(xxl);
+      }
+      font-size: getFontSize(xl);
+      font-family: $font-family-title;
+      text-transform: uppercase;
+      font-weight: getFontWeight(bold);
+      transition: $transition;
+      cursor: pointer;
+
+      &-first {
+        color: getColor(black);
+      }
+
+      &-second {
+        background-color: getColor(intense-violet);
+        background-image: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.1),
+          rgba(255, 255, 255, 0)
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+    }
+  }
+
+  &-title {
+    @include response(xl) {
+      font-size: getFontSize(xl);
+    }
+    font-size: getFontSize(lg);
+    font-family: $font-family-title;
+    font-weight: getFontWeight(bold);
+    transition: $transition;
+    cursor: pointer;
+    padding-bottom: 2rem;
+  }
+
+  &-form {
+    @include flex(
+      $direction: column,
+      $justify: center,
+      $align: center,
+      $gap: 4rem
+    );
+
+    &-fieldset {
+      @include flex(
+        $direction: column,
+        $justify: center,
+        $align: center,
+        $gap: 1rem
+      );
+      border: none;
+
+      &-label {
+        @include response(xl) {
+          font-size: getFontSize(lg);
+        }
+        color: getColor(intense-violet);
+        font-size: getFontSize(md);
+        font-family: $font-family-title;
+        font-weight: getFontWeight(bold);
+        transition: $transition;
+        padding-bottom: 1rem;
+      }
+
+      &-input {
+        @include response(xl) {
+          font-size: getFontSize(lg);
+        }
+        font-size: getFontSize(md);
+        font-family: $font-family-title;
+        font-weight: getFontWeight(bold);
+        transition: $transition;
+        border: 1px solid getColor(black);
+        border-radius: 0.5rem;
+        padding: 1rem;
+
+        &:focus {
+          outline: none;
+          border: 1px solid getColor(intense-violet);
+        }
+      }
+    }
+
+    &-button {
+      @include button(md, true);
+    }
+  }
+
+  &-separator {
+    @include flex(
+      $direction: row,
+      $justify: center,
+      $align: center,
+      $gap: 2rem
+    );
+    &-text {
+      @include response(xl) {
+        font-size: getFontSize(md);
+      }
+      font-size: getFontSize(sm);
+      font-family: $font-family-title;
+      font-weight: getFontWeight(bold);
+      transition: $transition;
+      color: getColor(dark-grayish-violet);
+    }
+
+    &-line {
+      display: block;
+      width: 15rem;
+      height: 1px;
+      background-color: getColor(dark-grayish-violet);
+    }
+    padding-top: 2rem;
+  }
+
+  &-social {
+    @include flex(
+      $direction: row,
+      $justify: center,
+      $align: center,
+      $gap: 1rem
+    );
+    padding: 3rem;
+    &-button {
+      @include flex(
+        $direction: row,
+        $justify: center,
+        $align: center,
+        $gap: 0.8rem
+      );
+      @include button(md, false);
+      &-img {
+        width: 4rem;
+      }
+      &-text {
+        @include response(xl) {
+          font-size: getFontSize(md);
+        }
+        font-size: getFontSize(sm);
+        font-family: $font-family-title;
+        font-weight: getFontWeight(bold);
+      }
+    }
+  }
+}
+
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}

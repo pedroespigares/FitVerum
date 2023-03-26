@@ -1,0 +1,221 @@
+@mixin response($breakpoint) {
+  @if ($breakpoint == xl) {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if($breakpoint == lg) {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if($breakpoint == md) {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if($breakpoint == sm) {
+    @media (min-width: 576px) {
+      @content;
+    }
+  } @else if($breakpoint == xs) {
+    @media (min-width: 0px) {
+      @content;
+    }
+  }
+}
+
+@mixin navigation($hamburger: false) {
+  @include flex($direction: row, $justify: space-between, $align: center);
+
+  @if $hamburger {
+    &-list {
+      @include flex(column, flex-start, center, 10rem);
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0.01rem;
+      padding-top: 8rem;
+      left: -200%;
+      right: 0.01rem;
+      text-align: center;
+      transition: all 0.5s;
+      gap: 5rem;
+      z-index: 100;
+      background-image: url("../assets/images/bg-header-mobile.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  } @else {
+    &-list {
+      @include flex($direction: row, $justify: space-around);
+      position: inherit;
+      align-items: center;
+      height: 100%;
+      padding-top: 0rem;
+      background-image: none;
+    }
+  }
+
+  &-hamburger {
+    @include response(lg) {
+      display: none;
+    }
+
+    z-index: 200;
+    display: block;
+    font-size: getFontSize(md);
+    cursor: pointer;
+
+    &-lines {
+      height: 2em;
+      width: 2.5em;
+
+      @include flex(column, space-between);
+
+      border-radius: 50%;
+      &-line {
+        height: 0.2em;
+        width: 100%;
+        border-radius: 10px;
+        background-color: getColor(intense-violet);
+
+        &-1 {
+          transform-origin: 0% 0%;
+          transition: transform 0.4s ease-in-out;
+        }
+
+        &-2 {
+          transition: transform 0.2s ease-in-out;
+        }
+
+        &-3 {
+          transform-origin: 0% 100%;
+          transition: transform 0.4s ease-in-out;
+        }
+      }
+    }
+  }
+
+  &-item {
+    list-style: none;
+  }
+
+  &-link {
+    color: getColor(black);
+    font-size: getFontSize(lg);
+    text-decoration: none;
+    transition: $transition;
+    padding: 1rem 3rem 1rem 3rem;
+    font-weight: getFontWeight(semi-bold);
+    cursor: pointer;
+    &:hover {
+      color: getColor(intense-violet);
+      transition: $transition;
+    }
+  }
+
+  &-button-not-focus {
+    @include button(md);
+  }
+
+  &-button-focus {
+    @include button(md, true);
+  }
+}
+
+@mixin flex($direction: row, $justify: center, $align: center, $gap: 0) {
+  display: flex;
+  flex-flow: $direction wrap;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+  flex-wrap: nowrap;
+}
+
+@mixin button($size: lg, $focus: false) {
+  @if $focus {
+    color: getColor(white);
+    background-color: getColor(intense-violet);
+    border: 1px solid getColor(intense-violet);
+    background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
+  } @else {
+    color: getColor(black);
+    background-color: transparent;
+    border: 1px solid getColor(light-grayish-violet);
+  }
+  font-size: getFontSize($size);
+  transition: $transition;
+  border-radius: 10rem;
+  padding: 1rem 3rem 1rem 3rem;
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+    @if $focus {
+      background-color: darken(getColor(intense-violet), 5%);
+    } @else {
+      color: getColor(white);
+      border-color: getColor(intense-violet);
+      background-color: getColor(intense-violet);
+      background-image: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0)
+      );
+    }
+    transition: $transition;
+  }
+}
+
+@mixin card($column: false) {
+  @if $column {
+    @include flex(column, center, center);
+  } @else {
+    @include flex(row, space-between, center);
+  }
+  background-color: getColor(white);
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  transition: $transition;
+  &:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    transition: $transition;
+  }
+}
+
+@mixin section-titles {
+  @include response(xl) {
+    font-size: getFontSize(xl);
+  }
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: getFontSize(lg);
+  font-family: $font-family-title;
+  font-weight: getFontWeight(bold);
+  transition: $transition;
+  text-align: center;
+  background-color: getColor(intense-violet);
+  padding-bottom: 2rem;
+  padding-top: 10rem;
+}
+
+@mixin section-subtitles {
+  @include response(xl) {
+    font-size: getFontSize(xxxl);
+  }
+  font-size: getFontSize(xxl);
+  font-family: $font-family-title;
+  font-weight: getFontWeight(bold);
+  transition: $transition;
+  text-align: center;
+  color: getColor(black);
+}

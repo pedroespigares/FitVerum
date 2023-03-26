@@ -1,0 +1,116 @@
+@import "../../../scss/base.scss";
+@import "../../../scss/mixin.scss";
+@import "../../../scss/variables.scss";
+
+/// Layout cabecera
+.header {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: minmax(10rem, 1fr) repeat(
+      7,
+      minmax(min-content, 16rem)
+    ) minmax(10rem, 1fr);
+  grid-template-rows: repeat(2fr);
+  grid-gap: 2rem;
+  background-color: getColor(white);
+}
+
+/// Layout Navs
+.header-nav {
+  grid-column: 8/10;
+  @include navigation($hamburger: true);
+
+  @include response(lg) {
+    grid-column: 6/10;
+    @include navigation($hamburger: false);
+  }
+}
+
+/// Layout Logo
+.logo {
+  grid-column: 1 / 5;
+  grid-row: 1 / 2;
+
+  @include response(xl) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  padding: 1rem;
+
+  @include response(xl) {
+    @include flex(
+      $direction: row,
+      $justify: center,
+      $align: center,
+      $gap: 5rem
+    );
+  }
+
+  @include flex(
+    $direction: column,
+    $justify: center,
+    $align: center,
+    $gap: 0.5rem
+  );
+
+  &-img {
+    @include response(xl) {
+      width: 12rem;
+    }
+
+    width: 9rem;
+    transition: $transition;
+    cursor: pointer;
+  }
+
+  &-text {
+    @include response(xl) {
+      font-size: getFontSize(xxl);
+    }
+    font-size: getFontSize(xl);
+    font-family: $font-family-title;
+    text-transform: uppercase;
+    font-weight: getFontWeight(bold);
+    transition: $transition;
+    cursor: pointer;
+
+    &-first {
+      color: getColor(black);
+    }
+
+    &-second {
+      background-color: getColor(intense-violet);
+      background-image: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0)
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+  }
+}
+
+/// Componente de preparación de hamburguesa
+.fixed-position {
+  overflow: hidden;
+}
+
+.open .header-nav-hamburger-lines-line-1 {
+  transform: rotate(47deg);
+}
+
+.open .header-nav-hamburger-lines-line-2 {
+  transform: scaleY(0);
+}
+
+.open .header-nav-hamburger-lines-line-3 {
+  transform: rotate(-47deg);
+}
+
+nav.open ul.header-nav-list {
+  left: 0;
+}

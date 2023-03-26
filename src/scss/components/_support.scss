@@ -1,0 +1,144 @@
+.support {
+  &-title {
+    @include section-titles();
+  }
+
+  &-subtitle {
+    @include section-subtitles();
+  }
+
+  &-container {
+    padding-top: 15rem;
+
+    @include response(xl) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+    }
+
+    @include flex(
+      $direction: column,
+      $justify: center,
+      $align: center,
+      $gap: 7rem
+    );
+
+    &-image {
+      @include response(xl) {
+        grid-area: 1 / 1 / 2 / 2;
+        width: 100%;
+        margin-left: 10rem;
+        display: block;
+      }
+      display: none;
+    }
+
+    &-text {
+      grid-area: 1 / 2 / 2 / 3;
+      @include response(xl) {
+        @include flex(
+          $direction: column,
+          $justify: flex-start,
+          $align: center,
+          $gap: 2rem
+        );
+      }
+
+      @include flex(
+        $direction: column,
+        $justify: center,
+        $align: center,
+        $gap: 5rem
+      );
+
+      &-subtitle {
+        @include section-subtitles();
+        background-image: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.1),
+          rgba(255, 255, 255, 0)
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-color: getColor(intense-violet);
+      }
+
+      &-list {
+        @include response(xl) {
+          padding-top: 5rem;
+          padding-right: 5rem;
+        }
+        padding: 0;
+        @include flex(
+          $direction: column,
+          $justify: flex-start,
+          $align: center,
+          $gap: 5rem
+        );
+
+        &-item {
+          @include response(xl) {
+            @include flex(
+              $direction: row,
+              $justify: flex-start,
+              $align: center,
+              $gap: 2rem
+            );
+          }
+
+          @include flex(
+            $direction: column,
+            $justify: center,
+            $align: center,
+            $gap: 2rem
+          );
+
+          &-text {
+            &-title {
+              @include response(xl) {
+                text-align: left;
+                font-size: getFontSize(xxl);
+              }
+              text-align: center;
+              color: getColor(black);
+              font-size: getFontSize(lg);
+              font-weight: getFontWeight(semi-bold);
+            }
+
+            &-p {
+              @include response(xl) {
+                text-align: left;
+                font-size: getFontSize(xl);
+              }
+              text-align: center;
+              color: getColor(dark-grayish-violet);
+              font-size: getFontSize(md);
+              font-weight: getFontWeight(regular);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+i {
+  background-image: linear-gradient(
+    45deg,
+    #a163f1,
+    #6363f1 22%,
+    #3498ea 40%,
+    #40dfa3 67%,
+    rgba(64, 223, 163, 0.5)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: getFontSize(xxl);
+  @include response(xl) {
+    padding-right: 5rem;
+    font-size: getFontSize(landing-text-title);
+  }
+  font-weight: getFontWeight(semi-bold);
+}

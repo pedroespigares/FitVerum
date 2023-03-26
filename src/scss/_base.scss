@@ -1,0 +1,39 @@
+@import "./variables.scss";
+@import "./mixin.scss";
+
+/// Inicialización de todo el documento
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family-text;
+  scroll-behavior: smooth;
+}
+
+/// Inicialización de HTML
+html {
+  // Hacemos que la raiz sea 62.5% para que 1rem = 10px (mas facil de trabajar)
+  font-size: 62.5%;
+  @include response(md) {
+    font-size: 56.25%;
+  }
+
+  @include response(sm) {
+    font-size: 50%;
+  }
+}
+
+/// Container principal
+.container {
+  display: grid;
+  grid-template-columns: minmax(6rem, 1fr) repeat(8, minmax(min-content, 16rem)) minmax(
+      6rem,
+      1fr
+    );
+  grid-template-rows: repeat(3, min-content);
+}
+
+/// Inicialización de enlaces
+a {
+  text-decoration: none;
+}
