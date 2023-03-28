@@ -13,6 +13,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { RegisterComponent } from './components/register/register.component';
     HeaderComponent,
     LandingComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import { RegisterComponent } from './components/register/register.component';
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

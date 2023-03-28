@@ -92,33 +92,11 @@
       border: none;
 
       &-label {
-        @include response(xl) {
-          font-size: getFontSize(lg);
-        }
-        color: getColor(intense-violet);
-        font-size: getFontSize(md);
-        font-family: $font-family-title;
-        font-weight: getFontWeight(bold);
-        transition: $transition;
-        padding-bottom: 1rem;
+        @include label();
       }
 
       &-input {
-        @include response(xl) {
-          font-size: getFontSize(lg);
-        }
-        font-size: getFontSize(md);
-        font-family: $font-family-title;
-        font-weight: getFontWeight(bold);
-        transition: $transition;
-        border: 1px solid getColor(black);
-        border-radius: 0.5rem;
-        padding: 1rem;
-
-        &:focus {
-          outline: none;
-          border: 1px solid getColor(intense-violet);
-        }
+        @include input();
       }
     }
 

@@ -42,6 +42,9 @@
       background-image: url("../assets/images/bg-header-mobile.svg");
       background-repeat: no-repeat;
       background-size: cover;
+      &-actions{
+        @include flex($direction: row, $justify: space-around, $align: center, $gap: 2rem);
+      }
     }
   } @else {
     &-list {
@@ -51,6 +54,9 @@
       height: 100%;
       padding-top: 0rem;
       background-image: none;
+      &-actions{
+        @include flex($direction: row, $justify: space-around, $align: center, $gap: 2rem);
+      }
     }
   }
 
@@ -99,16 +105,10 @@
   }
 
   &-link {
-    color: getColor(black);
-    font-size: getFontSize(lg);
-    text-decoration: none;
-    transition: $transition;
-    padding: 1rem 3rem 1rem 3rem;
-    font-weight: getFontWeight(semi-bold);
-    cursor: pointer;
-    &:hover {
-      color: getColor(intense-violet);
-      transition: $transition;
+    @include navbar_links();
+
+    &-dropdown{
+      @include navbar_links();
     }
   }
 
@@ -218,4 +218,48 @@
   transition: $transition;
   text-align: center;
   color: getColor(black);
+}
+
+@mixin label{
+  @include response(xl) {
+    font-size: getFontSize(lg);
+  }
+  color: getColor(intense-violet);
+  font-size: getFontSize(md);
+  font-family: $font-family-title;
+  font-weight: getFontWeight(bold);
+  transition: $transition;
+  padding-bottom: 1rem;
+}
+
+@mixin input{
+  @include response(xl) {
+    font-size: getFontSize(lg);
+  }
+  font-size: getFontSize(md);
+  font-family: $font-family-title;
+  font-weight: getFontWeight(bold);
+  transition: $transition;
+  border: 1px solid getColor(black);
+  border-radius: 0.5rem;
+  padding: 1rem;
+
+  &:focus {
+    outline: none;
+    border: 1px solid getColor(intense-violet);
+  }
+}
+
+@mixin navbar_links(){
+  color: getColor(black);
+    font-size: getFontSize(lg);
+    text-decoration: none;
+    transition: $transition;
+    padding: 1rem 3rem 1rem 3rem;
+    font-weight: getFontWeight(semi-bold);
+    cursor: pointer;
+    &:hover {
+      color: getColor(intense-violet);
+      transition: $transition;
+    }
 }

@@ -1,3 +1,4 @@
+<app-header></app-header>
 <main class="content">
     <div class="register">
         <div class="register-logo-presentation">
@@ -10,14 +11,18 @@
         <h1 class="register-title">Register</h1>
         <div class="register-form">
             <fieldset class="register-form-fieldset">
+                <legend class="register-form-fieldset-label">Username</legend>
+                <input class="register-form-fieldset-input" type="text" placeholder="User" [(ngModel)]="username" required>
+            </fieldset>
+            <fieldset class="register-form-fieldset">
                 <legend class="register-form-fieldset-label">Email</legend>
-                <input class="register-form-fieldset-input" type="text" placeholder="example@email.com">
+                <input class="register-form-fieldset-input" type="text" placeholder="example@email.com" [(ngModel)]="email" required>
             </fieldset>
             <fieldset class="register-form-fieldset">
                 <legend class="register-form-fieldset-label">Password</legend>
-                <input class="register-form-fieldset-input" type="password" placeholder="********">
+                <input class="register-form-fieldset-input" type="password" placeholder="********" [(ngModel)]="password" required (keydown)="onKeyDown($event)">
             </fieldset>
-            <button class="register-form-button">
+            <button (click)="normalRegister()" class="register-form-button">
                 Register
             </button>
         </div>
@@ -28,7 +33,7 @@
         </div>
 
         <div class="register-social">
-            <button class="register-social-button">
+            <button (click)="googleRegister()" class="register-social-button">
                 <img class="register-social-button-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" alt="Google Logo">
                 <span class="register-social-button-text">Register with Google</span>
             </button>

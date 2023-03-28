@@ -1,0 +1,82 @@
+@import "../../../scss/mixin.scss";
+@import "../../../scss/variables.scss";
+
+.footer{
+    grid-column:  1 / -1;
+    grid-row: 3;
+    @include response(xl){
+        @include flex($direction: column, $justify: center, $align: flex-start, $gap: 5rem);
+    }
+
+    @include flex($direction: column, $gap: 2rem);
+    padding-bottom: 2rem;
+    margin-top: 20rem;
+    padding-top: 2rem;
+    background-color: darken(getColor(white), 1%);
+
+    &-title{
+        @include response(xl){
+            font-size: getFontSize(xl);
+        }
+        font-size: getFontSize(lg);
+        font-weight: getFontWeight(semi-bold);
+        color: getColor(intense-violet);
+        padding-bottom: 2rem;
+        padding-top: 2rem;
+        @include response(xl){
+            padding-left: 5rem;
+            text-align: left;
+        }
+        text-align: center;
+    }
+
+    &-link{
+        @include response(xl){
+            font-size: getFontSize(md);
+        }
+        font-size: getFontSize(sm);
+        font-weight: getFontWeight(normal);
+        color: getColor(dark-grayish-violet);
+        padding-bottom: 2rem;
+        text-decoration: none;
+        transition: $transition;
+
+        &:hover{
+            cursor: pointer;
+            color: getColor(intense-violet);
+            transition: $transition;
+        }
+    }
+
+    &-icon{
+        @include response(xl){
+            font-size: getFontSize(xl);
+        }
+        font-size: getFontSize(lg);
+        color: getColor(dark-grayish-violet);
+        transition: $transition;
+
+        &:hover{
+            cursor: pointer;
+            color: getColor(intense-violet);
+            transition: $transition;
+        }
+    }
+
+    &-list{
+        list-style: none;
+        @include response(xl){
+            padding-left: 5rem;
+        }
+    }
+
+    @include response(xl){
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: 1fr;
+    }
+
+    &-row{
+        @include flex($direction: row, $justify: flex-start, $align: center, $gap: 2rem);
+    }
+}

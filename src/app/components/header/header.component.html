@@ -22,9 +22,21 @@
             <li class="header-nav-item"><a class="header-nav-link" routerLink="/">Home</a></li>
             <li class="header-nav-item"><a class="header-nav-link" href="about.html">Activities</a></li>
             <li class="header-nav-item"><a class="header-nav-link" href="results.html">Houses</a></li>
-            <li class="header-nav-item"><a class="header-nav-link" href="contact.html">Contact</a></li>
-            <a class="header-nav-button-not-focus" routerLink="/login">Sign In</a>
-            <a class="header-nav-button-focus" routerLink="/register">Register</a>
+            <li ngbDropdown class="header-nav-item">
+              <a class="header-nav-link-dropdown" id="pruebaDropdown" ngbDropdownToggle routerLink="/">Dropdown</a>
+              <div ngbDropdownMenu aria-labelledby="pruebaDropdown">
+                <li class="header-nav-item" ngbDropdownItem><a class="header-nav-link" href="contact.html">Contact</a></li>
+                <li class="header-nav-item" ngbDropdownItem><a class="header-nav-link" href="contact.html">Contact</a></li>
+              </div>
+            </li>
+            <div class="header-nav-list-actions">
+              <img *ngIf="this.auth.isLogged && this.auth.userPhoto != null" [src]="this.auth.userPhoto" referrerpolicy="no-referrer" width="50" height="50" class="d-inline-block align-text-top me-4 rounded-circle">
+              <img *ngIf="this.auth.isLogged && this.auth.userPhoto == null" src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=5974ac39-112f-4bd1-a170-d2a23c392d95" width="50" height="50" class="d-inline-block align-text-top me-4 rounded-circle">
+              <i (click)="logout()" *ngIf="this.auth.isLogged" class="header-nav-icon fa-solid fa-right-to-bracket" title="Log Out"></i>
+              <i *ngIf="this.auth.isLogged" class="header-nav-icon fa-solid fa-gear close" title="Edit User"></i>
+            </div>
+            <a *ngIf="!this.auth.isLogged" class="header-nav-button-not-focus" routerLink="/login">Sign In</a>
+            <a *ngIf="!this.auth.isLogged" class="header-nav-button-focus" routerLink="/register">Register</a>
         </ul>
     </nav>
 </header>
