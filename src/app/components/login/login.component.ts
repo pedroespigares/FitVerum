@@ -9,6 +9,7 @@ import { AuthService } from '../../services/auth.service';
 export class LoginComponent {
   email :string = '';
   password :string = '';
+  isEmpty :boolean = false;
   constructor(public auth: AuthService) { }
 
   ngOnInit(){
@@ -16,6 +17,10 @@ export class LoginComponent {
   }
 
   normalLogin(){
+    if(this.email == '' || this.password == ''){
+      this.isEmpty = true;
+      return;
+    }
     this.auth.normalLogin(this.email, this.password);
   }
 

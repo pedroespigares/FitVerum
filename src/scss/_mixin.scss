@@ -42,8 +42,13 @@
       background-image: url("../assets/images/bg-header-mobile.svg");
       background-repeat: no-repeat;
       background-size: cover;
-      &-actions{
-        @include flex($direction: row, $justify: space-around, $align: center, $gap: 2rem);
+      &-actions {
+        @include flex(
+          $direction: row,
+          $justify: space-around,
+          $align: center,
+          $gap: 2rem
+        );
       }
     }
   } @else {
@@ -54,8 +59,13 @@
       height: 100%;
       padding-top: 0rem;
       background-image: none;
-      &-actions{
-        @include flex($direction: row, $justify: space-around, $align: center, $gap: 2rem);
+      &-actions {
+        @include flex(
+          $direction: row,
+          $justify: space-around,
+          $align: center,
+          $gap: 2rem
+        );
       }
     }
   }
@@ -107,7 +117,7 @@
   &-link {
     @include navbar_links();
 
-    &-dropdown{
+    &-dropdown {
       @include navbar_links();
     }
   }
@@ -130,7 +140,7 @@
   flex-wrap: nowrap;
 }
 
-@mixin button($size: lg, $focus: false) {
+@mixin button($size: lg, $focus: false, $width: null) {
   @if $focus {
     color: getColor(white);
     background-color: getColor(intense-violet);
@@ -165,6 +175,9 @@
       );
     }
     transition: $transition;
+  }
+  @if $width != null {
+    width: $width;
   }
 }
 
@@ -220,7 +233,7 @@
   color: getColor(black);
 }
 
-@mixin label{
+@mixin label {
   @include response(xl) {
     font-size: getFontSize(lg);
   }
@@ -232,7 +245,7 @@
   padding-bottom: 1rem;
 }
 
-@mixin input{
+@mixin input {
   @include response(xl) {
     font-size: getFontSize(lg);
   }
@@ -250,16 +263,16 @@
   }
 }
 
-@mixin navbar_links(){
+@mixin navbar_links() {
   color: getColor(black);
-    font-size: getFontSize(lg);
-    text-decoration: none;
+  font-size: getFontSize(lg);
+  text-decoration: none;
+  transition: $transition;
+  padding: 1rem 3rem 1rem 3rem;
+  font-weight: getFontWeight(semi-bold);
+  cursor: pointer;
+  &:hover {
+    color: getColor(intense-violet);
     transition: $transition;
-    padding: 1rem 3rem 1rem 3rem;
-    font-weight: getFontWeight(semi-bold);
-    cursor: pointer;
-    &:hover {
-      color: getColor(intense-violet);
-      transition: $transition;
-    }
+  }
 }

@@ -9,19 +9,21 @@
             </h1>
         </div>
         <h1 class="login-title">Sign In</h1>
-        <div class="login-form">
+        <form class="login-form">
             <fieldset class="login-form-fieldset">
                 <legend class="login-form-fieldset-label">Email</legend>
-                <input class="login-form-fieldset-input" type="text" placeholder="example@email.com" [(ngModel)]="email">
+                <input class="login-form-fieldset-input" type="email" placeholder="example@email.com" [(ngModel)]="email" name="email" required>
             </fieldset>
             <fieldset class="login-form-fieldset">
                 <legend class="login-form-fieldset-label">Password</legend>
-                <input class="login-form-fieldset-input" type="password" placeholder="********" [(ngModel)]="password" (keyup)="onKeyDown($event)">
+                <input class="login-form-fieldset-input" type="password" placeholder="********" [(ngModel)]="password" name="password" (keyup)="onKeyDown($event)" required>
             </fieldset>
+            <p class="login-form-fieldset-credentials">{{this.auth.failedError}}</p>
+            <p *ngIf="isEmpty" class="login-form-fieldset-credentials">Fields can't be empty</p>
             <button (click)="normalLogin()" class="login-form-button">
                 Sign in
             </button>
-        </div>
+        </form>
         <div class="login-separator">
             <span class="login-separator-line"></span>
             <span class="login-separator-text">or</span>

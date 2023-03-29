@@ -20,7 +20,7 @@
       </div>
         <ul class="header-nav-list">
             <li class="header-nav-item"><a class="header-nav-link" routerLink="/">Home</a></li>
-            <li class="header-nav-item"><a class="header-nav-link" href="about.html">Activities</a></li>
+            <li *ngIf="this.auth.isLogged" class="header-nav-item"><a class="header-nav-link" routerLink="/user-calendar/{{this.auth.userID}}">Activities</a></li>
             <li class="header-nav-item"><a class="header-nav-link" href="results.html">Houses</a></li>
             <li ngbDropdown class="header-nav-item">
               <a class="header-nav-link-dropdown" id="pruebaDropdown" ngbDropdownToggle routerLink="/">Dropdown</a>

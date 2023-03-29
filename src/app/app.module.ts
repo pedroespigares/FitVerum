@@ -15,6 +15,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UserCalendarComponent } from './components/user-calendar/user-calendar.component';
+import { UserRoutinesComponent } from './components/user-routines/user-routines.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LandingComponent,
     LoginComponent,
     RegisterComponent,
-    FooterComponent
+    FooterComponent,
+    UserCalendarComponent,
+    UserRoutinesComponent
   ],
   imports: [
     BrowserModule,

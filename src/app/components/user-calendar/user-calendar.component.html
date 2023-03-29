@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class="calendar-controls">
+    <button class="calendar-controls-button"
+    mwlCalendarPreviousView
+    [(viewDate)]="viewDate"
+    [view]="view">
+    Previous
+    </button>
+
+    <h3 class="calendar-controls-month">{{ viewDate | calendarDate:(view + 'ViewTitle') }}</h3>
+
+    <button class="calendar-controls-button"
+    mwlCalendarNextView
+    [(viewDate)]="viewDate"
+    [view]="view">
+    Next
+    </button>
+</div>
+
+<div [ngSwitch]="view">
+    <mwl-calendar-month-view
+      *ngSwitchCase="'month'"
+      [viewDate]="viewDate"
+      [events]="events"
+      [weekStartsOn]="weekStartsOn"
+      [weekendDays]="weekendDays"
+      (dayClicked)="routeToRoutines($event.day.date)"
+    >
+    </mwl-calendar-month-view>
+    <mwl-calendar-day-view
+      *ngSwitchCase="'day'"
+      [viewDate]="viewDate"
+      [events]="events"
+      (hourSegmentClicked)="clickedDate = $event.date"
+    >
+  </mwl-calendar-day-view>
+  </div>

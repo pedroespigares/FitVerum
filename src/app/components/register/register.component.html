@@ -9,23 +9,25 @@
             </h1>
         </div>
         <h1 class="register-title">Register</h1>
-        <div class="register-form">
+        <form class="register-form">
             <fieldset class="register-form-fieldset">
                 <legend class="register-form-fieldset-label">Username</legend>
                 <input class="register-form-fieldset-input" type="text" placeholder="User" [(ngModel)]="username" required>
             </fieldset>
             <fieldset class="register-form-fieldset">
                 <legend class="register-form-fieldset-label">Email</legend>
-                <input class="register-form-fieldset-input" type="text" placeholder="example@email.com" [(ngModel)]="email" required>
+                <input class="register-form-fieldset-input" type="email" placeholder="example@email.com" [(ngModel)]="email" required>
             </fieldset>
             <fieldset class="register-form-fieldset">
                 <legend class="register-form-fieldset-label">Password</legend>
-                <input class="register-form-fieldset-input" type="password" placeholder="********" [(ngModel)]="password" required (keydown)="onKeyDown($event)">
+                <input class="register-form-fieldset-input" type="password" placeholder="********" [(ngModel)]="password" required (keydown)="onKeyDown($event)" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$">
             </fieldset>
+            <p *ngIf="!passwordCorrect" class="register-form-fieldset-password-info">Password must contain at least 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.</p>
+            <p *ngIf="isEmpty" class="register-form-fieldset-password-info">Fields can't be empty</p>
             <button (click)="normalRegister()" class="register-form-button">
                 Register
             </button>
-        </div>
+        </form>
         <div class="register-separator">
             <span class="register-separator-line"></span>
             <span class="register-separator-text">or</span>

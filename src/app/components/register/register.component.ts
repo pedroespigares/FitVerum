@@ -10,14 +10,32 @@ export class RegisterComponent {
   username :string = '';
   email :string = '';
   password :string = '';
+  passwordCorrect :boolean = true;
+  isEmpty :boolean = false;
+
   constructor(public auth: AuthService) { }
 
   ngOnInit(){
     this.auth.checkAuthState();
   }
 
+  checkPassword(){
+    let regularExpression = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$");
+    if(regularExpression.test(this.password)){
+      this.passwordCorrect = true;
+    }else{
+      this.passwordCorrect = false;
+    }
+  }
   async normalRegister(){
-    this.auth.register(this.email, this.password, this.username);
+    if(this.username == '' || this.email == '' || this.password == ''){
+      this.isEmpty = true;
+      return;
+    }
+    this.checkPassword();
+    if(this.passwordCorrect){
+      this.auth.register(this.email, this.password, this.username);
+    }
   }
 
   googleRegister(){

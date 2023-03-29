@@ -98,6 +98,14 @@
       &-input {
         @include input();
       }
+
+      &-credentials{
+        font-size: getFontSize(sm);
+        text-align: center;
+        font-family: $font-family-text;
+        font-weight: getFontWeight(bold);
+        color: red;
+      }
     }
 
     &-button {

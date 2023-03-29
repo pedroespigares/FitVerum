@@ -98,6 +98,15 @@
       &-input {
         @include input();
       }
+
+      &-password-info {
+        font-size: getFontSize(xs);
+        text-align: center;
+        font-family: $font-family-text;
+        font-weight: getFontWeight(bold);
+        color: red;
+        width: 50%
+      }
     }
 
     &-button {

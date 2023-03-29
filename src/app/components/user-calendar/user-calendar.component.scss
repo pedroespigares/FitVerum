@@ -1,0 +1,67 @@
+@import "../../../scss/mixin.scss";
+@import "../../../scss/variables.scss";
+
+::ng-deep span.cal-day-number {
+  color: getColor(intense-violet);
+  font-family: $font-family-title !important;
+  font-size: 5rem !important;
+}
+
+::ng-deep .cal-month-view {
+  background-color: getColor(white);
+  padding-left: 5rem !important;
+  padding-right: 5rem !important;
+  height: 100vh;
+}
+
+::ng-deep .cal-cell-top {
+  cursor: pointer;
+  transition: $transition;
+  &:hover {
+    .cal-day-number {
+      color: getColor(intense-violet);
+      scale: 1.3;
+      transition: $transition;
+      opacity: 1;
+    }
+
+    &:active {
+      background-color: lighten(getColor(light-violet), 10%);
+    }
+  }
+
+  &:active {
+    background-color: getColor(light-violet);
+    scale: 1;
+  }
+}
+
+::ng-deep .cal-past,
+::ng-deep .cal-future,
+::ng-deep .cal-today {
+  color: getColor(black);
+  font-family: $font-family-title !important;
+  font-size: 2.5rem !important;
+}
+
+.calendar-controls {
+  margin-bottom: 5rem !important;
+  @include flex(
+    $direction: row,
+    $justify: center,
+    $align: center,
+    $gap: 20rem
+  );
+  padding: 2rem;
+  &-month {
+    font-size: getFontSize(xxl);
+    font-family: $font-family-title;
+    font-weight: getFontWeight(bold);
+    transition: $transition;
+    color: getColor(intense-violet);
+  }
+
+  &-button {
+    @include button(xl, true, 20rem);
+  }
+}

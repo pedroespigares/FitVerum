@@ -24,6 +24,7 @@ export class AuthService {
   public userEmail:string = '';
   public userPhoto:string = null;
   public username:string = '';
+  public failedError:string = '';
 
   constructor(public auth:Auth, public router:Router, public database: Firestore) { }
 
@@ -69,6 +70,7 @@ export class AuthService {
     .catch((error) => {
       this.isLogged = false;
       this.userID = '';
+      this.failedError = error.message.split('Firebase: Error (auth/')[1].split(').')[0];
     });
   }
 
