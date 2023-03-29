@@ -11,7 +11,10 @@
   background-color: getColor(white);
   padding-left: 5rem !important;
   padding-right: 5rem !important;
-  height: 100vh;
+}
+
+::ng-deep .cal-month-view .cal-day-cell{
+  min-height: 15rem;
 }
 
 ::ng-deep .cal-cell-top {
@@ -19,15 +22,21 @@
   transition: $transition;
   &:hover {
     .cal-day-number {
+      cursor: pointer;
       color: getColor(intense-violet);
       scale: 1.3;
       transition: $transition;
       opacity: 1;
+      color: getColor(white);
     }
-
-    &:active {
-      background-color: lighten(getColor(light-violet), 10%);
-    }
+    color: getColor(white);
+    background-color: getColor(intense-violet);
+    border: 1px solid getColor(intense-violet);
+    background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
   }
 
   &:active {
