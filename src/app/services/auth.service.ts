@@ -184,14 +184,4 @@ export class AuthService {
       }
     }
   }
-
-  async getUserTrainer(){
-    const userRef = doc(this.database, 'users', this.userID);
-    const userSnap = await getDoc(userRef);
-    if (userSnap.exists()) {
-      if (userSnap.data()['trainerID'] != null) {
-        return userSnap.data()['trainerID'];
-      }
-    }
-  }
 }
