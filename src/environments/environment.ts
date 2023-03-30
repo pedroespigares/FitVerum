@@ -7,3 +7,5 @@ export const environment = {
     authDomain: 'fitverum.firebaseapp.com',
     messagingSenderId: '205309217282',
   },}
+
+export const adminID = 'zmJG5qTQO0hA5KuJWbbWyLogkQg1';

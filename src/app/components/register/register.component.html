@@ -12,15 +12,15 @@
         <form class="register-form">
             <fieldset class="register-form-fieldset">
                 <legend class="register-form-fieldset-label">Username</legend>
-                <input class="register-form-fieldset-input" type="text" placeholder="User" [(ngModel)]="username" required>
+                <input class="register-form-fieldset-input" type="text" placeholder="User" [(ngModel)]="username" required name="username">
             </fieldset>
             <fieldset class="register-form-fieldset">
                 <legend class="register-form-fieldset-label">Email</legend>
-                <input class="register-form-fieldset-input" type="email" placeholder="example@email.com" [(ngModel)]="email" required>
+                <input class="register-form-fieldset-input" type="email" placeholder="example@email.com" [(ngModel)]="email" required name="email">
             </fieldset>
             <fieldset class="register-form-fieldset">
                 <legend class="register-form-fieldset-label">Password</legend>
-                <input class="register-form-fieldset-input" type="password" placeholder="********" [(ngModel)]="password" required (keydown)="onKeyDown($event)" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$">
+                <input class="register-form-fieldset-input" type="password" placeholder="********" [(ngModel)]="password" required (keydown)="onKeyDown($event)" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$" name="password">
             </fieldset>
             <p *ngIf="!passwordCorrect" class="register-form-fieldset-password-info">Password must contain at least 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.</p>
             <p *ngIf="isEmpty" class="register-form-fieldset-password-info">Fields can't be empty</p>

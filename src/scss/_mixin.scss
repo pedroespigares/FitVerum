@@ -53,7 +53,7 @@
     }
   } @else {
     &-list {
-      @include flex($direction: row, $justify: space-around);
+      @include flex($direction: row, $justify: flex-end, $align: center, $gap: 2.5rem);
       position: inherit;
       align-items: center;
       height: 100%;
@@ -63,6 +63,14 @@
         @include flex(
           $direction: row,
           $justify: space-around,
+          $align: center,
+          $gap: 2rem
+        );
+      }
+      &-buttons{
+        @include flex(
+          $direction: row,
+          $justify: center,
           $align: center,
           $gap: 2rem
         );
@@ -273,6 +281,20 @@
   cursor: pointer;
   &:hover {
     color: getColor(intense-violet);
+    transition: $transition;
+  }
+}
+
+@mixin routine-card(){
+  @include flex(column, center, center);
+  background-color: getColor(white);
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transition: $transition;
+  cursor: pointer;
+  &:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
     transition: $transition;
   }
 }

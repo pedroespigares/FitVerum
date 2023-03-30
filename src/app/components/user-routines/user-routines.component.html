@@ -1,1 +1,8 @@
-<p>user-routines works!</p>
+<app-header></app-header>
+<h1 class="routines-title">Your Routines</h1>
+<div class="routines-container">
+    <div class="routines-container-routine" *ngFor="let singleRoutine of routines">
+        <img class="routines-container-routine-img" [src]="singleRoutine.photoURL" alt="Routine Image">
+        <h2 class="routines-container-routine-title">{{singleRoutine.title}}</h2>
+    </div>
+</div>
