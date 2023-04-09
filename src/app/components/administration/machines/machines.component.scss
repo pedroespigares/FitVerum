@@ -1,0 +1,73 @@
+@import "../../../../scss/mixin.scss";
+@import "../../../../scss/variables.scss";
+
+.machines-administration-header {
+  @include view_header();
+}
+
+.machines-administration {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  gap: 7rem;
+  padding: 5rem;
+
+  &-actions {
+    @include response(xl){
+      @include flex($direction: row, $justify: flex-end);
+    }
+    @include flex($direction: row, $justify: center);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 0 5rem;
+    &-button {
+      @include button(lg, true);
+      margin-left: 2rem;
+    }
+  }
+  &-machine {
+    @include card(false);
+    &-img {
+      width: 100%;
+      height: 25rem;
+      object-fit: cover;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+    }
+    &-title {
+      margin: 0;
+      width: 100%;
+      text-align: center;
+      padding: 2rem;
+      font-size: 2rem;
+      font-family: $font-family-title;
+      font-weight: getFontWeight(bold);
+      color: getColor(black);
+      transition: $transition;
+      color: getColor(white);
+      background-color: getColor(intense-violet);
+      border: 1px solid getColor(intense-violet);
+      background-image: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0)
+      );
+    }
+
+    &-actions {
+      @include flex($direction: row, $justify: center, $align: center);
+      width: 100%;
+
+      &-button-delete {
+        @include deleteInCard();
+      }
+
+      &-button-edit {
+        @include editInCard();
+      }
+
+      &-button-show {
+        @include showInCard();
+      }
+    }
+  }
+}

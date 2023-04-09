@@ -1,0 +1,73 @@
+<app-header></app-header>
+<main class="content">
+  <div class="calendar-controls">
+    <button
+      class="calendar-controls-button"
+      mwlCalendarPreviousView
+      [(viewDate)]="viewDate"
+      [view]="view"
+    >
+      Previous
+    </button>
+
+    <h3 class="calendar-controls-month">
+      {{ viewDate | calendarDate : view + "ViewTitle" }}
+    </h3>
+
+    <button
+      class="calendar-controls-button"
+      mwlCalendarNextView
+      [(viewDate)]="viewDate"
+      [view]="view"
+    >
+      Next
+    </button>
+  </div>
+
+  <div *ngIf="events$ | async; let events">
+    <div [ngSwitch]="view">
+      <mwl-calendar-week-view
+        *ngSwitchCase="'week'"
+        [viewDate]="viewDate"
+        [events]="events"
+        [dayStartHour]="8"
+        [dayEndHour]="22"
+        [hourSegments]="1"
+        [daysInWeek]="daysInWeek"
+        [refresh]="refresh"
+        (eventClicked)="open($event.event)"
+        (eventTimesChanged)="eventTimesChanged($event)"
+        (hourSegmentClicked)="routeToAppointments($event.date)"
+      >
+      </mwl-calendar-week-view>
+    </div>
+  </div>
+
+  <ng-template #modalContent let-close="close">
+    <div class="modal-header">
+      <h5 class="modal-title">Event information</h5>
+      <button type="button" class="close modal-button" (click)="close()">
+        <i class="fa-solid fa-x"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div>
+        <h6 class="modal-body-title">Event title</h6>
+        <p class="modal-body-title-text">{{ modalData?.event?.title }}</p>
+        <h6 *ngIf="modalData?.event?.description != ''" class="modal-body-content-title">Description</h6>
+        <p *ngIf="modalData?.event?.description != ''" class="modal-body-content-text">{{ modalData?.event?.description}}</p>
+        <p *ngIf="modalData?.event?.description === ''" class="no-description-message">This event does not have a description</p>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="modal-button-delete" (click)="deleteEvent(modalData?.event?.id)">
+        <i class="fa-solid fa-trash"></i>
+      </button>
+      <button type="button" class="modal-button" (click)="close()">
+        Back
+      </button>
+    </div>
+  </ng-template>
+  
+  
+</main>

@@ -1,4 +1,3 @@
-@import "../../../scss/base.scss";
 @import "../../../scss/mixin.scss";
 @import "../../../scss/variables.scss";
 
@@ -79,7 +78,7 @@
       $direction: column,
       $justify: center,
       $align: center,
-      $gap: 4rem
+      $gap: 2rem
     );
 
     &-fieldset {
@@ -95,22 +94,65 @@
         @include label();
       }
 
+      &-input-container{
+        @include flex(
+          $direction: row,
+          $justify: center,
+          $align: center,
+          $gap: 1.5rem
+        );
+
+        &-icon{
+          font-size: 2.5rem;
+          color: getColor(dark-grayish-violet);
+          transition: $transition;
+          cursor: pointer;
+          &:hover{
+            color: getColor(intense-violet);
+          }
+
+          &-close {
+            font-size: 2.3rem;
+            color: getColor(dark-grayish-violet);
+            transition: $transition;
+            cursor: pointer;
+            &:hover {
+              color: getColor(intense-violet);
+            }
+          }
+
+          &-not-showing{
+            font-size: 2.5rem;
+            color: getColor(white);
+          }
+        }
+      }
+
       &-input {
         @include input();
       }
 
       &-password-info {
-        font-size: getFontSize(xs);
+        font-size: getFontSize(xxs);
         text-align: center;
         font-family: $font-family-text;
         font-weight: getFontWeight(bold);
         color: red;
         width: 50%
       }
+      
+      &-credentials{
+        font-size: getFontSize(sm);
+        text-align: center;
+        font-family: $font-family-text;
+        font-weight: getFontWeight(bold);
+        color: red;
+      }
     }
 
     &-button {
-      @include button(md, true);
+      @include button(lg, true);
+      align-self: center;
     }
   }
 

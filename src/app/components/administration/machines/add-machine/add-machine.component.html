@@ -1,0 +1,33 @@
+<app-header></app-header>
+<main class="content">
+<div class="add-machine">
+    <div class="add-machine-logo-presentation">
+        <img class="add-machine-logo-presentation-img" src="../../assets/images/FitVerumLogo.png" alt="Brand Logo">
+        <h1 class="add-machine-logo-presentation-text">
+            <span class="add-machine-logo-presentation-text-first">Fit</span>
+            <span class="add-machine-logo-presentation-text-second">Verum</span>
+        </h1>
+    </div>
+    <h1 class="add-machine-title">Add Machine</h1>
+    <form class="add-machine-form">
+        <fieldset class="add-machine-form-fieldset">
+            <legend class="add-machine-form-fieldset-label" for="machineName">Machine/Exercise Name</legend>
+            <input class="add-machine-form-fieldset-input" type="text" id="machineName" name="machineName" placeholder="Machine Name" [(ngModel)]="name">
+        </fieldset>
+        <fieldset class="add-machine-form-fieldset">
+            <legend class="add-machine-form-fieldset-label" for="machineDescription">Machine/Exercise Description</legend>
+            <textarea class="add-machine-form-fieldset-textarea" type="text" id="machineDescription" name="machineDescription" placeholder="Machine Description" [(ngModel)]="description"></textarea>
+        </fieldset>
+        <fieldset class="add-machine-form-fieldset">
+            <legend class="add-machine-form-fieldset-label" for="machineImage">Machine/Exercise Image</legend>
+            <label for="machineImage" class="add-machine-form-fieldset-label-file">
+                <label class="add-machine-form-fieldset-label-file-text" for="machineImage">{{uploadMessage}}</label>
+                <img *ngIf="!uploaded" class="add-machine-form-fieldset-label-file-img" src="../../../../../assets/images/add.png">
+            </label>
+            <input class="add-machine-form-fieldset-input-file" type="file" id="machineImage" name="machineImage" accept="image/*" (change)="uploadFile($event)">
+        </fieldset>
+        <button *ngIf="!uploaded" class="add-machine-form-button-disabled" disabled>Add Machine/Exercise</button>
+        <button *ngIf="uploaded" class="add-machine-form-button" (click)="addMachine()">Add Machine/Exercise</button>
+    </form>
+</div>
+</main>

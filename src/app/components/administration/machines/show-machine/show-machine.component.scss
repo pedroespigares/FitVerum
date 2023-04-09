@@ -1,0 +1,137 @@
+@import "../../../../../scss/mixin.scss";
+@import "../../../../../scss/variables.scss";
+
+.breadcrumbs {
+  @include breadcrumbs($margin-left: 5rem);
+}
+
+.content {
+  height: calc(95vh - 116px);
+  width: 100%;
+  background-color: getColor(white);
+  padding: 0 2rem;
+  @include response(xl) {
+    padding: 0 5rem;
+  }
+  &-loading {
+    height: calc(95vh - 116px);
+    width: 100%;
+    background-color: getColor(white);
+    padding: 0 2rem;
+    @include response(xl) {
+      padding: 0 5rem;
+    }
+    opacity: 0.5;
+  }
+}
+.show-machine {
+  margin-top: 80rem;
+
+  @include response(sm) {
+    margin-top: 25rem;
+  }
+  @include response(xl) {
+    display: grid;
+    grid-template-columns: 0.75fr 1fr;
+    grid-template-rows: 1fr;
+    margin-top: 0;
+  }
+
+  @include flex(
+    $direction: column,
+    $justify: center,
+    $align: center,
+    $gap: 5rem
+  );
+  height: 100%;
+  width: 100%;
+
+  &-img-container {
+    grid-area: 1 / 1 / 2 / 2;
+    @include flex($direction: row, $justify: center, $align: center);
+    &-img {
+      width: 90%;
+      height: 90%;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+  }
+
+  &-text {
+    @include response(xl) {
+      margin-left: 5rem;
+      padding-right: 5rem;
+      margin-top: 5rem;
+    }
+    @include flex(
+      $direction: column,
+      $justify: flex-start,
+      $align: flex-start,
+      $gap: 6rem
+    );
+
+    place-self: start;
+    width: 100%;
+
+    grid-area: 1 / 2 / 2 / 3;
+
+    &-title-container {
+      display: grid;
+      grid-template-columns: 1fr 0.1fr;
+      grid-template-rows: 1fr;
+      width: 100%;
+      align-items: center;
+      &-title {
+        grid-area: 1 / 1 / 2 / 2;
+        @include response(xl) {
+          font-size: getFontSize(xxxl);
+        }
+        font-size: getFontSize(xl);
+        font-family: $font-family-title;
+        font-weight: getFontWeight(bold);
+        text-align: center;
+        background-image: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.1),
+          rgba(255, 255, 255, 0)
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-color: getColor(intense-violet);
+        margin-bottom: 0;
+      }
+
+      &-button {
+        grid-area: 1 / 2 / 2 / 3;
+        @include response(xl) {
+          @include button($focus: true);
+        }
+        @include button($size: sm, $focus: true);
+      }
+    }
+
+    &-description {
+      @include response(xl) {
+        font-size: getFontSize(md);
+      }
+      font-size: getFontSize(sm);
+      font-family: $font-family-text;
+      font-weight: getFontWeight(regular);
+      text-align: justify;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.lds-ring {
+  @include loader();
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,4 +1,5 @@
 <app-header></app-header>
+<main class="content">
 <div class="calendar-controls">
     <button class="calendar-controls-button"
     mwlCalendarPreviousView
@@ -27,11 +28,5 @@
       (dayClicked)="routeToRoutines($event.day.date)"
     >
     </mwl-calendar-month-view>
-    <mwl-calendar-day-view
-      *ngSwitchCase="'day'"
-      [viewDate]="viewDate"
-      [events]="events"
-      (hourSegmentClicked)="clickedDate = $event.date"
-    >
-  </mwl-calendar-day-view>
   </div>
+</main>

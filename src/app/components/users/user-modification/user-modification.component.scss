@@ -1,0 +1,152 @@
+@import "../../../../scss/mixin.scss";
+@import "../../../../scss/variables.scss";
+
+.title {
+  @include view_header(5rem);
+  font-family: $font-family-title;
+  margin-bottom: 7rem;
+}
+
+.user-info {
+  @include flex($direction: row, $justify: center, $align: center, $gap: 10rem);
+
+  &-img-container {
+    @include flex($direction: row, $justify: center, $align: center);
+    &-img {
+      width: 20rem;
+      height: 20rem;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  &-container {
+    @include flex($direction: column, $justify: center, $align: flex-start);
+    &-name {
+      @include view_header(4rem);
+      font-family: $font-family-title;
+      color: getColor(black);
+    }
+    &-email {
+      font-size: getFontSize(md);
+      font-family: $font-family-text;
+      color: getColor(black);
+      font-weight: getFontWeight(thin);
+    }
+    &-membership {
+      font-size: getFontSize(sm);
+      font-family: $font-family-text;
+      color: getColor(black);
+      font-weight: getFontWeight(thin);
+    }
+  }
+}
+
+.change-data {
+  @include flex(
+    $direction: column,
+    $justify: center,
+    $align: center,
+    $gap: 10rem
+  );
+  margin-bottom: 5rem;
+
+  &-password,
+  &-name {
+    @include flex(
+      $direction: row,
+      $justify: center,
+      $align: center,
+      $gap: 5rem
+    );
+    &-input {
+      @include input();
+    }
+  }
+  &-title {
+    margin-top: 10rem;
+    @include view_header(3rem);
+    font-family: $font-family-title;
+    margin-bottom: 5rem;
+  }
+
+  &-btn {
+    @include button($size: xl ,$focus: true);
+    margin-bottom: 5rem;
+  }
+
+  &-img {
+    @include flex(
+      $direction: row,
+      $justify: center,
+      $align: center,
+      $gap: 2rem
+    );
+
+    @include input();
+    &-add-img {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    &-uploaded-img{
+      width: 7rem;
+      height: 7rem;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    &-label {
+      color: getColor(dark-grayish-violet);
+      transition: $transition;
+      cursor: pointer;
+      &:hover {
+        color: getColor(intense-violet);
+      }
+    }
+
+    &-input {
+      display: none;
+    }
+  }
+}
+
+.error-message {
+  @include view_header(2rem);
+  font-family: $font-family-text;
+  color: white;
+  margin-top: 5rem !important;
+  background-color: red;
+  border-radius: 10rem;
+  width: 20%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.success-message {
+  @include view_header(2rem);
+  font-family: $font-family-text;
+  color: white;
+  margin-top: 5rem !important;
+  background-color: green;
+  border-radius: 10rem;
+  width: 20%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.lds-ring {
+  @include loader(25vh, 100vh);
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

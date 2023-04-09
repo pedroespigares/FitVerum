@@ -12,16 +12,28 @@
         <form class="register-form">
             <fieldset class="register-form-fieldset">
                 <legend class="register-form-fieldset-label">Username</legend>
-                <input class="register-form-fieldset-input" type="text" placeholder="User" [(ngModel)]="username" required name="username">
+                <div class="register-form-fieldset-input-container">
+                    <input class="register-form-fieldset-input" type="text" placeholder="User" [(ngModel)]="username" required name="username">
+                    <i class="fa-solid fa-eye register-form-fieldset-input-container-icon-not-showing"></i>
+                </div>
             </fieldset>
             <fieldset class="register-form-fieldset">
                 <legend class="register-form-fieldset-label">Email</legend>
-                <input class="register-form-fieldset-input" type="email" placeholder="example@email.com" [(ngModel)]="email" required name="email">
+                <div class="register-form-fieldset-input-container">
+                    <input class="register-form-fieldset-input" type="email" placeholder="example@email.com" [(ngModel)]="email" required name="email">
+                    <i class="fa-solid fa-eye register-form-fieldset-input-container-icon-not-showing"></i>
+                </div>
             </fieldset>
             <fieldset class="register-form-fieldset">
                 <legend class="register-form-fieldset-label">Password</legend>
-                <input class="register-form-fieldset-input" type="password" placeholder="********" [(ngModel)]="password" required (keydown)="onKeyDown($event)" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$" name="password">
+                <div class="register-form-fieldset-input-container">
+                    <input *ngIf="!showingPassword" class="register-form-fieldset-input" type="password" placeholder="********" [(ngModel)]="password" required (keydown)="onKeyDown($event)" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$" name="password">
+                    <input *ngIf="showingPassword" class="register-form-fieldset-input" type="text" placeholder="********" [(ngModel)]="password" required (keydown)="onKeyDown($event)" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$" name="password">
+                    <i *ngIf="!showingPassword" class="fa-solid fa-eye register-form-fieldset-input-container-icon" (click)="showPassword()"></i>
+                    <i *ngIf="showingPassword" class="fa-solid fa-eye-slash register-form-fieldset-input-container-icon-close" (click)="showPassword()"></i>
+                </div>
             </fieldset>
+            <p class="register-form-fieldset-credentials">{{this.auth.failedError}}</p>
             <p *ngIf="!passwordCorrect" class="register-form-fieldset-password-info">Password must contain at least 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.</p>
             <p *ngIf="isEmpty" class="register-form-fieldset-password-info">Fields can't be empty</p>
             <button (click)="normalRegister()" class="register-form-button">

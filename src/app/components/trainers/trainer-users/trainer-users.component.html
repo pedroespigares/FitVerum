@@ -1,0 +1,96 @@
+<app-header></app-header>
+<main class="content">
+  <h1 class="trainers-clients-header">Clients Administration</h1>
+  <div class="trainers-clients-container">
+    <div class="trainers-clients-container-users">
+      <h2 class="trainers-clients-container-users-title">Available users</h2>
+      <div class="trainers-clients-container-users-container">
+        <table class="trainers-clients-container-users-container-table">
+          <tr *ngFor="let user of users | slice : (page - 1) * pageSize : page * pageSize">
+            <td>
+              <img
+                *ngIf="user.photoURL != null"
+                referrerpolicy="no-referrer"
+                class="trainers-clients-container-users-container-table-user-img"
+                [src]="user.photoURL"
+                alt="User Image"
+              />
+              <img
+                *ngIf="user.photoURL == null"
+                class="trainers-clients-container-users-container-table-user-img"
+                src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=5974ac39-112f-4bd1-a170-d2a23c392d95"
+                alt="User Image"
+              />
+            </td>
+            <td class="trainers-clients-container-users-container-table-user-name">
+              {{ user.displayName }}
+            </td>
+            <td>
+              <button class="trainers-clients-container-users-container-table-user-button" (click)="subscribeClient(user.userID)">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p *ngIf="this.users.length == 0" class="no-users-message">There are currently no users available</p>
+      <div class="pagination">
+        <ngb-pagination
+          *ngIf="this.users.length > 5"
+          [collectionSize]="this.users.length"
+          [pageSize]="pageSize"
+          [directionLinks]="false"
+          [(page)]="page"
+          class="w-100"
+        >
+        </ngb-pagination>
+      </div>
+    </div>
+
+    
+    <div class="trainers-clients-container-users">
+      <h2 class="trainers-clients-container-clients-title">Clients</h2>
+      <div class="trainers-clients-container-clients-container">
+        <table class="trainers-clients-container-clients-container-table">
+          <tr *ngFor="let client of clients | slice : (page - 1) * pageSize : page * pageSize">
+            <td>
+              <button class="trainers-clients-container-clients-container-table-client-button-left" (click)="unsubscribeClient(client.userID)">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+            </td>
+            <td>
+              <img
+                *ngIf="client.photoURL != null"
+                referrerpolicy="no-referrer"
+                class="trainers-clients-container-clients-container-table-client-img"
+                [src]="client.photoURL"
+                alt="User Image"
+              />
+              <img
+                *ngIf="client.photoURL == null"
+                class="trainers-clients-container-clients-container-table-client-img"
+                src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=5974ac39-112f-4bd1-a170-d2a23c392d95"
+                alt="User Image"
+              />
+            </td>
+            <td class="trainers-clients-container-clients-container-table-client-name">
+              {{ client.displayName }}
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p *ngIf="this.clients.length == 0" class="no-clients-message">There are currently no clients associated with you</p>
+      <div class="pagination">
+        <ngb-pagination
+        *ngIf="this.clients.length > 5"
+          [collectionSize]="this.users.length"
+          [pageSize]="pageSize"
+          [directionLinks]="false"
+          [(page)]="page"
+          class="w-100"
+        >
+        </ngb-pagination>
+      </div>
+    </div>
+  </div>
+</main>

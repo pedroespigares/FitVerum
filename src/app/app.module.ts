@@ -15,8 +15,18 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { UserCalendarComponent } from './components/user-calendar/user-calendar.component';
-import { UserRoutinesComponent } from './components/user-routines/user-routines.component';
+import { UserCalendarComponent } from './components/users/user-calendar/user-calendar.component';
+import { UserRoutinesComponent } from './components/users/user-routines/user-routines.component';
+import { UsersComponent } from './components/administration/users/users.component';
+import { MachinesComponent } from './components/administration/machines/machines.component';
+import { TrainerUsersComponent } from './components/trainers/trainer-users/trainer-users.component';
+import { AddMachineComponent } from './components/administration/machines/add-machine/add-machine.component';
+import { UpdateMachineComponent } from './components/administration/machines/update-machine/update-machine.component';
+import { ShowMachineComponent } from './components/administration/machines/show-machine/show-machine.component';
+import { TrainerCalendarComponent } from './components/trainers/trainer-calendar/trainer-calendar.component';
+import { TrainerAppointmentComponent } from './components/trainers/trainer-appointment/trainer-appointment.component';
+import { UserModificationComponent } from './components/users/user-modification/user-modification.component';
+import { TrainerModificationComponent } from './components/trainers/trainer-modification/trainer-modification.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +37,17 @@ import { UserRoutinesComponent } from './components/user-routines/user-routines.
     RegisterComponent,
     FooterComponent,
     UserCalendarComponent,
-    UserRoutinesComponent
+    UserRoutinesComponent,
+    UsersComponent,
+    MachinesComponent,
+    TrainerUsersComponent,
+    AddMachineComponent,
+    UpdateMachineComponent,
+    ShowMachineComponent,
+    TrainerCalendarComponent,
+    TrainerAppointmentComponent,
+    UserModificationComponent,
+    TrainerModificationComponent,
   ],
   imports: [
     BrowserModule,

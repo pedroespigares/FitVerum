@@ -43,16 +43,7 @@ export class UserCalendarComponent {
 
   weekendDays: number[] = [DAYS_OF_WEEK.SATURDAY, DAYS_OF_WEEK.SUNDAY];
 
-  changeDay(date: Date) {
-    this.viewDate = date;
-    this.view = CalendarView.Day;
-  }
-
-  changeToMonthView() {
-    this.view = CalendarView.Month;
-  }
-
   routeToRoutines(date: Date){
-    this.router.navigateByUrl(`/user-calendar/${this.activatedRoute.snapshot.paramMap.get('id')}/${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`);
+    this.router.navigateByUrl(`/user/calendar/${this.activatedRoute.snapshot.paramMap.get('id')}/${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`);
   }
 }

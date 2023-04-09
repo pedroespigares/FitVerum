@@ -10,6 +10,7 @@ export class LoginComponent {
   email :string = '';
   password :string = '';
   isEmpty :boolean = false;
+  showingPassword :boolean = false;
   constructor(public auth: AuthService) { }
 
   ngOnInit(){
@@ -34,7 +35,15 @@ export class LoginComponent {
     }
   }
 
+  showPassword(){
+    this.showingPassword = !this.showingPassword;
+  }
   // githubLogin(){
   //   this.auth.githubLogin();
   // }
+
+  ngOnDestroy(){
+    this.auth.failedError = '';
+    this.isEmpty = false;
+  }
 }

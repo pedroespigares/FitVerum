@@ -1,0 +1,12 @@
+<app-header></app-header>
+<h1 class="title">Trainer Information</h1>
+<div class="trainer-info">
+    <div *ngIf="!loading" class="trainer-info-img-container">
+        <img *ngIf="trainer.photoURL != null" class="trainer-info-img-container-img" [src]="trainer.photoURL" alt="Trainer Image">
+        <img *ngIf="trainer.photoURL == null" class="trainer-info-img-container-img" src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=5974ac39-112f-4bd1-a170-d2a23c392d95" alt="Trainer Image">
+    </div>
+    <div *ngIf="!loading" class="trainer-info-container">
+        <h1 class="trainer-info-container-name">{{trainer.displayName}}</h1>
+        <p class="trainer-info-container-membership">Member since {{membership | date: 'longDate'}}</p>
+    </div>
+</div>

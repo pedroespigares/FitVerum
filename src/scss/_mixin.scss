@@ -32,7 +32,7 @@
       width: 100%;
       height: 100%;
       top: 0.01rem;
-      padding-top: 8rem;
+      padding-top: 20rem;
       left: -200%;
       right: 0.01rem;
       text-align: center;
@@ -53,7 +53,12 @@
     }
   } @else {
     &-list {
-      @include flex($direction: row, $justify: flex-end, $align: center, $gap: 2.5rem);
+      @include flex(
+        $direction: row,
+        $justify: flex-end,
+        $align: center,
+        $gap: 2.5rem
+      );
       position: inherit;
       align-items: center;
       height: 100%;
@@ -67,7 +72,7 @@
           $gap: 2rem
         );
       }
-      &-buttons{
+      &-buttons {
         @include flex(
           $direction: row,
           $justify: center,
@@ -148,7 +153,7 @@
   flex-wrap: nowrap;
 }
 
-@mixin button($size: lg, $focus: false, $width: null) {
+@mixin button($size: lg, $focus: false, $width: null, $disabled: false) {
   @if $focus {
     color: getColor(white);
     background-color: getColor(intense-violet);
@@ -168,8 +173,8 @@
   border-radius: 10rem;
   padding: 1rem 3rem 1rem 3rem;
   text-decoration: none;
+  cursor: pointer;
   &:hover {
-    cursor: pointer;
     @if $focus {
       background-color: darken(getColor(intense-violet), 5%);
     } @else {
@@ -187,23 +192,13 @@
   @if $width != null {
     width: $width;
   }
-}
 
-@mixin card($column: false) {
-  @if $column {
-    @include flex(column, center, center);
-  } @else {
-    @include flex(row, space-between, center);
-  }
-  background-color: getColor(white);
-  border-radius: 1rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  padding: 2rem;
-  transition: $transition;
-  &:hover {
-    transform: translateY(-0.5rem);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-    transition: $transition;
+  @if $disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    &:hover {
+      background-color: getColor(intense-violet);
+    }
   }
 }
 
@@ -219,7 +214,7 @@
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  font-size: getFontSize(lg);
+  font-size: getFontSize(md);
   font-family: $font-family-title;
   font-weight: getFontWeight(bold);
   transition: $transition;
@@ -253,11 +248,11 @@
   padding-bottom: 1rem;
 }
 
-@mixin input {
+@mixin input($size: lg) {
   @include response(xl) {
-    font-size: getFontSize(lg);
+    font-size: getFontSize($size);
   }
-  font-size: getFontSize(md);
+  font-size: getFontSize(calc($size - 0.5));
   font-family: $font-family-title;
   font-weight: getFontWeight(bold);
   transition: $transition;
@@ -285,16 +280,169 @@
   }
 }
 
-@mixin routine-card(){
+@mixin card($withHover: true) {
   @include flex(column, center, center);
   background-color: getColor(white);
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transition: $transition;
   cursor: pointer;
+  @if $withHover {
+    &:hover {
+      transform: translateY(-0.5rem);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+      transition: $transition;
+    }
+  }
+}
+
+@mixin deleteInCard() {
+  color: getColor(white);
+  background-color: #e74c3c;
+  border: none;
+  flex-grow: 1;
+  font-size: getFontSize(xl);
+  border-bottom-left-radius: 1rem;
+  transition: $transition;
+  padding: 1rem 3rem 1rem 3rem;
+  text-decoration: none;
+  cursor: pointer;
   &:hover {
-    transform: translateY(-0.5rem);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    opacity: 0.8;
+  }
+}
+
+@mixin editInCard() {
+  color: getColor(white);
+  background-color: #f1c40f;
+  border: none;
+  flex-grow: 1;
+  font-size: getFontSize(xl);
+  transition: $transition;
+  padding: 1rem 3rem 1rem 3rem;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+@mixin showInCard() {
+  color: getColor(white);
+  background-color: #27ae60;
+  border: none;
+  flex-grow: 1;
+  font-size: getFontSize(xl);
+  transition: $transition;
+  padding: 1rem 3rem 1rem 3rem;
+  border-bottom-right-radius: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+@mixin view_header($size: 5rem) {
+  @include response(xl) {
+    font-size: $size;
+  }
+  font-size: calc($size / 1.5);
+  font-family: $font-family-title;
+  font-weight: getFontWeight(bold);
+  color: getColor(intense-violet);
+  transition: $transition;
+  text-align: center;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+@mixin user_button($padding: 1rem) {
+  width: 100%;
+  height: 10rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  font-size: getFontSize(xl);
+  transition: $transition;
+  padding: $padding $padding $padding $padding;
+  text-decoration: none;
+  background-color: getColor(intense-violet);
+  color: getColor(white);
+  border: none;
+  &:hover {
+    background-color: darken(getColor(intense-violet), 5%);
+  }
+}
+
+@mixin breadcrumbs($margin-left: 3rem) {
+  @include flex(
+    $direction: row,
+    $justify: flex-start,
+    $align: center,
+    $gap: 1rem
+  );
+  margin-left: $margin-left;
+  margin-top: 2rem;
+  &-item {
+    margin: 0;
+    font-size: getFontSize(md);
+    font-family: $font-family-text;
+    color: getColor(black);
+    text-decoration: none;
     transition: $transition;
+    &:hover {
+      color: getColor(intense-violet);
+    }
+  }
+}
+
+@mixin normal_delete_button {
+  color: getColor(white);
+  background-color: #e74c3c;
+  border: none;
+  font-size: getFontSize(xl);
+  border-radius: 10rem;
+  transition: $transition;
+  padding: 1rem 3rem 1rem 3rem;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+@mixin loader($top: calc(50% - 6.4rem), $left: calc(50% - 6.4rem)) {
+  display: inline-block;
+  position: relative;
+  width: 0.8rem;
+  height: 0.8rem;
+  top: $top;
+  left: $left;
+
+  div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 6.4rem;
+    height: 6.4rem;
+    margin: 0.8rem;
+    border: 0.8rem solid getColor(intense-violet);
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: getColor(intense-violet) transparent transparent transparent;
+  }
+  div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  div:nth-child(3) {
+    animation-delay: -0.15s;
   }
 }

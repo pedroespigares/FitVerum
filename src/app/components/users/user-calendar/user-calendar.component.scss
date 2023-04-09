@@ -1,5 +1,5 @@
-@import "../../../scss/mixin.scss";
-@import "../../../scss/variables.scss";
+@import "../../../../scss/mixin.scss";
+@import "../../../../scss/variables.scss";
 
 ::ng-deep span.cal-day-number {
   color: getColor(intense-violet);
@@ -30,8 +30,8 @@
       color: getColor(white);
     }
     color: getColor(white);
-    background-color: getColor(intense-violet);
-    border: 1px solid getColor(intense-violet);
+    background-color: getColor(light-violet);
+    border: 1px solid getColor(light-violet);
     background-image: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.1),

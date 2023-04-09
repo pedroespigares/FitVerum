@@ -12,11 +12,19 @@
         <form class="login-form">
             <fieldset class="login-form-fieldset">
                 <legend class="login-form-fieldset-label">Email</legend>
-                <input class="login-form-fieldset-input" type="email" placeholder="example@email.com" [(ngModel)]="email" name="email" required>
+                <div class="login-form-fieldset-input-container">
+                    <input class="login-form-fieldset-input" type="email" placeholder="example@email.com" [(ngModel)]="email" name="email" required>
+                    <i class="fa-solid fa-eye login-form-fieldset-input-container-icon-not-showing"></i>
+                </div>
             </fieldset>
             <fieldset class="login-form-fieldset">
                 <legend class="login-form-fieldset-label">Password</legend>
-                <input class="login-form-fieldset-input" type="password" placeholder="********" [(ngModel)]="password" name="password" (keyup)="onKeyDown($event)" required>
+                <div class="login-form-fieldset-input-container">
+                    <input *ngIf="!showingPassword" class="login-form-fieldset-input" type="password" placeholder="********" [(ngModel)]="password" name="password" (keyup)="onKeyDown($event)" required>
+                    <input *ngIf="showingPassword" class="login-form-fieldset-input" type="text" placeholder="********" [(ngModel)]="password" name="password" (keyup)="onKeyDown($event)" required>
+                    <i *ngIf="!showingPassword" class="fa-solid fa-eye login-form-fieldset-input-container-icon" (click)="showPassword()"></i>
+                    <i *ngIf="showingPassword" class="fa-solid fa-eye-slash login-form-fieldset-input-container-icon-close" (click)="showPassword()"></i>
+                </div>
             </fieldset>
             <p class="login-form-fieldset-credentials">{{this.auth.failedError}}</p>
             <p *ngIf="isEmpty" class="login-form-fieldset-credentials">Fields can't be empty</p>

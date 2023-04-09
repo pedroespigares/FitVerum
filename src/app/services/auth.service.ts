@@ -7,6 +7,10 @@ import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   GithubAuthProvider,
+  deleteUser,
+  updatePassword,
+  sendPasswordResetEmail,
+  updateEmail
 } from '@angular/fire/auth';
 import {
   Firestore,
@@ -49,6 +53,8 @@ export class AuthService {
         this.userEmail = user.email;
         this.userID = user.uid;
         this.userPhoto = user.photoURL;
+        this.checkUserRol();
+        this.getUserPhoto();
       } else {
         this.isLogged = false;
         this.userID = '';
@@ -70,6 +76,9 @@ export class AuthService {
       .catch((error) => {
         this.isLogged = false;
         this.userID = '';
+        this.failedError = error.message
+          .split('Firebase: Error (auth/')[1]
+          .split(').')[0];
       });
   }
 
@@ -130,16 +139,27 @@ export class AuthService {
     this.isLogged = false;
     this.userID = '';
     this.router.navigate(['/']);
+    this.isAdmin = false;
+    this.isTrainer = false;
   }
 
   isAuthentificated() {
     return this.isLogged;
   }
 
-  // Check if user exists in database
+
+
+
+  // Comprobar si el usuario existe en la base de datos tanto como usuario como entrenador
 
   async checkIfUserExists() {
     const docRef = doc(this.database, 'users', this.userID);
+    const docSnap = await getDoc(docRef);
+    return docSnap.exists();
+  }
+
+  async checkIfTrainerExists() {
+    const docRef = doc(this.database, 'trainers', this.userID);
     const docSnap = await getDoc(docRef);
     return docSnap.exists();
   }
@@ -161,11 +181,14 @@ export class AuthService {
   // Create user in database if it doesn't exist
   async createUser() {
     let userExists: any = await this.checkIfUserExists();
+    let trainerExists: any = await this.checkIfTrainerExists();
 
-    if (!userExists) {
+    if (!userExists && !trainerExists) {
       await setDoc(doc(this.database, 'users', this.userID), {
+        userID: this.userID,
         displayName: this.username,
         photoURL: this.userPhoto,
+        email: this.userEmail,
         trainerID: null,
         timestamp: Date.now(),
       });
@@ -175,13 +198,42 @@ export class AuthService {
   }
 
   // Get user photo from database
-  async getUserPhoto() {
+  getUserPhoto() {
     const userRef = doc(this.database, 'users', this.userID);
-    const userSnap = await getDoc(userRef);
-    if (userSnap.exists()) {
-      if (userSnap.data()['photoURL'] != null) {
-        this.userPhoto = userSnap.data()['photoURL'];
+    getDoc(userRef).then((doc) => {
+      if (doc.exists()) {
+        this.userPhoto = doc.data()['photoURL'];
       }
-    }
+    });
+  }
+
+  updatePassword(password: string) {
+    updatePassword(this.auth.currentUser, password)
+      .then(() => {
+        // 
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  updateEmail(email: string) {
+    updateEmail(this.auth.currentUser, email)
+      .then(() => {
+        // 
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  sendPasswordResetEmail(email: string) {
+    sendPasswordResetEmail(this.auth, email)
+      .then(() => {
+        // 
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 }

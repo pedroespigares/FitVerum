@@ -16,10 +16,10 @@ export class UserRoutinesComponent {
 
   ngOnInit() {
     this.user = this.router.snapshot.paramMap.get('id');
-    this.database.getUserTrainer(this.user).then((data) => {
-      this.trainer = data;
-      console.log(this.trainer);
-    });
+    // this.database.getUserTrainer(this.user).then((data) => {
+    //   this.trainer = data;
+    //   console.log(this.trainer);
+    // });
     this.database.getRoutines(this.user).subscribe((data) => {
       this.routines = data;
     });

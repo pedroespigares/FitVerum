@@ -1,6 +1,10 @@
 @import "../../../scss/mixin.scss";
 @import "../../../scss/variables.scss";
 
+img{
+  margin: 0 !important;
+}
+
 /// Layout cabecera
 .header {
   grid-column: 1 / -1;
@@ -18,6 +22,11 @@
     $gap: 0.5rem
   );
   background-color: getColor(white);
+
+  &-user-img{
+    display: inline-block;
+    border-radius: 50%;
+  }
 }
 
 /// Layout Navs
@@ -44,15 +53,12 @@
       color: getColor(intense-violet);
       transition: $transition;
     }
-
-    &-user{
-      @include response(xl) {
-        font-size: getFontSize(xl);
-      }
-      font-size: getFontSize(lg);
-      color: getColor(dark-grayish-violet);
-    }
   }
+}
+
+.user-type{
+  font-size: getFontSize(md);
+  margin: 0;
 }
 
 /// Layout Logo
@@ -149,6 +155,10 @@ nav.open ul.header-nav-list {
 
 .close-gear {
   animation: rotate-center-inverse 0.5s ease-in-out both;
+}
+
+a{
+  text-decoration: none;
 }
 
 @keyframes rotate-center {

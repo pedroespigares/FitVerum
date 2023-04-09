@@ -1,0 +1,120 @@
+@import "../../../../scss/mixin.scss";
+@import "../../../../scss/variables.scss";
+
+.trainers-clients-header {
+  @include view_header();
+}
+
+.trainers-clients-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+
+  &-users {
+    border-right: 2px solid getColor(light-grayish-violet);
+  }
+  &-users,
+  &-clients {
+    margin-top: 7rem;
+    &-title {
+      @include view_header(3rem);
+      margin-bottom: 2rem;
+    }
+    &-container {
+      @include flex($direction: row, $justify: center, $align: center);
+      &-table {
+        width: 60%;
+        border-collapse: separate;
+        border-spacing: 3rem;
+        tr {
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+          border-radius: 1rem;
+        }
+        &-user,
+        &-client {
+          &-img {
+            width: 7.5rem;
+            height: 7.5rem;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 1rem;
+          }
+          &-name {
+            font-size: getFontSize(xl);
+            font-family: $font-family-title;
+            font-weight: getFontWeight(bold);
+            color: getColor(black);
+            width: 50%;
+          }
+          &-button {
+            width: 100%;
+            height: 10rem;
+            border-top-right-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            background-image: linear-gradient(
+              180deg,
+              rgba(255, 255, 255, 0.1),
+              rgba(255, 255, 255, 0)
+            );
+            font-size: getFontSize(xl);
+            transition: $transition;
+            padding: 1rem 1rem 1rem 1rem;
+            text-decoration: none;
+            background-color: getColor(intense-violet);
+            color: getColor(white);
+            border: none;
+            &:hover {
+              background-color: darken(getColor(intense-violet), 5%);
+            }
+            &-left {
+              width: 100%;
+              height: 10rem;
+              border-top-left-radius: 1rem;
+              border-bottom-left-radius: 1rem;
+              border-top-right-radius: 0;
+              border-bottom-right-radius: 0;
+              background-image: linear-gradient(
+                180deg,
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0)
+              );
+              font-size: getFontSize(xl);
+              transition: $transition;
+              padding: 1rem 1rem 1rem 1rem;
+              text-decoration: none;
+              background-color: getColor(intense-violet);
+              color: getColor(white);
+              border: none;
+              &:hover {
+                background-color: darken(getColor(intense-violet), 5%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  ::ng-deep .pagination {
+    margin-top: 1rem;
+    justify-content: center;
+    // Al venir de un componente de terceros, no se puede usar el @include ni las variables de sass propias
+    --bs-pagination-color: getColor(black);
+    --bs-pagination-hover-color: getColor(intense-violet);
+    --bs-pagination-active-bg: #6a69dc;
+    --bs-pagination-active-border-color: #6a69dc;
+    --bs-pagination-font-size: 2rem;
+    --bs-pagination-padding-x: 1.5rem;
+    --bs-pagination-padding-y: 0.75rem;
+    --bs-pagination-focus-box-shadow: none;
+  }
+
+  .no-clients-message,
+  .no-users-message {
+    font-size: 2rem;
+    font-family: $font-family-title;
+    font-weight: getFontWeight(bold);
+    color: getColor(black);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+}

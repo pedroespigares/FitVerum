@@ -1,0 +1,117 @@
+<app-header></app-header>
+<main class="content">
+  <div class="breadcrumbs">
+    <a class="breadcrumbs-item" routerLink="/trainer/calendar/{{trainerID}}">Management</a>
+    <p class="breadcrumbs-item"> > </p>
+    <p class="breadcrumbs-item">New appointment</p>
+  </div>
+  <div class="appointment-container">
+    <div class="appointment-container-clients">
+      <h1 class="appointment-container-clients-title">Clients</h1>
+      <table class="appointment-container-clients-table" *ngIf="selectedClient == null">
+        <tr
+          *ngFor="let client of clients | slice : (page - 1) * pageSize : page * pageSize">
+          <td>
+            <img
+              *ngIf="client.photoURL != null"
+              referrerpolicy="no-referrer"
+              class="appointment-container-clients-table-client-img"
+              [src]="client.photoURL"
+              alt="Client Image"
+            />
+            <img
+              *ngIf="client.photoURL == null"
+              class="appointment-container-clients-table-client-img"
+              src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=5974ac39-112f-4bd1-a170-d2a23c392d95"
+              alt="Client Image"
+            />
+          </td>
+          <td class="appointment-container-clients-table-client-name">
+            {{ client.displayName }}
+          </td>
+          <td>
+            <button class="appointment-container-clients-table-client-button" (click)="selectClient(client)">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </td>
+        </tr>
+      </table>
+      <p *ngIf="this.clients.length == 0" class="no-clients-message">
+        There are currently no clients available
+      </p>
+      <p *ngIf="selectedClient != null" class="no-clients-message">
+        You already selected a client
+      </p>
+      <div class="pagination">
+        <ngb-pagination
+          [collectionSize]="this.clients.length"
+          *ngIf="this.clients.length > 5"
+          [pageSize]="pageSize"
+          [directionLinks]="false"
+          [(page)]="page"
+          class="w-100"
+        >
+        </ngb-pagination>
+      </div>
+    </div>
+
+
+    <div class="appointment-container-info">
+        <h1 class="appointment-container-info-title">Appointment Information</h1>
+        <div class="appointment-container-info-selected-client">
+          <h2 *ngIf="selectedClient != null " class="appointment-container-info-selected-client-title">Selected Client: </h2>
+          <h2 *ngIf="selectedClient == null " class="appointment-container-info-selected-client-title">No client selected </h2>
+          <div class="appointment-container-info-selected-client-container">
+            <img
+              *ngIf="selectedClient != null && selectedClient.photoURL != null"
+              referrerpolicy="no-referrer"
+              class="appointment-container-info-selected-client-container-img"
+              [src]="selectedClient.photoURL"
+              alt="Client Image"
+            />
+            <img
+              *ngIf="selectedClient != null && selectedClient.photoURL == null"
+              class="appointment-container-info-selected-client-container-img"
+              src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=5974ac39-112f-4bd1-a170-d2a23c392d95"
+              alt="Client Image"
+            />
+            <h3 *ngIf="selectedClient != null" class="appointment-container-info-selected-client-container-name">
+              {{ selectedClient.displayName }}
+            </h3>
+            <button *ngIf="selectedClient != null" class="appointment-container-info-selected-client-container-button" (click)="removeClient(selectedClient)">
+              <i class="fa-solid fa-minus"></i>
+            </button>
+        </div>
+      </div>
+
+      <div *ngIf="selectedClient != null" class="appointment-container-info-date">
+        <div class="appointment-container-info-date-container">
+          <h2 class="appointment-container-info-date-container-title">Title</h2>
+            <input class="appointment-container-info-date-container-input" type="text" [(ngModel)]="title" />
+          <h2 class="appointment-container-info-date-container-title">Date</h2>
+          <h2 class="appointment-container-info-date-container-title-focus">{{this.date | date: 'longDate'}}</h2>
+          <h2 class="appointment-container-info-date-container-title">from</h2>
+          <h2 class="appointment-container-info-date-container-title-focus">{{this.date | date: 'HH:mm'}}</h2>
+          <h2 class="appointment-container-info-date-container-title">to</h2>
+            <input class="appointment-container-info-date-container-input" type="time" [(ngModel)]="end_time" max="22:00" min="08:00"/>
+          <h2 class="appointment-container-info-date-container-title">appointment color</h2>
+            <input class="appointment-container-info-date-container-input" type="color" [(ngModel)]="color" />
+        </div>
+      </div>
+
+      <div *ngIf="selectedClient != null" class="appointment-textarea-container">
+        <h2 *ngIf="selectedClient != null" class="appointment-textarea-container-title">Description</h2>
+        <textarea *ngIf="selectedClient != null" class="appointment-textarea-container-input" [(ngModel)]="description"></textarea>
+      </div>
+      <button *ngIf="selectedClient != null && date != undefined && end_time != undefined && title != undefined" class="appointment-container-info-button" (click)="createAppointment()">
+        <i class="fa-solid fa-plus"></i>
+        Create Appointment
+      </button>
+      <button *ngIf="date == undefined || end_time == undefined || title == undefined" class="appointment-container-info-button-disabled" (click)="createAppointment()">
+        <i class="fa-solid fa-plus"></i>
+        Create Appointment
+      </button>
+      <p class="error-message" *ngIf="errorMessage != ''">{{errorMessage}}</p>
+    </div>
+  </div>
+</main>

@@ -12,6 +12,7 @@ export class RegisterComponent {
   password :string = '';
   passwordCorrect :boolean = true;
   isEmpty :boolean = false;
+  showingPassword :boolean = false;
 
   constructor(public auth: AuthService) { }
 
@@ -27,6 +28,7 @@ export class RegisterComponent {
       this.passwordCorrect = false;
     }
   }
+  
   async normalRegister(){
     if(this.username == '' || this.email == '' || this.password == ''){
       this.isEmpty = true;
@@ -48,7 +50,17 @@ export class RegisterComponent {
     }
   }
 
+  showPassword(){
+    this.showingPassword = !this.showingPassword;
+  }
+
   // githubRegister(){
   //   this.auth.githubLogin();
   // }
+
+  ngOnDestroy(){
+    this.auth.failedError = '';
+    this.isEmpty = false;
+    this.passwordCorrect = true;
+  }
 }

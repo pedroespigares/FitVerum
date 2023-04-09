@@ -1,0 +1,35 @@
+<app-header></app-header>
+<main class="content">
+    <div class="edit-machine">
+        <div class="edit-machine-logo-presentation">
+            <img class="edit-machine-logo-presentation-img" src="../../assets/images/FitVerumLogo.png" alt="Brand Logo">
+            <h1 class="edit-machine-logo-presentation-text">
+                <span class="edit-machine-logo-presentation-text-first">Fit</span>
+                <span class="edit-machine-logo-presentation-text-second">Verum</span>
+            </h1>
+        </div>
+        <div class="edit-machine-title-container">
+            <h1 class="edit-machine-title-container-text">Edit Machine/Exercise</h1>
+            <img class="edit-machine-title-container-img" [src]="previousPhotoURL" alt="Machine Image">
+        </div>
+        <form class="edit-machine-form">
+            <fieldset class="edit-machine-form-fieldset">
+                <legend class="edit-machine-form-fieldset-label" for="machineName">Machine/Exercise Name</legend>
+                <input *ngIf="machineUploaded" class="edit-machine-form-fieldset-input" type="text" id="machineName" name="machineName" placeholder="Machine Name" [(ngModel)]="name">
+            </fieldset>
+            <fieldset class="edit-machine-form-fieldset">
+                <legend class="edit-machine-form-fieldset-label" for="machineDescription">Machine/Exercise Description</legend>
+                <textarea *ngIf="machineUploaded" class="edit-machine-form-fieldset-textarea" type="text" id="machineDescription" name="machineDescription" placeholder="Machine Description" [(ngModel)]="description"></textarea>
+            </fieldset>
+            <fieldset class="edit-machine-form-fieldset">
+                <legend class="edit-machine-form-fieldset-label" for="machineImage">Machine/Exercise Image</legend>
+                <label for="machineImage" class="edit-machine-form-fieldset-label-file">
+                    <label class="edit-machine-form-fieldset-label-file-text" for="machineImage">{{uploadMessage}}</label>
+                    <img *ngIf="!uploaded" class="edit-machine-form-fieldset-label-file-img" src="../../../../../assets/images/add.png">
+                </label>
+                <input class="edit-machine-form-fieldset-input-file" type="file" id="machineImage" name="machineImage" accept="image/*" (change)="uploadFile($event)">
+            </fieldset>
+            <button class="edit-machine-form-button" (click)="updateMachine()">Update</button>
+        </form>
+    </div>
+</main>

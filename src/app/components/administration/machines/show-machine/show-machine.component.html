@@ -1,0 +1,25 @@
+<app-header></app-header>
+<main class="content">
+    <div class="breadcrumbs">
+        <a class="breadcrumbs-item" routerLink="/administration/machines">Machines</a>
+        <p class="breadcrumbs-item"> > </p>
+        <p *ngIf="!loading" class="breadcrumbs-item">{{machine.name}}</p>
+      </div>
+    <div *ngIf="loading" class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="show-machine">
+        <div class="show-machine-img-container">
+            <img *ngIf="!loading" class="show-machine-img-container-img " [src]="machine.photoURL" alt="Machine Image">
+        </div>
+        <div class="show-machine-text">
+            <div class="show-machine-text-title-container">
+                <h1 *ngIf="!loading" class="show-machine-text-title-container-title">{{machine.name}}</h1>
+            </div>
+            <p *ngIf="!loading" class="show-machine-text-description">{{machine.description}}</p>
+        </div>
+    </div>
+</main>

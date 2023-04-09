@@ -1,0 +1,106 @@
+<app-header></app-header>
+<h1 class="user-administration-header">Users Administration</h1>
+<main class="content">
+<div class="users-trainers-container">
+  <div class="users-trainers-container-users">
+    <h2 class="users-trainers-container-users-title">Users</h2>
+    <div class="users-trainers-container-users-container">
+      <table class="users-trainers-container-users-container-table">
+        <tr *ngFor="let user of users | slice : (page - 1) * pageSize : page * pageSize">
+          <td>
+            <img
+              *ngIf="user.photoURL != null"
+              class="users-trainers-container-users-container-table-user-img"
+              referrerpolicy="no-referrer"
+              [src]="user.photoURL"
+              alt="User Image"
+            />
+            <img
+              *ngIf="user.photoURL == null"
+              class="users-trainers-container-users-container-table-user-img"
+              src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=5974ac39-112f-4bd1-a170-d2a23c392d95"
+              alt="User Image"
+            />
+          </td>
+          <td class="users-trainers-container-users-container-table-user-name">
+            {{ user.displayName }}
+          </td>
+          <td>
+            <button class="users-trainers-container-users-container-table-user-icon" (click)="deleteUser(user.userID)">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </td>
+          <td>
+            <button class="users-trainers-container-users-container-table-user-button" (click)="convertUserToTrainer(user.userID)">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <p *ngIf="this.users.length == 0" class="no-users-message">There are currently no users</p>
+    <div class="pagination">
+      <ngb-pagination
+        *ngIf="this.users.length > 5"
+        [collectionSize]="this.users.length"
+        [pageSize]="pageSize"
+        [directionLinks]="false"
+        [(page)]="page"
+        class="w-100"
+      >
+      </ngb-pagination>
+    </div>
+  </div>
+
+
+  <div class="users-trainers-container-users">
+    <h2 class="users-trainers-container-trainers-title">Trainers</h2>
+    <div class="users-trainers-container-trainers-container">
+      <table class="users-trainers-container-trainers-container-table">
+        <tr *ngFor="let trainer of trainers | slice : (page - 1) * pageSize : page * pageSize">
+          <td>
+            <button class="users-trainers-container-trainers-container-table-trainer-button-left" (click)="convertTrainerToUser(trainer.trainerID)">
+              <i class="fa-solid fa-minus"></i>
+            </button>
+          </td>
+          <td>
+            <button class="users-trainers-container-trainers-container-table-trainer-icon" (click)="deleteTrainer(trainer.trainerID)">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </td>
+          <td>
+            <img
+              *ngIf="trainer.photoURL != null"
+              class="users-trainers-container-trainers-container-table-trainer-img"
+              referrerpolicy="no-referrer"
+              [src]="trainer.photoURL"
+              alt="User Image"
+            />
+            <img
+              *ngIf="trainer.photoURL == null"
+              class="users-trainers-container-trainers-container-table-trainer-img"
+              src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=5974ac39-112f-4bd1-a170-d2a23c392d95"
+              alt="User Image"
+            />
+          </td>
+          <td class="users-trainers-container-trainers-container-table-trainer-name">
+            {{ trainer.displayName }}
+          </td>
+        </tr>
+      </table>
+    </div>
+    <p *ngIf="this.trainers.length == 0" class="no-trainers-message">There are currently no trainers</p>
+    <div class="pagination">
+      <ngb-pagination
+      *ngIf="this.trainers.length > 5"
+        [collectionSize]="this.users.length"
+        [pageSize]="pageSize"
+        [directionLinks]="false"
+        [(page)]="page"
+        class="w-100"
+      >
+      </ngb-pagination>
+    </div>
+  </div>
+</div>
+</main>

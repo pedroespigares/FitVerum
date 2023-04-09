@@ -21,21 +21,25 @@
         <ul class="header-nav-list">
             <li class="header-nav-item"><a class="header-nav-link" routerLink="/">Home</a></li>
             <li *ngIf="!this.auth.isLogged" class="header-nav-item"><a class="header-nav-link" routerLink="/about-us">About Us</a></li>
-            <li *ngIf="this.auth.isLogged && !this.auth.isAdmin && !this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/user-calendar/{{this.auth.userID}}">Activities</a></li>
-            <li *ngIf="this.auth.isLogged && this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/user-calendar/{{this.auth.userID}}">Management</a></li>
-
-            <li *ngIf="this.auth.isLogged && this.auth.isAdmin" ngbDropdown class="header-nav-item">
-              <a class="header-nav-link-dropdown" id="pruebaDropdown" ngbDropdownToggle routerLink="/">Administration</a>
-              <div ngbDropdownMenu aria-labelledby="pruebaDropdown">
-                <li class="header-nav-item" ngbDropdownItem><a class="header-nav-link" href="contact.html">Machines</a></li>
-                <li class="header-nav-item" ngbDropdownItem><a class="header-nav-link" href="contact.html">Trainers</a></li>
+            <li *ngIf="this.auth.isLogged && !this.auth.isAdmin && !this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/user/calendar/{{this.auth.userID}}">Activities</a></li>
+            <li *ngIf="this.auth.isLogged && this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/trainer/calendar/{{this.auth.userID}}">Management</a></li>
+            <li *ngIf="this.auth.isLogged && this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/trainer/clients/{{this.auth.userID}}">Clients</a></li>
+            <li *ngIf="this.auth.isLogged && this.auth.isAdmin" class="header-nav-item"><a class="header-nav-link" routerLink="/administration/users">Users</a></li>
+            <li *ngIf="this.auth.isLogged && this.auth.isAdmin" class="header-nav-item"><a class="header-nav-link" routerLink="/administration/machines">Machines</a></li>
+            <!-- <li ngbDropdown class="header-nav-item">
+              <a class="header-nav-link-dropdown" id="adminDropdown" ngbDropdownToggle routerLink="/">Administration</a>
+              <div ngbDropdownMenu aria-labelledby="adminDropdown"
               </div>
-            </li>
+            </li> -->
             <div class="header-nav-list-actions">
-              <img *ngIf="this.auth.isLogged && this.auth.userPhoto != null" [src]="this.auth.userPhoto" referrerpolicy="no-referrer" width="50" height="50" class="d-inline-block align-text-top me-4 rounded-circle">
-              <img *ngIf="this.auth.isLogged && this.auth.userPhoto == null" src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=5974ac39-112f-4bd1-a170-d2a23c392d95" width="50" height="50" class="d-inline-block align-text-top me-4 rounded-circle">
+              <img *ngIf="this.auth.isLogged && this.auth.userPhoto != null && !this.auth.isAdmin" [src]="this.auth.userPhoto" referrerpolicy="no-referrer" width="50" height="50" class="header-user-img">
+              <img *ngIf="this.auth.isLogged && this.auth.userPhoto == null && !this.auth.isAdmin" src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=5974ac39-112f-4bd1-a170-d2a23c392d95" width="50" height="50" class="header-user-img">
+              <img *ngIf="this.auth.isLogged && this.auth.isAdmin" src="../../../assets/images/FitVerumLogo.png" width="50" height="50" class="header-user-img">
+              <p class="user-type" *ngIf="this.auth.isLogged && this.auth.isAdmin">(Admin)</p>	
+              <p class="user-type" *ngIf="this.auth.isLogged && this.auth.isTrainer">(Trainer)</p>	
               <i (click)="logout()" *ngIf="this.auth.isLogged" class="header-nav-icon fa-solid fa-right-to-bracket" title="Log Out"></i>
-              <i *ngIf="this.auth.isLogged" class="header-nav-icon fa-solid fa-gear close" title="Edit User"></i>
+              <i *ngIf="this.auth.isLogged && !this.auth.isAdmin && !this.auth.isTrainer" class="header-nav-icon fa-solid fa-gear close" title="Edit User" routerLink="/user/modification/{{this.auth.userID}}"></i>
+              <i *ngIf="this.auth.isLogged && !this.auth.isAdmin && this.auth.isTrainer" class="header-nav-icon fa-solid fa-gear close" title="Edit User" routerLink="/trainer/modification/{{this.auth.userID}}"></i>
             </div>
             <div class="header-nav-list-buttons">
               <a *ngIf="!this.auth.isLogged" class="header-nav-button-not-focus" routerLink="/login">Sign In</a>
