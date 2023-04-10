@@ -1,4 +1,4 @@
-import { Component, onInit } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './trainer-appointment.component.html',
   styleUrls: ['./trainer-appointment.component.scss']
 })
-export class TrainerAppointmentComponent implements onInit {
+export class TrainerAppointmentComponent implements OnInit {
   clients: any[] = [];
   page = 1;
   pageSize = 5;
@@ -35,10 +35,19 @@ export class TrainerAppointmentComponent implements onInit {
     });
   }
 
+  /**
+   * Seleccionar cliente
+   * @param client
+   */
   selectClient(client: any) :void {
     this.selectedClient = client;
     this.clients.splice(this.clients.indexOf(client), 1);
   }
+
+  /**
+   * Desseleccionar cliente
+   * @param client
+   */
 
   removeClient(client: any) :void {
     this.clients.push(client);

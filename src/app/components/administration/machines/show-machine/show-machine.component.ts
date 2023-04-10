@@ -1,4 +1,4 @@
-import { Component, onInit } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DatabaseService } from 'src/app/services/database.service';
 import { Router } from '@angular/router';
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './show-machine.component.html',
   styleUrls: ['./show-machine.component.scss']
 })
-export class ShowMachineComponent implements onInit {
+export class ShowMachineComponent implements OnInit {
   machine: any;
   loading = true;
   constructor(private route: ActivatedRoute, private database: DatabaseService, private router: Router) { }

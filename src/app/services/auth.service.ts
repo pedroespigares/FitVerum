@@ -6,22 +6,14 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
-  GithubAuthProvider,
-  deleteUser,
   updatePassword,
   sendPasswordResetEmail,
   updateEmail
 } from '@angular/fire/auth';
 import {
   Firestore,
-  collectionData,
-  collection,
-  query,
-  where,
   setDoc,
-  deleteDoc,
   doc,
-  getDocs,
   getDoc,
 } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
@@ -46,6 +38,9 @@ export class AuthService {
     public database: Firestore
   ) {}
 
+  /**
+   * Comprobar si el usuario está logueado
+   */
   checkAuthState() {
     onAuthStateChanged(this.auth, (user) => {
       if (user) {
@@ -62,6 +57,12 @@ export class AuthService {
     });
   }
 
+  /**
+   * Registrar con email y contraseña
+   * @param email
+   * @param password
+   * @param username
+   */
   register(email: string, password: string, username: string) {
     createUserWithEmailAndPassword(this.auth, email, password)
       .then((userCredential) => {
@@ -82,6 +83,11 @@ export class AuthService {
       });
   }
 
+  /**
+   * Loguear con email y contraseña
+   * @param email
+   * @param password
+   */
   normalLogin(email: string, password: string) {
     signInWithEmailAndPassword(this.auth, email, password)
       .then((userCredential) => {
@@ -101,6 +107,9 @@ export class AuthService {
       });
   }
 
+  /**
+   * Loguear con Google
+   */
   googleLogin() {
     signInWithPopup(this.auth, new GoogleAuthProvider())
       .then((userCredential) => {
@@ -134,6 +143,9 @@ export class AuthService {
   //   });
   // }
 
+  /**
+   * Cerar sesión
+   */
   signOut() {
     this.auth.signOut();
     this.isLogged = false;
@@ -148,22 +160,30 @@ export class AuthService {
   }
 
 
-
-
-  // Comprobar si el usuario existe en la base de datos tanto como usuario como entrenador
-
+  /**
+   * Comprobar si el usuario existe en la base de datos
+   * @returns
+   */
   async checkIfUserExists() {
     const docRef = doc(this.database, 'users', this.userID);
     const docSnap = await getDoc(docRef);
     return docSnap.exists();
   }
 
+  /**
+   * Comprobar si el usuario existe en la base de datos como entrenador
+   * @returns
+   */
   async checkIfTrainerExists() {
     const docRef = doc(this.database, 'trainers', this.userID);
     const docSnap = await getDoc(docRef);
     return docSnap.exists();
   }
 
+  /**
+   * Comprobar si el usuario es administrador o entrenador o usuario normal
+   * @returns
+   */
   async checkUserRol() {
     if (this.userID == adminID) {
       this.isAdmin = true;
@@ -178,7 +198,10 @@ export class AuthService {
     }
   }
 
-  // Create user in database if it doesn't exist
+  /**
+   * Crear usuario en la base de datos si no existe
+   * @returns
+   */
   async createUser() {
     let userExists: any = await this.checkIfUserExists();
     let trainerExists: any = await this.checkIfTrainerExists();
@@ -197,7 +220,9 @@ export class AuthService {
     }
   }
 
-  // Get user photo from database
+  /**
+   * Obtener la foto de perfil del usuario
+   */
   getUserPhoto() {
     const userRef = doc(this.database, 'users', this.userID);
     const trainerRef = doc(this.database, 'trainers', this.userID);
@@ -214,30 +239,42 @@ export class AuthService {
     });
   }
 
+  /**
+   * Actualizar la contraseña del usuario
+   * @param password
+   */
   updatePassword(password: string) {
     updatePassword(this.auth.currentUser, password)
       .then(() => {
-        // 
+        //
       })
       .catch((error) => {
         console.log(error);
       });
   }
 
+  /**
+   * Actualizar el email del usuario
+   * @param email
+   */
   updateEmail(email: string) {
     updateEmail(this.auth.currentUser, email)
       .then(() => {
-        // 
+        //
       })
       .catch((error) => {
         console.log(error);
       });
   }
 
+  /**
+   * Enviar email para restablecer la contraseña
+   * @param email
+   */
   sendPasswordResetEmail(email: string) {
     sendPasswordResetEmail(this.auth, email)
       .then(() => {
-        // 
+        //
       })
       .catch((error) => {
         console.log(error);

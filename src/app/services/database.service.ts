@@ -8,7 +8,6 @@ import {
   setDoc,
   deleteDoc,
   doc,
-  getDocs,
   updateDoc,
   getDoc,
 } from '@angular/fire/firestore';
@@ -19,10 +18,20 @@ import { AuthService } from './auth.service';
   providedIn: 'root',
 })
 export class DatabaseService {
+  /**
+   * Constructor con las dependencias necesarias (Firestore y AuthService)
+   * @param database - Firestore
+   * @param auth - AuthService
+   */
   constructor(public database: Firestore, public auth: AuthService) {}
 
   // Getters
 
+  /**
+   * Obtener el ID del entrenador de un usuario
+   * @param userID - ID del usuario
+   * @returns - ID del entrenador
+   */
   async getUserTrainer(userID: string) {
     const userRef = doc(this.database, 'users', userID);
     const userSnap = await getDoc(userRef);
@@ -33,11 +42,20 @@ export class DatabaseService {
     }
   }
 
+  /**
+   * Obtener todos los usuarios
+   * @returns - Observable con los usuarios
+   */
   getUsers(): Observable<any[]> {
     const usersRef = collection(this.database, 'users');
     return collectionData(usersRef, { idField: 'id' }) as Observable<any[]>;
   }
 
+  /**
+   * Obtener los datos de un usuario
+   * @param userID - ID del usuario
+   * @returns - Datos del usuario
+   */
   async getUserData(userID: string) {
     const userRef = doc(this.database, 'users', userID);
     const docSnap = await getDoc(userRef);
@@ -48,17 +66,30 @@ export class DatabaseService {
     }
   }
 
+  /**
+   * Obtener los usuarios sin entrenador
+   * @returns - Observable con los usuarios sin entrenador
+   */
   getUsersWithoutTrainer(): Observable<any[]> {
     const usersRef = collection(this.database, 'users');
     const q = query(usersRef, where('trainerID', '==', null));
     return collectionData(q, { idField: 'id' }) as Observable<any[]>;
   }
 
+  /**
+   * Obtener todos los entrenadores
+   * @returns - Observable con los entrenadores
+   */
   getTrainers(): Observable<any[]> {
     const trainersRef = collection(this.database, 'trainers');
     return collectionData(trainersRef, { idField: 'id' }) as Observable<any[]>;
   }
 
+  /**
+   * Obtener los datos de un entrenador
+   * @param trainerID - ID del entrenador
+   * @returns - Datos del entrenador
+   */
   async getTrainerData(trainerID: string) {
     const trainerRef = doc(this.database, 'trainers', trainerID);
     const docSnap = await getDoc(trainerRef);
@@ -68,23 +99,44 @@ export class DatabaseService {
       return null;
     }
   }
+
+  /**
+   * Obtener los clientes de un entrenador
+   * @param trainerID
+   * @returns - Observable con los clientes del entrenador
+   */
   getTrainerClients(trainerID: string): Observable<any[]> {
     const usersRef = collection(this.database, 'users');
     const q = query(usersRef, where('trainerID', '==', trainerID));
     return collectionData(q, { idField: 'id' }) as Observable<any[]>;
   }
 
+
+  /**
+   * Obtener las rutinas de un usuario
+   * @param user - ID del usuario
+   * @returns - Observable con las rutinas del usuario
+   */
   getRoutines(user: string): Observable<any[]> {
     const routinesRef = collection(this.database, 'routines');
     const q = query(routinesRef, where('userID', '==', user));
     return collectionData(q, { idField: 'id' }) as Observable<any[]>;
   }
 
+  /**
+   * Obtener todas las máquinas
+   * @returns - Observable con todas las máquinas
+   */
   getMachines(): Observable<any[]> {
     const machinesRef = collection(this.database, 'machines');
     return collectionData(machinesRef, { idField: 'id' }) as Observable<any[]>;
   }
 
+  /**
+   * Obtener los datos de una máquina
+   * @param id - ID de la máquina
+   * @returns - Datos de la máquina
+   */
   async getMachineByID(id: string) {
     const machineRef = doc(this.database, 'machines', id);
     const docSnap = await getDoc(machineRef);
@@ -92,6 +144,11 @@ export class DatabaseService {
   }
 
   // En los convert lo que hacemos es "traspasar" los datos de un documento a otro
+
+  /**
+   * Convertir un usuario en entrenador
+   * @param id - ID del usuario
+   */
 
   convertUserToTrainer(id: string) {
     const userRef = doc(this.database, 'users', id);
@@ -110,6 +167,10 @@ export class DatabaseService {
     });
   }
 
+  /**
+   * Convertir un entrenador en usuario
+   * @param id - ID del entrenador
+   */
   convertTrainerToUser(id: string) {
     const userRef = doc(this.database, 'users', id);
     const trainerRef = doc(this.database, 'trainers', id);
@@ -128,7 +189,12 @@ export class DatabaseService {
     });
   }
 
-  // Convertir un usuario en cliente de un entrenador
+  /**
+   * Convertir un usuario en cliente de un entrenador
+   * @param userID - ID del usuario
+   * @param trainerID - ID del entrenador
+   */
+
   subscribeClient(userID: string, trainerID: string) {
     const userRef = doc(this.database, 'users', userID);
     getDoc(userRef).then((doc) => {
@@ -144,7 +210,10 @@ export class DatabaseService {
     });
   }
 
-  // Quitar a un usuario de la lista de clientes de un entrenador
+  /**
+   * Quita a un usuario de la lista de clientes de un entrenador
+   * @param userID - ID del usuario
+   */
   unsubscribeClient(userID: string) {
     const userRef = doc(this.database, 'users', userID);
     getDoc(userRef).then((doc) => {
@@ -162,12 +231,19 @@ export class DatabaseService {
 
 // Metodos de eliminacion de usuarios y entrenadores
 
-
+/**
+ * Borrar un usuario de la base de datos
+ * @param id - ID del usuario
+ */
   deleteUser(id: string) {
     const userRef = doc(this.database, 'users', id);
     deleteDoc(userRef);
   }
 
+  /**
+   * Borra un entrenador de la base de datos
+   * @param id - ID del entrenador
+   */
   deleteTrainer(id: string) {
     const trainerRef = doc(this.database, 'trainers', id);
     deleteDoc(trainerRef);
@@ -176,12 +252,24 @@ export class DatabaseService {
 
   // Update de datos de usuarios y entrenadores
 
+  /**
+   * Actualizar el nombre de un usuario
+   * @param id - ID del usuario
+   * @param displayName - Nombre a actualizar
+   */
+
   updateDisplayName(id: string, displayName: string) {
     const userRef = doc(this.database, 'users', id);
     updateDoc(userRef, {
       displayName: displayName,
     });
   }
+
+  /**
+   * Actualizar la foto de perfil de un usuario
+   * @param id - ID del usuario
+   * @param photoURL - URL de la foto a actualizar
+   */
 
   updatePhotoURL(id: string, photoURL: string) {
     const userRef = doc(this.database, 'users', id);
@@ -190,6 +278,12 @@ export class DatabaseService {
     });
   }
 
+
+  /**
+   * Actualizar el email de un usuario
+   * @param id - ID del usuario
+   * @param email - Email a actualizar
+   */
   updateEmail(id: string, email: string) {
     const userRef = doc(this.database, 'users', id);
     updateDoc(userRef, {
@@ -199,7 +293,14 @@ export class DatabaseService {
 
   // Metodos para las maquinas
 
-  
+
+  /**
+   * Añadir una máquina a la base de datos
+   * @param name - Nombre de la máquina
+   * @param description - Descripción de la máquina
+   * @param photoURL - URL de la foto de la máquina
+   */
+
   addMachine(name: string, description: string, photoURL: string) {
     const machinesRef = collection(this.database, 'machines');
     setDoc(doc(machinesRef), {
@@ -209,6 +310,13 @@ export class DatabaseService {
     });
   }
 
+  /**
+   * Actualizar los datos de una máquina
+   * @param id - ID de la máquina
+   * @param name - Nombre de la máquina
+   * @param description - Descripción de la máquina
+   * @param photoURL - URL de la foto de la máquina
+   */
   updateMachine(id: string, name: string, description: string, photoURL: string) {
     const machineRef = doc(this.database, 'machines', id);
     updateDoc(machineRef, {
@@ -218,11 +326,26 @@ export class DatabaseService {
     });
   }
 
+  /**
+   * Borrar una máquina de la base de datos
+   * @param id - ID de la máquina
+   */
   deleteMachine(id: string) {
     const machineRef = doc(this.database, 'machines', id);
     deleteDoc(machineRef);
   }
 
+
+  /**
+   * Crear una cita
+   * @param userID - ID del usuario
+   * @param trainerID - ID del entrenador
+   * @param from_date - Fecha de inicio
+   * @param to_date - Fecha de fin
+   * @param color - Color del evento
+   * @param title - Titulo del evento
+   * @param description - Descripción del evento
+   */
 
   createAppointment(userID: string, trainerID: string, from_date: number, to_date: number, color: string, title: string, description: string){
     const appointmentsRef = collection(this.database, 'trainerEntry');
@@ -245,6 +368,13 @@ export class DatabaseService {
     });
   }
 
+  /**
+   * Actualizar las fechas de una cita
+   * @param id - ID de la cita
+   * @param from_date - Fecha de inicio
+   * @param to_date - Fecha de fin
+   */
+
   updateAppointmentDates(id: string, from_date: number, to_date: number){
     const appointmentRef = doc(this.database, 'trainerEntry', id);
     updateDoc(appointmentRef, {
@@ -253,12 +383,22 @@ export class DatabaseService {
     });
   }
 
+  /**
+   * Obtener las citas de un entrenador
+   * @param trainerID - ID del entrenador
+   * @returns - Observable con las citas
+   */
+
   getAppointmentsOfTrainer(trainerID: string): Observable<any[]> {
     const appointmentsRef = collection(this.database, 'trainerEntry');
     const q = query(appointmentsRef, where('trainerID', '==', trainerID));
     return collectionData(q, { idField: 'id' }) as Observable<any[]>;
   }
 
+  /**
+   * Borrar una cita de la base de datos
+   * @param id - ID de la cita
+   */
   deleteAppointment(id: string) {
     const appointmentRef = doc(this.database, 'trainerEntry', id);
     deleteDoc(appointmentRef);

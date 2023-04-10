@@ -1,4 +1,4 @@
-import { Component, onInit } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DatabaseService } from 'src/app/services/database.service';
 import { Router } from '@angular/router';
@@ -15,7 +15,7 @@ import {
   templateUrl: './update-machine.component.html',
   styleUrls: ['./update-machine.component.scss']
 })
-export class UpdateMachineComponent implements onInit {
+export class UpdateMachineComponent implements OnInit {
 
   basePath = '/machines';
   machine: any;
@@ -29,7 +29,7 @@ export class UpdateMachineComponent implements onInit {
   newPhotoURL: string;
   storage: any;
 
-  constructor(private route: ActivatedRoute, private database: DatabaseService, private router: Router) { 
+  constructor(private route: ActivatedRoute, private database: DatabaseService, private router: Router) {
     this.storage = getStorage();
   }
 
@@ -43,7 +43,11 @@ export class UpdateMachineComponent implements onInit {
       this.previousPhotoURL = this.machine.photoURL;
     });
   }
-    
+
+  /**
+   * Subir imagen a Firebase Storage
+   * @param event
+   */
   uploadFile(event: any) {
     const file = event.target.files[0];
     const storageRef = ref(this.storage, `${this.basePath}/${file.name}`);
@@ -57,11 +61,19 @@ export class UpdateMachineComponent implements onInit {
     });
   }
 
+  /**
+   * Borrar imagen de Firebase Storage
+   * @param photoURL
+   */
+
   deletePhotoFromStorage(photoURL: string): void {
     const photoRef = ref(this.storage, photoURL);
     deleteObject(photoRef);
   }
 
+  /**
+   * Actualizar máquina
+   */
   updateMachine(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if(this.previousPhotoURL == null) {
@@ -72,5 +84,5 @@ export class UpdateMachineComponent implements onInit {
     }
     this.router.navigate(['/administration/machines']);
   }
-    
+
 }

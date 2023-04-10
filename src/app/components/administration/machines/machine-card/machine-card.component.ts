@@ -17,6 +17,12 @@ export class MachineCardComponent {
     this.storage = getStorage();
   }
 
+  /**
+   * Borrar máquina de la base de datos
+   * @param id
+   * @param photoURL
+   * @returns
+   */
   deleteMachine(id: string, photoURL: string): void {
     let confirmDelete = confirm('Are you sure you want to delete this machine?');
     if (confirmDelete){
@@ -26,6 +32,12 @@ export class MachineCardComponent {
       return;
     }
   }
+
+  /**
+   * Borrar foto de la máquina de Firebase Storage
+   * @param photoURL
+   * @returns
+   * */
 
   deletePhotoFromStorage(photoURL: string): void {
     const photoRef = ref(this.storage, photoURL);

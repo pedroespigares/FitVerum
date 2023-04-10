@@ -1,4 +1,4 @@
-import { Component, onInit, onDestroy } from '@angular/core';
+import { Component,OnInit, OnDestroy } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './user-routines.component.html',
   styleUrls: ['./user-routines.component.scss']
 })
-export class UserRoutinesComponent implements onInit, onDestroy {
+export class UserRoutinesComponent implements OnInit, OnDestroy {
   routines: any[];
   user: string;
   trainer: string;

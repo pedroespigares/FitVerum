@@ -35,7 +35,7 @@
           </td>
         </tr>
       </table>
-      <p *ngIf="this.clients.length == 0" class="no-clients-message">
+      <p *ngIf="this.clients.length == 0 && selectedClient == null" class="no-clients-message">
         There are currently no clients available
       </p>
       <p *ngIf="selectedClient != null" class="no-clients-message">

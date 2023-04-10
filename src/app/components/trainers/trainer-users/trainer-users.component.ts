@@ -1,4 +1,4 @@
-import { Component, onInit } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { ActivatedRoute } from '@angular/router';
@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './trainer-users.component.html',
   styleUrls: ['./trainer-users.component.scss']
 })
-export class TrainerUsersComponent implements onInit {
+export class TrainerUsersComponent implements OnInit {
   users: any[] = [];
   clients: any[] = [];
   page = 1;

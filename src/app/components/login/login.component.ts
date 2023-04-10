@@ -1,4 +1,4 @@
-import { Component, onInit } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -6,16 +6,26 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements onInit {
+export class LoginComponent implements OnInit {
   email :string = '';
   password :string = '';
   isEmpty :boolean = false;
   showingPassword :boolean = false;
   constructor(public auth: AuthService) { }
 
+  /*
+  * Comprobamos si el usuario está logueado
+  * @returns void
+  * */
+
   ngOnInit(){
     this.auth.checkAuthState();
   }
+
+  /*
+  * Iniciar sesión con email y contraseña
+  * @returns void
+  * */
 
   normalLogin(){
     if(this.email == '' || this.password == ''){
@@ -25,23 +35,36 @@ export class LoginComponent implements onInit {
     this.auth.normalLogin(this.email, this.password);
   }
 
+  /*
+  * Iniciar sesión con Google
+  * @returns void
+  * */
+
   googleLogin(){
     this.auth.googleLogin();
   }
 
-  onKeyDown(event) {
+  /*
+  * Evento para iniciar sesión con la tecla Enter
+  * */
+
+  onKeyDown(event: any) {
     if (event.key === "Enter") {
       this.normalLogin();
     }
   }
 
+  /*
+  * Mostrar u ocultar la contraseña
+  * */
+
   showPassword(){
     this.showingPassword = !this.showingPassword;
   }
-  // githubLogin(){
-  //   this.auth.githubLogin();
-  // }
 
+  /*
+  * Limpiar el error de inicio de sesión
+  * */
   ngOnDestroy(){
     this.auth.failedError = '';
     this.isEmpty = false;

@@ -1,4 +1,4 @@
-import { Component, onInit } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DatabaseService } from 'src/app/services/database.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './trainer-modification.component.html',
   styleUrls: ['./trainer-modification.component.scss']
 })
-export class TrainerModificationComponent implements onInit {
+export class TrainerModificationComponent implements OnInit {
   trainer: any;
   loading = true;
   membership: Date;

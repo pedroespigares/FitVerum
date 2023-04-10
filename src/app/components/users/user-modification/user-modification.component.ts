@@ -1,4 +1,4 @@
-import { Component, onInit } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DatabaseService } from 'src/app/services/database.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -14,8 +14,8 @@ import {
   templateUrl: './user-modification.component.html',
   styleUrls: ['./user-modification.component.scss']
 })
-export class UserModificationComponent implements onInit {
-  
+export class UserModificationComponent implements OnInit {
+
   storage: any;
   basePath: string = 'users';
 

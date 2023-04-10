@@ -1,4 +1,4 @@
-import { Component, onInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CalendarEvent, CalendarView, DAYS_OF_WEEK } from 'angular-calendar';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -7,30 +7,16 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './user-calendar.component.html',
   styleUrls: ['./user-calendar.component.scss']
 })
-export class UserCalendarComponent implements onInit {
+export class UserCalendarComponent implements OnInit {
   view: CalendarView = CalendarView.Month;
 
   viewDate: Date = new Date();
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
-  // Para que el calendario sepa que eventos mostrar que serian las rutinas de la base de datos,
-  // se puede hacer un subscribe al observable de rutinas y hacerle un map para que devuelva un array de CalendarEvent
-  // Ejemplo:
-  // ngOnInit() {
-  //   this.rutinasService.getRutinas().subscribe(rutinas => {
-  //     this.events = rutinas.map(rutina => {
-  //       return {
-  //         title: rutina.nombre,
-  //         start: rutina.fechaInicio,
-  //         end: rutina.fechaFin,
-  //         color: {
-  //            primary: '#ad2121',
-  //            secondary: '#FAE3E3'
-  //        },
-  //       }
-  //     })
-  //   })
-  // }
+
+  ngOnInit() {
+
+  }
 
 
   events: CalendarEvent[] = [];
