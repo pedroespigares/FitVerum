@@ -1,5 +1,6 @@
 <main class="content">
-    <div class="edit-machine">
+    <div *ngIf="loading" class="loader"></div>
+    <div *ngIf="!loading" class="edit-machine">
         <div class="edit-machine-logo-presentation">
             <img class="edit-machine-logo-presentation-img" src="../../assets/images/FitVerumLogo.png" alt="Brand Logo">
             <h1 class="edit-machine-logo-presentation-text">

@@ -128,3 +128,7 @@
     text-align: center;
   }
 }
+
+.loader{
+  @include loader(35vh, 38vw);
+}

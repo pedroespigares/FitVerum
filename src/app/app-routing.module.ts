@@ -15,6 +15,7 @@ import { TrainerCalendarComponent } from './components/trainers/trainer-calendar
 import { TrainerAppointmentComponent } from './components/trainers/trainer-appointment/trainer-appointment.component';
 import { UserModificationComponent } from './components/users/user-modification/user-modification.component';
 import { TrainerModificationComponent } from './components/trainers/trainer-modification/trainer-modification.component';
+import { TrainerRoutinesComponent } from './components/trainers/trainer-routines/trainer-routines.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent},
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'trainer/calendar/:id', component: TrainerCalendarComponent},
   { path: 'trainer/calendar/:id/:date', component: TrainerAppointmentComponent},
   { path: 'trainer/modification/:id', component: TrainerModificationComponent},
+  { path: 'trainer/routines/:id', component: TrainerRoutinesComponent},
   { path: 'administration/machines/edit/:id', component: UpdateMachineComponent},
   { path: 'administration/machines/show/:id', component: ShowMachineComponent},
 ];

@@ -1,0 +1,225 @@
+@import "../../../../scss/mixin.scss";
+@import "../../../../scss/variables.scss";
+
+.breadcrumbs{
+  @include breadcrumbs();
+}
+
+.trainer-routines-container {
+  display: grid;
+  grid-template-columns: 0.25fr 1fr;
+  grid-template-rows: 1fr;
+
+  &-clients {
+    border-right: 1px solid getColor(light-grayish-violet);
+    height: calc(100vh - 126.797px - 5rem);
+    margin-top: 5rem;
+    grid-area: 1 / 1 / 2 / 2;
+    &-title {
+      @include view_header(4rem);
+      margin-bottom: 2rem;
+    }
+    &-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 3rem;
+      tr {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        border-radius: 1rem;
+      }
+      &-client {
+        &-img {
+          width: 7.5rem;
+          height: 7.5rem;
+          border-radius: 50%;
+          object-fit: cover;
+          margin: 1rem;
+        }
+        &-name {
+          font-size: 3rem;
+          font-family: $font-family-title;
+          font-weight: getFontWeight(bold);
+          color: getColor(black);
+        }
+        &-button {
+          @include user_button();
+        }
+      }
+    }
+  }
+
+  &-info {
+    grid-area: 1 / 2 / 2 / 3;
+    @include flex(
+      $direction: column,
+      $justify: flex-start,
+      $align: center,
+      $gap: 5rem
+    );
+
+    &-title {
+      @include view_header(4rem);
+      margin-top: 5rem;
+    }
+
+    &-selected-client {
+      margin-top: 5rem;
+      @include flex(
+        $direction: row,
+        $justify: center,
+        $align: center,
+        $gap: 5rem
+      );
+      &-title {
+        @include response(xl) {
+          font-size: 2.5rem;
+        }
+        font-size: calc(2.5rem / 1.5);
+        font-family: $font-family-title;
+        font-weight: getFontWeight(bold);
+        color: getColor(black);
+        text-align: center;
+        margin-bottom: 0;
+      }
+
+      &-container {
+        @include flex(
+          $direction: row,
+          $justify: center,
+          $align: center,
+          $gap: 5rem
+        );
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        border-radius: 1rem;
+        &-img {
+          width: 7.5rem;
+          height: 7.5rem;
+          border-radius: 50%;
+          object-fit: cover;
+          margin: 1rem;
+        }
+
+        &-name {
+          font-size: 3rem;
+          font-family: $font-family-text;
+          color: getColor(black);
+        }
+
+        &-button {
+          @include user_button($padding: 2.5rem);
+        }
+      }
+    }
+
+    &-date {
+      margin-top: 10rem;
+      @include flex(
+        $direction: row,
+        $justify: center,
+        $align: center,
+        $gap: 5rem
+      );
+
+      &-container {
+        @include flex(
+          $direction: row,
+          $justify: center,
+          $align: center,
+          $gap: 3rem
+        );
+        &-title {
+          @include response(xl) {
+            font-size: 2.5rem;
+          }
+          font-size: calc(2.5rem / 1.5);
+          font-family: $font-family-title;
+          font-weight: getFontWeight(bold);
+          color: getColor(black);
+          text-align: center;
+
+          &-focus{
+            @include response(xl) {
+              font-size: 2.5rem;
+            }
+            font-size: calc(2.5rem / 1.5);
+            font-family: $font-family-title;
+            font-weight: getFontWeight(bold);
+            color: getColor(black);
+            text-align: center;
+            color: getColor(intense-violet);
+          }
+        }
+
+        &-input {
+          @include input();
+        }
+      }
+    }
+
+    &-button {
+      margin-top: 10rem;
+      @include button($size: xl,$focus: true);
+
+      &-disabled{
+        margin-top: 10rem;
+        @include button($size: xl, $disabled: true)
+      }
+    }
+  }
+}
+
+.appointment-textarea-container{
+  @include flex(
+    $direction: row,
+    $justify: center,
+    $align: center,
+    $gap: 5rem
+  );
+  &-title{
+    @include response(xl) {
+      font-size: 3rem;
+    }
+    font-size: calc(3rem - 1.5rem);
+    font-family: $font-family-title;
+    font-weight: getFontWeight(bold);
+    color: getColor(black);
+    text-align: center;
+  }
+
+  &-input{
+    @include input(md);
+    resize: both;
+  }
+}
+
+::ng-deep .pagination {
+  margin-top: 1rem;
+  justify-content: center;
+  // Al venir de un componente de terceros, no se puede usar el @include ni las variables de sass propias
+  --bs-pagination-color: getColor(black);
+  --bs-pagination-hover-color: getColor(intense-violet);
+  --bs-pagination-active-bg: #6a69dc;
+  --bs-pagination-active-border-color: #6a69dc;
+  --bs-pagination-font-size: 2rem;
+  --bs-pagination-padding-x: 1.5rem;
+  --bs-pagination-padding-y: 0.75rem;
+  --bs-pagination-focus-box-shadow: none;
+}
+
+.no-clients-message {
+  font-size: 2rem;
+  font-family: $font-family-title;
+  font-weight: getFontWeight(bold);
+  color: getColor(black);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.error-message{
+  font-size: getFontSize(md);
+  font-family: $font-family-title;
+  font-weight: getFontWeight(bold);
+  color: red;
+  margin-bottom: 2rem;
+  text-align: center;
+}

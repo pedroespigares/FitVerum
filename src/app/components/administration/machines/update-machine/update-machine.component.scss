@@ -178,3 +178,7 @@
     }
   }
 }
+
+.loader{
+  @include loader(0%, 0%);
+}

@@ -24,6 +24,7 @@
             <li *ngIf="this.auth.isLogged && !this.auth.isAdmin && !this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/user/calendar/{{this.auth.userID}}">Activities</a></li>
             <li *ngIf="this.auth.isLogged && this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/trainer/calendar/{{this.auth.userID}}">Management</a></li>
             <li *ngIf="this.auth.isLogged && this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/trainer/clients/{{this.auth.userID}}">Clients</a></li>
+            <li *ngIf="this.auth.isLogged && this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/trainer/routines/{{this.auth.userID}}">Routines</a></li>
             <li *ngIf="this.auth.isLogged && this.auth.isAdmin" class="header-nav-item"><a class="header-nav-link" routerLink="/administration/users">Users</a></li>
             <li *ngIf="this.auth.isLogged && this.auth.isAdmin" class="header-nav-item"><a class="header-nav-link" routerLink="/administration/machines">Machines</a></li>
             <!-- <li ngbDropdown class="header-nav-item">

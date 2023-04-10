@@ -1,6 +1,7 @@
 <h1 class="user-administration-header">Users Administration</h1>
 <main class="content">
-<div class="users-trainers-container">
+<div *ngIf="usersLoading && trainersLoading" class="loader"></div>
+<div *ngIf="!usersLoading && !trainersLoading" class="users-trainers-container">
   <div class="users-trainers-container-users">
     <h2 class="users-trainers-container-users-title">Users</h2>
     <div class="users-trainers-container-users-container">

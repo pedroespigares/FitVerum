@@ -118,3 +118,7 @@
     text-align: center;
   }
 }
+
+.loader {
+  @include loader(40vh, 38vw);
+}

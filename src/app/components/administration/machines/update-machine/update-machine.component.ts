@@ -29,6 +29,8 @@ export class UpdateMachineComponent implements OnInit {
   newPhotoURL: string;
   storage: any;
 
+  loading: boolean = true;
+
   constructor(private route: ActivatedRoute, private database: DatabaseService, private router: Router) {
     this.storage = getStorage();
   }
@@ -41,6 +43,7 @@ export class UpdateMachineComponent implements OnInit {
       this.name = this.machine.name;
       this.description = this.machine.description;
       this.previousPhotoURL = this.machine.photoURL;
+      this.loading = false;
     });
   }
 

@@ -12,15 +12,20 @@ export class UsersComponent {
   page = 1;
   pageSize = 5;
 
+  usersLoading = true;
+  trainersLoading = true;
+
   constructor(private database: DatabaseService) {}
 
   ngOnInit() {
     this.database.getUsers().subscribe((data) => {
       this.users = data;
+      this.usersLoading = false;
     });
 
     this.database.getTrainers().subscribe((data) => {
       this.trainers = data;
+      this.trainersLoading = false;
     });
   }
 

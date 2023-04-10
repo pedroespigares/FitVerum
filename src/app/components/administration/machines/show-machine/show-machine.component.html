@@ -4,12 +4,7 @@
         <p class="breadcrumbs-item"> > </p>
         <p *ngIf="!loading" class="breadcrumbs-item">{{machine.name}}</p>
       </div>
-    <div *ngIf="loading" class="lds-ring">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+    <div *ngIf="loading" class="loader"></div>
     <div class="show-machine">
         <div class="show-machine-img-container">
             <img *ngIf="!loading" class="show-machine-img-container-img " [src]="machine.photoURL" alt="Machine Image">

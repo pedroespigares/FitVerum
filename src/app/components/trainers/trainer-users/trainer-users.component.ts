@@ -13,6 +13,8 @@ export class TrainerUsersComponent implements OnInit {
   clients: any[] = [];
   page = 1;
   pageSize = 5;
+  usersWithoutTrainerLoading = true;
+  clientsLoading = true;
 
   constructor(private database: DatabaseService, private activatedRoute: ActivatedRoute, private auth: AuthService) {}
 
@@ -21,10 +23,12 @@ export class TrainerUsersComponent implements OnInit {
 
     this.database.getUsersWithoutTrainer().subscribe((data) => {
       this.users = data;
+      this.usersWithoutTrainerLoading = false;
     });
 
     this.database.getTrainerClients(trainerID).subscribe((data) => {
       this.clients = data;
+      this.clientsLoading = false;
     });
   }
 

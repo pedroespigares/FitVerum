@@ -1,0 +1,53 @@
+<main class="content">
+  <div class="trainer-routines-container">
+    <div class="trainer-routines-container-clients">
+      <h1 class="trainer-routines-container-clients-title">Clients</h1>
+      <table class="trainer-routines-container-clients-table" *ngIf="selectedClient == null">
+        <tr
+          *ngFor="let client of clients | slice : (page - 1) * pageSize : page * pageSize" (click)="selectClient(client)">
+          <td>
+            <img
+              *ngIf="client.photoURL != null"
+              referrerpolicy="no-referrer"
+              class="trainer-routines-container-clients-table-client-img"
+              [src]="client.photoURL"
+              alt="Client Image"
+            />
+            <img
+              *ngIf="client.photoURL == null"
+              class="trainer-routines-container-clients-table-client-img"
+              src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=5974ac39-112f-4bd1-a170-d2a23c392d95"
+              alt="Client Image"
+            />
+          </td>
+          <td class="trainer-routines-container-clients-table-client-name">
+            {{ client.displayName }}
+          </td>
+          <td>
+            <button class="trainer-routines-container-clients-table-client-button" (click)="selectClient(client)">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </td>
+        </tr>
+      </table>
+      <p *ngIf="this.clients.length == 0" class="no-clients-message">
+        There are currently no clients available
+      </p>
+      <p *ngIf="selectedClient != null" class="no-clients-message">
+        You already selected a client
+      </p>
+      <div class="pagination">
+        <ngb-pagination
+          [collectionSize]="this.clients.length"
+          *ngIf="this.clients.length > 5"
+          [pageSize]="pageSize"
+          [directionLinks]="false"
+          [(page)]="page"
+          class="w-100"
+        >
+        </ngb-pagination>
+      </div>
+    </div>
+  </div>
+</main>
+

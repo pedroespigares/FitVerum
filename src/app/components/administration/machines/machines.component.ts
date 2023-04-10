@@ -1,6 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
-import { ref, getStorage, deleteObject} from '@angular/fire/storage';
+import { getStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-machines',
@@ -11,6 +11,7 @@ import { ref, getStorage, deleteObject} from '@angular/fire/storage';
 export class MachinesComponent implements OnInit {
   machines: any[];
   storage: any;
+  loading: boolean = true;
 
   constructor(private database: DatabaseService) {
     this.storage = getStorage();
@@ -19,6 +20,7 @@ export class MachinesComponent implements OnInit {
   ngOnInit(): void {
     this.database.getMachines().subscribe((machines: any) => {
       this.machines = machines;
+      this.loading = false;
     });
   }
 }

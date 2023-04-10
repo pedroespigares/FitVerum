@@ -416,33 +416,38 @@
   }
 }
 
-@mixin loader($top: calc(50% - 6.4rem), $left: calc(50% - 6.4rem)) {
-  display: inline-block;
+@mixin loader($top: 45%, $left: 40%) {
+  display: block;
+  height: 6px;
+  width: 25vw;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.2);
   position: relative;
-  width: 0.8rem;
-  height: 0.8rem;
+
   top: $top;
   left: $left;
 
-  div {
-    box-sizing: border-box;
-    display: block;
+  &::before {
+    content: "";
     position: absolute;
-    width: 6.4rem;
-    height: 6.4rem;
-    margin: 0.8rem;
-    border: 0.8rem solid getColor(intense-violet);
-    border-radius: 50%;
-    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: getColor(intense-violet) transparent transparent transparent;
+    background: getColor(intense-violet);
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    border-radius: 30px;
+    animation: moving 1s ease-in-out infinite;
   }
-  div:nth-child(1) {
-    animation-delay: -0.45s;
-  }
-  div:nth-child(2) {
-    animation-delay: -0.3s;
-  }
-  div:nth-child(3) {
-    animation-delay: -0.15s;
+
+  @keyframes moving {
+    50% {
+      width: 100%;
+    }
+  
+    100% {
+      width: 0;
+      right: 0;
+      left: unset;
+    }
   }
 }
