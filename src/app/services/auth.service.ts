@@ -200,9 +200,16 @@ export class AuthService {
   // Get user photo from database
   getUserPhoto() {
     const userRef = doc(this.database, 'users', this.userID);
+    const trainerRef = doc(this.database, 'trainers', this.userID);
     getDoc(userRef).then((doc) => {
       if (doc.exists()) {
         this.userPhoto = doc.data()['photoURL'];
+      } else{
+        getDoc(trainerRef).then((doc) => {
+          if (doc.exists()) {
+            this.userPhoto = doc.data()['photoURL'];
+          }
+        });
       }
     });
   }
