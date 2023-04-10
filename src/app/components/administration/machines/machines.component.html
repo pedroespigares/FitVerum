@@ -1,4 +1,3 @@
-<app-header></app-header>
 <main class="content">
     <h1 class="machines-administration-header">Machines and Exercises Administration</h1>
     <div class="machines-administration-actions">
@@ -6,13 +5,7 @@
     </div>
     <div class="machines-administration">
         <div class="machines-administration-machine" *ngFor="let singleMachine of machines">
-            <img class="machines-administration-machine-img" [src]="singleMachine.photoURL" alt="Routine Image">
-            <h2 class="machines-administration-machine-title">{{singleMachine.name}}</h2>
-            <div class="machines-administration-machine-actions">
-                <button class="machines-administration-machine-actions-button-delete" (click)="deleteMachine(singleMachine.id, singleMachine.photoURL)"><i class="fa-solid fa-trash"></i></button>
-                <button class="machines-administration-machine-actions-button-edit" routerLink="/administration/machines/edit/{{singleMachine.id}}"><i class="fa-solid fa-pen-to-square"></i></button>
-                <button class="machines-administration-machine-actions-button-show" routerLink="/administration/machines/show/{{singleMachine.id}}"><i class="fa-solid fa-circle-info"></i></button>
-            </div>
+            <app-machine-card [machine]="singleMachine"></app-machine-card>
         </div>
     </div>
 </main>

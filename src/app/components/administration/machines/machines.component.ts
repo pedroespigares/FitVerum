@@ -12,7 +12,7 @@ export class MachinesComponent {
   machines: any[];
   storage: any;
 
-  constructor(private database: DatabaseService) { 
+  constructor(private database: DatabaseService) {
     this.storage = getStorage();
   }
 
@@ -20,20 +20,5 @@ export class MachinesComponent {
     this.database.getMachines().subscribe((machines: any) => {
       this.machines = machines;
     });
-  }
-
-  deleteMachine(id: string, photoURL: string): void {
-    let confirmDelete = confirm('Are you sure you want to delete this machine?');
-    if (confirmDelete){
-      this.database.deleteMachine(id);
-      this.deletePhotoFromStorage(photoURL);
-    } else {
-      return;
-    }
-  }
-
-  deletePhotoFromStorage(photoURL: string): void {
-    const photoRef = ref(this.storage, photoURL);
-    deleteObject(photoRef);
   }
 }

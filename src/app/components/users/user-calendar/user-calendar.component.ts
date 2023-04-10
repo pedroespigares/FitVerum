@@ -31,7 +31,7 @@ export class UserCalendarComponent {
   //     })
   //   })
   // }
-  
+
 
   events: CalendarEvent[] = [];
 

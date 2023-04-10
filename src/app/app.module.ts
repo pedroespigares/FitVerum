@@ -27,6 +27,7 @@ import { TrainerCalendarComponent } from './components/trainers/trainer-calendar
 import { TrainerAppointmentComponent } from './components/trainers/trainer-appointment/trainer-appointment.component';
 import { UserModificationComponent } from './components/users/user-modification/user-modification.component';
 import { TrainerModificationComponent } from './components/trainers/trainer-modification/trainer-modification.component';
+import { MachineCardComponent } from './components/administration/machines/machine-card/machine-card.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { TrainerModificationComponent } from './components/trainers/trainer-modi
     TrainerAppointmentComponent,
     UserModificationComponent,
     TrainerModificationComponent,
+    MachineCardComponent,
   ],
   imports: [
     BrowserModule,
