@@ -1,13 +1,13 @@
-<img class="machines-administration-machine-img" [src]="machine.photoURL"alt="Routine Image"/>
-<h2 class="machines-administration-machine-title">{{ machine.name }}</h2>
-<div class="machines-administration-machine-actions">
-  <button class="machines-administration-machine-actions-button-delete" (click)="deleteMachine(machine.id, machine.photoURL)">
+<img class="machine-img" [src]="machine.photoURL"alt="Routine Image"/>
+<h2 class="machine-title">{{ machine.name }}</h2>
+<div class="machine-actions">
+  <button class="machine-actions-button-delete" (click)="deleteMachine(machine.id, machine.photoURL)">
     <i class="fa-solid fa-trash"></i>
   </button>
-  <button class="machines-administration-machine-actions-button-edit" routerLink="/administration/machines/edit/{{ machine.id }}">
+  <button class="machine-actions-button-edit" routerLink="/administration/machines/edit/{{ machine.id }}">
     <i class="fa-solid fa-pen-to-square"></i>
   </button>
-  <button class="machines-administration-machine-actions-button-show" routerLink="/administration/machines/show/{{ machine.id }}">
+  <button class="machine-actions-button-show" routerLink="/administration/machines/show/{{ machine.id }}">
     <i class="fa-solid fa-circle-info"></i>
   </button>
 </div>
