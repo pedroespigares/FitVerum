@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, onInit } from '@angular/core';
 import { CalendarEvent, CalendarView, DAYS_OF_WEEK } from 'angular-calendar';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -7,7 +7,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './user-calendar.component.html',
   styleUrls: ['./user-calendar.component.scss']
 })
-export class UserCalendarComponent {
+export class UserCalendarComponent implements onInit {
   view: CalendarView = CalendarView.Month;
 
   viewDate: Date = new Date();

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, onInit } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { ref, getStorage, deleteObject} from '@angular/fire/storage';
 
@@ -8,7 +8,7 @@ import { ref, getStorage, deleteObject} from '@angular/fire/storage';
   styleUrls: ['./machines.component.scss']
 })
 
-export class MachinesComponent {
+export class MachinesComponent implements onInit {
   machines: any[];
   storage: any;
 

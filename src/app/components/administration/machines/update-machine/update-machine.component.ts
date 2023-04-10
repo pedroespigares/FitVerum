@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, onInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DatabaseService } from 'src/app/services/database.service';
 import { Router } from '@angular/router';
@@ -15,7 +15,7 @@ import {
   templateUrl: './update-machine.component.html',
   styleUrls: ['./update-machine.component.scss']
 })
-export class UpdateMachineComponent {
+export class UpdateMachineComponent implements onInit {
 
   basePath = '/machines';
   machine: any;

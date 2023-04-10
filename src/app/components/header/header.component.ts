@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, onInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { DatabaseService } from '../../services/database.service';
 
@@ -7,7 +7,7 @@ import { DatabaseService } from '../../services/database.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
+export class HeaderComponent implements onInit {
   canGetPhoto: boolean = false;
   
   constructor(public auth: AuthService, public database: DatabaseService) {}

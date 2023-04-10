@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, onInit } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './trainer-appointment.component.html',
   styleUrls: ['./trainer-appointment.component.scss']
 })
-export class TrainerAppointmentComponent {
+export class TrainerAppointmentComponent implements onInit {
   clients: any[] = [];
   page = 1;
   pageSize = 5;

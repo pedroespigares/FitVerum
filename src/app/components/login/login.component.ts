@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, onInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements onInit {
   email :string = '';
   password :string = '';
   isEmpty :boolean = false;

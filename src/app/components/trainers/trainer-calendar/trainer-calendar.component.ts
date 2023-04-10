@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef, ChangeDetectionStrategy, ViewChild, TemplateRef } from '@angular/core';
+import { Component, ChangeDetectorRef, ChangeDetectionStrategy, ViewChild, TemplateRef, onInit } from '@angular/core';
 import { CalendarEvent, CalendarView, DAYS_OF_WEEK, CalendarEventTimesChangedEvent, } from 'angular-calendar';
 import { Router, ActivatedRoute } from '@angular/router';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
@@ -14,7 +14,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./trainer-calendar.component.scss'],
 })
-export class TrainerCalendarComponent {
+export class TrainerCalendarComponent implements onInit{
   @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
 
   view: CalendarView = CalendarView.Week;
