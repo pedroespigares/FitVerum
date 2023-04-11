@@ -29,6 +29,9 @@ import { UserModificationComponent } from './components/users/user-modification/
 import { TrainerModificationComponent } from './components/trainers/trainer-modification/trainer-modification.component';
 import { MachineCardComponent } from './components/administration/machines/machine-card/machine-card.component';
 import { TrainerRoutinesComponent } from './components/trainers/trainer-routines/trainer-routines.component';
+import { NotFoundComponent } from './components/errors/not-found/not-found.component';
+import { ForbiddenComponent } from './components/errors/forbidden/forbidden.component';
+
 
 @NgModule({
   declarations: [
@@ -52,6 +55,8 @@ import { TrainerRoutinesComponent } from './components/trainers/trainer-routines
     TrainerModificationComponent,
     MachineCardComponent,
     TrainerRoutinesComponent,
+    NotFoundComponent,
+    ForbiddenComponent,
   ],
   imports: [
     BrowserModule,

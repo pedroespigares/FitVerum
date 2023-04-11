@@ -16,24 +16,32 @@ import { TrainerAppointmentComponent } from './components/trainers/trainer-appoi
 import { UserModificationComponent } from './components/users/user-modification/user-modification.component';
 import { TrainerModificationComponent } from './components/trainers/trainer-modification/trainer-modification.component';
 import { TrainerRoutinesComponent } from './components/trainers/trainer-routines/trainer-routines.component';
+import { NotFoundComponent } from './components/errors/not-found/not-found.component';
+import { ForbiddenComponent } from './components/errors/forbidden/forbidden.component';
+import { AuthGuard } from './services/guards/auth.guard';
+import { AdminGuard } from './services/guards/admin.guard';
+import { TrainerGuard } from './services/guards/trainer.guard';
 
 const routes: Routes = [
   { path: '', component: LandingComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
-  { path: 'user/calendar/:id', component: UserCalendarComponent},
-  { path: 'user/calendar/:id/:date', component: UserRoutinesComponent},
-  { path: 'user/modification/:id', component: UserModificationComponent},
-  { path: 'administration/users', component: UsersComponent},
-  { path: 'administration/machines', component: MachinesComponent},
-  { path: 'administration/machines/add', component: AddMachineComponent},
-  { path: 'trainer/clients/:id', component: TrainerUsersComponent},
-  { path: 'trainer/calendar/:id', component: TrainerCalendarComponent},
-  { path: 'trainer/calendar/:id/:date', component: TrainerAppointmentComponent},
-  { path: 'trainer/modification/:id', component: TrainerModificationComponent},
-  { path: 'trainer/routines/:id', component: TrainerRoutinesComponent},
-  { path: 'administration/machines/edit/:id', component: UpdateMachineComponent},
-  { path: 'administration/machines/show/:id', component: ShowMachineComponent},
+  { path: 'user/calendar/:id', component: UserCalendarComponent, canActivate: [AuthGuard]},
+  { path: 'user/calendar/:id/:date', component: UserRoutinesComponent, canActivate: [AuthGuard]},
+  { path: 'user/modification/:id', component: UserModificationComponent, canActivate: [AuthGuard]},
+  { path: 'administration/users', component: UsersComponent, canActivate: [AdminGuard]},
+  { path: 'administration/machines', component: MachinesComponent, canActivate: [AdminGuard]},
+  { path: 'administration/machines/add', component: AddMachineComponent, canActivate: [AdminGuard]},
+  { path: 'administration/machines/edit/:id', component: UpdateMachineComponent, canActivate: [AdminGuard]},
+  { path: 'administration/machines/show/:id', component: ShowMachineComponent, canActivate: [AdminGuard]},
+  { path: 'trainer/clients/:id', component: TrainerUsersComponent, canActivate: [TrainerGuard]},
+  { path: 'trainer/calendar/:id', component: TrainerCalendarComponent, canActivate: [TrainerGuard]},
+  { path: 'trainer/calendar/:id/:date', component: TrainerAppointmentComponent, canActivate: [TrainerGuard]},
+  { path: 'trainer/modification/:id', component: TrainerModificationComponent, canActivate: [TrainerGuard]},
+  { path: 'trainer/routines/:id', component: TrainerRoutinesComponent, canActivate: [TrainerGuard]},
+  { path: 'error/404-not-found', component: NotFoundComponent},
+  { path: 'error/403-forbidden', component: ForbiddenComponent},
+  { path: '**', redirectTo: '/error/404-not-found'}
 ];
 
 @NgModule({

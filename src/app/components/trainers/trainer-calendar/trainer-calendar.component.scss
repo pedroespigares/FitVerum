@@ -98,77 +98,8 @@
 }
 
 .modal {
-  &-button {
-    @include response(xl) {
-      @include button(lg, true);
-    }
-    @include button(md, true);
-
-    &-delete {
-      @include normal_delete_button()
-    }
-  }
-
-  &-title{
-    @include response(xl) {
-      font-size: getFontSize(xxl);
-    }
-    font-size: getFontSize(lg);
-    font-family: $font-family-title;
-    font-weight: getFontWeight(bold);
-    color: getColor(intense-violet);
-    text-align: center;
-  }
-
-  &-body{
-    &-title{
-      @include response(xl) {
-        font-size: getFontSize(xl);
-      }
-      font-size: getFontSize(md);
-      font-family: $font-family-title;
-      font-weight: getFontWeight(bold);
-      color: getColor(intense-violet);
-      text-align: center;
-      margin-bottom: 1rem;
-
-      &-text{
-        @include response(xl) {
-          font-size: getFontSize(lg);
-        }
-        font-size: getFontSize(sm);
-        font-family: $font-family-title;
-        font-weight: getFontWeight(bold);
-        color: getColor(black);
-        text-align: center;
-        margin-bottom: 5rem;
-      }
-    }
-
-    &-content{
-      &-title{
-        @include response(xl) {
-          font-size: getFontSize(xl);
-        }
-        font-size: getFontSize(md);
-        font-family: $font-family-title;
-        font-weight: getFontWeight(bold);
-        color: getColor(intense-violet);
-        text-align: center;
-        margin-bottom: 1rem;
-      }
-
-      &-text{
-        @include response(xl) {
-          font-size: getFontSize(md);
-        }
-        font-size: getFontSize(xs);
-        font-family: $font-family-title;
-        color: getColor(black);
-        text-align: center;
-      }
-    }
-  }
+  // TODO: Editar borders
+  @include modal();
 }
 
 .no-description-message{

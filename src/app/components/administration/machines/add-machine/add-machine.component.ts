@@ -26,6 +26,10 @@ export class AddMachineComponent {
     this.storage = getStorage();
    }
 
+   /**
+    * Subir imagen a Firebase Storage
+    * @param event
+    */
    uploadFile(event: any) {
     const file = event.target.files[0];
     const storageRef = ref(this.storage, `${this.basePath}/${file.name}`);
