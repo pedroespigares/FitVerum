@@ -41,7 +41,7 @@
     <p *ngIf="this.users.length == 0" class="no-users-message">There are currently no users</p>
     <div class="pagination">
       <ngb-pagination
-        *ngIf="this.users.length > 5"
+        *ngIf="this.users.length > 4"
         [collectionSize]="this.users.length"
         [pageSize]="pageSize"
         [directionLinks]="false"
@@ -57,7 +57,7 @@
     <h2 class="users-trainers-container-trainers-title">Trainers</h2>
     <div class="users-trainers-container-trainers-container">
       <table class="users-trainers-container-trainers-container-table">
-        <tr *ngFor="let trainer of trainers | slice : (page - 1) * pageSize : page * pageSize">
+        <tr *ngFor="let trainer of trainers | slice : (page_2 - 1) * pageSize_2 : page_2 * pageSize_2">
           <td>
             <button class="users-trainers-container-trainers-container-table-trainer-button-left" (click)="convertTrainerToUser(trainer.trainerID)">
               <i class="fa-solid fa-minus"></i>
@@ -92,11 +92,11 @@
     <p *ngIf="this.trainers.length == 0" class="no-trainers-message">There are currently no trainers</p>
     <div class="pagination">
       <ngb-pagination
-      *ngIf="this.trainers.length > 5"
+      *ngIf="this.trainers.length > 4"
         [collectionSize]="this.users.length"
-        [pageSize]="pageSize"
+        [pageSize]="pageSize_2"
         [directionLinks]="false"
-        [(page)]="page"
+        [(page)]="page_2"
         class="w-100"
       >
       </ngb-pagination>

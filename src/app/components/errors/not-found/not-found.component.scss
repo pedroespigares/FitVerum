@@ -1,0 +1,42 @@
+@import "../../../../scss/mixin.scss";
+@import "../../../../scss/variables.scss";
+
+.not-found-container{
+  @include flex($direction: column, $justify: flex-start, $align: center);
+  padding-top: 20rem;
+  height: calc(100vh - 150px);
+  width: 100vw;
+  background-color: getColor(white);
+  &-title{
+    @include view_header(7rem);
+    margin-bottom: 2rem;
+  }
+  &-message{
+    @include view_header(2.5rem);
+    color: getColor(dark-grayish-violet);
+    margin-bottom: 2rem;
+  }
+
+  &-link{
+    @include view_header(2.5rem);
+    text-decoration: none;
+    color: getColor(intense-violet);
+    transition: $transition;
+    cursor: pointer;
+    &:hover{
+      color: getColor(dark-grayish-violet);
+    }
+  }
+}
+
+.waves {
+  z-index: 10;
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background-image: url("../../../../assets/images/wave.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -12,7 +12,11 @@ export class TrainerUsersComponent implements OnInit {
   users: any[] = [];
   clients: any[] = [];
   page = 1;
-  pageSize = 5;
+  pageSize = 4;
+
+  page_2 = 1;
+  pageSize_2 = 4;
+
   usersWithoutTrainerLoading = true;
   clientsLoading = true;
 

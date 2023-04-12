@@ -13,6 +13,8 @@
 }
 
 .register {
+  z-index: 11;
+  background-color: getColor(white);
   animation: scale-in-center 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   width: 30%;
   @include flex($direction: column, $justify: center, $align: center, $gap: 0);
@@ -140,7 +142,7 @@
         color: red;
         width: 50%
       }
-      
+
       &-credentials{
         font-size: getFontSize(sm);
         text-align: center;
@@ -212,6 +214,18 @@
       }
     }
   }
+}
+
+.waves {
+  z-index: 10;
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background-image: url("../../../assets/images/wave.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @keyframes scale-in-center {

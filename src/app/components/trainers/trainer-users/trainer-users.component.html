@@ -52,7 +52,7 @@
       <h2 class="trainers-clients-container-clients-title">Clients</h2>
       <div class="trainers-clients-container-clients-container">
         <table class="trainers-clients-container-clients-container-table">
-          <tr *ngFor="let client of clients | slice : (page - 1) * pageSize : page * pageSize">
+          <tr *ngFor="let client of clients | slice : (page_2 - 1) * pageSize_2 : page_2 * pageSize_2">
             <td>
               <button class="trainers-clients-container-clients-container-table-client-button-left" (click)="unsubscribeClient(client.userID)">
                 <i class="fa-solid fa-minus"></i>
@@ -82,11 +82,11 @@
       <p *ngIf="this.clients.length == 0" class="no-clients-message">There are currently no clients associated with you</p>
       <div class="pagination">
         <ngb-pagination
-        *ngIf="this.clients.length > 5"
+        *ngIf="this.clients.length > 4"
           [collectionSize]="this.users.length"
-          [pageSize]="pageSize"
+          [pageSize]="pageSize_2"
           [directionLinks]="false"
-          [(page)]="page"
+          [(page)]="page_2"
           class="w-100"
         >
         </ngb-pagination>

@@ -10,7 +10,10 @@ export class UsersComponent {
   users: any[] = [];
   trainers: any[] = [];
   page = 1;
-  pageSize = 5;
+  pageSize = 4;
+
+  page_2 = 1;
+  pageSize_2 = 4;
 
   usersLoading = true;
   trainersLoading = true;
