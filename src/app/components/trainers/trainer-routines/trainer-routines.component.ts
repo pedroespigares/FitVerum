@@ -30,8 +30,14 @@ export class TrainerRoutinesComponent implements OnInit {
   }
 
   selectClient(client: any) {
-    this.selectedClient = client;
-    this.getRoutines(client);
+    if(this.selectedClient == null){
+      this.selectedClient = client;
+      this.getRoutines(client);
+    } else{
+      this.deselectClient();
+      this.selectedClient = client;
+      this.getRoutines(client);
+    }
   }
 
   deselectClient() {

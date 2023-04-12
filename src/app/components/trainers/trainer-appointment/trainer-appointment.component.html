@@ -7,7 +7,7 @@
   <div class="appointment-container">
     <div class="appointment-container-clients">
       <h1 class="appointment-container-clients-title">Clients</h1>
-      <table class="appointment-container-clients-table" *ngIf="selectedClient == null">
+      <table class="appointment-container-clients-table">
         <tr
           *ngFor="let client of clients | slice : (page - 1) * pageSize : page * pageSize">
           <td>
@@ -30,16 +30,13 @@
           </td>
           <td>
             <button class="appointment-container-clients-table-client-button" (click)="selectClient(client)">
-              <i class="fa-solid fa-plus"></i>
+              <i class="fa-solid fa-hand-pointer"></i>
             </button>
           </td>
         </tr>
       </table>
       <p *ngIf="this.clients.length == 0 && selectedClient == null" class="no-clients-message">
         There are currently no clients available
-      </p>
-      <p *ngIf="selectedClient != null" class="no-clients-message">
-        You already selected a client
       </p>
       <div class="pagination">
         <ngb-pagination
@@ -77,8 +74,8 @@
             <h3 *ngIf="selectedClient != null" class="appointment-container-info-selected-client-container-name">
               {{ selectedClient.displayName }}
             </h3>
-            <button *ngIf="selectedClient != null" class="appointment-container-info-selected-client-container-button" (click)="removeClient(selectedClient)">
-              <i class="fa-solid fa-minus"></i>
+            <button *ngIf="selectedClient != null" class="appointment-container-info-selected-client-container-button" (click)="deselectClient()">
+              <i class="fa-solid fa-circle-xmark"></i>
             </button>
         </div>
       </div>

@@ -2,7 +2,7 @@
   <div class="trainer-routines-container">
     <div class="trainer-routines-container-clients">
       <h1 class="trainer-routines-container-clients-title">Clients</h1>
-      <table class="trainer-routines-container-clients-table" *ngIf="selectedClient == null">
+      <table class="trainer-routines-container-clients-table">
         <tr
           *ngFor="let client of clients | slice : (page - 1) * pageSize : page * pageSize" (click)="selectClient(client)">
           <td>
@@ -25,16 +25,13 @@
           </td>
           <td>
             <button class="trainer-routines-container-clients-table-client-button" (click)="selectClient(client)">
-              <i class="fa-solid fa-plus"></i>
+              <i class="fa-solid fa-hand-pointer"></i>
             </button>
           </td>
         </tr>
       </table>
       <p *ngIf="this.clients.length == 0" class="no-clients-message">
         There are currently no clients available
-      </p>
-      <p *ngIf="selectedClient != null" class="no-clients-message">
-        You already selected a client
       </p>
       <div class="pagination">
         <ngb-pagination
@@ -52,8 +49,7 @@
     <div class="trainer-routines-container-info">
       <div *ngIf="loadingRoutines && selectedClient != null" class="loader"></div>
       <h1 *ngIf="selectedClient != null" class="trainer-routines-container-info-title">
-        Routines from <span class="trainer-routines-container-info-title-username">{{selectedClient.displayName}} </span>
-        <i class="fa-solid fa-minus trainer-routines-container-info-title-icon" (click)="deselectClient()"></i>
+        Routines from <span class="trainer-routines-container-info-title-username">{{selectedClient.displayName}}</span>
       </h1>
       <h1 *ngIf="selectedClient == null" class="trainer-routines-container-info-title">Routines</h1>
       <h2 *ngIf="selectedClient == null" class="trainer-routines-container-info-no-client">No client selected</h2>

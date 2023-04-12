@@ -39,18 +39,19 @@ export class TrainerAppointmentComponent implements OnInit {
    * Seleccionar cliente
    * @param client
    */
-  selectClient(client: any) :void {
-    this.selectedClient = client;
-    this.clients.splice(this.clients.indexOf(client), 1);
+  selectClient(client: any) {
+    if(this.selectedClient == null){
+      this.selectedClient = client;
+    } else{
+      this.deselectClient();
+      this.selectedClient = client;
+    }
   }
 
   /**
    * Desseleccionar cliente
-   * @param client
    */
-
-  removeClient(client: any) :void {
-    this.clients.push(client);
+  deselectClient() :void {
     this.selectedClient = null;
   }
 
