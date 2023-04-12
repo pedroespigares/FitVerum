@@ -31,6 +31,8 @@ import { MachineCardComponent } from './components/administration/machines/machi
 import { TrainerRoutinesComponent } from './components/trainers/trainer-routines/trainer-routines.component';
 import { NotFoundComponent } from './components/errors/not-found/not-found.component';
 import { ForbiddenComponent } from './components/errors/forbidden/forbidden.component';
+import { TrainerRoutineCardComponent } from './components/trainers/trainer-routines/trainer-routine-card/trainer-routine-card.component';
+import { UserExercisesComponent } from './components/users/user-exercises/user-exercises.component';
 
 
 @NgModule({
@@ -57,6 +59,8 @@ import { ForbiddenComponent } from './components/errors/forbidden/forbidden.comp
     TrainerRoutinesComponent,
     NotFoundComponent,
     ForbiddenComponent,
+    TrainerRoutineCardComponent,
+    UserExercisesComponent,
   ],
   imports: [
     BrowserModule,

@@ -48,6 +48,24 @@
         </ngb-pagination>
       </div>
     </div>
+
+    <div class="trainer-routines-container-info">
+      <div *ngIf="loadingRoutines && selectedClient != null" class="loader"></div>
+      <h1 *ngIf="selectedClient != null" class="trainer-routines-container-info-title">
+        Routines from <span class="trainer-routines-container-info-title-username">{{selectedClient.displayName}} </span>
+        <i class="fa-solid fa-minus trainer-routines-container-info-title-icon" (click)="deselectClient()"></i>
+      </h1>
+      <h1 *ngIf="selectedClient == null" class="trainer-routines-container-info-title">Routines</h1>
+      <h2 *ngIf="selectedClient == null" class="trainer-routines-container-info-no-client">No client selected</h2>
+      <div class="trainer-routines-container-info-container-actions">
+        <button *ngIf="selectedClient != null" class="trainer-routines-container-info-container-actions-button" routerLink="/administration/machines/add">Add Routine</button>
+    </div>
+      <div class="trainer-routines-container-info-container">
+        <div class="trainer-routines-container-info-container-routine" *ngFor="let singleRoutine of routines">
+          <app-trainer-routine-card [routine]="singleRoutine"></app-trainer-routine-card>
+        </div>
+      </div>
+    </div>
   </div>
 </main>
 

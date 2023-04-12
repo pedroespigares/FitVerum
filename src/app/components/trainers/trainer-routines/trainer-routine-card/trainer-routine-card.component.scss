@@ -1,0 +1,49 @@
+@import "../../../../../scss/mixin.scss";
+@import "../../../../../scss/variables.scss";
+
+.routine {
+  @include card(false);
+  &-img {
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+  &-title {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
+    font-size: 2rem;
+    font-family: $font-family-title;
+    font-weight: getFontWeight(bold);
+    color: getColor(black);
+    transition: $transition;
+    color: getColor(white);
+    background-color: getColor(intense-violet);
+    border: 1px solid getColor(intense-violet);
+    background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  &-actions {
+    @include flex($direction: row, $justify: center, $align: center);
+    width: 100%;
+
+    &-button-delete {
+      @include deleteInCard();
+    }
+
+    &-button-edit {
+      @include editInCard();
+    }
+
+    &-button-show {
+      @include showInCard();
+    }
+  }
+}

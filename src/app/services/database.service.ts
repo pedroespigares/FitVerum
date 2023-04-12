@@ -133,6 +133,17 @@ export class DatabaseService {
   }
 
   /**
+   * Obtener las rutinas de un cliente
+   * @param clientID - ID del cliente
+   * @returns - Observable con las rutinas del cliente
+   */
+  getClientRoutines(clientID: string): Observable<any[]> {
+    const routinesRef = collection(this.database, 'routines');
+    const q = query(routinesRef, where('userID', '==', clientID));
+    return collectionData(q, { idField: 'id' }) as Observable<any[]>;
+  }
+
+  /**
    * Obtener los datos de una máquina
    * @param id - ID de la máquina
    * @returns - Datos de la máquina
@@ -404,6 +415,14 @@ export class DatabaseService {
     deleteDoc(appointmentRef);
   }
 
+  /**
+   * Borrar una rutina de la base de datos
+   * @param id - ID de la rutina
+   */
+  deleteRoutine(id: string) {
+    const routineRef = doc(this.database, 'routines', id);
+    deleteDoc(routineRef);
+  }
 
 // hay que sacar el trainer a partir del user
 //   getRoutinesWithUserAndTrainer(user: string, trainer: string) {

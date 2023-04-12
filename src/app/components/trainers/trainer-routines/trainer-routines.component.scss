@@ -1,7 +1,7 @@
 @import "../../../../scss/mixin.scss";
 @import "../../../../scss/variables.scss";
 
-.breadcrumbs{
+.breadcrumbs {
   @include breadcrumbs();
 }
 
@@ -50,145 +50,56 @@
 
   &-info {
     grid-area: 1 / 2 / 2 / 3;
-    @include flex(
-      $direction: column,
-      $justify: flex-start,
-      $align: center,
-      $gap: 5rem
-    );
 
     &-title {
       @include view_header(4rem);
       margin-top: 5rem;
-    }
-
-    &-selected-client {
-      margin-top: 5rem;
-      @include flex(
-        $direction: row,
-        $justify: center,
-        $align: center,
-        $gap: 5rem
-      );
-      &-title {
-        @include response(xl) {
-          font-size: 2.5rem;
+      &-icon{
+        margin-left: 1rem;
+        color: red;
+        transition: $transition;
+        &:hover{
+          cursor: pointer;
+          transition: $transition;
+          scale: 1.2;
         }
-        font-size: calc(2.5rem / 1.5);
-        font-family: $font-family-title;
-        font-weight: getFontWeight(bold);
+      }
+
+      &-username{
         color: getColor(black);
-        text-align: center;
-        margin-bottom: 0;
+        padding-left: 1rem;
       }
+    }
 
-      &-container {
-        @include flex(
-          $direction: row,
-          $justify: center,
-          $align: center,
-          $gap: 5rem
-        );
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-        border-radius: 1rem;
-        &-img {
-          width: 7.5rem;
-          height: 7.5rem;
-          border-radius: 50%;
-          object-fit: cover;
-          margin: 1rem;
+    &-no-client{
+      text-align: center;
+      font-size: 2rem;
+      font-family: $font-family-title;
+      font-weight: getFontWeight(bold);
+      color: getColor(black);
+      padding-top: 1rem;
+    }
+
+    &-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+      gap: 7rem;
+      padding: 5rem;
+
+      &-actions {
+        @include response(xl) {
+          @include flex($direction: row, $justify: flex-end);
         }
-
-        &-name {
-          font-size: 3rem;
-          font-family: $font-family-text;
-          color: getColor(black);
-        }
-
+        @include flex($direction: row, $justify: center);
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        padding: 0 5rem;
         &-button {
-          @include user_button($padding: 2.5rem);
+          @include button(lg, true);
+          margin-left: 2rem;
         }
       }
     }
-
-    &-date {
-      margin-top: 10rem;
-      @include flex(
-        $direction: row,
-        $justify: center,
-        $align: center,
-        $gap: 5rem
-      );
-
-      &-container {
-        @include flex(
-          $direction: row,
-          $justify: center,
-          $align: center,
-          $gap: 3rem
-        );
-        &-title {
-          @include response(xl) {
-            font-size: 2.5rem;
-          }
-          font-size: calc(2.5rem / 1.5);
-          font-family: $font-family-title;
-          font-weight: getFontWeight(bold);
-          color: getColor(black);
-          text-align: center;
-
-          &-focus{
-            @include response(xl) {
-              font-size: 2.5rem;
-            }
-            font-size: calc(2.5rem / 1.5);
-            font-family: $font-family-title;
-            font-weight: getFontWeight(bold);
-            color: getColor(black);
-            text-align: center;
-            color: getColor(intense-violet);
-          }
-        }
-
-        &-input {
-          @include input();
-        }
-      }
-    }
-
-    &-button {
-      margin-top: 10rem;
-      @include button($size: xl,$focus: true);
-
-      &-disabled{
-        margin-top: 10rem;
-        @include button($size: xl, $disabled: true)
-      }
-    }
-  }
-}
-
-.appointment-textarea-container{
-  @include flex(
-    $direction: row,
-    $justify: center,
-    $align: center,
-    $gap: 5rem
-  );
-  &-title{
-    @include response(xl) {
-      font-size: 3rem;
-    }
-    font-size: calc(3rem - 1.5rem);
-    font-family: $font-family-title;
-    font-weight: getFontWeight(bold);
-    color: getColor(black);
-    text-align: center;
-  }
-
-  &-input{
-    @include input(md);
-    resize: both;
   }
 }
 
@@ -215,11 +126,15 @@
   text-align: center;
 }
 
-.error-message{
+.error-message {
   font-size: getFontSize(md);
   font-family: $font-family-title;
   font-weight: getFontWeight(bold);
   color: red;
   margin-bottom: 2rem;
   text-align: center;
+}
+
+.loader {
+  @include loader(40vh, 28vw);
 }
