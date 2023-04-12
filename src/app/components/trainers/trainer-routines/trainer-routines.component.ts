@@ -16,6 +16,8 @@ export class TrainerRoutinesComponent implements OnInit {
   pageSize = 5;
   selectedClient: any = null;
 
+  loadingRoutines = true;
+
 
   constructor(private database: DatabaseService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
@@ -26,7 +28,22 @@ export class TrainerRoutinesComponent implements OnInit {
       this.clients = data;
     });
   }
+
   selectClient(client: any) {
     this.selectedClient = client;
+    this.getRoutines(client);
+  }
+
+  deselectClient() {
+    this.selectedClient = null;
+    this.routines = [];
+  }
+
+
+  getRoutines(client: any) {
+    this.database.getClientRoutines(client.id).subscribe((data) => {
+      this.routines = data;
+      this.loadingRoutines = false;
+    });
   }
 }
