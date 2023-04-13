@@ -12,7 +12,7 @@
             <h1 class="edit-machine-title-container-text">Edit Machine/Exercise</h1>
             <img class="edit-machine-title-container-img" [src]="previousPhotoURL" alt="Machine Image">
         </div>
-        <form class="edit-machine-form">
+        <form class="edit-machine-form" (ngSubmit)="updateMachine()">
             <fieldset class="edit-machine-form-fieldset">
                 <legend class="edit-machine-form-fieldset-label" for="machineName">Machine/Exercise Name</legend>
                 <input *ngIf="machineUploaded" class="edit-machine-form-fieldset-input" type="text" id="machineName" name="machineName" placeholder="Machine Name" [(ngModel)]="name">
@@ -29,7 +29,7 @@
                 </label>
                 <input class="edit-machine-form-fieldset-input-file" type="file" id="machineImage" name="machineImage" accept="image/*" (change)="uploadFile($event)">
             </fieldset>
-            <button class="edit-machine-form-button" (click)="updateMachine()">Update</button>
+            <button type="submit" class="edit-machine-form-button">Update</button>
         </form>
     </div>
 </main>

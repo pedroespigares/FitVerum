@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
-import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-trainer-routines',
@@ -19,9 +19,9 @@ export class TrainerRoutinesComponent implements OnInit {
   loadingRoutines = true;
 
 
-  constructor(private database: DatabaseService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private database: DatabaseService, private router: Router, private auth: AuthService) { }
 
-  trainerID = this.activatedRoute.snapshot.paramMap.get('id');
+  trainerID = this.auth.userID
 
   ngOnInit() {
     this.database.getTrainerClients(this.trainerID).subscribe((data) => {

@@ -34,6 +34,7 @@
         [hourSegments]="1"
         [daysInWeek]="daysInWeek"
         [refresh]="refresh"
+        [excludeDays]="excludeDays"
         (eventClicked)="open($event.event)"
         (eventTimesChanged)="eventTimesChanged($event)"
         (hourSegmentClicked)="routeToAppointments($event.date)"

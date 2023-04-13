@@ -20,24 +20,25 @@ export class TrainerUsersComponent implements OnInit {
   usersWithoutTrainerLoading = true;
   clientsLoading = true;
 
+  trainerID: string = this.auth.userID;
+
   constructor(private database: DatabaseService, private activatedRoute: ActivatedRoute, private auth: AuthService) {}
 
   ngOnInit() {
-    let trainerID = this.activatedRoute.snapshot.paramMap.get('id');
 
     this.database.getUsersWithoutTrainer().subscribe((data) => {
       this.users = data;
       this.usersWithoutTrainerLoading = false;
     });
 
-    this.database.getTrainerClients(trainerID).subscribe((data) => {
+    this.database.getTrainerClients(this.trainerID).subscribe((data) => {
       this.clients = data;
       this.clientsLoading = false;
     });
   }
 
   subscribeClient(clientID: string) {
-    this.database.subscribeClient(clientID, this.auth.userID);
+    this.database.subscribeClient(clientID, this.trainerID);
   }
 
   unsubscribeClient(clientID: string) {

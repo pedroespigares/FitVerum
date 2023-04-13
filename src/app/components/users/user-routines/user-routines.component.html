@@ -1,5 +1,6 @@
 <main class="content">
 <h1 class="routines-title">Your Routines</h1>
+<h2 class="routines-title-no-routines" *ngIf="!routines.length">You don't have any routines yet</h2>
 <div class="routines-container">
     <div class="routines-container-routine" *ngFor="let singleRoutine of routines">
         <img class="routines-container-routine-img" [src]="singleRoutine.photoURL" alt="Routine Image">

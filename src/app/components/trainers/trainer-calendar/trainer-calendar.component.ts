@@ -7,6 +7,7 @@ import { Subject } from 'rxjs';
 import { DatabaseService } from 'src/app/services/database.service';
 import { Observable } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-trainer-calendar',
@@ -27,7 +28,8 @@ export class TrainerCalendarComponent implements OnInit{
     private activatedRoute: ActivatedRoute,
     private breakpointObserver: BreakpointObserver,
     private cd: ChangeDetectorRef,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private auth: AuthService
   ) {}
 
   events$: Observable<CalendarEvent<{ trainerID: string }>[]>;
@@ -50,6 +52,8 @@ export class TrainerCalendarComponent implements OnInit{
 
   private destroy$ = new Subject<void>();
   refresh = new Subject<void>();
+
+  trainerID: string = this.auth.userID
 
   ngOnInit() {
     const CALENDAR_RESPONSIVE = {
@@ -84,9 +88,7 @@ export class TrainerCalendarComponent implements OnInit{
         this.cd.markForCheck();
       });
 
-
-      let trainerID = this.activatedRoute.snapshot.paramMap.get('id');
-      this.fetchAppointments(trainerID);
+      this.fetchAppointments(this.trainerID);
   }
 
   // Evento que maneja tanto el cambio por drag and drop como el cambio de flecha por reescalado
@@ -108,7 +110,7 @@ export class TrainerCalendarComponent implements OnInit{
   routeToAppointments(date: Date) {
     let timestamp = date.getTime();
     this.router.navigateByUrl(
-      `/trainer/calendar/${this.activatedRoute.snapshot.paramMap.get('id')}/${timestamp}`
+      `/trainer/calendar/${timestamp}`
     );
   }
 

@@ -26,7 +26,7 @@ export class UpdateMachineComponent implements OnInit {
   machineUploaded: boolean = false;
   uploaded: boolean = false;
   previousPhotoURL: string;
-  newPhotoURL: string;
+  newPhotoURL: string = null;
   storage: any;
 
   loading: boolean = true;
@@ -59,7 +59,6 @@ export class UpdateMachineComponent implements OnInit {
       this.uploadMessage = 'Image Uploaded';
       getDownloadURL(storageRef).then((url) => {
         this.newPhotoURL = url;
-        this.previousPhotoURL = null;
       });
     });
   }
@@ -71,7 +70,7 @@ export class UpdateMachineComponent implements OnInit {
 
   deletePhotoFromStorage(photoURL: string): void {
     const photoRef = ref(this.storage, photoURL);
-    deleteObject(photoRef);
+    deleteObject(photoRef)
   }
 
   /**
@@ -79,11 +78,11 @@ export class UpdateMachineComponent implements OnInit {
    */
   updateMachine(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    if(this.previousPhotoURL == null) {
+    if(this.newPhotoURL == null) {
+      this.database.updateMachine(id, this.name, this.description, this.previousPhotoURL);
+    } else {
       this.database.updateMachine(id, this.name, this.description, this.newPhotoURL);
       this.deletePhotoFromStorage(this.previousPhotoURL);
-    } else {
-      this.database.updateMachine(id, this.name, this.description, this.previousPhotoURL);
     }
     this.router.navigate(['/administration/machines']);
   }

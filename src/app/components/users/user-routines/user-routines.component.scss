@@ -3,6 +3,10 @@
 
 .routines-title{
     @include view_header();
+    &-no-routines{
+      @include view_header(3rem);
+      color: getColor(black);
+    }
 }
 
 .routines-container{

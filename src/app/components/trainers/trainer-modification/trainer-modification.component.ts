@@ -1,5 +1,4 @@
 import { Component,OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { DatabaseService } from 'src/app/services/database.service';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -13,11 +12,12 @@ export class TrainerModificationComponent implements OnInit {
   loading = true;
   membership: Date;
 
-  constructor(private database: DatabaseService, private activatedRoute: ActivatedRoute, private auth: AuthService) {}
+  constructor(private database: DatabaseService, private auth: AuthService) {}
+
+  id: string = this.auth.userID
 
   ngOnInit(): void {
-    let id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.database.getTrainerData(id).then((data) => {
+    this.database.getTrainerData(this.id).then((data) => {
       this.trainer = data;
       this.loading = false;
       this.membership = new Date(this.trainer.timestamp);

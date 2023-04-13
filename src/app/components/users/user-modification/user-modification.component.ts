@@ -1,5 +1,4 @@
 import { Component,OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { DatabaseService } from 'src/app/services/database.service';
 import { AuthService } from 'src/app/services/auth.service';
 import {
@@ -45,11 +44,11 @@ export class UserModificationComponent implements OnInit {
   displayNameChanged: boolean = false;
   passwordChanged: boolean = false;
 
-  constructor(private database: DatabaseService, private activatedRoute: ActivatedRoute, private auth: AuthService) {
+  constructor(private database: DatabaseService, private auth: AuthService) {
     this.storage = getStorage();
   }
 
-  id: string = this.activatedRoute.snapshot.paramMap.get('id')
+  id: string = this.auth.userID;
 
   ngOnInit(): void {
     this.database.getUserData(this.id).then((data) => {

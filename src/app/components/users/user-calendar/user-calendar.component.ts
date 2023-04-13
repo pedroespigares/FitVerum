@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarEvent, CalendarView, DAYS_OF_WEEK } from 'angular-calendar';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-user-calendar',
@@ -12,7 +13,7 @@ export class UserCalendarComponent implements OnInit {
 
   viewDate: Date = new Date();
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private router: Router, private auth: AuthService) {}
 
   ngOnInit() {
 
@@ -29,7 +30,9 @@ export class UserCalendarComponent implements OnInit {
 
   weekendDays: number[] = [DAYS_OF_WEEK.SATURDAY, DAYS_OF_WEEK.SUNDAY];
 
+
+
   routeToRoutines(date: Date){
-    this.router.navigateByUrl(`/user/calendar/${this.activatedRoute.snapshot.paramMap.get('id')}/${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`);
+    this.router.navigateByUrl(`/user/calendar/${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`);
   }
 }

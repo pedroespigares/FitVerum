@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-trainer-appointment',
@@ -13,7 +14,6 @@ export class TrainerAppointmentComponent implements OnInit {
   page = 1;
   pageSize = 5;
   selectedClient: any = null;
-  trainerID: string;
 
   date: Date = undefined;
   end_time: number = undefined;
@@ -23,10 +23,10 @@ export class TrainerAppointmentComponent implements OnInit {
 
   errorMessage: string = '';
 
-  constructor(private database: DatabaseService, private activatedRoute: ActivatedRoute, private router: Router) {}
+  trainerID: string = this.auth.userID;
+  constructor(private database: DatabaseService, private activatedRoute: ActivatedRoute, private router: Router, private auth: AuthService) {}
 
   ngOnInit() {
-    this.trainerID = this.activatedRoute.snapshot.paramMap.get('id');
     let date = this.activatedRoute.snapshot.paramMap.get('date');
     this.date = new Date(parseInt(date));
 
@@ -74,6 +74,6 @@ export class TrainerAppointmentComponent implements OnInit {
 
     this.database.createAppointment(this.selectedClient.userID, this.selectedClient.trainerID, from_date_timestamp, to_date_timestamp, this.color, `${this.selectedClient.displayName} - ${this.title}`, this.description);
     this.selectedClient = null;
-    this.router.navigateByUrl(`/trainer/calendar/${this.activatedRoute.snapshot.paramMap.get('id')}`);
+    this.router.navigateByUrl(`/trainer/calendar`);
   }
 }

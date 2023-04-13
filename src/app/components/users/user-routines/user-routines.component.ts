@@ -1,6 +1,6 @@
 import { Component,OnInit, OnDestroy } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
-import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-user-routines',
@@ -8,19 +8,18 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./user-routines.component.scss']
 })
 export class UserRoutinesComponent implements OnInit, OnDestroy {
-  routines: any[];
-  user: string;
+  routines: any[] = [];
   trainer: string;
 
-  constructor(private database: DatabaseService, private router: ActivatedRoute) {}
+  id: string = this.auth.userID
+  constructor(private database: DatabaseService, private auth: AuthService) {}
 
   ngOnInit() {
-    this.user = this.router.snapshot.paramMap.get('id');
     // this.database.getUserTrainer(this.user).then((data) => {
     //   this.trainer = data;
     //   console.log(this.trainer);
     // });
-    this.database.getRoutines(this.user).subscribe((data) => {
+    this.database.getRoutines(this.auth.userID).subscribe((data) => {
       this.routines = data;
     });
   }
