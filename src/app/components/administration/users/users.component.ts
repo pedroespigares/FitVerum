@@ -46,7 +46,7 @@ export class UsersComponent {
   deleteUser(id: string) {
     let confirm = window.confirm('Are you sure you want to delete this user?');
     if (confirm) {
-      this.database.deleteUser(id);
+      this.database.delete('users', id);
     } else {
       return;
     }
@@ -57,7 +57,7 @@ export class UsersComponent {
       'Are you sure you want to delete this trainer?'
     );
     if (confirm) {
-      this.database.deleteTrainer(id);
+      this.database.delete('trainers', id);
     } else {
       return;
     }

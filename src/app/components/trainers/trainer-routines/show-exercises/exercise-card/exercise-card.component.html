@@ -1,0 +1,13 @@
+<img class="exercise-img" [src]="exercise.photoURL"alt="Exercise Image"/>
+<h2 class="exercise-title">{{ exercise.title }}</h2>
+<div class="exercise-actions">
+  <button class="exercise-actions-button-delete" (click)="deleteExercise(exercise.id, exercise.photoURL)">
+    <i class="fa-solid fa-trash"></i>
+  </button>
+  <button class="exercise-actions-button-edit" routerLink="/trainer/exercises/edit/{{ exercise.id }}">
+    <i class="fa-solid fa-pen-to-square"></i>
+  </button>
+  <button class="exercise-actions-button-show" routerLink="/trainer/exercises/show/{{ exercise.id }}">
+    <i class="fa-solid fa-circle-info"></i>
+  </button>
+</div>

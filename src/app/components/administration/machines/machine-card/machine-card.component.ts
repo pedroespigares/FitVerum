@@ -26,7 +26,7 @@ export class MachineCardComponent {
   deleteMachine(id: string, photoURL: string): void {
     let confirmDelete = confirm('Are you sure you want to delete this machine?');
     if (confirmDelete){
-      this.database.deleteMachine(id);
+      this.database.delete('machines', id);
       this.deletePhotoFromStorage(photoURL);
     } else {
       return;

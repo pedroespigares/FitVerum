@@ -33,6 +33,9 @@ import { NotFoundComponent } from './components/errors/not-found/not-found.compo
 import { ForbiddenComponent } from './components/errors/forbidden/forbidden.component';
 import { TrainerRoutineCardComponent } from './components/trainers/trainer-routines/trainer-routine-card/trainer-routine-card.component';
 import { UserExercisesComponent } from './components/users/user-exercises/user-exercises.component';
+import { EditRoutineComponent } from './components/trainers/trainer-routines/edit-routine/edit-routine.component';
+import { ShowExercisesComponent } from './components/trainers/trainer-routines/show-exercises/show-exercises.component';
+import { ExerciseCardComponent } from './components/trainers/trainer-routines/show-exercises/exercise-card/exercise-card.component';
 
 
 @NgModule({
@@ -61,6 +64,9 @@ import { UserExercisesComponent } from './components/users/user-exercises/user-e
     ForbiddenComponent,
     TrainerRoutineCardComponent,
     UserExercisesComponent,
+    EditRoutineComponent,
+    ShowExercisesComponent,
+    ExerciseCardComponent,
   ],
   imports: [
     BrowserModule,

@@ -126,7 +126,7 @@ export class TrainerCalendarComponent implements OnInit{
   deleteEvent(eventID: string){
     let confirm = window.confirm('Are you sure you want to delete this appointment?');
     if(confirm){
-      this.database.deleteAppointment(eventID);
+      this.database.delete('appointments', eventID);
       this.modalService.dismissAll();
     } else{
       return;

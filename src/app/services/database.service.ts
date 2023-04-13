@@ -144,6 +144,17 @@ export class DatabaseService {
   }
 
   /**
+   * Obtener los ejercicios de una rutina
+   * @param routineID - ID de la rutina
+   * @returns - Observable con los ejercicios de la rutina
+   */
+  getExercisesByRoutine(routineID: string): Observable<any[]> {
+    const exercisesRef = collection(this.database, 'exercises');
+    const q = query(exercisesRef, where('routineID', '==', routineID));
+    return collectionData(q, { idField: 'id' }) as Observable<any[]>;
+  }
+
+  /**
    * Obtener los datos de una máquina
    * @param id - ID de la máquina
    * @returns - Datos de la máquina
@@ -152,6 +163,12 @@ export class DatabaseService {
     const machineRef = doc(this.database, 'machines', id);
     const docSnap = await getDoc(machineRef);
     return docSnap.data();
+  }
+  
+  async getRoutineTitle(routineID: string){
+    const routineRef = doc(this.database, 'routines', routineID);
+    const docSnap = await getDoc(routineRef);
+    return docSnap.data()['title'];
   }
 
   // En los convert lo que hacemos es "traspasar" los datos de un documento a otro
@@ -240,29 +257,6 @@ export class DatabaseService {
     });
   }
 
-// Metodos de eliminacion de usuarios y entrenadores
-
-/**
- * Borrar un usuario de la base de datos
- * @param id - ID del usuario
- */
-  deleteUser(id: string) {
-    const userRef = doc(this.database, 'users', id);
-    deleteDoc(userRef);
-  }
-
-  /**
-   * Borra un entrenador de la base de datos
-   * @param id - ID del entrenador
-   */
-  deleteTrainer(id: string) {
-    const trainerRef = doc(this.database, 'trainers', id);
-    deleteDoc(trainerRef);
-  }
-
-
-  // Update de datos de usuarios y entrenadores
-
   /**
    * Actualizar el nombre de un usuario
    * @param id - ID del usuario
@@ -337,14 +331,8 @@ export class DatabaseService {
     });
   }
 
-  /**
-   * Borrar una máquina de la base de datos
-   * @param id - ID de la máquina
-   */
-  deleteMachine(id: string) {
-    const machineRef = doc(this.database, 'machines', id);
-    deleteDoc(machineRef);
-  }
+  
+  
 
 
   /**
@@ -407,23 +395,15 @@ export class DatabaseService {
   }
 
   /**
-   * Borrar una cita de la base de datos
-   * @param id - ID de la cita
+   * Borrar una entrada de la base de datos a partir de su ID y tabla
+   * @param table - Tabla de la base de datos
+   * @param id - ID de la entrada
    */
-  deleteAppointment(id: string) {
-    const appointmentRef = doc(this.database, 'trainerEntry', id);
-    deleteDoc(appointmentRef);
-  }
 
-  /**
-   * Borrar una rutina de la base de datos
-   * @param id - ID de la rutina
-   */
-  deleteRoutine(id: string) {
-    const routineRef = doc(this.database, 'routines', id);
-    deleteDoc(routineRef);
+  delete(table: string, id: string) {
+    const ref = doc(this.database, table, id);
+    deleteDoc(ref);
   }
-
 // hay que sacar el trainer a partir del user
 //   getRoutinesWithUserAndTrainer(user: string, trainer: string) {
 //     const routinesRef = collection(this.database, 'routines');

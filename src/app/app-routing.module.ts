@@ -16,6 +16,8 @@ import { TrainerAppointmentComponent } from './components/trainers/trainer-appoi
 import { UserModificationComponent } from './components/users/user-modification/user-modification.component';
 import { TrainerModificationComponent } from './components/trainers/trainer-modification/trainer-modification.component';
 import { TrainerRoutinesComponent } from './components/trainers/trainer-routines/trainer-routines.component';
+import { ShowExercisesComponent } from './components/trainers/trainer-routines/show-exercises/show-exercises.component';
+import { EditRoutineComponent } from './components/trainers/trainer-routines/edit-routine/edit-routine.component';
 import { NotFoundComponent } from './components/errors/not-found/not-found.component';
 import { ForbiddenComponent } from './components/errors/forbidden/forbidden.component';
 import { AuthGuard } from './services/guards/auth.guard';
@@ -39,6 +41,8 @@ const routes: Routes = [
   { path: 'trainer/calendar/:date', component: TrainerAppointmentComponent, canActivate: [TrainerGuard]},
   { path: 'trainer/modification/', component: TrainerModificationComponent, canActivate: [TrainerGuard]},
   { path: 'trainer/routines', component: TrainerRoutinesComponent, canActivate: [TrainerGuard]},
+  { path: 'trainer/routines/show/:id', component: ShowExercisesComponent, canActivate: [TrainerGuard]},
+  { path: 'trainer/routines/edit/:id', component: EditRoutineComponent, canActivate: [TrainerGuard]},
   { path: 'error/404-not-found', component: NotFoundComponent},
   { path: 'error/403-forbidden', component: ForbiddenComponent},
   { path: '**', redirectTo: '/error/404-not-found'}

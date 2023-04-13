@@ -1,0 +1,12 @@
+<main class="content">
+    <div *ngIf="loading" class="loader"></div>
+    <h1 class="exercises-header">Exercises of <span class="exercises-header-routine-name">{{routineName}}</span> routine</h1>
+    <div class="exercises-actions">
+        <button class="exercises-actions-button" routerLink="/administration/machines/add">Add Exercise</button>
+    </div>
+    <div class="exercises">
+        <div class="exercises-machine" *ngFor="let exercise of exercises">
+            <app-exercise-card [exercise]="exercise"></app-exercise-card>
+        </div>
+    </div>
+</main>

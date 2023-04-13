@@ -1,0 +1,36 @@
+@import "../../../../../scss/mixin.scss";
+@import "../../../../../scss/variables.scss";
+
+.exercises-header {
+  @include view_header();
+
+  &-routine-name{
+    @include view_header();
+    color: getColor(black);
+  }
+}
+
+.exercises {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  gap: 7rem;
+  padding: 5rem;
+
+  &-actions {
+    @include response(xl){
+      @include flex($direction: row, $justify: flex-end);
+    }
+    @include flex($direction: row, $justify: center);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 0 5rem;
+    &-button {
+      @include button(lg, true);
+      margin-left: 2rem;
+    }
+  }
+}
+
+.loader {
+  @include loader(40vh, 38vw);
+}

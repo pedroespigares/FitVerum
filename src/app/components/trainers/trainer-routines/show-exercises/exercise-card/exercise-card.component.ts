@@ -3,14 +3,14 @@ import { DatabaseService } from 'src/app/services/database.service';
 import { ref, getStorage, deleteObject} from '@angular/fire/storage';
 
 @Component({
-  selector: 'app-trainer-routine-card',
-  templateUrl: './trainer-routine-card.component.html',
-  styleUrls: ['./trainer-routine-card.component.scss']
+  selector: 'app-exercise-card',
+  templateUrl: './exercise-card.component.html',
+  styleUrls: ['./exercise-card.component.scss']
 })
-export class TrainerRoutineCardComponent {
+export class ExerciseCardComponent {
   storage: any;
 
-  @Input() routine: any;
+  @Input() exercise: any;
 
   constructor(private database: DatabaseService) {
     this.storage = getStorage();
@@ -22,10 +22,10 @@ export class TrainerRoutineCardComponent {
    * @param photoURL
    * @returns
    */
-  deleteRoutine(id: string, photoURL: string): void {
+  deleteExercise(id: string, photoURL: string): void {
     let confirmDelete = confirm('Are you sure you want to delete this machine?');
     if (confirmDelete){
-      this.database.delete('routines', id);
+      this.database.delete('exercises', id);
       this.deletePhotoFromStorage(photoURL);
     } else {
       return;
