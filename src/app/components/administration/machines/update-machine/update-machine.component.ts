@@ -17,7 +17,7 @@ import {
 })
 export class UpdateMachineComponent implements OnInit {
 
-  basePath = '/machines';
+  basePath = 'machines';
   machine: any;
   name: string;
   description: string;
@@ -37,7 +37,7 @@ export class UpdateMachineComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.database.getMachineByID(id).then((machine) => {
+    this.database.getByID(id, "machines").then((machine) => {
       this.machine = machine;
       this.machineUploaded = true;
       this.name = this.machine.name;

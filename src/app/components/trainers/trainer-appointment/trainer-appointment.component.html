@@ -81,24 +81,25 @@
       </div>
 
       <div *ngIf="selectedClient != null" class="appointment-container-info-date">
-        <div class="appointment-container-info-date-container">
+        <form class="appointment-container-info-date-container">
           <h2 class="appointment-container-info-date-container-title">Title</h2>
-            <input class="appointment-container-info-date-container-input" type="text" [(ngModel)]="title" />
+            <input class="appointment-container-info-date-container-input" name="text" type="text" [(ngModel)]="title" />
           <h2 class="appointment-container-info-date-container-title">Date</h2>
           <h2 class="appointment-container-info-date-container-title-focus">{{this.date | date: 'longDate'}}</h2>
           <h2 class="appointment-container-info-date-container-title">from</h2>
           <h2 class="appointment-container-info-date-container-title-focus">{{this.date | date: 'HH:mm'}}</h2>
           <h2 class="appointment-container-info-date-container-title">to</h2>
-            <input class="appointment-container-info-date-container-input" type="time" [(ngModel)]="end_time" max="22:00" min="08:00"/>
+            <input class="appointment-container-info-date-container-input" type="time" name="to_hour" [(ngModel)]="end_time" max="22:00" min="08:00"/>
           <h2 class="appointment-container-info-date-container-title">appointment color</h2>
-            <input class="appointment-container-info-date-container-input" type="color" [(ngModel)]="color" />
-        </div>
+            <input class="appointment-container-info-date-container-input" name="color" type="color" [(ngModel)]="color" />
+        </form>
       </div>
 
       <div *ngIf="selectedClient != null" class="appointment-textarea-container">
         <h2 *ngIf="selectedClient != null" class="appointment-textarea-container-title">Description</h2>
         <textarea *ngIf="selectedClient != null" class="appointment-textarea-container-input" [(ngModel)]="description"></textarea>
       </div>
+      <p class="error-message" *ngIf="errorMessage != ''">{{errorMessage}}</p>
       <button *ngIf="selectedClient != null && date != undefined && end_time != undefined && title != undefined" class="appointment-container-info-button" (click)="createAppointment()">
         <i class="fa-solid fa-plus"></i>
         Create Appointment
@@ -107,7 +108,6 @@
         <i class="fa-solid fa-plus"></i>
         Create Appointment
       </button>
-      <p class="error-message" *ngIf="errorMessage != ''">{{errorMessage}}</p>
     </div>
   </div>
 </main>

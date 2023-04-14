@@ -50,6 +50,9 @@ export class TrainerCalendarComponent implements OnInit{
     event: any;
   };
 
+  modalDataStart: Date;
+  modalDataEnd: Date;
+
   private destroy$ = new Subject<void>();
   refresh = new Subject<void>();
 
@@ -120,13 +123,15 @@ export class TrainerCalendarComponent implements OnInit{
 
   open(event: any) {
 		this.modalData = { event };
+    this.modalDataStart = new Date(event.start);
+    this.modalDataEnd = new Date(event.end);
     this.modalService.open(this.modalContent, { size: 'lg', centered: true, keyboard: true});
 	}
 
   deleteEvent(eventID: string){
     let confirm = window.confirm('Are you sure you want to delete this appointment?');
     if(confirm){
-      this.database.delete('appointments', eventID);
+      this.database.delete('trainerEntry', eventID);
       this.modalService.dismissAll();
     } else{
       return;

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { ref, getStorage, deleteObject} from '@angular/fire/storage';
 
@@ -7,13 +7,21 @@ import { ref, getStorage, deleteObject} from '@angular/fire/storage';
   templateUrl: './exercise-card.component.html',
   styleUrls: ['./exercise-card.component.scss']
 })
-export class ExerciseCardComponent {
+export class ExerciseCardComponent implements OnInit{
   storage: any;
 
   @Input() exercise: any;
 
+  machinePhotoURL: string;
+
   constructor(private database: DatabaseService) {
     this.storage = getStorage();
+  }
+
+  ngOnInit(): void {
+    this.database.getMachinePhoto(this.exercise.machineID).then((photoURL) => {
+      this.machinePhotoURL = photoURL;
+    });
   }
 
   /**

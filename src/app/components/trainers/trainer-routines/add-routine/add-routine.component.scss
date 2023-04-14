@@ -12,9 +12,4 @@
   }
 }
 
-@include edit(machine);
-
-
-.loader{
-  @include loader(0%, 0%);
-}
+@include add(routine)

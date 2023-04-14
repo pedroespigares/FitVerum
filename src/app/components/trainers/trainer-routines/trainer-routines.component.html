@@ -54,8 +54,9 @@
       <h1 *ngIf="selectedClient == null" class="trainer-routines-container-info-title">Routines</h1>
       <h2 *ngIf="selectedClient == null" class="trainer-routines-container-info-no-client">No client selected</h2>
       <div class="trainer-routines-container-info-container-actions">
-        <button *ngIf="selectedClient != null" class="trainer-routines-container-info-container-actions-button" routerLink="/administration/machines/add">Add Routine</button>
-    </div>
+        <button *ngIf="selectedClient != null" class="trainer-routines-container-info-container-actions-button" routerLink="/trainer/routines/add/{{selectedClient.id}}">Add Routine</button>
+      </div>
+      <h2 *ngIf="routines.length == 0 && selectedClient != null" class="trainer-routines-container-info-no-routines">This user doesn't have any routines</h2>
       <div class="trainer-routines-container-info-container">
         <div class="trainer-routines-container-info-container-routine" *ngFor="let singleRoutine of routines">
           <app-trainer-routine-card [routine]="singleRoutine"></app-trainer-routine-card>

@@ -4,6 +4,7 @@
     <div class="exercises-actions">
         <button class="exercises-actions-button" routerLink="/administration/machines/add">Add Exercise</button>
     </div>
+    <h2 *ngIf="exercises.length == 0" class="exercises-header-no-exercises">This routine doesn't have any exercises assigned</h2>
     <div class="exercises">
         <div class="exercises-machine" *ngFor="let exercise of exercises">
             <app-exercise-card [exercise]="exercise"></app-exercise-card>

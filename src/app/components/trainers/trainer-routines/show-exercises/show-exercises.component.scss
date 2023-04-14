@@ -8,6 +8,11 @@
     @include view_header();
     color: getColor(black);
   }
+
+  &-no-exercises{
+    @include view_header(2rem);
+    color: getColor(dark-grayish-violet);
+  }
 }
 
 .exercises {

@@ -1,0 +1,30 @@
+<main class="content">
+  <div class="add-routine">
+      <div class="add-routine-logo-presentation">
+          <img class="add-routine-logo-presentation-img" src="../../assets/images/FitVerumLogo.png" alt="Brand Logo">
+          <h1 class="add-routine-logo-presentation-text">
+              <span class="add-routine-logo-presentation-text-first">Fit</span>
+              <span class="add-routine-logo-presentation-text-second">Verum</span>
+          </h1>
+      </div>
+      <h1 class="add-routine-title">Add Routine</h1>
+      <form class="add-routine-form" (ngSubmit)="addRoutine()">
+          <fieldset class="add-routine-form-fieldset">
+              <legend class="add-routine-form-fieldset-label" for="routineTitle">Routine Name</legend>
+              <input class="add-routine-form-fieldset-input" type="text" id="routineTitle" name="routineTitle" placeholder="Routine Title" [(ngModel)]="title">
+          </fieldset>
+
+          <fieldset class="add-routine-form-fieldset">
+              <legend class="add-routine-form-fieldset-label" for="routineImage">Routine Image</legend>
+              <label for="routineImage" class="add-routine-form-fieldset-label-file">
+                  <label class="add-routine-form-fieldset-label-file-text" for="routineImage">{{uploadMessage}}</label>
+                  <img *ngIf="!uploaded" class="add-routine-form-fieldset-label-file-img" src="../../../../../assets/images/add.png">
+                  <img *ngIf="uploaded" class="add-routine-form-fieldset-label-file-img-uploaded" [src]="photoURL">
+              </label>
+              <input class="add-routine-form-fieldset-input-file" type="file" id="routineImage" name="routineImage" accept="image/*" (change)="uploadFile($event)">
+          </fieldset>
+          <button *ngIf="!uploaded" class="add-routine-form-button-disabled" disabled>Add routine/Exercise</button>
+          <button type="submit" *ngIf="uploaded" class="add-routine-form-button">Add routine/Exercise</button>
+      </form>
+  </div>
+  </main>

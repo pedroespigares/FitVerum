@@ -36,6 +36,8 @@ import { UserExercisesComponent } from './components/users/user-exercises/user-e
 import { EditRoutineComponent } from './components/trainers/trainer-routines/edit-routine/edit-routine.component';
 import { ShowExercisesComponent } from './components/trainers/trainer-routines/show-exercises/show-exercises.component';
 import { ExerciseCardComponent } from './components/trainers/trainer-routines/show-exercises/exercise-card/exercise-card.component';
+import { NgChartsModule } from 'ng2-charts';
+import { AddRoutineComponent } from './components/trainers/trainer-routines/add-routine/add-routine.component';
 
 
 @NgModule({
@@ -67,6 +69,7 @@ import { ExerciseCardComponent } from './components/trainers/trainer-routines/sh
     EditRoutineComponent,
     ShowExercisesComponent,
     ExerciseCardComponent,
+    AddRoutineComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,7 +79,8 @@ import { ExerciseCardComponent } from './components/trainers/trainer-routines/sh
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    NgbModule
+    NgbModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

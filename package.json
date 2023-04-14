@@ -30,7 +30,9 @@
     "angular-calendar": "^0.31.0",
     "aos": "^3.0.0-beta.6",
     "bootstrap": "^5.2.3",
+    "chart.js": "^3.6.0",
     "date-fns": "^2.29.3",
+    "ng2-charts": "^4.1.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

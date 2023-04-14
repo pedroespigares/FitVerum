@@ -67,7 +67,7 @@ export class TrainerAppointmentComponent implements OnInit {
       return;
     }
 
-    if(parsedEndTime >= 22 && parsedEndTimeMinutes > 0 || parsedEndTime < 8) {
+    if(parsedEndTime > 22 && parsedEndTimeMinutes >= 0 || parsedEndTime < 8) {
       this.errorMessage = 'End time must be between 8:00 and 22:00';
       return;
     }

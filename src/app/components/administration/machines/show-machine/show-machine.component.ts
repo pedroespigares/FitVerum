@@ -15,7 +15,7 @@ export class ShowMachineComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    this.database.getMachineByID(id).then((machine) => {
+    this.database.getByID(id, "machines").then((machine) => {
       this.machine = machine;
       this.loading = false;
     });

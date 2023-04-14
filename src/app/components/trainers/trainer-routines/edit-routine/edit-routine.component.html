@@ -1,1 +1,32 @@
-<p>edit-routine works!</p>
+<main class="content">
+  <div *ngIf="loading" class="loader"></div>
+  <div *ngIf="!loading" class="edit-routine">
+      <div class="edit-routine-logo-presentation">
+          <img class="edit-routine-logo-presentation-img" src="../../assets/images/FitVerumLogo.png" alt="Brand Logo">
+          <h1 class="edit-routine-logo-presentation-text">
+              <span class="edit-routine-logo-presentation-text-first">Fit</span>
+              <span class="edit-routine-logo-presentation-text-second">Verum</span>
+          </h1>
+      </div>
+      <div class="edit-routine-title-container">
+          <h1 class="edit-routine-title-container-text">Edit Routine</h1>
+          <img class="edit-routine-title-container-img" [src]="previousPhotoURL" alt="routine Image">
+      </div>
+      <form class="edit-routine-form" (ngSubmit)="updateRoutine()">
+          <fieldset class="edit-routine-form-fieldset">
+              <legend class="edit-routine-form-fieldset-label" for="routineTitle">Routine Title</legend>
+              <input *ngIf="routineUploaded" class="edit-routine-form-fieldset-input" type="text" id="routineTitle" name="routineTitle" placeholder="Routine Title" [(ngModel)]="title">
+          </fieldset>
+          <fieldset class="edit-routine-form-fieldset">
+              <legend class="edit-routine-form-fieldset-label" for="routineImage">Routine Image</legend>
+              <label for="routineImage" class="edit-routine-form-fieldset-label-file">
+                  <label class="edit-routine-form-fieldset-label-file-text" for="routineImage">{{uploadMessage}}</label>
+                  <img *ngIf="!uploaded" class="edit-routine-form-fieldset-label-file-img" src="../../../../../assets/images/add.png">
+                  <img *ngIf="uploaded" class="edit-routine-form-fieldset-label-file-img-uploaded" [src]="newPhotoURL">
+              </label>
+              <input class="edit-routine-form-fieldset-input-file" type="file" id="routineImage" name="routineImage" accept="image/*" (change)="uploadFile($event)">
+          </fieldset>
+          <button type="submit" class="edit-routine-form-button">Update</button>
+      </form>
+  </div>
+</main>

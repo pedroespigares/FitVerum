@@ -26,6 +26,7 @@
                 <label for="machineImage" class="edit-machine-form-fieldset-label-file">
                     <label class="edit-machine-form-fieldset-label-file-text" for="machineImage">{{uploadMessage}}</label>
                     <img *ngIf="!uploaded" class="edit-machine-form-fieldset-label-file-img" src="../../../../../assets/images/add.png">
+                    <img *ngIf="uploaded" class="edit-machine-form-fieldset-label-file-img-uploaded" [src]="newPhotoURL">
                 </label>
                 <input class="edit-machine-form-fieldset-input-file" type="file" id="machineImage" name="machineImage" accept="image/*" (change)="uploadFile($event)">
             </fieldset>

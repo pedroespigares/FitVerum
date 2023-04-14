@@ -452,7 +452,7 @@
   }
 }
 
-@mixin modal(){
+@mixin modal() {
   overflow: auto;
   &-button {
     @include response(xl) {
@@ -461,11 +461,11 @@
     @include button(md, true);
 
     &-delete {
-      @include normal_delete_button()
+      @include normal_delete_button();
     }
   }
 
-  &-title{
+  &-title {
     @include response(xl) {
       font-size: getFontSize(xxl);
     }
@@ -476,8 +476,8 @@
     text-align: center;
   }
 
-  &-body{
-    &-title{
+  &-body {
+    &-title {
       @include response(xl) {
         font-size: getFontSize(xl);
       }
@@ -488,21 +488,33 @@
       text-align: center;
       margin-bottom: 1rem;
 
-      &-text{
+      &-text {
         @include response(xl) {
           font-size: getFontSize(lg);
         }
-        font-size: getFontSize(sm);
+        font-size: getFontSize(md);
         font-family: $font-family-title;
         font-weight: getFontWeight(bold);
         color: getColor(black);
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      &-date {
+        @include response(xl) {
+          font-size: getFontSize(md);
+        }
+        font-size: getFontSize(sm);
+        font-family: $font-family-title;
+        font-weight: getFontWeight(thin);
+        color: getColor(dark-grayish-violet);
         text-align: center;
         margin-bottom: 5rem;
       }
     }
 
-    &-content{
-      &-title{
+    &-content {
+      &-title {
         @include response(xl) {
           font-size: getFontSize(xl);
         }
@@ -514,7 +526,7 @@
         margin-bottom: 1rem;
       }
 
-      &-text{
+      &-text {
         @include response(xl) {
           font-size: getFontSize(md);
         }
@@ -522,6 +534,346 @@
         font-family: $font-family-title;
         color: getColor(black);
         text-align: center;
+      }
+    }
+  }
+}
+
+@mixin uploadedImageStyles() {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@mixin edit($name) {
+  .edit-#{$name} {
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+      height: 0.5rem;
+    }
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: getColor(intense-violet);
+    }
+
+    width: 50%;
+    box-shadow: 0px 0px 27px -3px rgba(0, 0, 0, 0.75);
+    padding-bottom: 5rem;
+    &-logo-presentation {
+      padding-top: 5rem;
+      @include flex(
+        $direction: row,
+        $justify: center,
+        $align: center,
+        $gap: 0.5rem
+      );
+
+      &-img {
+        width: 9rem;
+        transition: $transition;
+      }
+
+      &-text {
+        @include response(xl) {
+          font-size: getFontSize(xxl);
+        }
+        font-size: getFontSize(xl);
+        font-family: $font-family-title;
+        text-transform: uppercase;
+        font-weight: getFontWeight(bold);
+
+        &-first {
+          color: getColor(black);
+        }
+
+        &-second {
+          background-color: getColor(intense-violet);
+          background-image: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.1),
+            rgba(255, 255, 255, 0)
+          );
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
+        }
+      }
+    }
+
+    &-title-container {
+      @include flex(
+        $direction: row,
+        $justify: center,
+        $align: center,
+        $gap: 2rem
+      );
+      padding-top: 2rem;
+      padding-bottom: 5rem;
+      &-text {
+        @include response(xl) {
+          font-size: getFontSize(xl);
+        }
+        font-size: getFontSize(lg);
+        font-family: $font-family-title;
+        font-weight: getFontWeight(bold);
+        text-align: center;
+      }
+
+      &-img {
+        width: 7rem;
+        height: 7rem;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+
+    &-form {
+      @include flex(
+        $direction: column,
+        $justify: center,
+        $align: center,
+        $gap: 5rem
+      );
+      width: 50%;
+      margin: 0 auto;
+
+      &-fieldset {
+        @include flex(
+          $direction: column,
+          $justify: center,
+          $align: center,
+          $gap: 1rem
+        );
+        border: none;
+        &-label {
+          @include label();
+          &-file {
+            @include flex(
+              $direction: row,
+              $justify: center,
+              $align: center,
+              $gap: 3rem
+            );
+            @include input();
+            padding-right: 6.5rem;
+            &-text {
+              color: getColor(dark-grayish-violet);
+              transition: $transition;
+              cursor: pointer;
+              &:hover {
+                color: getColor(intense-violet);
+              }
+            }
+            &-img {
+              width: 3rem;
+              height: 3rem;
+              border-radius: 50%;
+              object-fit: cover;
+              cursor: pointer;
+
+              &-uploaded {
+                @include uploadedImageStyles();
+              }
+            }
+          }
+        }
+
+        &-img {
+          width: 15rem;
+          height: 15rem;
+          border-radius: 1rem;
+        }
+
+        &-input {
+          @include input();
+
+          &-file {
+            display: none;
+          }
+        }
+
+        &-textarea {
+          @include input();
+          resize: both;
+        }
+      }
+      &-button {
+        @include response(xl) {
+          @include button(lg, true);
+        }
+        @include button(sm, true);
+        &-disabled {
+          @include response(xl) {
+            @include button(lg, true, $disabled: true);
+          }
+          @include button(sm, true, $disabled: true);
+        }
+      }
+    }
+  }
+
+  .loader {
+    @include loader(0%, 0%);
+  }
+}
+
+@mixin add($name) {
+  .add-#{$name} {
+    overflow: auto;
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+      height: 0.5rem;
+    }
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: getColor(intense-violet);
+    }
+
+    width: 50%;
+    box-shadow: 0px 0px 27px -3px rgba(0, 0, 0, 0.75);
+    padding-bottom: 5rem;
+
+    &-header {
+      @include view_header();
+      margin-bottom: 5rem;
+    }
+
+    &-logo-presentation {
+      padding-top: 5rem;
+      @include flex(
+        $direction: row,
+        $justify: center,
+        $align: center,
+        $gap: 0.5rem
+      );
+
+      &-img {
+        width: 9rem;
+        transition: $transition;
+      }
+
+      &-text {
+        @include response(xl) {
+          font-size: getFontSize(xxl);
+        }
+        font-size: getFontSize(xl);
+        font-family: $font-family-title;
+        text-transform: uppercase;
+        font-weight: getFontWeight(bold);
+
+        &-first {
+          color: getColor(black);
+        }
+
+        &-second {
+          background-color: getColor(intense-violet);
+          background-image: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.1),
+            rgba(255, 255, 255, 0)
+          );
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
+        }
+      }
+    }
+
+    &-title {
+      @include response(xl) {
+        font-size: getFontSize(xl);
+      }
+      font-size: getFontSize(lg);
+      font-family: $font-family-title;
+      font-weight: getFontWeight(bold);
+      padding-top: 2rem;
+      padding-bottom: 5rem;
+      text-align: center;
+    }
+    &-form {
+      @include flex(
+        $direction: column,
+        $justify: center,
+        $align: center,
+        $gap: 5rem
+      );
+      width: 50%;
+      margin: 0 auto;
+
+      &-fieldset {
+        @include flex(
+          $direction: column,
+          $justify: center,
+          $align: center,
+          $gap: 1rem
+        );
+        border: none;
+        &-label {
+          @include label();
+          &-file {
+            @include flex(
+              $direction: row,
+              $justify: center,
+              $align: center,
+              $gap: 3rem
+            );
+            @include input();
+            padding-right: 6.5rem;
+            &-text {
+              color: getColor(dark-grayish-violet);
+              transition: $transition;
+              cursor: pointer;
+              &:hover {
+                color: getColor(intense-violet);
+              }
+            }
+            &-img {
+              width: 3rem;
+              height: 3rem;
+              border-radius: 50%;
+              object-fit: cover;
+              cursor: pointer;
+
+              &-uploaded {
+                @include uploadedImageStyles();
+              }
+            }
+          }
+        }
+
+        &-input {
+          @include input();
+
+          &-file {
+            display: none;
+          }
+        }
+
+        &-textarea {
+          @include input();
+          resize: both;
+        }
+      }
+      &-button {
+        @include response(xl) {
+          @include button(lg, true);
+        }
+        @include button(sm, true);
+        &-disabled {
+          @include response(xl) {
+            @include button(lg, true, $disabled: true);
+          }
+          @include button(sm, true, $disabled: true);
+        }
       }
     }
   }

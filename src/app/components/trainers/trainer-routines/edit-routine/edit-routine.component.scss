@@ -1,0 +1,15 @@
+@import "../../../../../scss/mixin.scss";
+@import "../../../../../scss/variables.scss";
+
+.content {
+  @include flex($direction: column, $justify: center, $align: center, $gap: 0);
+  height: calc(95vh - 116px);
+  width: 100%;
+  background-color: getColor(white);
+  padding: 0 2rem;
+  @include response(xl) {
+    padding: 0 5rem;
+  }
+}
+
+@include edit(routine);

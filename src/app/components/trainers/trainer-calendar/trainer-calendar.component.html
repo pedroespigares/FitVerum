@@ -54,6 +54,7 @@
       <div>
         <h6 class="modal-body-title">Event title</h6>
         <p class="modal-body-title-text">{{ modalData?.event?.title }}</p>
+        <p class="modal-body-title-date">{{ modalDataStart | date: 'HH:mm'}} - {{modalDataEnd | date: 'HH:mm'}}</p>
         <h6 *ngIf="modalData?.event?.description != ''" class="modal-body-content-title">Description</h6>
         <p *ngIf="modalData?.event?.description != ''" class="modal-body-content-text">{{ modalData?.event?.description}}</p>
         <p *ngIf="modalData?.event?.description === ''" class="no-description-message">This event does not have a description</p>
