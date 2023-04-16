@@ -31,7 +31,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'user/calendar', component: UserCalendarComponent, canActivate: [AuthGuard]},
   { path: 'user/calendar/:date', component: UserRoutinesComponent, canActivate: [AuthGuard]},
-  { path: 'user/modification/', component: UserModificationComponent, canActivate: [AuthGuard]},
+  { path: 'user/modification', component: UserModificationComponent, canActivate: [AuthGuard]},
   { path: 'administration/users', component: UsersComponent, canActivate: [AdminGuard]},
   { path: 'administration/machines', component: MachinesComponent, canActivate: [AdminGuard]},
   { path: 'administration/machines/add', component: AddMachineComponent, canActivate: [AdminGuard]},
