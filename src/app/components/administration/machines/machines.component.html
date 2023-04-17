@@ -4,6 +4,9 @@
     <div class="machines-administration-actions">
         <button class="machines-administration-actions-button" routerLink="/administration/machines/add">Add Machine or Exercise</button>
     </div>
+    <div class="machines-administration-empty">
+        <p *ngIf="machines.length == 0" class="machines-administration-empty-text">There are no machines or exercises</p>
+    </div>
     <div class="machines-administration">
         <div class="machines-administration-machine" *ngFor="let singleMachine of machines">
             <app-machine-card [machine]="singleMachine"></app-machine-card>

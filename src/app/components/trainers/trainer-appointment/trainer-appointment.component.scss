@@ -74,6 +74,7 @@
         @include response(xl) {
           font-size: 2.5rem;
         }
+        flex: 1;
         font-size: calc(2.5rem / 1.5);
         font-family: $font-family-title;
         font-weight: getFontWeight(bold);

@@ -29,3 +29,13 @@
 .loader {
   @include loader(40vh, 38vw);
 }
+
+.machines-administration-empty{
+  @include flex($direction: row, $justify: center, $align: center);
+  &-text{
+    font-size: getFontSize(md);
+    font-family: $font-family-title;
+    font-weight: getFontWeight(bold);
+    color: getColor(dark-grayish-violet);
+  }
+}

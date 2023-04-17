@@ -79,9 +79,9 @@ export class RegisterComponent implements OnInit {
     this.showingPassword = !this.showingPassword;
   }
 
-  // githubRegister(){
-  //   this.auth.githubLogin();
-  // }
+  githubLogin(){
+    this.auth.githubLogin();
+  }
 
   /**
    * Limpiar los campos de texto

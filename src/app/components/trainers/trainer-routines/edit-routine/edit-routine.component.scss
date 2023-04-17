@@ -13,3 +13,7 @@
 }
 
 @include edit(routine);
+
+.breadcrumbs{
+  @include breadcrumbs();
+}

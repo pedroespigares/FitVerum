@@ -10,7 +10,9 @@ export class LoginComponent implements OnInit {
   email :string = '';
   password :string = '';
   isEmpty :boolean = false;
+  emailEmpty :boolean = false;
   showingPassword :boolean = false;
+  forgottenPSW :boolean = false;
   constructor(public auth: AuthService) { }
 
   /*
@@ -44,6 +46,10 @@ export class LoginComponent implements OnInit {
     this.auth.googleLogin();
   }
 
+  githubLogin(){
+    this.auth.githubLogin();
+  }
+
   /*
   * Evento para iniciar sesión con la tecla Enter
   * */
@@ -62,6 +68,18 @@ export class LoginComponent implements OnInit {
     this.showingPassword = !this.showingPassword;
   }
 
+  forgotPassword(){
+    this.isEmpty = false;
+    let regularExpression = new RegExp("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$");
+    if(this.email == '' || !regularExpression.test(this.email)){
+      this.emailEmpty = true;
+      return;
+    }
+    
+    this.auth.sendPasswordResetEmail(this.email)
+    this.forgottenPSW = true;
+    this.emailEmpty = false;
+  }
   /*
   * Limpiar el error de inicio de sesión
   * */

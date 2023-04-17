@@ -36,7 +36,7 @@
       <p *ngIf="this.users.length == 0" class="no-users-message">There are currently no users available</p>
       <div class="pagination">
         <ngb-pagination
-          *ngIf="this.users.length > 5"
+          *ngIf="this.users.length > 4"
           [collectionSize]="this.users.length"
           [pageSize]="pageSize"
           [directionLinks]="false"

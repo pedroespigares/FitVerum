@@ -1,4 +1,11 @@
 <main class="content">
+    <div class="breadcrumbs">
+        <a class="breadcrumbs-item" routerLink="/trainer/routines">Routines</a>
+        <p class="breadcrumbs-item"> > </p>
+        <p class="breadcrumbs-item">{{routineName}}</p>
+        <p class="breadcrumbs-item"> > </p>
+        <p class="breadcrumbs-item">Exercises</p>
+    </div>
     <div *ngIf="loading" class="loader"></div>
     <h1 class="exercises-header">Exercises of <span class="exercises-header-routine-name">{{routineName}}</span> routine</h1>
     <div class="exercises-actions">

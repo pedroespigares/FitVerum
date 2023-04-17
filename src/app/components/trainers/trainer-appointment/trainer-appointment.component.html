@@ -1,6 +1,6 @@
 <main class="content">
   <div class="breadcrumbs">
-    <a class="breadcrumbs-item" routerLink="/trainer/calendar/{{trainerID}}">Management</a>
+    <a class="breadcrumbs-item" routerLink="/trainer/calendar">Management</a>
     <p class="breadcrumbs-item"> > </p>
     <p class="breadcrumbs-item">New appointment</p>
   </div>
@@ -56,25 +56,25 @@
         <h1 class="appointment-container-info-title">Appointment Information</h1>
         <div class="appointment-container-info-selected-client">
           <h2 *ngIf="selectedClient != null " class="appointment-container-info-selected-client-title">Selected Client: </h2>
-          <h2 *ngIf="selectedClient == null " class="appointment-container-info-selected-client-title">No client selected </h2>
-          <div class="appointment-container-info-selected-client-container">
+          <h2 *ngIf="selectedClient == null " class="appointment-container-info-selected-client-title">No client selected</h2>
+          <div *ngIf="selectedClient != null" class="appointment-container-info-selected-client-container">
             <img
-              *ngIf="selectedClient != null && selectedClient.photoURL != null"
+              *ngIf="selectedClient.photoURL != null"
               referrerpolicy="no-referrer"
               class="appointment-container-info-selected-client-container-img"
               [src]="selectedClient.photoURL"
               alt="Client Image"
             />
             <img
-              *ngIf="selectedClient != null && selectedClient.photoURL == null"
+              *ngIf="selectedClient.photoURL == null"
               class="appointment-container-info-selected-client-container-img"
               src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=5974ac39-112f-4bd1-a170-d2a23c392d95"
               alt="Client Image"
             />
-            <h3 *ngIf="selectedClient != null" class="appointment-container-info-selected-client-container-name">
+            <h3 class="appointment-container-info-selected-client-container-name">
               {{ selectedClient.displayName }}
             </h3>
-            <button *ngIf="selectedClient != null" class="appointment-container-info-selected-client-container-button" (click)="deselectClient()">
+            <button class="appointment-container-info-selected-client-container-button" (click)="deselectClient()">
               <i class="fa-solid fa-circle-xmark"></i>
             </button>
         </div>

@@ -1,3 +1,10 @@
+<div class="breadcrumbs">
+    <a class="breadcrumbs-item" routerLink="/trainer/routines">Routines</a>
+    <p class="breadcrumbs-item"> > </p>
+    <p class="breadcrumbs-item">Edit</p>
+    <p class="breadcrumbs-item"> > </p>
+    <p class="breadcrumbs-item">{{title}}</p>
+</div>
 <main class="content">
   <div *ngIf="loading" class="loader"></div>
   <div *ngIf="!loading" class="edit-routine">

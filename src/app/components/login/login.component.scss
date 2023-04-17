@@ -78,7 +78,7 @@
       $direction: column,
       $justify: center,
       $align: center,
-      $gap: 4rem
+      $gap: 3rem
     );
 
     &-fieldset {
@@ -137,6 +137,7 @@
         font-family: $font-family-text;
         font-weight: getFontWeight(bold);
         color: red;
+        margin-bottom: 0;
       }
     }
 
@@ -227,4 +228,30 @@
   background-image: url("../../../assets/images/wave.svg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.forgot-password{
+  @include response(xl) {
+    font-size: getFontSize(md);
+  }
+  font-size: getFontSize(sm);
+  font-family: $font-family-title;
+  font-weight: getFontWeight(bold);
+  transition: $transition;
+  color: getColor(dark-grayish-violet);
+  cursor: pointer;
+  &:hover{
+    color: getColor(intense-violet);
+  }
+
+  &-check{
+    @include response(xl) {
+      font-size: getFontSize(md);
+    }
+    font-size: getFontSize(sm);
+    font-family: $font-family-title;
+    font-weight: getFontWeight(bold);
+    transition: $transition;
+    color: green;
+  }
 }

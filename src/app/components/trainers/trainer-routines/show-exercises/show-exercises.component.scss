@@ -39,3 +39,7 @@
 .loader {
   @include loader(40vh, 38vw);
 }
+
+.breadcrumbs{
+  @include breadcrumbs();
+}

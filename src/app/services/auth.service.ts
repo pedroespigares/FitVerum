@@ -5,6 +5,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider,
+  GithubAuthProvider,
   createUserWithEmailAndPassword,
   updatePassword,
   sendPasswordResetEmail,
@@ -31,6 +32,8 @@ export class AuthService {
   public failedError: string = '';
   public isTrainer: boolean = false;
   public isAdmin: boolean = false;
+  public userExists: boolean = false;
+  public userChecked: boolean = false;
 
   constructor(
     public auth: Auth,
@@ -128,20 +131,23 @@ export class AuthService {
       });
   }
 
-  // githubLogin(){
-  //   signInWithPopup(this.auth, new GithubAuthProvider())
-  //   .then((userCredential) => {
-  //     this.isLogged = true;
-  //     this.userID = userCredential.user.uid;
-  //     this.userEmail = userCredential.user.email
-  //     this.userPhoto = userCredential.user.photoURL;
-  //     this.router.navigate(['/']);
-  //   })
-  //   .catch((error) => {
-  //     this.isLogged = false;
-  //     this.userID = '';
-  //   });
-  // }
+  githubLogin(){
+    signInWithPopup(this.auth, new GithubAuthProvider())
+    .then((userCredential) => {
+        this.isLogged = true;
+        this.userID = userCredential.user.uid;
+        this.userEmail = userCredential.user.email;
+        this.userPhoto = userCredential.user.photoURL;
+        this.username = userCredential.user.displayName;
+        this.createUser();
+        this.checkUserRol();
+        this.router.navigate(['/']);
+    })
+    .catch((error) => {
+      this.isLogged = false;
+      this.userID = '';
+    });
+  }
 
   /**
    * Cerar sesión
@@ -162,7 +168,7 @@ export class AuthService {
 
   /**
    * Comprobar si el usuario existe en la base de datos
-   * @returns
+   * @returns boolean
    */
   async checkIfUserExists() {
     const docRef = doc(this.database, 'users', this.userID);
@@ -172,7 +178,7 @@ export class AuthService {
 
   /**
    * Comprobar si el usuario existe en la base de datos como entrenador
-   * @returns
+   * @returns boolean
    */
   async checkIfTrainerExists() {
     const docRef = doc(this.database, 'trainers', this.userID);
@@ -182,7 +188,7 @@ export class AuthService {
 
   /**
    * Comprobar si el usuario es administrador o entrenador o usuario normal
-   * @returns
+   * Cambiar el valor de las variables isAdmin y isTrainer
    */
   async checkUserRol() {
     if (this.userID == adminID) {
@@ -199,8 +205,7 @@ export class AuthService {
   }
 
   /**
-   * Crear usuario en la base de datos si no existe
-   * @returns
+   * Crear usuario en la base de datos si no existe ya en la tabla de usuarios o entrenadores
    */
   async createUser() {
     let userExists: any = await this.checkIfUserExists();
@@ -222,6 +227,7 @@ export class AuthService {
 
   /**
    * Obtener la foto de perfil del usuario
+   * Cambiar el valor de la variable userPhoto
    */
   getUserPhoto() {
     const userRef = doc(this.database, 'users', this.userID);
@@ -274,10 +280,13 @@ export class AuthService {
   sendPasswordResetEmail(email: string) {
     sendPasswordResetEmail(this.auth, email)
       .then(() => {
-        //
+        this.userChecked = true;
       })
       .catch((error) => {
-        console.log(error);
+        this.userChecked = false;
+        if(error.code == 'auth/user-not-found'){
+          this.failedError = 'There is no user record corresponding to this email';
+        }
       });
   }
 }
