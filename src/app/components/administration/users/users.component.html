@@ -6,7 +6,7 @@
     <h2 class="users-trainers-container-users-title">Users</h2>
     <div class="users-trainers-container-users-container">
       <table class="users-trainers-container-users-container-table">
-        <tr *ngFor="let user of users | slice : (page - 1) * pageSize : page * pageSize">
+        <tr *ngFor="let user of users | slice : (page - 1) * pageSize : page * pageSize" (click)="convertUserToTrainer(user.userID)">
           <td>
             <img
               *ngIf="user.photoURL != null"
@@ -31,7 +31,7 @@
             </button>
           </td>
           <td>
-            <button class="users-trainers-container-users-container-table-user-button" (click)="convertUserToTrainer(user.userID)" placement="right" ngbTooltip="Convert normal user into trainer" tooltipClass="user-tooltip">
+            <button class="users-trainers-container-users-container-table-user-button" placement="right" ngbTooltip="Convert normal user into trainer" tooltipClass="user-tooltip">
               <i class="fa-solid fa-plus"></i>
             </button>
           </td>

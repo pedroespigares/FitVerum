@@ -6,13 +6,23 @@
 }
 
 .appointment-container {
-  display: grid;
-  grid-template-columns: 0.25fr 1fr;
-  grid-template-rows: 1fr;
+  @include response(xl){
+    display: grid;
+    grid-template-columns: 0.25fr 1fr;
+    grid-template-rows: 1fr;
+  }
+  
+  @include flex(
+    $direction: column,
+    $justify: center,
+    $align: center,
+  );
 
   &-clients {
-    border-right: 1px solid getColor(light-grayish-violet);
-    height: calc(100vh - 126.797px - 5rem);
+    @include response(xl){
+      border-left: 1px solid getColor(light-grayish-violet);
+      height: calc(100vh - 126.797px - 5rem);
+    }
     margin-top: 5rem;
     grid-area: 1 / 1 / 2 / 2;
     &-title {
@@ -22,21 +32,38 @@
     &-table {
       width: 100%;
       border-collapse: separate;
-      border-spacing: 3rem;
+      @include response(xl) {
+        border-spacing: 3rem;
+      }
+      border-spacing: 2rem;
       tr {
         box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
         border-radius: 1rem;
+        cursor: pointer;
+        transition: $transition;
+        &:hover {
+          transform: translateY(-0.5rem);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+          transition: $transition;
+        }
       }
       &-client {
         &-img {
-          width: 7.5rem;
-          height: 7.5rem;
+          @include response(xl){
+            width: 7.5rem;
+            height: 7.5rem;
+          }
+          width: 5.5rem;
+          height: 5.5rem;
           border-radius: 50%;
           object-fit: cover;
           margin: 1rem;
         }
         &-name {
-          font-size: 3rem;
+          @include response(xl) {
+            font-size: getFontSize(xl);
+          }
+          font-size: getFontSize(md);
           font-family: $font-family-title;
           font-weight: getFontWeight(bold);
           color: getColor(black);
@@ -64,11 +91,19 @@
 
     &-selected-client {
       margin-top: 5rem;
+      @include response(xl){
+        @include flex(
+          $direction: row,
+          $justify: center,
+          $align: center,
+          $gap: 5rem
+        );
+      }
       @include flex(
-        $direction: row,
+        $direction: column,
         $justify: center,
         $align: center,
-        $gap: 5rem
+        $gap: 2rem
       );
       &-title {
         @include response(xl) {
@@ -88,20 +123,27 @@
           $direction: row,
           $justify: center,
           $align: center,
-          $gap: 5rem
+          $gap: 3rem
         );
         box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
         border-radius: 1rem;
         &-img {
-          width: 7.5rem;
-          height: 7.5rem;
+          @include response(xl){
+            width: 7.5rem;
+            height: 7.5rem;
+          }
+          width: 5.5rem;
+          height: 5.5rem;
           border-radius: 50%;
           object-fit: cover;
           margin: 1rem;
         }
 
         &-name {
-          font-size: 3rem;
+          @include response(xl) {
+            font-size: getFontSize(xl);
+          }
+          font-size: getFontSize(md);
           font-family: $font-family-text;
           color: getColor(black);
         }
@@ -122,8 +164,16 @@
       );
 
       &-container {
+        @include response(xl){
+          @include flex(
+            $direction: row,
+            $justify: center,
+            $align: center,
+            $gap: 3rem
+          );
+        }
         @include flex(
-          $direction: row,
+          $direction: column,
           $justify: center,
           $align: center,
           $gap: 3rem
@@ -158,12 +208,23 @@
     }
 
     &-button {
-      margin-top: 10rem;
-      @include button($size: xl,$focus: true);
+      @include response(xl) {
+        margin-top: 15rem;
+        @include button($size: xl, $focus: true);
+      }
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+      @include button($size: md, $focus: true);
+
 
       &-disabled{
-        margin-top: 10rem;
-        @include button($size: xl, $disabled: true)
+        @include response(xl) {
+          margin-top: 15rem;
+          @include button($size: xl, $disabled: true);
+        }
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        @include button($size: md, $disabled: true);
       }
     }
   }

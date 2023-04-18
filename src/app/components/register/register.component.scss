@@ -13,12 +13,14 @@
 }
 
 .register {
+  @include response(lg) {
+    background-color: getColor(white);
+    box-shadow: 0px 0px 27px -3px rgba(0, 0, 0, 0.75);
+  }
   z-index: 11;
-  background-color: getColor(white);
   animation: scale-in-center 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   width: 30%;
   @include flex($direction: column, $justify: center, $align: center, $gap: 0);
-  box-shadow: 0px 0px 27px -3px rgba(0, 0, 0, 0.75);
 
   &-logo-presentation {
     padding-top: 5rem;
@@ -30,20 +32,24 @@
     );
 
     &-img {
-      width: 9rem;
-      transition: $transition;
+      @include response(xl) {
+        width: 9rem;
+        display: block;
+      }
+      display: none;
     }
 
     &-text {
       @include response(xl) {
         font-size: getFontSize(xxl);
+        display: block;
+        font-family: $font-family-title;
+        text-transform: uppercase;
+        font-weight: getFontWeight(bold);
+        transition: $transition;
+        cursor: pointer;
       }
-      font-size: getFontSize(xl);
-      font-family: $font-family-title;
-      text-transform: uppercase;
-      font-weight: getFontWeight(bold);
-      transition: $transition;
-      cursor: pointer;
+      display: none;
 
       &-first {
         color: getColor(black);
@@ -96,7 +102,7 @@
         @include label();
       }
 
-      &-input-container{
+      &-input-container {
         @include flex(
           $direction: row,
           $justify: center,
@@ -104,12 +110,12 @@
           $gap: 1.5rem
         );
 
-        &-icon{
+        &-icon {
           font-size: 2.5rem;
           color: getColor(dark-grayish-violet);
           transition: $transition;
           cursor: pointer;
-          &:hover{
+          &:hover {
             color: getColor(intense-violet);
           }
 
@@ -123,7 +129,7 @@
             }
           }
 
-          &-not-showing{
+          &-not-showing {
             font-size: 2.5rem;
             color: getColor(white);
           }
@@ -140,10 +146,10 @@
         font-family: $font-family-text;
         font-weight: getFontWeight(bold);
         color: red;
-        width: 50%
+        width: 50%;
       }
 
-      &-credentials{
+      &-credentials {
         font-size: getFontSize(sm);
         text-align: center;
         font-family: $font-family-text;
@@ -153,7 +159,10 @@
     }
 
     &-button {
-      @include button(lg, true);
+      @include response(xl) {
+        @include button(lg, true);
+      }
+      @include button(sm, true);
       align-self: center;
     }
   }
@@ -165,6 +174,7 @@
       $align: center,
       $gap: 2rem
     );
+    width: 100%;
     &-text {
       @include response(xl) {
         font-size: getFontSize(md);
@@ -192,6 +202,7 @@
       $align: center,
       $gap: 1rem
     );
+
     padding: 3rem;
     &-button {
       @include flex(
@@ -200,32 +211,38 @@
         $align: center,
         $gap: 0.8rem
       );
-      @include button(md, false);
+      @include response(xl) {
+        @include button(md, false);
+      }
+      @include button(sm, false);
       &-img {
         width: 4rem;
       }
       &-text {
         @include response(xl) {
           font-size: getFontSize(md);
+          font-family: $font-family-title;
+          font-weight: getFontWeight(bold);
+          display: block;
         }
-        font-size: getFontSize(sm);
-        font-family: $font-family-title;
-        font-weight: getFontWeight(bold);
+        display: none;
       }
     }
   }
 }
 
-.waves {
-  z-index: 10;
-  width: 100%;
-  height: 50%;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  background-image: url("../../../assets/images/wave.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
+@include response(lg) {
+  .waves {
+    z-index: 10;
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background-image: url("../../../assets/images/wave.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 @keyframes scale-in-center {

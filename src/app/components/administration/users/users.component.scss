@@ -29,6 +29,13 @@
         tr {
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
           border-radius: 1rem;
+          cursor: pointer;
+          transition: $transition;
+          &:hover {
+            transform: translateY(-0.5rem);
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+            transition: $transition;
+          }
         }
         &-user,
         &-trainer {

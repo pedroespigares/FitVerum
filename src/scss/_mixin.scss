@@ -241,7 +241,7 @@
     font-size: getFontSize(lg);
   }
   color: getColor(intense-violet);
-  font-size: getFontSize(md);
+  font-size: getFontSize(sm);
   font-family: $font-family-title;
   font-weight: getFontWeight(bold);
   transition: $transition;
@@ -252,7 +252,7 @@
   @include response(xl) {
     font-size: getFontSize($size);
   }
-  font-size: getFontSize(calc($size - 0.5));
+  font-size: calc(getFontSize($size) - 0.5rem);
   font-family: $font-family-title;
   font-weight: getFontWeight(bold);
   transition: $transition;
@@ -919,6 +919,9 @@
   .toast-container{
     @include flex($direction: row, $justify: flex-end, $align: center);
     width: 100%;
+    @include response(xl){
+      margin-top: calc($margin-top + 8rem);
+    }
     margin-top: $margin-top;
     padding-right: 1rem;
   }
