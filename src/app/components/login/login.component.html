@@ -26,7 +26,7 @@
                 </div>
             </fieldset>
             <p class="forgot-password" *ngIf="!forgottenPSW" (click)="forgotPassword()">Forgot password?</p>
-            <p class="forgot-password-check" *ngIf="forgottenPSW && !emailEmpty && this.auth.failedError != '' && this.auth.userChecked" (click)="forgotPassword()">Check your email</p>
+            <p class="forgot-password-check" *ngIf="forgottenPSW">Check your email</p>
             <p class="login-form-fieldset-credentials">{{this.auth.failedError}}</p>
             <p *ngIf="isEmpty" class="login-form-fieldset-credentials">Fields can't be empty</p>
             <p *ngIf="emailEmpty" class="login-form-fieldset-credentials">Fill the email input for recovering with a valid format</p>

@@ -143,3 +143,5 @@
 .loader {
   @include loader(40vh, 28vw);
 }
+
+@include toast(-12.5rem);

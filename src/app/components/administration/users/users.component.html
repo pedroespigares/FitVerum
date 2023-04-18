@@ -31,7 +31,7 @@
             </button>
           </td>
           <td>
-            <button class="users-trainers-container-users-container-table-user-button" (click)="convertUserToTrainer(user.userID)">
+            <button class="users-trainers-container-users-container-table-user-button" (click)="convertUserToTrainer(user.userID)" placement="right" ngbTooltip="Convert normal user into trainer" tooltipClass="user-tooltip">
               <i class="fa-solid fa-plus"></i>
             </button>
           </td>
@@ -59,7 +59,7 @@
       <table class="users-trainers-container-trainers-container-table">
         <tr *ngFor="let trainer of trainers | slice : (page_2 - 1) * pageSize_2 : page_2 * pageSize_2">
           <td>
-            <button class="users-trainers-container-trainers-container-table-trainer-button-left" (click)="convertTrainerToUser(trainer.trainerID)">
+            <button class="users-trainers-container-trainers-container-table-trainer-button-left" (click)="convertTrainerToUser(trainer.trainerID)" placement="left" ngbTooltip="Convert trainer into normal user" tooltipClass="user-tooltip">
               <i class="fa-solid fa-minus"></i>
             </button>
           </td>

@@ -5,11 +5,33 @@
         <button class="machines-administration-actions-button" routerLink="/administration/machines/add">Add Machine or Exercise</button>
     </div>
     <div class="machines-administration-empty">
-        <p *ngIf="machines.length == 0" class="machines-administration-empty-text">There are no machines or exercises</p>
+        <p *ngIf="!loading && machines.length == 0" class="machines-administration-empty-text">There are no machines or exercises</p>
     </div>
     <div class="machines-administration">
         <div class="machines-administration-machine" *ngFor="let singleMachine of machines">
-            <app-machine-card [machine]="singleMachine"></app-machine-card>
+            <app-machine-card (deleteMachineEvent)="handleDeleteMachine()" [machine]="singleMachine"></app-machine-card>
         </div>
     </div>
+  <div class="toast-container">
+    <ngb-toast *ngIf="showAddToast" [autohide]="true" (hidden)="showAddToast=false">
+      <ng-template ngbToastHeader>
+        <div class="me-auto">
+          <img src="../../../../../assets/images/FitVerumLogo.png" width="40" height="40"/>
+          <strong class="mx-1">FitVerum</strong>
+        </div>
+      </ng-template>
+      Machine added successfully!
+    </ngb-toast>
+  </div>
+  <div class="toast-container">
+    <ngb-toast *ngIf="showDeleteToast" [autohide]="true" (hidden)="showDeleteToast=false">
+      <ng-template ngbToastHeader>
+        <div class="me-auto">
+          <img src="../../../../../assets/images/FitVerumLogo.png" width="40" height="40"/>
+          <strong class="mx-1">FitVerum</strong>
+        </div>
+      </ng-template>
+      Machine deleted successfully!
+    </ngb-toast>
+  </div>
 </main>

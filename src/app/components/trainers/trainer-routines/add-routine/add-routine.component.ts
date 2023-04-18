@@ -9,6 +9,7 @@ import { DatabaseService } from 'src/app/services/database.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { ToastsService } from 'src/app/services/toasts.service';
 
 @Component({
   selector: 'app-add-routine',
@@ -29,9 +30,11 @@ export class AddRoutineComponent {
     private database: DatabaseService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private auth: AuthService) {
+    private auth: AuthService,
+    private toasts: ToastsService) {
     this.storage = getStorage();
     this.userID = this.activatedRoute.snapshot.paramMap.get('userID');
+    this.toasts.routineAdded = false;
    }
 
    /**
@@ -52,6 +55,7 @@ export class AddRoutineComponent {
 
   addRoutine(){
     this.database.addRoutine(this.title, this.photoURL, this.userID, this.auth.userID);
+    this.toasts.routineAdded = true;
     this.router.navigate(['/trainer/routines']);
   }
 }

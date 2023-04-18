@@ -7,6 +7,7 @@ import {
 } from '@angular/fire/storage';
 import { DatabaseService } from 'src/app/services/database.service';
 import { Router } from '@angular/router';
+import { ToastsService } from 'src/app/services/toasts.service';
 
 @Component({
   selector: 'app-add-machine',
@@ -22,9 +23,10 @@ export class AddMachineComponent {
   storage: any;
   uploadMessage: string = 'Choose Image';
 
-  constructor(private database: DatabaseService, private router: Router) {
+  constructor(private database: DatabaseService, private router: Router, private toasts: ToastsService) {
     this.storage = getStorage();
-   }
+    this.toasts.machineAdded = false;
+  }
 
    /**
     * Subir imagen a Firebase Storage
@@ -44,6 +46,7 @@ export class AddMachineComponent {
 
   addMachine(){
     this.database.addMachine(this.name, this.description, this.photoURL);
+    this.toasts.machineAdded = true;
     this.router.navigate(['/administration/machines']);
   }
 }

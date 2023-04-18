@@ -1,0 +1,38 @@
+<div class="breadcrumbs" *ngIf="routineLoaded">
+  <a class="breadcrumbs-item" routerLink="/trainer/routines">Routines</a>
+  <p class="breadcrumbs-item"> > </p>
+  <p class="breadcrumbs-item">{{routineName}}</p>
+  <p class="breadcrumbs-item"> > </p>
+  <p class="breadcrumbs-item">Exercises</p>
+  <p class="breadcrumbs-item"> > </p>
+  <p class="breadcrumbs-item">New</p>
+</div>
+<main class="content">
+<div class="add-exercise">
+    <div class="add-exercise-logo-presentation">
+        <img class="add-exercise-logo-presentation-img" src="../../assets/images/FitVerumLogo.png" alt="Brand Logo">
+        <h1 class="add-exercise-logo-presentation-text">
+            <span class="add-exercise-logo-presentation-text-first">Fit</span>
+            <span class="add-exercise-logo-presentation-text-second">Verum</span>
+        </h1>
+    </div>
+    <h1 class="add-exercise-title">Add Exercise</h1>
+    <form class="add-exercise-form" (ngSubmit)="addExercise()">
+        <fieldset class="add-exercise-form-fieldset">
+            <legend class="add-exercise-form-fieldset-label" for="exerciseTitle">Exercise Name</legend>
+            <input class="add-exercise-form-fieldset-input" type="text" id="exerciseTitle" name="exerciseTitle" placeholder="Exercise Title" [(ngModel)]="title">
+        </fieldset>
+        <fieldset class="add-exercise-form-fieldset">
+            <legend class="add-exercise-form-fieldset-label" for="exerciseDescription">Exercise Description</legend>
+            <textarea class="add-exercise-form-fieldset-input" name="exerciseDescription" placeholder="Exercise Description" [(ngModel)]="description"></textarea>
+        </fieldset>
+        <fieldset class="add-exercise-form-fieldset">
+          <legend class="add-exercise-form-fieldset-label" for="exerciseDescription">Machine</legend>
+          <select *ngIf="!loading" class="add-exercise-form-fieldset-input" name="exerciseMachine" [(ngModel)]="machineID">
+              <option *ngFor="let machine of machines" [ngValue]="machine.id">{{machine.name}}</option>
+          </select>
+        </fieldset>
+        <button type="submit" class="add-exercise-form-button">Add Exercise</button>
+    </form>
+</div>
+</main>

@@ -9,7 +9,7 @@
     <div *ngIf="loading" class="loader"></div>
     <h1 class="exercises-header">Exercises of <span class="exercises-header-routine-name">{{routineName}}</span> routine</h1>
     <div class="exercises-actions">
-        <button class="exercises-actions-button" routerLink="/administration/machines/add">Add Exercise</button>
+        <button class="exercises-actions-button" routerLink="/trainer/routines/add/{{routineID}}/exercise">Add Exercise</button>
     </div>
     <h2 *ngIf="exercises.length == 0" class="exercises-header-no-exercises">This routine doesn't have any exercises assigned</h2>
     <div class="exercises">

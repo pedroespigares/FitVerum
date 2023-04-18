@@ -169,7 +169,12 @@ export class DatabaseService {
     return docSnap.data()['photoURL'];
   }
 
-
+/**
+ * Obtener un elemento por su ID y colección
+ * @param id
+ * @param collection
+ * @returns
+ */
   async getByID(id: string, collection: string) {
     const machineRef = doc(this.database, collection , id);
     const docSnap = await getDoc(machineRef);
@@ -446,6 +451,22 @@ export class DatabaseService {
     });
   }
 
+  /**
+   * Crear un ejercicio
+   * @param title
+   * @param description
+   * @param machineID
+   * @param routineID
+   */
+  addExercise(title: string, description: string, machineID: string, routineID: string){
+    const exercisesRef = collection(this.database, 'exercises');
+    setDoc(doc(exercisesRef), {
+      title: title,
+      description: description,
+      machineID: machineID,
+      routineID: routineID,
+    });
+  }
 
 // --------------------------------------------------------------------------------------------
 

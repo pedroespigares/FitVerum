@@ -22,7 +22,7 @@ export class TrainerUsersComponent implements OnInit {
 
   trainerID: string = this.auth.userID;
 
-  constructor(private database: DatabaseService, private activatedRoute: ActivatedRoute, private auth: AuthService) {}
+  constructor(private database: DatabaseService, private auth: AuthService) {}
 
   ngOnInit() {
 

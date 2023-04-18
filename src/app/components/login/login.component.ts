@@ -70,15 +70,20 @@ export class LoginComponent implements OnInit {
 
   forgotPassword(){
     this.isEmpty = false;
+
     let regularExpression = new RegExp("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$");
     if(this.email == '' || !regularExpression.test(this.email)){
       this.emailEmpty = true;
       return;
     }
-    
+
     this.auth.sendPasswordResetEmail(this.email)
-    this.forgottenPSW = true;
     this.emailEmpty = false;
+
+    if(this.auth.userChecked){
+      this.forgottenPSW = true;
+      this.auth.failedError = '';
+    }
   }
   /*
   * Limpiar el error de inicio de sesión

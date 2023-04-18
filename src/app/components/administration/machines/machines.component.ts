@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { getStorage } from '@angular/fire/storage';
+import { ToastsService } from 'src/app/services/toasts.service';
 
 @Component({
   selector: 'app-machines',
@@ -13,7 +14,10 @@ export class MachinesComponent implements OnInit {
   storage: any;
   loading: boolean = true;
 
-  constructor(private database: DatabaseService) {
+  showAddToast: boolean = this.toasts.machineAdded;
+  showDeleteToast: boolean = false;
+
+  constructor(private database: DatabaseService, private toasts: ToastsService) {
     this.storage = getStorage();
   }
 
@@ -22,5 +26,9 @@ export class MachinesComponent implements OnInit {
       this.machines = machines;
       this.loading = false;
     });
+  }
+
+  handleDeleteMachine(): void{
+    this.showDeleteToast = true;
   }
 }

@@ -38,6 +38,7 @@ import { ShowExercisesComponent } from './components/trainers/trainer-routines/s
 import { ExerciseCardComponent } from './components/trainers/trainer-routines/show-exercises/exercise-card/exercise-card.component';
 import { NgChartsModule } from 'ng2-charts';
 import { AddRoutineComponent } from './components/trainers/trainer-routines/add-routine/add-routine.component';
+import { AddExerciceComponent } from './components/trainers/trainer-routines/show-exercises/add-exercice/add-exercice.component';
 
 
 @NgModule({
@@ -70,6 +71,7 @@ import { AddRoutineComponent } from './components/trainers/trainer-routines/add-
     ShowExercisesComponent,
     ExerciseCardComponent,
     AddRoutineComponent,
+    AddExerciceComponent,
   ],
   imports: [
     BrowserModule,

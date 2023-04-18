@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { ToastsService } from 'src/app/services/toasts.service';
 
 @Component({
   selector: 'app-trainer-routines',
@@ -18,8 +19,10 @@ export class TrainerRoutinesComponent implements OnInit {
 
   loadingRoutines = true;
 
+  showAddToast: boolean = this.toasts.routineAdded;
+  showDeleteToast: boolean = false;
 
-  constructor(private database: DatabaseService, private router: Router, private auth: AuthService) { }
+  constructor(private database: DatabaseService, private toasts: ToastsService, private auth: AuthService) { }
 
   trainerID = this.auth.userID
 

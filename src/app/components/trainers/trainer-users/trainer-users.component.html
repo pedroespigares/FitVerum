@@ -26,7 +26,7 @@
               {{ user.displayName }}
             </td>
             <td>
-              <button class="trainers-clients-container-users-container-table-user-button" (click)="subscribeClient(user.userID)">
+              <button class="trainers-clients-container-users-container-table-user-button" (click)="subscribeClient(user.userID)" placement="right" ngbTooltip="Subscribe Client" tooltipClass="user-tooltip">
                 <i class="fa-solid fa-plus"></i>
               </button>
             </td>
@@ -54,7 +54,7 @@
         <table class="trainers-clients-container-clients-container-table">
           <tr *ngFor="let client of clients | slice : (page_2 - 1) * pageSize_2 : page_2 * pageSize_2">
             <td>
-              <button class="trainers-clients-container-clients-container-table-client-button-left" (click)="unsubscribeClient(client.userID)">
+              <button class="trainers-clients-container-clients-container-table-client-button-left" (click)="unsubscribeClient(client.userID)" placement="left" ngbTooltip="Unsubscribe Client" tooltipClass="user-tooltip">
                 <i class="fa-solid fa-minus"></i>
               </button>
             </td>

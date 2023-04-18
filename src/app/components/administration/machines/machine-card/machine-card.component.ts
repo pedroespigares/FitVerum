@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { ref, getStorage, deleteObject} from '@angular/fire/storage';
+import { ToastsService } from 'src/app/services/toasts.service';
 
 @Component({
   selector: 'app-machine-card',
@@ -12,8 +13,9 @@ export class MachineCardComponent {
   storage: any;
 
   @Input() machine: any;
+  @Output() deleteMachineEvent = new EventEmitter();
 
-  constructor(private database: DatabaseService) {
+  constructor(private database: DatabaseService, private toast: ToastsService) {
     this.storage = getStorage();
   }
 
@@ -28,6 +30,7 @@ export class MachineCardComponent {
     if (confirmDelete){
       this.database.delete('machines', id);
       this.deletePhotoFromStorage(photoURL);
+      this.deleteMachineEvent.emit();
     } else {
       return;
     }

@@ -122,3 +122,10 @@
 .loader {
   @include loader(40vh, 38vw);
 }
+
+::ng-deep .tooltip{
+  @include response(xl){
+    font-size: getFontSize(xs);
+  }
+  font-size: getFontSize(xxs);
+}
