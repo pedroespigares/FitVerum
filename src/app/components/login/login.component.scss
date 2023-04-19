@@ -231,6 +231,20 @@
   }
 }
 
+.forgot-password {
+  font-size: getFontSize(md);
+  font-family: $font-family-text;
+  font-weight: getFontWeight(thin);
+  display: block;
+
+  transition: $transition;
+  cursor: pointer;
+  &:hover{
+    color: getColor(intense-violet);
+  }
+}
+
+
 @include response(lg) {
   .waves {
     z-index: 10;

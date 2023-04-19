@@ -7,6 +7,7 @@
 
 .machines-administration-header {
   @include view_header();
+  margin-top: 5rem;
 }
 
 .machines-administration {
@@ -24,7 +25,10 @@
     margin-bottom: 2rem;
     padding: 0 5rem;
     &-button {
-      @include button(lg, true);
+      @include response(xl){
+        @include button(lg, true);
+      }
+      @include button(sm, true);
       margin-left: 2rem;
     }
   }

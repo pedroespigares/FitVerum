@@ -25,8 +25,6 @@
   }
 }
 .show-machine {
-  margin-top: 80rem;
-
   @include response(sm) {
     margin-top: 25rem;
   }
