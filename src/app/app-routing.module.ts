@@ -25,11 +25,12 @@ import { ForbiddenComponent } from './components/errors/forbidden/forbidden.comp
 import { AuthGuard } from './services/guards/auth.guard';
 import { AdminGuard } from './services/guards/admin.guard';
 import { TrainerGuard } from './services/guards/trainer.guard';
+import { NotloggedGuard } from './services/guards/notlogged.guard';
 
 const routes: Routes = [
   { path: '', component: LandingComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'register', component: RegisterComponent},
+  { path: 'register', component: RegisterComponent, canActivate: [NotloggedGuard]},
   { path: 'user/calendar', component: UserCalendarComponent, canActivate: [AuthGuard]},
   { path: 'user/calendar/:date', component: UserRoutinesComponent, canActivate: [AuthGuard]},
   { path: 'user/modification', component: UserModificationComponent, canActivate: [AuthGuard]},

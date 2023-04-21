@@ -4,7 +4,10 @@
 ::ng-deep span.cal-day-number {
   color: getColor(intense-violet);
   font-family: $font-family-title !important;
-  font-size: 5rem !important;
+  @include response(xl){
+    font-size: 5rem !important;
+  }
+  font-size: getFontSize(md) !important;
 }
 
 ::ng-deep .cal-month-view {
@@ -50,17 +53,28 @@
 ::ng-deep .cal-today {
   color: getColor(black);
   font-family: $font-family-title !important;
-  font-size: 2.5rem !important;
+  font-size: getFontSize(lg) !important;
 }
 
 .calendar-controls {
+  margin-bottom: 10rem !important;
   margin-bottom: 5rem !important;
+  @include response(xl){
+    @include flex(
+      $direction: row,
+      $justify: center,
+      $align: center,
+      $gap: 20rem
+    );
+  }
+
   @include flex(
-    $direction: row,
+    $direction: column,
     $justify: center,
     $align: center,
-    $gap: 20rem
+    $gap: 7rem
   );
+
   padding: 2rem;
   &-month {
     font-size: getFontSize(xxl);
@@ -71,6 +85,9 @@
   }
 
   &-button {
-    @include button(xl, true, 20rem);
+    @include response(xl){
+      @include button(xl, true, 20rem);
+    }
+    @include button(md, true, 20rem);
   }
 }

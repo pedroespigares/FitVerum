@@ -50,6 +50,14 @@
           $gap: 2rem
         );
       }
+      &-buttons {
+        @include flex(
+          $direction: column,
+          $justify: center,
+          $align: center,
+          $gap: 2rem
+        );
+      }
     }
   } @else {
     &-list {
