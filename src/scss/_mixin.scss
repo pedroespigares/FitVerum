@@ -27,7 +27,7 @@
 
   @if $hamburger {
     &-list {
-      @include flex(column, flex-start, center, 10rem);
+      @include flex(column, flex-start, center, 3rem);
       position: fixed;
       width: 100%;
       height: 100%;
@@ -37,7 +37,6 @@
       right: 0.01rem;
       text-align: center;
       transition: all 0.5s;
-      gap: 5rem;
       z-index: 100;
       background-image: url("../assets/images/bg-header-mobile.svg");
       background-repeat: no-repeat;
@@ -633,7 +632,7 @@
       @include response(xl) {
         padding-top: 2rem;
       }
-      padding-top: 5rem;
+      padding-top: 25rem;
       padding-bottom: 5rem;
       &-text {
         @include response(xl) {
@@ -825,7 +824,7 @@
       @include response(xl){
         padding-top: 2rem;
       }
-      padding-top: 5rem;
+      padding-top: 25rem;
       padding-bottom: 5rem;
       text-align: center;
     }

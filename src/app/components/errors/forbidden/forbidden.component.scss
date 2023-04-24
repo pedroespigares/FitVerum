@@ -3,7 +3,7 @@
 
 .forbidden-container{
   @include flex($direction: column, $justify: flex-start, $align: center);
-  padding-top: 20rem;
+  padding-top: 10rem;
   @include response(xl){
     height: calc(100vh - 150px);
   }

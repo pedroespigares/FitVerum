@@ -8,6 +8,8 @@
 .machines-administration-header {
   @include view_header();
   margin-top: 5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .machines-administration {

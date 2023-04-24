@@ -17,6 +17,9 @@
     @include response(xl) {
       border-right: 2px solid getColor(light-grayish-violet);
     }
+    @include flex($direction: column, $justify: flex-start, $align: center);
+    height: 100%;
+    width: 100%;
   }
   &-users,
   &-trainers {
@@ -31,7 +34,7 @@
     &-container {
       @include flex($direction: row, $justify: center, $align: center);
       &-table {
-        width: 65%;
+        width: 100%;
         border-collapse: separate;
         @include response(xl) {
           border-spacing: 3rem;
@@ -125,6 +128,17 @@
               border: none;
               &:hover {
                 background-color: darken(getColor(intense-violet), 5%);
+              }
+
+              &-name{
+                @include response(xl) {
+                  font-size: getFontSize(lg);
+                }
+                font-size: getFontSize(sm);
+                font-family: $font-family-title;
+                font-weight: getFontWeight(bold);
+                color: getColor(black);
+                padding-right: 2rem;
               }
             }
           }
