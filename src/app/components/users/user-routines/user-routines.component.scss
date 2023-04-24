@@ -47,3 +47,7 @@
         }
     }
 }
+
+.loader{
+    @include loader(40vh);
+}
