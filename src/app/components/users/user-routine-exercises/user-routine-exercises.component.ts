@@ -14,15 +14,20 @@ export class UserRoutineExercisesComponent implements OnInit {
   routineID: string = this.route.snapshot.paramMap.get('routineID');
   routineName: string;
 
+  loadingRoutines: boolean = true;
+  loadingTitle: boolean = true;
+
   constructor(private route: ActivatedRoute, private database: DatabaseService, private router: Router) { }
 
   ngOnInit() {
     this.database.getExercisesByRoutine(this.routineID).subscribe((data) => {
       this.exercises = data;
+      this.loadingRoutines = false;
     });
 
     this.database.getRoutineTitle(this.routineID).then((data) => {
       this.routineName = data;
+      this.loadingTitle = false;
     });
   }
 }

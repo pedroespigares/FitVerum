@@ -12,13 +12,16 @@ export class SimpleExerciseCardComponent implements OnInit{
 
   @Input() exercise: any;
 
-  machineID: string
+  machineID: string;
+  loading: boolean = true;
+
   constructor(private database: DatabaseService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.machineID = this.exercise.machineID;
     this.database.getMachinePhoto(this.machineID).then((photoURL) => {
       this.exercise.photoURL = photoURL;
+      this.loading = false;
     });
   }
 

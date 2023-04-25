@@ -1,4 +1,26 @@
 <main class="content">
+  <div class="toast-container">
+    <ngb-toast *ngIf="showDeleteToast" [autohide]="true" (hidden)="showDeleteToast=false">
+      <ng-template ngbToastHeader>
+        <div class="me-auto">
+          <img src="../../../../../assets/images/FitVerumLogo.png" width="40" height="40"/>
+          <strong class="mx-1">FitVerum</strong>
+        </div>
+      </ng-template>
+      Machine deleted successfully!
+    </ngb-toast>
+  </div>
+  <div class="toast-container">
+    <ngb-toast *ngIf="showAddToast" [autohide]="true" (hidden)="showAddToast=false">
+      <ng-template ngbToastHeader>
+        <div class="me-auto">
+          <img src="../../../../../assets/images/FitVerumLogo.png" width="40" height="40"/>
+          <strong class="mx-1">FitVerum</strong>
+        </div>
+      </ng-template>
+      Machine added successfully!
+    </ngb-toast>
+  </div>
     <div *ngIf="loading" class="loader"></div>
     <h1 class="machines-administration-header">Machines and Exercises Administration</h1>
     <div class="machines-administration-actions">
@@ -12,26 +34,4 @@
             <app-machine-card (deleteMachineEvent)="handleDeleteMachine()" [machine]="singleMachine"></app-machine-card>
         </div>
     </div>
-  <div class="toast-container">
-    <ngb-toast *ngIf="showAddToast" [autohide]="true" (hidden)="showAddToast=false">
-      <ng-template ngbToastHeader>
-        <div class="me-auto">
-          <img src="../../../../../assets/images/FitVerumLogo.png" width="40" height="40"/>
-          <strong class="mx-1">FitVerum</strong>
-        </div>
-      </ng-template>
-      Machine added successfully!
-    </ngb-toast>
-  </div>
-  <div class="toast-container">
-    <ngb-toast *ngIf="showDeleteToast" [autohide]="true" (hidden)="showDeleteToast=false">
-      <ng-template ngbToastHeader>
-        <div class="me-auto">
-          <img src="../../../../../assets/images/FitVerumLogo.png" width="40" height="40"/>
-          <strong class="mx-1">FitVerum</strong>
-        </div>
-      </ng-template>
-      Machine deleted successfully!
-    </ngb-toast>
-  </div>
 </main>

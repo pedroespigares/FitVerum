@@ -1,1 +1,38 @@
-<p>user-entry works!</p>
+<main class="content">
+  <h1 class="exercise-title" *ngIf="!loading"><span class="exercise-title-span">{{exercise.title}}</span> entry</h1>
+  <div class="entry-container">
+    <div class="entry-container-left">
+      <img *ngIf="!loading" src="{{photoURL}}" alt="Exercise image" class="entry-container-left-img">
+      <div class="entry-container-left-buttons">
+        <button class="entry-container-left-buttons-button">Description</button>
+        <button class="entry-container-left-buttons-button">Evolution</button>
+      </div>
+    </div>
+
+    <div class="entry-container-right">
+        <h2 class="entry-container-right-title">At {{date | date: "longDate"}}</h2>
+        <form class="entry-container-right-form" (ngSubmit)="saveEntry()">
+          <div class="entry-container-right-form-group">
+            <label class="entry-container-right-form-group-label">I made</label>
+            <input class="entry-container-right-form-group-input" name="series" type="number" placeholder="XXX" [(ngModel)]="series">
+            <label class="entry-container-right-form-group-label-2">series</label>
+          </div>
+          <div class="entry-container-right-form-group">
+            <label class="entry-container-right-form-group-label">with</label>
+            <input class="entry-container-right-form-group-input" name="repetitions" type="number" placeholder="XXX" [(ngModel)]="repetitions">
+            <label class="entry-container-right-form-group-label-2">repetitions</label>
+          </div>
+          <div class="entry-container-right-form-group">
+            <label class="entry-container-right-form-group-label">with</label>
+            <input class="entry-container-right-form-group-input" name="weight" type="number" placeholder="XXX" [(ngModel)]="weight">
+            <label class="entry-container-right-form-group-label-2">KG</label>
+          </div>
+          <div class="entry-container-right-form-group">
+            <label class="entry-container-right-form-group-label">Comments</label>
+            <textarea class="entry-container-right-form-group-textarea" name="comments" placeholder="Notes" [(ngModel)]="comments"></textarea>
+          </div>
+          <button class="entry-container-right-form-button" type="submit">Save</button>
+        </form>
+    </div>
+  </div>
+</main>

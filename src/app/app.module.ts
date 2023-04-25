@@ -32,7 +32,6 @@ import { TrainerRoutinesComponent } from './components/trainers/trainer-routines
 import { NotFoundComponent } from './components/errors/not-found/not-found.component';
 import { ForbiddenComponent } from './components/errors/forbidden/forbidden.component';
 import { TrainerRoutineCardComponent } from './components/trainers/trainer-routines/trainer-routine-card/trainer-routine-card.component';
-import { UserExercisesComponent } from './components/users/user-exercises/user-exercises.component';
 import { EditRoutineComponent } from './components/trainers/trainer-routines/edit-routine/edit-routine.component';
 import { ShowExercisesComponent } from './components/trainers/trainer-routines/show-exercises/show-exercises.component';
 import { ExerciseCardComponent } from './components/trainers/trainer-routines/show-exercises/exercise-card/exercise-card.component';
@@ -69,7 +68,6 @@ import { SimpleExerciseCardComponent } from './components/users/user-routine-exe
     NotFoundComponent,
     ForbiddenComponent,
     TrainerRoutineCardComponent,
-    UserExercisesComponent,
     EditRoutineComponent,
     ShowExercisesComponent,
     ExerciseCardComponent,

@@ -1,0 +1,115 @@
+@import "../../../../scss/mixin.scss";
+@import "../../../../scss/variables.scss";
+
+.content {
+  height: calc(100vh - 126.797px - 10rem);
+}
+
+.exercise-title {
+  @include view_header();
+  &-no-exercise {
+    @include view_header(3rem);
+    color: getColor(black);
+  }
+
+  &-span {
+    color: getColor(black);
+  }
+}
+
+.entry-container {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-rows: 1fr;
+  place-items: center;
+  height: 100%;
+  width: 100%;
+
+  &-left {
+    grid-area: 1 / 1 / 2 / 2;
+    @include flex($direction: column, $justify: center, $align: center);
+
+    &-img {
+      width: 50%;
+    }
+
+    &-buttons {
+      margin-top: 2rem;
+      @include flex(
+        $direction: row,
+        $justify: center,
+        $align: center,
+        $gap: 2rem
+      );
+
+      &-button {
+        @include button(sm, true);
+      }
+    }
+  }
+
+  &-right {
+    grid-area: 1 / 2 / 2 / 3;
+    width: 100%;
+    height: 100%;
+    @include flex(
+      $direction: column,
+      $justify: center,
+      $align: center,
+      $gap: 2rem
+    );
+
+    &-title{
+      @include view_header(5rem);
+      color: getColor(black);
+      margin-bottom: 5rem;
+    }
+
+    &-form {
+      @include flex(
+        $direction: column,
+        $justify: center,
+        $align: center,
+        $gap: 2rem
+      );
+
+      &-group {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        place-items: center;
+
+        &-input {
+          grid-area: 1 / 2 / 2 / 3;
+          min-width: 100%;
+          @include input();
+        }
+
+        &-textarea {
+          width: 100%;
+          @include input();
+          resize: both !important;
+        }
+        &-label {
+          grid-area: 1 / 1 / 2 / 2;
+          width: 100%;
+          @include label();
+          padding-bottom: 0;
+          text-align: center;
+          color: getColor(black);
+
+          &-2 {
+            width: 100%;
+            @include label();
+            grid-area: 1 / 3 / 2 / 4;
+            padding-bottom: 0;
+            text-align: center;
+          }
+        }
+      }
+      &-button {
+        @include button(lg, true);
+      }
+    }
+  }
+}

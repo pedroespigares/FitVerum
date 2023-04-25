@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { getStorage } from '@angular/fire/storage';
 import { ToastsService } from 'src/app/services/toasts.service';
@@ -9,7 +9,7 @@ import { ToastsService } from 'src/app/services/toasts.service';
   styleUrls: ['./machines.component.scss']
 })
 
-export class MachinesComponent implements OnInit {
+export class MachinesComponent implements OnInit, OnDestroy {
   machines: any[];
   storage: any;
   loading: boolean = true;
@@ -30,5 +30,9 @@ export class MachinesComponent implements OnInit {
 
   handleDeleteMachine(): void{
     this.showDeleteToast = true;
+  }
+
+  ngOnDestroy(): void {
+    this.toasts.machineAdded = false;
   }
 }

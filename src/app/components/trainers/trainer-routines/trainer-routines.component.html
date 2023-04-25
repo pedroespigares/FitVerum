@@ -1,4 +1,15 @@
 <main class="content">
+  <div class="toast-container">
+    <ngb-toast *ngIf="showAddToast" [autohide]="true" (hidden)="showAddToast=false">
+      <ng-template ngbToastHeader>
+        <div class="me-auto">
+          <img src="../../../../../assets/images/FitVerumLogo.png" width="40" height="40"/>
+          <strong class="mx-1">FitVerum</strong>
+        </div>
+      </ng-template>
+      Routine added successfully!
+    </ngb-toast>
+  </div>
   <div class="trainer-routines-container">
     <div class="trainer-routines-container-clients">
       <h1 class="trainer-routines-container-clients-title">Clients</h1>
@@ -63,18 +74,6 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="toast-container">
-    <ngb-toast *ngIf="showAddToast" [autohide]="true" (hidden)="showAddToast=false">
-      <ng-template ngbToastHeader>
-        <div class="me-auto">
-          <img src="../../../../../assets/images/FitVerumLogo.png" width="40" height="40"/>
-          <strong class="mx-1">FitVerum</strong>
-        </div>
-      </ng-template>
-      Routine added successfully!
-    </ngb-toast>
   </div>
 </main>
 
