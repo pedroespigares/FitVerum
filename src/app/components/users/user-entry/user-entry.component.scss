@@ -43,7 +43,7 @@
       );
 
       &-button {
-        @include button(sm, true);
+        @include button(sm, true, $width: 17rem);
       }
     }
   }

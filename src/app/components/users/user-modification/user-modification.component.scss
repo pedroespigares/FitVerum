@@ -5,10 +5,25 @@
   @include view_header(5rem);
   font-family: $font-family-title;
   margin-bottom: 7rem;
+  margin-top: 5rem;
 }
 
 .user-info {
-  @include flex($direction: row, $justify: center, $align: center, $gap: 10rem);
+  @include response(xl) {
+    @include flex(
+      $direction: row,
+      $justify: center,
+      $align: center,
+      $gap: 10rem
+    );
+  }
+
+  @include flex(
+    $direction: column,
+    $justify: center,
+    $align: center,
+    $gap: 5rem
+  );
 
   &-img-container {
     @include flex($direction: row, $justify: center, $align: center);
@@ -21,7 +36,10 @@
   }
 
   &-container {
-    @include flex($direction: column, $justify: center, $align: flex-start);
+    @include response(xl) {
+      @include flex($direction: column, $justify: center, $align: flex-start);
+    }
+    @include flex($direction: column, $justify: center, $align: center);
     &-name {
       @include view_header(4rem);
       font-family: $font-family-title;
@@ -59,6 +77,22 @@
       $align: center,
       $gap: 5rem
     );
+    @include response(xl) {
+      @include flex(
+        $direction: row,
+        $justify: center,
+        $align: center,
+        $gap: 5rem
+      );
+    }
+    
+    @include flex(
+      $direction: column,
+      $justify: center,
+      $align: center,
+      $gap: 2rem
+    );
+
     &-input {
       @include input();
     }
@@ -71,7 +105,10 @@
   }
 
   &-btn {
-    @include button($size: xl ,$focus: true);
+    @include response(xl) {
+      @include button($size: xl, $focus: true);
+    }
+    @include button($size: md, $focus: true);
     margin-bottom: 5rem;
   }
 
@@ -92,7 +129,7 @@
       cursor: pointer;
     }
 
-    &-uploaded-img{
+    &-uploaded-img {
       width: 7rem;
       height: 7rem;
       border-radius: 50%;
