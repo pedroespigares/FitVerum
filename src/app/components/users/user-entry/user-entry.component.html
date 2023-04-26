@@ -14,24 +14,25 @@
         <form class="entry-container-right-form" (ngSubmit)="saveEntry()">
           <div class="entry-container-right-form-group">
             <label class="entry-container-right-form-group-label">I made</label>
-            <input class="entry-container-right-form-group-input" name="series" type="number" placeholder="XXX" [(ngModel)]="series">
+            <input class="entry-container-right-form-group-input" name="series" type="number" placeholder="XXX" min="0" [(ngModel)]="series">
             <label class="entry-container-right-form-group-label-2">series</label>
           </div>
           <div class="entry-container-right-form-group">
             <label class="entry-container-right-form-group-label">with</label>
-            <input class="entry-container-right-form-group-input" name="repetitions" type="number" placeholder="XXX" [(ngModel)]="repetitions">
+            <input class="entry-container-right-form-group-input" name="repetitions" type="number" placeholder="XXX" min="0" [(ngModel)]="repetitions">
             <label class="entry-container-right-form-group-label-2">repetitions</label>
           </div>
           <div class="entry-container-right-form-group">
             <label class="entry-container-right-form-group-label">with</label>
-            <input class="entry-container-right-form-group-input" name="weight" type="number" placeholder="XXX" [(ngModel)]="weight">
+            <input class="entry-container-right-form-group-input" name="weight" type="number" placeholder="XXX" min="0" [(ngModel)]="weight">
             <label class="entry-container-right-form-group-label-2">KG</label>
           </div>
           <div class="entry-container-right-form-group">
             <label class="entry-container-right-form-group-label">Comments</label>
             <textarea class="entry-container-right-form-group-textarea" name="comments" placeholder="Notes" [(ngModel)]="comments"></textarea>
           </div>
-          <button class="entry-container-right-form-button" type="submit">Save</button>
+          <button *ngIf="weight != null && series != null && repetitions != null" class="entry-container-right-form-button" type="submit">Save</button>
+          <button *ngIf="weight == null || series == null || repetitions == null" class="entry-container-right-form-button-disabled" type="submit" disabled>Save</button>
         </form>
     </div>
   </div>

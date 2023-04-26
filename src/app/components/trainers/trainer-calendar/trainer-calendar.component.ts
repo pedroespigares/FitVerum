@@ -1,6 +1,6 @@
-import { Component, ChangeDetectorRef, ChangeDetectionStrategy, ViewChild, TemplateRef,OnInit } from '@angular/core';
-import { CalendarEvent, CalendarView, DAYS_OF_WEEK, CalendarEventTimesChangedEvent, } from 'angular-calendar';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, ChangeDetectorRef, ChangeDetectionStrategy, ViewChild, TemplateRef, OnInit } from '@angular/core';
+import { CalendarEvent, CalendarView, DAYS_OF_WEEK, CalendarEventTimesChangedEvent } from 'angular-calendar';
+import { Router } from '@angular/router';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
@@ -25,7 +25,6 @@ export class TrainerCalendarComponent implements OnInit{
   constructor(
     private router: Router,
     private database: DatabaseService,
-    private activatedRoute: ActivatedRoute,
     private breakpointObserver: BreakpointObserver,
     private cd: ChangeDetectorRef,
     private modalService: NgbModal,

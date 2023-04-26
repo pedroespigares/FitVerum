@@ -203,6 +203,17 @@ export class DatabaseService {
     return collectionData(q, { idField: 'id' }) as Observable<any[]>;
   }
 
+  /**
+   * Obtener las entradas de un usuario
+   * @param userID - ID del usuario
+   * @returns - Observable con las citas
+   */
+  getUserEntries(userID: string): Observable<any[]> {
+    const entriesRef = collection(this.database, 'userEntry');
+    const q = query(entriesRef, where('userID', '==', userID));
+    return collectionData(q, { idField: 'id' }) as Observable<any[]>;
+  }
+
 // --------------------------------------------------------------------------------------------
 
 
@@ -368,6 +379,18 @@ export class DatabaseService {
   }
 
   /**
+   * Actualizar la fecha de una entrada de usuario
+   * @param id - ID de la entrada
+   * @param date - Nueva fecha de la entrada
+   */ 
+  updateUserEntryDate(id: string, date: number){
+    const userEntryRef = doc(this.database, 'userEntry', id);
+    updateDoc(userEntryRef, {
+      start: date,
+    });
+  }
+
+  /**
    * Actualizar una rutina
    * @param id
    * @param title
@@ -433,6 +456,35 @@ export class DatabaseService {
         beforeStart: true,
         afterEnd: true,
       },
+    });
+  }
+
+  /**
+   * Crear una entrada de usuario del calendario
+   * @param userID - ID del usuario
+   * @param start - Fecha de inicio
+   * @param kg - Peso
+   * @param repetitions - Repeticiones
+   * @param series - Series
+   * @param color - Color del evento
+   * @param comment - Comentario
+   */
+
+  createUserEntry(userID: string, start: number, kg: number, repetitions: number, series: number, color: string, title: string, comment:string = null){
+    const userEntriesRef = collection(this.database, 'userEntry');
+    setDoc(doc(userEntriesRef), {
+      userID: userID,
+      start: start,
+      kg: kg,
+      repetitions: repetitions,
+      series: series,
+      color: {
+        primary: color,
+        secondary: color,
+      },
+      draggable: true,
+      comment: comment,
+      title: title,
     });
   }
 

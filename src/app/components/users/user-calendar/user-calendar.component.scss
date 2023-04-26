@@ -8,6 +8,7 @@
     font-size: 5rem !important;
   }
   font-size: getFontSize(md) !important;
+  opacity: 1 !important;
 }
 
 ::ng-deep .cal-month-view {
@@ -20,7 +21,7 @@
   min-height: 15rem;
 }
 
-::ng-deep .cal-cell-top {
+::ng-deep .cal-cell-top, .cal-month-view, .cal-events{
   cursor: pointer;
   transition: $transition;
   &:hover {

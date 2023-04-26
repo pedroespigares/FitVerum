@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-user-entry',
@@ -16,14 +17,15 @@ export class UserEntryComponent implements OnInit{
 
   loading: boolean = true;
 
-  series: number;
-  repetitions: number;
-  weight: number;
+  series: number = null;
+  repetitions: number = null;
+  weight: number = null;
 
-  color: string = "#aeafe3";
-  comments: string;
+  color: string = "#FF9595";
+  comments: string = null;
 
-  constructor(private database: DatabaseService, private router: Router, private route: ActivatedRoute) { }
+
+  constructor(private database: DatabaseService, private router: Router, private route: ActivatedRoute, private auth: AuthService) { }
 
   ngOnInit(): void {
     this.database.getByID(this.exerciseID, "exercises").then((exercise) => {
@@ -36,5 +38,10 @@ export class UserEntryComponent implements OnInit{
     });
   }
 
-  saveEntry(): void{}
+  saveEntry(): void{
+    if(this.series != null || this.repetitions != null || this.weight != null){
+      this.database.createUserEntry(this.auth.userID, this.date.getTime(), this.weight, this.repetitions, this.series, this.color, this.exercise.title, this.comments);
+      this.router.navigate(["/user/calendar"]);
+    }
+  }
 }

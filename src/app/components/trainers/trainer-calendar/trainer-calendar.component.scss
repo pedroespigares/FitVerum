@@ -113,3 +113,15 @@
   text-align: center;
   margin-bottom: 1rem;
 }
+
+
+.fa-x{
+  color: getColor(intense-violet);
+  font-size: getFontSize(xl);
+  transition: $transition;
+  padding-right: 1rem;
+  cursor: pointer;
+  &:hover{
+    color: getColor(light-violet);
+  }
+}

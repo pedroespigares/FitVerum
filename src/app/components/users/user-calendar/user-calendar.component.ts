@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { CalendarEvent, CalendarView, DAYS_OF_WEEK } from 'angular-calendar';
+import { CalendarEvent, CalendarView, DAYS_OF_WEEK, CalendarEventTimesChangedEvent } from 'angular-calendar';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { DatabaseService } from 'src/app/services/database.service';
+import { Observable } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-user-calendar',
@@ -13,14 +16,14 @@ export class UserCalendarComponent implements OnInit {
 
   viewDate: Date = new Date();
 
-  constructor(private router: Router, private auth: AuthService) {}
+  constructor(private router: Router, private auth: AuthService, private database: DatabaseService) {}
 
   ngOnInit() {
-
+    this.fetchEntries();
   }
 
 
-  events: CalendarEvent[] = [];
+  events$: Observable<CalendarEvent<{ userID: string }>[]>;
 
   clickedDate: Date;
 
@@ -30,9 +33,26 @@ export class UserCalendarComponent implements OnInit {
 
   weekendDays: number[] = [DAYS_OF_WEEK.SATURDAY, DAYS_OF_WEEK.SUNDAY];
 
+  refresh = new Subject<void>();
 
+  fetchEntries(): void{
+    this.events$ = this.database.getUserEntries(this.auth.userID);
+  }
 
   routeToRoutines(date: Date){
     this.router.navigateByUrl(`/user/calendar/${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`);
+  }
+
+  eventTimesChanged({
+    event,
+    newStart,
+  }: CalendarEventTimesChangedEvent): void {
+    event.start = newStart;
+    this.refresh.next();
+    if(typeof newStart === 'number'){
+      this.database.updateUserEntryDate(event.id.toString(), newStart);
+    } else{
+      this.database.updateUserEntryDate(event.id.toString(), newStart.getTime());
+    }
   }
 }

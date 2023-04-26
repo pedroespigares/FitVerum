@@ -17,15 +17,18 @@
     </button>
 </div>
 
-<div [ngSwitch]="view">
-    <mwl-calendar-month-view
-      *ngSwitchCase="'month'"
-      [viewDate]="viewDate"
-      [events]="events"
-      [weekStartsOn]="weekStartsOn"
-      [weekendDays]="weekendDays"
-      (dayClicked)="routeToRoutines($event.day.date)"
-    >
-    </mwl-calendar-month-view>
+<div *ngIf="events$ | async; let events">
+  <div [ngSwitch]="view">
+      <mwl-calendar-month-view
+        *ngSwitchCase="'month'"
+        [viewDate]="viewDate"
+        [events]="events"
+        [weekStartsOn]="weekStartsOn"
+        [weekendDays]="weekendDays"
+        (eventTimesChanged)="eventTimesChanged($event)"
+        (dayClicked)="routeToRoutines($event.day.date)"
+      >
+      </mwl-calendar-month-view>
   </div>
+</div>
 </main>
