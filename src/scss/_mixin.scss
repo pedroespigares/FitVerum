@@ -160,7 +160,14 @@
   flex-wrap: nowrap;
 }
 
-@mixin button($size: lg, $focus: false, $width: null, $disabled: false, $border-radius: 10rem, $heigth: null) {
+@mixin button(
+  $size: lg,
+  $focus: false,
+  $width: null,
+  $disabled: false,
+  $border-radius: 10rem,
+  $heigth: null
+) {
   @if $focus {
     color: getColor(white);
     background-color: getColor(intense-violet);
@@ -558,6 +565,10 @@
 
 @mixin edit($name) {
   .edit-#{$name} {
+    z-index: 11;
+    border-radius: 0.5rem;
+    background-color: getColor(white);
+    animation: scale-in-center 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     @include response(xl) {
       overflow: auto;
       &::-webkit-scrollbar {
@@ -576,53 +587,54 @@
     }
 
     padding-bottom: 5rem;
+    margin-top: 20rem;
     width: 100%;
 
-      @include response(xl){
-      &-logo-presentation {
-        padding-top: 5rem;
-        @include flex(
-          $direction: row,
-          $justify: center,
-          $align: center,
-          $gap: 0.5rem
-        );
+    &-logo-presentation {
+      padding-top: 5rem;
+      @include flex(
+        $direction: row,
+        $justify: center,
+        $align: center,
+        $gap: 0.5rem
+      );
 
-        &-img {
+      &-img {
+        @include response(lg) {
           width: 9rem;
           transition: $transition;
+          display: block;
         }
+        display: none;
+      }
 
-        &-text {
-          @include response(xl) {
-            font-size: getFontSize(xxl);
-          }
-          font-size: getFontSize(xl);
+      &-text {
+        @include response(lg) {
+          font-size: getFontSize(xxl);
           font-family: $font-family-title;
           text-transform: uppercase;
           font-weight: getFontWeight(bold);
+          display: block;
+        }
 
-          &-first {
-            color: getColor(black);
-          }
+        display: none;
 
-          &-second {
-            background-color: getColor(intense-violet);
-            background-image: linear-gradient(
-              180deg,
-              rgba(255, 255, 255, 0.1),
-              rgba(255, 255, 255, 0)
-            );
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-          }
+        &-first {
+          color: getColor(black);
+        }
+
+        &-second {
+          background-color: getColor(intense-violet);
+          background-image: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.1),
+            rgba(255, 255, 255, 0)
+          );
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
         }
       }
-    }
-
-    &-logo-presentation{
-      display: none;
     }
 
     &-title-container {
@@ -635,7 +647,6 @@
       @include response(xl) {
         padding-top: 2rem;
       }
-      padding-top: 25rem;
       padding-bottom: 5rem;
       &-text {
         @include response(xl) {
@@ -743,10 +754,28 @@
   .loader {
     @include loader(0%, 0%);
   }
+
+  @keyframes scale-in-center {
+    0% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
 }
 
 @mixin add($name) {
   .add-#{$name} {
+    border-radius: 0.5rem;
+    animation: scale-in-center 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    z-index: 11;
+    background-color: getColor(white);
+    margin-top: 20rem;
     @include response(xl) {
       overflow: auto;
       &::-webkit-scrollbar {
@@ -770,50 +799,53 @@
       margin-bottom: 5rem;
     }
 
-    @include response(xl){
-      &-logo-presentation {
-        padding-top: 5rem;
-        @include flex(
-          $direction: row,
-          $justify: center,
-          $align: center,
-          $gap: 0.5rem
-        );
+    &-logo-presentation {
+      padding-top: 5rem;
+      @include flex(
+        $direction: row,
+        $justify: center,
+        $align: center,
+        $gap: 0.5rem
+      );
 
-        &-img {
+      &-img {
+        @include response(lg) {
           width: 9rem;
-          transition: $transition;
+          display: block;
         }
+        display: none;
+      }
 
-        &-text {
-          @include response(xl) {
-            font-size: getFontSize(xxl);
-          }
+      &-text {
+        @include response(xl) {
           font-size: getFontSize(xl);
           font-family: $font-family-title;
           text-transform: uppercase;
           font-weight: getFontWeight(bold);
+          display: block;
+        }
 
-          &-first {
-            color: getColor(black);
-          }
+        display: none;
 
-          &-second {
-            background-color: getColor(intense-violet);
-            background-image: linear-gradient(
-              180deg,
-              rgba(255, 255, 255, 0.1),
-              rgba(255, 255, 255, 0)
-            );
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-          }
+        &-first {
+          color: getColor(black);
+        }
+
+        &-second {
+          background-color: getColor(intense-violet);
+          background-image: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.1),
+            rgba(255, 255, 255, 0)
+          );
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
         }
       }
     }
 
-    &-logo-presentation{
+    &-logo-presentation {
       display: none;
     }
 
@@ -824,10 +856,9 @@
       font-size: getFontSize(lg);
       font-family: $font-family-title;
       font-weight: getFontWeight(bold);
-      @include response(xl){
+      @include response(xl) {
         padding-top: 2rem;
       }
-      padding-top: 25rem;
       padding-bottom: 5rem;
       text-align: center;
     }
@@ -907,6 +938,19 @@
           @include button(sm, true, $disabled: true);
         }
       }
+    }
+  }
+
+  @keyframes scale-in-center {
+    0% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      opacity: 1;
     }
   }
 }

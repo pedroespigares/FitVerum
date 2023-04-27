@@ -4,8 +4,8 @@
     <div class="entry-container-left">
       <img *ngIf="!loading" src="{{photoURL}}" alt="Exercise image" class="entry-container-left-img">
       <div class="entry-container-left-buttons">
-        <button class="entry-container-left-buttons-button">Description</button>
-        <button class="entry-container-left-buttons-button">Evolution</button>
+        <button class="entry-container-left-buttons-button" (click)="openCanvas(content)">Description</button>
+        <button class="entry-container-left-buttons-button" (click)="openModal()">Evolution</button>
       </div>
     </div>
 
@@ -36,4 +36,29 @@
         </form>
     </div>
   </div>
+
+
+  <ng-template #content let-offcanvas>
+    <div class="offcanvas-header">
+      <h4 class="offcanvas-title fs-1" id="description">{{exercise.title}} description</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+    </div>
+    <div class="offcanvas-body fs-3">
+      <p>{{exercise.description}}</p>
+    </div>
+  </ng-template>
+
+  <ng-template #modalContent let-close="close">
+    <div class="modal-header">
+      <h5 class="modal-title">Exercise evolution</h5>
+      <i class="fa-solid fa-x" (click)="close()"></i>
+    </div>
+    <div class="modal-body">
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="modal-button" (click)="close()">
+        Back
+      </button>
+    </div>
+  </ng-template>
 </main>

@@ -15,8 +15,8 @@
 
   &-clients {
     @include response(xl) {
-      border-left: 1px solid getColor(light-grayish-violet);
-      height: calc(100vh - 126.797px - 5rem);
+      border-right: 1px solid getColor(light-grayish-violet);
+      height: calc(100vh - 126.797px - 10rem);
     }
     margin-top: 5rem;
     grid-area: 1 / 1 / 2 / 2;
@@ -72,6 +72,7 @@
 
   &-info {
     grid-area: 1 / 2 / 2 / 3;
+    height: 100%;
 
     &-title {
       @include view_header(4rem);

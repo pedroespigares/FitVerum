@@ -1,6 +1,10 @@
 @import "../../../../scss/mixin.scss";
 @import "../../../../scss/variables.scss";
 
+.content{
+  height: calc(100vh - 112px - 10rem);
+}
+
 .trainers-clients-header {
   margin-top: 5rem;
   @include view_header();
@@ -15,6 +19,13 @@
   @include flex($direction: column, $justify: center, $align: center);
 
   &-users {
+    @include flex($direction: column, $justify: flex-start, $align: center);
+    height: 100%;
+    width: 100%;
+  }
+
+  &-users-border{
+    margin-top: 7rem;
     @include response(xl) {
       border-right: 2px solid getColor(light-grayish-violet);
     }

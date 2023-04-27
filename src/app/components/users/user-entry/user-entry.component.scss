@@ -2,7 +2,7 @@
 @import "../../../../scss/variables.scss";
 
 .content {
-  height: calc(100vh - 126.797px);
+  height: calc(100vh - 126.797px - 10rem);
 }
 
 .exercise-title {
@@ -18,11 +18,10 @@
 }
 
 .entry-container {
-  margin-top: 12.5rem;
   display: grid;
   grid-template-columns: 0.5fr 1fr;
   grid-template-rows: 1fr;
-  place-items: start;
+  place-items: center;
   height: 100%;
   width: 100%;
 
@@ -35,16 +34,16 @@
     }
 
     &-buttons {
-      margin-top: 5rem;
+      margin-top: 2rem;
       @include flex(
         $direction: row,
         $justify: center,
         $align: center,
-        $gap: 5rem
+        $gap: 2rem
       );
 
       &-button {
-        @include button(lg, true, $width: 25rem);
+        @include button(md, true, $width: 20rem);
       }
     }
   }
@@ -55,7 +54,7 @@
     height: 100%;
     @include flex(
       $direction: column,
-      $justify: flex-start,
+      $justify: center,
       $align: center,
       $gap: 2rem
     );
@@ -82,7 +81,8 @@
 
         &-input {
           grid-area: 1 / 2 / 2 / 3;
-          @include input($text-align : center);
+          width: 100%;
+          @include input();
         }
 
         &-textarea {
@@ -109,12 +109,18 @@
       }
       &-button {
         margin-top: 5rem;
-        @include button(xl, true, $width: 30rem);
+        @include button(lg, true);
+
         &-disabled{
           margin-top: 5rem;
-          @include button(xl, true, $width: 30rem, $disabled: true);
+          @include button(lg, false, $disabled: true);
         }
       }
     }
   }
+}
+
+.offcanvas-title{
+  text-align: center !important;
+  color: getColor(intense-violet);
 }

@@ -22,7 +22,6 @@
     transition: $transition;
     color: getColor(white);
     background-color: getColor(intense-violet);
-    border: 1px solid getColor(intense-violet);
     background-image: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.1),

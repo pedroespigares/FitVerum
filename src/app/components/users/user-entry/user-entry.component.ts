@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { NgbOffcanvas} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-user-entry',
@@ -9,6 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./user-entry.component.scss']
 })
 export class UserEntryComponent implements OnInit{
+  @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
 
   exerciseID: string = this.route.snapshot.paramMap.get('exerciseID');
   exercise: any;
@@ -24,8 +27,17 @@ export class UserEntryComponent implements OnInit{
   color: string = "#FF9595";
   comments: string = null;
 
+  modalData: {
+    event: any;
+  };
 
-  constructor(private database: DatabaseService, private router: Router, private route: ActivatedRoute, private auth: AuthService) { }
+  constructor(
+    private database: DatabaseService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private auth: AuthService,
+    private offcanvasService: NgbOffcanvas,
+    private modalService: NgbModal,) { }
 
   ngOnInit(): void {
     this.database.getByID(this.exerciseID, "exercises").then((exercise) => {
@@ -44,4 +56,13 @@ export class UserEntryComponent implements OnInit{
       this.router.navigate(["/user/calendar"]);
     }
   }
+
+  openCanvas(content:any){
+      this.offcanvasService.open(content, { ariaLabelledBy: 'description' })
+  }
+
+  openModal() {
+		this.modalData = { event: this.exercise};
+    this.modalService.open(this.modalContent, { size: 'lg', centered: true, keyboard: true});
+	}
 }
