@@ -16,6 +16,7 @@ export class UserEntryComponent implements OnInit{
   exerciseID: string = this.route.snapshot.paramMap.get('exerciseID');
   exercise: any;
   date: Date = new Date(this.route.snapshot.paramMap.get('date'));
+  dateNotFormatted = this.route.snapshot.paramMap.get('date');
   photoURL: string;
 
   loading: boolean = true;
@@ -24,8 +25,11 @@ export class UserEntryComponent implements OnInit{
   repetitions: number = null;
   weight: number = null;
 
-  color: string = "#FF9595";
+  color: string = "#6a69dc";
   comments: string = null;
+
+  routineID: string;
+  routineName: string;
 
   modalData: {
     event: any;
@@ -45,7 +49,14 @@ export class UserEntryComponent implements OnInit{
 
       this.database.getMachinePhoto(this.exercise.machineID).then((photoURL) => {
         this.photoURL = photoURL;
-        this.loading = false;
+
+        this.database.getRoutineByExercise(this.exerciseID).then((routineID) => {
+          this.routineID = routineID;
+          this.database.getRoutineTitle(routineID).then((title) => {
+            this.routineName = title;
+            this.loading = false;
+          });
+        });
       });
     });
   }

@@ -1,6 +1,11 @@
 <main class="content">
 <div *ngIf="loading" class="loader"></div>
 <h1 class="routines-title">Your Routines</h1>
+<div *ngIf="!loading" class="breadcrumbs">
+  <a class="breadcrumbs-item" routerLink="/user/calendar">Calendar</a>
+  <p class="breadcrumbs-item"> > </p>
+  <a class="breadcrumbs-item">Routines</a>
+</div>
 <h2 class="routines-title-no-routines" *ngIf="!routines.length">You don't have any routines yet</h2>
 <div class="routines-container">
     <div class="routines-container-routine" *ngFor="let singleRoutine of routines" (click)="goToRoutineExercises(singleRoutine)">

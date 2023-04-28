@@ -51,3 +51,7 @@
 .loader{
     @include loader(40vh);
 }
+
+.breadcrumbs{
+  @include breadcrumbs(5rem);
+}

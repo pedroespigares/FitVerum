@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { DatabaseService } from 'src/app/services/database.service';
 
@@ -17,7 +16,9 @@ export class UserRoutineExercisesComponent implements OnInit {
   loadingRoutines: boolean = true;
   loadingTitle: boolean = true;
 
-  constructor(private route: ActivatedRoute, private database: DatabaseService, private router: Router) { }
+  date: any = this.route.snapshot.paramMap.get('date');
+
+  constructor(private route: ActivatedRoute, private database: DatabaseService) { }
 
   ngOnInit() {
     this.database.getExercisesByRoutine(this.routineID).subscribe((data) => {

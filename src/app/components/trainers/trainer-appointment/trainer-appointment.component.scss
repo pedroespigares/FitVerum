@@ -204,6 +204,26 @@
 
         &-input {
           @include input();
+          &-color{
+            grid-area: 1 / 2 / 2 / 3;
+            width: 100%;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 5rem;
+            height: 5rem;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            &::-webkit-color-swatch {
+              border-radius: 15px;
+              border: none;
+            }
+            &::-moz-color-swatch {
+              border-radius: 15px;
+              border: none;
+            }
+          }
         }
       }
     }

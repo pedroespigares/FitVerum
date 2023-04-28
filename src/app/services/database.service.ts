@@ -214,6 +214,17 @@ export class DatabaseService {
     return collectionData(q, { idField: 'id' }) as Observable<any[]>;
   }
 
+  /**
+   * Obtener la rutina relacionada a un ejercicio
+   * @param exerciseID
+   * @returns
+   */
+  async getRoutineByExercise(exerciseID: string){
+    const exerciseRef = doc(this.database, 'exercises', exerciseID);
+    const docSnap = await getDoc(exerciseRef);
+    return docSnap.data()['routineID'];
+  }
+
 // --------------------------------------------------------------------------------------------
 
 
@@ -382,7 +393,7 @@ export class DatabaseService {
    * Actualizar la fecha de una entrada de usuario
    * @param id - ID de la entrada
    * @param date - Nueva fecha de la entrada
-   */ 
+   */
   updateUserEntryDate(id: string, date: number){
     const userEntryRef = doc(this.database, 'userEntry', id);
     updateDoc(userEntryRef, {

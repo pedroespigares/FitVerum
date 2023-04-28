@@ -19,7 +19,7 @@
 
 .entry-container {
   display: grid;
-  grid-template-columns: 0.5fr 1fr;
+  grid-template-columns: 0.80fr 1fr;
   grid-template-rows: 1fr;
   place-items: center;
   height: 100%;
@@ -43,7 +43,7 @@
       );
 
       &-button {
-        @include button(md, true, $width: 20rem);
+        @include button(lg, true, $width: 20rem);
       }
     }
   }
@@ -63,6 +63,10 @@
       @include view_header(5rem);
       color: getColor(black);
       margin-bottom: 5rem;
+      &-date{
+        color: getColor(intense-violet);
+        font-weight: getFontWeight(normal);
+      }
     }
 
     &-form {
@@ -78,11 +82,32 @@
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 1fr;
         place-items: center;
+        width: 100%;
 
         &-input {
           grid-area: 1 / 2 / 2 / 3;
           width: 100%;
           @include input();
+          &-color{
+            grid-area: 1 / 2 / 2 / 3;
+            width: 100%;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            &::-webkit-color-swatch {
+              border-radius: 0.5rem;
+              border: none;
+            }
+            &::-moz-color-swatch {
+              border-radius: 0.5rem;
+              border: none;
+            }
+          }
         }
 
         &-textarea {
@@ -109,11 +134,11 @@
       }
       &-button {
         margin-top: 5rem;
-        @include button(lg, true);
+        @include button(lg, true, $width: 20rem);
 
         &-disabled{
           margin-top: 5rem;
-          @include button(lg, false, $disabled: true);
+          @include button(lg, false, $disabled: true, $width: 20rem);
         }
       }
     }
@@ -123,4 +148,12 @@
 .offcanvas-title{
   text-align: center !important;
   color: getColor(intense-violet);
+}
+
+.breadcrumbs{
+  @include breadcrumbs(5rem);
+}
+
+.loader{
+  @include loader(50%, 38%);
 }

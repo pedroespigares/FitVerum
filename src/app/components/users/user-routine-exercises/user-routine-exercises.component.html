@@ -1,5 +1,12 @@
 <main class="content">
   <h1 class="exercise-title"><span class="exercise-title-span" *ngIf="!loadingTitle">{{routineName}}</span> exercises</h1>
+  <div *ngIf="!loadingRoutines" class="breadcrumbs">
+    <a class="breadcrumbs-item" routerLink="/user/calendar">Calendar</a>
+    <p class="breadcrumbs-item"> > </p>
+    <a class="breadcrumbs-item" routerLink="/user/calendar/{{date}}">Routines</a>
+    <p class="breadcrumbs-item"> > </p>
+    <a class="breadcrumbs-item">{{routineName}}</a>
+  </div>
   <h2 class="exercise-title-no-exercise" *ngIf="!exercises.length">This routine doesn't have any exercises</h2>
   <div class="exercise-container" *ngIf="!loadingRoutines">
       <app-simple-exercise-card  *ngFor="let singleExercise of exercises" [exercise]="singleExercise"></app-simple-exercise-card>

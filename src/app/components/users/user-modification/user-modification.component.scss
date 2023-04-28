@@ -49,13 +49,13 @@
       font-size: getFontSize(md);
       font-family: $font-family-text;
       color: getColor(black);
-      font-weight: getFontWeight(thin);
+      font-weight: getFontWeight(normal);
     }
     &-membership {
       font-size: getFontSize(sm);
       font-family: $font-family-text;
       color: getColor(black);
-      font-weight: getFontWeight(thin);
+      font-weight: getFontWeight(normal);
     }
   }
 }
@@ -85,7 +85,7 @@
         $gap: 5rem
       );
     }
-    
+
     @include flex(
       $direction: column,
       $justify: center,

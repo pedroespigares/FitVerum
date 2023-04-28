@@ -19,3 +19,7 @@
     gap: 7rem;
     padding: 5rem;
 }
+
+.breadcrumbs{
+  @include breadcrumbs(5rem);
+}

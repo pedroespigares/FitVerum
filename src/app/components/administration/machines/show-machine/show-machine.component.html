@@ -3,7 +3,7 @@
         <a class="breadcrumbs-item" routerLink="/administration/machines">Machines</a>
         <p class="breadcrumbs-item"> > </p>
         <p *ngIf="!loading" class="breadcrumbs-item">{{machine.name}}</p>
-      </div>
+    </div>
     <div *ngIf="loading" class="loader"></div>
     <div class="show-machine">
         <div class="show-machine-img-container">

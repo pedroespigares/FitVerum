@@ -1,16 +1,26 @@
 <main class="content">
   <h1 class="exercise-title" *ngIf="!loading"><span class="exercise-title-span">{{exercise.title}}</span> entry</h1>
+  <div *ngIf="!loading" class="breadcrumbs">
+    <a class="breadcrumbs-item" routerLink="/user/calendar">Calendar</a>
+    <p class="breadcrumbs-item"> > </p>
+    <a class="breadcrumbs-item" routerLink="/user/calendar/{{date}}">Routines</a>
+    <p class="breadcrumbs-item"> > </p>
+    <a class="breadcrumbs-item" routerLink="/user/calendar/{{dateNotFormatted}}">{{routineName}}</a>
+    <p class="breadcrumbs-item"> > </p>
+    <a class="breadcrumbs-item">{{exercise.title}}</a>
+  </div>
+  <div *ngIf="loading" class="loader"></div>
   <div class="entry-container">
     <div class="entry-container-left">
       <img *ngIf="!loading" src="{{photoURL}}" alt="Exercise image" class="entry-container-left-img">
-      <div class="entry-container-left-buttons">
+      <div *ngIf="!loading" class="entry-container-left-buttons">
         <button class="entry-container-left-buttons-button" (click)="openCanvas(content)">Description</button>
         <button class="entry-container-left-buttons-button" (click)="openModal()">Evolution</button>
       </div>
     </div>
 
-    <div class="entry-container-right">
-        <h2 class="entry-container-right-title">At {{date | date: "longDate"}}</h2>
+    <div *ngIf="!loading" class="entry-container-right">
+        <h2 class="entry-container-right-title">At <span class="entry-container-right-title-date">{{date | date: "longDate"}}</span></h2>
         <form class="entry-container-right-form" (ngSubmit)="saveEntry()">
           <div class="entry-container-right-form-group">
             <label class="entry-container-right-form-group-label">I made</label>
@@ -26,6 +36,10 @@
             <label class="entry-container-right-form-group-label">with</label>
             <input class="entry-container-right-form-group-input" name="weight" type="number" placeholder="XXX" min="0" [(ngModel)]="weight">
             <label class="entry-container-right-form-group-label-2">KG</label>
+          </div>
+          <div class="entry-container-right-form-group">
+            <label class="entry-container-right-form-group-label">color</label>
+            <input class="entry-container-right-form-group-input-color" name="color" type="color" [(ngModel)]="color">
           </div>
           <div class="entry-container-right-form-group">
             <label class="entry-container-right-form-group-label">Comments</label>
