@@ -24,6 +24,7 @@ import { UserRoutineExercisesComponent } from './components/users/user-routine-e
 import { UserEntryComponent } from './components/users/user-entry/user-entry.component';
 import { NotFoundComponent } from './components/errors/not-found/not-found.component';
 import { ForbiddenComponent } from './components/errors/forbidden/forbidden.component';
+import { AboutUsComponent } from './components/static/about-us/about-us.component';
 import { AuthGuard } from './services/guards/auth.guard';
 import { AdminGuard } from './services/guards/admin.guard';
 import { TrainerGuard } from './services/guards/trainer.guard';
@@ -31,6 +32,7 @@ import { NotloggedGuard } from './services/guards/notlogged.guard';
 
 const routes: Routes = [
   { path: '', component: LandingComponent},
+  { path: 'about-us', component: AboutUsComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent, canActivate: [NotloggedGuard]},
   { path: 'user/calendar', component: UserCalendarComponent, canActivate: [AuthGuard]},

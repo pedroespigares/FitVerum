@@ -6,9 +6,8 @@
   padding-top: 10rem;
   @include response(xl){
     height: calc(100vh - 150px);
+    padding-top: 30rem;
   }
-  padding-top: 30rem;
-  height: calc(100vh - 158px);
   width: 100vw;
   background-color: getColor(white);
   &-title{

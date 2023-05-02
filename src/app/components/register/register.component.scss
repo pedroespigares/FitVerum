@@ -7,6 +7,7 @@
   width: 100%;
   background-color: getColor(white);
   padding: 0 2rem;
+  margin-top: 5rem;
   @include response(xl) {
     padding: 0 5rem;
   }

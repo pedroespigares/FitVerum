@@ -41,6 +41,7 @@ import { AddExerciceComponent } from './components/trainers/trainer-routines/sho
 import { UserEntryComponent } from './components/users/user-entry/user-entry.component';
 import { UserRoutineExercisesComponent } from './components/users/user-routine-exercises/user-routine-exercises.component';
 import { SimpleExerciseCardComponent } from './components/users/user-routine-exercises/simple-exercise-card/simple-exercise-card.component';
+import { AboutUsComponent } from './components/static/about-us/about-us.component';
 
 
 @NgModule({
@@ -76,6 +77,7 @@ import { SimpleExerciseCardComponent } from './components/users/user-routine-exe
     UserEntryComponent,
     UserRoutineExercisesComponent,
     SimpleExerciseCardComponent,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,

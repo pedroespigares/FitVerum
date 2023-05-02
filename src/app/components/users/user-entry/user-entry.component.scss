@@ -18,32 +18,51 @@
 }
 
 .entry-container {
-  display: grid;
-  grid-template-columns: 0.80fr 1fr;
-  grid-template-rows: 1fr;
-  place-items: center;
+  @include response(lg){
+    display: grid;
+    grid-template-columns: 0.80fr 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+    margin-top: 0;
+  }
+
+  @include flex($direction: column, $justify: center, $align: center, $gap: 10rem);
   height: 100%;
   width: 100%;
+  margin-top: 30rem;
 
   &-left {
     grid-area: 1 / 1 / 2 / 2;
     @include flex($direction: column, $justify: center, $align: center);
 
     &-img {
-      width: 70%;
+      @include response(lg){
+        width: 70%;
+      }
+      width: 50%;
     }
 
     &-buttons {
       margin-top: 2rem;
+      @include response(lg){
+        @include flex(
+          $direction: row,
+          $justify: center,
+          $align: center,
+          $gap: 2rem
+        );
+      }
       @include flex(
-        $direction: row,
+        $direction: column,
         $justify: center,
         $align: center,
         $gap: 2rem
       );
-
       &-button {
-        @include button(lg, true, $width: 20rem);
+        @include response(lg){
+          @include button(lg, true, $width: 20rem);
+        }
+        @include button(md, true, $width: 20rem);
       }
     }
   }
@@ -135,6 +154,10 @@
       &-button {
         margin-top: 5rem;
         @include button(lg, true, $width: 20rem);
+        @include response(lg){
+          padding-bottom: 0;
+        }
+        padding-bottom: 5rem;
 
         &-disabled{
           margin-top: 5rem;
@@ -151,7 +174,10 @@
 }
 
 .breadcrumbs{
-  @include breadcrumbs(5rem);
+  @include response(lg){
+    @include breadcrumbs(5rem);
+  }
+  @include breadcrumbs(1.5rem);
 }
 
 .loader{

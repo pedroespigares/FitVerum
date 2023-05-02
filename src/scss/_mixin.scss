@@ -143,11 +143,11 @@
   }
 
   &-button-not-focus {
-    @include button(md);
+    @include button(md, $width: 15rem);
   }
 
   &-button-focus {
-    @include button(md, true);
+    @include button(md, true, $width: 15rem);
   }
 }
 
@@ -406,7 +406,10 @@
   margin-top: 2rem;
   &-item {
     margin: 0;
-    font-size: getFontSize(md);
+    @include response(lg){
+      font-size: getFontSize(md);
+    }
+    font-size: getFontSize(xs);
     font-family: $font-family-text;
     color: getColor(black);
     text-decoration: none;
