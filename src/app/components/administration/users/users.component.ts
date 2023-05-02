@@ -30,6 +30,7 @@ export class UsersComponent {
       this.trainers = data;
       this.trainersLoading = false;
     });
+
   }
 
   convertUserToTrainer(id: string) {

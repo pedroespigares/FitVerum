@@ -6,7 +6,7 @@
     <h2 class="users-trainers-container-users-title">Users</h2>
     <div class="users-trainers-container-users-container">
       <table class="users-trainers-container-users-container-table">
-        <tr *ngFor="let user of users | slice : (page - 1) * pageSize : page * pageSize" (click)="convertUserToTrainer(user.userID)">
+        <tr *ngFor="let user of users | slice : (page - 1) * pageSize : page * pageSize">
           <td>
             <img
               *ngIf="user.photoURL != null"
@@ -14,15 +14,17 @@
               referrerpolicy="no-referrer"
               [src]="user.photoURL"
               alt="User Image"
+              (click)="convertUserToTrainer(user.userID)"
             />
             <img
               *ngIf="user.photoURL == null"
               class="users-trainers-container-users-container-table-user-img"
               src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=5974ac39-112f-4bd1-a170-d2a23c392d95"
               alt="User Image"
+              (click)="convertUserToTrainer(user.userID)"
             />
           </td>
-          <td class="users-trainers-container-users-container-table-user-name">
+          <td class="users-trainers-container-users-container-table-user-name"  (click)="convertUserToTrainer(user.userID)">
             {{ user.displayName }}
           </td>
           <td>
@@ -30,7 +32,7 @@
               <i class="fa-solid fa-trash"></i>
             </button>
           </td>
-          <td>
+          <td (click)="convertUserToTrainer(user.userID)">
             <button class="users-trainers-container-users-container-table-user-button" placement="right" ngbTooltip="Convert normal user into trainer" tooltipClass="user-tooltip">
               <i class="fa-solid fa-plus"></i>
             </button>
@@ -57,9 +59,9 @@
     <h2 class="users-trainers-container-trainers-title">Trainers</h2>
     <div class="users-trainers-container-trainers-container">
       <table class="users-trainers-container-trainers-container-table">
-        <tr *ngFor="let trainer of trainers | slice : (page_2 - 1) * pageSize_2 : page_2 * pageSize_2" (click)="convertTrainerToUser(trainer.trainerID)">
+        <tr *ngFor="let trainer of trainers | slice : (page_2 - 1) * pageSize_2 : page_2 * pageSize_2">
           <td>
-            <button class="users-trainers-container-trainers-container-table-trainer-button-left" placement="left" ngbTooltip="Convert trainer into normal user" tooltipClass="user-tooltip">
+            <button (click)="convertTrainerToUser(trainer.trainerID)" class="users-trainers-container-trainers-container-table-trainer-button-left" placement="left" ngbTooltip="Convert trainer into normal user" tooltipClass="user-tooltip">
               <i class="fa-solid fa-minus"></i>
             </button>
           </td>
@@ -75,15 +77,17 @@
               referrerpolicy="no-referrer"
               [src]="trainer.photoURL"
               alt="User Image"
+              (click)="convertTrainerToUser(trainer.trainerID)"
             />
             <img
               *ngIf="trainer.photoURL == null"
               class="users-trainers-container-trainers-container-table-trainer-img"
               src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=5974ac39-112f-4bd1-a170-d2a23c392d95"
               alt="User Image"
+              (click)="convertTrainerToUser(trainer.trainerID)"
             />
           </td>
-          <td class="users-trainers-container-trainers-container-table-trainer-button-left-name">
+          <td (click)="convertTrainerToUser(trainer.trainerID)" class="users-trainers-container-trainers-container-table-trainer-button-left-name">
             {{ trainer.displayName }}
           </td>
         </tr>
@@ -92,8 +96,8 @@
     <p *ngIf="this.trainers.length == 0" class="no-trainers-message">There are currently no trainers</p>
     <div class="pagination">
       <ngb-pagination
-      *ngIf="this.trainers.length > 4"
-        [collectionSize]="this.users.length"
+        *ngIf="this.trainers.length > 4"
+        [collectionSize]="this.trainers.length"
         [pageSize]="pageSize_2"
         [directionLinks]="false"
         [(page)]="page_2"

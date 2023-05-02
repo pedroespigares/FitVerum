@@ -31,10 +31,10 @@
                     <i *ngIf="!showingPassword" class="fa-solid fa-eye register-form-fieldset-input-container-icon" (click)="showPassword()"></i>
                     <i *ngIf="showingPassword" class="fa-solid fa-eye-slash register-form-fieldset-input-container-icon-close" (click)="showPassword()"></i>
                 </div>
-                <p class="register-form-fieldset-password-info-under">Min 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.</p>
+                <p *ngIf="passwordCorrect" class="register-form-fieldset-password-info-under">Min 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.</p>
+                <p *ngIf="!passwordCorrect" class="register-form-fieldset-password-info-under-error">Min 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.</p>
             </fieldset>
             <p class="register-form-fieldset-credentials">{{this.auth.failedError}}</p>
-            <p *ngIf="!passwordCorrect" class="register-form-fieldset-password-info">Password must contain at least 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.</p>
             <p *ngIf="isEmpty" class="register-form-fieldset-password-info">Fields can't be empty</p>
             <button (click)="normalRegister()" class="register-form-button">
                 Register

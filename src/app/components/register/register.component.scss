@@ -154,6 +154,10 @@
           font-size: getFontSize(xxs);
           font-family: $font-family-text;
           color: getColor(dark-grayish-violet);
+          &-error{
+            color: red;
+            font-size: getFontSize(xxs);
+          }
         }
       }
 
