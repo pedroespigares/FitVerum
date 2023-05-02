@@ -1,0 +1,25 @@
+@import "../../../../../scss/mixin.scss";
+@import "../../../../../scss/variables.scss";
+
+.exercise-title{
+    @include view_header();
+    &-no-exercise{
+      @include view_header(3rem);
+      color: getColor(black);
+    }
+
+    &-span{
+      color: getColor(black);
+    }
+}
+
+.exercise-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    gap: 7rem;
+    padding: 5rem;
+}
+
+.breadcrumbs{
+  @include breadcrumbs(5rem);
+}

@@ -43,8 +43,12 @@
     &-container {
       @include flex($direction: row, $justify: center, $align: center);
       &-table {
-        width: 100%;
+       @include response(lg){
+          width: 45%;
+        }
+        width: 85%;
         border-collapse: separate;
+        table-layout: fixed;
         @include response(xl) {
           border-spacing: 3rem;
         }
@@ -53,15 +57,18 @@
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
           border-radius: 1rem;
           cursor: pointer;
+          width: 100%;
           transition: $transition;
+          @include flex($direction: row, $justify: flex-start, $align: center);
           &:hover {
             transform: translateY(-0.5rem);
             box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
             transition: $transition;
           }
+          margin-bottom: 3rem;
+          overflow: hidden;
         }
-        &-user,
-        &-client {
+        &-user, &-client {
           &-img {
             @include response(xl) {
               width: 7.5rem;
@@ -83,6 +90,8 @@
             font-weight: getFontWeight(bold);
             color: getColor(black);
             width: 50%;
+            padding-left: 2rem;
+            flex: 1;
           }
           &-button {
             width: 100%;
@@ -130,16 +139,32 @@
                 background-color: darken(getColor(intense-violet), 5%);
               }
 
-
               &-name{
                 @include response(xl) {
-                  font-size: getFontSize(lg);
+                  font-size: getFontSize(xl);
                 }
-                font-size: getFontSize(sm);
+                font-size: getFontSize(md);
                 font-family: $font-family-title;
                 font-weight: getFontWeight(bold);
                 color: getColor(black);
                 padding-right: 2rem;
+                padding-left: 2rem;
+                flex: 1;
+              }
+
+              &-img {
+                @include response(xl) {
+                  width: 7.5rem;
+                  height: 7.5rem;
+                  margin: 1rem;
+                  margin-left: 2rem;
+                }
+                width: 5.5rem;
+                height: 5.5rem;
+                border-radius: 50%;
+                object-fit: cover;
+                margin: 0.5rem;
+                margin-left: 1rem;
               }
             }
           }

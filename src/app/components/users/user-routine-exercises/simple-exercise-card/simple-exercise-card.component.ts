@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class SimpleExerciseCardComponent implements OnInit{
 
   @Input() exercise: any;
+  @Input() goToEntry: boolean;
 
   machineID: string;
   loading: boolean = true;
@@ -26,6 +27,7 @@ export class SimpleExerciseCardComponent implements OnInit{
   }
 
   goToUserEntry() {
+    if(!this.goToEntry) return;
     let date = this.route.snapshot.paramMap.get('date');
     this.router.navigateByUrl(`user/calendar/${date}/entry/${this.exercise.id}`);
   }

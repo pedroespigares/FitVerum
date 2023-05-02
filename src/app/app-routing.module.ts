@@ -25,6 +25,8 @@ import { UserEntryComponent } from './components/users/user-entry/user-entry.com
 import { NotFoundComponent } from './components/errors/not-found/not-found.component';
 import { ForbiddenComponent } from './components/errors/forbidden/forbidden.component';
 import { AboutUsComponent } from './components/static/about-us/about-us.component';
+import { UserRoutinesSimpleComponent } from './components/users/simple/user-routines-simple/user-routines-simple.component';
+import { UserRoutineExercisesSimpleComponent } from './components/users/simple/user-routine-exercises-simple/user-routine-exercises-simple.component';
 import { AuthGuard } from './services/guards/auth.guard';
 import { AdminGuard } from './services/guards/admin.guard';
 import { TrainerGuard } from './services/guards/trainer.guard';
@@ -35,6 +37,8 @@ const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent, canActivate: [NotloggedGuard]},
+  { path: 'user/routines', component: UserRoutinesSimpleComponent, canActivate: [AuthGuard]},
+  { path: 'user/routines/:routineID', component: UserRoutineExercisesSimpleComponent, canActivate: [AuthGuard]},
   { path: 'user/calendar', component: UserCalendarComponent, canActivate: [AuthGuard]},
   { path: 'user/calendar/:date', component: UserRoutinesComponent, canActivate: [AuthGuard]},
   { path: 'user/calendar/:date/:routineID', component: UserRoutineExercisesComponent, canActivate: [AuthGuard]},
