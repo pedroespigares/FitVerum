@@ -1,0 +1,13 @@
+<img class="diet-img" [src]="diet.photoURL"alt="Diet Image"/>
+<h2 class="diet-title">{{ diet.title }}</h2>
+<div class="diet-actions">
+  <button class="diet-actions-button-delete" (click)="deleteDiet(diet.id, diet.photoURL)">
+    <i class="fa-solid fa-trash"></i>
+  </button>
+  <button class="diet-actions-button-edit" routerLink="/trainer/diets/edit/{{ diet.id }}">
+    <i class="fa-solid fa-pen-to-square"></i>
+  </button>
+  <button class="diet-actions-button-show" routerLink="/trainer/diets/show/{{ diet.id }}">
+    <i class="fa-solid fa-circle-info"></i>
+  </button>
+</div>

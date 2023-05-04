@@ -1,0 +1,11 @@
+<main class="content">
+  <div *ngIf="loading" class="loader"></div>
+  <h1 class="diets-title">Your Diets</h1>
+  <h2 class="diets-title-no-diets" *ngIf="!diets.length">You don't have any diet yet</h2>
+  <div class="diets-container">
+      <div class="diets-container-routine" *ngFor="let singleDiet of diets" (click)="goToDiet(singleDiet)">
+          <img class="diets-container-routine-img" [src]="singleDiet.photoURL" alt="Routine Image">
+          <h2 class="diets-container-routine-title">{{singleDiet.title}}</h2>
+      </div>
+  </div>
+  </main>

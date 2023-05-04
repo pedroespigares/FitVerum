@@ -4,19 +4,20 @@ import { AuthService } from 'src/app/services/auth.service';
 import { ToastsService } from 'src/app/services/toasts.service';
 
 @Component({
-  selector: 'app-trainer-routines',
-  templateUrl: './trainer-routines.component.html',
-  styleUrls: ['./trainer-routines.component.scss']
+  selector: 'app-trainer-diets',
+  templateUrl: './trainer-diets.component.html',
+  styleUrls: ['./trainer-diets.component.scss']
 })
-export class TrainerRoutinesComponent implements OnInit {
+export class TrainerDietsComponent {
+
 
   clients: any[] = [];
-  routines: any[] = [];
+  diets: any[] = [];
   page = 1;
   pageSize = 5;
   selectedClient: any = null;
 
-  loadingRoutines = true;
+  loadingDiets = true;
 
   showAddToast: boolean = this.toasts.routineAdded;
   showDeleteToast: boolean = false;
@@ -34,24 +35,24 @@ export class TrainerRoutinesComponent implements OnInit {
   selectClient(client: any) {
     if(this.selectedClient == null){
       this.selectedClient = client;
-      this.getRoutines(client);
+      this.getDiets(client);
     } else{
       this.deselectClient();
       this.selectedClient = client;
-      this.getRoutines(client);
+      this.getDiets(client);
     }
   }
 
   deselectClient() {
     this.selectedClient = null;
-    this.routines = [];
+    this.diets = [];
   }
 
 
-  getRoutines(client: any) {
-    this.database.getRoutines(client.id).subscribe((data) => {
-      this.routines = data;
-      this.loadingRoutines = false;
+  getDiets(client: any) {
+    this.database.getDiets(client.id).subscribe((data) => {
+      this.diets = data;
+      this.loadingDiets = false;
     });
   }
 }

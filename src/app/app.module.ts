@@ -44,6 +44,9 @@ import { SimpleExerciseCardComponent } from './components/users/user-routine-exe
 import { AboutUsComponent } from './components/static/about-us/about-us.component';
 import { UserRoutinesSimpleComponent } from './components/users/simple/user-routines-simple/user-routines-simple.component';
 import { UserRoutineExercisesSimpleComponent } from './components/users/simple/user-routine-exercises-simple/user-routine-exercises-simple.component';
+import { TrainerDietsComponent } from './components/trainers/trainer-diets/trainer-diets.component';
+import { TrainerDietCardComponent } from './components/trainers/trainer-diets/trainer-diet-card/trainer-diet-card.component';
+import { UserDietsComponent } from './components/users/user-diets/user-diets.component';
 
 
 @NgModule({
@@ -82,6 +85,9 @@ import { UserRoutineExercisesSimpleComponent } from './components/users/simple/u
     AboutUsComponent,
     UserRoutinesSimpleComponent,
     UserRoutineExercisesSimpleComponent,
+    TrainerDietsComponent,
+    TrainerDietCardComponent,
+    UserDietsComponent,
   ],
   imports: [
     BrowserModule,

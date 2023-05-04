@@ -1,0 +1,170 @@
+@import "../../../../scss/mixin.scss";
+@import "../../../../scss/variables.scss";
+
+.breadcrumbs {
+  @include breadcrumbs();
+}
+
+.trainer-diets-container {
+  @include response(xl) {
+    display: grid;
+    grid-template-columns: 0.25fr 1fr;
+    grid-template-rows: 1fr;
+  }
+  @include flex($direction: column, $justify: center, $align: center);
+
+  &-clients {
+    @include response(xl) {
+      border-right: 1px solid getColor(light-grayish-violet);
+      height: calc(100vh - 126.797px - 10rem);
+    }
+    margin-top: 5rem;
+    grid-area: 1 / 1 / 2 / 2;
+    &-title {
+      @include view_header(4rem);
+      margin-bottom: 2rem;
+    }
+    &-table {
+      width: 100%;
+      border-collapse: separate;
+      @include response(xl) {
+        border-spacing: 3rem;
+      }
+      border-spacing: 2rem;
+      tr {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        border-radius: 1rem;
+        cursor: pointer;
+        transition: $transition;
+        &:hover {
+          transform: translateY(-0.5rem);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+          transition: $transition;
+        }
+      }
+      &-client {
+        &-img {
+          @include response(xl){
+            width: 7.5rem;
+            height: 7.5rem;
+          }
+          width: 5.5rem;
+          height: 5.5rem;
+          border-radius: 50%;
+          object-fit: cover;
+          margin: 1rem;
+        }
+        &-name {
+          @include response(xl) {
+            font-size: getFontSize(xl);
+          }
+          font-size: getFontSize(md);
+          font-family: $font-family-title;
+          font-weight: getFontWeight(bold);
+          color: getColor(black);
+        }
+        &-button {
+          @include user_button();
+        }
+      }
+    }
+  }
+
+  &-info {
+    grid-area: 1 / 2 / 2 / 3;
+    height: 100%;
+
+    &-title {
+      @include view_header(4rem);
+      margin-top: 5rem;
+      &-icon{
+        margin-left: 1rem;
+        color: red;
+        transition: $transition;
+        &:hover{
+          cursor: pointer;
+          transition: $transition;
+          scale: 1.2;
+        }
+      }
+
+      &-username{
+        color: getColor(black);
+        padding-left: 1rem;
+      }
+    }
+
+    &-no-client{
+      text-align: center;
+      font-size: 2rem;
+      font-family: $font-family-title;
+      font-weight: getFontWeight(bold);
+      color: getColor(black);
+      padding-top: 1rem;
+    }
+
+    &-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+      gap: 7rem;
+      padding: 5rem;
+
+      &-actions {
+        @include response(xl) {
+          @include flex($direction: row, $justify: flex-end);
+        }
+        @include flex($direction: row, $justify: center);
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        padding: 0 5rem;
+        &-button {
+          @include button(lg, true);
+          margin-left: 2rem;
+        }
+      }
+    }
+
+    &-no-diets{
+      @include view_header(2rem);
+      color: getColor(dark-grayish-violet);
+    }
+  }
+}
+
+::ng-deep .pagination {
+  margin-top: 1rem;
+  justify-content: center;
+  // Al venir de un componente de terceros, no se puede usar el @include ni las variables de sass propias
+  --bs-pagination-color: getColor(black);
+  --bs-pagination-hover-color: getColor(intense-violet);
+  --bs-pagination-active-bg: #6a69dc;
+  --bs-pagination-active-border-color: #6a69dc;
+  --bs-pagination-font-size: 2rem;
+  --bs-pagination-padding-x: 1.5rem;
+  --bs-pagination-padding-y: 0.75rem;
+  --bs-pagination-focus-box-shadow: none;
+}
+
+.no-clients-message {
+  font-size: 2rem;
+  font-family: $font-family-title;
+  font-weight: getFontWeight(bold);
+  color: getColor(black);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.error-message {
+  font-size: getFontSize(md);
+  font-family: $font-family-title;
+  font-weight: getFontWeight(bold);
+  color: red;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.loader {
+  @include loader(40vh, 28vw);
+}
+
+@include toast(-21rem);

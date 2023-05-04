@@ -21,9 +21,11 @@
             <li *ngIf="!this.auth.isLogged" class="header-nav-item"><a class="header-nav-link" routerLink="/about-us">About Us</a></li>
             <li *ngIf="this.auth.isLogged && !this.auth.isAdmin && !this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/user/calendar">Activities</a></li>
             <li *ngIf="this.auth.isLogged && !this.auth.isAdmin && !this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/user/routines">My routines</a></li>
+            <li *ngIf="this.auth.isLogged && !this.auth.isAdmin && !this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/user/diets">My diets</a></li>
             <li *ngIf="this.auth.isLogged && this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/trainer/calendar">Management</a></li>
             <li *ngIf="this.auth.isLogged && this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/trainer/clients">Clients</a></li>
             <li *ngIf="this.auth.isLogged && this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/trainer/routines">Routines</a></li>
+            <li *ngIf="this.auth.isLogged && this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/trainer/diets">Diets</a></li>
             <li *ngIf="this.auth.isLogged && this.auth.isAdmin" class="header-nav-item"><a class="header-nav-link" routerLink="/administration/users">Users</a></li>
             <li *ngIf="this.auth.isLogged && this.auth.isAdmin" class="header-nav-item"><a class="header-nav-link" routerLink="/administration/machines">Machines</a></li>
             <div class="header-nav-list-actions">

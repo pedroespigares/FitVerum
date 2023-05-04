@@ -1,0 +1,57 @@
+@import "../../../../scss/mixin.scss";
+@import "../../../../scss/variables.scss";
+
+.diets-title{
+    @include view_header();
+    &-no-diets{
+      @include view_header(3rem);
+      color: getColor(black);
+    }
+}
+
+.diets-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    gap: 7rem;
+    padding: 5rem;
+
+    &-routine{
+        @include card();
+        &-img{
+            width: 100%;
+            height: 25rem;
+            object-fit: cover;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+        }
+        &-title{
+            margin: 0;
+            width: 100%;
+            text-align: center;
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            padding: 2rem;
+            font-size: 2rem;
+            font-family: $font-family-title;
+            font-weight: getFontWeight(bold);
+            color: getColor(black);
+            transition: $transition;
+            color: getColor(white);
+            background-color: getColor(intense-violet);
+            border: 1px solid getColor(intense-violet);
+            background-image: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.1),
+            rgba(255, 255, 255, 0)
+            );
+        }
+    }
+}
+
+.loader{
+    @include loader(40vh);
+}
+
+.breadcrumbs{
+  @include breadcrumbs(5rem);
+}

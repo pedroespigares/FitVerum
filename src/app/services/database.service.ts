@@ -126,6 +126,17 @@ export class DatabaseService {
   }
 
   /**
+   * Obtener las dietas de un usuario
+   * @param user - ID del usuario
+   * @returns - Observable con las dietas del usuario
+   */
+  getDiets(user: string): Observable<any[]> {
+    const routinesRef = collection(this.database, 'diets');
+    const q = query(routinesRef, where('userID', '==', user));
+    return collectionData(q, { idField: 'id' }) as Observable<any[]>;
+  }
+
+  /**
    * Obtener todas las máquinas
    * @returns - Observable con todas las máquinas
    */
@@ -134,16 +145,6 @@ export class DatabaseService {
     return collectionData(machinesRef, { idField: 'id' }) as Observable<any[]>;
   }
 
-  /**
-   * Obtener las rutinas de un cliente
-   * @param clientID - ID del cliente
-   * @returns - Observable con las rutinas del cliente
-   */
-  getClientRoutines(clientID: string): Observable<any[]> {
-    const routinesRef = collection(this.database, 'routines');
-    const q = query(routinesRef, where('userID', '==', clientID));
-    return collectionData(q, { idField: 'id' }) as Observable<any[]>;
-  }
 
   /**
    * Obtener los ejercicios de una rutina

@@ -27,6 +27,8 @@ import { ForbiddenComponent } from './components/errors/forbidden/forbidden.comp
 import { AboutUsComponent } from './components/static/about-us/about-us.component';
 import { UserRoutinesSimpleComponent } from './components/users/simple/user-routines-simple/user-routines-simple.component';
 import { UserRoutineExercisesSimpleComponent } from './components/users/simple/user-routine-exercises-simple/user-routine-exercises-simple.component';
+import { TrainerDietsComponent } from './components/trainers/trainer-diets/trainer-diets.component';
+import { UserDietsComponent } from './components/users/user-diets/user-diets.component';
 import { AuthGuard } from './services/guards/auth.guard';
 import { AdminGuard } from './services/guards/admin.guard';
 import { TrainerGuard } from './services/guards/trainer.guard';
@@ -37,6 +39,7 @@ const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent, canActivate: [NotloggedGuard]},
+  { path: 'user/diets', component: UserDietsComponent, canActivate: [AuthGuard]},
   { path: 'user/routines', component: UserRoutinesSimpleComponent, canActivate: [AuthGuard]},
   { path: 'user/routines/:routineID', component: UserRoutineExercisesSimpleComponent, canActivate: [AuthGuard]},
   { path: 'user/calendar', component: UserCalendarComponent, canActivate: [AuthGuard]},
@@ -53,6 +56,7 @@ const routes: Routes = [
   { path: 'trainer/calendar', component: TrainerCalendarComponent, canActivate: [TrainerGuard]},
   { path: 'trainer/calendar/:date', component: TrainerAppointmentComponent, canActivate: [TrainerGuard]},
   { path: 'trainer/modification', component: TrainerModificationComponent, canActivate: [TrainerGuard]},
+  { path: 'trainer/diets', component: TrainerDietsComponent, canActivate: [TrainerGuard]},
   { path: 'trainer/routines', component: TrainerRoutinesComponent, canActivate: [TrainerGuard]},
   { path: 'trainer/routines/show/:id', component: ShowExercisesComponent, canActivate: [TrainerGuard]},
   { path: 'trainer/routines/edit/:id', component: EditRoutineComponent, canActivate: [TrainerGuard]},
