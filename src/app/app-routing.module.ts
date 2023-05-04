@@ -29,6 +29,7 @@ import { UserRoutinesSimpleComponent } from './components/users/simple/user-rout
 import { UserRoutineExercisesSimpleComponent } from './components/users/simple/user-routine-exercises-simple/user-routine-exercises-simple.component';
 import { TrainerDietsComponent } from './components/trainers/trainer-diets/trainer-diets.component';
 import { UserDietsComponent } from './components/users/user-diets/user-diets.component';
+import { UserEvolutionComponent } from './components/users/user-evolution/user-evolution.component';
 import { AuthGuard } from './services/guards/auth.guard';
 import { AdminGuard } from './services/guards/admin.guard';
 import { TrainerGuard } from './services/guards/trainer.guard';
@@ -46,6 +47,7 @@ const routes: Routes = [
   { path: 'user/calendar/:date', component: UserRoutinesComponent, canActivate: [AuthGuard]},
   { path: 'user/calendar/:date/:routineID', component: UserRoutineExercisesComponent, canActivate: [AuthGuard]},
   { path: 'user/calendar/:date/entry/:exerciseID', component: UserEntryComponent, canActivate: [AuthGuard]},
+  { path: 'user/evolution/:exerciseID', component: UserEvolutionComponent, canActivate: [AuthGuard]},
   { path: 'user/modification', component: UserModificationComponent, canActivate: [AuthGuard]},
   { path: 'administration/users', component: UsersComponent, canActivate: [AdminGuard]},
   { path: 'administration/machines', component: MachinesComponent, canActivate: [AdminGuard]},

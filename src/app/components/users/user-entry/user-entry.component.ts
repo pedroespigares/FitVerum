@@ -3,7 +3,6 @@ import { DatabaseService } from 'src/app/services/database.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { NgbOffcanvas} from '@ng-bootstrap/ng-bootstrap';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-user-entry',
@@ -40,8 +39,7 @@ export class UserEntryComponent implements OnInit{
     private router: Router,
     private route: ActivatedRoute,
     private auth: AuthService,
-    private offcanvasService: NgbOffcanvas,
-    private modalService: NgbModal,) { }
+    private offcanvasService: NgbOffcanvas,) { }
 
   ngOnInit(): void {
     this.database.getByID(this.exerciseID, "exercises").then((exercise) => {
@@ -63,7 +61,7 @@ export class UserEntryComponent implements OnInit{
 
   saveEntry(): void{
     if(this.series != null || this.repetitions != null || this.weight != null){
-      this.database.createUserEntry(this.auth.userID, this.date.getTime(), this.weight, this.repetitions, this.series, this.color, this.exercise.title, this.comments);
+      this.database.createUserEntry(this.auth.userID, this.date.getTime(), this.weight, this.repetitions, this.series, this.color, this.exercise.title, this.exerciseID, this.comments);
       this.router.navigate(["/user/calendar"]);
     }
   }
@@ -72,8 +70,7 @@ export class UserEntryComponent implements OnInit{
       this.offcanvasService.open(content, { ariaLabelledBy: 'description' })
   }
 
-  openModal() {
-		this.modalData = { event: this.exercise};
-    this.modalService.open(this.modalContent, { size: 'lg', centered: true, keyboard: true});
-	}
+  openEvolution(eventID: any) {
+    this.router.navigateByUrl(`/user/evolution/${eventID}`);
+  }
 }

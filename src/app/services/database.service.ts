@@ -10,6 +10,7 @@ import {
   doc,
   updateDoc,
   getDoc,
+  getDocs
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
@@ -158,6 +159,16 @@ export class DatabaseService {
   }
 
 
+  async getDataFromUserEntry(userID: string, exerciseID: string){
+    const entryRef = collection(this.database, 'userEntry');
+    const q = query(entryRef, where('userID', '==', userID), where('exerciseID', '==', exerciseID));
+    const querySnapshot = await getDocs(q);
+    const data = [];
+    querySnapshot.forEach((doc) => {
+      data.push({weigth: doc.data()['kg'], series: doc.data()['series'], repetitions: doc.data()['repetitions']});
+    });
+    return data;
+  }
 
   /**
    * Obtener la foto de una máquina (los ejercicios no tienen foto, utilizamos la de la máquina que corresponda)
@@ -482,7 +493,7 @@ export class DatabaseService {
    * @param comment - Comentario
    */
 
-  createUserEntry(userID: string, start: number, kg: number, repetitions: number, series: number, color: string, title: string, comment:string = null){
+  createUserEntry(userID: string, start: number, kg: number, repetitions: number, series: number, color: string, title: string, exerciseID: string,comment:string = null){
     const userEntriesRef = collection(this.database, 'userEntry');
     setDoc(doc(userEntriesRef), {
       userID: userID,
@@ -497,6 +508,7 @@ export class DatabaseService {
       draggable: true,
       comment: comment,
       title: title,
+      exerciseID: exerciseID,
     });
   }
 

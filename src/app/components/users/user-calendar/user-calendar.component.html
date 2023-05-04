@@ -25,10 +25,39 @@
         [events]="events"
         [weekStartsOn]="weekStartsOn"
         [weekendDays]="weekendDays"
+        (eventClicked)="open($event.event)"
         (eventTimesChanged)="eventTimesChanged($event)"
         (dayClicked)="routeToRoutines($event.day.date)"
       >
       </mwl-calendar-month-view>
   </div>
 </div>
+
+<ng-template #modalContent let-close="close">
+  <div class="modal-header">
+    <h5 class="modal-title">Event information</h5>
+    <i class="fa-solid fa-x" (click)="close()"></i>
+  </div>
+  <div class="modal-body">
+    <div>
+      <h6 class="modal-body-title">Event title</h6>
+      <p class="modal-body-title-text">{{ modalData?.event?.title }}</p>
+      <p class="modal-body-title-date">{{ modalDataDate | date: 'longDate'}}</p>
+      <h6 *ngIf="modalData?.event?.comment != ''" class="modal-body-content-title">Comments</h6>
+      <p *ngIf="modalData?.event?.comment != ''" class="modal-body-content-text">{{ modalData?.event?.comment}}</p>
+      <p *ngIf="modalData?.event?.comment === null" class="no-comment-message">This event does not have a comment</p>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="modal-button-delete" (click)="deleteEvent(modalData?.event?.id)">
+      <i class="fa-solid fa-trash"></i>
+    </button>
+    <button type="button" class="modal-button" (click)="openEvolution(modalData?.event?.exerciseID)">
+      See evolution
+    </button>
+    <button type="button" class="modal-button" (click)="close()">
+      Back
+    </button>
+  </div>
+</ng-template>
 </main>

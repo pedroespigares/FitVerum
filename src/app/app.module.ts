@@ -47,6 +47,7 @@ import { UserRoutineExercisesSimpleComponent } from './components/users/simple/u
 import { TrainerDietsComponent } from './components/trainers/trainer-diets/trainer-diets.component';
 import { TrainerDietCardComponent } from './components/trainers/trainer-diets/trainer-diet-card/trainer-diet-card.component';
 import { UserDietsComponent } from './components/users/user-diets/user-diets.component';
+import { UserEvolutionComponent } from './components/users/user-evolution/user-evolution.component';
 
 
 @NgModule({
@@ -88,6 +89,7 @@ import { UserDietsComponent } from './components/users/user-diets/user-diets.com
     TrainerDietsComponent,
     TrainerDietCardComponent,
     UserDietsComponent,
+    UserEvolutionComponent,
   ],
   imports: [
     BrowserModule,

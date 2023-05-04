@@ -15,7 +15,7 @@
       <img *ngIf="!loading" src="{{photoURL}}" alt="Exercise image" class="entry-container-left-img">
       <div *ngIf="!loading" class="entry-container-left-buttons">
         <button class="entry-container-left-buttons-button" (click)="openCanvas(content)">Description</button>
-        <button class="entry-container-left-buttons-button" (click)="openModal()">Evolution</button>
+        <button class="entry-container-left-buttons-button" (click)="openEvolution(exerciseID)">Evolution</button>
       </div>
     </div>
 
@@ -59,20 +59,6 @@
     </div>
     <div class="offcanvas-body fs-3">
       <p>{{exercise.description}}</p>
-    </div>
-  </ng-template>
-
-  <ng-template #modalContent let-close="close">
-    <div class="modal-header">
-      <h5 class="modal-title">Exercise evolution</h5>
-      <i class="fa-solid fa-x" (click)="close()"></i>
-    </div>
-    <div class="modal-body">
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="modal-button" (click)="close()">
-        Back
-      </button>
     </div>
   </ng-template>
 </main>

@@ -154,10 +154,6 @@
       &-button {
         margin-top: 5rem;
         @include button(lg, true, $width: 20rem);
-        @include response(lg){
-          padding-bottom: 0;
-        }
-        padding-bottom: 5rem;
 
         &-disabled{
           margin-top: 5rem;

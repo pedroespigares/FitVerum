@@ -92,3 +92,32 @@
     @include button(md, true, 20rem);
   }
 }
+
+.modal {
+  // TODO: Editar borders
+  @include modal();
+}
+
+.no-comment-message{
+  @include response(xl) {
+    font-size: getFontSize(md);
+  }
+  font-size: getFontSize(sm);
+  font-family: $font-family-title;
+  font-weight: getFontWeight(bold);
+  color: getColor(dark-grayish-violet);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+
+.fa-x{
+  color: getColor(intense-violet);
+  font-size: getFontSize(xl);
+  transition: $transition;
+  padding-right: 1rem;
+  cursor: pointer;
+  &:hover{
+    color: getColor(light-violet);
+  }
+}
