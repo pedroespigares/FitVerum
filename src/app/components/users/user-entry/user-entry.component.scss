@@ -2,7 +2,7 @@
 @import "../../../../scss/variables.scss";
 
 .content {
-  height: calc(100vh - 126.797px - 10rem);
+  height: calc(100vh - 126.797px - 15rem);
 }
 
 .exercise-title {
@@ -37,7 +37,7 @@
 
     &-img {
       @include response(lg){
-        width: 70%;
+        width: 65%;
       }
       width: 50%;
     }

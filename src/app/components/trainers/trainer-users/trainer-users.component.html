@@ -1,9 +1,9 @@
 <main class="content">
   <div *ngIf="usersWithoutTrainerLoading && clientsLoading" class="loader"></div>
-  <h1 class="trainers-clients-header">Clients Administration</h1>
+  <h1 class="trainers-clients-header">{{"TRAINERS.CLIENTS.TITLE" | translate}}</h1>
   <div *ngIf="!usersWithoutTrainerLoading && !clientsLoading" class="trainers-clients-container">
     <div class="trainers-clients-container-users-border">
-      <h2 class="trainers-clients-container-users-title">Available users</h2>
+      <h2 class="trainers-clients-container-users-title">{{"TRAINERS.CLIENTS.AVAILABLE-USERS" | translate}}</h2>
       <div class="trainers-clients-container-users-container">
         <table class="trainers-clients-container-users-container-table">
           <tr *ngFor="let user of users | slice : (page - 1) * pageSize : page * pageSize" (click)="subscribeClient(user.userID)">
@@ -33,7 +33,7 @@
           </tr>
         </table>
       </div>
-      <p *ngIf="this.users.length == 0" class="no-users-message">There are currently no users available</p>
+      <p *ngIf="this.users.length == 0" class="no-users-message">{{"TRAINERS.CLIENTS.NO-USERS" | translate}}</p>
       <div class="pagination">
         <ngb-pagination
           *ngIf="this.users.length > 4"
@@ -49,7 +49,7 @@
 
 
     <div class="trainers-clients-container-users">
-      <h2 class="trainers-clients-container-clients-title">Clients</h2>
+      <h2 class="trainers-clients-container-clients-title">{{"TRAINERS.CLIENTS.CLIENTS" | translate}}</h2>
       <div class="trainers-clients-container-clients-container">
         <table class="trainers-clients-container-clients-container-table">
           <tr *ngFor="let client of clients | slice : (page_2 - 1) * pageSize_2 : page_2 * pageSize_2" (click)="unsubscribeClient(client.userID)">
@@ -79,7 +79,7 @@
           </tr>
         </table>
       </div>
-      <p *ngIf="this.clients.length == 0" class="no-clients-message">There are currently no clients associated with you</p>
+      <p *ngIf="this.clients.length == 0" class="no-clients-message">{{"TRAINERS.CLIENTS.NO-CLIENTS" | translate}}</p>
       <div class="pagination">
         <ngb-pagination
         *ngIf="this.clients.length > 4"

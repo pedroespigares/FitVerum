@@ -8,6 +8,7 @@ export class ToastsService {
   public machineEdited: boolean = false;
 
   public routineAdded: boolean = false;
+  public routineDeleted: boolean = false;
   public routineEdited: boolean = false;
   constructor() { }
 }

@@ -167,4 +167,8 @@
   @include loader(40vh, 28vw);
 }
 
-@include toast(-21rem);
+@include toast(-15rem, true);
+
+@include response(xl){
+  @include toast(-21rem, false);
+}

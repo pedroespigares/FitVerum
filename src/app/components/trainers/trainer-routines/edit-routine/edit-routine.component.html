@@ -1,7 +1,7 @@
 <div class="breadcrumbs">
-    <a class="breadcrumbs-item" routerLink="/trainer/routines">Routines</a>
+    <a class="breadcrumbs-item" routerLink="/trainer/routines">{{"TRAINERS.ROUTINES.ROUTINES" | translate}}</a>
     <p class="breadcrumbs-item"> > </p>
-    <p class="breadcrumbs-item">Edit</p>
+    <p class="breadcrumbs-item">{{"TRAINERS.ROUTINES.EDIT-FORM.EDIT" | translate}}</p>
     <p class="breadcrumbs-item"> > </p>
     <p class="breadcrumbs-item">{{title}}</p>
 </div>
@@ -16,16 +16,16 @@
           </h1>
       </div>
       <div class="edit-routine-title-container">
-          <h1 class="edit-routine-title-container-text">Edit Routine</h1>
+          <h1 class="edit-routine-title-container-text">{{"TRAINERS.ROUTINES.EDIT-FORM.TITLE" | translate}}</h1>
           <img class="edit-routine-title-container-img" [src]="previousPhotoURL" alt="routine Image">
       </div>
       <form class="edit-routine-form" (ngSubmit)="updateRoutine()">
           <fieldset class="edit-routine-form-fieldset">
-              <legend class="edit-routine-form-fieldset-label" for="routineTitle">Routine Title</legend>
+              <legend class="edit-routine-form-fieldset-label" for="routineTitle">{{"TRAINERS.ROUTINES.ADD-FORM.NAME" | translate}}</legend>
               <input *ngIf="routineUploaded" class="edit-routine-form-fieldset-input" type="text" id="routineTitle" name="routineTitle" placeholder="Routine Title" [(ngModel)]="title">
           </fieldset>
           <fieldset class="edit-routine-form-fieldset">
-              <legend class="edit-routine-form-fieldset-label" for="routineImage">Routine Image</legend>
+              <legend class="edit-routine-form-fieldset-label" for="routineImage">{{"TRAINERS.ROUTINES.ADD-FORM.IMAGE" | translate}}</legend>
               <label for="routineImage" class="edit-routine-form-fieldset-label-file">
                   <label class="edit-routine-form-fieldset-label-file-text" for="routineImage">{{uploadMessage}}</label>
                   <img *ngIf="!uploaded" class="edit-routine-form-fieldset-label-file-img" src="../../../../../assets/images/add.png">
@@ -33,7 +33,7 @@
               </label>
               <input class="edit-routine-form-fieldset-input-file" type="file" id="routineImage" name="routineImage" accept="image/*" (change)="uploadFile($event)">
           </fieldset>
-          <button type="submit" class="edit-routine-form-button">Update</button>
+          <button type="submit" class="edit-routine-form-button">{{"TRAINERS.ROUTINES.EDIT-FORM.BUTTON" | translate}}</button>
       </form>
   </div>
 </main>

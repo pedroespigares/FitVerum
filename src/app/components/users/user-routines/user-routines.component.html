@@ -6,7 +6,7 @@
   <p class="breadcrumbs-item"> > </p>
   <a class="breadcrumbs-item">Routines</a>
 </div>
-<h2 class="routines-title-no-routines" *ngIf="!routines.length">You don't have any routines yet</h2>
+<h2 class="routines-title-no-routines" *ngIf="!routines.length && !loading">You don't have any routines yet</h2>
 <div class="routines-container">
     <div class="routines-container-routine" *ngFor="let singleRoutine of routines" (click)="goToRoutineExercises(singleRoutine)">
         <img class="routines-container-routine-img" [src]="singleRoutine.photoURL" alt="Routine Image">

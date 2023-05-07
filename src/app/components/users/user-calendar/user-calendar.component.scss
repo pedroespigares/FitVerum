@@ -121,3 +121,13 @@
     color: getColor(light-violet);
   }
 }
+
+.modal-data-text{
+  font-family: $font-family-title;
+  font-weight: getFontWeight(bold);
+  color: getColor(black);
+}
+
+.modal-body-content-text{
+  margin-bottom: 3rem;
+}

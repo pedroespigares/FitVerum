@@ -22,11 +22,11 @@ export class ShowExercisesComponent implements OnInit{
   ngOnInit(): void {
     this.database.getExercisesByRoutine(this.routineID).subscribe((data: any) => {
         this.exercises = data;
-        this.loading = false;
     });
 
     this.database.getRoutineTitle(this.routineID).then((name) =>{
       this.routineName = name;
+      this.loading = false;
     })
   }
 

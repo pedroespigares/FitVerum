@@ -6,7 +6,7 @@
       [(viewDate)]="viewDate"
       [view]="view"
     >
-      Previous
+    {{"TRAINERS.MANAGEMENT.PREVIOUS" | translate}}
     </button>
 
     <h3 class="calendar-controls-month">
@@ -19,7 +19,7 @@
       [(viewDate)]="viewDate"
       [view]="view"
     >
-      Next
+    {{"TRAINERS.MANAGEMENT.NEXT" | translate}}
     </button>
   </div>
 
@@ -45,17 +45,17 @@
 
   <ng-template #modalContent let-close="close">
     <div class="modal-header">
-      <h5 class="modal-title">Event information</h5>
+      <h5 class="modal-title">{{"TRAINERS.MANAGEMENT.EVENT-INFORMATION" | translate}}</h5>
       <i class="fa-solid fa-x" (click)="close()"></i>
     </div>
     <div class="modal-body">
       <div>
-        <h6 class="modal-body-title">Event title</h6>
+        <h6 class="modal-body-title">{{"TRAINERS.MANAGEMENT.EVENT-TITLE" | translate}}</h6>
         <p class="modal-body-title-text">{{ modalData?.event?.title }}</p>
         <p class="modal-body-title-date">{{ modalDataStart | date: 'HH:mm'}} - {{modalDataEnd | date: 'HH:mm'}}</p>
-        <h6 *ngIf="modalData?.event?.description != ''" class="modal-body-content-title">Description</h6>
+        <h6 *ngIf="modalData?.event?.description != ''" class="modal-body-content-title">{{"TRAINERS.MANAGEMENT.DESCRIPTION" | translate}}</h6>
         <p *ngIf="modalData?.event?.description != ''" class="modal-body-content-text">{{ modalData?.event?.description}}</p>
-        <p *ngIf="modalData?.event?.description === ''" class="no-description-message">This event does not have a description</p>
+        <p *ngIf="modalData?.event?.description === ''" class="no-description-message">{{"TRAINERS.MANAGEMENT.NO-DESCRIPTION" | translate}}</p>
       </div>
     </div>
     <div class="modal-footer">
@@ -63,7 +63,7 @@
         <i class="fa-solid fa-trash"></i>
       </button>
       <button type="button" class="modal-button" (click)="close()">
-        Back
+        {{"TRAINERS.MANAGEMENT.BACK" | translate}}
       </button>
     </div>
   </ng-template>

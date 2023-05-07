@@ -7,18 +7,18 @@
             <span class="add-machine-logo-presentation-text-second">Verum</span>
         </h1>
     </div>
-    <h1 class="add-machine-title">Add Machine</h1>
+    <h1 class="add-machine-title">{{"ADMINISTRATION.MACHINES.ADD-MACHINE-FORM.TITLE" | translate}}</h1>
     <form class="add-machine-form" (ngSubmit)="addMachine()">
         <fieldset class="add-machine-form-fieldset">
-            <legend class="add-machine-form-fieldset-label" for="machineName">Machine/Exercise Name</legend>
+            <legend class="add-machine-form-fieldset-label" for="machineName">{{"ADMINISTRATION.MACHINES.ADD-MACHINE-FORM.NAME" | translate}}</legend>
             <input class="add-machine-form-fieldset-input" type="text" id="machineName" name="machineName" placeholder="Machine Name" [(ngModel)]="name">
         </fieldset>
         <fieldset class="add-machine-form-fieldset">
-            <legend class="add-machine-form-fieldset-label" for="machineDescription">Machine/Exercise Description</legend>
+            <legend class="add-machine-form-fieldset-label" for="machineDescription">{{"ADMINISTRATION.MACHINES.ADD-MACHINE-FORM.DESCRIPTION" | translate}}</legend>
             <textarea class="add-machine-form-fieldset-textarea" type="text" id="machineDescription" name="machineDescription" placeholder="Machine Description" [(ngModel)]="description"></textarea>
         </fieldset>
         <fieldset class="add-machine-form-fieldset">
-            <legend class="add-machine-form-fieldset-label" for="machineImage">Machine/Exercise Image</legend>
+            <legend class="add-machine-form-fieldset-label" for="machineImage">{{"ADMINISTRATION.MACHINES.ADD-MACHINE-FORM.IMAGEN" | translate}}</legend>
             <label for="machineImage" class="add-machine-form-fieldset-label-file">
                 <label class="add-machine-form-fieldset-label-file-text" for="machineImage">{{uploadMessage}}</label>
                 <img *ngIf="!uploaded" class="add-machine-form-fieldset-label-file-img" src="../../../../../assets/images/add.png">
@@ -26,8 +26,8 @@
             </label>
             <input class="add-machine-form-fieldset-input-file" type="file" id="machineImage" name="machineImage" accept="image/*" (change)="uploadFile($event)">
         </fieldset>
-        <button *ngIf="!uploaded" class="add-machine-form-button-disabled" disabled>Add Machine/Exercise</button>
-        <button type="submit" *ngIf="uploaded" class="add-machine-form-button">Add Machine/Exercise</button>
+        <button *ngIf="!uploaded" class="add-machine-form-button-disabled" disabled>{{"ADMINISTRATION.MACHINES.ADD-MACHINE-FORM.BUTTON" | translate}}</button>
+        <button type="submit" *ngIf="uploaded" class="add-machine-form-button">{{"ADMINISTRATION.MACHINES.ADD-MACHINE-FORM.BUTTON" | translate}}</button>
     </form>
 </div>
 <div class="waves"></div>

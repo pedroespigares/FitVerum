@@ -5,11 +5,11 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider,
-  GithubAuthProvider,
+  TwitterAuthProvider,
   createUserWithEmailAndPassword,
   updatePassword,
   sendPasswordResetEmail,
-  updateEmail
+  updateEmail,
 } from '@angular/fire/auth';
 import {
   Firestore,
@@ -34,6 +34,7 @@ export class AuthService {
   public isAdmin: boolean = false;
   public userExists: boolean = false;
   public userChecked: boolean = false;
+  public thirdPartyLogin: boolean = false;
 
   constructor(
     public auth: Auth,
@@ -60,6 +61,30 @@ export class AuthService {
     });
   }
 
+  /**
+   * Comprobar si el usuario es administrador o entrenador preparado para el guard
+   */
+  async checkAuthStateAsync() {
+    return new Promise((resolve, reject) => {
+      onAuthStateChanged(this.auth, (user) => {
+        if (user) {
+          this.isLogged = true;
+          this.userEmail = user.email;
+          this.userID = user.uid;
+          this.userPhoto = user.photoURL;
+          // this.loaded = true;
+          this.checkUserRol().then(() => {
+            this.getUserPhoto();
+            resolve(true);
+          });
+        } else {
+          this.isLogged = false;
+          this.userID = '';
+          resolve(false);
+        }
+      });
+    });
+  }
   /**
    * Registrar con email y contraseña
    * @param email
@@ -104,9 +129,11 @@ export class AuthService {
       .catch((error) => {
         this.isLogged = false;
         this.userID = '';
-        this.failedError = error.message
-          .split('Firebase: Error (auth/')[1]
-          .split(').')[0];
+        if(error.message == 'Firebase: Error (auth/user-not-found).'){
+          this.failedError = 'This user does not exist';
+        } else if (error.message == 'Firebase: Error (auth/wrong-password).'){
+          this.failedError = 'Wrong password';
+        }
       });
   }
 
@@ -121,6 +148,7 @@ export class AuthService {
         this.userEmail = userCredential.user.email;
         this.userPhoto = userCredential.user.photoURL;
         this.username = userCredential.user.displayName;
+        this.thirdPartyLogin = true;
         this.createUser();
         this.checkUserRol();
         this.router.navigate(['/']);
@@ -131,14 +159,16 @@ export class AuthService {
       });
   }
 
-  githubLogin(){
-    signInWithPopup(this.auth, new GithubAuthProvider())
+  // TODO: Encontrar otro provider que no sea Github
+  twitterLogin(){
+    signInWithPopup(this.auth, new TwitterAuthProvider())
     .then((userCredential) => {
         this.isLogged = true;
         this.userID = userCredential.user.uid;
         this.userEmail = userCredential.user.email;
         this.userPhoto = userCredential.user.photoURL;
         this.username = userCredential.user.displayName;
+        this.thirdPartyLogin = true;
         this.createUser();
         this.checkUserRol();
         this.router.navigate(['/']);
@@ -159,10 +189,6 @@ export class AuthService {
     this.router.navigate(['/']);
     this.isAdmin = false;
     this.isTrainer = false;
-  }
-
-  isAuthentificated() {
-    return this.isLogged;
   }
 
 
@@ -193,6 +219,7 @@ export class AuthService {
   async checkUserRol() {
     if (this.userID == adminID) {
       this.isAdmin = true;
+      // this.checked = true;
       return;
     }
 
@@ -200,6 +227,7 @@ export class AuthService {
     const trainerSnap = await getDoc(trainerRef);
     if (trainerSnap.exists()) {
       this.isTrainer = true;
+      // this.checked = true;
       return;
     }
   }

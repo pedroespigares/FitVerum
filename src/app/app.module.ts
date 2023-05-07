@@ -48,6 +48,9 @@ import { TrainerDietsComponent } from './components/trainers/trainer-diets/train
 import { TrainerDietCardComponent } from './components/trainers/trainer-diets/trainer-diet-card/trainer-diet-card.component';
 import { UserDietsComponent } from './components/users/user-diets/user-diets.component';
 import { UserEvolutionComponent } from './components/users/user-evolution/user-evolution.component';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -93,6 +96,14 @@ import { UserEvolutionComponent } from './components/users/user-evolution/user-e
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader:{
+        provide: TranslateLoader,
+        useFactory: (http: HttpClient) => new TranslateHttpLoader(http),
+        deps: [HttpClient],
+      }
+    }),
     AppRoutingModule,
     FormsModule,
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),

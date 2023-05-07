@@ -7,7 +7,7 @@
     <p class="breadcrumbs-item"> > </p>
     <a class="breadcrumbs-item">{{routineName}}</a>
   </div>
-  <h2 class="exercise-title-no-exercise" *ngIf="!exercises.length">This routine doesn't have any exercises</h2>
+  <h2 class="exercise-title-no-exercise" *ngIf="!exercises.length && !loadingRoutines">This routine doesn't have any exercises</h2>
   <div class="exercise-container" *ngIf="!loadingRoutines">
       <app-simple-exercise-card  *ngFor="let singleExercise of exercises" [exercise]="singleExercise" [goToEntry]="true"></app-simple-exercise-card>
   </div>

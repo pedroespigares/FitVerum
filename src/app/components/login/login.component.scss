@@ -161,9 +161,9 @@
 
     &-button {
       @include response(xl) {
-        @include button(lg, true);
+        @include button(lg, true, $width: 20rem);
       }
-      @include button(sm, true);
+      @include button(sm, true, $width: 20rem);
       align-self: center;
     }
   }

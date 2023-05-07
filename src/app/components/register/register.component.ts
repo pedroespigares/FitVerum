@@ -79,8 +79,8 @@ export class RegisterComponent implements OnInit {
     this.showingPassword = !this.showingPassword;
   }
 
-  githubLogin(){
-    this.auth.githubLogin();
+  twitterLogin(){
+    this.auth.twitterLogin();
   }
 
   /**

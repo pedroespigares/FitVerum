@@ -1,0 +1,194 @@
+{
+    "HEADER": {
+      "NAVBAR": {
+        "HOME": "Inicio",
+        "ABOUT": "Sobre nosotros",
+        "ACTIVITIES": "Actividades",
+        "MY-ROUTINES": "Mis rutinas",
+        "MY-DIETS": "Mis dietas",
+        "MANAGEMENT": "Gestión",
+        "CLIENTS": "Clientes",
+        "ROUTINES": "Routinas",
+        "DIETS": "Dietas",
+        "USERS": "Usuarios",
+        "MACHINES": "Máquinas",
+        "TRAINER": "ENT",
+        "SINGIN": "Entrar",
+        "REGISTER": "Registro"
+      }
+    },
+    "LANDING":{
+        "MAIN-1":"Tu aplicación,",
+        "MAIN-2":"Para el Fitness real",
+        "GET-STARTED":"Comenzar",
+        "BENEFITS":{
+            "TITLE": "Ventajas de nuestro servicio",
+            "SUBTITLE": "Todo tu progreso en una página",
+            "1-TITLE": "Seguridad",
+            "1-DESCRIPTION": "Un sistema seguro y fácil de usar para coordinar las sesiones de formación",
+            "2-TITLE": "Herramienta",
+            "2-DESCRIPTION": "Una herramienta para fijar objetivos realistas y seguir su evolución a lo largo de los meses",
+            "3-TITLE": "Feedback",
+            "3-DESCRIPTION": "La posibilidad de dar y recibir opiniones para mejorar la calidad del servicio",
+            "4-TITLE": "Gestiona tus rutinas",
+            "4-DESCRIPTION": "La comodidad de poder gestionar su formación desde una plataforma centralizada"
+        },
+        "SUPPORT":{
+            "TITLE": "Soporte",
+            "SUBTITLE": "Estamos aquí para ayudarte",
+
+            "SERVICES":{
+                "TITLE": "Todos nuestros servicios",
+                "1-TITLE": "Informes y análisis",
+                "1-DESCRIPTION": "Ofrecemos potentes herramientas de informes y análisis para ayudarle a medir la eficacia de sus programas de formación y a tomar decisiones basadas en datos.",
+                "2-TITLE": "Gestión de alumnos",
+                "2-DESCRIPTION": "Nuestra página web de gestión de la formación ofrece sólidas herramientas de gestión de alumnos que le ayudarán a realizar un seguimiento y una gestión eficaces del progreso de sus alumnos.",
+                "3-TITLE": "Personalización",
+                "3-DESCRIPTION": "Ofrecemos una amplia gama de opciones de personalización para ayudarle a crear una experiencia de aprendizaje única y de marca para sus alumnos. Con nuestras funciones de personalización, puede personalizar el diseño y la disposición de sus materiales de formación."
+            }   
+        }
+    },
+    "FOOTER":{
+      "HELP":"Ayuda",
+      "CONTACT":"Contacto",
+      "FAQ":"FAQ",
+      "FORUM":"Foro",
+      "SUGGESTIONS":"Sugerencias",
+      "ABOUT-US":"Sobre nosotros",
+      "WHO-WE-ARE":"Quienes somos",
+      "WORK-WITH-US":"Trabaja con nosotros",
+      "TERMS-OF-USE":"Términos de uso",
+      "LEGAL": "Legal",
+      "COOKIES-POLICY": "Política de cookies",
+      "PRIVACY-POLICY": "Política de privacidad",
+      "LEGAL-TERMS": "Términos legales",
+      "COMPANY-INFORMATION": "Información de la empresa",
+      "FOLLOW-US": "Síguenos"
+    },
+    "LOGIN":{
+      "TITLE": "Iniciar sesión",
+      "EMAIL": "Email",
+      "PASSWORD": "Contraseña",
+      "FORGOT-PASSWORD": "¿Olvidaste tu contraseña?",
+      "BUTTON": "Entrar",
+      "GOOGLE": "Entrar con Google",
+      "TWITTER": "Entrar con Twitter",
+      "OR": "o",
+      "CHECK-EMAIL": "Revisa tu email",
+      "ERROR-EMPTY": "Los campos no pueden estar vacíos",
+      "VALID-FORMAT": "Rellena el email con un formato válido"
+    },
+    "REGISTER":{
+      "TITLE": "Registrarse",
+      "USERNAME": "Nombre de usuario",
+      "EMAIL": "Email",
+      "PASSWORD": "Contraseña",
+      "PSW-FORMAT": "Min 8 caracteres, 1 mayúscula, 1 minúscula, 1 número and 1 carácter especial.",
+      "BUTTON": "Registrarse",
+      "GOOGLE": "Registrarse con Google",
+      "TWITTER": "Registrarse con Twitter",
+      "OR": "o",
+      "ERROR-EMPTY": "Los campos no pueden estar vacíos"
+    },
+    "ABOUT-US":{
+      "FIRST": "¡Bienvenido a FitVerum! Somos un equipo de profesionales dedicados y apasionados por ayudar a las personas a alcanzar sus objetivos de fitness a través de programas de entrenamiento personalizados y un coaching excepcional. Nuestra plataforma está diseñada para conectar a las personas con entrenadores personales certificados que se especializan en diversas áreas de la aptitud, incluyendo la pérdida de peso, entrenamiento de fuerza, entrenamiento de resistencia, y mucho más. Creemos que todo el mundo merece tener acceso a un entrenamiento físico de alta calidad, independientemente de su ubicación u horario.",
+      "SECOND": "Nuestros entrenadores son seleccionados en función de su experiencia, conocimientos y dedicación para ayudar a los clientes a alcanzar sus objetivos. Ofrecemos formación continua y apoyo para asegurar que nuestros entrenadores están al día con las últimas tendencias y técnicas de fitness, lo que les permite ofrecer la mejor experiencia de entrenamiento posible para nuestros clientes. En FitVerum, estamos comprometidos a crear un ambiente de apoyo y motivación para nuestros clientes. Nuestros entrenadores trabajan en estrecha colaboración con cada cliente para desarrollar un programa de entrenamiento personalizado que se adapte a sus necesidades, objetivos y nivel de condición física. Si usted es un principiante que busca comenzar su viaje de fitness o un atleta experimentado que busca llevar su entrenamiento al siguiente nivel, tenemos un entrenador que puede ayudarle a alcanzar sus metas.",
+      "THIRD": "Nuestra plataforma es fácil de usar y permite a los clientes programar sesiones con el entrenador que elijan en el momento que más les convenga. También proporcionamos herramientas y recursos para ayudar a los clientes a seguir su progreso y mantenerse motivados a lo largo de su viaje de fitness. En FitVerum, creemos que el fitness debe ser accesible, asequible y divertido. Estamos dedicados a ayudar a nuestros clientes a alcanzar sus objetivos de fitness y vivir una vida más sana y feliz. ¡Póngase en contacto con nosotros hoy para comenzar su viaje de fitness!"
+    },
+    "ADMINISTRATION":{
+      "USERS":{
+        "TITLE": "Administración de usuarios",
+        "USERS": "Usuarios",
+        "TRAINERS": "Entrenadores",
+        "NO-USERS": "Actualmente no hay usuarios",
+        "NO-TRAINERS": "Actualmente no hay entrenadores"
+      },
+      "MACHINES":{
+        "TITLE": "Administración de Máquinas y Ejercicios",
+        "ADD-BUTTON": "Añadir Máquina or Ejercicio",
+        "NO-MACHINES": "No hay máquinas o ejercicios",
+        "ADDED-TOAST": "¡Máquina añadida con éxito!",
+        "DELETED-TOAST": "¡Máquina borrada con éxito!",
+        "ADD-MACHINE-FORM": {
+          "TITLE": "Añadir Máquina",
+          "NAME": "Nombre de Máquina/Ejercicio",
+          "DESCRIPTION": "Descripción de Máquina/Ejercicio",
+          "IMAGEN": "Imagen de Máquina/Ejercicio",
+          "BUTTON": "Añadir Máquina/Ejercicio"
+        },
+        "UPDATE-MACHINE-FORM": {
+          "TITLE": "Actualizar Machine/Exercise",
+          "NAME": "Machine/Exercise Name",
+          "DESCRIPTION": "Machine/Exercise Description",
+          "IMAGEN": "Machine/Exercise Image",
+          "BUTTON": "Actualizar"
+        }
+      }
+    },
+    
+    "TRAINERS": {
+      "MANAGEMENT":{
+        "PREVIOUS": "Anterior",
+        "NEXT": "Siguiente",
+        "EVENT-INFORMATION": "Información de la cita",
+        "EVENT-TITLE": "Título de la cita",
+        "DESCRIPTION": "Descripción",
+        "NO-DESCRIPTION": "Esta cita no tiene descripción",
+        "BACK": "Volver"
+      },
+      "APPOINTMENT":{
+        "MANAGEMENT": "Gestión",
+        "NEW-APPOINTMENT": "Nueva cita",
+        "CLIENTS": "Clientes",
+        "NO-CLIENTS": "Actualmente no hay clientes disponibles",
+        "APPOINTMENT-INFORMATION": "Información de la cita",
+        "NO-CLIENT-SELECTED": "No hay ningún cliente seleccionado",
+        "BUTTON": "Crear cita",
+        "SELECTED-CLIENT": "Cliente seleccionado: ",
+        "TITLE": "Título",
+        "DATE": "Fecha",
+        "FROM": "Desde",
+        "TO": "Hasta",
+        "APPOINTMENT-COLOR": "Color de la cita",
+        "DESCRIPTION": "Descripción" 
+      },
+      "CLIENTS":{
+        "TITLE": "Administración de clientes",
+        "AVAILABLE-USERS": "Usuarios disponibles",
+        "CLIENTS": "Clientes",
+        "NO-USERS": "Actualmente no hay usuarios disponibles",
+        "NO-CLIENTS": "Actualmente no tienes clientes"
+      },
+      "ROUTINES":{
+        "CLIENTS": "Clientes",
+        "ROUTINES": "Rutinas",
+        "BUTTON": "Nueva Rutina",
+        "TITLE": "Rutinas de ",
+        "TOAST-ADD": "Rutina añadida correctamente!",
+        "TOAST-DELETED": "Rutina borrada correctamente!",
+        "NO-CLIENTS": "Actualmente no hay clientes disponibles",
+        "NO-ROUTINES": "Este usuario no tiene rutinas",
+        "NO-CLIENT": "Ningún cliente seleccionado",
+        "ADD-FORM": {
+          "NEW-ROUTINE": "Nueva Rutina", 
+          "ADD-ROUTINE": "Añadir Rutina",
+          "NAME": "Nombre de la Rutina",
+          "IMAGE": "Imagen de la Rutina",
+          "BUTTON": "Añadir Rutina"
+        },
+        "EDIT-FORM":{
+          "EDIT": "Editar",
+          "TITLE": "Editar Rutina",
+          "BUTTON": "Editar"
+        },
+        "SHOW-BREADCUMBS":{
+          "ROUTINES": "Rutinas",
+          "EXERCISES": "Ejercicios",
+          "NO-EXERCISES": "Esta rutina no tiene ejercicios asignados",
+          "EXERCISES-OF": "Ejercios de ",
+          "ADD-EXERCISE": "Añadir Ejercicio",
+          "ROUTINE": "Rutina"
+        }
+      }
+    }
+  }

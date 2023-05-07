@@ -46,8 +46,8 @@ export class LoginComponent implements OnInit {
     this.auth.googleLogin();
   }
 
-  githubLogin(){
-    this.auth.githubLogin();
+  twitterLogin(){
+    this.auth.twitterLogin();
   }
 
   /*

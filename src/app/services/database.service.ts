@@ -5,6 +5,7 @@ import {
   collection,
   query,
   where,
+  orderBy,
   setDoc,
   deleteDoc,
   doc,
@@ -159,13 +160,19 @@ export class DatabaseService {
   }
 
 
+  /**
+   * Obtener las entradas de un usuario en un ejercicio
+   * @param userID - ID del usuario
+   * @param exerciseID - ID del ejercicio
+   * @returns - Array con las entradas del usuario en el ejercicio
+   */
   async getDataFromUserEntry(userID: string, exerciseID: string){
     const entryRef = collection(this.database, 'userEntry');
-    const q = query(entryRef, where('userID', '==', userID), where('exerciseID', '==', exerciseID));
+    const q = query(entryRef, where('userID', '==', userID), where('exerciseID', '==', exerciseID), orderBy('start', 'asc'));
     const querySnapshot = await getDocs(q);
     const data = [];
     querySnapshot.forEach((doc) => {
-      data.push({weigth: doc.data()['kg'], series: doc.data()['series'], repetitions: doc.data()['repetitions']});
+      data.push({weight: doc.data()['kg'], series: doc.data()['series'], repetitions: doc.data()['repetitions'], date: doc.data()['start']});
     });
     return data;
   }
@@ -201,6 +208,17 @@ export class DatabaseService {
   async getRoutineTitle(routineID: string){
     const routineRef = doc(this.database, 'routines', routineID);
     const docSnap = await getDoc(routineRef);
+    return docSnap.data()['title'];
+  }
+
+  /**
+   * Obtener el nombre de un ejercicio
+   * @param id - ID de la ejercicio
+   * @returns - Nombre de la ejercicio
+   */
+  async getExerciseTitle(exerciseID: string){
+    const exerciseRef = doc(this.database, 'exercises', exerciseID);
+    const docSnap = await getDoc(exerciseRef);
     return docSnap.data()['title'];
   }
 

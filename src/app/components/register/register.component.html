@@ -7,53 +7,53 @@
                 <span class="register-logo-presentation-text-second">Verum</span>
             </h1>
         </div>
-        <h1 class="register-title">Register</h1>
+        <h1 class="register-title">{{"REGISTER.TITLE" | translate}}</h1>
         <form class="register-form">
             <fieldset class="register-form-fieldset">
-                <legend class="register-form-fieldset-label">Username</legend>
+                <legend class="register-form-fieldset-label">{{"REGISTER.USERNAME" | translate}}</legend>
                 <div class="register-form-fieldset-input-container">
                     <input class="register-form-fieldset-input" type="text" placeholder="User" [(ngModel)]="username" required name="username">
                     <i class="fa-solid fa-eye register-form-fieldset-input-container-icon-not-showing"></i>
                 </div>
             </fieldset>
             <fieldset class="register-form-fieldset">
-                <legend class="register-form-fieldset-label">Email</legend>
+                <legend class="register-form-fieldset-label">{{"REGISTER.EMAIL" | translate}}</legend>
                 <div class="register-form-fieldset-input-container">
                     <input class="register-form-fieldset-input" type="email" placeholder="example@email.com" [(ngModel)]="email" required name="email">
                     <i class="fa-solid fa-eye register-form-fieldset-input-container-icon-not-showing"></i>
                 </div>
             </fieldset>
             <fieldset class="register-form-fieldset">
-                <legend class="register-form-fieldset-label">Password</legend>
+                <legend class="register-form-fieldset-label">{{"REGISTER.PASSWORD" | translate}}</legend>
                 <div class="register-form-fieldset-input-container">
                     <input *ngIf="!showingPassword" class="register-form-fieldset-input" type="password" placeholder="********" [(ngModel)]="password" required (keydown)="onKeyDown($event)" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$" name="password">
                     <input *ngIf="showingPassword" class="register-form-fieldset-input" type="text" placeholder="********" [(ngModel)]="password" required (keydown)="onKeyDown($event)" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$" name="password">
                     <i *ngIf="!showingPassword" class="fa-solid fa-eye register-form-fieldset-input-container-icon" (click)="showPassword()"></i>
                     <i *ngIf="showingPassword" class="fa-solid fa-eye-slash register-form-fieldset-input-container-icon-close" (click)="showPassword()"></i>
                 </div>
-                <p *ngIf="passwordCorrect" class="register-form-fieldset-password-info-under">Min 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.</p>
-                <p *ngIf="!passwordCorrect" class="register-form-fieldset-password-info-under-error">Min 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.</p>
+                <p *ngIf="passwordCorrect" class="register-form-fieldset-password-info-under">{{"REGISTER.PSW-FORMAT" | translate}}</p>
+                <p *ngIf="!passwordCorrect" class="register-form-fieldset-password-info-under-error">{{"REGISTER.PSW-FORMAT" | translate}}</p>
             </fieldset>
             <p class="register-form-fieldset-credentials">{{this.auth.failedError}}</p>
-            <p *ngIf="isEmpty" class="register-form-fieldset-password-info">Fields can't be empty</p>
+            <p *ngIf="isEmpty" class="register-form-fieldset-password-info">{{"REGISTER.ERROR-EMPTY" | translate}}</p>
             <button (click)="normalRegister()" class="register-form-button">
-                Register
+                {{"REGISTER.BUTTON" | translate}}
             </button>
         </form>
         <div class="register-separator">
             <span class="register-separator-line"></span>
-            <span class="register-separator-text">or</span>
+            <span class="register-separator-text">{{"REGISTER.OR" | translate}}</span>
             <span class="register-separator-line"></span>
         </div>
 
         <div class="register-social">
             <button (click)="googleRegister()" class="register-social-button">
                 <img class="register-social-button-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" alt="Google Logo">
-                <span class="register-social-button-text">Register with Google</span>
+                <span class="register-social-button-text">{{"REGISTER.GOOGLE" | translate}}</span>
             </button>
-            <button (click)="githubLogin()" class="register-social-button">
-                <img class="register-social-button-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png" alt="gitHub Logo">
-                <span class="register-social-button-text">Register with GitHub</span>
+            <button (click)="twitterLogin()" class="register-social-button">
+                <img class="register-social-button-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/512px-Logo_of_Twitter.svg.png" alt="Twitter Logo">
+                <span class="register-social-button-text">{{"REGISTER.TWITTER" | translate}}</span>
             </button>
         </div>
     </div>

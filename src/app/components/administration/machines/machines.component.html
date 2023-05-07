@@ -7,7 +7,7 @@
           <strong class="mx-1">FitVerum</strong>
         </div>
       </ng-template>
-      Machine deleted successfully!
+      {{"ADMINISTRATION.MACHINES.DELETED-TOAST" | translate}}
     </ngb-toast>
   </div>
   <div class="toast-container">
@@ -18,16 +18,16 @@
           <strong class="mx-1">FitVerum</strong>
         </div>
       </ng-template>
-      Machine added successfully!
+      {{"ADMINISTRATION.MACHINES.ADDED-TOAST" | translate}}
     </ngb-toast>
   </div>
     <div *ngIf="loading" class="loader"></div>
-    <h1 class="machines-administration-header">Machines and Exercises Administration</h1>
+    <h1 class="machines-administration-header">{{"ADMINISTRATION.MACHINES.TITLE" | translate}}</h1>
     <div class="machines-administration-actions">
-        <button class="machines-administration-actions-button" routerLink="/administration/machines/add">Add Machine or Exercise</button>
+        <button class="machines-administration-actions-button" routerLink="/administration/machines/add">{{"ADMINISTRATION.MACHINES.ADD-BUTTON" | translate}}</button>
     </div>
     <div class="machines-administration-empty">
-        <p *ngIf="!loading && machines.length == 0" class="machines-administration-empty-text">There are no machines or exercises</p>
+        <p *ngIf="!loading && machines.length == 0" class="machines-administration-empty-text">{{"ADMINISTRATION.MACHINES.NO-MACHINES" | translate}}</p>
     </div>
     <div class="machines-administration">
         <div class="machines-administration-machine" *ngFor="let singleMachine of machines">

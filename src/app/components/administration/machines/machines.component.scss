@@ -49,4 +49,8 @@
   }
 }
 
-@include toast(-26rem);
+@include toast(-20rem, true);
+
+@include response(xl){
+  @include toast(-26rem);
+}

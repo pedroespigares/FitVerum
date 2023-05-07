@@ -44,7 +44,7 @@ export class UserModificationComponent implements OnInit {
   displayNameChanged: boolean = false;
   passwordChanged: boolean = false;
 
-  constructor(private database: DatabaseService, private auth: AuthService) {
+  constructor(private database: DatabaseService, public auth: AuthService) {
     this.storage = getStorage();
   }
 

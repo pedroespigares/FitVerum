@@ -1,12 +1,12 @@
 <main class="content">
   <div class="breadcrumbs">
-    <a class="breadcrumbs-item" routerLink="/trainer/calendar">Management</a>
+    <a class="breadcrumbs-item" routerLink="/trainer/calendar">{{"TRAINERS.APPOINTMENT.MANAGEMENT" | translate}}</a>
     <p class="breadcrumbs-item"> > </p>
-    <p class="breadcrumbs-item">New appointment</p>
+    <p class="breadcrumbs-item">{{"TRAINERS.APPOINTMENT.NEW-APPOINTMENT" | translate}}</p>
   </div>
   <div class="appointment-container">
     <div class="appointment-container-clients">
-      <h1 class="appointment-container-clients-title">Clients</h1>
+      <h1 class="appointment-container-clients-title">{{"TRAINERS.APPOINTMENT.CLIENTS" | translate}}</h1>
       <table class="appointment-container-clients-table">
         <tr
           *ngFor="let client of clients | slice : (page - 1) * pageSize : page * pageSize" (click)="selectClient(client)">
@@ -36,7 +36,7 @@
         </tr>
       </table>
       <p *ngIf="this.clients.length == 0 && selectedClient == null" class="no-clients-message">
-        There are currently no clients available
+        {{"TRAINERS.APPOINTMENT.NO-CLIENTS" | translate}}
       </p>
       <div class="pagination">
         <ngb-pagination
@@ -53,10 +53,10 @@
 
 
     <div class="appointment-container-info">
-        <h1 class="appointment-container-info-title">Appointment Information</h1>
+        <h1 class="appointment-container-info-title">{{"TRAINERS.APPOINTMENT.APPOINTMENT-INFORMATION" | translate}}</h1>
         <div class="appointment-container-info-selected-client">
-          <h2 *ngIf="selectedClient != null " class="appointment-container-info-selected-client-title">Selected Client: </h2>
-          <h2 *ngIf="selectedClient == null " class="appointment-container-info-selected-client-title">No client selected</h2>
+          <h2 *ngIf="selectedClient != null " class="appointment-container-info-selected-client-title">{{"TRAINERS.APPOINTMENT.SELECTED-CLIENT" | translate}}</h2>
+          <h2 *ngIf="selectedClient == null " class="appointment-container-info-selected-client-title">{{"TRAINERS.APPOINTMENT.NO-CLIENT-SELECTED" | translate}}</h2>
           <div *ngIf="selectedClient != null" class="appointment-container-info-selected-client-container">
             <img
               *ngIf="selectedClient.photoURL != null"
@@ -82,31 +82,31 @@
 
       <div *ngIf="selectedClient != null" class="appointment-container-info-date">
         <form class="appointment-container-info-date-container">
-          <h2 class="appointment-container-info-date-container-title">Title</h2>
+          <h2 class="appointment-container-info-date-container-title">{{"TRAINERS.APPOINTMENT.TITLE" | translate}}</h2>
             <input class="appointment-container-info-date-container-input" name="text" type="text" [(ngModel)]="title" />
-          <h2 class="appointment-container-info-date-container-title">Date</h2>
+          <h2 class="appointment-container-info-date-container-title">{{"TRAINERS.APPOINTMENT.DATE" | translate}}</h2>
           <h2 class="appointment-container-info-date-container-title-focus">{{this.date | date: 'longDate'}}</h2>
-          <h2 class="appointment-container-info-date-container-title">from</h2>
+          <h2 class="appointment-container-info-date-container-title">{{"TRAINERS.APPOINTMENT.FROM" | translate}}</h2>
           <h2 class="appointment-container-info-date-container-title-focus">{{this.date | date: 'HH:mm'}}</h2>
-          <h2 class="appointment-container-info-date-container-title">to</h2>
+          <h2 class="appointment-container-info-date-container-title">{{"TRAINERS.APPOINTMENT.TO" | translate}}</h2>
             <input class="appointment-container-info-date-container-input" type="time" name="to_hour" [(ngModel)]="end_time" max="22:00" min="08:00"/>
-          <h2 class="appointment-container-info-date-container-title">appointment color</h2>
+          <h2 class="appointment-container-info-date-container-title">{{"TRAINERS.APPOINTMENT.APPOINTMENT-COLOR" | translate}}</h2>
             <input class="appointment-container-info-date-container-input-color" name="color" type="color" [(ngModel)]="color" />
         </form>
       </div>
 
       <div *ngIf="selectedClient != null" class="appointment-textarea-container">
-        <h2 *ngIf="selectedClient != null" class="appointment-textarea-container-title">Description</h2>
+        <h2 *ngIf="selectedClient != null" class="appointment-textarea-container-title">{{"TRAINERS.APPOINTMENT.DESCRIPTION" | translate}}</h2>
         <textarea *ngIf="selectedClient != null" class="appointment-textarea-container-input" [(ngModel)]="description"></textarea>
       </div>
       <p class="error-message" *ngIf="errorMessage != ''">{{errorMessage}}</p>
       <button *ngIf="selectedClient != null && date != undefined && end_time != undefined && title != undefined" class="appointment-container-info-button" (click)="createAppointment()">
         <i class="fa-solid fa-plus"></i>
-        Create Appointment
+        {{"TRAINERS.APPOINTMENT.BUTTON" | translate}}
       </button>
       <button *ngIf="date == undefined || end_time == undefined || title == undefined" class="appointment-container-info-button-disabled" (click)="createAppointment()">
         <i class="fa-solid fa-plus"></i>
-        Create Appointment
+        {{"TRAINERS.APPOINTMENT.BUTTON" | translate}}
       </button>
     </div>
   </div>

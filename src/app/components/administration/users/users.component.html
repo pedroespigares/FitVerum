@@ -1,9 +1,9 @@
-<h1 class="user-administration-header">Users Administration</h1>
+<h1 class="user-administration-header">{{"ADMINISTRATION.USERS.TITLE" | translate}}</h1>
 <main class="content">
 <div *ngIf="usersLoading && trainersLoading" class="loader"></div>
 <div *ngIf="!usersLoading && !trainersLoading" class="users-trainers-container">
   <div class="users-trainers-container-users">
-    <h2 class="users-trainers-container-users-title">Users</h2>
+    <h2 class="users-trainers-container-users-title">{{"ADMINISTRATION.USERS.USERS" | translate}}</h2>
     <div class="users-trainers-container-users-container">
       <table class="users-trainers-container-users-container-table">
         <tr *ngFor="let user of users | slice : (page - 1) * pageSize : page * pageSize">
@@ -40,7 +40,7 @@
         </tr>
       </table>
     </div>
-    <p *ngIf="this.users.length == 0" class="no-users-message">There are currently no users</p>
+    <p *ngIf="this.users.length == 0" class="no-users-message">{{"ADMINISTRATION.USERS.NO-USERS" | translate}}</p>
     <div class="pagination">
       <ngb-pagination
         *ngIf="this.users.length > 4"
@@ -56,7 +56,7 @@
 
 
   <div class="users-trainers-container-trainers">
-    <h2 class="users-trainers-container-trainers-title">Trainers</h2>
+    <h2 class="users-trainers-container-trainers-title">{{"ADMINISTRATION.USERS.TRAINERS" | translate}}</h2>
     <div class="users-trainers-container-trainers-container">
       <table class="users-trainers-container-trainers-container-table">
         <tr *ngFor="let trainer of trainers | slice : (page_2 - 1) * pageSize_2 : page_2 * pageSize_2">
@@ -93,7 +93,7 @@
         </tr>
       </table>
     </div>
-    <p *ngIf="this.trainers.length == 0" class="no-trainers-message">There are currently no trainers</p>
+    <p *ngIf="this.trainers.length == 0" class="no-trainers-message">{{"ADMINISTRATION.USERS.NO-TRAINERS" | translate}}</p>
     <div class="pagination">
       <ngb-pagination
         *ngIf="this.trainers.length > 4"

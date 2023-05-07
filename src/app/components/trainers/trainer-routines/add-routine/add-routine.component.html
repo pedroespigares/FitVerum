@@ -1,7 +1,7 @@
 <div class="breadcrumbs">
-    <a class="breadcrumbs-item" routerLink="/trainer/routines">Routines</a>
+    <a class="breadcrumbs-item" routerLink="/trainer/routines">{{"TRAINERS.ROUTINES.ROUTINES" | translate}}</a>
     <p class="breadcrumbs-item"> > </p>
-    <p class="breadcrumbs-item">New routine</p>
+    <p class="breadcrumbs-item">{{"TRAINERS.ROUTINES.ADD-FORM.NEW-ROUTINE" | translate}}</p>
 </div>
 <main class="content">
   <div class="add-routine">
@@ -12,15 +12,15 @@
               <span class="add-routine-logo-presentation-text-second">Verum</span>
           </h1>
       </div>
-      <h1 class="add-routine-title">Add Routine</h1>
+      <h1 class="add-routine-title">{{"TRAINERS.ROUTINES.ADD-FORM.ADD-ROUTINE" | translate}}</h1>
       <form class="add-routine-form" (ngSubmit)="addRoutine()">
           <fieldset class="add-routine-form-fieldset">
-              <legend class="add-routine-form-fieldset-label" for="routineTitle">Routine Name</legend>
+              <legend class="add-routine-form-fieldset-label" for="routineTitle">{{"TRAINERS.ROUTINES.ADD-FORM.NAME" | translate}}</legend>
               <input class="add-routine-form-fieldset-input" type="text" id="routineTitle" name="routineTitle" placeholder="Routine Title" [(ngModel)]="title">
           </fieldset>
 
           <fieldset class="add-routine-form-fieldset">
-              <legend class="add-routine-form-fieldset-label" for="routineImage">Routine Image</legend>
+              <legend class="add-routine-form-fieldset-label" for="routineImage">{{"TRAINERS.ROUTINES.ADD-FORM.IMAGE" | translate}}</legend>
               <label for="routineImage" class="add-routine-form-fieldset-label-file">
                   <label class="add-routine-form-fieldset-label-file-text" for="routineImage">{{uploadMessage}}</label>
                   <img *ngIf="!uploaded" class="add-routine-form-fieldset-label-file-img" src="../../../../../assets/images/add.png">
@@ -28,8 +28,8 @@
               </label>
               <input class="add-routine-form-fieldset-input-file" type="file" id="routineImage" name="routineImage" accept="image/*" (change)="uploadFile($event)">
           </fieldset>
-          <button *ngIf="!uploaded" class="add-routine-form-button-disabled" disabled>Add routine/Exercise</button>
-          <button type="submit" *ngIf="uploaded" class="add-routine-form-button">Add routine/Exercise</button>
+          <button *ngIf="!uploaded" class="add-routine-form-button-disabled" disabled>{{"TRAINERS.ROUTINES.ADD-FORM.BUTTON" | translate}}</button>
+          <button type="submit" *ngIf="uploaded" class="add-routine-form-button">{{"TRAINERS.ROUTINES.ADD-FORM.BUTTON" | translate}}</button>
       </form>
   </div>
   </main>

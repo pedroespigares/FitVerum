@@ -7,7 +7,7 @@
   width: 100%;
   background-color: getColor(white);
   padding: 0 2rem;
-  margin-top: 5rem;
+  margin-top: 3rem;
   @include response(xl) {
     padding: 0 5rem;
   }
@@ -172,9 +172,9 @@
 
     &-button {
       @include response(xl) {
-        @include button(lg, true);
+        @include button(lg, true, $width: 20rem);
       }
-      @include button(sm, true);
+      @include button(sm, true, $width: 20rem);
       align-self: center;
     }
   }

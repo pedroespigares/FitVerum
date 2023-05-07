@@ -43,6 +43,8 @@
       <h6 class="modal-body-title">Event title</h6>
       <p class="modal-body-title-text">{{ modalData?.event?.title }}</p>
       <p class="modal-body-title-date">{{ modalDataDate | date: 'longDate'}}</p>
+      <h6 class="modal-body-content-title">Stats</h6>
+      <p class="modal-body-content-text">Series: <span class="modal-data-text">{{ modalData?.event?.series }}</span> - Reps: <span class="modal-data-text">{{ modalData?.event?.repetitions }}</span> - Weight: <span class="modal-data-text">{{ modalData?.event?.kg }} kg</span></p>
       <h6 *ngIf="modalData?.event?.comment != ''" class="modal-body-content-title">Comments</h6>
       <p *ngIf="modalData?.event?.comment != ''" class="modal-body-content-text">{{ modalData?.event?.comment}}</p>
       <p *ngIf="modalData?.event?.comment === null" class="no-comment-message">This event does not have a comment</p>

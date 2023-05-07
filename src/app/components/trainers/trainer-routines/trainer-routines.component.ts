@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { ToastsService } from 'src/app/services/toasts.service';
@@ -8,7 +8,7 @@ import { ToastsService } from 'src/app/services/toasts.service';
   templateUrl: './trainer-routines.component.html',
   styleUrls: ['./trainer-routines.component.scss']
 })
-export class TrainerRoutinesComponent implements OnInit {
+export class TrainerRoutinesComponent implements OnInit, OnDestroy {
 
   clients: any[] = [];
   routines: any[] = [];
@@ -47,11 +47,18 @@ export class TrainerRoutinesComponent implements OnInit {
     this.routines = [];
   }
 
+  handleDeleteRoutine(): void{
+    this.showDeleteToast = true;
+  }
 
   getRoutines(client: any) {
     this.database.getRoutines(client.id).subscribe((data) => {
       this.routines = data;
       this.loadingRoutines = false;
     });
+  }
+
+  ngOnDestroy(): void {
+    this.toasts.routineAdded = false;
   }
 }

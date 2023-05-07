@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DatabaseService } from 'src/app/services/database.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { Chart, ChartConfiguration, ChartEvent, ChartType } from 'chart.js';
+import { BaseChartDirective } from 'ng2-charts';
+
+import { default as Annotation } from 'chartjs-plugin-annotation';
+
 
 @Component({
   selector: 'app-user-evolution',
@@ -10,13 +15,100 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class UserEvolutionComponent implements OnInit{
 
-  constructor(private route: ActivatedRoute, private database: DatabaseService, private auth: AuthService) { }
+  constructor(private route: ActivatedRoute, private database: DatabaseService, private auth: AuthService) { 
+    Chart.register(Annotation)
+  }
 
-  data: any;
+  private newLabel? = 'New label';
+
+  weight: any = [];
+  series: any = [];
+  reps: any = [];
+
+  labels: any = [];
+
+  loaded: boolean = false;
+
+  exerciseID: string = this.route.snapshot.paramMap.get('exerciseID');
+  exerciseName: string;
 
   ngOnInit(): void {
     this.database.getDataFromUserEntry(this.auth.userID, this.route.snapshot.paramMap.get('exerciseID')).then((data) => {
-      console.log(data);
+      data.forEach((element: any) => {
+        this.weight.push(element.weight);
+        this.series.push(element.series);
+        this.reps.push(element.repetitions);
+        this.labels.push(new Date(element.date).getDate() + '/' + (new Date(element.date).getMonth() + 1) + '/' + new Date(element.date).getFullYear());
+      });
+      this.database.getExerciseTitle(this.exerciseID).then((title) => {
+        this.exerciseName = title;
+        this.loaded = true;
+      });
     });
   }
+
+  public lineChartData: ChartConfiguration['data'] = {
+    datasets: [
+      {
+        data: this.series,
+        label: 'Series',
+        backgroundColor: '#6a69dc',
+        borderColor: '#6a69dc',
+        pointBackgroundColor: '#6a69dc',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgba(148,159,177,0.8)',
+        fill: 'false',
+      },
+      {
+        data: this.reps,
+        label: 'Repetitions',
+        backgroundColor: '#252525',
+        borderColor: '#252525',
+        pointBackgroundColor: 'rgba(77,83,96,1)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgba(77,83,96,1)',
+        fill: 'false',
+      },
+      {
+        data: this.weight,
+        label: 'Weight',
+        yAxisID: 'y1',
+        backgroundColor: 'rgb(0,179,230)',
+        borderColor: 'rgb(0,179,230)',
+        pointBackgroundColor: 'rgba(148,159,177,1)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgba(148,159,177,0.8)',
+        fill: 'false',
+      }
+    ],
+    labels: this.labels
+  };
+
+  public lineChartOptions: ChartConfiguration['options'] = {
+    elements: {
+      line: {
+        tension: 0.5
+      }
+    },
+    scales: {
+      y:
+        {
+          position: 'left',
+        },
+      y1: {
+        position: 'right',
+        grid: {
+          color: '#8c97bf',
+        },
+        ticks: {
+          color: '#6a69dc'
+        }
+      }
+    }
+  };
+
+  public lineChartType: ChartType = 'line';
 }

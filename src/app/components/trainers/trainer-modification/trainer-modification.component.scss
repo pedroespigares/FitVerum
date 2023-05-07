@@ -1,41 +1,187 @@
 @import "../../../../scss/mixin.scss";
 @import "../../../../scss/variables.scss";
 
-.title{
-    @include view_header(5rem);
-    font-family: $font-family-title;
-    margin-bottom: 7rem;
+.title {
+  @include view_header(5rem);
+  font-family: $font-family-title;
+  margin-bottom: 7rem;
+  margin-top: 5rem;
 }
 
-.trainer-info{
-    @include flex($direction: row, $justify: center, $align: center, $gap: 10rem);
+.trainer-info {
+  @include response(xl) {
+    @include flex(
+      $direction: row,
+      $justify: center,
+      $align: center,
+      $gap: 10rem
+    );
+  }
 
-    &-img-container{
-        @include flex($direction: row, $justify: center, $align: center);
-        &-img{
-            width: 20rem;
-            height: 20rem;
-            border-radius: 50%;
-            object-fit: cover;
-        }
+  @include flex(
+    $direction: column,
+    $justify: center,
+    $align: center,
+    $gap: 5rem
+  );
+
+  &-img-container {
+    @include flex($direction: row, $justify: center, $align: center);
+    &-img {
+      width: 20rem;
+      height: 20rem;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  &-container {
+    @include response(xl) {
+      @include flex($direction: column, $justify: center, $align: flex-start);
+    }
+    @include flex($direction: column, $justify: center, $align: center);
+    &-name {
+      @include view_header(4rem);
+      font-family: $font-family-title;
+      color: getColor(black);
+    }
+    &-email {
+      font-size: getFontSize(md);
+      font-family: $font-family-text;
+      color: getColor(black);
+      font-weight: getFontWeight(normal);
+    }
+    &-membership {
+      font-size: getFontSize(sm);
+      font-family: $font-family-text;
+      color: getColor(black);
+      font-weight: getFontWeight(normal);
+    }
+  }
+}
+
+.change-data {
+  @include flex(
+    $direction: column,
+    $justify: center,
+    $align: center,
+    $gap: 10rem
+  );
+  margin-bottom: 5rem;
+
+  &-password,
+  &-name {
+    @include flex(
+      $direction: row,
+      $justify: center,
+      $align: center,
+      $gap: 5rem
+    );
+    @include response(xl) {
+      @include flex(
+        $direction: row,
+        $justify: center,
+        $align: center,
+        $gap: 5rem
+      );
     }
 
-    &-container{
-        @include flex($direction: column, $justify: center, $align: flex-start);
-        &-name{
-            @include view_header(4rem);
-            font-family: $font-family-title;
-            color: getColor(black);
-        }
-        &-membership{
-            font-size: getFontSize(md);
-            font-family: $font-family-text;
-            color: getColor(black);
-            font-weight: getFontWeight(normal);
-        }
+    @include flex(
+      $direction: column,
+      $justify: center,
+      $align: center,
+      $gap: 2rem
+    );
+
+    &-input {
+      @include input();
     }
+  }
+  &-title {
+    margin-top: 10rem;
+    @include view_header(3rem);
+    font-family: $font-family-title;
+    margin-bottom: 5rem;
+  }
+
+  &-btn {
+    @include response(xl) {
+      @include button($size: xl, $focus: true);
+    }
+    @include button($size: md, $focus: true);
+    margin-bottom: 5rem;
+  }
+
+  &-img {
+    @include flex(
+      $direction: row,
+      $justify: center,
+      $align: center,
+      $gap: 2rem
+    );
+
+    @include input();
+    &-add-img {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    &-uploaded-img {
+      width: 7rem;
+      height: 7rem;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    &-label {
+      color: getColor(dark-grayish-violet);
+      transition: $transition;
+      cursor: pointer;
+      &:hover {
+        color: getColor(intense-violet);
+      }
+    }
+
+    &-input {
+      display: none;
+    }
+  }
+}
+
+.error-message {
+  @include view_header(2rem);
+  font-family: $font-family-text;
+  color: white;
+  margin-top: 5rem !important;
+  background-color: red;
+  border-radius: 10rem;
+  width: 20%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.success-message {
+  @include view_header(2rem);
+  font-family: $font-family-text;
+  color: white;
+  margin-top: 5rem !important;
+  background-color: green;
+  border-radius: 10rem;
+  width: 20%;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .loader{
-    @include loader();
+  @include loader(40vh, 38vw);
+}
+
+
+.thirdPartyLoginMessage{
+  @include view_header(2rem);
+  color: getColor(dark-grayish-violet);
+  margin-top: 5rem;
 }

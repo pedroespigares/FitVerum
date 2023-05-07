@@ -13,12 +13,21 @@ export class AdminGuard {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    if(this.auth.isAdmin){
-      return true;
-    } else {
-      this.router.navigate(['/error/403-forbidden']);
-      return false;
-    }
+    return this.auth.checkAuthStateAsync().then((res) => {
+      if(this.auth.isAdmin && res){
+        return true;
+      } else {
+        this.router.navigate(['/error/403-forbidden']);
+        return false;
+      }
+    });
+
+    // if(this.auth.isAdmin){
+    //   return true;
+    // } else {
+    //   this.router.navigate(['/error/403-forbidden']);
+    //   return false;
+    // }
   }
 
 }

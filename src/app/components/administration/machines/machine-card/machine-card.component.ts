@@ -1,7 +1,6 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { ref, getStorage, deleteObject} from '@angular/fire/storage';
-import { ToastsService } from 'src/app/services/toasts.service';
 
 @Component({
   selector: 'app-machine-card',
@@ -15,7 +14,7 @@ export class MachineCardComponent {
   @Input() machine: any;
   @Output() deleteMachineEvent = new EventEmitter();
 
-  constructor(private database: DatabaseService, private toast: ToastsService) {
+  constructor(private database: DatabaseService) {
     this.storage = getStorage();
   }
 

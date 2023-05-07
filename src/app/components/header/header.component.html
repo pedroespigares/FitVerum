@@ -16,31 +16,36 @@
               <span class="header-nav-hamburger-lines-line header-nav-hamburger-lines-line-3"></span>
           </div>
       </div>
-        <ul class="header-nav-list">
-            <li class="header-nav-item"><a class="header-nav-link" routerLink="/">Home</a></li>
-            <li *ngIf="!this.auth.isLogged" class="header-nav-item"><a class="header-nav-link" routerLink="/about-us">About Us</a></li>
-            <li *ngIf="this.auth.isLogged && !this.auth.isAdmin && !this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/user/calendar">Activities</a></li>
-            <li *ngIf="this.auth.isLogged && !this.auth.isAdmin && !this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/user/routines">My routines</a></li>
-            <li *ngIf="this.auth.isLogged && !this.auth.isAdmin && !this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/user/diets">My diets</a></li>
-            <li *ngIf="this.auth.isLogged && this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/trainer/calendar">Management</a></li>
-            <li *ngIf="this.auth.isLogged && this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/trainer/clients">Clients</a></li>
-            <li *ngIf="this.auth.isLogged && this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/trainer/routines">Routines</a></li>
-            <li *ngIf="this.auth.isLogged && this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/trainer/diets">Diets</a></li>
-            <li *ngIf="this.auth.isLogged && this.auth.isAdmin" class="header-nav-item"><a class="header-nav-link" routerLink="/administration/users">Users</a></li>
-            <li *ngIf="this.auth.isLogged && this.auth.isAdmin" class="header-nav-item"><a class="header-nav-link" routerLink="/administration/machines">Machines</a></li>
+        <!-- <ul class="header-nav-list" *ngIf="this.auth.loaded && this.auth.checked || this.auth.userID == ''"> -->
+          <ul class="header-nav-list">
+            <li class="header-nav-item"><a class="header-nav-link" routerLink="/">{{"HEADER.NAVBAR.HOME" | translate}}</a></li>
+            <li *ngIf="!this.auth.isLogged" class="header-nav-item"><a class="header-nav-link" routerLink="/about-us">{{"HEADER.NAVBAR.ABOUT" | translate}}</a></li>
+            <li *ngIf="this.auth.isLogged && !this.auth.isAdmin && !this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/user/calendar">{{"HEADER.NAVBAR.ACTIVITIES" | translate}}</a></li>
+            <li *ngIf="this.auth.isLogged && !this.auth.isAdmin && !this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/user/routines">{{"HEADER.NAVBAR.MY-ROUTINES" | translate}}</a></li>
+            <li *ngIf="this.auth.isLogged && !this.auth.isAdmin && !this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/user/diets">{{"HEADER.NAVBAR.MY-DIETS" | translate}}</a></li>
+            <li *ngIf="this.auth.isLogged && this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/trainer/calendar">{{"HEADER.NAVBAR.MANAGEMENT" | translate}}</a></li>
+            <li *ngIf="this.auth.isLogged && this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/trainer/clients">{{"HEADER.NAVBAR.CLIENTS" | translate}}</a></li>
+            <li *ngIf="this.auth.isLogged && this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/trainer/routines">{{"HEADER.NAVBAR.ROUTINES" | translate}}</a></li>
+            <li *ngIf="this.auth.isLogged && this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/trainer/diets">{{"HEADER.NAVBAR.DIETS" | translate}}</a></li>
+            <li *ngIf="this.auth.isLogged && this.auth.isAdmin" class="header-nav-item"><a class="header-nav-link" routerLink="/administration/users">{{"HEADER.NAVBAR.USERS" | translate}}</a></li>
+            <li *ngIf="this.auth.isLogged && this.auth.isAdmin" class="header-nav-item"><a class="header-nav-link" routerLink="/administration/machines">{{"HEADER.NAVBAR.MACHINES" | translate}}</a></li>
             <div class="header-nav-list-actions">
+              <select #langSelect class="header-nav-icon" (change)="translate.use(langSelect.value)">
+                <option value="en" selected>🇬🇧</option>
+                <option value="es">🇪🇸</option>
+              </select>
               <img *ngIf="this.auth.isLogged && this.auth.userPhoto != null && !this.auth.isAdmin" [src]="this.auth.userPhoto" referrerpolicy="no-referrer" width="50" height="50" class="header-user-img">
               <img *ngIf="this.auth.isLogged && this.auth.userPhoto == null && !this.auth.isAdmin" src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=5974ac39-112f-4bd1-a170-d2a23c392d95" width="50" height="50" class="header-user-img">
               <img *ngIf="this.auth.isLogged && this.auth.isAdmin" src="../../../assets/images/FitVerumLogo.png" width="50" height="50" class="header-user-img">
               <p class="user-type" *ngIf="this.auth.isLogged && this.auth.isAdmin">(Admin)</p>
-              <p class="user-type" *ngIf="this.auth.isLogged && this.auth.isTrainer">(Trainer)</p>
+              <p class="user-type" *ngIf="this.auth.isLogged && this.auth.isTrainer">{{"HEADER.NAVBAR.TRAINER" | translate}}</p>
               <i (click)="logout()" *ngIf="this.auth.isLogged" class="header-nav-icon fa-solid fa-right-to-bracket" title="Log Out"></i>
               <i *ngIf="this.auth.isLogged && !this.auth.isAdmin && !this.auth.isTrainer" class="header-nav-icon fa-solid fa-gear close" title="Edit User" routerLink="/user/modification"></i>
               <i *ngIf="this.auth.isLogged && !this.auth.isAdmin && this.auth.isTrainer" class="header-nav-icon fa-solid fa-gear close" title="Edit User" routerLink="/trainer/modification"></i>
             </div>
             <div class="header-nav-list-buttons">
-              <a *ngIf="!this.auth.isLogged" class="header-nav-button-not-focus" routerLink="/login">Sign In</a>
-              <a *ngIf="!this.auth.isLogged" class="header-nav-button-focus" routerLink="/register">Register</a>
+              <a *ngIf="!this.auth.isLogged" class="header-nav-button-not-focus" routerLink="/login">{{"HEADER.NAVBAR.SINGIN" | translate}}</a>
+              <a *ngIf="!this.auth.isLogged" class="header-nav-button-focus" routerLink="/register">{{"HEADER.NAVBAR.REGISTER" | translate}}</a>
             </div>
         </ul>
     </nav>

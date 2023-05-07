@@ -1,1 +1,11 @@
-<p>user-evolution works!</p>
+<main class="content">
+    <h1 class="exercise-title"><span class="exercise-title-span" *ngIf="loaded">{{exerciseName}}</span> evolution</h1>
+    <div *ngIf="!loaded" class="loader"></div>
+    <div class="chart-container">
+        <canvas *ngIf="loaded" baseChart class="chart-container-chart"
+            [data]="lineChartData"
+            [options]="lineChartOptions"
+            [type]="lineChartType">
+        </canvas>
+    </div>
+</main>

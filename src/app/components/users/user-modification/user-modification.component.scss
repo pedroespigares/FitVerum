@@ -175,15 +175,13 @@
   margin: 0 auto;
 }
 
-.lds-ring {
-  @include loader(25vh, 100vh);
+.loader{
+  @include loader(40vh, 38vw);
 }
 
-@keyframes lds-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+
+.thirdPartyLoginMessage{
+  @include view_header(2rem);
+  color: getColor(dark-grayish-violet);
+  margin-top: 5rem;
 }

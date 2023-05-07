@@ -35,7 +35,7 @@ img{
   @include navigation($hamburger: true);
 
   @include response(lg) {
-    grid-column: 6/10;
+    grid-column: 5/10;
     padding-right: 5rem;
     @include navigation($hamburger: false);
   }
@@ -47,12 +47,30 @@ img{
     font-size: getFontSize(lg);
     color: getColor(dark-grayish-violet);
     transition: $transition;
+    border: none;
 
     &:hover {
       cursor: pointer;
       color: getColor(intense-violet);
       transition: $transition;
     }
+
+    &:focus {
+      outline: none;
+    }
+  };
+
+  select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    /* SVG background image */
+    background: none;
+    background-size: 12px;
+    background-position-x: right;
+    background-position-y: calc(100% - 10px);
+    background-repeat: no-repeat;
   }
 }
 

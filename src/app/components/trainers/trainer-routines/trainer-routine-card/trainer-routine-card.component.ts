@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { ref, getStorage, deleteObject} from '@angular/fire/storage';
 
@@ -11,6 +11,7 @@ export class TrainerRoutineCardComponent {
   storage: any;
 
   @Input() routine: any;
+  @Output() deleteRoutineEvent = new EventEmitter();
 
   constructor(private database: DatabaseService) {
     this.storage = getStorage();
@@ -27,6 +28,7 @@ export class TrainerRoutineCardComponent {
     if (confirmDelete){
       this.database.delete('routines', id);
       this.deletePhotoFromStorage(photoURL);
+      this.deleteRoutineEvent.emit();
     } else {
       return;
     }
