@@ -30,6 +30,8 @@ import { UserRoutineExercisesSimpleComponent } from './components/users/simple/u
 import { TrainerDietsComponent } from './components/trainers/trainer-diets/trainer-diets.component';
 import { UserDietsComponent } from './components/users/user-diets/user-diets.component';
 import { UserEvolutionComponent } from './components/users/user-evolution/user-evolution.component';
+import { AddDietComponent } from './components/trainers/trainer-diets/add-diet/add-diet.component';
+import { EditDietComponent } from './components/trainers/trainer-diets/edit-diet/edit-diet.component';
 import { AuthGuard } from './services/guards/auth.guard';
 import { AdminGuard } from './services/guards/admin.guard';
 import { TrainerGuard } from './services/guards/trainer.guard';
@@ -59,6 +61,8 @@ const routes: Routes = [
   { path: 'trainer/calendar/:date', component: TrainerAppointmentComponent, canActivate: [TrainerGuard]},
   { path: 'trainer/modification', component: TrainerModificationComponent, canActivate: [TrainerGuard]},
   { path: 'trainer/diets', component: TrainerDietsComponent, canActivate: [TrainerGuard]},
+  { path: 'trainer/diets/add/:userID', component: AddDietComponent, canActivate: [TrainerGuard]},
+  { path: 'trainer/diets/edit/:id', component: EditDietComponent, canActivate: [TrainerGuard]},
   { path: 'trainer/routines', component: TrainerRoutinesComponent, canActivate: [TrainerGuard]},
   { path: 'trainer/routines/show/:id', component: ShowExercisesComponent, canActivate: [TrainerGuard]},
   { path: 'trainer/routines/edit/:id', component: EditRoutineComponent, canActivate: [TrainerGuard]},

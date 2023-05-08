@@ -406,6 +406,22 @@ export class DatabaseService {
   }
 
   /**
+   * Actualizar los datos de una dieta
+   * @param id - ID de la dieta
+   * @param name - Nombre de la máquina
+   * @param description - Descripción de la máquina
+   * @param photoURL - URL de la foto de la máquina
+   */
+  updateDiet(id: string, name: string, description: string, photoURL: string) {
+    const machineRef = doc(this.database, 'diets', id);
+    updateDoc(machineRef, {
+      name: name,
+      description: description,
+      photoURL: photoURL,
+    });
+  }
+
+  /**
    * Actualizar las fechas de una cita
    * @param id - ID de la cita
    * @param from_date - Fecha de inicio
@@ -467,6 +483,22 @@ export class DatabaseService {
     });
   }
 
+  /**
+   * Añadir una dieta a la base de datos
+   * @param title - Nombre de la dieta
+   * @param description - Descripción de la máquina
+   * @param photoURL - URL de la foto de la máquina
+   */
+  addDiet(name: string, description: string, photoURL: string, trainerID: string, userID: string) {
+    const machinesRef = collection(this.database, 'diets');
+    setDoc(doc(machinesRef), {
+      name: name,
+      description: description,
+      photoURL: photoURL,
+      trainerID: trainerID,
+      userID: userID,
+    });
+  }
 
   /**
    * Crear una cita

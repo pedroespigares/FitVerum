@@ -1,0 +1,29 @@
+@import "../../../../../scss/mixin.scss";
+@import "../../../../../scss/variables.scss";
+
+.content {
+  @include flex($direction: column, $justify: center, $align: center, $gap: 0);
+  height: calc(95vh - 116px);
+  width: 100%;
+  background-color: getColor(white);
+  padding: 0 2rem;
+  @include response(xl) {
+    padding: 0 5rem;
+  }
+}
+
+@include add(diet);
+
+@include response(lg) {
+  .waves {
+    z-index: 10;
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background-image: url("../../../../../assets/images/wave.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

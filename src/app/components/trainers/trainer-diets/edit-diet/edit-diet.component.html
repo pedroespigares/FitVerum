@@ -1,0 +1,37 @@
+<main class="content">
+    <div *ngIf="loading" class="loader"></div>
+    <div *ngIf="!loading" class="edit-diet">
+        <div class="edit-diet-logo-presentation">
+            <img class="edit-diet-logo-presentation-img" src="../../assets/images/FitVerumLogo.png" alt="Brand Logo">
+            <h1 class="edit-diet-logo-presentation-text">
+                <span class="edit-diet-logo-presentation-text-first">Fit</span>
+                <span class="edit-diet-logo-presentation-text-second">Verum</span>
+            </h1>
+        </div>
+        <div class="edit-diet-title-container">
+            <h1 class="edit-diet-title-container-text">{{"TRAINERS.DIETS.EDIT-FORM.TITLE" | translate}}</h1>
+            <img class="edit-diet-title-container-img" [src]="previousPhotoURL" alt="Diet Image">
+        </div>
+        <form class="edit-diet-form" (ngSubmit)="updateDiet()">
+            <fieldset class="edit-diet-form-fieldset">
+                <legend class="edit-diet-form-fieldset-label" for="dietName">{{"TRAINERS.DIETS.ADD-FORM.NAME" | translate}}</legend>
+                <input *ngIf="dietUploaded" class="edit-diet-form-fieldset-input" type="text" id="dietName" name="dietName" placeholder="Diet Name" [(ngModel)]="name">
+            </fieldset>
+            <fieldset class="edit-diet-form-fieldset">
+                <legend class="edit-diet-form-fieldset-label" for="dietDescription">{{"TRAINERS.DIETS.ADD-FORM.DESCRIPTION" | translate}}</legend>
+                <textarea *ngIf="dietUploaded" class="edit-diet-form-fieldset-textarea" type="text" id="dietDescription" name="dietDescription" placeholder="Diet Description" [(ngModel)]="description"></textarea>
+            </fieldset>
+            <fieldset class="edit-diet-form-fieldset">
+                <legend class="edit-diet-form-fieldset-label" for="dietImage">{{"TRAINERS.DIETS.ADD-FORM.IMAGE" | translate}}</legend>
+                <label for="dietImage" class="edit-diet-form-fieldset-label-file">
+                    <label class="edit-diet-form-fieldset-label-file-text" for="dietImage">{{uploadMessage}}</label>
+                    <img *ngIf="!uploaded" class="edit-diet-form-fieldset-label-file-img" src="../../../../../assets/images/add.png">
+                    <img *ngIf="uploaded" class="edit-diet-form-fieldset-label-file-img-uploaded" [src]="newPhotoURL">
+                </label>
+                <input class="edit-diet-form-fieldset-input-file" type="file" id="dietImage" name="dietImage" accept="image/*" (change)="uploadFile($event)">
+            </fieldset>
+            <button type="submit" class="edit-diet-form-button">{{"TRAINERS.DIETS.EDIT-FORM.BUTTON" | translate}}</button>
+        </form>
+    </div>
+    <div class="waves"></div>
+</main>

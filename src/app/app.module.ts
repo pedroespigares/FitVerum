@@ -51,6 +51,8 @@ import { UserEvolutionComponent } from './components/users/user-evolution/user-e
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule} from '@angular/common/http';
+import { AddDietComponent } from './components/trainers/trainer-diets/add-diet/add-diet.component';
+import { EditDietComponent } from './components/trainers/trainer-diets/edit-diet/edit-diet.component';
 
 
 @NgModule({
@@ -93,6 +95,8 @@ import { HttpClient, HttpClientModule} from '@angular/common/http';
     TrainerDietCardComponent,
     UserDietsComponent,
     UserEvolutionComponent,
+    AddDietComponent,
+    EditDietComponent,
   ],
   imports: [
     BrowserModule,
