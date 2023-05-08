@@ -15,7 +15,7 @@
     background-color: darken(getColor(white), 1%);
 
     &-title{
-        @include response(xl){
+        @include response(lg){
             font-size: getFontSize(xl);
         }
         font-size: getFontSize(lg);
@@ -32,7 +32,7 @@
     }
 
     &-link{
-        @include response(xl){
+        @include response(lg){
             font-size: getFontSize(md);
         }
         font-size: getFontSize(sm);
@@ -50,7 +50,7 @@
         }
 
         &-row{
-            @include response(xl){
+            @include response(lg){
                 font-size: getFontSize(md);
             }
             font-size: getFontSize(sm);
@@ -61,7 +61,7 @@
     }
 
     &-icon{
-        @include response(xl){
+        @include response(lg){
             font-size: getFontSize(xl);
         }
         font-size: getFontSize(lg);

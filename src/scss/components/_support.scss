@@ -98,6 +98,8 @@
             &-title {
               @include response(xl) {
                 text-align: left;
+              }
+              @include response(lg) {
                 font-size: getFontSize(xxl);
               }
               text-align: center;
@@ -111,6 +113,8 @@
             &-p {
               @include response(xl) {
                 text-align: left;
+              }
+              @include response(lg) {
                 font-size: getFontSize(xl);
               }
               text-align: center;
@@ -139,7 +143,7 @@ i {
   -webkit-background-clip: text;
   color: transparent;
   font-size: getFontSize(xxxl);
-  @include response(xl) {
+  @include response(lg) {
     padding-right: 5rem;
     font-size: getFontSize(landing-text-title);
     width: 10rem;

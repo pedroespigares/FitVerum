@@ -4,7 +4,7 @@
     mwlCalendarPreviousView
     [(viewDate)]="viewDate"
     [view]="view">
-    Previous
+    {{"USERS.ACTIVITIES.PREVIOUS" | translate}}
     </button>
 
     <h3 class="calendar-controls-month">{{ viewDate | calendarDate:(view + 'ViewTitle') }}</h3>
@@ -13,7 +13,7 @@
     mwlCalendarNextView
     [(viewDate)]="viewDate"
     [view]="view">
-    Next
+    {{"USERS.ACTIVITIES.NEXT" | translate}}
     </button>
 </div>
 
@@ -35,19 +35,19 @@
 
 <ng-template #modalContent let-close="close">
   <div class="modal-header">
-    <h5 class="modal-title">Event information</h5>
+    <h5 class="modal-title">{{"USERS.ACTIVITIES.EVENT-INFORMATION" | translate}}</h5>
     <i class="fa-solid fa-x" (click)="close()"></i>
   </div>
   <div class="modal-body">
     <div>
-      <h6 class="modal-body-title">Event title</h6>
+      <h6 class="modal-body-title">{{"USERS.ACTIVITIES.EVENT-TITLE" | translate}}</h6>
       <p class="modal-body-title-text">{{ modalData?.event?.title }}</p>
       <p class="modal-body-title-date">{{ modalDataDate | date: 'longDate'}}</p>
-      <h6 class="modal-body-content-title">Stats</h6>
-      <p class="modal-body-content-text">Series: <span class="modal-data-text">{{ modalData?.event?.series }}</span> - Reps: <span class="modal-data-text">{{ modalData?.event?.repetitions }}</span> - Weight: <span class="modal-data-text">{{ modalData?.event?.kg }} kg</span></p>
-      <h6 *ngIf="modalData?.event?.comment != ''" class="modal-body-content-title">Comments</h6>
+      <h6 class="modal-body-content-title">{{"USERS.ACTIVITIES.STATS" | translate}}</h6>
+      <p class="modal-body-content-text">Series: <span class="modal-data-text">{{ modalData?.event?.series }}</span> - Reps: <span class="modal-data-text">{{ modalData?.event?.repetitions }}</span> - {{"USERS.ACTIVITIES.WEIGHT" | translate}}: <span class="modal-data-text">{{ modalData?.event?.kg }} kg</span></p>
+      <h6 *ngIf="modalData?.event?.comment != ''" class="modal-body-content-title">{{"USERS.ACTIVITIES.COMMENTS" | translate}}</h6>
       <p *ngIf="modalData?.event?.comment != ''" class="modal-body-content-text">{{ modalData?.event?.comment}}</p>
-      <p *ngIf="modalData?.event?.comment === null" class="no-comment-message">This event does not have a comment</p>
+      <p *ngIf="modalData?.event?.comment === null" class="no-comment-message">{{"USERS.ACTIVITIES.NO-COMMENTS" | translate}}</p>
     </div>
   </div>
   <div class="modal-footer">
@@ -55,10 +55,10 @@
       <i class="fa-solid fa-trash"></i>
     </button>
     <button type="button" class="modal-button" (click)="openEvolution(modalData?.event?.exerciseID)">
-      See evolution
+      {{"USERS.ACTIVITIES.SEE-EVOLUTION" | translate}}
     </button>
     <button type="button" class="modal-button" (click)="close()">
-      Back
+      {{"USERS.ACTIVITIES.BACK" | translate}}
     </button>
   </div>
 </ng-template>

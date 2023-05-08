@@ -1,6 +1,6 @@
 @mixin response($breakpoint) {
   @if ($breakpoint == xl) {
-    @media (min-width: 1200px) {
+    @media (min-width: 1500px) {
       @content;
     }
   } @else if($breakpoint == lg) {
@@ -218,7 +218,7 @@
 }
 
 @mixin section-titles {
-  @include response(xl) {
+  @include response(lg) {
     font-size: getFontSize(xl);
   }
   background-image: linear-gradient(
@@ -240,7 +240,7 @@
 }
 
 @mixin section-subtitles {
-  @include response(xl) {
+  @include response(lg) {
     font-size: getFontSize(xxxl);
   }
   font-size: getFontSize(xxl);

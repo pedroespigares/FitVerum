@@ -4,9 +4,6 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 5rem;
-  }
-
-  @include response(xl) {
     margin-bottom: 20rem;
   }
   margin-bottom: 10rem;
@@ -27,11 +24,14 @@
       @include response(xl) {
         font-size: getFontSize(landing-text-title);
       }
+      @include response(lg){
+        font-size: getFontSize(landing-text-title);
+      }
       font-size: getFontSize(xxxl);
       font-family: $font-family-title;
       font-weight: getFontWeight(semi-bold);
       color: getColor(black);
-      text-align: center;
+      text-align: left;
       margin-bottom: 1rem;
 
       animation: focus-in-expand 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -52,11 +52,13 @@
       @include response(xl) {
         font-size: getFontSize(landing-text-title);
       }
-
+      @include response(lg){
+        font-size: getFontSize(landing-text-title);
+      }
       font-size: getFontSize(xxxl);
       font-family: $font-family-title;
       font-weight: getFontWeight(bold);
-      text-align: center;
+      text-align: left;
       margin-bottom: 1rem;
 
       animation: focus-in-expand 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -71,7 +73,7 @@
       );
       padding-top: 2rem;
       &-button {
-        @include response(xl) {
+        @include response(lg) {
           @include button(lg, true);
         }
         @include button(md, true);

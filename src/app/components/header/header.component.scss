@@ -96,7 +96,7 @@ img{
       $direction: row,
       $justify: center,
       $align: center,
-      $gap: 5rem
+      $gap: 3rem
     );
   }
 
@@ -127,6 +127,7 @@ img{
     font-weight: getFontWeight(bold);
     transition: $transition;
     cursor: pointer;
+    text-align: center;
 
     &-first {
       color: getColor(black);

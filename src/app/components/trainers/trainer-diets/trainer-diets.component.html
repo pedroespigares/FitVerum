@@ -12,7 +12,7 @@
   </div>
   <div class="trainer-diets-container">
     <div class="trainer-diets-container-clients">
-      <h1 class="trainer-diets-container-clients-title">Clients</h1>
+      <h1 class="trainer-diets-container-clients-title">{{"TRAINERS.DIETS.CLIENTS" | translate}}</h1>
       <table class="trainer-diets-container-clients-table">
         <tr
           *ngFor="let client of clients | slice : (page - 1) * pageSize : page * pageSize" (click)="selectClient(client)">
@@ -42,7 +42,7 @@
         </tr>
       </table>
       <p *ngIf="this.clients.length == 0" class="no-clients-message">
-        There are currently no clients available
+        {{"TRAINERS.DIETS.NO-CLIENTS" | translate}}
       </p>
       <div class="pagination">
         <ngb-pagination
@@ -60,14 +60,14 @@
     <div class="trainer-diets-container-info">
       <div *ngIf="loadingDiets && selectedClient != null" class="loader"></div>
       <h1 *ngIf="selectedClient != null" class="trainer-diets-container-info-title">
-        Diets from <span class="trainer-diets-container-info-title-username">{{selectedClient.displayName}}</span>
+        {{"TRAINERS.DIETS.TITLE" | translate}} <span class="trainer-diets-container-info-title-username">{{selectedClient.displayName}}</span>
       </h1>
-      <h1 *ngIf="selectedClient == null" class="trainer-diets-container-info-title">Diets</h1>
-      <h2 *ngIf="selectedClient == null" class="trainer-diets-container-info-no-client">No client selected</h2>
+      <h1 *ngIf="selectedClient == null" class="trainer-diets-container-info-title">{{"TRAINERS.DIETS.DIETS" | translate}}</h1>
+      <h2 *ngIf="selectedClient == null" class="trainer-diets-container-info-no-client">{{"TRAINERS.DIETS.NO-CLIENT" | translate}}</h2>
       <div class="trainer-diets-container-info-container-actions">
-        <button *ngIf="selectedClient != null" class="trainer-diets-container-info-container-actions-button" routerLink="/trainer/diets/add/{{selectedClient.id}}">Add Diet</button>
+        <button *ngIf="selectedClient != null" class="trainer-diets-container-info-container-actions-button" routerLink="/trainer/diets/add/{{selectedClient.id}}">{{"TRAINERS.DIETS.BUTTON" | translate}}</button>
       </div>
-      <h2 *ngIf="diets.length == 0 && selectedClient != null" class="trainer-diets-container-info-no-diets">This user doesn't have any diets</h2>
+      <h2 *ngIf="diets.length == 0 && selectedClient != null" class="trainer-diets-container-info-no-diets">{{"TRAINERS.DIETS.NO-DIETS" | translate}}</h2>
       <div class="trainer-diets-container-info-container">
         <div class="trainer-diets-container-info-container-routine" *ngFor="let singleDiet of diets">
           <app-trainer-diet-card [diet]="singleDiet"></app-trainer-diet-card>

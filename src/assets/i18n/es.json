@@ -8,7 +8,7 @@
         "MY-DIETS": "Mis dietas",
         "MANAGEMENT": "Gestión",
         "CLIENTS": "Clientes",
-        "ROUTINES": "Routinas",
+        "ROUTINES": "Rutinas",
         "DIETS": "Dietas",
         "USERS": "Usuarios",
         "MACHINES": "Máquinas",
@@ -45,7 +45,7 @@
                 "2-DESCRIPTION": "Nuestra página web de gestión de la formación ofrece sólidas herramientas de gestión de alumnos que le ayudarán a realizar un seguimiento y una gestión eficaces del progreso de sus alumnos.",
                 "3-TITLE": "Personalización",
                 "3-DESCRIPTION": "Ofrecemos una amplia gama de opciones de personalización para ayudarle a crear una experiencia de aprendizaje única y de marca para sus alumnos. Con nuestras funciones de personalización, puede personalizar el diseño y la disposición de sus materiales de formación."
-            }   
+            }
         }
     },
     "FOOTER":{
@@ -125,7 +125,7 @@
         }
       }
     },
-    
+
     "TRAINERS": {
       "MANAGEMENT":{
         "PREVIOUS": "Anterior",
@@ -150,7 +150,7 @@
         "FROM": "Desde",
         "TO": "Hasta",
         "APPOINTMENT-COLOR": "Color de la cita",
-        "DESCRIPTION": "Descripción" 
+        "DESCRIPTION": "Descripción"
       },
       "CLIENTS":{
         "TITLE": "Administración de clientes",
@@ -170,7 +170,7 @@
         "NO-ROUTINES": "Este usuario no tiene rutinas",
         "NO-CLIENT": "Ningún cliente seleccionado",
         "ADD-FORM": {
-          "NEW-ROUTINE": "Nueva Rutina", 
+          "NEW-ROUTINE": "Nueva Rutina",
           "ADD-ROUTINE": "Añadir Rutina",
           "NAME": "Nombre de la Rutina",
           "IMAGE": "Imagen de la Rutina",
@@ -189,6 +189,50 @@
           "ADD-EXERCISE": "Añadir Ejercicio",
           "ROUTINE": "Rutina"
         }
+      },
+      "DIETS":{
+        "CLIENTS": "Clientes",
+        "DIETS": "Dietas",
+        "BUTTON": "Nueva Dieta",
+        "TITLE": "Dietas de ",
+        "TOAST-ADD": "Dieta añadida correctamente!",
+        "TOAST-DELETED": "Dieta borrada correctamente!",
+        "NO-CLIENTS": "Actualmente no hay clientes disponibles",
+        "NO-DIETS": "Este usuario no tiene dietas",
+        "NO-CLIENT": "Ningún cliente seleccionado",
+        "ADD-FORM": {
+          "NEW-DIET": "Nueva Dieta",
+          "ADD-DIET": "Añadir Dieta",
+          "NAME": "Nombre de la Dieta",
+          "DESCRIPTIOn": "Descripción de la Dieta",
+          "IMAGE": "Imagen de la Dieta",
+          "BUTTON": "Añadir Dieta"
+        },
+        "EDIT-FORM":{
+          "EDIT": "Editar",
+          "TITLE": "Editar Dieta",
+          "BUTTON": "Editar"
+        }
+      }
+    },
+    "USERS":{
+      "ACTIVITIES":{
+        "PREVIOUS": "Anterior",
+        "NEXT": "Siguiente",
+        "EVENT-INFORMATION": "Información de la entrada",
+        "EVENT-TITLE": "Título de la entrada",
+        "STATS": "Estadísticas",
+        "WEIGHT": "Peso",
+        "COMMENTS": "Comentarios",
+        "NO-COMMENTS": "Esta entrada no tiene comentarios",
+        "SEE-EVOLUTION": "Ver evolución",
+        "BACK": "Volver"
+      },
+      "ROUTINES": {
+        "YOUR-ROUTINES": "Tus Rutinas",
+        "CALENDAR": "Calendario",
+        "ROUTINES": "Rutinas",
+        "EXERCISES": "ejercicios"
       }
     }
   }

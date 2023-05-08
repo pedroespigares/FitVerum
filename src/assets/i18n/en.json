@@ -45,7 +45,7 @@
                 "2-DESCRIPTION": "Our training management webpage provides robust learner management tools to help you efficiently track and manage your learners' progress.",
                 "3-TITLE": "Customization",
                 "3-DESCRIPTION": "We offers a range of customization options to help you create a unique and branded learning experience for your learners. With our customization features, you can personalize the design and layout of your training materials."
-            }   
+            }
         }
     },
     "FOOTER":{
@@ -149,7 +149,7 @@
         "FROM": "from",
         "TO": "to",
         "APPOINTMENT-COLOR": "appointment color",
-        "DESCRIPTION": "Description" 
+        "DESCRIPTION": "Description"
       },
       "CLIENTS":{
         "TITLE": "Clients Administration",
@@ -169,7 +169,7 @@
         "NO-ROUTINES": "This user doesn't have any routines",
         "NO-CLIENT": "No client selected",
         "ADD-FORM": {
-          "NEW-ROUTINE": "New Routine", 
+          "NEW-ROUTINE": "New Routine",
           "ADD-ROUTINE": "Add Routine",
           "NAME": "Routine Name",
           "IMAGE": "Routine Image",
@@ -188,6 +188,50 @@
           "ADD-EXERCISE": "Add Exercise",
           "ROUTINE": "Routine"
         }
+      },
+      "DIETS":{
+        "CLIENTS": "Clients",
+        "DIETS": "Diets",
+        "BUTTON": "Add Diet",
+        "TITLE": "Diets from ",
+        "TOAST-ADD": "Diet added successfully!",
+        "TOAST-DELETED": "Diet deleted successfully!",
+        "NO-CLIENTS": "There are currently no clients available",
+        "NO-DIETS": "This user doesn't have any diets",
+        "NO-CLIENT": "No client selected",
+        "ADD-FORM": {
+          "NEW-DIET": "New Diet",
+          "ADD-DIET": "Add Diet",
+          "NAME": "Diet Name",
+          "DESCRIPTIOn": "Diet Descritpion",
+          "IMAGE": "Diet Image",
+          "BUTTON": "Add Diet"
+        },
+        "EDIT-FORM":{
+          "EDIT": "Edit",
+          "TITLE": "Edit Diet",
+          "BUTTON": "Update"
+        }
+      }
+    },
+    "USERS":{
+      "ACTIVITIES":{
+        "PREVIOUS": "Previous",
+        "NEXT": "Next",
+        "EVENT-INFORMATION": "Entry Information",
+        "EVENT-TITLE": "Entry Title",
+        "STATS": "Stats",
+        "WEIGHT": "Weight",
+        "COMMENTS": "Comments",
+        "NO-COMMENTS": "This entry doesn't have any comments",
+        "SEE-EVOLUTION": "See Evolution",
+        "BACK": "Back"
+      },
+      "ROUTINES": {
+        "YOUR-ROUTINES": "Your Routines",
+        "CALENDAR": "Calendar",
+        "ROUTINES": "Routines",
+        "EXERCISES": "exercises"
       }
     }
   }
