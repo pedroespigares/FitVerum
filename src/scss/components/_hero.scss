@@ -21,23 +21,24 @@
     align-content: center;
 
     &-title {
-      @include response(xl) {
-        font-size: getFontSize(landing-text-title);
-      }
-      @include response(lg){
-        font-size: getFontSize(landing-text-title);
-      }
+      width: 100%;
       font-size: getFontSize(xxxl);
       font-family: $font-family-title;
       font-weight: getFontWeight(semi-bold);
       color: getColor(black);
-      text-align: left;
+      text-align: center;
       margin-bottom: 1rem;
-
       animation: focus-in-expand 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      @include response(xl){
+        text-align: left;
+      }
+      @include response(lg){
+        font-size: getFontSize(landing-text-title);
+      }
     }
 
     &-subtitle {
+      width: 100%;
       background-image: linear-gradient(
         45deg,
         #a163f1,
@@ -49,19 +50,18 @@
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
-      @include response(xl) {
-        font-size: getFontSize(landing-text-title);
+      text-align: center;
+      font-size: getFontSize(xxxl);
+      font-family: $font-family-title;
+      font-weight: getFontWeight(bold);
+      margin-bottom: 1rem;
+      animation: focus-in-expand 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      @include response(xl){
+        text-align: left;
       }
       @include response(lg){
         font-size: getFontSize(landing-text-title);
       }
-      font-size: getFontSize(xxxl);
-      font-family: $font-family-title;
-      font-weight: getFontWeight(bold);
-      text-align: left;
-      margin-bottom: 1rem;
-
-      animation: focus-in-expand 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     }
 
     &-started {

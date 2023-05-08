@@ -232,7 +232,27 @@
         "YOUR-ROUTINES": "Tus Rutinas",
         "CALENDAR": "Calendario",
         "ROUTINES": "Rutinas",
-        "EXERCISES": "ejercicios"
+        "EXERCISES": "ejercicios",
+        "NO-EXERCISES": "Esta rutina no tiene ejercicios asignados",
+        "NO-ROUTINES": "No tienes rutinas asignadas"
+      },
+      "DIETS": {
+        "YOUR-DIETS": "Tus dietas",
+        "NO-DIETS": "No tienes dietas asignadas"
+      },
+      "ENTRY": {
+        "ENTRY": " entrada",
+        "CALENDAR": "Calendario",
+        "ROUTINES": "Rutinas",
+        "DESCRIPTION": "Descripción",
+        "EVOLUTION": "Evolución",
+        "I-MADE": "Hice",
+        "WITH": "con",
+        "REPETITIONS": "repeticiones",
+        "COMMENTS": "Comentarios",
+        "SAVE": "Guardar",
+        "LC-DESCRIPTION": "descripción",
+        "AT": "El"
       }
     }
   }

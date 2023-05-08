@@ -1,9 +1,9 @@
 <main class="content">
-  <h1 class="exercise-title" *ngIf="!loading"><span class="exercise-title-span">{{exercise.title}}</span> entry</h1>
+  <h1 class="exercise-title" *ngIf="!loading"><span class="exercise-title-span">{{exercise.title}}</span> {{"USERS.ENTRY.ENTRY" | translate}}</h1>
   <div *ngIf="!loading" class="breadcrumbs">
-    <a class="breadcrumbs-item" routerLink="/user/calendar">Calendar</a>
+    <a class="breadcrumbs-item" routerLink="/user/calendar">{{"USERS.ENTRY.CALENDAR" | translate}}</a>
     <p class="breadcrumbs-item"> > </p>
-    <a class="breadcrumbs-item" routerLink="/user/calendar/{{date}}">Routines</a>
+    <a class="breadcrumbs-item" routerLink="/user/calendar/{{date}}">{{"USERS.ENTRY.ROUTINES" | translate}}</a>
     <p class="breadcrumbs-item"> > </p>
     <a class="breadcrumbs-item" routerLink="/user/calendar/{{dateNotFormatted}}">{{routineName}}</a>
     <p class="breadcrumbs-item"> > </p>
@@ -14,26 +14,26 @@
     <div class="entry-container-left">
       <img *ngIf="!loading" src="{{photoURL}}" alt="Exercise image" class="entry-container-left-img">
       <div *ngIf="!loading" class="entry-container-left-buttons">
-        <button class="entry-container-left-buttons-button" (click)="openCanvas(content)">Description</button>
-        <button class="entry-container-left-buttons-button" (click)="openEvolution(exerciseID)">Evolution</button>
+        <button class="entry-container-left-buttons-button" (click)="openCanvas(content)">{{"USERS.ENTRY.DESCRIPTION" | translate}}</button>
+        <button class="entry-container-left-buttons-button" (click)="openEvolution(exerciseID)">{{"USERS.ENTRY.EVOLUTION" | translate}}</button>
       </div>
     </div>
 
     <div *ngIf="!loading" class="entry-container-right">
-        <h2 class="entry-container-right-title">At <span class="entry-container-right-title-date">{{date | date: "longDate"}}</span></h2>
+        <h2 class="entry-container-right-title">{{"USERS.ENTRY.AT" | translate}} <span class="entry-container-right-title-date">{{date | date: "longDate"}}</span></h2>
         <form class="entry-container-right-form" (ngSubmit)="saveEntry()">
           <div class="entry-container-right-form-group">
-            <label class="entry-container-right-form-group-label">I made</label>
+            <label class="entry-container-right-form-group-label">{{"USERS.ENTRY.I-MADE" | translate}}</label>
             <input class="entry-container-right-form-group-input" name="series" type="number" placeholder="XXX" min="0" [(ngModel)]="series">
             <label class="entry-container-right-form-group-label-2">series</label>
           </div>
           <div class="entry-container-right-form-group">
-            <label class="entry-container-right-form-group-label">with</label>
+            <label class="entry-container-right-form-group-label">{{"USERS.ENTRY.WITH" | translate}}</label>
             <input class="entry-container-right-form-group-input" name="repetitions" type="number" placeholder="XXX" min="0" [(ngModel)]="repetitions">
-            <label class="entry-container-right-form-group-label-2">repetitions</label>
+            <label class="entry-container-right-form-group-label-2">{{"USERS.ENTRY.REPETITIONS" | translate}}</label>
           </div>
           <div class="entry-container-right-form-group">
-            <label class="entry-container-right-form-group-label">with</label>
+            <label class="entry-container-right-form-group-label">{{"USERS.ENTRY.WITH" | translate}}</label>
             <input class="entry-container-right-form-group-input" name="weight" type="number" placeholder="XXX" min="0" [(ngModel)]="weight">
             <label class="entry-container-right-form-group-label-2">KG</label>
           </div>
@@ -42,11 +42,11 @@
             <input class="entry-container-right-form-group-input-color" name="color" type="color" [(ngModel)]="color">
           </div>
           <div class="entry-container-right-form-group">
-            <label class="entry-container-right-form-group-label">Comments</label>
+            <label class="entry-container-right-form-group-label">{{"USERS.ENTRY.COMMENTS" | translate}}</label>
             <textarea class="entry-container-right-form-group-textarea" name="comments" placeholder="Notes" [(ngModel)]="comments"></textarea>
           </div>
-          <button *ngIf="weight != null && series != null && repetitions != null" class="entry-container-right-form-button" type="submit">Save</button>
-          <button *ngIf="weight == null || series == null || repetitions == null" class="entry-container-right-form-button-disabled" type="submit" disabled>Save</button>
+          <button *ngIf="weight != null && series != null && repetitions != null" class="entry-container-right-form-button" type="submit">{{"USERS.ENTRY.SAVE" | translate}}</button>
+          <button *ngIf="weight == null || series == null || repetitions == null" class="entry-container-right-form-button-disabled" type="submit" disabled>{{"USERS.ENTRY.SAVE" | translate}}</button>
         </form>
     </div>
   </div>
@@ -54,7 +54,7 @@
 
   <ng-template #content let-offcanvas>
     <div class="offcanvas-header">
-      <h4 class="offcanvas-title fs-1" id="description">{{exercise.title}} description</h4>
+      <h4 class="offcanvas-title fs-1" id="description">{{exercise.title}} {{"USERS.ENTRY.LC-DESCRIPTION" | translate}}</h4>
       <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
     </div>
     <div class="offcanvas-body fs-3">

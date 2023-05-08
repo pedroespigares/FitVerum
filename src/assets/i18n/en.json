@@ -231,7 +231,27 @@
         "YOUR-ROUTINES": "Your Routines",
         "CALENDAR": "Calendar",
         "ROUTINES": "Routines",
-        "EXERCISES": "exercises"
+        "EXERCISES": "exercises",
+        "NO-EXERCISES": "This routine doesn't have any exercises",
+        "NO-ROUTINES": "You don't have any routines yet"
+      },
+      "DIETS": {
+        "YOUR-DIETS": "Your Diets",
+        "NO-DIETS": "You don't have any diet yet"
+      },
+      "ENTRY": {
+        "ENTRY": " entry",
+        "CALENDAR": "Calendar",
+        "ROUTINES": "Routines",
+        "DESCRIPTION": "Description",
+        "EVOLUTION": "Evolution",
+        "I-MADE": "I made",
+        "WITH": "with",
+        "REPETITIONS": "repetitions",
+        "COMMENTS": "Comments",
+        "SAVE": "Save",
+        "LC-DESCRIPTION": "description",
+        "AT": "At"
       }
     }
   }

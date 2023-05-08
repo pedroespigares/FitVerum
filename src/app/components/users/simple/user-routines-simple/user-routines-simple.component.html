@@ -1,7 +1,7 @@
 <main class="content">
     <div *ngIf="loading" class="loader"></div>
-    <h1 class="routines-title">Your Routines</h1>
-    <h2 class="routines-title-no-routines" *ngIf="!routines.length">You don't have any routine yet</h2>
+    <h1 class="routines-title">{{"USERS.ROUTINES.YOUR-ROUTINES" | translate}}</h1>
+    <h2 class="routines-title-no-routines" *ngIf="!routines.length">{{"USERS.ROUTINES.NO-ROUTINES" | translate}}</h2>
     <div class="routines-container">
         <div class="routines-container-routine" *ngFor="let singleRoutine of routines" (click)="goToRoutineExercises(singleRoutine)">
             <img class="routines-container-routine-img" [src]="singleRoutine.photoURL" alt="Routine Image">

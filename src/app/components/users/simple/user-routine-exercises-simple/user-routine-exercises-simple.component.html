@@ -1,8 +1,7 @@
 <main class="content">
     <h1 class="exercise-title"><span class="exercise-title-span" *ngIf="!loadingTitle">{{routineName}}</span> exercises</h1>
-    <h2 class="exercise-title-no-exercise" *ngIf="!exercises.length">This routine doesn't have any exercises</h2>
+    <h2 class="exercise-title-no-exercise" *ngIf="!exercises.length">{{"USERS.ROUTINES.NO-EXERCISES" | translate}}</h2>
     <div class="exercise-container" *ngIf="!loadingRoutines">
         <app-simple-exercise-card  *ngFor="let singleExercise of exercises" [exercise]="singleExercise" [goToEntry]="false"></app-simple-exercise-card>
     </div>
   </main>
-  

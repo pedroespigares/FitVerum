@@ -1,12 +1,12 @@
 <main class="content">
 <div *ngIf="loading" class="loader"></div>
-<h1 class="routines-title">Your Routines</h1>
+<h1 class="routines-title">{{"USERS.ROUTINES.YOUR-ROUTINES" | translate}}</h1>
 <div *ngIf="!loading" class="breadcrumbs">
-  <a class="breadcrumbs-item" routerLink="/user/calendar">Calendar</a>
+  <a class="breadcrumbs-item" routerLink="/user/calendar">{{"USERS.ROUTINES.CALENDAR" | translate}}</a>
   <p class="breadcrumbs-item"> > </p>
-  <a class="breadcrumbs-item">Routines</a>
+  <a class="breadcrumbs-item">{{"USERS.ROUTINES.ROUTINES" | translate}}</a>
 </div>
-<h2 class="routines-title-no-routines" *ngIf="!routines.length && !loading">You don't have any routines yet</h2>
+<h2 class="routines-title-no-routines" *ngIf="!routines.length && !loading">{{"USERS.ROUTINES.NO-ROUTINES" | translate}}</h2>
 <div class="routines-container">
     <div class="routines-container-routine" *ngFor="let singleRoutine of routines" (click)="goToRoutineExercises(singleRoutine)">
         <img class="routines-container-routine-img" [src]="singleRoutine.photoURL" alt="Routine Image">
