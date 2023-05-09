@@ -39,5 +39,14 @@ $(document).on("mouseout", ".fa-gear", function () {
 });
 
 $(document).on("click", ".fa-moon", function () {
-  $(document.body).toggleClass("theme--dark");
+  $(".dark-toggler").removeClass("fa-moon");
+  $(".dark-toggler").addClass("fa-sun");
+  $(document.body).addClass("theme--dark");
+  
+});
+
+$(document).on("click", ".fa-sun", function () {
+  $(".dark-toggler").removeClass("fa-sun");
+  $(".dark-toggler").addClass("fa-moon");
+  $(document.body).removeClass("theme--dark");
 });

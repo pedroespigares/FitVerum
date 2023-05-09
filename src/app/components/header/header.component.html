@@ -39,7 +39,7 @@
               <img *ngIf="this.auth.isLogged && this.auth.isAdmin" src="../../../assets/images/FitVerumLogo.png" width="50" height="50" class="header-user-img">
               <p class="user-type" *ngIf="this.auth.isLogged && this.auth.isAdmin">(Admin)</p>
               <p class="user-type" *ngIf="this.auth.isLogged && this.auth.isTrainer">{{"HEADER.NAVBAR.TRAINER" | translate}}</p>
-              <i class="header-nav-icon fa-solid fa-moon" title="Change Theme"></i>
+              <i class="header-nav-icon dark-toggler fa-solid fa-moon" title="Change Theme"></i>
               <i (click)="logout()" *ngIf="this.auth.isLogged" class="header-nav-icon fa-solid fa-right-to-bracket" title="Log Out"></i>
               <i *ngIf="this.auth.isLogged && !this.auth.isAdmin && !this.auth.isTrainer" class="header-nav-icon fa-solid fa-gear close" title="Edit User" routerLink="/user/modification"></i>
               <i *ngIf="this.auth.isLogged && !this.auth.isAdmin && this.auth.isTrainer" class="header-nav-icon fa-solid fa-gear close" title="Edit User" routerLink="/trainer/modification"></i>
