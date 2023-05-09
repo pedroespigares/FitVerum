@@ -32,8 +32,11 @@
                   <img *ngIf="uploaded" class="edit-routine-form-fieldset-label-file-img-uploaded" [src]="newPhotoURL">
               </label>
               <input class="edit-routine-form-fieldset-input-file" type="file" id="routineImage" name="routineImage" accept="image/*" (change)="uploadFile($event)">
+              <p *ngIf="!fileTooBig" class="info-under">3 MB Max</p>
+              <p *ngIf="fileTooBig" class="info-under-error">3 MB Max</p>
           </fieldset>
           <button type="submit" class="edit-routine-form-button">{{"TRAINERS.ROUTINES.EDIT-FORM.BUTTON" | translate}}</button>
       </form>
   </div>
+  <div class="waves"></div>
 </main>

@@ -1,20 +1,24 @@
 @import "../../../../scss/mixin.scss";
 @import "../../../../scss/variables.scss";
 
-.content {
-  height: calc(100vh - 126.797px - 10rem);
+.content{
+  @include response(md){
+    height: calc(100vh - 126.797px - 10rem);
+    @include flex($direction: column, $justify: center, $align: center, $gap: 15rem);
+  }
   @include flex($direction: column, $justify: center, $align: center, $gap: 15rem);
+  height: auto;
 }
 
 .exercise-title{
     @include view_header();
     &-no-exercise{
       @include view_header(3rem);
-      color: getColor(black);
+      color: var(--text-color);
     }
 
     &-span{
-      color: getColor(black);
+      color: var(--text-color);
     }
 }
 

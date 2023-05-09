@@ -37,3 +37,7 @@ $(document).on("mouseout", ".fa-gear", function () {
   $(".fa-gear").removeClass("open-gear");
   $(".fa-gear").addClass("close-gear");
 });
+
+$(document).on("click", ".fa-moon", function () {
+  $(document.body).toggleClass("theme--dark");
+});

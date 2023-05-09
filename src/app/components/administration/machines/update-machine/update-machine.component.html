@@ -29,6 +29,8 @@
                     <img *ngIf="uploaded" class="edit-machine-form-fieldset-label-file-img-uploaded" [src]="newPhotoURL">
                 </label>
                 <input class="edit-machine-form-fieldset-input-file" type="file" id="machineImage" name="machineImage" accept="image/*" (change)="uploadFile($event)">
+                <p *ngIf="!fileTooBig" class="info-under">3 MB Max</p>
+                <p *ngIf="fileTooBig" class="info-under-error">3 MB Max</p>
             </fieldset>
             <button type="submit" class="edit-machine-form-button">{{"ADMINISTRATION.MACHINES.UPDATE-MACHINE-FORM.BUTTON" | translate}}</button>
         </form>

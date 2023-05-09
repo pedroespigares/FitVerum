@@ -45,7 +45,7 @@
     font-size: getFontSize(md);
     font-family: $font-family-title;
     font-weight: getFontWeight(bold);
-    color: getColor(dark-grayish-violet);
+    color: var(--cuaternary-color);
   }
 }
 

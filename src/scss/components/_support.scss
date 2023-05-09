@@ -1,4 +1,5 @@
 .support {
+  padding-bottom: 20rem;
   &-title {
     @include section-titles();
   }
@@ -61,7 +62,7 @@
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
-        background-color: getColor(intense-violet);
+        background-color: var(--primary-color);
       }
 
       &-list {
@@ -103,7 +104,7 @@
                 font-size: getFontSize(xxl);
               }
               text-align: center;
-              color: getColor(black);
+              color: var(--text-color);
               font-size: getFontSize(lg);
               font-weight: getFontWeight(bold);
               font-family: $font-family-title;
@@ -118,7 +119,7 @@
                 font-size: getFontSize(xl);
               }
               text-align: center;
-              color: getColor(dark-grayish-violet);
+              color: var(--cuaternary-color);
               font-size: getFontSize(md);
               font-weight: getFontWeight(regular);
               font-family: $font-family-text;

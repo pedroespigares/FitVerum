@@ -1,5 +1,5 @@
 .benefits {
-  background-color: darken(getColor(white), 1%);
+
 
   &-title {
     @include section-titles();
@@ -11,6 +11,7 @@
 
   &-cards {
     padding-top: 8rem;
+
     @include flex(
       $direction: column,
       $justify: center,
@@ -29,6 +30,7 @@
 
     &-card {
       &-image {
+        background-color: white !important;
         @include card();
         @include response(xl) {
           width: 310.797px;
@@ -70,7 +72,7 @@
           font-family: $font-family-title;
           font-weight: getFontWeight(bold);
           transition: $transition;
-          color: getColor(intense-violet);
+          color: var(--primary-color);
           @include response(xl) {
             padding-top: 0;
           }
@@ -82,7 +84,7 @@
           font-family: $font-family-text;
           font-weight: getFontWeight(normal);
           transition: $transition;
-          color: getColor(black);
+          color: var(--text-color);
           @include response(xl) {
             text-align: left;
           }

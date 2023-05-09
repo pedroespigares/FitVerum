@@ -5,9 +5,9 @@
   @include flex($direction: column, $justify: center, $align: center, $gap: 0);
   height: calc(95vh - 116px);
   width: 100%;
-  background-color: getColor(white);
+  background-color: var(--background-color);
   padding: 0 2rem;
-  margin-top: 3rem;
+  padding-top: 3rem;
   @include response(xl) {
     padding: 0 5rem;
   }
@@ -15,7 +15,7 @@
 
 .register {
   @include response(lg) {
-    background-color: getColor(white);
+    background-color: var(--background-color);
     box-shadow: 0px 0px 27px -3px rgba(0, 0, 0, 0.75);
   }
   z-index: 11;
@@ -54,11 +54,11 @@
       display: none;
 
       &-first {
-        color: getColor(black);
+        color: var(--text-color);
       }
 
       &-second {
-        background-color: getColor(intense-violet);
+        background-color: var(--primary-color);
         background-image: linear-gradient(
           180deg,
           rgba(255, 255, 255, 0.1),
@@ -115,26 +115,26 @@
 
         &-icon {
           font-size: 2.5rem;
-          color: getColor(dark-grayish-violet);
+          color: var(--cuaternary-color);
           transition: $transition;
           cursor: pointer;
           &:hover {
-            color: getColor(intense-violet);
+            color: var(--primary-color);
           }
 
           &-close {
             font-size: 2.3rem;
-            color: getColor(dark-grayish-violet);
+            color: var(--cuaternary-color);
             transition: $transition;
             cursor: pointer;
             &:hover {
-              color: getColor(intense-violet);
+              color: var(--primary-color);
             }
           }
 
           &-not-showing {
             font-size: 2.5rem;
-            color: getColor(white);
+            color: var(--background-color);
           }
         }
       }
@@ -153,7 +153,7 @@
         &-under{
           font-size: getFontSize(xxs);
           font-family: $font-family-text;
-          color: getColor(dark-grayish-violet);
+          color: var(--cuaternary-color);
           &-error{
             color: red;
             font-size: getFontSize(xxs);
@@ -195,14 +195,14 @@
       font-family: $font-family-title;
       font-weight: getFontWeight(bold);
       transition: $transition;
-      color: getColor(dark-grayish-violet);
+      color: var(--cuaternary-color);
     }
 
     &-line {
       display: block;
       width: 15rem;
       height: 1px;
-      background-color: getColor(dark-grayish-violet);
+      background-color: var(--cuaternary-color);
     }
     padding-top: 2rem;
   }

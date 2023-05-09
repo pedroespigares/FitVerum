@@ -8,7 +8,7 @@
 .content {
   height: calc(95vh - 116px);
   width: 100%;
-  background-color: getColor(white);
+  background-color: var(--background-color);
   padding: 0 2rem;
   @include response(xl) {
     padding: 0 5rem;
@@ -16,7 +16,7 @@
   &-loading {
     height: calc(95vh - 116px);
     width: 100%;
-    background-color: getColor(white);
+    background-color: var(--background-color);
     padding: 0 2rem;
     @include response(xl) {
       padding: 0 5rem;
@@ -96,7 +96,7 @@
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
-        background-color: getColor(intense-violet);
+        background-color: var(--primary-color);
         margin-bottom: 0;
       }
 

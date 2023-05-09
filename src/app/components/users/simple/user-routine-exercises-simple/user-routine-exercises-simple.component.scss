@@ -1,15 +1,22 @@
 @import "../../../../../scss/mixin.scss";
 @import "../../../../../scss/variables.scss";
 
+.content{
+  @include response(md){
+    height: calc(100vh - 112px);
+  }
+  height: auto;
+}
+
 .exercise-title{
     @include view_header();
     &-no-exercise{
       @include view_header(3rem);
-      color: getColor(black);
+      color: var(--text-color);
     }
 
     &-span{
-      color: getColor(black);
+      color: var(--text-color);
     }
 }
 

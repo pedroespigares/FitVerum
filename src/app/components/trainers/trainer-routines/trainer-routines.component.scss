@@ -1,6 +1,13 @@
 @import "../../../../scss/mixin.scss";
 @import "../../../../scss/variables.scss";
 
+.content{
+  @include response(md){
+    height: calc(100vh - 112px);
+  }
+  height: auto;
+}
+
 .breadcrumbs {
   @include breadcrumbs();
 }
@@ -15,7 +22,7 @@
 
   &-clients {
     @include response(xl) {
-      border-right: 1px solid getColor(light-grayish-violet);
+      border-right: 1px solid var(--tertiary-color);
       height: calc(100vh - 126.797px - 10rem);
     }
     margin-top: 5rem;
@@ -51,6 +58,7 @@
           width: 5.5rem;
           height: 5.5rem;
           border-radius: 50%;
+          border: 2px solid white;
           object-fit: cover;
           margin: 1rem;
         }
@@ -61,7 +69,7 @@
           font-size: getFontSize(md);
           font-family: $font-family-title;
           font-weight: getFontWeight(bold);
-          color: getColor(black);
+          color: var(--text-color);
         }
         &-button {
           @include user_button();
@@ -89,7 +97,7 @@
       }
 
       &-username{
-        color: getColor(black);
+        color: var(--text-color);
         padding-left: 1rem;
       }
     }
@@ -99,7 +107,7 @@
       font-size: 2rem;
       font-family: $font-family-title;
       font-weight: getFontWeight(bold);
-      color: getColor(black);
+      color: var(--text-color);
       padding-top: 1rem;
     }
 
@@ -126,7 +134,7 @@
 
     &-no-routines{
       @include view_header(2rem);
-      color: getColor(dark-grayish-violet);
+      color: var(--cuaternary-color);
     }
   }
 }
@@ -135,8 +143,8 @@
   margin-top: 1rem;
   justify-content: center;
   // Al venir de un componente de terceros, no se puede usar el @include ni las variables de sass propias
-  --bs-pagination-color: getColor(black);
-  --bs-pagination-hover-color: getColor(intense-violet);
+  --bs-pagination-color: var(--text-color);
+  --bs-pagination-hover-color: var(--primary-color);
   --bs-pagination-active-bg: #6a69dc;
   --bs-pagination-active-border-color: #6a69dc;
   --bs-pagination-font-size: 2rem;
@@ -149,7 +157,7 @@
   font-size: 2rem;
   font-family: $font-family-title;
   font-weight: getFontWeight(bold);
-  color: getColor(black);
+  color: var(--text-color);
   margin-bottom: 2rem;
   text-align: center;
 }

@@ -1,8 +1,15 @@
 @import "../../../../scss/mixin.scss";
 @import "../../../../scss/variables.scss";
 
+.content{
+  @include response(md){
+    height: calc(100vh - 112px);
+  }
+  height: 100vh;
+}
+
 ::ng-deep span.cal-day-number {
-  color: getColor(intense-violet);
+  color: var(--primary-color);
   font-family: $font-family-title !important;
   @include response(xl){
     font-size: 5rem !important;
@@ -12,7 +19,7 @@
 }
 
 ::ng-deep .cal-month-view {
-  background-color: getColor(white);
+  background-color: var(--background-color);
   padding-left: 5rem !important;
   padding-right: 5rem !important;
 }
@@ -27,15 +34,15 @@
   &:hover {
     .cal-day-number {
       cursor: pointer;
-      color: getColor(intense-violet);
+      color: var(--primary-color);
       scale: 1.3;
       transition: $transition;
       opacity: 1;
-      color: getColor(white);
+      color: var(--background-color);
     }
-    color: getColor(white);
-    background-color: getColor(light-violet);
-    border: 1px solid getColor(light-violet);
+    color: var(--background-color);
+    background-color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
     background-image: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.1),
@@ -44,7 +51,7 @@
   }
 
   &:active {
-    background-color: getColor(light-violet);
+    background-color: var(--secondary-color);
     scale: 1;
   }
 }
@@ -52,7 +59,7 @@
 ::ng-deep .cal-past,
 ::ng-deep .cal-future,
 ::ng-deep .cal-today {
-  color: getColor(black);
+  color: var(--text-color);
   font-family: $font-family-title !important;
   font-size: getFontSize(lg) !important;
 }
@@ -82,7 +89,7 @@
     font-family: $font-family-title;
     font-weight: getFontWeight(bold);
     transition: $transition;
-    color: getColor(intense-violet);
+    color: var(--primary-color);
   }
 
   &-button {
@@ -105,27 +112,27 @@
   font-size: getFontSize(sm);
   font-family: $font-family-title;
   font-weight: getFontWeight(bold);
-  color: getColor(dark-grayish-violet);
+  color: var(--cuaternary-color);
   text-align: center;
   margin-bottom: 1rem;
 }
 
 
 .fa-x{
-  color: getColor(intense-violet);
+  color: var(--primary-color);
   font-size: getFontSize(xl);
   transition: $transition;
   padding-right: 1rem;
   cursor: pointer;
   &:hover{
-    color: getColor(light-violet);
+    color: var(--secondary-color);
   }
 }
 
 .modal-data-text{
   font-family: $font-family-title;
   font-weight: getFontWeight(bold);
-  color: getColor(black);
+  color: var(--text-color);
 }
 
 .modal-body-content-text{

@@ -9,14 +9,14 @@
     padding-top: 30rem;
   }
   width: 100vw;
-  background-color: getColor(white);
+  background-color: var(--background-color);
   &-title{
     @include view_header(7rem);
     margin-bottom: 2rem;
   }
   &-message{
     @include view_header(2.5rem);
-    color: getColor(dark-grayish-violet);
+    color: var(--cuaternary-color);
     margin-bottom: 2rem;
   }
 
@@ -24,11 +24,11 @@
     @include view_header(2.5rem);
     z-index: 5;
     text-decoration: none;
-    color: getColor(intense-violet);
+    color: var(--primary-color);
     transition: $transition;
     cursor: pointer;
     &:hover{
-      color: getColor(dark-grayish-violet);
+      color: var(--cuaternary-color);
     }
   }
 }

@@ -22,6 +22,8 @@ export class AddMachineComponent {
   photoURL: string = '';
   storage: any;
   uploadMessage: string = 'Choose Image';
+  maxSize: number = 3145728;
+  fileTooBig: boolean = false;
 
   constructor(private database: DatabaseService, private router: Router, private toasts: ToastsService) {
     this.storage = getStorage();
@@ -34,6 +36,10 @@ export class AddMachineComponent {
     */
    uploadFile(event: any) {
     const file = event.target.files[0];
+    if (file.size > this.maxSize) {
+      this.fileTooBig = true;
+      return;
+    }
     const storageRef = ref(this.storage, `${this.basePath}/${file.name}`);
     uploadBytes(storageRef, file).then(() => {
       this.uploaded = true;

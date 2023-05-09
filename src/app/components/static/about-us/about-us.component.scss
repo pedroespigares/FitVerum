@@ -1,6 +1,10 @@
 @import "../../../../scss/mixin.scss";
 @import "../../../../scss/variables.scss";
 
+.content{
+  height: calc(100vh - 112px);
+}
+
 .title{
   @include view_header(5rem);
 }
@@ -13,7 +17,7 @@
   padding-right: 5rem;
 
   &-text{
-    color: getColor(black);
+    color: var(--text-color);
     font-size: getFontSize(lg);
     line-height: 5rem;
     text-align: justify;

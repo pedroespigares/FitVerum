@@ -10,9 +10,8 @@
 
     @include flex($direction: column, $gap: 2rem);
     padding-bottom: 2rem;
-    margin-top: 20rem;
     padding-top: 2rem;
-    background-color: darken(getColor(white), 1%);
+    background-color: var(--background-color);
 
     &-title{
         @include response(lg){
@@ -21,7 +20,7 @@
         font-size: getFontSize(lg);
         font-weight: getFontWeight(bold);
         font-family: $font-family-title;
-        color: getColor(intense-violet);
+        color: var(--primary-color);
         padding-bottom: 2rem;
         padding-top: 2rem;
         @include response(xl){
@@ -38,14 +37,14 @@
         font-size: getFontSize(sm);
         font-weight: getFontWeight(normal);
         font-family: $font-family-text;
-        color: getColor(dark-grayish-violet);
+        color: var(--cuaternary-color);
         padding-bottom: 2rem;
         text-decoration: none;
         transition: $transition;
 
         &:hover{
             cursor: pointer;
-            color: getColor(intense-violet);
+            color: var(--primary-color);
             transition: $transition;
         }
 
@@ -55,7 +54,7 @@
             }
             font-size: getFontSize(sm);
             font-weight: getFontWeight(normal);
-            color: getColor(dark-grayish-violet);
+            color: var(--cuaternary-color);
             margin: 0;
         }
     }
@@ -65,12 +64,12 @@
             font-size: getFontSize(xl);
         }
         font-size: getFontSize(lg);
-        color: getColor(dark-grayish-violet);
+        color: var(--cuaternary-color);
         transition: $transition;
 
         &:hover{
             cursor: pointer;
-            color: getColor(intense-violet);
+            color: var(--primary-color);
             transition: $transition;
         }
     }

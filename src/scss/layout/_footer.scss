@@ -9,7 +9,7 @@
 //     @include flex($direction: column, $gap: 2rem);
 //     padding-bottom: 2rem;
 //     padding-top: 2rem;
-//     background-color: darken(getColor(tertiary), 2%);
+
 
 //     &-title{
 //         @include response(xl){
@@ -17,7 +17,7 @@
 //         }
 //         font-size: getFontSize(xl);
 //         font-weight: getFontWeight(bold);
-//         color: getColor(primary);
+//         color: var(--primary-color);
 //         padding-bottom: 2rem;
 //         padding-top: 2rem;
 //     }
@@ -36,7 +36,7 @@
 
 //         &:hover{
 //             cursor: pointer;
-//             color: getColor(primary);
+//             color: var(--primary-color);
 //             transition: $transition;
 //         }
 //     }
@@ -52,7 +52,7 @@
 
 //         &:hover{
 //             cursor: pointer;
-//             color: getColor(primary);
+//             color: var(--primary-color);
 //             transition: $transition;
 //         }
 //     }

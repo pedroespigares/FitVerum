@@ -15,7 +15,7 @@
   @include flex($direction: column, $justify: center, $align: center);
   &-users {
     @include response(xl) {
-      border-right: 2px solid getColor(light-grayish-violet);
+      border-right: 2px solid var(--tertiary-color);
     }
   }
   &-users, &-trainers {
@@ -83,7 +83,7 @@
             font-size: getFontSize(sm);
             font-family: $font-family-title;
             font-weight: getFontWeight(bold);
-            color: getColor(black);
+            color: var(--text-color);
             flex: 1;
             overflow: hidden;
           }
@@ -94,7 +94,7 @@
               padding-left: 2rem;
             }
             font-size: getFontSize(sm);
-            color: getColor(intense-violet);
+            color: var(--primary-color);
             cursor: pointer;
             transition: $transition;
             &:hover {
@@ -122,12 +122,9 @@
             transition: $transition;
             padding: 1rem 1rem 1rem 1rem;
             text-decoration: none;
-            background-color: getColor(intense-violet);
-            color: getColor(white);
+            background-color: var(--primary-color);
+            color: var(--background-color);
             border: none;
-            &:hover {
-              background-color: darken(getColor(intense-violet), 5%);
-            }
             &-left {
               height: 10rem;
               border-top-left-radius: 1rem;
@@ -146,12 +143,10 @@
               transition: $transition;
               padding: 1rem 1rem 1rem 1rem;
               text-decoration: none;
-              background-color: getColor(intense-violet);
-              color: getColor(white);
+              background-color: var(--primary-color);
+              color: var(--background-color);
               border: none;
-              &:hover {
-                background-color: darken(getColor(intense-violet), 5%);
-              }
+
 
               &-name{
                 @include response(xl) {
@@ -162,7 +157,7 @@
                 font-size: getFontSize(sm);
                 font-family: $font-family-title;
                 font-weight: getFontWeight(bold);
-                color: getColor(black);
+                color: var(--text-color);
                 flex: 1;
               }
             }
@@ -175,8 +170,8 @@
     margin-top: 1rem;
     justify-content: center;
     // Al venir de un componente de terceros, no se puede usar el @include ni las variables de sass propias
-    --bs-pagination-color: getColor(black);
-    --bs-pagination-hover-color: getColor(intense-violet);
+    --bs-pagination-color: var(--text-color);
+    --bs-pagination-hover-color: var(--primary-color);
     --bs-pagination-active-bg: #6a69dc;
     --bs-pagination-active-border-color: #6a69dc;
     --bs-pagination-font-size: 2rem;
@@ -190,7 +185,7 @@
     font-size: 2rem;
     font-family: $font-family-title;
     font-weight: getFontWeight(bold);
-    color: getColor(black);
+    color: var(--text-color);
     margin-bottom: 2rem;
     text-align: center;
   }

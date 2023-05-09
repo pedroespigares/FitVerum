@@ -2,11 +2,14 @@
 @import "../../../../scss/variables.scss";
 
 .content{
-  height: calc(100vh - 112px - 10rem);
+  @include response(md){
+    height: calc(100vh - 112px);
+  }
+  height: auto;
 }
 
 .trainers-clients-header {
-  margin-top: 5rem;
+  padding-top: 5rem;
   @include view_header();
 }
 
@@ -27,7 +30,7 @@
   &-users-border{
     margin-top: 7rem;
     @include response(xl) {
-      border-right: 2px solid getColor(light-grayish-violet);
+      border-right: 2px solid var(--tertiary-color);
     }
     @include flex($direction: column, $justify: flex-start, $align: center);
     height: 100%;
@@ -78,6 +81,7 @@
             width: 5.5rem;
             height: 5.5rem;
             border-radius: 50%;
+            border: 2px solid white;
             object-fit: cover;
             margin: 0.5rem;
           }
@@ -88,7 +92,7 @@
             font-size: getFontSize(md);
             font-family: $font-family-title;
             font-weight: getFontWeight(bold);
-            color: getColor(black);
+            color: var(--text-color);
             width: 50%;
             padding-left: 2rem;
             flex: 1;
@@ -110,12 +114,9 @@
             transition: $transition;
             padding: 1rem 1rem 1rem 1rem;
             text-decoration: none;
-            background-color: getColor(intense-violet);
-            color: getColor(white);
+            background-color: var(--primary-color);
+            color: var(--background-color);
             border: none;
-            &:hover {
-              background-color: darken(getColor(intense-violet), 5%);
-            }
             &-left {
               width: 100%;
               height: 10rem;
@@ -132,12 +133,10 @@
               transition: $transition;
               padding: 1rem 1rem 1rem 1rem;
               text-decoration: none;
-              background-color: getColor(intense-violet);
-              color: getColor(white);
+              background-color: var(--primary-color);
+              color: var(--background-color);
               border: none;
-              &:hover {
-                background-color: darken(getColor(intense-violet), 5%);
-              }
+
 
               &-name{
                 @include response(xl) {
@@ -146,7 +145,7 @@
                 font-size: getFontSize(md);
                 font-family: $font-family-title;
                 font-weight: getFontWeight(bold);
-                color: getColor(black);
+                color: var(--text-color);
                 padding-right: 2rem;
                 padding-left: 2rem;
                 flex: 1;
@@ -162,6 +161,7 @@
                 width: 5.5rem;
                 height: 5.5rem;
                 border-radius: 50%;
+                border: 2px solid white;
                 object-fit: cover;
                 margin: 0.5rem;
                 margin-left: 1rem;
@@ -176,8 +176,8 @@
     margin-top: 1rem;
     justify-content: center;
     // Al venir de un componente de terceros, no se puede usar el @include ni las variables de sass propias
-    --bs-pagination-color: getColor(black);
-    --bs-pagination-hover-color: getColor(intense-violet);
+    --bs-pagination-color: var(--text-color);
+    --bs-pagination-hover-color: var(--primary-color);
     --bs-pagination-active-bg: #6a69dc;
     --bs-pagination-active-border-color: #6a69dc;
     --bs-pagination-font-size: 2rem;
@@ -191,7 +191,7 @@
     font-size: 2rem;
     font-family: $font-family-title;
     font-weight: getFontWeight(bold);
-    color: getColor(black);
+    color: var(--text-color);
     margin-bottom: 2rem;
     text-align: center;
   }

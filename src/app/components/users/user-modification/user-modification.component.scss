@@ -43,18 +43,18 @@
     &-name {
       @include view_header(4rem);
       font-family: $font-family-title;
-      color: getColor(black);
+      color: var(--text-color);
     }
     &-email {
       font-size: getFontSize(md);
       font-family: $font-family-text;
-      color: getColor(black);
+      color: var(--text-color);
       font-weight: getFontWeight(normal);
     }
     &-membership {
       font-size: getFontSize(sm);
       font-family: $font-family-text;
-      color: getColor(black);
+      color: var(--text-color);
       font-weight: getFontWeight(normal);
     }
   }
@@ -137,11 +137,11 @@
     }
 
     &-label {
-      color: getColor(dark-grayish-violet);
+      color: var(--cuaternary-color);
       transition: $transition;
       cursor: pointer;
       &:hover {
-        color: getColor(intense-violet);
+        color: var(--primary-color);
       }
     }
 
@@ -182,6 +182,6 @@
 
 .thirdPartyLoginMessage{
   @include view_header(2rem);
-  color: getColor(dark-grayish-violet);
+  color: var(--cuaternary-color);
   margin-top: 5rem;
 }

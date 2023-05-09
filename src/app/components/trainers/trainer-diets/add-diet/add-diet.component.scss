@@ -5,7 +5,7 @@
   @include flex($direction: column, $justify: center, $align: center, $gap: 0);
   height: calc(95vh - 116px);
   width: 100%;
-  background-color: getColor(white);
+  background-color: var(--background-color);
   padding: 0 2rem;
   @include response(xl) {
     padding: 0 5rem;

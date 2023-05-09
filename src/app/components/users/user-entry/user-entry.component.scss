@@ -1,19 +1,22 @@
 @import "../../../../scss/mixin.scss";
 @import "../../../../scss/variables.scss";
 
-.content {
-  height: calc(100vh - 126.797px - 15rem);
+.content{
+  @include response(md){
+    height: calc(100vh - 112px);
+  }
+  height: 175vh;
 }
 
 .exercise-title {
   @include view_header();
   &-no-exercise {
     @include view_header(3rem);
-    color: getColor(black);
+    color: var(--text-color);
   }
 
   &-span {
-    color: getColor(black);
+    color: var(--text-color);
   }
 }
 
@@ -23,16 +26,18 @@
     grid-template-columns: 0.80fr 1fr;
     grid-template-rows: 1fr;
     place-items: center;
-    margin-top: 0;
+    padding-top: 3rem;
+    height: calc(100vh - 112px - 100px - 24px);
   }
 
   @include flex($direction: column, $justify: center, $align: center, $gap: 10rem);
-  height: 100%;
+  height: 100vh;
   width: 100%;
-  margin-top: 30rem;
+  padding-top: 30rem;
 
   &-left {
     grid-area: 1 / 1 / 2 / 2;
+    height: 100%;
     @include flex($direction: column, $justify: center, $align: center);
 
     &-img {
@@ -73,17 +78,17 @@
     height: 100%;
     @include flex(
       $direction: column,
-      $justify: center,
+      $justify: start,
       $align: center,
       $gap: 2rem
     );
 
     &-title{
       @include view_header(5rem);
-      color: getColor(black);
+      color: var(--text-color);
       margin-bottom: 5rem;
       &-date{
-        color: getColor(intense-violet);
+        color: var(--primary-color);
         font-weight: getFontWeight(normal);
       }
     }
@@ -105,15 +110,20 @@
 
         &-input {
           grid-area: 1 / 2 / 2 / 3;
-          width: 100%;
+          @include response(md){
+            width: 100%;
+          }
+          width: 50% !important;
           @include input();
           &-color{
+            @include response(md){
+              width: 100%;
+            }
+            width: 50% !important;
             grid-area: 1 / 2 / 2 / 3;
-            width: 100%;
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
-            width: 100%;
             height: 100%;
             background-color: transparent;
             border: none;
@@ -130,20 +140,29 @@
         }
 
         &-textarea {
-          width: 100%;
+          @include response(md){
+            width: 100%;
+          }
+          width: 70% !important;
           @include input();
           resize: both !important;
         }
         &-label {
+          @include response(md){
+            width: 100%;
+          }
+          width: 50% !important;
           grid-area: 1 / 1 / 2 / 2;
-          width: 100%;
           @include label();
           padding-bottom: 0;
           text-align: center;
-          color: getColor(black);
+          color: var(--text-color);
 
           &-2 {
-            width: 100%;
+            @include response(md){
+              width: 100%;
+            }
+            width: 50% !important;
             @include label();
             grid-area: 1 / 3 / 2 / 4;
             padding-bottom: 0;
@@ -154,10 +173,18 @@
       &-button {
         margin-top: 5rem;
         @include button(lg, true, $width: 20rem);
+        @include response(md){
+          margin-bottom: 0;
+        }
+        margin-bottom: 2rem;
 
         &-disabled{
           margin-top: 5rem;
           @include button(lg, false, $disabled: true, $width: 20rem);
+          @include response(md){
+            margin-bottom: 0;
+          }
+          margin-bottom: 2rem;
         }
       }
     }
@@ -166,7 +193,7 @@
 
 .offcanvas-title{
   text-align: center !important;
-  color: getColor(intense-violet);
+  color: var(--primary-color);
 }
 
 .breadcrumbs{

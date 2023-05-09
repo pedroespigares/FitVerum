@@ -28,6 +28,8 @@ export class UpdateMachineComponent implements OnInit {
   previousPhotoURL: string;
   newPhotoURL: string = null;
   storage: any;
+  maxSize: number = 3145728;
+  fileTooBig: boolean = false;
 
   loading: boolean = true;
 
@@ -53,6 +55,10 @@ export class UpdateMachineComponent implements OnInit {
    */
   uploadFile(event: any) {
     const file = event.target.files[0];
+    if (file.size > this.maxSize) {
+      this.fileTooBig = true;
+      return;
+    }
     const storageRef = ref(this.storage, `${this.basePath}/${file.name}`);
     uploadBytes(storageRef, file).then(() => {
       this.uploaded = true;

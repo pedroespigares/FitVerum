@@ -25,7 +25,7 @@
       font-size: getFontSize(xxxl);
       font-family: $font-family-title;
       font-weight: getFontWeight(semi-bold);
-      color: getColor(black);
+      color: var(--text-color);
       text-align: center;
       margin-bottom: 1rem;
       animation: focus-in-expand 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;

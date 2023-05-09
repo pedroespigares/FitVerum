@@ -1,14 +1,18 @@
 @import "../../../../scss/mixin.scss";
 @import "../../../../scss/variables.scss";
 
+.content{
+  height: 100vh;
+}
+
 ::ng-deep span.cal-day-number {
-  color: getColor(intense-violet);
+  color: var(--primary-color);
   font-family: $font-family-title !important;
   font-size: 5rem !important;
 }
 
 ::ng-deep .cal-week-view {
-  background-color: getColor(white);
+  background-color: var(--background-color);
   margin-left: 5rem !important;
   margin-right: 5rem !important;
 }
@@ -21,8 +25,8 @@
   cursor: pointer;
   transition: $transition;
   &:hover {
-    color: getColor(white);
-    background-color: getColor(light-violet) !important;
+    color: var(--background-color);
+    background-color: var(--secondary-color) !important;
     background-image: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.1),
@@ -37,25 +41,25 @@
   @include response(xl) {
     font-size: getFontSize(xxl);
   }
-  color: getColor(black);
+  color: var(--text-color);
   font-family: $font-family-title !important;
   font-size: getFontSize(sm) !important;
 }
 
 ::ng-deep .cal-time {
-  color: getColor(black);
+  color: var(--text-color);
   font-family: $font-family-title !important;
   font-size: 1.5rem !important;
 }
 
 ::ng-deep .cal-event-title {
-  color: getColor(black);
+  color: var(--text-color);
   font-family: $font-family-title !important;
   font-size: 1.75rem !important;
 }
 
 ::ng-deep .cal-current-time-marker {
-  background-color: getColor(intense-violet) !important;
+  background-color: var(--primary-color) !important;
 }
 
 .calendar-controls {
@@ -85,7 +89,7 @@
     font-family: $font-family-title;
     font-weight: getFontWeight(bold);
     transition: $transition;
-    color: getColor(intense-violet);
+    color: var(--primary-color);
     text-align: center;
   }
 
@@ -109,19 +113,19 @@
   font-size: getFontSize(md);
   font-family: $font-family-title;
   font-weight: getFontWeight(bold);
-  color: getColor(intense-violet);
+  color: var(--primary-color);
   text-align: center;
   margin-bottom: 1rem;
 }
 
 
 .fa-x{
-  color: getColor(intense-violet);
+  color: var(--primary-color);
   font-size: getFontSize(xl);
   transition: $transition;
   padding-right: 1rem;
   cursor: pointer;
   &:hover{
-    color: getColor(light-violet);
+    color: var(--secondary-color);
   }
 }

@@ -25,11 +25,13 @@ export class AddDietComponent {
   storage: any;
   uploadMessage: string = 'Choose Image';
   userID: string = this.route.snapshot.paramMap.get('userID');
+  maxSize: number = 3145728;
+  fileTooBig: boolean = false;
 
   constructor(
-    private database: DatabaseService, 
-    private router: Router, 
-    private toasts: ToastsService, 
+    private database: DatabaseService,
+    private router: Router,
+    private toasts: ToastsService,
     private auth: AuthService,
     private route: ActivatedRoute
     ) {
@@ -43,6 +45,10 @@ export class AddDietComponent {
     */
    uploadFile(event: any) {
     const file = event.target.files[0];
+    if (file.size > this.maxSize) {
+      this.fileTooBig = true;
+      return;
+    }
     const storageRef = ref(this.storage, `${this.basePath}/${file.name}`);
     uploadBytes(storageRef, file).then(() => {
       this.uploaded = true;

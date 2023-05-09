@@ -10,3 +10,25 @@
 .fixed-position {
   overflow: hidden !important;
 }
+
+.theme{
+  --primary-color: #{getColor('primary')};
+  --secondary-color: #{getColor('secondary')};
+  --tertiary-color: #{getColor('tertiary')};
+  --cuaternary-color: #{getColor('cuaternary')};
+  --background-color: #{getColor('background')};
+  --text-color: #{getColor('text')};
+
+  &--dark{
+    --primary-color: #{getColor('primary')};
+    --secondary-color: #{getColor('secondary')};
+    --tertiary-color: #{getColor('cuaternary')};
+    --cuaternary-color: #{getColor('tertiary')};
+    --background-color: #{getColor('text')};
+    --text-color: #{getColor('background')};
+  }
+}
+
+.content{
+  background-color: var(--background-color);
+}

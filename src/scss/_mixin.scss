@@ -41,6 +41,14 @@
       background-image: url("../assets/images/bg-header-mobile.svg");
       background-repeat: no-repeat;
       background-size: cover;
+      &-list::before{
+        background-color: var(--primary-color);
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+      }
       &-actions {
         @include flex(
           $direction: row,
@@ -111,7 +119,7 @@
         height: 0.2em;
         width: 100%;
         border-radius: 10px;
-        background-color: getColor(intense-violet);
+        background-color: var(--primary-color);
 
         &-1 {
           transform-origin: 0% 0%;
@@ -169,16 +177,16 @@
   $heigth: null
 ) {
   @if $focus {
-    color: getColor(white);
-    background-color: getColor(intense-violet);
-    border: 1px solid getColor(intense-violet);
+    color: white;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
     background-image: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.1),
       rgba(255, 255, 255, 0)
     );
   } @else {
-    color: getColor(black);
+    color: var(--text-color);
     background-color: transparent;
     border: 1px solid getColor(normal-grayish-violet);
   }
@@ -190,18 +198,15 @@
   text-decoration: none;
   cursor: pointer;
   &:hover {
-    @if $focus {
-      background-color: darken(getColor(intense-violet), 5%);
-    } @else {
-      color: getColor(white);
-      border-color: getColor(intense-violet);
-      background-color: getColor(intense-violet);
-      background-image: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.1),
-        rgba(255, 255, 255, 0)
-      );
-    }
+    color: var(--background-color);
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+    background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
+
     transition: $transition;
   }
   @if $width != null {
@@ -212,7 +217,7 @@
     cursor: not-allowed;
     opacity: 0.5;
     &:hover {
-      background-color: getColor(intense-violet);
+      background-color: var(--primary-color);
     }
   }
 }
@@ -234,7 +239,7 @@
   font-weight: getFontWeight(bold);
   transition: $transition;
   text-align: center;
-  background-color: getColor(intense-violet);
+  background-color: var(--primary-color);
   padding-bottom: 2rem;
   padding-top: 10rem;
 }
@@ -248,14 +253,14 @@
   font-weight: getFontWeight(bold);
   transition: $transition;
   text-align: center;
-  color: getColor(black);
+  color: var(--text-color);
 }
 
 @mixin label {
   @include response(xl) {
     font-size: getFontSize(lg);
   }
-  color: getColor(intense-violet);
+  color: var(--primary-color);
   font-size: getFontSize(sm);
   font-family: $font-family-title;
   font-weight: getFontWeight(bold);
@@ -271,7 +276,7 @@
   font-family: $font-family-title;
   font-weight: getFontWeight(bold);
   transition: $transition;
-  border: 1px solid getColor(black);
+  border: 1px solid var(--text-color);
   border-radius: 0.5rem;
   padding: 1rem;
   text-align: $text-align;
@@ -282,12 +287,12 @@
   width: 16.5625em;
   &:focus {
     outline: none;
-    border: 1px solid getColor(intense-violet);
+    border: 1px solid var(--primary-color);
   }
 }
 
 @mixin navbar_links() {
-  color: getColor(black);
+  color: var(--text-color);
   font-size: getFontSize(lg);
   text-decoration: none;
   transition: $transition;
@@ -295,14 +300,14 @@
   font-weight: getFontWeight(semi-bold);
   cursor: pointer;
   &:hover {
-    color: getColor(intense-violet);
+    color: var(--primary-color);
     transition: $transition;
   }
 }
 
 @mixin card($withHover: true) {
   @include flex(column, center, center);
-  background-color: getColor(white);
+  background-color: var(--background-color);
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transition: $transition;
@@ -317,7 +322,7 @@
 }
 
 @mixin deleteInCard() {
-  color: getColor(white);
+  color: white;
   background-color: #e74c3c;
   border: none;
   flex-grow: 1;
@@ -333,7 +338,7 @@
 }
 
 @mixin editInCard() {
-  color: getColor(white);
+  color: white;
   background-color: #f1c40f;
   border: none;
   flex-grow: 1;
@@ -348,7 +353,7 @@
 }
 
 @mixin showInCard() {
-  color: getColor(white);
+  color: white;
   background-color: #27ae60;
   border: none;
   flex-grow: 1;
@@ -370,7 +375,7 @@
   font-size: calc($size / 1.5);
   font-family: $font-family-title;
   font-weight: getFontWeight(bold);
-  color: getColor(intense-violet);
+  color: var(--primary-color);
   transition: $transition;
   text-align: center;
   padding-bottom: 2rem;
@@ -391,12 +396,9 @@
   transition: $transition;
   padding: $padding $padding $padding $padding;
   text-decoration: none;
-  background-color: getColor(intense-violet);
-  color: getColor(white);
+  background-color: var(--primary-color);
+  color: white;
   border: none;
-  &:hover {
-    background-color: darken(getColor(intense-violet), 5%);
-  }
 }
 
 @mixin breadcrumbs($margin-left: 3rem) {
@@ -406,26 +408,28 @@
     $align: center,
     $gap: 1rem
   );
-  margin-left: $margin-left;
-  margin-top: 2rem;
+  padding-left: $margin-left;
+  padding-top: 2rem;
   &-item {
+    padding: 0;
     margin: 0;
     @include response(lg){
       font-size: getFontSize(md);
     }
     font-size: getFontSize(xs);
     font-family: $font-family-text;
-    color: getColor(black);
     text-decoration: none;
     transition: $transition;
+    color: var(--text-color);
     &:hover {
-      color: getColor(intense-violet);
+      color: var(--primary-color);
     }
   }
+  background-color: var(--background-color);
 }
 
 @mixin normal_delete_button {
-  color: getColor(white);
+  color: var(--background-color);
   background-color: #e74c3c;
   border: none;
   font-size: getFontSize(xl);
@@ -454,7 +458,7 @@
   &::before {
     content: "";
     position: absolute;
-    background: getColor(intense-violet);
+    background: var(--primary-color);
     top: 0;
     left: 0;
     width: 0%;
@@ -496,7 +500,7 @@
     font-size: getFontSize(lg);
     font-family: $font-family-title;
     font-weight: getFontWeight(bold);
-    color: getColor(intense-violet);
+    color: var(--primary-color);
     text-align: center;
   }
 
@@ -508,7 +512,7 @@
       font-size: getFontSize(md);
       font-family: $font-family-title;
       font-weight: getFontWeight(bold);
-      color: getColor(intense-violet);
+      color: var(--primary-color);
       text-align: center;
       margin-bottom: 1rem;
 
@@ -519,7 +523,7 @@
         font-size: getFontSize(md);
         font-family: $font-family-title;
         font-weight: getFontWeight(bold);
-        color: getColor(black);
+        color: var(--text-color);
         text-align: center;
         margin-bottom: 1rem;
       }
@@ -531,7 +535,7 @@
         font-size: getFontSize(sm);
         font-family: $font-family-title;
         font-weight: getFontWeight(normal);
-        color: getColor(dark-grayish-violet);
+        color: var(--cuaternary-color);
         text-align: center;
         margin-bottom: 5rem;
       }
@@ -545,7 +549,7 @@
         font-size: getFontSize(md);
         font-family: $font-family-title;
         font-weight: getFontWeight(bold);
-        color: getColor(intense-violet);
+        color: var(--primary-color);
         text-align: center;
         margin-bottom: 1rem;
       }
@@ -556,7 +560,7 @@
         }
         font-size: getFontSize(xs);
         font-family: $font-family-title;
-        color: getColor(black);
+        color: var(--text-color);
         text-align: center;
       }
     }
@@ -574,7 +578,7 @@
   .edit-#{$name} {
     z-index: 11;
     border-radius: 0.5rem;
-    background-color: getColor(white);
+    background-color: var(--background-color);
     animation: scale-in-center 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     @include response(xl) {
       overflow: auto;
@@ -587,7 +591,7 @@
       }
 
       &::-webkit-scrollbar-thumb {
-        background-color: getColor(intense-violet);
+        background-color: var(--primary-color);
       }
       width: 50%;
       box-shadow: 0px 0px 27px -3px rgba(0, 0, 0, 0.75);
@@ -627,11 +631,11 @@
         display: none;
 
         &-first {
-          color: getColor(black);
+          color: var(--text-color);
         }
 
         &-second {
-          background-color: getColor(intense-violet);
+          background-color: var(--primary-color);
           background-image: linear-gradient(
             180deg,
             rgba(255, 255, 255, 0.1),
@@ -663,6 +667,7 @@
         font-family: $font-family-title;
         font-weight: getFontWeight(bold);
         text-align: center;
+        color: var(--text-color);
       }
 
       &-img {
@@ -703,12 +708,12 @@
             padding-right: 2rem;
             padding-left: 2rem;
             &-text {
-              color: getColor(dark-grayish-violet);
+              color: var(--cuaternary-color);
               transition: $transition;
               cursor: pointer;
               flex: 1;
               &:hover {
-                color: getColor(intense-violet);
+                color: var(--primary-color);
               }
             }
             &-img {
@@ -763,6 +768,20 @@
     @include loader(0%, 0%);
   }
 
+  .info-under{
+    font-size: getFontSize(xxs);
+    font-family: $font-family-text;
+    color: var(--cuaternary-color);
+    align-self: flex-start;
+    justify-self: flex-start;
+    &-error{
+      align-self: flex-start;
+      justify-self: flex-start;
+      color: red;
+      font-size: getFontSize(xxs);
+    }
+  }
+
   @keyframes scale-in-center {
     0% {
       -webkit-transform: scale(0);
@@ -782,8 +801,8 @@
     border-radius: 0.5rem;
     animation: scale-in-center 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     z-index: 11;
-    background-color: getColor(white);
-    margin-top: 4rem;
+    background-color: var(--background-color);
+    padding-top: 4rem;
     @include response(xl) {
       &::-webkit-scrollbar {
         width: 0.5rem;
@@ -794,7 +813,7 @@
       }
 
       &::-webkit-scrollbar-thumb {
-        background-color: getColor(intense-violet);
+        background-color: var(--primary-color);
       }
       width: 50%;
       box-shadow: 0px 0px 27px -3px rgba(0, 0, 0, 0.75);
@@ -830,16 +849,17 @@
           text-transform: uppercase;
           font-weight: getFontWeight(bold);
           display: block;
+          color: var(--text-color);
         }
 
         display: none;
 
         &-first {
-          color: getColor(black);
+          color: var(--text-color);
         }
 
         &-second {
-          background-color: getColor(intense-violet);
+          background-color: var(--primary-color);
           background-image: linear-gradient(
             180deg,
             rgba(255, 255, 255, 0.1),
@@ -864,6 +884,7 @@
       }
       padding-bottom: 5rem;
       text-align: center;
+      color: var(--text-color);
     }
     &-form {
       @include flex(
@@ -895,12 +916,12 @@
             padding-right: 2rem;
             padding-left: 2rem;
             &-text {
-              color: getColor(dark-grayish-violet);
+              color: var(--cuaternary-color);
               transition: $transition;
               cursor: pointer;
               flex: 1;
               &:hover {
-                color: getColor(intense-violet);
+                color: var(--primary-color);
               }
             }
             &-img {
@@ -945,6 +966,20 @@
     }
   }
 
+  .info-under{
+    font-size: getFontSize(xxs);
+    font-family: $font-family-text;
+    color: var(--cuaternary-color);
+    align-self: flex-start;
+    justify-self: flex-start;
+    &-error{
+      align-self: flex-start;
+      justify-self: flex-start;
+      color: red;
+      font-size: getFontSize(xxs);
+    }
+  }
+
   @keyframes scale-in-center {
     0% {
       -webkit-transform: scale(0);
@@ -961,13 +996,13 @@
 
 @mixin toast($margin-top: 12.25rem, $full-width: false) {
   ::ng-deep .toast {
-    background-color: getColor(intense-violet);
+    background-color: var(--primary-color);
     background-image: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.1),
       rgba(255, 255, 255, 0)
     );
-    color: getColor(white);
+    color: var(--background-color);
     font-size: getFontSize(sm);
     font-family: $font-family-title;
     font-weight: getFontWeight(normal);
@@ -988,8 +1023,8 @@
   ::ng-deep .toast-header {
     @include response(xl) {
       font-size: getFontSize(lg);
-      background-color: getColor(white);
-      color: getColor(intense-violet);
+      background-color: var(--background-color);
+      color: var(--primary-color);
       font-size: getFontSize(md);
       font-family: $font-family-title;
       font-weight: getFontWeight(normal);
@@ -999,7 +1034,7 @@
   }
 
   ::ng-deep .btn-close {
-    color: getColor(intense-violet);
+    color: var(--primary-color);
   }
 
   .toast-container {
