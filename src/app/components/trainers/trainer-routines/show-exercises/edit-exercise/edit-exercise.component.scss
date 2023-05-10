@@ -12,10 +12,11 @@
   }
 }
 
-@include add(exercise);
+@include edit(exercise);
 
-.breadcrumbs{
-  @include breadcrumbs();
+
+.loader{
+  @include loader(0%, 0%);
 }
 
 @include response(lg) {

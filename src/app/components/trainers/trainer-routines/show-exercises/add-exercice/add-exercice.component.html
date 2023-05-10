@@ -1,11 +1,11 @@
 <div class="breadcrumbs" *ngIf="routineLoaded">
-  <a class="breadcrumbs-item" routerLink="/trainer/routines">Routines</a>
+  <a class="breadcrumbs-item" routerLink="/trainer/routines">{{"TRAINERS.ROUTINES.SHOW-BREADCUMBS.ROUTINES" | translate}}</a>
   <p class="breadcrumbs-item"> > </p>
   <p class="breadcrumbs-item">{{routineName}}</p>
   <p class="breadcrumbs-item"> > </p>
-  <p class="breadcrumbs-item">Exercises</p>
+  <p class="breadcrumbs-item">{{"TRAINERS.ROUTINES.SHOW-BREADCUMBS.EXERCISES" | translate}}</p>
   <p class="breadcrumbs-item"> > </p>
-  <p class="breadcrumbs-item">New</p>
+  <p class="breadcrumbs-item">{{"TRAINERS.ROUTINES.SHOW-BREADCUMBS.NEW" | translate}}</p>
 </div>
 <main class="content">
 <div class="add-exercise">
@@ -16,23 +16,24 @@
             <span class="add-exercise-logo-presentation-text-second">Verum</span>
         </h1>
     </div>
-    <h1 class="add-exercise-title">Add Exercise</h1>
+    <h1 class="add-exercise-title">{{"TRAINERS.ROUTINES.EXERCISES.ADD.TITLE" | translate}}</h1>
     <form class="add-exercise-form" (ngSubmit)="addExercise()">
         <fieldset class="add-exercise-form-fieldset">
-            <legend class="add-exercise-form-fieldset-label" for="exerciseTitle">Exercise Name</legend>
+            <legend class="add-exercise-form-fieldset-label" for="exerciseTitle">{{"TRAINERS.ROUTINES.EXERCISES.ADD.NAME" | translate}}</legend>
             <input class="add-exercise-form-fieldset-input" type="text" id="exerciseTitle" name="exerciseTitle" placeholder="Exercise Title" [(ngModel)]="title">
         </fieldset>
         <fieldset class="add-exercise-form-fieldset">
-            <legend class="add-exercise-form-fieldset-label" for="exerciseDescription">Exercise Description</legend>
+            <legend class="add-exercise-form-fieldset-label" for="exerciseDescription">{{"TRAINERS.ROUTINES.EXERCISES.ADD.DESCRIPTION" | translate}}</legend>
             <textarea class="add-exercise-form-fieldset-input" name="exerciseDescription" placeholder="Exercise Description" [(ngModel)]="description"></textarea>
         </fieldset>
         <fieldset class="add-exercise-form-fieldset">
-          <legend class="add-exercise-form-fieldset-label" for="exerciseDescription">Machine</legend>
+          <legend class="add-exercise-form-fieldset-label" for="exerciseDescription">{{"TRAINERS.ROUTINES.EXERCISES.ADD.MACHINE" | translate}}</legend>
           <select *ngIf="!loading" class="add-exercise-form-fieldset-input" name="exerciseMachine" [(ngModel)]="machineID">
               <option *ngFor="let machine of machines" [ngValue]="machine.id">{{machine.name}}</option>
           </select>
         </fieldset>
-        <button type="submit" class="add-exercise-form-button">Add Exercise</button>
+        <button type="submit" class="add-exercise-form-button">{{"TRAINERS.ROUTINES.EXERCISES.ADD.BUTTON" | translate}}</button>
     </form>
 </div>
+<div class="waves"></div>
 </main>

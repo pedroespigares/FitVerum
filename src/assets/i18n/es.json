@@ -187,7 +187,24 @@
           "NO-EXERCISES": "Esta rutina no tiene ejercicios asignados",
           "EXERCISES-OF": "Ejercios de ",
           "ADD-EXERCISE": "Añadir Ejercicio",
-          "ROUTINE": "Rutina"
+          "ROUTINE": "Rutina",
+          "NEW": "Nuevo"
+        },
+        "EXERCISES": {
+          "ADD":{
+            "TITLE": "Añadir Ejercicio",
+            "NAME": "Nombre del Ejercicio",
+            "DESCRIPTION": "Descripción del Ejercicio",
+            "MACHINE": "Máquina",
+            "BUTTON": "Añadir Ejercicio"
+          },
+          "EDIT":{
+            "TITLE": "Editar Ejercicio",
+            "NAME": "Nombre del Ejercicio",
+            "DESCRIPTION": "Descripción del Ejercicio",
+            "MACHINE": "Máquina",
+            "BUTTON": "Editar"
+          }
         }
       },
       "DIETS":{
@@ -254,5 +271,14 @@
         "LC-DESCRIPTION": "descripción",
         "AT": "El"
       }
+    },
+    "MODIFICATIONS":{
+      "USER-INFO": "Información del Usuario",
+      "TRAINER-INFO": "Información del entrenador",
+      "MEMBER-SINCE": "Miembro desde ",
+      "3RD-PARTY": "Tu cuenta es de un tercero, por lo que no puedes cambiar tu información",
+      "CHANGE-USER-DATA": "Cambiar datos de usuario",
+      "CHANGE-TRAINER-DATA": "Cambiar datos de entrenador",
+      "CHANGE-DATA": "Cambiar datos"
     }
   }

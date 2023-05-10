@@ -1,6 +1,13 @@
 @import "../../../../scss/mixin.scss";
 @import "../../../../scss/variables.scss";
 
+.content{
+  @include response(md){
+    height: calc(100vh - 112px);
+  }
+  height: auto;
+}
+
 .title {
   @include view_header(5rem);
   font-family: $font-family-title;

@@ -1,6 +1,6 @@
 <main class="content">
     <div *ngIf="loading" class="loader"></div>
-    <h1 class="title">Trainer Information</h1>
+    <h1 class="title">{{"MODIFICATIONS.TRAINER-INFO" | translate}}</h1>
     <div class="trainer-info">
         <div *ngIf="!loading" class="trainer-info-img-container">
             <img *ngIf="trainer.photoURL != null" class="trainer-info-img-container-img" [src]="trainer.photoURL" alt="Trainer Image">
@@ -9,10 +9,10 @@
         <div *ngIf="!loading" class="trainer-info-container">
             <h1 class="trainer-info-container-name">{{trainer.displayName}}</h1>
             <p class="trainer-info-container-email">{{trainer.email}}</p>
-            <p class="trainer-info-container-membership">Member since {{membership | date: 'longDate'}}</p>
+            <p class="trainer-info-container-membership">{{"MODIFICATIONS.MEMBER-SINCE" | translate}}{{membership | date: 'longDate'}}</p>
         </div>
     </div>
-    <h2 *ngIf="!loading && !this.auth.thirdPartyLogin" class="change-data-title">Change Trainer Data</h2>
+    <h2 *ngIf="!loading && !this.auth.thirdPartyLogin" class="change-data-title">{{"MODIFICATIONS.CHANGE-TRAINER-DATA" | translate}}</h2>
     <form *ngIf="!loading && !this.auth.thirdPartyLogin" class="change-data">
         <div class="change-data-password">
             <input type="password" class="change-data-password-input" placeholder="New Password" name="newPassword" [(ngModel)]="newPassword" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$">
@@ -28,11 +28,10 @@
             <img *ngIf="uploaded" class="change-data-img-uploaded-img" [src]="uploadedPhotoURL">
         </label>
         <input class="change-data-img-input" type="file" id="Profile picture" name="Profile picture" accept="image/*" (change)="uploadFile($event)">
-        <button *ngIf="!loading" class="change-data-btn" (click)="changeData()">Change Data</button>
+        <button *ngIf="!loading" class="change-data-btn" (click)="changeData()">{{"MODIFICATIONS.CHANGE-DATA" | translate}}</button>
     </form>
 
     <p *ngIf="errorMessage != ''" class="error-message">{{errorMessage}}</p>
     <p *ngIf="success" class="success-message">{{successMessage}}</p>
-    <h3 *ngIf="!loading && this.auth.thirdPartyLogin" class="thirdPartyLoginMessage">You logged with a third party service, so you can't change your account information</h3>
-    <!-- <h3 class="thirdPartyLoginMessage">You logged with a 3rd party service, so you can't change your account information</h3> -->
+    <h3 *ngIf="!loading && this.auth.thirdPartyLogin" class="thirdPartyLoginMessage">{{"MODIFICATIONS.3RD-PARTY" | translate}}</h3>
 </main>

@@ -1,9 +1,17 @@
 @import "../../../../scss/mixin.scss";
 @import "../../../../scss/variables.scss";
 
+.content{
+  @include response(md){
+    height: calc(100vh - 112px);
+  }
+  height: auto;
+}
+
 .user-administration-header {
   @include view_header();
-  margin-top: 4rem;
+  padding-top: 4rem;
+  margin: 0;
 }
 
 .users-trainers-container {
@@ -71,6 +79,7 @@
             }
             width: 5rem;
             height: 5rem;
+            border: 2px solid white;
             border-radius: 50%;
             object-fit: cover;
             margin: 0.5rem;
@@ -101,7 +110,7 @@
               color: red;
             }
             border: none;
-            background-color: white;
+            background-color: var(--background-color);
             padding-right: 1rem;
             padding-left: 1rem;
           }
@@ -173,11 +182,12 @@
     --bs-pagination-color: var(--text-color);
     --bs-pagination-hover-color: var(--primary-color);
     --bs-pagination-active-bg: #6a69dc;
-    --bs-pagination-active-border-color: #6a69dc;
+    --bs-pagination-active-border-color: var(--text-color);
     --bs-pagination-font-size: 2rem;
     --bs-pagination-padding-x: 1.5rem;
     --bs-pagination-padding-y: 0.75rem;
     --bs-pagination-focus-box-shadow: none;
+    --bs-pagination-bg: var(--background-color);
   }
 
   .no-trainers-message,

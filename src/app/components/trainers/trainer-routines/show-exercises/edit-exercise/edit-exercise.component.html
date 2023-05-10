@@ -1,0 +1,34 @@
+<main class="content">
+  <div *ngIf="loading" class="loader"></div>
+  <div *ngIf="!loading" class="edit-exercise">
+      <div class="edit-exercise-logo-presentation">
+          <img class="edit-exercise-logo-presentation-img" src="../../assets/images/FitVerumLogo.png" alt="Brand Logo">
+          <h1 class="edit-exercise-logo-presentation-text">
+              <span class="edit-exercise-logo-presentation-text-first">Fit</span>
+              <span class="edit-exercise-logo-presentation-text-second">Verum</span>
+          </h1>
+      </div>
+      <div class="edit-exercise-title-container">
+          <h1 class="edit-exercise-title-container-text">{{"TRAINERS.ROUTINES.EXERCISES.EDIT.TITLE" | translate}}</h1>
+          <img class="edit-exercise-title-container-img" [src]="photo" alt="exercise Image">
+      </div>
+      <form class="edit-exercise-form" (ngSubmit)="updateExercise()">
+          <fieldset class="edit-exercise-form-fieldset">
+              <legend class="edit-exercise-form-fieldset-label" for="exerciseName">{{"TRAINERS.ROUTINES.EXERCISES.EDIT.NAME" | translate}}</legend>
+              <input *ngIf="exerciseUploaded" class="edit-exercise-form-fieldset-input" type="text" id="exerciseName" name="exerciseName" placeholder="exercise Name" [(ngModel)]="title">
+          </fieldset>
+          <fieldset class="edit-exercise-form-fieldset">
+              <legend class="edit-exercise-form-fieldset-label" for="exerciseDescription">{{"TRAINERS.ROUTINES.EXERCISES.EDIT.DESCRIPTION" | translate}}</legend>
+              <textarea *ngIf="exerciseUploaded" class="edit-exercise-form-fieldset-textarea" type="text" id="exerciseDescription" name="exerciseDescription" placeholder="exercise Description" [(ngModel)]="description"></textarea>
+          </fieldset>
+          <fieldset class="edit-exercise-form-fieldset">
+            <legend class="edit-exercise-form-fieldset-label" for="exerciseDescription">{{"TRAINERS.ROUTINES.EXERCISES.EDIT.MACHINE" | translate}}</legend>
+            <select *ngIf="!loading" class="edit-exercise-form-fieldset-input" name="exerciseMachine" [(ngModel)]="machineID">
+                <option *ngFor="let machine of machines" [ngValue]="machine.id">{{machine.name}}</option>
+            </select>
+          </fieldset>
+          <button type="submit" class="edit-exercise-form-button">{{"TRAINERS.ROUTINES.EXERCISES.EDIT.BUTTON" | translate}}</button>
+      </form>
+  </div>
+  <div class="waves"></div>
+</main>

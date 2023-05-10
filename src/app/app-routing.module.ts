@@ -20,6 +20,7 @@ import { ShowExercisesComponent } from './components/trainers/trainer-routines/s
 import { EditRoutineComponent } from './components/trainers/trainer-routines/edit-routine/edit-routine.component';
 import { AddRoutineComponent } from './components/trainers/trainer-routines/add-routine/add-routine.component';
 import { AddExerciceComponent } from './components/trainers/trainer-routines/show-exercises/add-exercice/add-exercice.component';
+import { EditExerciseComponent} from './components/trainers/trainer-routines/show-exercises/edit-exercise/edit-exercise.component';
 import { UserRoutineExercisesComponent } from './components/users/user-routine-exercises/user-routine-exercises.component';
 import { UserEntryComponent } from './components/users/user-entry/user-entry.component';
 import { NotFoundComponent } from './components/errors/not-found/not-found.component';
@@ -68,6 +69,7 @@ const routes: Routes = [
   { path: 'trainer/routines/edit/:id', component: EditRoutineComponent, canActivate: [TrainerGuard]},
   { path: 'trainer/routines/add/:userID', component: AddRoutineComponent, canActivate: [TrainerGuard]},
   { path: 'trainer/routines/add/:routineID/exercise', component: AddExerciceComponent, canActivate: [TrainerGuard]},
+  { path: 'trainer/exercises/edit/:id', component: EditExerciseComponent, canActivate: [TrainerGuard]},
   { path: 'error/404-not-found', component: NotFoundComponent},
   { path: 'error/403-forbidden', component: ForbiddenComponent},
   { path: '**', redirectTo: '/error/404-not-found'}

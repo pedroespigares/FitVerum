@@ -54,6 +54,7 @@ export class AuthService {
         this.userPhoto = user.photoURL;
         this.checkUserRol();
         this.getUserPhoto();
+        this.getLoginMethod();
       } else {
         this.isLogged = false;
         this.userID = '';
@@ -75,6 +76,7 @@ export class AuthService {
           // this.loaded = true;
           this.checkUserRol().then(() => {
             this.getUserPhoto();
+            this.getLoginMethod();
             resolve(true);
           });
         } else {
@@ -267,6 +269,26 @@ export class AuthService {
         getDoc(trainerRef).then((doc) => {
           if (doc.exists()) {
             this.userPhoto = doc.data()['photoURL'];
+          }
+        });
+      }
+    });
+  }
+
+  /**
+   * Obtener si un usuario se logeo con una cuenta de terceros
+   * Cambiar el valor de la variable 3rdPartyLogin
+   */
+  getLoginMethod() {
+    const userRef = doc(this.database, 'users', this.userID);
+    const trainerRef = doc(this.database, 'trainers', this.userID);
+    getDoc(userRef).then((doc) => {
+      if (doc.exists()) {
+        this.thirdPartyLogin = doc.data()['thirdParty'];
+      } else{
+        getDoc(trainerRef).then((doc) => {
+          if (doc.exists()) {
+            this.thirdPartyLogin = doc.data()['thirdParty'];
           }
         });
       }

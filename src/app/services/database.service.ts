@@ -278,6 +278,7 @@ export class DatabaseService {
           photoURL: doc.data()['photoURL'],
           timestamp: doc.data()['timestamp'],
           email: doc.data()['email'],
+          thirdParty: doc.data()['thirdParty'],
         });
         deleteDoc(userRef);
       }
@@ -300,6 +301,7 @@ export class DatabaseService {
           trainerID: null,
           timestamp: doc.data()['timestamp'],
           email: doc.data()['email'],
+          thirdParty: doc.data()['thirdParty'],
         });
         deleteDoc(trainerRef);
       }
@@ -402,6 +404,24 @@ export class DatabaseService {
       name: name,
       description: description,
       photoURL: photoURL,
+    });
+  }
+
+  /**
+   * Actualizar los datos de un ejercicio
+   * @param id - ID del ejercicio
+   * @param title - Título del ejercicio
+   * @param description - Descripción del ejercicio
+   * @param machineID - ID de la máquina que se usa en el ejercicio
+   * @param routineID - ID de la rutina a la que pertenece el ejercicio
+   */
+  updateExercise(id: string, title: string, description: string, machineID: string, routineID: string) {
+    const exerciseRef = doc(this.database, 'exercises', id);
+    updateDoc(exerciseRef, {
+      title: title,
+      description: description,
+      machineID: machineID,
+      routineID: routineID,
     });
   }
 

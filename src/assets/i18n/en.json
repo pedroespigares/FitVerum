@@ -186,7 +186,24 @@
           "NO-EXERCISES": "This routine doesn't have any exercises assigned",
           "EXERCISES-OF": "Exercises of ",
           "ADD-EXERCISE": "Add Exercise",
-          "ROUTINE": "Routine"
+          "ROUTINE": "Routine",
+          "NEW": "New"
+        },
+        "EXERCISES": {
+          "ADD":{
+            "TITLE": "Add Exercise",
+            "NAME": "Exercise Name",
+            "DESCRIPTION": "Exercise Description",
+            "MACHINE": "Machine",
+            "BUTTON": "Add Exercise"
+          },
+          "EDIT":{
+            "TITLE": "Edit Exercise",
+            "NAME": "Exercise Name",
+            "DESCRIPTION": "Exercise Description",
+            "MACHINE": "Machine",
+            "BUTTON": "Update"
+          }
         }
       },
       "DIETS":{
@@ -253,5 +270,14 @@
         "LC-DESCRIPTION": "description",
         "AT": "At"
       }
+    },
+    "MODIFICATIONS":{
+      "USER-INFO": "User Information",
+      "TRAINER-INFO": "Trainer Information",
+      "MEMBER-SINCE": "Member since ",
+      "3RD-PARTY": "You logged with a third party service, so you can't change your account information",
+      "CHANGE-USER-DATA": "Change User Data",
+      "CHANGE-TRAINER-DATA": "Change Trainer Data",
+      "CHANGE-DATA": "Change Data"
     }
   }

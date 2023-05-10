@@ -53,6 +53,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule} from '@angular/common/http';
 import { AddDietComponent } from './components/trainers/trainer-diets/add-diet/add-diet.component';
 import { EditDietComponent } from './components/trainers/trainer-diets/edit-diet/edit-diet.component';
+import { EditExerciseComponent } from './components/trainers/trainer-routines/show-exercises/edit-exercise/edit-exercise.component';
 
 
 @NgModule({
@@ -97,6 +98,7 @@ import { EditDietComponent } from './components/trainers/trainer-diets/edit-diet
     UserEvolutionComponent,
     AddDietComponent,
     EditDietComponent,
+    EditExerciseComponent,
   ],
   imports: [
     BrowserModule,

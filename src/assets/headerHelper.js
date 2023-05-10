@@ -1,30 +1,36 @@
 $(document).on("click", ".header-nav-hamburger-lines", function () {
   $(".header-nav").toggleClass("open");
+  $("#header-wave").toggleClass("open");
   $("body").toggleClass("fixed-position");
 });
 
 $(document).on("click", ".header-nav-link", function () {
   $(".header-nav").removeClass("open");
+  $("#header-wave").removeClass("open");
   $("body").removeClass("fixed-position");
 });
 
 $(document).on("click", ".header-nav-button-not-focus", function () {
   $(".header-nav").removeClass("open");
+  $("#header-wave").removeClass("open");
   $("body").removeClass("fixed-position");
 });
 
 $(document).on("click", ".header-nav-button-focus", function () {
   $(".header-nav").removeClass("open");
+  $("#header-wave").removeClass("open");
   $("body").removeClass("fixed-position");
 });
 
 $(document).on("click", ".fa-gear", function () {
   $(".header-nav").removeClass("open");
+  $("#header-wave").removeClass("open");
   $("body").removeClass("fixed-position");
 });
 
 $(document).on("click", ".fa-right-to-bracket", function () {
   $(".header-nav").removeClass("open");
+  $("#header-wave").removeClass("open");
   $("body").removeClass("fixed-position");
 });
 
@@ -42,7 +48,7 @@ $(document).on("click", ".fa-moon", function () {
   $(".dark-toggler").removeClass("fa-moon");
   $(".dark-toggler").addClass("fa-sun");
   $(document.body).addClass("theme--dark");
-  
+
 });
 
 $(document).on("click", ".fa-sun", function () {

@@ -38,7 +38,7 @@
       text-align: center;
       transition: all 0.5s;
       z-index: 100;
-      background-image: url("../assets/images/bg-header-mobile.svg");
+      background-color: var(--background-color);
       background-repeat: no-repeat;
       background-size: cover;
       &-list::before{
@@ -380,6 +380,7 @@
   text-align: center;
   padding-bottom: 2rem;
   padding-top: 2rem;
+  background-color: var(--background-color);
 }
 
 @mixin user_button($padding: 1rem) {
@@ -482,6 +483,7 @@
 
 @mixin modal() {
   overflow: auto;
+  background-color: var(--background-color);
   &-button {
     @include response(xl) {
       @include button(lg, true, $border-radius: 0.5rem, $heigth: 6.5rem);
