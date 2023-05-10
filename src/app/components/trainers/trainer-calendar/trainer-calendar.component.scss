@@ -35,15 +35,27 @@
   }
 }
 
+::ng-deep .cal-hour-odd {
+  background-color: var(--gray) !important;
+}
+
 ::ng-deep .cal-past,
 ::ng-deep .cal-future,
 ::ng-deep .cal-today {
   @include response(xl) {
     font-size: getFontSize(xxl);
   }
-  color: var(--text-color);
+  color: var(--text-color) !important;
   font-family: $font-family-title !important;
   font-size: getFontSize(sm) !important;
+}
+
+::ng-deep .cal-week-view .cal-header.cal-today{
+  background-color: var(--primary-color) !important;
+}
+
+::ng-deep .cal-week-view .cal-header.cal-weekend span {
+  color: red;
 }
 
 ::ng-deep .cal-time {
@@ -128,4 +140,8 @@
   &:hover{
     color: var(--secondary-color);
   }
+}
+
+::ng-deep .modal-content {
+  background-color: var(--background-color) !important;
 }

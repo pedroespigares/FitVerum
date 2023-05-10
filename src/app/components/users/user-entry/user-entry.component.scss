@@ -78,7 +78,7 @@
     height: 100%;
     @include flex(
       $direction: column,
-      $justify: start,
+      $justify: flex-start,
       $align: center,
       $gap: 2rem
     );

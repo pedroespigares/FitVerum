@@ -67,7 +67,7 @@ export class UserCalendarComponent implements OnInit {
   open(event: any) {
 		this.modalData = { event };
     this.modalDataDate = new Date(event.start);
-    this.modalService.open(this.modalContent, { size: 'lg', centered: true, keyboard: true});
+    this.modalService.open(this.modalContent, { size: 'lg', centered: true, keyboard: true, windowClass: 'custom-modal'});
 	}
 
   openEvolution(eventID: any) {

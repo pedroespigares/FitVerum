@@ -54,6 +54,7 @@ import { HttpClient, HttpClientModule} from '@angular/common/http';
 import { AddDietComponent } from './components/trainers/trainer-diets/add-diet/add-diet.component';
 import { EditDietComponent } from './components/trainers/trainer-diets/edit-diet/edit-diet.component';
 import { EditExerciseComponent } from './components/trainers/trainer-routines/show-exercises/edit-exercise/edit-exercise.component';
+import { ShowSingleExerciseComponent } from './components/trainers/trainer-routines/show-exercises/show-single-exercise/show-single-exercise.component';
 
 
 @NgModule({
@@ -99,6 +100,7 @@ import { EditExerciseComponent } from './components/trainers/trainer-routines/sh
     AddDietComponent,
     EditDietComponent,
     EditExerciseComponent,
+    ShowSingleExerciseComponent,
   ],
   imports: [
     BrowserModule,

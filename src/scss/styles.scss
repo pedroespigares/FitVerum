@@ -18,6 +18,7 @@
   --cuaternary-color: #{getColor('cuaternary')};
   --background-color: #{getColor('background')};
   --text-color: #{getColor('text')};
+  --gray : lightgray;
 
   &--dark{
     --primary-color: #{getColor('primary')};
@@ -26,9 +27,13 @@
     --cuaternary-color: #{getColor('tertiary')};
     --background-color: #{getColor('text')};
     --text-color: #{getColor('background')};
+    --gray : gray;
   }
 }
 
 .content{
   background-color: var(--background-color);
 }
+
+
+$modal-content-bg: var(--background-color);

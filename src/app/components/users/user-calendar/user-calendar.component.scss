@@ -8,6 +8,21 @@
   height: 100vh;
 }
 
+::ng-deep .cal-cell-row {
+  &:hover{
+    background-color: var(--grey) !important;
+  }
+}
+
+::ng-deep .cal-events{
+  background-color: var(--grey) !important;
+}
+
+::ng-deep .cal-month-view .cal-event {
+  width: 15px !important;
+  height: 15px !important;
+}
+
 ::ng-deep span.cal-day-number {
   color: var(--primary-color);
   font-family: $font-family-title !important;
@@ -62,6 +77,9 @@
   color: var(--text-color);
   font-family: $font-family-title !important;
   font-size: getFontSize(lg) !important;
+  &:hover{
+    background-color: var(--background-color) !important;
+  }
 }
 
 .calendar-controls {
@@ -100,6 +118,7 @@
   }
 }
 
+
 .modal {
   // TODO: Editar borders
   @include modal();
@@ -129,6 +148,10 @@
   }
 }
 
+::ng-deep .modal-content {
+  background-color: var(--background-color) !important;
+}
+
 .modal-data-text{
   font-family: $font-family-title;
   font-weight: getFontWeight(bold);
@@ -136,5 +159,6 @@
 }
 
 .modal-body-content-text{
+  background-color: var(--background-color);
   margin-bottom: 3rem;
 }

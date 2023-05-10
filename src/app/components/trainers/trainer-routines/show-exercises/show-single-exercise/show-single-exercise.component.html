@@ -1,0 +1,19 @@
+<main class="content">
+    <div class="breadcrumbs">
+        <a class="breadcrumbs-item" routerLink="/administration/machines">{{"TRAINERS.ROUTINES.SHOW-BREADCUMBS.EXERCISES" | translate}}</a>
+        <p class="breadcrumbs-item"> > </p>
+        <p *ngIf="!loading" class="breadcrumbs-item">{{exercise.title}}</p>
+    </div>
+    <div *ngIf="loading" class="loader"></div>
+    <div class="show-exercise">
+        <div class="show-exercise-img-container">
+            <img *ngIf="!loading" class="show-exercise-img-container-img " [src]="photo" alt="exercise Image">
+        </div>
+        <div class="show-exercise-text">
+            <div class="show-exercise-text-title-container">
+                <h1 *ngIf="!loading" class="show-exercise-text-title-container-title">{{exercise.title}}</h1>
+            </div>
+            <p *ngIf="!loading" class="show-exercise-text-description">{{exercise.description}}</p>
+        </div>
+    </div>
+</main>
