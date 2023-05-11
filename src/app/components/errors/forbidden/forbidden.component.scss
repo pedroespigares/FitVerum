@@ -1,6 +1,13 @@
 @import "../../../../scss/mixin.scss";
 @import "../../../../scss/variables.scss";
 
+.content{
+  @include response(md){
+    height: calc(100vh - 112px);
+  }
+  height: 50vh;
+}
+
 .forbidden-container{
   @include flex($direction: column, $justify: flex-start, $align: center);
   padding-top: 10rem;
