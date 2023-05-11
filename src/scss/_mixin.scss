@@ -79,6 +79,7 @@
       height: 100%;
       padding-top: 0rem;
       background-image: none;
+      transition: none;
       &-actions {
         @include flex(
           $direction: row,
@@ -376,7 +377,7 @@
   font-family: $font-family-title;
   font-weight: getFontWeight(bold);
   color: var(--primary-color);
-  transition: $transition;
+  // transition: $transition;
   text-align: center;
   padding-bottom: 2rem;
   padding-top: 2rem;

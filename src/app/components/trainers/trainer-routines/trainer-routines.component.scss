@@ -28,7 +28,10 @@
     margin-top: 5rem;
     grid-area: 1 / 1 / 2 / 2;
     &-title {
-      @include view_header(4rem);
+      @include response(lg){
+        @include view_header(4rem);
+      }
+      @include view_header(3.5rem);
       margin-bottom: 2rem;
     }
     &-table {
@@ -58,7 +61,6 @@
           width: 5.5rem;
           height: 5.5rem;
           border-radius: 50%;
-          border: 2px solid white;
           object-fit: cover;
           margin: 1rem;
         }
@@ -83,7 +85,10 @@
     height: 100%;
 
     &-title {
-      @include view_header(4rem);
+      @include response(lg){
+        @include view_header(4rem);
+      }
+      @include view_header(3.5rem);
       margin-top: 5rem;
       &-icon{
         margin-left: 1rem;
