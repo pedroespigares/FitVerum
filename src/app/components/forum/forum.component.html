@@ -1,7 +1,18 @@
 <main class="content">
-    <div class="loader"></div>
-    <h1 class="forum-header">Forum</h1>
-    <div class="forum-container">
+    <div *ngIf="loading" class="loader"></div>
+    <h1 class="forum-header">{{"FORUM.TITLE" | translate}}</h1>
+    <div *ngIf="!loading" class="forum-container">
       <app-message *ngFor="let singleMessage of messages" [message]="singleMessage"></app-message>
     </div>
+    <form *ngIf="this.auth.isLogged && !loading" class="forum-form">
+        <textarea
+          class="forum-form-textarea"
+          name="message"
+          [(ngModel)]="writtenMessage"
+          placeholder="Write your message here..."
+          (keydown)="onKeyDown($event)"
+          required
+        ></textarea>
+      <button type="submit" class="forum-form-button" (click)="onSubmit()">{{"FORUM.SUBMIT" | translate}}</button>
+    </form>
 </main>

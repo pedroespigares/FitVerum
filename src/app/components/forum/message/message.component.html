@@ -1,6 +1,18 @@
 <div *ngIf="!loading" class="message-container">
   <div class="message-container-header">
-    <img *ngIf="userData.photoURL != null" [src]="userData.photoURL">
-    <img *ngIf="userData.photoURL == null" src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=938b94bc-1a96-4cfd-9cec-7c97da53e3ce">
+    <img class="message-container-header-img" *ngIf="userData.photoURL != null" [src]="userData.photoURL">
+    <img class="message-container-header-img" *ngIf="userData.photoURL == null" src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=938b94bc-1a96-4cfd-9cec-7c97da53e3ce">
+    <img class="message-container-header-img" *ngIf="userData.isAdmin" src="../../../../assets/images/FitVerumLogo.png">
+    <div class="message-container-header-info">
+      <div class="message-container-header-info-name">
+        <p class="message-container-header-info-name-text">{{userData.displayName}}</p>
+        <i *ngIf="message.isTrainer" class="message-container-header-info-name-icon-dumbbell fa-solid fa-dumbbell"></i>
+        <i *ngIf="message.isAdmin"class="message-container-header-info-name-icon-dumbbell fa-solid fa-star"></i>
+      </div>
+      <p class="message-container-header-info-date">{{message.date | date:"short"}}</p>
+    </div>
+  </div>
+  <div class="message-container-content">
+    <p class="message-container-content-text">{{message.message}}</p>
   </div>
 </div>

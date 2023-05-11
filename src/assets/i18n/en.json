@@ -4,15 +4,16 @@
         "HOME": "Home",
         "ABOUT": "About Us",
         "ACTIVITIES": "Activities",
-        "MY-ROUTINES": "My Routines",
-        "MY-DIETS": "My Diets",
+        "MY-ROUTINES": "Routines",
+        "MY-DIETS": "Diets",
         "MANAGEMENT": "Management",
         "CLIENTS": "Clients",
         "ROUTINES": "Routines",
         "DIETS": "Diets",
         "USERS": "Users",
+        "FORUM": "Forum",
         "MACHINES": "Machines",
-        "TRAINER": "(Trainer)",
+        "TRAINER": "(TRN)",
         "SINGIN": "Sign In",
         "REGISTER": "Register"
       }
@@ -279,5 +280,9 @@
       "CHANGE-USER-DATA": "Change User Data",
       "CHANGE-TRAINER-DATA": "Change Trainer Data",
       "CHANGE-DATA": "Change Data"
+    },
+    "FORUM":{
+      "TITLE": "Forum",
+      "SUBMIT": "Submit"
     }
   }

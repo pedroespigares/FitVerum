@@ -1,3 +1,71 @@
-.hola{
-  backdrop-filter: blur(10px);
+@import "../../../../scss/mixin.scss";
+@import "../../../../scss/variables.scss";
+
+.message-container{
+  @include flex($direction: column, $justify: flex-start, $align: flex-start, $gap: 3rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  margin: 5rem;
+  border-radius: 1rem;
+
+  &-header{
+    @include flex($direction: row, $justify: flex-start, $align: center, $gap: 1rem);
+    &-img{
+      @include response(xl){
+        width: 7.5rem;
+        height: 7.5rem;
+      }
+      width: 5.5rem;
+      height: 5.5rem;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 1rem;
+    }
+    &-info{
+      @include flex($direction: column, $justify: center, $align: flex-start, $gap: 0.5rem);
+      &-name{
+        @include flex($direction: row, $justify: flex-start, $align: center, $gap: 1rem);
+        &-text{
+          margin: 0;
+          @include response(md){
+            font-size: getFontSize(md);
+          }
+          font-size: getFontSize(xxs);
+          color: var(--text-color);
+        }
+        &-icon{
+          &-star{
+            @include response(xl){
+              font-size: getFontSize(md);
+              color: yellow
+            }
+            font-size: getFontSize(sm);
+            color: yellow
+          }
+          &-dumbbell{
+            @include response(xl){
+              font-size: getFontSize(md);
+              color: green;
+            }
+            font-size: getFontSize(sm);
+            color: green;
+          }
+        }
+      }
+      &-date{
+        margin: 0;
+        font-size: getFontSize(xxs);
+        color: var(--text-color);
+      }
+    }
+  }
+  &-content-text{
+    margin: 0;
+    @include response(md){
+      font-size: getFontSize(md);
+    }
+    font-size: getFontSize(xxs);
+    color: var(--text-color);
+    padding: 0 1rem;
+    padding-bottom: 2rem;
+  }
 }

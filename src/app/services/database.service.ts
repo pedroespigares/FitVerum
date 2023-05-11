@@ -185,7 +185,8 @@ export class DatabaseService {
    */
   getForumMessages(): Observable<any[]> {
     const messagesRef = collection(this.database, 'forumMessages');
-    return collectionData(messagesRef, { idField: 'id' }) as Observable<any[]>;
+    const q = query(messagesRef, orderBy('date', 'asc'));
+    return collectionData(q, { idField: 'id' }) as Observable<any[]>;
   }
 
 
@@ -640,6 +641,18 @@ export class DatabaseService {
       description: description,
       machineID: machineID,
       routineID: routineID,
+    });
+  }
+
+  uploadForumMessage(message: string, date: number, isAdmin: boolean, isTrainer: boolean, photoURL: string, userID: string){
+    const forumRef = collection(this.database, 'forumMessages');
+    setDoc(doc(forumRef), {
+      message: message,
+      date: date,
+      isAdmin: isAdmin,
+      isTrainer: isTrainer,
+      photoURL: photoURL,
+      userID: userID,
     });
   }
 
