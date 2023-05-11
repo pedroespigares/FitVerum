@@ -3,7 +3,7 @@
 
 .content {
   @include flex($direction: column, $justify: flex-start, $align: center, $gap: 0);
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   background-color: var(--background-color);
   padding: 0 2rem;
@@ -82,8 +82,8 @@
     font-family: $font-family-title;
     font-weight: getFontWeight(bold);
     transition: $transition;
-    cursor: pointer;
     padding-bottom: 2rem;
+    color: var(--text-color);
   }
 
   &-form {

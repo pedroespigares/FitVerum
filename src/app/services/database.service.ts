@@ -47,6 +47,26 @@ export class DatabaseService {
   }
 
   /**
+   * Obtener la foto de perfil del usuario
+   * Cambiar el valor de la variable userPhoto
+   */
+  async getUserPhoto(userID: string) {
+    const userRef = doc(this.database, 'users', userID);
+    const trainerRef = doc(this.database, 'trainers', userID);
+    await getDoc(userRef).then((doc) => {
+      if (doc.exists()) {
+        return doc.data()['photoURL'];
+      } else{
+        getDoc(trainerRef).then((doc) => {
+          if (doc.exists()) {
+            return doc.data()['photoURL'];
+          }
+        });
+      }
+    });
+  }
+
+  /**
    * Obtener todos los usuarios
    * @returns - Observable con los usuarios
    */
@@ -157,6 +177,15 @@ export class DatabaseService {
     const exercisesRef = collection(this.database, 'exercises');
     const q = query(exercisesRef, where('routineID', '==', routineID));
     return collectionData(q, { idField: 'id' }) as Observable<any[]>;
+  }
+
+  /**
+   * Obtener los mensajes del foro
+   * @returns - Observable con los mensajes del foro
+   */
+  getForumMessages(): Observable<any[]> {
+    const messagesRef = collection(this.database, 'forumMessages');
+    return collectionData(messagesRef, { idField: 'id' }) as Observable<any[]>;
   }
 
 

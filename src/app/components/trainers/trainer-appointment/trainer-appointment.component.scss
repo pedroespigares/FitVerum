@@ -2,7 +2,14 @@
 @import "../../../../scss/variables.scss";
 
 .content{
-  height: calc(100vh - 112px);
+  @include response(lg){
+    height: calc(100vh - 112px);
+  }
+
+  @include response(md){
+    height: 175vh;
+  }
+  height: 200vh;
 }
 
 .breadcrumbs{

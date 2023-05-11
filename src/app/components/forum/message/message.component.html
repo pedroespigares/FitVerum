@@ -1,0 +1,6 @@
+<div *ngIf="!loading" class="message-container">
+  <div class="message-container-header">
+    <img *ngIf="userData.photoURL != null" [src]="userData.photoURL">
+    <img *ngIf="userData.photoURL == null" src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=938b94bc-1a96-4cfd-9cec-7c97da53e3ce">
+  </div>
+</div>

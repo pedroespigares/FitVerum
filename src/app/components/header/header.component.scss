@@ -34,7 +34,7 @@ img{
   grid-column: 8/10;
   @include navigation($hamburger: true);
 
-  @include response(lg) {
+  @include response(xl) {
     grid-column: 5/10;
     padding-right: 5rem;
     @include navigation($hamburger: false);
@@ -200,7 +200,7 @@ a{
   }
 }
 
-@include response(lg) {
+@include response(xl) {
   .waves{
     display: none;
   }

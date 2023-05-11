@@ -100,7 +100,7 @@
   }
 
   &-hamburger {
-    @include response(lg) {
+    @include response(xl) {
       display: none;
     }
 
@@ -431,7 +431,7 @@
 }
 
 @mixin normal_delete_button {
-  color: var(--background-color);
+  color: white;
   background-color: #e74c3c;
   border: none;
   font-size: getFontSize(xl);

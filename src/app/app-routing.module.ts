@@ -34,6 +34,7 @@ import { UserDietsComponent } from './components/users/user-diets/user-diets.com
 import { UserEvolutionComponent } from './components/users/user-evolution/user-evolution.component';
 import { AddDietComponent } from './components/trainers/trainer-diets/add-diet/add-diet.component';
 import { EditDietComponent } from './components/trainers/trainer-diets/edit-diet/edit-diet.component';
+import { ForumComponent } from './components/forum/forum.component';
 import { AuthGuard } from './services/guards/auth.guard';
 import { AdminGuard } from './services/guards/admin.guard';
 import { TrainerGuard } from './services/guards/trainer.guard';
@@ -44,6 +45,7 @@ const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent, canActivate: [NotloggedGuard]},
+  { path: 'forum', component: ForumComponent},
   { path: 'user/diets', component: UserDietsComponent, canActivate: [AuthGuard]},
   { path: 'user/routines', component: UserRoutinesSimpleComponent, canActivate: [AuthGuard]},
   { path: 'user/routines/:routineID', component: UserRoutineExercisesSimpleComponent, canActivate: [AuthGuard]},

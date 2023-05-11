@@ -15,14 +15,14 @@
 }
 
 .users-trainers-container {
-  @include response(xl) {
+  @include response(lg) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
   }
   @include flex($direction: column, $justify: center, $align: center);
   &-users {
-    @include response(xl) {
+    @include response(lg) {
       border-right: 2px solid var(--tertiary-color);
     }
   }
@@ -131,7 +131,7 @@
             padding: 1rem 1rem 1rem 1rem;
             text-decoration: none;
             background-color: var(--primary-color);
-            color: var(--background-color);
+            color: white;
             border: none;
             &-left {
               height: 10rem;
@@ -152,7 +152,7 @@
               padding: 1rem 1rem 1rem 1rem;
               text-decoration: none;
               background-color: var(--primary-color);
-              color: var(--background-color);
+              color: white;
               border: none;
 
 

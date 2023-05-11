@@ -2,10 +2,24 @@
 @import "../../../../scss/variables.scss";
 
 .content{
+  @include response(sm){
+    height: auto;
+    padding-bottom: 30rem;
+  }
   @include response(md){
-    height: calc(100vh - 112px);
+    height: auto;
+    padding-bottom: 30rem;
+  }
+  @include response(lg){
+    height: auto;
+    padding-bottom: 30rem;
+  }
+  @include response(xl){
+    height: auto;
+    padding-bottom: 6.8rem;
   }
   height: auto;
+  padding-bottom: 6.8rem;
 }
 
 .breadcrumbs {

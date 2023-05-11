@@ -161,7 +161,6 @@ export class AuthService {
       });
   }
 
-  // TODO: Encontrar otro provider que no sea Github
   twitterLogin(){
     signInWithPopup(this.auth, new TwitterAuthProvider())
     .then((userCredential) => {

@@ -76,7 +76,7 @@
 
 .calendar-controls {
   margin-bottom: 5rem !important;
-  @include response(xl) {
+  @include response(md) {
     @include flex(
       $direction: row,
       $justify: center,
