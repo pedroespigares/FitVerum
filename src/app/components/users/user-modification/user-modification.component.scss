@@ -3,7 +3,13 @@
 
 .content{
   @include response(md){
-    height: calc(100vh - 112px);
+    height: 120vh;
+  }
+  @include response(lg){
+    height: 110vh;
+  }
+  @include response(xl){
+    height: 100vh;
   }
   height: auto;
 }
@@ -11,8 +17,8 @@
 .title {
   @include view_header(5rem);
   font-family: $font-family-title;
-  margin-bottom: 7rem;
-  margin-top: 5rem;
+  padding-bottom: 7rem;
+  padding-top: 5rem;
 }
 
 .user-info {
@@ -163,7 +169,7 @@
   font-family: $font-family-text;
   color: white;
   margin-top: 5rem !important;
-  background-color: red;
+  background-color: #e74c3c;
   border-radius: 10rem;
   width: 20%;
   text-align: center;

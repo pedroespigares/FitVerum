@@ -57,6 +57,7 @@ import { EditExerciseComponent } from './components/trainers/trainer-routines/sh
 import { ShowSingleExerciseComponent } from './components/trainers/trainer-routines/show-exercises/show-single-exercise/show-single-exercise.component';
 import { ForumComponent } from './components/forum/forum.component';
 import { MessageComponent } from './components/forum/message/message.component';
+import { ShowDietComponent } from './components/trainers/trainer-diets/show-diet/show-diet.component';
 
 
 @NgModule({
@@ -105,6 +106,7 @@ import { MessageComponent } from './components/forum/message/message.component';
     ShowSingleExerciseComponent,
     ForumComponent,
     MessageComponent,
+    ShowDietComponent,
   ],
   imports: [
     BrowserModule,

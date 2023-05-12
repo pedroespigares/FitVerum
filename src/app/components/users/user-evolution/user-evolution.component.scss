@@ -2,12 +2,8 @@
 @import "../../../../scss/variables.scss";
 
 .content{
-  @include response(md){
-    height: calc(100vh - 126.797px - 10rem);
-    @include flex($direction: column, $justify: center, $align: center, $gap: 15rem);
-  }
-  @include flex($direction: column, $justify: center, $align: center, $gap: 15rem);
-  height: auto;
+  height: calc(100vh - 112px);
+  @include flex($direction: column, $justify: flex-start, $align: center, $gap: 10rem);
 }
 
 .exercise-title{

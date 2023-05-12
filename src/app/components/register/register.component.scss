@@ -151,14 +151,14 @@
         text-align: center;
         font-family: $font-family-text;
         font-weight: getFontWeight(bold);
-        color: red;
+        color: #e74c3c;
         width: 50%;
         &-under{
           font-size: getFontSize(xxs);
           font-family: $font-family-text;
           color: var(--cuaternary-color);
           &-error{
-            color: red;
+            color: #e74c3c;
             font-size: getFontSize(xxs);
           }
         }
@@ -169,7 +169,7 @@
         text-align: center;
         font-family: $font-family-text;
         font-weight: getFontWeight(bold);
-        color: red;
+        color: #e74c3c;
       }
     }
 

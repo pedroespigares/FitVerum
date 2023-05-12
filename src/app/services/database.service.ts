@@ -376,6 +376,15 @@ export class DatabaseService {
       }
     });
   }
+
+  /**
+   * Borrar mensaje del foro
+   * @param messageID - ID del mensaje
+   */
+  deleteForumMessage(messageID: string) {
+    const messageRef = doc(this.database, 'forumMessages', messageID);
+    deleteDoc(messageRef);
+  }
 // --------------------------------------------------------------------------------------------
 
 

@@ -2,12 +2,90 @@
 @import "../../../../scss/variables.scss";
 
 .message-container{
-  @include flex($direction: column, $justify: flex-start, $align: flex-start, $gap: 3rem);
+  @include flex($direction: column, $justify: flex-start, $align: flex-start, $gap: 2rem);
+  &-with-delete{
+    display: grid;
+    grid-template-columns: 1fr 0.1fr;
+    grid-template-rows: 1fr;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    margin: 5rem;
+    border-radius: 1rem;
+  }
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   margin: 5rem;
   border-radius: 1rem;
 
+
+  &-admin{
+    &-with-delete{
+      display: grid;
+      grid-template-columns: 1fr 0.1fr;
+      grid-template-rows: 1fr;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      margin: 5rem;
+      border-radius: 1rem;
+      background-color: var(--tertiary-color);
+
+      &-header-info-name-text{
+        color: white;
+        margin: 0;
+        @include response(md){
+          font-size: getFontSize(md);
+          }
+        font-size: getFontSize(xxs);
+      }
+      &-header-info-date{
+        margin: 0;
+        font-size: getFontSize(xxs);
+        color: white;
+      }
+
+      &-content-text{
+        margin: 0;
+        @include response(md){
+          font-size: getFontSize(md);
+        }
+        font-size: getFontSize(xxs);
+        color: white;
+        padding: 0 2.5rem;
+        padding-bottom: 2rem;
+      }
+    }
+    @include flex($direction: column, $justify: flex-start, $align: flex-start, $gap: 3rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    margin: 5rem;
+    border-radius: 1rem;
+    background-color: var(--tertiary-color);
+    &-header-info-name-text{
+      color: white;
+      margin: 0;
+      @include response(md){
+        font-size: getFontSize(md);
+        }
+      font-size: getFontSize(xxs);
+    }
+    &-header-info-date{
+      margin: 0;
+      font-size: getFontSize(xxs);
+      color: white;
+    }
+
+    &-content-text{
+      margin: 0;
+      @include response(md){
+        font-size: getFontSize(md);
+      }
+      font-size: getFontSize(xxs);
+      color: white;
+      padding: 0 2.5rem;
+      padding-bottom: 2rem;
+    }
+  }
+
+
+
   &-header{
+    grid-area: 1 / 1 / 2 / 2;
     @include flex($direction: row, $justify: flex-start, $align: center, $gap: 1rem);
     &-img{
       @include response(xl){
@@ -19,6 +97,17 @@
       border-radius: 50%;
       object-fit: cover;
       margin: 1rem;
+      &-admin{
+        @include response(xl){
+          width: 8.5rem;
+          height: 8.5rem;
+        }
+        width: 6.5rem;
+        height: 6.5rem;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 1rem;
+      }
     }
     &-info{
       @include flex($direction: column, $justify: center, $align: flex-start, $gap: 0.5rem);
@@ -65,7 +154,26 @@
     }
     font-size: getFontSize(xxs);
     color: var(--text-color);
-    padding: 0 1rem;
+    padding: 0 2rem;
     padding-bottom: 2rem;
+  }
+  &-icon-container{
+    grid-area: 1 / 2 / 3 / 3;
+    @include flex($direction: column, $justify: center, $align: center);
+    &-icon{
+      @include response(xl){
+        font-size: getFontSize(xl);
+      }
+      font-size: getFontSize(lg);
+      color: #e74c3c;
+      margin: 1rem;
+      transition: $transition;
+      cursor: pointer;
+      &:hover{
+        color: #c0392b;
+        scale: 1.1;
+        transition: $transition;
+      }
+    }
   }
 }

@@ -1,18 +1,79 @@
-<div *ngIf="!loading" class="message-container">
+<div *ngIf="!loading && !userData.isAdmin && this.auth.isAdmin" class="message-container-with-delete">
   <div class="message-container-header">
-    <img class="message-container-header-img" *ngIf="userData.photoURL != null" [src]="userData.photoURL">
-    <img class="message-container-header-img" *ngIf="userData.photoURL == null" src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=938b94bc-1a96-4cfd-9cec-7c97da53e3ce">
-    <img class="message-container-header-img" *ngIf="userData.isAdmin" src="../../../../assets/images/FitVerumLogo.png">
+    <img class="message-container-header-img" *ngIf="userData.photoURL != null && !userData.isAdmin" [src]="userData.photoURL">
+    <img class="message-container-header-img" *ngIf="userData.photoURL == null && !userData.isAdmin" src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=938b94bc-1a96-4cfd-9cec-7c97da53e3ce">
     <div class="message-container-header-info">
       <div class="message-container-header-info-name">
         <p class="message-container-header-info-name-text">{{userData.displayName}}</p>
         <i *ngIf="message.isTrainer" class="message-container-header-info-name-icon-dumbbell fa-solid fa-dumbbell"></i>
-        <i *ngIf="message.isAdmin"class="message-container-header-info-name-icon-dumbbell fa-solid fa-star"></i>
+        <i *ngIf="message.isAdmin"class="message-container-header-info-name-icon-star fa-solid fa-star"></i>
       </div>
       <p class="message-container-header-info-date">{{message.date | date:"short"}}</p>
     </div>
   </div>
   <div class="message-container-content">
     <p class="message-container-content-text">{{message.message}}</p>
+  </div>
+  <div class="message-container-icon-container">
+    <i class="fa-solid fa-trash message-container-icon-container-icon" (click)="deleteMessage(message.id)"></i>
+  </div>
+</div>
+
+<div *ngIf="!loading && userData.isAdmin && this.auth.isAdmin" class="message-container-admin-with-delete">
+  <div class="message-container-header">
+    <img class="message-container-header-img" *ngIf="userData.photoURL != null && !userData.isAdmin" [src]="userData.photoURL">
+    <img class="message-container-header-img" *ngIf="userData.photoURL == null && !userData.isAdmin" src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=938b94bc-1a96-4cfd-9cec-7c97da53e3ce">
+    <img class="message-container-header-img-admin" *ngIf="userData.isAdmin" src="../../../../assets/images/FitVerumLogo.png">
+    <div class="message-container-header-info">
+      <div class="message-container-header-info-name">
+        <p class="message-container-admin-with-delete-header-info-name-text">{{userData.displayName}}</p>
+        <i *ngIf="message.isTrainer" class="message-container-header-info-name-icon-dumbbell fa-solid fa-dumbbell"></i>
+        <i *ngIf="message.isAdmin"class="message-container-header-info-name-icon-star fa-solid fa-star"></i>
+      </div>
+      <p class="message-container-admin-with-delete-header-info-date">{{message.date | date:"short"}}</p>
+    </div>
+  </div>
+  <div class="message-container-content">
+    <p class="message-container-admin-with-delete-content-text">{{message.message}}</p>
+  </div>
+  <div class="message-container-icon-container">
+    <i class="fa-solid fa-trash message-container-icon-container-icon" (click)="deleteMessage(message.id)"></i>
+  </div>
+</div>
+
+<div *ngIf="!loading && !userData.isAdmin && !this.auth.isAdmin" class="message-container">
+  <div class="message-container-header">
+    <img class="message-container-header-img" *ngIf="userData.photoURL != null && !userData.isAdmin" [src]="userData.photoURL">
+    <img class="message-container-header-img" *ngIf="userData.photoURL == null && !userData.isAdmin" src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=938b94bc-1a96-4cfd-9cec-7c97da53e3ce">
+    <div class="message-container-header-info">
+      <div class="message-container-header-info-name">
+        <p class="message-container-header-info-name-text">{{userData.displayName}}</p>
+        <i *ngIf="message.isTrainer" class="message-container-header-info-name-icon-dumbbell fa-solid fa-dumbbell"></i>
+        <i *ngIf="message.isAdmin"class="message-container-header-info-name-icon-star fa-solid fa-star"></i>
+      </div>
+      <p class="message-container-header-info-date">{{message.date | date:"short"}}</p>
+    </div>
+  </div>
+  <div class="message-container-content">
+    <p class="message-container-content-text">{{message.message}}</p>
+  </div>
+</div>
+
+<div *ngIf="!loading && userData.isAdmin && !this.auth.isAdmin" class="message-container-admin">
+  <div class="message-container-header">
+    <img class="message-container-header-img" *ngIf="userData.photoURL != null && !userData.isAdmin" [src]="userData.photoURL">
+    <img class="message-container-header-img" *ngIf="userData.photoURL == null && !userData.isAdmin" src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=938b94bc-1a96-4cfd-9cec-7c97da53e3ce">
+    <img class="message-container-header-img-admin" *ngIf="userData.isAdmin" src="../../../../assets/images/FitVerumLogo.png">
+    <div class="message-container-header-info">
+      <div class="message-container-header-info-name">
+        <p class="message-container-admin-header-info-name-text">{{userData.displayName}}</p>
+        <i *ngIf="message.isTrainer" class="message-container-header-info-name-icon-dumbbell fa-solid fa-dumbbell"></i>
+        <i *ngIf="message.isAdmin"class="message-container-header-info-name-icon-star fa-solid fa-star"></i>
+      </div>
+      <p class="message-container-admin-header-info-date">{{message.date | date:"short"}}</p>
+    </div>
+  </div>
+  <div class="message-container-content">
+    <p class="message-container-admin-content-text">{{message.message}}</p>
   </div>
 </div>

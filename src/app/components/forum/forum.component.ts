@@ -18,18 +18,31 @@ export class ForumComponent implements OnInit, OnDestroy{
     this.database.getForumMessages().subscribe((messages: any[]) => {
       this.messages = messages;
       this.loading = false;
+      console.log(this.messages);
     });
   }
 
   onSubmit(): void {
-    this.database.uploadForumMessage(this.writtenMessage, new Date().getTime(), this.auth.isAdmin, this.auth.isTrainer, null, this.auth.userID);
-    this.writtenMessage = '';
+    if(this.auth.isAdmin){
+      this.database.uploadForumMessage(this.writtenMessage, new Date().getTime(), true, false, null, null);
+      this.writtenMessage = '';
+    } else{
+      this.database.uploadForumMessage(this.writtenMessage, new Date().getTime(), this.auth.isAdmin, this.auth.isTrainer, null, this.auth.userID);
+      this.writtenMessage = '';
+    }
+
   }
 
   onKeyDown(event: any) {
     if (event.key === "Enter" && this.writtenMessage != '') {
-      this.database.uploadForumMessage(this.writtenMessage, new Date().getTime(), this.auth.isAdmin, this.auth.isTrainer, null, this.auth.userID);
-      this.writtenMessage = '';
+      if(this.auth.isAdmin){
+        this.database.uploadForumMessage(this.writtenMessage, new Date().getTime(), true, false, null, null);
+        this.writtenMessage = '';
+      } else{
+        this.database.uploadForumMessage(this.writtenMessage, new Date().getTime(), this.auth.isAdmin, this.auth.isTrainer, null, this.auth.userID);
+        this.writtenMessage = '';
+      }
+
     }
   }
 

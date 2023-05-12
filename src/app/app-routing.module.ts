@@ -34,6 +34,7 @@ import { UserDietsComponent } from './components/users/user-diets/user-diets.com
 import { UserEvolutionComponent } from './components/users/user-evolution/user-evolution.component';
 import { AddDietComponent } from './components/trainers/trainer-diets/add-diet/add-diet.component';
 import { EditDietComponent } from './components/trainers/trainer-diets/edit-diet/edit-diet.component';
+import { ShowDietComponent } from './components/trainers/trainer-diets/show-diet/show-diet.component';
 import { ForumComponent } from './components/forum/forum.component';
 import { AuthGuard } from './services/guards/auth.guard';
 import { AdminGuard } from './services/guards/admin.guard';
@@ -47,8 +48,10 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent, canActivate: [NotloggedGuard]},
   { path: 'forum', component: ForumComponent},
   { path: 'user/diets', component: UserDietsComponent, canActivate: [AuthGuard]},
+  { path: 'user/diets/:id', component: ShowDietComponent, canActivate: [AuthGuard]},
   { path: 'user/routines', component: UserRoutinesSimpleComponent, canActivate: [AuthGuard]},
   { path: 'user/routines/:routineID', component: UserRoutineExercisesSimpleComponent, canActivate: [AuthGuard]},
+  { path: 'user/exercises/:id', component: ShowSingleExerciseComponent, canActivate: [AuthGuard]},
   { path: 'user/calendar', component: UserCalendarComponent, canActivate: [AuthGuard]},
   { path: 'user/calendar/:date', component: UserRoutinesComponent, canActivate: [AuthGuard]},
   { path: 'user/calendar/:date/:routineID', component: UserRoutineExercisesComponent, canActivate: [AuthGuard]},
@@ -65,6 +68,7 @@ const routes: Routes = [
   { path: 'trainer/calendar/:date', component: TrainerAppointmentComponent, canActivate: [TrainerGuard]},
   { path: 'trainer/modification', component: TrainerModificationComponent, canActivate: [TrainerGuard]},
   { path: 'trainer/diets', component: TrainerDietsComponent, canActivate: [TrainerGuard]},
+  { path: 'trainer/diets/show/:id', component: ShowDietComponent, canActivate: [TrainerGuard]},
   { path: 'trainer/diets/add/:userID', component: AddDietComponent, canActivate: [TrainerGuard]},
   { path: 'trainer/diets/edit/:id', component: EditDietComponent, canActivate: [TrainerGuard]},
   { path: 'trainer/routines', component: TrainerRoutinesComponent, canActivate: [TrainerGuard]},

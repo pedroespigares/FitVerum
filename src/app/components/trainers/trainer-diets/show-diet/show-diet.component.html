@@ -1,0 +1,20 @@
+<main class="content">
+  <div *ngIf="!loading" class="breadcrumbs">
+      <a *ngIf="this.auth.isTrainer" class="breadcrumbs-item" routerLink="/trainer/diets">{{"TRAINERS.DIETS.DIETS" | translate}}</a>
+      <a *ngIf="!this.auth.isTrainer" class="breadcrumbs-item" routerLink="/user/diets">{{"TRAINERS.DIETS.DIETS" | translate}}</a>
+      <p class="breadcrumbs-item"> > </p>
+      <p *ngIf="!loading" class="breadcrumbs-item">{{diet.name}}</p>
+  </div>
+  <div *ngIf="loading" class="loader"></div>
+  <div class="show-diet">
+      <div class="show-diet-img-container">
+          <img *ngIf="!loading" class="show-diet-img-container-img " [src]="diet.photoURL" alt="diet Image">
+      </div>
+      <div class="show-diet-text">
+          <div class="show-diet-text-title-container">
+              <h1 *ngIf="!loading" class="show-diet-text-title-container-title">{{diet.name}}</h1>
+          </div>
+          <p *ngIf="!loading" class="show-diet-text-description">{{diet.description}}</p>
+      </div>
+  </div>
+</main>

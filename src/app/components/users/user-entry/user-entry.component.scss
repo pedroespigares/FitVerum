@@ -111,13 +111,13 @@
         &-input {
           grid-area: 1 / 2 / 2 / 3;
           @include response(md){
-            width: 100%;
+            width: 100% !important;
           }
           width: 50% !important;
           @include input();
           &-color{
             @include response(md){
-              width: 100%;
+              width: 100% !important;
             }
             width: 50% !important;
             grid-area: 1 / 2 / 2 / 3;
@@ -141,7 +141,7 @@
 
         &-textarea {
           @include response(md){
-            width: 100%;
+            width: 100% !important;
           }
           width: 70% !important;
           @include input();

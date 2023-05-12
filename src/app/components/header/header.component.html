@@ -27,9 +27,9 @@
             <li *ngIf="this.auth.isLogged && this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/trainer/clients">{{"HEADER.NAVBAR.CLIENTS" | translate}}</a></li>
             <li *ngIf="this.auth.isLogged && this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/trainer/routines">{{"HEADER.NAVBAR.ROUTINES" | translate}}</a></li>
             <li *ngIf="this.auth.isLogged && this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/trainer/diets">{{"HEADER.NAVBAR.DIETS" | translate}}</a></li>
-            <li class="header-nav-item"><a class="header-nav-link" routerLink="/forum">{{"HEADER.NAVBAR.FORUM" | translate}}</a></li>
             <li *ngIf="this.auth.isLogged && this.auth.isAdmin" class="header-nav-item"><a class="header-nav-link" routerLink="/administration/users">{{"HEADER.NAVBAR.USERS" | translate}}</a></li>
             <li *ngIf="this.auth.isLogged && this.auth.isAdmin" class="header-nav-item"><a class="header-nav-link" routerLink="/administration/machines">{{"HEADER.NAVBAR.MACHINES" | translate}}</a></li>
+            <li class="header-nav-item"><a class="header-nav-link" routerLink="/forum">{{"HEADER.NAVBAR.FORUM" | translate}}</a></li>
             <div class="header-nav-list-actions">
               <select #langSelect class="header-nav-icon" (change)="translate.use(langSelect.value)">
                 <option value="en" selected>🇬🇧</option>

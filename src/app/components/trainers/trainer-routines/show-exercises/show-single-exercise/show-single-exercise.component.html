@@ -1,8 +1,8 @@
 <main class="content">
-    <div class="breadcrumbs">
+    <div *ngIf="!loading" class="breadcrumbs">
         <a class="breadcrumbs-item" routerLink="/administration/machines">{{"TRAINERS.ROUTINES.SHOW-BREADCUMBS.EXERCISES" | translate}}</a>
         <p class="breadcrumbs-item"> > </p>
-        <p *ngIf="!loading" class="breadcrumbs-item">{{exercise.title}}</p>
+        <p class="breadcrumbs-item">{{exercise.title}}</p>
     </div>
     <div *ngIf="loading" class="loader"></div>
     <div class="show-exercise">

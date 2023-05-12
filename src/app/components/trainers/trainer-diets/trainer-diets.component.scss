@@ -106,7 +106,7 @@
       margin-top: 5rem;
       &-icon{
         margin-left: 1rem;
-        color: red;
+        color: #e74c3c;
         transition: $transition;
         &:hover{
           cursor: pointer;
@@ -185,7 +185,7 @@
   font-size: getFontSize(md);
   font-family: $font-family-title;
   font-weight: getFontWeight(bold);
-  color: red;
+  color: #e74c3c;
   margin-bottom: 2rem;
   text-align: center;
 }

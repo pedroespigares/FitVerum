@@ -3,7 +3,13 @@
 
 .content{
   @include response(md){
-    height: calc(100vh - 112px);
+    height: 120vh;
+  }
+  @include response(lg){
+    height: 110vh;
+  }
+  @include response(xl){
+    height: 100vh;
   }
   height: auto;
 }
@@ -163,7 +169,7 @@
   font-family: $font-family-text;
   color: white;
   margin-top: 5rem !important;
-  background-color: red;
+  background-color: #e74c3c;
   border-radius: 10rem;
   width: 20%;
   text-align: center;

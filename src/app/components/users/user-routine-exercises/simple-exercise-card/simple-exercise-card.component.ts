@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-simple-exercise-card',
@@ -16,7 +17,7 @@ export class SimpleExerciseCardComponent implements OnInit{
   machineID: string;
   loading: boolean = true;
 
-  constructor(private database: DatabaseService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private database: DatabaseService, private route: ActivatedRoute, private router: Router, private auth: AuthService) { }
 
   ngOnInit(): void {
     this.machineID = this.exercise.machineID;
@@ -27,7 +28,9 @@ export class SimpleExerciseCardComponent implements OnInit{
   }
 
   goToUserEntry() {
-    if(!this.goToEntry) return;
+    if(!this.goToEntry){
+      this.router.navigateByUrl(`user/exercises/${this.machineID}`);
+    };
     let date = this.route.snapshot.paramMap.get('date');
     this.router.navigateByUrl(`user/calendar/${date}/entry/${this.exercise.id}`);
   }

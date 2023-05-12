@@ -15,7 +15,7 @@ import { default as Annotation } from 'chartjs-plugin-annotation';
 })
 export class UserEvolutionComponent implements OnInit{
 
-  constructor(private route: ActivatedRoute, private database: DatabaseService, private auth: AuthService) { 
+  constructor(private route: ActivatedRoute, private database: DatabaseService, private auth: AuthService) {
     Chart.register(Annotation)
   }
 
@@ -63,8 +63,8 @@ export class UserEvolutionComponent implements OnInit{
       {
         data: this.reps,
         label: 'Repetitions',
-        backgroundColor: '#252525',
-        borderColor: '#252525',
+        backgroundColor: '#8c97bf',
+        borderColor: '#8c97bf',
         pointBackgroundColor: 'rgba(77,83,96,1)',
         pointBorderColor: '#fff',
         pointHoverBackgroundColor: '#fff',
@@ -82,9 +82,10 @@ export class UserEvolutionComponent implements OnInit{
         pointHoverBackgroundColor: '#fff',
         pointHoverBorderColor: 'rgba(148,159,177,0.8)',
         fill: 'false',
-      }
+      },
     ],
-    labels: this.labels
+    labels: this.labels,
+
   };
 
   public lineChartOptions: ChartConfiguration['options'] = {
@@ -94,8 +95,16 @@ export class UserEvolutionComponent implements OnInit{
       }
     },
     scales: {
+      x:{
+        ticks: {
+          color: '#6a69dc'
+        }
+      },
       y:
         {
+          ticks: {
+            color: '#6a69dc'
+          },
           position: 'left',
         },
       y1: {

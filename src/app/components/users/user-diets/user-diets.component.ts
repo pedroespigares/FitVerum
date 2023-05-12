@@ -28,6 +28,6 @@ export class UserDietsComponent implements OnInit, OnDestroy {
   }
 
   goToDiet(diet: any) {
-    this.router.navigateByUrl(`user/diet/${diet.id}`);
+    this.router.navigateByUrl(`user/diets/${diet.id}`);
   }
 }
