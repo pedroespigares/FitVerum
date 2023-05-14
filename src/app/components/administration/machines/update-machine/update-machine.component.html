@@ -1,3 +1,10 @@
+<div *ngIf="!loading" class="breadcrumbs">
+    <a class="breadcrumbs-item" routerLink="/administration/machines">{{"ADMINISTRATION.MACHINES.MACHINES" | translate}}</a>
+    <p class="breadcrumbs-item"> > </p>
+    <p class="breadcrumbs-item">{{"ADMINISTRATION.MACHINES.UPDATE-MACHINE-FORM.TITLE" | translate}}</p>
+    <p class="breadcrumbs-item"> > </p>
+    <p class="breadcrumbs-item"> {{name}} </p>
+</div>
 <main class="content">
     <div *ngIf="loading" class="loader"></div>
     <div *ngIf="!loading" class="edit-machine">

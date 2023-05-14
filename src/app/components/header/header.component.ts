@@ -10,10 +10,15 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HeaderComponent implements OnInit {
   canGetPhoto: boolean = false;
+  language: string = localStorage.getItem('language');
 
   constructor(public auth: AuthService, public database: DatabaseService, public translate: TranslateService) {
     translate.addLangs(['es', 'en']);
-    translate.setDefaultLang('en');
+    if(this.language == null) {
+      translate.use('en');
+    } else {
+      translate.use(this.language);
+    }
   }
 
   /**
@@ -30,5 +35,10 @@ export class HeaderComponent implements OnInit {
    */
   logout() {
     this.auth.signOut();
+  }
+
+  changeLanguage($event: any) {
+    this.translate.use($event.target.value);
+    localStorage.setItem('language', $event.target.value);
   }
 }

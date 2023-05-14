@@ -31,9 +31,11 @@
             <li *ngIf="this.auth.isLogged && this.auth.isAdmin" class="header-nav-item"><a class="header-nav-link" routerLink="/administration/machines">{{"HEADER.NAVBAR.MACHINES" | translate}}</a></li>
             <li class="header-nav-item"><a class="header-nav-link" routerLink="/forum">{{"HEADER.NAVBAR.FORUM" | translate}}</a></li>
             <div class="header-nav-list-actions">
-              <select #langSelect class="header-nav-icon" (change)="translate.use(langSelect.value)">
-                <option value="en" selected>🇬🇧</option>
-                <option value="es">🇪🇸</option>
+              <select #langSelect class="header-nav-icon" (change)="changeLanguage($event)">
+                <option value="en" *ngIf="this.language == 'en' || this.language == null" selected>🇬🇧</option>
+                <option value="es"*ngIf="this.language == 'en' || this.language == null">🇪🇸</option>
+                <option value="en" *ngIf="this.language == 'es'">🇬🇧</option>
+                <option value="es" *ngIf="this.language == 'es'" selected>🇪🇸</option>
               </select>
               <img *ngIf="this.auth.isLogged && this.auth.userPhoto != null && !this.auth.isAdmin" [src]="this.auth.userPhoto" referrerpolicy="no-referrer" width="50" height="50" class="header-user-img">
               <img *ngIf="this.auth.isLogged && this.auth.userPhoto == null && !this.auth.isAdmin" src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=938b94bc-1a96-4cfd-9cec-7c97da53e3ce" width="50" height="50" class="header-user-img">

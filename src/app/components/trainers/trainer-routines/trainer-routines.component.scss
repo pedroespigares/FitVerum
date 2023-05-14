@@ -48,13 +48,13 @@
       }
       border-spacing: 2rem;
       tr {
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        box-shadow: 0 0.5rem 1rem var(--box-shadow-thin);
         border-radius: 1rem;
         cursor: pointer;
         transition: $transition;
         &:hover {
           transform: translateY(-0.5rem);
-          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1rem 2rem var(--box-shadow-thin);
           transition: $transition;
         }
       }

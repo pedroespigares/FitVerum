@@ -27,3 +27,7 @@
     background-size: cover;
   }
 }
+
+.breadcrumbs{
+  @include breadcrumbs();
+}

@@ -7,11 +7,11 @@
     display: grid;
     grid-template-columns: 1fr 0.1fr;
     grid-template-rows: 1fr;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0.5rem 1rem var(--box-shadow-thin);
     margin: 5rem;
     border-radius: 1rem;
   }
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.5rem 1rem var(--box-shadow-thin);
   margin: 5rem;
   border-radius: 1rem;
 
@@ -21,7 +21,7 @@
       display: grid;
       grid-template-columns: 1fr 0.1fr;
       grid-template-rows: 1fr;
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      box-shadow: 0 0.5rem 1rem var(--box-shadow-thin);
       margin: 5rem;
       border-radius: 1rem;
       background-color: var(--tertiary-color);
@@ -52,7 +52,7 @@
       }
     }
     @include flex($direction: column, $justify: flex-start, $align: flex-start, $gap: 3rem);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0.5rem 1rem var(--box-shadow-thin);
     margin: 5rem;
     border-radius: 1rem;
     background-color: var(--tertiary-color);

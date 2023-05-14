@@ -19,7 +19,7 @@
 }
 
 .loader{
-    @include loader(37vh, 38vw);
+    @include loader($left: 0%);
 }
 
 .chart-container{

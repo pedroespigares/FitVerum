@@ -18,6 +18,8 @@
   --cuaternary-color: #{getColor('cuaternary')};
   --background-color: #{getColor('background')};
   --text-color: #{getColor('text')};
+  --box-shadow-normal: rgba(0, 0, 0, 0.75);
+  --box-shadow-thin: rgba(0, 0, 0, 0.15);
   --gray : lightgray;
 
   &--dark{
@@ -27,6 +29,8 @@
     --cuaternary-color: #{getColor('tertiary')};
     --background-color: #{getColor('text')};
     --text-color: #{getColor('background')};
+    --box-shadow-normal: #{getColor('primary')};
+    --box-shadow-thin: #{getColor('primary')};
     --gray : gray;
   }
 }

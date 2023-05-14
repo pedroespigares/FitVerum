@@ -190,6 +190,13 @@ export class AuthService {
     this.router.navigate(['/']);
     this.isAdmin = false;
     this.isTrainer = false;
+    this.userEmail = '';
+    this.userPhoto = null;
+    this.username = '';
+    this.failedError = '';
+    this.userExists = false;
+    this.userChecked = false;
+    this.thirdPartyLogin = false;
   }
 
 

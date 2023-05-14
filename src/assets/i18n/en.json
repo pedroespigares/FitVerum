@@ -1,288 +1,292 @@
 {
-    "HEADER": {
-      "NAVBAR": {
-        "HOME": "Home",
-        "ABOUT": "About Us",
-        "ACTIVITIES": "Activities",
-        "MY-ROUTINES": "Routines",
-        "MY-DIETS": "Diets",
-        "MANAGEMENT": "Management",
-        "CLIENTS": "Clients",
-        "ROUTINES": "Routines",
-        "DIETS": "Diets",
-        "USERS": "Users",
-        "FORUM": "Forum",
-        "MACHINES": "Machines",
-        "TRAINER": "(TRN)",
-        "SINGIN": "Sign In",
-        "REGISTER": "Register"
-      }
-    },
-    "LANDING":{
-        "MAIN-1":"Your app,",
-        "MAIN-2":"The Real Fitness",
-        "GET-STARTED":"Get Started",
-        "BENEFITS":{
-            "TITLE": "Benefits of our service",
-            "SUBTITLE": "All your progess in one page",
-            "1-TITLE": "Security",
-            "1-DESCRIPTION": "A secure and easy-to-use system for coordinating training sessions",
-            "2-TITLE": "Tool",
-            "2-DESCRIPTION": "A tool for setting realistic goals and tracking your progress through the months",
-            "3-TITLE": "Feedback",
-            "3-DESCRIPTION": "The possibility of giving and receiving feedback to improve the quality of the service",
-            "4-TITLE": "Manage your routines",
-            "4-DESCRIPTION": "The convenience of being able to manage your training from a centralized platform"
-        },
-        "SUPPORT":{
-            "TITLE": "Support",
-            "SUBTITLE": "We are here to help you",
-
-            "SERVICES":{
-                "TITLE": "All our support services",
-                "1-TITLE": "Reporting and Analytics",
-                "1-DESCRIPTION": "We offer powerful reporting and analytics tools to help you measure the effectiveness of your training programs and make data-driven decisions.",
-                "2-TITLE": "Learner Management",
-                "2-DESCRIPTION": "Our training management webpage provides robust learner management tools to help you efficiently track and manage your learners' progress.",
-                "3-TITLE": "Customization",
-                "3-DESCRIPTION": "We offers a range of customization options to help you create a unique and branded learning experience for your learners. With our customization features, you can personalize the design and layout of your training materials."
-            }
-        }
-    },
-    "FOOTER":{
-      "HELP":"Help",
-      "CONTACT":"Contact",
-      "FAQ":"FAQ",
-      "FORUM":"Forum",
-      "SUGGESTIONS":"Suggestions",
-      "ABOUT-US":"About Us",
-      "WHO-WE-ARE":"Who we are",
-      "WORK-WITH-US":"Work with us",
-      "TERMS-OF-USE":"Terms of and conditions",
-      "LEGAL": "Legal",
-      "COOKIES-POLICY": "Cookies Policy",
-      "PRIVACY-POLICY": "Privacy Policy",
-      "LEGAL-TERMS": "Legal Terms",
-      "COMPANY-INFORMATION": "Company Information",
-      "FOLLOW-US": "Follow us"
-    },
-    "LOGIN":{
-      "TITLE": "Sign In",
-      "EMAIL": "Email",
-      "PASSWORD": "Password",
-      "FORGOT-PASSWORD": "Forgot your password?",
-      "BUTTON": "Sign In",
-      "GOOGLE": "Sign in with Google",
-      "TWITTER": "Sign in with Twitter",
-      "OR": "or",
-      "CHECK-EMAIL": "Revisa tu email",
-      "ERROR-EMPTY": "Fields can't be empty",
-      "VALID-FORMAT": "Fill the email input for recovering with a valid format"
-    },
-    "REGISTER":{
-      "TITLE": "Register",
-      "USERNAME": "Username",
-      "EMAIL": "Email",
-      "PASSWORD": "Password",
-      "PSW-FORMAT": "Min 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.",
-      "BUTTON": "Register",
-      "GOOGLE": "Register with Google",
-      "TWITTER": "Register with Twitter",
-      "OR": "or",
-      "ERROR-EMPTY": "Fields can't be empty"
-    },
-    "ABOUT-US":{
-      "FIRST": "Welcome to FitVerum! We are a team of dedicated professionals who are passionate about helping individuals achieve their fitness goals through personalized training programs and exceptional coaching. Our platform is designed to connect individuals with certified personal trainers who specialize in various areas of fitness, including weight loss, strength training, endurance training, and more. We believe that everyone deserves access to high-quality fitness training, regardless of their location or schedule.",
-      "SECOND": "Our trainers are hand-selected based on their experience, expertise, and dedication to helping clients achieve their goals. We provide ongoing training and support to ensure that our trainers are up-to-date with the latest fitness trends and techniques, allowing them to provide the best possible training experience for our clients. At FitVerum, we are committed to creating a supportive and motivating environment for our clients. Our trainers work closely with each client to develop a personalized training program that is tailored to their unique needs, goals, and fitness level. Whether you are a beginner looking to start your fitness journey or an experienced athlete looking to take your training to the next level, we have a trainer who can help you achieve your goals.",
-      "THIRD": "Our platform is easy to use and allows clients to schedule sessions with their chosen trainer at a time that is convenient for them. We also provide tools and resources to help clients track their progress and stay motivated throughout their fitness journey. At FitVerum, we believe that fitness should be accessible, affordable, and fun. We are dedicated to helping our clients achieve their fitness goals and live healthier, happier lives. Contact us today to get started on your fitness journey!"
-    },
-    "ADMINISTRATION":{
-      "USERS":{
-        "TITLE": "Users Administration",
-        "USERS": "Users",
-        "TRAINERS": "Trainers",
-        "NO-USERS": "There are currently no users",
-        "NO-TRAINERS": "There are currently no trainers"
-      },
-      "MACHINES":{
-        "TITLE": "Machines and Exercises Administration",
-        "ADD-BUTTON": "Add Machine or Exercise",
-        "NO-MACHINES": "There are no machines or exercises",
-        "ADDED-TOAST": "Machine added successfully!",
-        "DELETED-TOAST": "Machine deleted successfully!",
-        "ADD-MACHINE-FORM": {
-          "TITLE": "Add Machine",
-          "NAME": "Machine/Exercise Name",
-          "DESCRIPTION": "Machine/Exercise Description",
-          "IMAGEN": "Machine/Exercise Image",
-          "BUTTON": "Add Machine/Exercise"
-        },
-        "UPDATE-MACHINE-FORM": {
-          "TITLE": "Edit Machine/Exercise",
-          "NAME": "Machine/Exercise Name",
-          "DESCRIPTION": "Machine/Exercise Description",
-          "IMAGEN": "Machine/Exercise Image",
-          "BUTTON": "Update"
-        }
-      }
-    },
-    "TRAINERS": {
-      "MANAGEMENT":{
-        "PREVIOUS": "Previous",
-        "NEXT": "Next",
-        "EVENT-INFORMATION": "Appointment Information",
-        "EVENT-TITLE": "Appointment Title",
-        "DESCRIPTION": "Description",
-        "NO-DESCRIPTION": "This Appointment does not have a description",
-        "BACK": "Back"
-      },
-      "APPOINTMENT":{
-        "MANAGEMENT": "Management",
-        "NEW-APPOINTMENT": "New Appointment",
-        "CLIENTS": "Clients",
-        "NO-CLIENTS": "There are currently no clients available",
-        "APPOINTMENT-INFORMATION": "Appointment Information",
-        "NO-CLIENT-SELECTED": "No client selected",
-        "BUTTON": "Create Appointment",
-        "SELECTED-CLIENT": "Selected client: ",
-        "TITLE": "Title",
-        "DATE": "Date",
-        "FROM": "from",
-        "TO": "to",
-        "APPOINTMENT-COLOR": "appointment color",
-        "DESCRIPTION": "Description"
-      },
-      "CLIENTS":{
-        "TITLE": "Clients Administration",
-        "AVAILABLE-USERS": "Available Users",
-        "CLIENTS": "Clients",
-        "NO-USERS": "There are currently no users available",
-        "NO-CLIENTS": "There are currently no clients associated with you"
-      },
-      "ROUTINES":{
-        "CLIENTS": "Clients",
-        "ROUTINES": "Routines",
-        "BUTTON": "Add Routine",
-        "TITLE": "Routines from ",
-        "TOAST-ADD": "Routine added successfully!",
-        "TOAST-DELETED": "Routine deleted successfully!",
-        "NO-CLIENTS": "There are currently no clients available",
-        "NO-ROUTINES": "This user doesn't have any routines",
-        "NO-CLIENT": "No client selected",
-        "ADD-FORM": {
-          "NEW-ROUTINE": "New Routine",
-          "ADD-ROUTINE": "Add Routine",
-          "NAME": "Routine Name",
-          "IMAGE": "Routine Image",
-          "BUTTON": "Add Routine"
-        },
-        "EDIT-FORM":{
-          "EDIT": "Edit",
-          "TITLE": "Edit Routine",
-          "BUTTON": "Update"
-        },
-        "SHOW-BREADCUMBS":{
-          "ROUTINES": "Routines",
-          "EXERCISES": "Exercises",
-          "NO-EXERCISES": "This routine doesn't have any exercises assigned",
-          "EXERCISES-OF": "Exercises of ",
-          "ADD-EXERCISE": "Add Exercise",
-          "ROUTINE": "Routine",
-          "NEW": "New"
-        },
-        "EXERCISES": {
-          "ADD":{
-            "TITLE": "Add Exercise",
-            "NAME": "Exercise Name",
-            "DESCRIPTION": "Exercise Description",
-            "MACHINE": "Machine",
-            "BUTTON": "Add Exercise"
-          },
-          "EDIT":{
-            "TITLE": "Edit Exercise",
-            "NAME": "Exercise Name",
-            "DESCRIPTION": "Exercise Description",
-            "MACHINE": "Machine",
-            "BUTTON": "Update"
-          }
-        }
-      },
-      "DIETS":{
-        "CLIENTS": "Clients",
-        "DIETS": "Diets",
-        "BUTTON": "Add Diet",
-        "TITLE": "Diets from ",
-        "TOAST-ADD": "Diet added successfully!",
-        "TOAST-DELETED": "Diet deleted successfully!",
-        "NO-CLIENTS": "There are currently no clients available",
-        "NO-DIETS": "This user doesn't have any diets",
-        "NO-CLIENT": "No client selected",
-        "ADD-FORM": {
-          "NEW-DIET": "New Diet",
-          "ADD-DIET": "Add Diet",
-          "NAME": "Diet Name",
-          "DESCRIPTION": "Diet Descritpion",
-          "IMAGE": "Diet Image",
-          "BUTTON": "Add Diet"
-        },
-        "EDIT-FORM":{
-          "EDIT": "Edit",
-          "TITLE": "Edit Diet",
-          "BUTTON": "Update"
-        }
-      }
-    },
-    "USERS":{
-      "ACTIVITIES":{
-        "PREVIOUS": "Previous",
-        "NEXT": "Next",
-        "EVENT-INFORMATION": "Entry Information",
-        "EVENT-TITLE": "Entry Title",
-        "STATS": "Stats",
-        "WEIGHT": "Weight",
-        "COMMENTS": "Comments",
-        "NO-COMMENTS": "This entry doesn't have any comments",
-        "SEE-EVOLUTION": "See Evolution",
-        "BACK": "Back"
-      },
-      "ROUTINES": {
-        "YOUR-ROUTINES": "Your Routines",
-        "CALENDAR": "Calendar",
-        "ROUTINES": "Routines",
-        "EXERCISES": "exercises",
-        "NO-EXERCISES": "This routine doesn't have any exercises",
-        "NO-ROUTINES": "You don't have any routines yet"
-      },
-      "DIETS": {
-        "YOUR-DIETS": "Your Diets",
-        "NO-DIETS": "You don't have any diet yet"
-      },
-      "ENTRY": {
-        "ENTRY": " entry",
-        "CALENDAR": "Calendar",
-        "ROUTINES": "Routines",
-        "DESCRIPTION": "Description",
-        "EVOLUTION": "Evolution",
-        "I-MADE": "I made",
-        "WITH": "with",
-        "REPETITIONS": "repetitions",
-        "COMMENTS": "Comments",
-        "SAVE": "Save",
-        "LC-DESCRIPTION": "description",
-        "AT": "At"
-      }
-    },
-    "MODIFICATIONS":{
-      "USER-INFO": "User Information",
-      "TRAINER-INFO": "Trainer Information",
-      "MEMBER-SINCE": "Member since ",
-      "3RD-PARTY": "You logged with a third party service, so you can't change your account information",
-      "CHANGE-USER-DATA": "Change User Data",
-      "CHANGE-TRAINER-DATA": "Change Trainer Data",
-      "CHANGE-DATA": "Change Data"
-    },
-    "FORUM":{
-      "TITLE": "Forum",
-      "SUBMIT": "Submit"
+  "HEADER": {
+    "NAVBAR": {
+      "HOME": "Home",
+      "ABOUT": "About Us",
+      "ACTIVITIES": "Activities",
+      "MY-ROUTINES": "Routines",
+      "MY-DIETS": "Diets",
+      "MANAGEMENT": "Management",
+      "CLIENTS": "Clients",
+      "ROUTINES": "Routines",
+      "DIETS": "Diets",
+      "USERS": "Users",
+      "FORUM": "Forum",
+      "MACHINES": "Machines",
+      "TRAINER": "(TRN)",
+      "SINGIN": "Sign In",
+      "REGISTER": "Register"
     }
+  },
+  "LANDING": {
+    "MAIN-1": "Your app,",
+    "MAIN-2": "The Real Fitness",
+    "GET-STARTED": "Get Started",
+    "BENEFITS": {
+      "TITLE": "Benefits of our service",
+      "SUBTITLE": "All your progess in one page",
+      "1-TITLE": "Security",
+      "1-DESCRIPTION": "A secure and easy-to-use system for coordinating training sessions",
+      "2-TITLE": "Tool",
+      "2-DESCRIPTION": "A tool for setting realistic goals and tracking your progress through the months",
+      "3-TITLE": "Feedback",
+      "3-DESCRIPTION": "The possibility of giving and receiving feedback to improve the quality of the service",
+      "4-TITLE": "Manage your routines",
+      "4-DESCRIPTION": "The convenience of being able to manage your training from a centralized platform"
+    },
+    "SUPPORT": {
+      "TITLE": "Support",
+      "SUBTITLE": "We are here to help you",
+
+      "SERVICES": {
+        "TITLE": "All our support services",
+        "1-TITLE": "Reporting and Analytics",
+        "1-DESCRIPTION": "We offer powerful reporting and analytics tools to help you measure the effectiveness of your training programs and make data-driven decisions.",
+        "2-TITLE": "Learner Management",
+        "2-DESCRIPTION": "Our training management webpage provides robust learner management tools to help you efficiently track and manage your learners' progress.",
+        "3-TITLE": "Customization",
+        "3-DESCRIPTION": "We offers a range of customization options to help you create a unique and branded learning experience for your learners. With our customization features, you can personalize the design and layout of your training materials."
+      }
+    }
+  },
+  "FOOTER": {
+    "HELP": "Help",
+    "CONTACT": "Contact",
+    "FAQ": "FAQ",
+    "FORUM": "Forum",
+    "SUGGESTIONS": "Suggestions",
+    "ABOUT-US": "About Us",
+    "WHO-WE-ARE": "Who we are",
+    "WORK-WITH-US": "Work with us",
+    "TERMS-OF-USE": "Terms of and conditions",
+    "LEGAL": "Legal",
+    "COOKIES-POLICY": "Cookies Policy",
+    "PRIVACY-POLICY": "Privacy Policy",
+    "LEGAL-TERMS": "Legal Terms",
+    "COMPANY-INFORMATION": "Company Information",
+    "FOLLOW-US": "Follow us"
+  },
+  "LOGIN": {
+    "TITLE": "Sign In",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "FORGOT-PASSWORD": "Forgot your password?",
+    "BUTTON": "Sign In",
+    "GOOGLE": "Sign in with Google",
+    "TWITTER": "Sign in with Twitter",
+    "OR": "or",
+    "CHECK-EMAIL": "Revisa tu email",
+    "ERROR-EMPTY": "Fields can't be empty",
+    "VALID-FORMAT": "Fill the email input for recovering with a valid format"
+  },
+  "REGISTER": {
+    "TITLE": "Register",
+    "USERNAME": "Username",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "PSW-FORMAT": "Min 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.",
+    "BUTTON": "Register",
+    "GOOGLE": "Register with Google",
+    "TWITTER": "Register with Twitter",
+    "OR": "or",
+    "ERROR-EMPTY": "Fields can't be empty"
+  },
+  "ABOUT-US": {
+    "FIRST": "Welcome to FitVerum! We are a team of dedicated professionals who are passionate about helping individuals achieve their fitness goals through personalized training programs and exceptional coaching. Our platform is designed to connect individuals with certified personal trainers who specialize in various areas of fitness, including weight loss, strength training, endurance training, and more. We believe that everyone deserves access to high-quality fitness training, regardless of their location or schedule.",
+    "SECOND": "Our trainers are hand-selected based on their experience, expertise, and dedication to helping clients achieve their goals. We provide ongoing training and support to ensure that our trainers are up-to-date with the latest fitness trends and techniques, allowing them to provide the best possible training experience for our clients. At FitVerum, we are committed to creating a supportive and motivating environment for our clients. Our trainers work closely with each client to develop a personalized training program that is tailored to their unique needs, goals, and fitness level. Whether you are a beginner looking to start your fitness journey or an experienced athlete looking to take your training to the next level, we have a trainer who can help you achieve your goals.",
+    "THIRD": "Our platform is easy to use and allows clients to schedule sessions with their chosen trainer at a time that is convenient for them. We also provide tools and resources to help clients track their progress and stay motivated throughout their fitness journey. At FitVerum, we believe that fitness should be accessible, affordable, and fun. We are dedicated to helping our clients achieve their fitness goals and live healthier, happier lives. Contact us today to get started on your fitness journey!"
+  },
+  "ADMINISTRATION": {
+    "USERS": {
+      "TITLE": "Users Administration",
+      "USERS": "Users",
+      "TRAINERS": "Trainers",
+      "NO-USERS": "There are currently no users",
+      "NO-TRAINERS": "There are currently no trainers"
+    },
+    "MACHINES": {
+      "MACHINES": "Machines",
+      "TITLE": "Machines and Exercises Administration",
+      "ADD-BUTTON": "Add Machine or Exercise",
+      "NO-MACHINES": "There are no machines or exercises",
+      "ADDED-TOAST": "Machine added successfully!",
+      "DELETED-TOAST": "Machine deleted successfully!",
+      "ADD-MACHINE-FORM": {
+        "TITLE": "Add Machine",
+        "NAME": "Machine/Exercise Name",
+        "DESCRIPTION": "Machine/Exercise Description",
+        "IMAGEN": "Machine/Exercise Image",
+        "BUTTON": "Add Machine/Exercise"
+      },
+      "UPDATE-MACHINE-FORM": {
+        "TITLE": "Edit Machine/Exercise",
+        "NAME": "Machine/Exercise Name",
+        "DESCRIPTION": "Machine/Exercise Description",
+        "IMAGEN": "Machine/Exercise Image",
+        "BUTTON": "Update"
+      },
+      "SHOW-MACHINE": {
+        "TITLE": "Machine/Exercise Information"
+      }
+    }
+  },
+  "TRAINERS": {
+    "MANAGEMENT": {
+      "PREVIOUS": "Previous",
+      "NEXT": "Next",
+      "EVENT-INFORMATION": "Appointment Information",
+      "EVENT-TITLE": "Appointment Title",
+      "DESCRIPTION": "Description",
+      "NO-DESCRIPTION": "This Appointment does not have a description",
+      "BACK": "Back"
+    },
+    "APPOINTMENT": {
+      "MANAGEMENT": "Management",
+      "NEW-APPOINTMENT": "New Appointment",
+      "CLIENTS": "Clients",
+      "NO-CLIENTS": "There are currently no clients available",
+      "APPOINTMENT-INFORMATION": "Appointment Information",
+      "NO-CLIENT-SELECTED": "No client selected",
+      "BUTTON": "Create Appointment",
+      "SELECTED-CLIENT": "Selected client: ",
+      "TITLE": "Title",
+      "DATE": "Date",
+      "FROM": "from",
+      "TO": "to",
+      "APPOINTMENT-COLOR": "appointment color",
+      "DESCRIPTION": "Description"
+    },
+    "CLIENTS": {
+      "TITLE": "Clients Administration",
+      "AVAILABLE-USERS": "Available Users",
+      "CLIENTS": "Clients",
+      "NO-USERS": "There are currently no users available",
+      "NO-CLIENTS": "There are currently no clients associated with you"
+    },
+    "ROUTINES": {
+      "CLIENTS": "Clients",
+      "ROUTINES": "Routines",
+      "BUTTON": "Add Routine",
+      "TITLE": "Routines from ",
+      "TOAST-ADD": "Routine added successfully!",
+      "TOAST-DELETED": "Routine deleted successfully!",
+      "NO-CLIENTS": "There are currently no clients available",
+      "NO-ROUTINES": "This user doesn't have any routines",
+      "NO-CLIENT": "No client selected",
+      "ADD-FORM": {
+        "NEW-ROUTINE": "New Routine",
+        "ADD-ROUTINE": "Add Routine",
+        "NAME": "Routine Name",
+        "IMAGE": "Routine Image",
+        "BUTTON": "Add Routine"
+      },
+      "EDIT-FORM": {
+        "EDIT": "Edit",
+        "TITLE": "Edit Routine",
+        "BUTTON": "Update"
+      },
+      "SHOW-BREADCUMBS": {
+        "ROUTINES": "Routines",
+        "EXERCISES": "Exercises",
+        "NO-EXERCISES": "This routine doesn't have any exercises assigned",
+        "EXERCISES-OF": "Exercises of ",
+        "ADD-EXERCISE": "Add Exercise",
+        "ROUTINE": "Routine",
+        "NEW": "New"
+      },
+      "EXERCISES": {
+        "ADD": {
+          "TITLE": "Add Exercise",
+          "NAME": "Exercise Name",
+          "DESCRIPTION": "Exercise Description",
+          "MACHINE": "Machine",
+          "BUTTON": "Add Exercise"
+        },
+        "EDIT": {
+          "TITLE": "Edit Exercise",
+          "NAME": "Exercise Name",
+          "DESCRIPTION": "Exercise Description",
+          "MACHINE": "Machine",
+          "BUTTON": "Update"
+        }
+      }
+    },
+    "DIETS": {
+      "CLIENTS": "Clients",
+      "DIETS": "Diets",
+      "BUTTON": "Add Diet",
+      "TITLE": "Diets from ",
+      "TOAST-ADD": "Diet added successfully!",
+      "TOAST-DELETED": "Diet deleted successfully!",
+      "NO-CLIENTS": "There are currently no clients available",
+      "NO-DIETS": "This user doesn't have any diets",
+      "NO-CLIENT": "No client selected",
+      "ADD-FORM": {
+        "NEW-DIET": "New Diet",
+        "ADD-DIET": "Add Diet",
+        "NAME": "Diet Name",
+        "DESCRIPTION": "Diet Descritpion",
+        "IMAGE": "Diet Image",
+        "BUTTON": "Add Diet"
+      },
+      "EDIT-FORM": {
+        "EDIT": "Edit",
+        "TITLE": "Edit Diet",
+        "BUTTON": "Update"
+      }
+    }
+  },
+  "USERS": {
+    "ACTIVITIES": {
+      "PREVIOUS": "Previous",
+      "NEXT": "Next",
+      "EVENT-INFORMATION": "Entry Information",
+      "EVENT-TITLE": "Entry Title",
+      "STATS": "Stats",
+      "WEIGHT": "Weight",
+      "COMMENTS": "Comments",
+      "NO-COMMENTS": "This entry doesn't have any comments",
+      "SEE-EVOLUTION": "See Evolution",
+      "BACK": "Back"
+    },
+    "ROUTINES": {
+      "YOUR-ROUTINES": "Your Routines",
+      "CALENDAR": "Calendar",
+      "ROUTINES": "Routines",
+      "EXERCISES": "exercises",
+      "NO-EXERCISES": "This routine doesn't have any exercises",
+      "NO-ROUTINES": "You don't have any routines yet"
+    },
+    "DIETS": {
+      "YOUR-DIETS": "Your Diets",
+      "NO-DIETS": "You don't have any diet yet"
+    },
+    "ENTRY": {
+      "ENTRY": " entry",
+      "CALENDAR": "Calendar",
+      "ROUTINES": "Routines",
+      "DESCRIPTION": "Description",
+      "EVOLUTION": "Evolution",
+      "I-MADE": "I made",
+      "WITH": "with",
+      "REPETITIONS": "repetitions",
+      "COMMENTS": "Comments",
+      "SAVE": "Save",
+      "LC-DESCRIPTION": "description",
+      "AT": "At"
+    }
+  },
+  "MODIFICATIONS": {
+    "USER-INFO": "User Information",
+    "TRAINER-INFO": "Trainer Information",
+    "MEMBER-SINCE": "Member since ",
+    "3RD-PARTY": "You logged with a third party service, so you can't change your account information",
+    "CHANGE-USER-DATA": "Change User Data",
+    "CHANGE-TRAINER-DATA": "Change Trainer Data",
+    "CHANGE-DATA": "Change Data"
+  },
+  "FORUM": {
+    "TITLE": "Forum",
+    "SUBMIT": "Submit"
   }
+}

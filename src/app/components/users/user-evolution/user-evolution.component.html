@@ -1,5 +1,5 @@
 <main class="content">
-    <h1 class="exercise-title"><span class="exercise-title-span" *ngIf="loaded">{{exerciseName}}</span> evolution</h1>
+    <h1 *ngIf="loaded" class="exercise-title"><span class="exercise-title-span">{{exerciseName}}</span> evolution</h1>
     <div *ngIf="!loaded" class="loader"></div>
     <div class="chart-container">
         <canvas *ngIf="loaded" baseChart class="chart-container-chart"

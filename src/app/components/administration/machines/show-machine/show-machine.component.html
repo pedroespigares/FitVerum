@@ -1,8 +1,10 @@
 <main class="content">
-    <div class="breadcrumbs">
+    <div *ngIf="!loading"class="breadcrumbs">
         <a class="breadcrumbs-item" routerLink="/administration/machines">{{"HEADER.NAVBAR.MACHINES" | translate}}</a>
         <p class="breadcrumbs-item"> > </p>
-        <p *ngIf="!loading" class="breadcrumbs-item">{{machine.name}}</p>
+        <p class="breadcrumbs-item">{{"ADMINISTRATION.MACHINES.SHOW-MACHINE.TITLE" | translate}}</p>
+        <p class="breadcrumbs-item"> > </p>
+        <p class="breadcrumbs-item">{{machine.name}}</p>
     </div>
     <div *ngIf="loading" class="loader"></div>
     <div class="show-machine">
