@@ -1,6 +1,7 @@
 @import "../../../../scss/mixin.scss";
 @import "../../../../scss/variables.scss";
 
+/// Estilos del contenido de la vista de administración de usuarios
 .content{
   @include response(md){
     height: calc(100vh - 112px);
@@ -8,12 +9,14 @@
   height: auto;
 }
 
+/// Estilos de la cabecera de la vista
 .user-administration-header {
   @include view_header();
   padding-top: 4rem;
   margin: 0;
 }
 
+/// Estilos de la vista de administración de usuarios
 .users-trainers-container {
   @include response(lg) {
     display: grid;

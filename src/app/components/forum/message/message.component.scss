@@ -1,6 +1,8 @@
 @import "../../../../scss/mixin.scss";
 @import "../../../../scss/variables.scss";
 
+
+/// Estilos del mensaje individual del foro
 .message-container{
   @include flex($direction: column, $justify: flex-start, $align: flex-start, $gap: 2rem);
   &-with-delete{

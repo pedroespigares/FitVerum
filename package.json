@@ -9,7 +9,8 @@
     "test": "ng test",
     "compodoc:build": "compodoc -n FitVerumDocs -t --hideGenerator -p tsconfig.doc.json --customFavicon ./src/favicon.ico --customLogo ./src/assets/images/FitVerumLogo.png -d ./docs",
     "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json -s",
-    "compodoc:serve": "compodoc -s"
+    "compodoc:serve": "compodoc -s",
+    "sassdoc": "sassdoc ./src --config=sassdoc.config.json"
   },
   "private": true,
   "dependencies": {

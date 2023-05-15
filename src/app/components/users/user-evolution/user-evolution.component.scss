@@ -1,11 +1,13 @@
 @import "../../../../scss/mixin.scss";
 @import "../../../../scss/variables.scss";
 
+/// Estilos para la vista de evolución de usuario
 .content{
   height: calc(100vh - 112px);
   @include flex($direction: column, $justify: flex-start, $align: center, $gap: 10rem);
 }
 
+/// Estilo del título
 .exercise-title{
     @include view_header();
     &-no-exercise{
@@ -22,6 +24,7 @@
     @include loader($left: 0%);
 }
 
+/// Estilo del contenedor de la gráfica
 .chart-container{
     @include flex($direction: column, $justify: center, $align: center);
     @include response(lg){

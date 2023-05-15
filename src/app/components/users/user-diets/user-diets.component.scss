@@ -1,6 +1,7 @@
 @import "../../../../scss/mixin.scss";
 @import "../../../../scss/variables.scss";
 
+/// Estilos para la vista de dietas de usuario
 .content{
   @include response(md){
     height: calc(100vh - 112px);
@@ -8,6 +9,7 @@
   height: auto;
 }
 
+/// Estilo del título
 .diets-title{
     @include view_header();
     &-no-diets{
@@ -16,6 +18,8 @@
     }
 }
 
+
+/// Estilos del contenedor de las dietas
 .diets-container{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));

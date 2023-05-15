@@ -7,10 +7,12 @@
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
 
+/// Helper para el header móvil, para que no se mueva el contenido
 .fixed-position {
   overflow: hidden !important;
 }
 
+/// Cambio de tema a oscuro o claro
 .theme{
   --primary-color: #{getColor('primary')};
   --secondary-color: #{getColor('secondary')};
@@ -35,6 +37,7 @@
   }
 }
 
+/// Cambio de tema a oscuro o claro
 .content{
   background-color: var(--background-color);
 }

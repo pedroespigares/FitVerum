@@ -1,6 +1,7 @@
 @import "../../../../../scss/mixin.scss";
 @import "../../../../../scss/variables.scss";
 
+/// Estilos para el card de la máquina
 .machine {
   @include card(false);
   &-img {

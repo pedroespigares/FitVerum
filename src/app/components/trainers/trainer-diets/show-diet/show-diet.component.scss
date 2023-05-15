@@ -5,6 +5,7 @@
   @include breadcrumbs($margin-left: 5rem);
 }
 
+/// Estilos del contenido de la vista de mostrar dieta
 .content {
   @include response(md){
     height: calc(100vh - 112px);
@@ -17,6 +18,8 @@
     padding: 0 5rem;
   }
 }
+
+/// Estilos del contenedor de mostrar dieta
 .show-diet {
   @include response(sm) {
     margin-top: 25rem;

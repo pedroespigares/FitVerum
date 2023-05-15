@@ -1,6 +1,7 @@
 @import "../../../../../../scss/mixin.scss";
 @import "../../../../../../scss/variables.scss";
 
+/// Estilos de la card de un ejercicio
 .exercise {
   @include card(false);
   &-img {

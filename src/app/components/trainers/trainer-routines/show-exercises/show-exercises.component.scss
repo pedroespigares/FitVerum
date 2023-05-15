@@ -1,6 +1,7 @@
 @import "../../../../../scss/mixin.scss";
 @import "../../../../../scss/variables.scss";
 
+/// Estilos para la vista de mostrar ejercicios
 .content{
   @include response(md){
     height: calc(100vh - 112px);
@@ -8,6 +9,7 @@
   height: auto;
 }
 
+/// Estilos para la cabecera de la vista de mostrar ejercicios
 .exercises-header {
   @include view_header();
 
@@ -22,6 +24,7 @@
   }
 }
 
+/// Estilos para la vista de mostrar ejercicios
 .exercises {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));

@@ -1,6 +1,7 @@
 @import "../../../scss/mixin.scss";
 @import "../../../scss/variables.scss";
 
+/// Estilos del contenido de la vista de registro
 .content {
   @include flex($direction: column, $justify: flex-start, $align: center, $gap: 0);
   height: 100vh;
@@ -16,6 +17,7 @@
   }
 }
 
+/// Estilos para el formulario de registro
 .register {
   @include response(lg) {
     background-color: var(--background-color);

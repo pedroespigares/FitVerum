@@ -1,6 +1,8 @@
 @import "../../../../scss/mixin.scss";
 @import "../../../../scss/variables.scss";
 
+
+/// Estilos del contenido de la vista modificar entrenador
 .content{
   @include response(md){
     height: 120vh;
@@ -14,6 +16,7 @@
   height: auto;
 }
 
+/// Estilo del título
 .title {
   @include view_header(5rem);
   font-family: $font-family-title;
@@ -21,6 +24,7 @@
   padding-top: 5rem;
 }
 
+/// Estilo del contenedor de la información del entrenador
 .trainer-info {
   @include response(xl) {
     @include flex(
@@ -85,6 +89,7 @@
   }
 }
 
+/// Estilo del formulario de modificación de datos
 .change-data {
   @include flex(
     $direction: column,
@@ -176,6 +181,7 @@
   }
 }
 
+/// Estilo de los mensajes de error
 .error-message {
   @include view_header(2rem);
   font-family: $font-family-text;
@@ -188,6 +194,7 @@
   margin: 0 auto;
 }
 
+/// Estilo de los mensajes de éxito
 .success-message {
   @include view_header(2rem);
   font-family: $font-family-text;
@@ -205,6 +212,7 @@
 }
 
 
+/// Estilo del mensaje de inicio de sesión con terceros
 .thirdPartyLoginMessage{
   @include view_header(2rem);
   color: var(--cuaternary-color);

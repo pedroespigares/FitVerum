@@ -1,6 +1,7 @@
 @import "../../../../scss/mixin.scss";
 @import "../../../../scss/variables.scss";
 
+/// Estilos del contenido de la vista de error 403
 .content{
   @include response(md){
     height: calc(100vh - 112px);
@@ -8,6 +9,7 @@
   height: 50vh;
 }
 
+/// Estilos de la vista de error 403
 .forbidden-container{
   @include flex($direction: column, $justify: flex-start, $align: center);
   padding-top: 10rem;

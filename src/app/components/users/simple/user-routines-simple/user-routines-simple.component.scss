@@ -1,6 +1,7 @@
 @import "../../../../../scss/mixin.scss";
 @import "../../../../../scss/variables.scss";
 
+/// Estilos para la vista de rutinas de un usuario (simple)
 .content{
   @include response(md){
     height: calc(100vh - 112px);
@@ -8,6 +9,7 @@
   height: auto;
 }
 
+/// Estilos del título de la vista
 .routines-title{
     @include view_header();
     &-no-routines{
@@ -16,6 +18,7 @@
     }
 }
 
+/// Estilos del contenedor de las rutinas simples
 .routines-container{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));

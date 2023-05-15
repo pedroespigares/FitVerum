@@ -1,6 +1,7 @@
 @import "../../../../scss/mixin.scss";
 @import "../../../../scss/variables.scss";
 
+/// Estilos del contenido de la vista de citas de entrenador
 .content{
   @include response(lg){
     height: calc(100vh - 112px);
@@ -12,10 +13,12 @@
   height: 200vh;
 }
 
+/// Estilos de las migas de pan
 .breadcrumbs{
   @include breadcrumbs();
 }
 
+/// Estilos del contendor de las citas
 .appointment-container {
   @include response(xl){
     display: grid;

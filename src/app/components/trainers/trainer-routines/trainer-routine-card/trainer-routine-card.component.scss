@@ -1,6 +1,7 @@
 @import "../../../../../scss/mixin.scss";
 @import "../../../../../scss/variables.scss";
 
+/// Estlos para el card de la rutina
 .routine {
   @include card(false);
   &-img {

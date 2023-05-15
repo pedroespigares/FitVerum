@@ -20,6 +20,7 @@
     }
 }
 
+/// Contenedor de los ejercicios
 .exercise-container{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));

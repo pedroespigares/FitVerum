@@ -1,3 +1,12 @@
+/// Mixin que cambia el contenido de un elemento de acuerdo a un breakpoint
+/// @example
+/// .container{
+///    @include response(xl){
+///       background-color: getColor(secondary);
+///   }
+/// }
+/// @param {string} $breakpoint -- Nombre del breakpoint
+///
 @mixin response($breakpoint) {
   @if ($breakpoint == xl) {
     @media (min-width: 1500px) {
@@ -22,6 +31,13 @@
   }
 }
 
+/// Mixin para el menú de navegación
+/// @example
+/// .navigation{
+///   @include navigation();
+/// }
+/// @param {boolean} $hamburger [false] -- Preparar el menú para el menú hamburguesa
+/// 
 @mixin navigation($hamburger: false) {
   @include flex($direction: row, $justify: space-between, $align: center);
 
@@ -160,6 +176,16 @@
   }
 }
 
+/// Mixin de posicionamiento con flexbox
+/// @example
+/// .container{
+///    @include flex();
+/// }
+/// @param {string} $direction [row] -- Dirección del flexbox
+/// @param {string} $justify [center]-- Justificación del contenido
+/// @param {string} $align [center]-- Alineación del contenido
+/// @param {string} $gap [0]-- Espacio entre elementos
+///
 @mixin flex($direction: row, $justify: center, $align: center, $gap: 0) {
   display: flex;
   flex-flow: $direction wrap;
@@ -169,6 +195,19 @@
   flex-wrap: nowrap;
 }
 
+
+// Mixin para los botones
+/// @example
+/// .button{
+///   @include button();
+/// }
+/// @param {string} $size [lg] -- Tamaño del botón
+/// @param {boolean} $focus [false] -- Si el botón está enfocado
+/// @param {string} $width [null] -- Ancho del botón
+/// @param {boolean} $disabled [false] -- Si el botón está deshabilitado
+/// @param {string} $border-radius [10rem] -- Radio de las esquinas del botón
+/// @param {string} $heigth [null] -- Altura del botón
+/// 
 @mixin button(
   $size: lg,
   $focus: false,
@@ -223,6 +262,12 @@
   }
 }
 
+// Mixin para los títulos de las secciones en la página de inicio
+/// @example
+/// .section-title{
+///   @include section-titles();
+/// }
+/// 
 @mixin section-titles {
   @include response(lg) {
     font-size: getFontSize(xl);
@@ -245,6 +290,12 @@
   padding-top: 10rem;
 }
 
+// Mixin para los subtítulos de las secciones en la página de inicio
+/// @example
+/// .section-subtitle{
+///   @include section-subtitles();
+/// }
+/// 
 @mixin section-subtitles {
   @include response(lg) {
     font-size: getFontSize(xxxl);
@@ -257,6 +308,12 @@
   color: var(--text-color);
 }
 
+/// Mixin para los labels de los formularios
+/// @example
+/// .label{
+///   @include label();
+/// }
+/// 
 @mixin label {
   @include response(xl) {
     font-size: getFontSize(lg);
@@ -269,6 +326,14 @@
   padding-bottom: 1rem;
 }
 
+/// Mixin para los inputs de los formularios
+/// @example
+/// .input{
+///   @include input();
+/// }
+/// @param {string} $size [lg] -- Tamaño del input
+/// @param {string} $text-align [left] -- Alineación del texto
+/// 
 @mixin input($size: lg, $text-align: left) {
   @include response(xl) {
     font-size: getFontSize($size);
@@ -292,6 +357,12 @@
   }
 }
 
+/// Mixin para los links del navbar
+/// @example
+/// .navbar-link{
+///   @include navbar_links();
+/// }
+/// 
 @mixin navbar_links() {
   color: var(--text-color);
   font-size: getFontSize(lg);
@@ -306,6 +377,13 @@
   }
 }
 
+/// Mixin para las cards
+/// @example
+/// .card{
+///   @include card();
+/// }
+/// @param {boolean} $withHover [true] -- Si la card tiene hover o no
+/// 
 @mixin card($withHover: true) {
   @include flex(column, center, center);
   background-color: var(--background-color);
@@ -322,6 +400,12 @@
   }
 }
 
+/// Mixin para el botón de eliminar en las cards
+/// @example
+/// .delete{
+///   @include deleteInCard();
+/// }
+/// 
 @mixin deleteInCard() {
   color: white;
   background-color: #e74c3c;
@@ -338,6 +422,12 @@
   }
 }
 
+/// Mixin para el botón de editar en las cards
+/// @example
+/// .edit{
+///   @include editInCard();
+/// }
+/// 
 @mixin editInCard() {
   color: white;
   background-color: #f1c40f;
@@ -353,6 +443,12 @@
   }
 }
 
+/// Mixin para el botón de ver en las cards
+/// @example
+/// .show{
+///   @include showInCard();
+/// }
+/// 
 @mixin showInCard() {
   color: white;
   background-color: #27ae60;
@@ -369,6 +465,13 @@
   }
 }
 
+/// Mixin para los títulos de las páginas
+/// @example
+/// .title{
+///   @include view_header();
+/// }
+/// @param {string} $size [5rem] -- Tamaño del título
+/// 
 @mixin view_header($size: 5rem) {
   @include response(xl) {
     font-size: $size;
@@ -384,6 +487,13 @@
   background-color: var(--background-color);
 }
 
+/// Mixin para los botones de usuario (los presentes en las secciones usuarios para añadir o eliminar)
+/// @example
+/// .user-button{
+///   @include user_button();
+/// }
+/// @param {string} $padding [1rem] -- Padding del botón
+/// 
 @mixin user_button($padding: 1rem) {
   width: 100%;
   height: 10rem;
@@ -403,6 +513,13 @@
   border: none;
 }
 
+/// Mixin para las migas de pan
+/// @example
+/// .breadcrumbs{
+///   @include breadcrumbs();
+/// }
+/// @param {string} $margin-left [3rem] -- Margen izquierdo de las migas de pan
+/// 
 @mixin breadcrumbs($margin-left: 3rem) {
   @include flex(
     $direction: row,
@@ -430,6 +547,13 @@
   background-color: var(--background-color);
 }
 
+/// Mixin para los botones normales (diferentes al botón principal)
+/// @example
+/// .normal-button{
+///  @include normal_button();
+/// }
+/// @param {string} $color [#e74c3c] -- Color del botón
+/// 
 @mixin normal_button($color: #e74c3c) {
   color: white;
   background-color: $color;
@@ -449,6 +573,14 @@
   }
 }
 
+/// Mixin para el loader
+/// @example
+/// .loader{
+///  @include loader();
+/// }
+/// @param {string} $top [45%] -- Posición top del loader
+/// @param {string} $left [40%] -- Posición left del loader
+/// 
 @mixin loader($top: 45%, $left: 40%) {
   display: block;
   height: 6px;
@@ -485,6 +617,12 @@
   }
 }
 
+/// Mixin para los modales
+/// @example
+/// .modal{
+///   @include modal();
+/// }
+/// 
 @mixin modal() {
   overflow: auto;
   background-color: var(--background-color);
@@ -577,6 +715,12 @@
   }
 }
 
+/// Mixin para las imagenes subidas
+/// @example
+/// .uploaded-image{
+///   @include uploadedImageStyles();
+/// }
+/// 
 @mixin uploadedImageStyles() {
   width: 7rem;
   height: 7rem;
@@ -584,6 +728,13 @@
   object-fit: cover;
 }
 
+/// Mixin para los formularios de editar
+/// @example
+/// .example(no_hace_falta_la_clase){
+///   @include edit('user');
+/// }
+/// @param {string} $name -- Nombre de la clase
+/// 
 @mixin edit($name) {
   .edit-#{$name} {
     z-index: 11;
@@ -806,6 +957,14 @@
   }
 }
 
+/// Mixin para los formularios de añadir
+/// @example
+/// .example(no_hace_falta_la_clase) {
+///   @include add('user');
+/// }
+/// @param {string} $name -- Nombre de la clase
+///
+/// 
 @mixin add($name) {
   .add-#{$name} {
     border-radius: 0.5rem;
@@ -1004,6 +1163,14 @@
   }
 }
 
+/// Mixin para los toast
+/// @example
+/// .example(no_hace_falta_la_clase){
+///   @include toast($margin-top: 12rem, $full-width: false);
+/// }
+/// @param {number} $margin-top - Margen superior del toast
+/// @param {boolean} $full-width - Si el toast ocupa todo el ancho de la pantalla
+/// 
 @mixin toast($margin-top: 12.25rem, $full-width: false) {
   ::ng-deep .toast {
     background-color: var(--primary-color);

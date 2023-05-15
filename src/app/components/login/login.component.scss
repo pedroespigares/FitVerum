@@ -1,6 +1,7 @@
 @import "../../../scss/mixin.scss";
 @import "../../../scss/variables.scss";
 
+/// Estilos del contenido de la vista de login
 .content {
   @include flex($direction: column, $justify: flex-start, $align: center, $gap: 0);
   height: 90vh;
@@ -16,6 +17,7 @@
   }
 }
 
+/// Estilos del formulario de login
 .login {
   @include response(lg) {
     background-color: var(--background-color);
@@ -236,6 +238,7 @@
   }
 }
 
+/// Estilos para el mensaje de olvidé mi contraseña
 .forgot-password {
   font-size: getFontSize(md);
   font-family: $font-family-text;

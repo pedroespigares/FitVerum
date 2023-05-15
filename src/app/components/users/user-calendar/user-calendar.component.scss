@@ -1,6 +1,7 @@
 @import "../../../../scss/mixin.scss";
 @import "../../../../scss/variables.scss";
 
+/// Estilos para la vista de calendario de usuario
 .content{
   @include response(md){
     height: calc(100vh - 112px);
@@ -82,6 +83,7 @@
   }
 }
 
+/// Estilos de los botones de control del calendario
 .calendar-controls {
   margin-bottom: 10rem !important;
   margin-bottom: 5rem !important;
@@ -119,10 +121,12 @@
 }
 
 
+/// Estilos para el modal de consulta de evento
 .modal {
   @include modal();
 }
 
+/// Estilos para el mensaje de no hay comentarios
 .no-comment-message{
   @include response(xl) {
     font-size: getFontSize(md);
@@ -136,6 +140,7 @@
 }
 
 
+/// Estilos para el botón de cerrar modal
 .fa-x{
   color: var(--primary-color);
   font-size: getFontSize(xl);
@@ -151,12 +156,14 @@
   background-color: var(--background-color) !important;
 }
 
+/// Estilos para el título del modal
 .modal-data-text{
   font-family: $font-family-title;
   font-weight: getFontWeight(bold);
   color: var(--text-color);
 }
 
+/// Estilos para el texto del modal
 .modal-body-content-text{
   background-color: var(--background-color);
   margin-bottom: 3rem;

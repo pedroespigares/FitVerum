@@ -1,6 +1,7 @@
 @import "../../../../../scss/mixin.scss";
 @import "../../../../../scss/variables.scss";
 
+/// Estilos para la vista de ejercicios de una rutina (simple)
 .content{
   @include response(md){
     height: calc(100vh - 112px);
@@ -8,6 +9,7 @@
   height: auto;
 }
 
+/// Estilos del título de la vista
 .exercise-title{
     @include view_header();
     &-no-exercise{
@@ -20,6 +22,7 @@
     }
 }
 
+/// Estilos del contenedor de los ejercicios simples
 .exercise-container{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));

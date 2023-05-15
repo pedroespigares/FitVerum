@@ -1,3 +1,4 @@
+/// Sección hero en landing page
 .hero {
   @include response(xl) {
     display: grid;

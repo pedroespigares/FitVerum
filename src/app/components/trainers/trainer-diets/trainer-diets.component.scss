@@ -1,6 +1,7 @@
 @import "../../../../scss/mixin.scss";
 @import "../../../../scss/variables.scss";
 
+/// Estilos del contenido de la vista de dietas de entrenador
 .content{
   @include response(sm){
     height: auto;
@@ -22,10 +23,12 @@
   padding-bottom: 6.8rem;
 }
 
+/// Estilo de las migas de pan
 .breadcrumbs {
   @include breadcrumbs();
 }
 
+/// Estilo del contedor de las dietas
 .trainer-diets-container {
   @include response(xl) {
     display: grid;

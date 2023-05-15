@@ -5,6 +5,7 @@
   @include breadcrumbs($margin-left: 5rem);
 }
 
+/// Estilos para la vista de mostrar un solo ejercicio
 .content {
   @include response(md){
     height: calc(100vh - 112px);
@@ -17,6 +18,8 @@
     padding: 0 5rem;
   }
 }
+
+/// Estilos para el contenedor de mostrar un solo ejercicio
 .show-exercise {
   @include response(sm) {
     margin-top: 25rem;

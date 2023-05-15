@@ -1,6 +1,7 @@
 @import "../../../../scss/mixin.scss";
 @import "../../../../scss/variables.scss";
 
+/// Estlos para la vista de clientes de entrenador
 .content{
   @include response(md){
     height: calc(100vh - 112px);
@@ -8,11 +9,13 @@
   height: auto;
 }
 
+/// Estilos del título de la vista
 .trainers-clients-header {
   padding-top: 5rem;
   @include view_header();
 }
 
+/// Estilos del contenedor de los clientes
 .trainers-clients-container {
   @include response(lg) {
     display: grid;
@@ -186,6 +189,7 @@
     --bs-pagination-bg: var(--background-color);
   }
 
+  /// Estilos de los mensajes de no hay usuarios o clientes
   .no-clients-message,
   .no-users-message {
     font-size: 2rem;

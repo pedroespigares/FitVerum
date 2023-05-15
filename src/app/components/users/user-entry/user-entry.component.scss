@@ -1,6 +1,7 @@
 @import "../../../../scss/mixin.scss";
 @import "../../../../scss/variables.scss";
 
+/// Estilos para la vista de editar ejercicio
 .content{
   @include response(md){
     height: calc(100vh - 112px);
@@ -8,6 +9,7 @@
   height: 175vh;
 }
 
+/// Estilos para el titulo de la vista
 .exercise-title {
   @include view_header();
   &-no-exercise {
@@ -20,6 +22,7 @@
   }
 }
 
+/// Estilos para el contenedor entrada de ejercicio
 .entry-container {
   @include response(lg){
     display: grid;
@@ -193,6 +196,7 @@
   }
 }
 
+/// Estilos para el título del offcanvas
 .offcanvas-title{
   text-align: center !important;
   color: var(--primary-color);

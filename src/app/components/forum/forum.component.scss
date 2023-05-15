@@ -1,12 +1,14 @@
 @import "../../../scss/mixin.scss";
 @import "../../../scss/variables.scss";
 
+/// Estilos del contenido de la vista del foro
 .content {
   height: calc(100vh - 112px);
   @include flex($direction: column, $justify: flex-start, $align: center, $gap: 3rem);
   padding-bottom: 5rem;
 }
 
+/// Estilos del foro
 .forum{
   &-header{
     @include view_header();

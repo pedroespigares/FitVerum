@@ -1,10 +1,12 @@
 @import "../../../../../scss/mixin.scss";
 @import "../../../../../scss/variables.scss";
 
+/// Estilos para las migas de pan
 .breadcrumbs {
   @include breadcrumbs($margin-left: 5rem);
 }
 
+/// Estilos del contenido de la vista de mostrar máquina
 .content {
   @include response(md){
     height: calc(100vh - 112px);
@@ -17,6 +19,8 @@
     padding: 0 5rem;
   }
 }
+
+/// Estilos de la vista de mostrar máquina
 .show-machine {
   @include response(sm) {
     margin-top: 25rem;
@@ -116,6 +120,7 @@
   }
 }
 
+/// Estilos del loader
 .loader {
   @include loader();
 }

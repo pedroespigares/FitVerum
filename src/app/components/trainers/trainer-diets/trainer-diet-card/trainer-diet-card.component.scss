@@ -1,6 +1,7 @@
 @import "../../../../../scss/mixin.scss";
 @import "../../../../../scss/variables.scss";
 
+/// Estilo de card de la dieta
 .diet {
   @include card(false);
   &-img {

@@ -1,6 +1,7 @@
 @import "../../../../../scss/mixin.scss";
 @import "../../../../../scss/variables.scss";
 
+/// Estilos del contenido de la vista de añadir rutina
 .content {
   @include flex($direction: column, $justify: center, $align: center, $gap: 0);
   height: calc(95vh - 116px);
