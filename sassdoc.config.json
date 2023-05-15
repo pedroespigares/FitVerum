@@ -1,0 +1,14 @@
+{
+  "verbose": true,
+  "display": {
+    "access": ["public", "private"],
+    "alias": true,
+    "watermark": true
+  },
+  "theme": "default",
+  "dest": "./docs/sassdoc",
+  "include": [
+    "./src/app/**/*.component.scss",
+    "./src/scss/**/*.scss"
+  ]
+}

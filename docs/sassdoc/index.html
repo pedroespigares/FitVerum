@@ -1,0 +1,190 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Fit-verum - v0.0.0</title><link rel="stylesheet" href="assets/css/main.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="Fit-verum - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="Release the docs!"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title">Fit-verum - 0.0.0</h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="colors"><a href="#colors">colors</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="colors-variable"><a href="#colors-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="colors" data-name="colors" data-type="variable"><a href="#colors-variable-colors">colors</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="colors-function"><a href="#colors-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="colors" data-name="getColor" data-type="function"><a href="#colors-function-getColor">getColor</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="sizes"><a href="#sizes">sizes</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="sizes-variable"><a href="#sizes-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="sizes" data-name="font-sizes" data-type="variable"><a href="#sizes-variable-font-sizes">font-sizes</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="sizes-function"><a href="#sizes-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="sizes" data-name="getFontSize" data-type="function"><a href="#sizes-function-getFontSize">getFontSize</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="undefined"><a href="#undefined">General</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-css"><a href="#undefined-css">css</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name=".header" data-type="css"><a href="#undefined-css-.header">.header</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name=".header-nav" data-type="css"><a href="#undefined-css-.header-nav">.header-nav</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name=".logo" data-type="css"><a href="#undefined-css-.logo">.logo</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name=".open .header-nav-hamburger-lines-line-1" data-type="css"><a href="#undefined-css-.open .header-nav-hamburger-lines-line-1">.open .header-nav-hamburger-lines-line-1</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="*" data-type="css"><a href="#undefined-css-*">*</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="html" data-type="css"><a href="#undefined-css-html">html</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name=".container" data-type="css"><a href="#undefined-css-.container">.container</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="a" data-type="css"><a href="#undefined-css-a">a</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name=".content" data-type="css"><a href="#undefined-css-.content">.content</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-variable"><a href="#undefined-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="transition" data-type="variable"><a href="#undefined-variable-transition">transition</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="font-family-title" data-type="variable"><a href="#undefined-variable-font-family-title">font-family-title</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="font-family-text" data-type="variable"><a href="#undefined-variable-font-family-text">font-family-text</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="max-width" data-type="variable"><a href="#undefined-variable-max-width">max-width</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="weight"><a href="#weight">weight</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="weight-variable"><a href="#weight-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="weight" data-name="font-weight" data-type="variable"><a href="#weight-variable-font-weight">font-weight</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="weight-function"><a href="#weight-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="weight" data-name="getFontWeight" data-type="function"><a href="#weight-function-getFontWeight">getFontWeight</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="colors"><div class="container">colors</div></h1><section class="main__sub-section" id="colors-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="colors-variable-colors"><h3 class="item__heading"><a class="item__name" href="#variable-colors">colors</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$colors: (
+  primary: #6a69dc,
+  secondary: #aeafe3,
+  tertiary: #8c97bf,
+  cuaternary: #596073,
+  background: #ffffff,
+  text: #060606,
+);</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Mapa de colores</p></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#colors-function-getColor"><code>getColor</code></a></li></ul></section></section><section class="main__sub-section" id="colors-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="colors-function-getColor"><h3 class="item__heading"><a class="item__name" href="#function-getColor">getColor</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function getColor($color) { 
+  @return map-get($colors, $color);
+ }" data-collapsed="@function getColor($color) { ... }"><code>@function getColor($color) { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>Nombre del color del mapa de colores</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Color</code> &mdash;<p>Color en Hexadecimal</p></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#colors-variable-colors"><code>colors</code></a></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="sizes"><div class="container">sizes</div></h1><section class="main__sub-section" id="sizes-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="sizes-variable-font-sizes"><h3 class="item__heading"><a class="item__name" href="#variable-font-sizes">font-sizes</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$font-sizes: (
+  landing-text-title: 12rem,
+  xxxl: 6rem,
+  xxl: 4rem,
+  xl: 3rem,
+  lg: 2.5rem,
+  md: 2rem,
+  sm: 1.8rem,
+  xs: 1.6rem,
+  xxs: 1.4rem,
+);</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#sizes-function-getFontSize"><code>getFontSize</code></a></li></ul></section></section><section class="main__sub-section" id="sizes-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="sizes-function-getFontSize"><h3 class="item__heading"><a class="item__name" href="#function-getFontSize">getFontSize</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function getFontSize($size) { 
+  @return map-get($font-sizes, $size);
+ }" data-collapsed="@function getFontSize($size) { ... }"><code>@function getFontSize($size) { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$size</code></th><td data-label="desc"><p>Nombre del tamaño de fuente del mapa de tamaños</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Size</code> &mdash;<p>Tamaño de fuente en rem</p></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#sizes-variable-font-sizes"><code>font-sizes</code></a></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="undefined"><div class="container">General</div></h1><section class="main__sub-section" id="undefined-css"><h2 class="main__heading--secondary"><div class="container">css</div></h2><section class="main__item container item" id="undefined-css-.header"><h3 class="item__heading"><a class="item__name" href="#css-.header">.header</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.header {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  @include response(xl) {
+    display: grid;
+    grid-template-columns: minmax(10rem, 1fr) repeat(7, minmax(min-content, 16rem)) minmax(10rem, 1fr);
+    grid-template-rows: repeat(2fr);
+    grid-gap: 2rem;
+  }
+  @include flex(
+    $direction: row,
+    $justify: space-around,
+    $align: center,
+    $gap: 0.5rem
+  );
+  background-color: var(--background-color);
+
+  &amp;-user-img{
+    display: inline-block;
+    border-radius: 50%;
+  }
+}</code>" data-collapsed=".header { ... }"><code>.header { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Layout cabecera</p></div></section><section class="main__item container item" id="undefined-css-.header-nav"><h3 class="item__heading"><a class="item__name" href="#css-.header-nav">.header-nav</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.header-nav {
+  grid-column: 8/10;
+  @include navigation($hamburger: true);
+
+  @include response(xl) {
+    grid-column: 5/10;
+    padding-right: 5rem;
+    @include navigation($hamburger: false);
+  }
+
+  &amp;-icon {
+    @include response(xl) {
+      font-size: getFontSize(xl);
+    }
+    font-size: getFontSize(lg);
+    color: var(--cuaternary-color);
+    transition: $transition;
+    border: none;
+
+    &amp;:hover {
+      cursor: pointer;
+      color: var(--primary-color);
+      transition: $transition;
+    }
+
+    &amp;:focus {
+      outline: none;
+    }
+  };
+
+  select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    /* SVG background image */
+    background: none;
+    background-size: 12px;
+    background-position-x: right;
+    background-position-y: calc(100% - 10px);
+    background-repeat: no-repeat;
+  }
+}</code>" data-collapsed=".header-nav { ... }"><code>.header-nav { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Layout Navs</p></div></section><section class="main__item container item" id="undefined-css-.logo"><h3 class="item__heading"><a class="item__name" href="#css-.logo">.logo</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.logo {
+  grid-column: 1 / 5;
+  grid-row: 1 / 2;
+
+  @include response(xl) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  padding: 1rem;
+
+  @include response(xl) {
+    @include flex(
+      $direction: row,
+      $justify: center,
+      $align: center,
+      $gap: 3rem
+    );
+  }
+
+  @include flex(
+    $direction: column,
+    $justify: center,
+    $align: center,
+    $gap: 0.5rem
+  );
+
+  &amp;-img {
+    @include response(xl) {
+      width: 12rem;
+    }
+
+    width: 9rem;
+    transition: $transition;
+    cursor: pointer;
+  }
+
+  &amp;-text {
+    @include response(xl) {
+      font-size: getFontSize(xxl);
+    }
+    font-size: getFontSize(xl);
+    font-family: $font-family-title;
+    text-transform: uppercase;
+    font-weight: getFontWeight(bold);
+    transition: $transition;
+    cursor: pointer;
+    text-align: center;
+
+    &amp;-first {
+      color: var(--text-color);
+    }
+
+    &amp;-second {
+      background-color: var(--primary-color);
+      background-image: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0)
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+  }
+}</code>" data-collapsed=".logo { ... }"><code>.logo { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Layout Logo</p></div></section><section class="main__item container item" id="undefined-css-.open .header-nav-hamburger-lines-line-1"><h3 class="item__heading"><a class="item__name" href="#css-.open .header-nav-hamburger-lines-line-1">.open .header-nav-hamburger-lines-line-1</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.open .header-nav-hamburger-lines-line-1 {
+  transform: rotate(47deg);
+}</code>" data-collapsed=".open .header-nav-hamburger-lines-line-1 { ... }"><code>.open .header-nav-hamburger-lines-line-1 { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Componente de preparación de hamburguesa</p></div></section><section class="main__item container item" id="undefined-css-*"><h3 class="item__heading"><a class="item__name" href="#css-*">*</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family-text;
+  scroll-behavior: smooth;
+}</code>" data-collapsed="* { ... }"><code>* { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Inicialización de todo el documento</p></div></section><section class="main__item container item" id="undefined-css-html"><h3 class="item__heading"><a class="item__name" href="#css-html">html</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>html {
+  // Hacemos que la raiz sea 62.5% para que 1rem = 10px (mas facil de trabajar)
+  font-size: 62.5%;
+  @include response(md) {
+    font-size: 56.25%;
+  }
+
+  @include response(sm) {
+    font-size: 50%;
+  }
+}</code>" data-collapsed="html { ... }"><code>html { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Inicialización de HTML</p></div></section><section class="main__item container item" id="undefined-css-.container"><h3 class="item__heading"><a class="item__name" href="#css-.container">.container</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.container {
+  display: grid;
+  grid-template-columns: minmax(6rem, 1fr) repeat(8, minmax(min-content, 16rem)) minmax(
+      6rem,
+      1fr
+    );
+  grid-template-rows: repeat(3, min-content);
+}</code>" data-collapsed=".container { ... }"><code>.container { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Container principal</p></div></section><section class="main__item container item" id="undefined-css-a"><h3 class="item__heading"><a class="item__name" href="#css-a">a</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>a {
+  text-decoration: none;
+}</code>" data-collapsed="a { ... }"><code>a { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Inicialización de enlaces</p></div></section><section class="main__item container item" id="undefined-css-.content"><h3 class="item__heading"><a class="item__name" href="#css-.content">.content</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.content {
+  grid-row: 2;
+    grid-column: 1 / -1;
+}</code>" data-collapsed=".content { ... }"><code>.content { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Layout para contenido de la página</p></div></section></section><section class="main__sub-section" id="undefined-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="undefined-variable-transition"><h3 class="item__heading"><a class="item__name" href="#variable-transition">transition</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$transition: 0.2s;</code></pre></div></section><section class="main__item container item" id="undefined-variable-font-family-title"><h3 class="item__heading"><a class="item__name" href="#variable-font-family-title">font-family-title</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$font-family-title: &quot;Plus Jakarta Sans&quot;, sans-serif;</code></pre></div></section><section class="main__item container item" id="undefined-variable-font-family-text"><h3 class="item__heading"><a class="item__name" href="#variable-font-family-text">font-family-text</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$font-family-text: &quot;Poppins&quot;, sans-serif;</code></pre></div></section><section class="main__item container item" id="undefined-variable-max-width"><h3 class="item__heading"><a class="item__name" href="#variable-max-width">max-width</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$max-width: 1200px;</code></pre></div></section></section></section><section class="main__section"><h1 class="main__heading" id="weight"><div class="container">weight</div></h1><section class="main__sub-section" id="weight-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="weight-variable-font-weight"><h3 class="item__heading"><a class="item__name" href="#variable-font-weight">font-weight</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$font-weight: (
+  extraLight: 200,
+  light: 300,
+  normal: 400,
+  medium: 500,
+  semi-bold: 600,
+  bold: 700,
+  extraBold: 800,
+);</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Mapa de pesos de fuente</p></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#weight-function-getFontWeight"><code>getFontWeight</code></a></li></ul></section></section><section class="main__sub-section" id="weight-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="weight-function-getFontWeight"><h3 class="item__heading"><a class="item__name" href="#function-getFontWeight">getFontWeight</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function getFontWeight($weight) { 
+  @return map-get($font-weight, $weight);
+ }" data-collapsed="@function getFontWeight($weight) { ... }"><code>@function getFontWeight($weight) { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$weight</code></th><td data-label="desc"><p>Nombre del peso de fuente del mapa de pesos</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Weight</code> &mdash;<p>Peso de fuente</p></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#weight-variable-font-weight"><code>font-weight</code></a></li></ul></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --> <span class="project-info__name">Fit-verum</span><!-- Version --> <span class="project-info__version">- v0.0.0</span><!-- License --></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>
