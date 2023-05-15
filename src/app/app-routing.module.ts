@@ -36,6 +36,7 @@ import { AddDietComponent } from './components/trainers/trainer-diets/add-diet/a
 import { EditDietComponent } from './components/trainers/trainer-diets/edit-diet/edit-diet.component';
 import { ShowDietComponent } from './components/trainers/trainer-diets/show-diet/show-diet.component';
 import { ForumComponent } from './components/forum/forum.component';
+import { EditEntryComponent } from './components/users/user-entry/edit-entry/edit-entry.component';
 import { AuthGuard } from './services/guards/auth.guard';
 import { AdminGuard } from './services/guards/admin.guard';
 import { TrainerGuard } from './services/guards/trainer.guard';
@@ -44,7 +45,7 @@ import { NotloggedGuard } from './services/guards/notlogged.guard';
 const routes: Routes = [
   { path: '', component: LandingComponent},
   { path: 'about-us', component: AboutUsComponent},
-  { path: 'login', component: LoginComponent},
+  { path: 'login', component: LoginComponent, canActivate: [NotloggedGuard]},
   { path: 'register', component: RegisterComponent, canActivate: [NotloggedGuard]},
   { path: 'forum', component: ForumComponent},
   { path: 'user/diets', component: UserDietsComponent, canActivate: [AuthGuard]},
@@ -56,6 +57,7 @@ const routes: Routes = [
   { path: 'user/calendar/:date', component: UserRoutinesComponent, canActivate: [AuthGuard]},
   { path: 'user/calendar/:date/:routineID', component: UserRoutineExercisesComponent, canActivate: [AuthGuard]},
   { path: 'user/calendar/:date/entry/:exerciseID', component: UserEntryComponent, canActivate: [AuthGuard]},
+  { path: 'user/edit-entry/:id', component: EditEntryComponent, canActivate: [AuthGuard]},
   { path: 'user/evolution/:exerciseID', component: UserEvolutionComponent, canActivate: [AuthGuard]},
   { path: 'user/modification', component: UserModificationComponent, canActivate: [AuthGuard]},
   { path: 'administration/users', component: UsersComponent, canActivate: [AdminGuard]},

@@ -11,6 +11,9 @@
             <p class="user-info-container-email">{{user.email}}</p>
             <p class="user-info-container-membership">{{"MODIFICATIONS.MEMBER-SINCE" | translate}}{{membership | date: 'longDate'}}</p>
         </div>
+        <div *ngIf="!loading" class="user-info-container">
+          <button class="user-info-container-btn" (click)="deleteUser()">{{"MODIFICATIONS.DELETE-ACCOUNT" | translate}}</button>
+        </div>
     </div>
     <h2 *ngIf="!loading && !this.auth.thirdPartyLogin" class="change-data-title">{{"MODIFICATIONS.CHANGE-USER-DATA" | translate}}</h2>
     <form *ngIf="!loading && !this.auth.thirdPartyLogin" class="change-data">
@@ -32,6 +35,7 @@
     </form>
 
     <p *ngIf="errorMessage != ''" class="error-message">{{errorMessage}}</p>
+    <p *ngIf="this.auth.userModificationError != ''" class="error-message">{{this.auth.userModificationError}}</p>
     <p *ngIf="success" class="success-message">{{successMessage}}</p>
     <h3 *ngIf="!loading && this.auth.thirdPartyLogin" class="thirdPartyLoginMessage">{{"MODIFICATIONS.3RD-PARTY" | translate}}</h3>
 </main>

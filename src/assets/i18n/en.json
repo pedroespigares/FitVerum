@@ -247,7 +247,10 @@
       "COMMENTS": "Comments",
       "NO-COMMENTS": "This entry doesn't have any comments",
       "SEE-EVOLUTION": "See Evolution",
-      "BACK": "Back"
+      "BACK": "Back",
+      "ADDED-TOAST": "Entry added successfully!",
+      "DELETED-TOAST": "Entry deleted successfully!",
+      "EDITED-TOAST": "Entry edited successfully!"
     },
     "ROUTINES": {
       "YOUR-ROUTINES": "Your Routines",
@@ -273,7 +276,8 @@
       "COMMENTS": "Comments",
       "SAVE": "Save",
       "LC-DESCRIPTION": "description",
-      "AT": "At"
+      "AT": "At",
+      "UPDATE": "Update"
     }
   },
   "MODIFICATIONS": {
@@ -283,7 +287,8 @@
     "3RD-PARTY": "You logged with a third party service, so you can't change your account information",
     "CHANGE-USER-DATA": "Change User Data",
     "CHANGE-TRAINER-DATA": "Change Trainer Data",
-    "CHANGE-DATA": "Change Data"
+    "CHANGE-DATA": "Change Data",
+    "DELETE-ACCOUNT": "Delete Account"
   },
   "FORUM": {
     "TITLE": "Forum",

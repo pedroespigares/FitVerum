@@ -1,10 +1,11 @@
-import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef, OnDestroy } from '@angular/core';
 import { CalendarEvent, CalendarView, DAYS_OF_WEEK, CalendarEventTimesChangedEvent } from 'angular-calendar';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { DatabaseService } from 'src/app/services/database.service';
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs';
+import { ToastsService } from 'src/app/services/toasts.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -12,7 +13,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './user-calendar.component.html',
   styleUrls: ['./user-calendar.component.scss']
 })
-export class UserCalendarComponent implements OnInit {
+export class UserCalendarComponent implements OnInit, OnDestroy {
   @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
   view: CalendarView = CalendarView.Month;
 
@@ -24,7 +25,11 @@ export class UserCalendarComponent implements OnInit {
 
   modalDataDate: Date;
 
-  constructor(private router: Router, private auth: AuthService, private database: DatabaseService, private modalService: NgbModal) {}
+  showAddToast: boolean = this.toast.entryAdded;
+  showDeleteToast: boolean = false;
+  showUpdatedToast: boolean = this.toast.entryUpdated;
+
+  constructor(private router: Router, private auth: AuthService, private database: DatabaseService, private modalService: NgbModal, private toast: ToastsService) {}
 
   ngOnInit() {
     this.fetchEntries();
@@ -82,5 +87,17 @@ export class UserCalendarComponent implements OnInit {
     this.database.delete('userEntry', id);
     this.modalService.dismissAll();
     this.refresh.next();
+    this.showDeleteToast = true;
+  }
+
+  goToUpdate(id: string) {
+    this.modalService.dismissAll();
+    this.router.navigateByUrl(`/user/edit-entry/${id}`);
+  }
+
+  ngOnDestroy(): void {
+    this.toast.entryAdded = false;
+    this.showDeleteToast = false;
+    this.toast.entryUpdated = false;
   }
 }

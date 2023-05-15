@@ -7,6 +7,7 @@ import {
   uploadBytes,
   getDownloadURL,
 } from '@angular/fire/storage';
+import { getAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-trainer-modification',
@@ -44,6 +45,9 @@ export class TrainerModificationComponent implements OnInit {
   displayNameChanged: boolean = false;
   passwordChanged: boolean = false;
 
+  userFromNativeAuth: any = getAuth();
+
+
   constructor(private database: DatabaseService, public auth: AuthService) {
     this.storage = getStorage();
   }
@@ -58,7 +62,7 @@ export class TrainerModificationComponent implements OnInit {
     });
   }
 
-  
+
   changePassword() {
     let regularExpression = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$");
 
@@ -100,7 +104,7 @@ export class TrainerModificationComponent implements OnInit {
     });
   }
 
-  // FIXME: Cierra sesión al cambiar el email
+  // FIXME: Cierra sesión al cambiar el email ¿debería?
   changeData(){
     if(this.uploadedPhotoURL != null){
       this.database.updatePhotoURL(this.id, this.uploadedPhotoURL);
@@ -132,6 +136,16 @@ export class TrainerModificationComponent implements OnInit {
         this.auth.checkAuthState();
         this.auth.userPhoto = this.trainer.photoURL;
       });
+    }
+  }
+
+  deleteTrainer() {
+    let confirmation = confirm('Are you sure you want to delete your account?');
+    if (confirmation) {
+      this.auth.deleteAccount(this.userFromNativeAuth.currentUser);
+      this.database.deleteTrainerWithUserID(this.auth.userID);
+      this.database.deleteUserData(this.auth.userID, true);
+      this.auth.signOut();
     }
   }
 }

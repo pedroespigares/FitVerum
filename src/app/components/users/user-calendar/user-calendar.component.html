@@ -1,4 +1,37 @@
 <main class="content">
+  <div class="toast-container">
+    <ngb-toast *ngIf="showAddToast" [autohide]="true" (hidden)="showAddToast=false">
+      <ng-template ngbToastHeader>
+        <div class="me-auto">
+          <img src="../../../../assets/images/FitVerumLogo.png" width="40" height="40"/>
+          <strong class="mx-1">FitVerum</strong>
+        </div>
+      </ng-template>
+      {{"USERS.ACTIVITIES.ADDED-TOAST" | translate}}
+    </ngb-toast>
+  </div>
+  <div class="toast-container">
+    <ngb-toast *ngIf="showDeleteToast" [autohide]="true" (hidden)="showDeleteToast=false">
+      <ng-template ngbToastHeader>
+        <div class="me-auto">
+          <img src="../../../../assets/images/FitVerumLogo.png" width="40" height="40"/>
+          <strong class="mx-1">FitVerum</strong>
+        </div>
+      </ng-template>
+      {{"USERS.ACTIVITIES.DELETED-TOAST" | translate}}
+    </ngb-toast>
+  </div>
+  <div class="toast-container">
+    <ngb-toast *ngIf="showUpdatedToast" [autohide]="true" (hidden)="showDeleteToast=false">
+      <ng-template ngbToastHeader>
+        <div class="me-auto">
+          <img src="../../../../assets/images/FitVerumLogo.png" width="40" height="40"/>
+          <strong class="mx-1">FitVerum</strong>
+        </div>
+      </ng-template>
+      {{"USERS.ACTIVITIES.EDITED-TOAST" | translate}}
+    </ngb-toast>
+  </div>
 <div class="calendar-controls">
     <button class="calendar-controls-button"
     mwlCalendarPreviousView
@@ -53,6 +86,9 @@
   <div class="modal-footer">
     <button type="button" class="modal-button-delete" (click)="deleteEvent(modalData?.event?.id)">
       <i class="fa-solid fa-trash"></i>
+    </button>
+    <button type="button" class="modal-button-update" (click)="goToUpdate(modalData?.event?.id)">
+      <i class="fa-solid fa-pen-to-square"></i>
     </button>
     <button type="button" class="modal-button" (click)="openEvolution(modalData?.event?.exerciseID)">
       {{"USERS.ACTIVITIES.SEE-EVOLUTION" | translate}}

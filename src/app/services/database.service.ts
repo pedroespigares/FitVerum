@@ -506,6 +506,25 @@ export class DatabaseService {
     });
   }
 
+  updateUserEntry(id:string, userID: string, start: number, kg: number, repetitions: number, series: number, color: string, title: string, exerciseID: string,comment:string = null){
+    const userEntryRef = doc(this.database, 'userEntry', id);
+    updateDoc(userEntryRef, {
+      userID: userID,
+      start: start,
+      kg: kg,
+      repetitions: repetitions,
+      series: series,
+      color: {
+        primary: color,
+        secondary: color,
+      },
+      draggable: true,
+      comment: comment,
+      title: title,
+      exerciseID: exerciseID,
+    });
+  }
+
   /**
    * Actualizar una rutina
    * @param id
@@ -675,5 +694,133 @@ export class DatabaseService {
   delete(table: string, id: string) {
     const ref = doc(this.database, table, id);
     deleteDoc(ref);
+  }
+
+  /**
+   * Borrar un entrenador a partir de su ID de usuario
+   * @param userID - ID de usuario
+   */
+  deleteTrainerWithUserID(userID: string){
+    const trainerRef = collection(this.database, 'trainers');
+    const q = query(trainerRef, where("userID", "==", userID));
+    const trainerQuery = getDocs(q);
+    trainerQuery.then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        this.delete('trainers', doc.id);
+      });
+    });
+  }
+
+  /**
+   * Borrar un usuario a partir de su ID de usuario
+   * @param userID - ID de usuario
+   */
+  deleteUserWithUserID(userID: string){
+    const userRef = collection(this.database, 'users');
+    const q = query(userRef, where("userID", "==", userID));
+    const userQuery = getDocs(q);
+    userQuery.then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        this.delete('users', doc.id);
+      });
+    });
+  }
+
+  /**
+   * Borrar las dietas asociadas a un usuario o entrenador
+   * @param userID - ID de usuario
+   */
+  deleteDietsWithUserID(userID: string, isTrainer: boolean){
+    const dietsRef = collection(this.database, 'diets');
+    let q: any;
+    if(isTrainer){
+      q = query(dietsRef, where("trainerID", "==", userID));
+    } else{
+      q = query(dietsRef, where("userID", "==", userID));
+    }
+    const dietsQuery = getDocs(q);
+    dietsQuery.then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        this.delete('diets', doc.id);
+      });
+    });
+  }
+
+  /**
+   * Borrar las rutinas asociadas a un usuario o entrenador
+   * @param userID - ID de usuario
+   */
+  deleteRoutinesWithUserID(userID: string, isTrainer: boolean){
+    const routinesRef = collection(this.database, 'routines');
+    let q: any;
+    if(isTrainer){
+      q = query(routinesRef, where("trainerID", "==", userID));
+    } else{
+      q = query(routinesRef, where("userID", "==", userID));
+    }
+    const routinesQuery = getDocs(q);
+    routinesQuery.then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        this.delete('routines', doc.id);
+      });
+    });
+  }
+
+  /**
+   * Borrar los mensajes del foro asociadas a un usuario o entrenador
+   * @param userID - ID de usuario
+   */
+  deleteForumMessagesWithUserID(userID: string){
+    const forumMessagesRef = collection(this.database, 'forumMessages');
+    const q = query(forumMessagesRef, where("userID", "==", userID));
+    const forumMessagesQuery = getDocs(q);
+    forumMessagesQuery.then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        this.delete('forumMessages', doc.id);
+      });
+    });
+  }
+
+  /**
+   * Borrar las entradas de cita asociadas a un usuario o entrenador
+   * @param userID - ID de usuario
+   */
+  deleteTrainerEntryWithUserID(userID: string, isTrainer: boolean){
+    const trainerEntryRef = collection(this.database, 'trainerEntry');
+    let q: any;
+    if(isTrainer){
+      q = query(trainerEntryRef, where("trainerID", "==", userID));
+    } else{
+      q = query(trainerEntryRef, where("userID", "==", userID));
+    }
+    const trainerEntryQuery = getDocs(q);
+    trainerEntryQuery.then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        this.delete('trainerEntry', doc.id);
+      });
+    });
+  }
+
+  /**
+   * Borrar las entradas de usuario asociadas a un usuario
+   * @param userID - ID de usuario
+   */
+  deleteUserEntryWithUserID(userID: string){
+    const userEntryRef = collection(this.database, 'userEntry');
+    const q = query(userEntryRef, where("userID", "==", userID));
+    const userEntryQuery = getDocs(q);
+    userEntryQuery.then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        this.delete('userEntry', doc.id);
+      });
+    });
+  }
+
+  deleteUserData(userID: string, isTrainer: boolean){
+    this.deleteDietsWithUserID(userID, isTrainer);
+    this.deleteRoutinesWithUserID(userID, isTrainer);
+    this.deleteForumMessagesWithUserID(userID);
+    this.deleteTrainerEntryWithUserID(userID, isTrainer);
+    this.deleteUserEntryWithUserID(userID);
   }
 }

@@ -10,6 +10,7 @@ import {
   updatePassword,
   sendPasswordResetEmail,
   updateEmail,
+  deleteUser
 } from '@angular/fire/auth';
 import {
   Firestore,
@@ -35,6 +36,7 @@ export class AuthService {
   public userExists: boolean = false;
   public userChecked: boolean = false;
   public thirdPartyLogin: boolean = false;
+  public userModificationError: string = '';
 
   constructor(
     public auth: Auth,
@@ -308,10 +310,12 @@ export class AuthService {
   updatePassword(password: string) {
     updatePassword(this.auth.currentUser, password)
       .then(() => {
-        //
+        this.userModificationError = '';
       })
       .catch((error) => {
-        console.log(error);
+        if(error.code == 'auth/requires-recent-login'){
+          this.userModificationError = 'You need to reauthenticate to delete your account';
+        }
       });
   }
 
@@ -322,11 +326,27 @@ export class AuthService {
   updateEmail(email: string) {
     updateEmail(this.auth.currentUser, email)
       .then(() => {
-        //
+        this.userModificationError = '';
       })
       .catch((error) => {
-        console.log(error);
+        if(error.code == 'auth/requires-recent-login'){
+          this.userModificationError = 'You need to reauthenticate to delete your account';
+        }
       });
+  }
+
+  /**
+   * Borrar la cuenta del usuario
+   * @param authUser
+   */
+  deleteAccount(authUser: any) {
+    deleteUser(authUser).then(() => {
+      this.userModificationError = '';
+    }).catch((error) => {
+      if(error.code == 'auth/requires-recent-login'){
+        this.userModificationError = 'You need to reauthenticate to delete your account';
+      }
+    });
   }
 
   /**

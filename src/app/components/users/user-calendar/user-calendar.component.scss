@@ -161,3 +161,9 @@
   background-color: var(--background-color);
   margin-bottom: 3rem;
 }
+
+@include toast(-20rem, true);
+
+@include response(xl){
+  @include toast(-20rem);
+}

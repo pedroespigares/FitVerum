@@ -70,6 +70,18 @@
       color: var(--text-color);
       font-weight: getFontWeight(normal);
     }
+    &-btn{
+      @include button($size: md, $border-radius: 1rem, $focus: true);
+      background-color: #e74c3c;
+      border: none;
+      color: white;
+      transition: $transition;
+      &:hover{
+        background-color: #c0392b;
+        transition: $transition;
+        color: white;
+      }
+    }
   }
 }
 

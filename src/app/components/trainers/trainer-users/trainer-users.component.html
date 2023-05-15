@@ -18,7 +18,7 @@
               <img
                 *ngIf="user.photoURL == null"
                 class="trainers-clients-container-users-container-table-user-img"
-                src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/userPic.png?alt=media&token=d7df8a6b-1817-405d-860c-8d9070a184bf"
+                src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=938b94bc-1a96-4cfd-9cec-7c97da53e3ce"
                 alt="User Image"
               />
             </td>
@@ -83,7 +83,7 @@
       <div class="pagination">
         <ngb-pagination
         *ngIf="this.clients.length > 4"
-          [collectionSize]="this.users.length"
+          [collectionSize]="this.clients.length"
           [pageSize]="pageSize_2"
           [directionLinks]="false"
           [(page)]="page_2"

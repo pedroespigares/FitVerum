@@ -43,5 +43,6 @@ export class TrainerUsersComponent implements OnInit {
 
   unsubscribeClient(clientID: string) {
     this.database.unsubscribeClient(clientID);
+    this.database.deleteRoutinesWithUserID(clientID, false);
   }
 }

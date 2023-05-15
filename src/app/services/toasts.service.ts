@@ -10,5 +10,8 @@ export class ToastsService {
   public routineAdded: boolean = false;
   public routineDeleted: boolean = false;
   public routineEdited: boolean = false;
+
+  public entryAdded: boolean = false;
+  public entryUpdated: boolean = false;
   constructor() { }
 }

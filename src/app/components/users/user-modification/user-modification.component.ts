@@ -7,6 +7,7 @@ import {
   uploadBytes,
   getDownloadURL,
 } from '@angular/fire/storage';
+import { getAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-user-modification',
@@ -43,6 +44,8 @@ export class UserModificationComponent implements OnInit {
   emailChanged: boolean = false;
   displayNameChanged: boolean = false;
   passwordChanged: boolean = false;
+
+  userFromNativeAuth: any = getAuth();
 
   constructor(private database: DatabaseService, public auth: AuthService) {
     this.storage = getStorage();
@@ -135,6 +138,16 @@ export class UserModificationComponent implements OnInit {
         this.auth.checkAuthState();
         this.auth.userPhoto = this.user.photoURL;
       });
+    }
+  }
+
+  deleteUser() {
+    let confirmation = confirm('Are you sure you want to delete your account?');
+    if (confirmation) {
+      this.auth.deleteAccount(this.userFromNativeAuth.currentUser);
+      this.database.deleteUserWithUserID(this.auth.userID);
+      this.database.deleteUserData(this.auth.userID, false);
+      this.auth.signOut();
     }
   }
 }

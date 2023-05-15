@@ -2,7 +2,7 @@
   "HEADER": {
     "NAVBAR": {
       "HOME": "Inicio",
-      "ABOUT": "Sobre nosotros",
+      "ABOUT": "Conócenos",
       "ACTIVITIES": "Actividades",
       "MY-ROUTINES": "Rutinas",
       "MY-DIETS": "Dietas",
@@ -248,7 +248,10 @@
       "COMMENTS": "Comentarios",
       "NO-COMMENTS": "Esta entrada no tiene comentarios",
       "SEE-EVOLUTION": "Ver evolución",
-      "BACK": "Volver"
+      "BACK": "Volver",
+      "ADDED-TOAST": "Entrada añadida correctamente!",
+      "DELETED-TOAST": "Entrada borrada correctamente!",
+      "EDITED-TOAST": "Entrada actualizada correctamente!"
     },
     "ROUTINES": {
       "YOUR-ROUTINES": "Tus Rutinas",
@@ -274,17 +277,19 @@
       "COMMENTS": "Comentarios",
       "SAVE": "Guardar",
       "LC-DESCRIPTION": "descripción",
-      "AT": "El"
+      "AT": "El",
+      "UPDATE": "Actualizar"
     }
   },
   "MODIFICATIONS": {
     "USER-INFO": "Información del Usuario",
     "TRAINER-INFO": "Información del entrenador",
     "MEMBER-SINCE": "Miembro desde ",
-    "3RD-PARTY": "Tu cuenta es de un tercero, por lo que no puedes cambiar tu información",
+    "3RD-PARTY": "Tu cuenta está asociada a la de un servicio de terceros, por lo que no puedes cambiar tu información",
     "CHANGE-USER-DATA": "Cambiar datos de usuario",
     "CHANGE-TRAINER-DATA": "Cambiar datos de entrenador",
-    "CHANGE-DATA": "Cambiar datos"
+    "CHANGE-DATA": "Cambiar datos",
+    "DELETE-ACCOUNT": "Borrar cuenta"
   },
   "FORUM": {
     "TITLE": "Foro",

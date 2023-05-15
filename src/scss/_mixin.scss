@@ -430,11 +430,14 @@
   background-color: var(--background-color);
 }
 
-@mixin normal_delete_button {
+@mixin normal_button($color: #e74c3c) {
   color: white;
-  background-color: #e74c3c;
+  background-color: $color;
   border: none;
-  font-size: getFontSize(xl);
+  @include response(xl) {
+    font-size: getFontSize(xl);
+  }
+  font-size: getFontSize(md);
   height: 6.5rem;
   border-radius: 0.5rem;
   transition: $transition;
@@ -492,7 +495,11 @@
     @include button(md, true, $border-radius: 0.5rem, $heigth: 6.5rem);
 
     &-delete {
-      @include normal_delete_button();
+      @include normal_button();
+    }
+
+    &-update {
+      @include normal_button(#f1c40f);
     }
   }
 
@@ -597,7 +604,7 @@
         background-color: var(--primary-color);
       }
       width: 50%;
-      box-shadow: 0px 0px 27px -3px var(--box-shadow--normal);
+      box-shadow: 0px 0px 27px -3px var(--box-shadow-normal);
     }
 
     padding-bottom: 5rem;
