@@ -109,9 +109,13 @@ export class AuthService {
       .catch((error) => {
         this.isLogged = false;
         this.userID = '';
-        this.failedError = error.message
-          .split('Firebase: Error (auth/')[1]
-          .split(').')[0];
+        if(error.message == 'Firebase: Error (auth/email-already-in-use).'){
+          this.failedError = 'This email is already in use';
+        } else if (error.message == 'Firebase: Error (auth/invalid-email).'){
+          this.failedError = 'Invalid email';
+        } else if (error.message == 'Firebase: Error (auth/weak-password).'){
+          this.failedError = 'Weak password';
+        }
       });
   }
 

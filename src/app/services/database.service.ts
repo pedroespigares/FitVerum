@@ -91,6 +91,40 @@ export class DatabaseService {
   }
 
   /**
+   * Obtener los datos de un usuario
+   * @param userID - ID del usuario
+   * @returns - Datos del usuario
+   */
+  async getUserDocumentID(userID: string) {
+    const userRef = collection(this.database, 'users');
+    const q = query(userRef, where('userID', '==', userID));
+    const querySnapshot = await getDocs(q);
+    let id = '';
+    querySnapshot.forEach((doc) => {
+      id = doc.id;
+    }
+    );
+    return id;
+  }
+
+  /**
+   * Obtener los datos de un usuario
+   * @param userID - ID del usuario
+   * @returns - Datos del usuario
+   */
+  async getTrainerDocumentID(trainerID: string) {
+    const trainerRef = collection(this.database, 'trainers');
+    const q = query(trainerRef, where('trainerID', '==', trainerID));
+    const querySnapshot = await getDocs(q);
+    let id = '';
+    querySnapshot.forEach((doc) => {
+      id = doc.id;
+    }
+    );
+    return id;
+  }
+
+  /**
    * Obtener los usuarios sin entrenador
    * @returns - Observable con los usuarios sin entrenador
    */
@@ -701,13 +735,8 @@ export class DatabaseService {
    * @param userID - ID de usuario
    */
   deleteTrainerWithUserID(userID: string){;
-    const trainerRef = collection(this.database, 'trainers');
-    const q = query(trainerRef, where("trainerID", "==", userID));
-    const trainersQuery = getDocs(q);
-    trainersQuery.then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        this.delete('trainers', doc.id);
-      });
+    this.getTrainerDocumentID(userID).then((id) => {
+      this.delete('trainers', id);
     });
   }
 
@@ -716,13 +745,8 @@ export class DatabaseService {
    * @param userID - ID de usuario
    */
   deleteUserWithUserID(userID: string){
-    const userRef = collection(this.database, 'users');
-    const q = query(userRef, where("userID", "==", userID));
-    const usersQuery = getDocs(q);
-    usersQuery.then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        this.delete('users', doc.id);
-      });
+    this.getUserDocumentID(userID).then((id) => {
+      this.delete('users', id);
     });
   }
 
