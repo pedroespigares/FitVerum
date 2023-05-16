@@ -700,11 +700,11 @@ export class DatabaseService {
    * Borrar un entrenador a partir de su ID de usuario
    * @param userID - ID de usuario
    */
-  deleteTrainerWithUserID(userID: string){
+  deleteTrainerWithUserID(userID: string){;
     const trainerRef = collection(this.database, 'trainers');
-    const q = query(trainerRef, where("userID", "==", userID));
-    const trainerQuery = getDocs(q);
-    trainerQuery.then((querySnapshot) => {
+    const q = query(trainerRef, where("trainerID", "==", userID));
+    const trainersQuery = getDocs(q);
+    trainersQuery.then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         this.delete('trainers', doc.id);
       });
@@ -718,8 +718,8 @@ export class DatabaseService {
   deleteUserWithUserID(userID: string){
     const userRef = collection(this.database, 'users');
     const q = query(userRef, where("userID", "==", userID));
-    const userQuery = getDocs(q);
-    userQuery.then((querySnapshot) => {
+    const usersQuery = getDocs(q);
+    usersQuery.then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         this.delete('users', doc.id);
       });
@@ -816,6 +816,11 @@ export class DatabaseService {
     });
   }
 
+  /**
+   * Borrar todos los datos de un usuario o entrenador
+   * @param userID 
+   * @param isTrainer 
+   */
   deleteUserData(userID: string, isTrainer: boolean){
     this.deleteDietsWithUserID(userID, isTrainer);
     this.deleteRoutinesWithUserID(userID, isTrainer);

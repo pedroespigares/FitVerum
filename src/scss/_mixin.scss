@@ -891,10 +891,10 @@
               $justify: space-between,
               $align: center,
             );
+            @include input($size: md);
             @include response(desktop){
               @include input();
             }
-            @include input($size: md);
             padding-right: 2rem;
             padding-left: 2rem;
             &-text {
@@ -927,10 +927,10 @@
         }
 
         &-input {
+          @include input($size: md);
           @include response(desktop){
             @include input();
           }
-          @include input($size: md);
 
           &-file {
             display: none;
@@ -938,10 +938,10 @@
         }
 
         &-textarea {
+          @include input($size: md);
           @include response(desktop){
             @include input();
           }
-          @include input($size: md);
           resize: both;
         }
       }
@@ -1128,10 +1128,10 @@
               $justify: space-between,
               $align: center,
             );
+            @include input($size: md);
             @include response(desktop){
               @include input();
             }
-            @include input($size: md);
             padding-right: 2rem;
             padding-left: 2rem;
             &-text {
@@ -1158,10 +1158,10 @@
         }
 
         &-input {
+          @include input($size: md);
           @include response(desktop){
             @include input();
           }
-          @include input($size: md);
 
           &-file {
             display: none;
@@ -1169,10 +1169,10 @@
         }
 
         &-textarea {
+          @include input($size: md);
           @include response(desktop){
             @include input();
           }
-          @include input($size: md);
           resize: both;
         }
       }

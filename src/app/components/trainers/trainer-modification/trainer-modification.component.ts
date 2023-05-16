@@ -142,10 +142,12 @@ export class TrainerModificationComponent implements OnInit {
   deleteTrainer() {
     let confirmation = confirm('Are you sure you want to delete your account?');
     if (confirmation) {
-      this.auth.deleteAccount(this.userFromNativeAuth.currentUser);
-      this.database.deleteTrainerWithUserID(this.auth.userID);
-      this.database.deleteUserData(this.auth.userID, true);
-      this.auth.signOut();
+      this.auth.deleteAccount(this.userFromNativeAuth.currentUser).then(() => {
+        this.database.deleteTrainerWithUserID(this.auth.userID);
+        this.auth.signOut();
+      }).catch((error) => {
+        console.log(error);
+      });
     }
   }
 }

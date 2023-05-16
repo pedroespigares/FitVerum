@@ -151,10 +151,10 @@
       }
 
       &-input {
+        @include input($size: md);
         @include response(desktop){
           @include input();
         }
-        @include input($size: md);
       }
 
       &-password-info {

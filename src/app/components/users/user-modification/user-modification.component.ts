@@ -144,10 +144,11 @@ export class UserModificationComponent implements OnInit {
   deleteUser() {
     let confirmation = confirm('Are you sure you want to delete your account?');
     if (confirmation) {
-      this.auth.deleteAccount(this.userFromNativeAuth.currentUser);
-      this.database.deleteUserWithUserID(this.auth.userID);
-      this.database.deleteUserData(this.auth.userID, false);
-      this.auth.signOut();
+        this.database.deleteUserWithUserID(this.auth.userID);
+        this.database.deleteUserData(this.auth.userID, false);
+        this.auth.deleteAccount(this.userFromNativeAuth.currentUser).then(() => {
+          this.auth.signOut();
+      });
     }
   }
 }

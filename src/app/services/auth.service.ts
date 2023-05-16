@@ -340,8 +340,8 @@ export class AuthService {
    * Borrar la cuenta del usuario
    * @param authUser
    */
-  deleteAccount(authUser: any) {
-    deleteUser(authUser).then(() => {
+  async deleteAccount(authUser: any) {
+    await deleteUser(authUser).then(() => {
       this.userModificationError = '';
     }).catch((error) => {
       if(error.code == 'auth/requires-recent-login'){
