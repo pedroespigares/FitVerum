@@ -3,10 +3,16 @@
 
 /// Estlos para la vista de clientes de entrenador
 .content{
-  @include response(md){
+  height: auto;
+  @include response(xs){
+    padding-bottom: 14rem;
+  }
+  @include response(xl){
+    padding-bottom: 20rem;
+  }
+  @include response(desktop){
     height: calc(100vh - 112px);
   }
-  height: auto;
 }
 
 /// Estilos del título de la vista

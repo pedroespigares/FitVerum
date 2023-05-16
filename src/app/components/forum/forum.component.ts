@@ -18,7 +18,6 @@ export class ForumComponent implements OnInit, OnDestroy{
     this.database.getForumMessages().subscribe((messages: any[]) => {
       this.messages = messages;
       this.loading = false;
-      console.log(this.messages);
     });
   }
 
@@ -27,7 +26,7 @@ export class ForumComponent implements OnInit, OnDestroy{
       this.database.uploadForumMessage(this.writtenMessage, new Date().getTime(), true, false, null, null);
       this.writtenMessage = '';
     } else{
-      this.database.uploadForumMessage(this.writtenMessage, new Date().getTime(), this.auth.isAdmin, this.auth.isTrainer, null, this.auth.userID);
+      this.database.uploadForumMessage(this.writtenMessage, new Date().getTime(), false, this.auth.isTrainer, null, this.auth.userID);
       this.writtenMessage = '';
     }
 
@@ -39,7 +38,7 @@ export class ForumComponent implements OnInit, OnDestroy{
         this.database.uploadForumMessage(this.writtenMessage, new Date().getTime(), true, false, null, null);
         this.writtenMessage = '';
       } else{
-        this.database.uploadForumMessage(this.writtenMessage, new Date().getTime(), this.auth.isAdmin, this.auth.isTrainer, null, this.auth.userID);
+        this.database.uploadForumMessage(this.writtenMessage, new Date().getTime(), false, this.auth.isTrainer, null, this.auth.userID);
         this.writtenMessage = '';
       }
 

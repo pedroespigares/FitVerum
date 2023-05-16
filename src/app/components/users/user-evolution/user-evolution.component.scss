@@ -3,7 +3,10 @@
 
 /// Estilos para la vista de evolución de usuario
 .content{
-  height: calc(100vh - 112px);
+  @include response(desktop){
+    height: calc(100vh - 112px);
+  }
+  height: 100vh;
   @include flex($direction: column, $justify: flex-start, $align: center, $gap: 10rem);
 }
 

@@ -8,12 +8,17 @@
   width: 100%;
   background-color: var(--background-color);
   padding: 0 2rem;
-  @include response(xl) {
-    padding: 0 5rem;
-  }
   @include response(md){
     height: calc(95vh - 116px);
     @include flex($direction: column, $justify: center, $align: center, $gap: 0);
+    padding-top: 6rem;
+  }
+  @include response(xl) {
+    padding: 0 5rem;
+    padding-top: 6rem;
+  }
+  @include response(desktop){
+    padding-top: none;
   }
 }
 
@@ -39,7 +44,7 @@
     );
 
     &-img {
-      @include response(xl) {
+      @include response(desktop) {
         width: 9rem;
         display: block;
       }
@@ -47,8 +52,8 @@
     }
 
     &-text {
-      @include response(xl) {
-        font-size: getFontSize(xxl);
+      @include response(desktop) {
+        font-size: getFontSize(xl);
         display: block;
         font-family: $font-family-title;
         text-transform: uppercase;
@@ -77,7 +82,7 @@
   }
 
   &-title {
-    @include response(xl) {
+    @include response(desktop) {
       font-size: getFontSize(xl);
     }
     font-size: getFontSize(lg);
@@ -86,15 +91,24 @@
     transition: $transition;
     padding-bottom: 2rem;
     color: var(--text-color);
+    margin: 0;
   }
 
   &-form {
     width: 50%;
-    @include flex(
+    @include response(dekstop){
+      @include flex(
       $direction: column,
       $justify: center,
       $align: center,
       $gap: 2rem
+    );
+    }
+    @include flex(
+      $direction: column,
+      $justify: center,
+      $align: center,
+      $gap: 1.5rem
     );
 
     &-fieldset {
@@ -108,6 +122,7 @@
 
       &-label {
         @include label();
+        margin: 0;
       }
 
       &-input-container {
@@ -145,7 +160,10 @@
       }
 
       &-input {
-        @include input();
+        @include response(desktop){
+          @include input();
+        }
+        @include input($size: md);
       }
 
       &-password-info {
@@ -155,6 +173,7 @@
         font-weight: getFontWeight(bold);
         color: #e74c3c;
         width: 50%;
+        margin: 0;
         &-under{
           font-size: getFontSize(xxs);
           font-family: $font-family-text;
@@ -176,7 +195,7 @@
     }
 
     &-button {
-      @include response(xl) {
+      @include response(desktop) {
         @include button(lg, true, $width: 20rem);
       }
       @include button(sm, true, $width: 20rem);
@@ -193,7 +212,7 @@
     );
     width: 100%;
     &-text {
-      @include response(xl) {
+      @include response(desktop) {
         font-size: getFontSize(md);
       }
       font-size: getFontSize(sm);
@@ -210,6 +229,12 @@
       background-color: var(--cuaternary-color);
     }
     padding-top: 2rem;
+    @include response(xl){
+      padding-top: 1rem;
+    }
+    @include response(desktop){
+      padding-top: 2rem;
+    }
   }
 
   &-social {
@@ -219,8 +244,13 @@
       $align: center,
       $gap: 1rem
     );
-
     padding: 3rem;
+    @include response(xl){
+      padding: 2rem;
+    }
+    @include response(desktop){
+      padding: 3rem;
+    }
     &-button {
       @include flex(
         $direction: row,
@@ -228,15 +258,15 @@
         $align: center,
         $gap: 0.8rem
       );
-      @include response(xl) {
-        @include button(md, false);
+      @include response(desktop) {
+        @include button(md, false, $heigth: 7rem);
       }
-      @include button(sm, false);
+      @include button(sm, false, $heigth: 5rem);
       &-img {
         width: 4rem;
       }
       &-text {
-        @include response(xl) {
+        @include response(desktop) {
           font-size: getFontSize(md);
           font-family: $font-family-title;
           font-weight: getFontWeight(bold);

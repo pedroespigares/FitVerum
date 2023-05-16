@@ -5,11 +5,8 @@
   @include response(md){
     height: 120vh;
   }
-  @include response(lg){
-    height: 110vh;
-  }
   @include response(xl){
-    height: 100vh;
+    height: 110vh;
   }
   height: auto;
 }

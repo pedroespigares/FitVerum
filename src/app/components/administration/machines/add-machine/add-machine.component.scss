@@ -4,19 +4,20 @@
 /// Estilos del contenido de la vista de añadir máquina
 .content {
   @include flex($direction: column, $justify: center, $align: center, $gap: 0);
-  height: calc(95vh - 116px);
+  height: 100vh;
   width: 100%;
   background-color: var(--background-color);
   padding: 0 2rem;
   @include response(xl) {
     padding: 0 5rem;
+    height: calc(95vh - 116px);
   }
 }
 
 @include add(machine);
 
 /// Olas de fondo
-@include response(lg) {
+@include response(xl) {
   .waves {
     z-index: 10;
     width: 100%;

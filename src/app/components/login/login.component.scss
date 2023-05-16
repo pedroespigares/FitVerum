@@ -14,6 +14,10 @@
   @include response(md){
     height: calc(95vh - 116px);
     @include flex($direction: column, $justify: center, $align: center, $gap: 0);
+    padding-top: 6rem;
+  }
+  @include response(desktop){
+    padding-top: none;
   }
 }
 
@@ -39,7 +43,7 @@
     );
 
     &-img {
-      @include response(xl) {
+      @include response(desktop) {
         width: 9rem;
         display: block;
       }
@@ -47,7 +51,7 @@
     }
 
     &-text {
-      @include response(xl) {
+      @include response(desktop) {
         font-size: getFontSize(xxl);
         display: block;
         font-family: $font-family-title;
@@ -78,6 +82,9 @@
 
   &-title {
     @include response(xl) {
+      font-size: getFontSize(lg);
+    }
+    @include response(desktop) {
       font-size: getFontSize(xl);
     }
     font-size: getFontSize(lg);
@@ -144,7 +151,10 @@
       }
 
       &-input {
-        @include input();
+        @include response(desktop){
+          @include input();
+        }
+        @include input($size: md);
       }
 
       &-password-info {
@@ -167,6 +177,9 @@
 
     &-button {
       @include response(xl) {
+        @include button(md, true, $width: 17rem);
+      }
+      @include response(desktop) {
         @include button(lg, true, $width: 20rem);
       }
       @include button(sm, true, $width: 20rem);
@@ -183,7 +196,7 @@
     );
     width: 100%;
     &-text {
-      @include response(xl) {
+      @include response(desktop) {
         font-size: getFontSize(md);
       }
       font-size: getFontSize(sm);
@@ -219,6 +232,9 @@
         $gap: 0.8rem
       );
       @include response(xl) {
+        @include button(sm, false, $heigth: 5rem);
+      }
+      @include response(desktop) {
         @include button(md, false, $heigth: 6rem);
       }
       @include button(sm, false);
@@ -227,6 +243,12 @@
       }
       &-text {
         @include response(xl) {
+          font-size: getFontSize(sm);
+          font-family: $font-family-title;
+          font-weight: getFontWeight(bold);
+          display: block;
+        }
+        @include response(desktop) {
           font-size: getFontSize(md);
           font-family: $font-family-title;
           font-weight: getFontWeight(bold);

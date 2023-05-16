@@ -8,7 +8,12 @@
 /// @param {string} $breakpoint -- Nombre del breakpoint
 ///
 @mixin response($breakpoint) {
-  @if ($breakpoint == xl) {
+  @if ($breakpoint == desktop) {
+    @media (min-width: 1750px) {
+      @content;
+    }
+  }
+  @else if ($breakpoint == xl) {
     @media (min-width: 1500px) {
       @content;
     }
@@ -37,7 +42,7 @@
 ///   @include navigation();
 /// }
 /// @param {boolean} $hamburger [false] -- Preparar el menú para el menú hamburguesa
-/// 
+///
 @mixin navigation($hamburger: false) {
   @include flex($direction: row, $justify: space-between, $align: center);
 
@@ -207,7 +212,7 @@
 /// @param {boolean} $disabled [false] -- Si el botón está deshabilitado
 /// @param {string} $border-radius [10rem] -- Radio de las esquinas del botón
 /// @param {string} $heigth [null] -- Altura del botón
-/// 
+///
 @mixin button(
   $size: lg,
   $focus: false,
@@ -267,7 +272,7 @@
 /// .section-title{
 ///   @include section-titles();
 /// }
-/// 
+///
 @mixin section-titles {
   @include response(lg) {
     font-size: getFontSize(xl);
@@ -295,7 +300,7 @@
 /// .section-subtitle{
 ///   @include section-subtitles();
 /// }
-/// 
+///
 @mixin section-subtitles {
   @include response(lg) {
     font-size: getFontSize(xxxl);
@@ -313,7 +318,7 @@
 /// .label{
 ///   @include label();
 /// }
-/// 
+///
 @mixin label {
   @include response(xl) {
     font-size: getFontSize(lg);
@@ -333,8 +338,9 @@
 /// }
 /// @param {string} $size [lg] -- Tamaño del input
 /// @param {string} $text-align [left] -- Alineación del texto
-/// 
-@mixin input($size: lg, $text-align: left) {
+/// @param {number} $width [16.5625em] -- Ancho del input
+///
+@mixin input($size: lg, $text-align: left, $width: 16.5625em) {
   @include response(xl) {
     font-size: getFontSize($size);
   }
@@ -347,7 +353,7 @@
   padding: 1rem;
   text-align: $text-align;
   @include response(xl) {
-    width: 16.3125em;
+    width: calc($width - 0.25em);
   }
 
   width: 16.5625em;
@@ -362,9 +368,15 @@
 /// .navbar-link{
 ///   @include navbar_links();
 /// }
-/// 
+///
 @mixin navbar_links() {
   color: var(--text-color);
+  @include response(xl){
+    font-size: getFontSize(md-lg);
+  }
+  @include response(desktop){
+    font-size: getFontSize(lg);
+  }
   font-size: getFontSize(lg);
   text-decoration: none;
   transition: $transition;
@@ -383,7 +395,7 @@
 ///   @include card();
 /// }
 /// @param {boolean} $withHover [true] -- Si la card tiene hover o no
-/// 
+///
 @mixin card($withHover: true) {
   @include flex(column, center, center);
   background-color: var(--background-color);
@@ -405,7 +417,7 @@
 /// .delete{
 ///   @include deleteInCard();
 /// }
-/// 
+///
 @mixin deleteInCard() {
   color: white;
   background-color: #e74c3c;
@@ -427,7 +439,7 @@
 /// .edit{
 ///   @include editInCard();
 /// }
-/// 
+///
 @mixin editInCard() {
   color: white;
   background-color: #f1c40f;
@@ -448,7 +460,7 @@
 /// .show{
 ///   @include showInCard();
 /// }
-/// 
+///
 @mixin showInCard() {
   color: white;
   background-color: #27ae60;
@@ -471,7 +483,7 @@
 ///   @include view_header();
 /// }
 /// @param {string} $size [5rem] -- Tamaño del título
-/// 
+///
 @mixin view_header($size: 5rem) {
   @include response(xl) {
     font-size: $size;
@@ -493,7 +505,7 @@
 ///   @include user_button();
 /// }
 /// @param {string} $padding [1rem] -- Padding del botón
-/// 
+///
 @mixin user_button($padding: 1rem) {
   width: 100%;
   height: 10rem;
@@ -519,7 +531,7 @@
 ///   @include breadcrumbs();
 /// }
 /// @param {string} $margin-left [3rem] -- Margen izquierdo de las migas de pan
-/// 
+///
 @mixin breadcrumbs($margin-left: 3rem) {
   @include flex(
     $direction: row,
@@ -553,7 +565,7 @@
 ///  @include normal_button();
 /// }
 /// @param {string} $color [#e74c3c] -- Color del botón
-/// 
+///
 @mixin normal_button($color: #e74c3c) {
   color: white;
   background-color: $color;
@@ -580,7 +592,7 @@
 /// }
 /// @param {string} $top [45%] -- Posición top del loader
 /// @param {string} $left [40%] -- Posición left del loader
-/// 
+///
 @mixin loader($top: 45%, $left: 40%) {
   display: block;
   height: 6px;
@@ -622,7 +634,7 @@
 /// .modal{
 ///   @include modal();
 /// }
-/// 
+///
 @mixin modal() {
   overflow: auto;
   background-color: var(--background-color);
@@ -720,7 +732,7 @@
 /// .uploaded-image{
 ///   @include uploadedImageStyles();
 /// }
-/// 
+///
 @mixin uploadedImageStyles() {
   width: 7rem;
   height: 7rem;
@@ -734,7 +746,7 @@
 ///   @include edit('user');
 /// }
 /// @param {string} $name -- Nombre de la clase
-/// 
+///
 @mixin edit($name) {
   .edit-#{$name} {
     z-index: 11;
@@ -763,7 +775,10 @@
     width: 100%;
 
     &-logo-presentation {
-      padding-top: 5rem;
+      @include response(desktop){
+        padding-top: 5rem;
+      }
+      padding-top: 2rem;
       @include flex(
         $direction: row,
         $justify: center,
@@ -772,7 +787,7 @@
       );
 
       &-img {
-        @include response(lg) {
+        @include response(desktop) {
           width: 9rem;
           transition: $transition;
           display: block;
@@ -781,7 +796,7 @@
       }
 
       &-text {
-        @include response(lg) {
+        @include response(desktop) {
           font-size: getFontSize(xxl);
           font-family: $font-family-title;
           text-transform: uppercase;
@@ -816,12 +831,14 @@
         $align: center,
         $gap: 2rem
       );
-      @include response(xl) {
+      @include response(desktop) {
+        font-size: getFontSize(xl);
+        padding-top: 0.5rem;
+        padding-bottom: 2.5rem;
         padding-top: 2rem;
       }
-      padding-bottom: 5rem;
       &-text {
-        @include response(xl) {
+        @include response(desktop) {
           font-size: getFontSize(xl);
         }
         font-size: getFontSize(lg);
@@ -840,11 +857,19 @@
     }
 
     &-form {
+      @include response(desktop){
+          @include flex(
+          $direction: column,
+          $justify: center,
+          $align: center,
+          $gap: 5rem
+        );
+      }
       @include flex(
         $direction: column,
         $justify: center,
         $align: center,
-        $gap: 5rem
+        $gap: 2rem
       );
       width: 50%;
       margin: 0 auto;
@@ -859,13 +884,17 @@
         border: none;
         &-label {
           @include label();
+          margin-bottom: 0;
           &-file {
             @include flex(
               $direction: row,
               $justify: space-between,
               $align: center,
             );
-            @include input();
+            @include response(desktop){
+              @include input();
+            }
+            @include input($size: md);
             padding-right: 2rem;
             padding-left: 2rem;
             &-text {
@@ -898,7 +927,10 @@
         }
 
         &-input {
-          @include input();
+          @include response(desktop){
+            @include input();
+          }
+          @include input($size: md);
 
           &-file {
             display: none;
@@ -906,7 +938,10 @@
         }
 
         &-textarea {
-          @include input();
+          @include response(desktop){
+            @include input();
+          }
+          @include input($size: md);
           resize: both;
         }
       }
@@ -964,7 +999,7 @@
 /// }
 /// @param {string} $name -- Nombre de la clase
 ///
-/// 
+///
 @mixin add($name) {
   .add-#{$name} {
     border-radius: 0.5rem;
@@ -995,7 +1030,10 @@
     }
 
     &-logo-presentation {
-      padding-top: 5rem;
+      @include response(desktop){
+        padding-top: 5rem;
+      }
+      padding-top: 2rem;
       @include flex(
         $direction: row,
         $justify: center,
@@ -1004,7 +1042,7 @@
       );
 
       &-img {
-        @include response(lg) {
+        @include response(desktop) {
           width: 9rem;
           display: block;
         }
@@ -1012,7 +1050,7 @@
       }
 
       &-text {
-        @include response(xl) {
+        @include response(desktop) {
           font-size: getFontSize(xl);
           font-family: $font-family-title;
           text-transform: uppercase;
@@ -1042,20 +1080,28 @@
     }
 
     &-title {
-      @include response(xl) {
+      @include response(desktop) {
         font-size: getFontSize(xl);
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
+        padding-top: 2rem;
       }
       font-size: getFontSize(lg);
       font-family: $font-family-title;
       font-weight: getFontWeight(bold);
-      @include response(xl) {
-        padding-top: 2rem;
-      }
       padding-bottom: 5rem;
       text-align: center;
       color: var(--text-color);
     }
     &-form {
+      @include response(desktop){
+          @include flex(
+          $direction: column,
+          $justify: center,
+          $align: center,
+          $gap: 2rem
+        );
+      }
       @include flex(
         $direction: column,
         $justify: center,
@@ -1075,13 +1121,17 @@
         border: none;
         &-label {
           @include label();
+          margin-bottom: 0;
           &-file {
             @include flex(
               $direction: row,
               $justify: space-between,
               $align: center,
             );
-            @include input();
+            @include response(desktop){
+              @include input();
+            }
+            @include input($size: md);
             padding-right: 2rem;
             padding-left: 2rem;
             &-text {
@@ -1108,7 +1158,10 @@
         }
 
         &-input {
-          @include input();
+          @include response(desktop){
+            @include input();
+          }
+          @include input($size: md);
 
           &-file {
             display: none;
@@ -1116,7 +1169,10 @@
         }
 
         &-textarea {
-          @include input();
+          @include response(desktop){
+            @include input();
+          }
+          @include input($size: md);
           resize: both;
         }
       }
@@ -1170,7 +1226,7 @@
 /// }
 /// @param {number} $margin-top - Margen superior del toast
 /// @param {boolean} $full-width - Si el toast ocupa todo el ancho de la pantalla
-/// 
+///
 @mixin toast($margin-top: 12.25rem, $full-width: false) {
   ::ng-deep .toast {
     background-color: var(--primary-color);

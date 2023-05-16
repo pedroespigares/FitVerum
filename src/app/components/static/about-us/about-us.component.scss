@@ -3,7 +3,16 @@
 
 /// Estilos del contenido de la vista de sobre nosotros
 .content{
-  height: calc(100vh - 112px);
+  height: auto;
+  @include response(xs){
+    padding-bottom: 10rem;
+  }
+  @include response(lg){
+    padding-bottom: 10rem;
+  }
+  @include response(xl){
+    padding-bottom: 17.15rem;
+  }
 }
 
 /// Estilo del título

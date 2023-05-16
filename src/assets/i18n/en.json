@@ -84,7 +84,7 @@
     "USERNAME": "Username",
     "EMAIL": "Email",
     "PASSWORD": "Password",
-    "PSW-FORMAT": "Min 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.",
+    "PSW-FORMAT": "Between 8 and 32 characters, 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.",
     "BUTTON": "Register",
     "GOOGLE": "Register with Google",
     "TWITTER": "Register with Twitter",

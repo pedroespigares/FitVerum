@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -59,6 +59,7 @@ import { ForumComponent } from './components/forum/forum.component';
 import { MessageComponent } from './components/forum/message/message.component';
 import { ShowDietComponent } from './components/trainers/trainer-diets/show-diet/show-diet.component';
 import { EditEntryComponent } from './components/users/user-entry/edit-entry/edit-entry.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 @NgModule({
@@ -127,7 +128,13 @@ import { EditEntryComponent } from './components/users/user-entry/edit-entry/edi
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     NgbModule,
-    NgChartsModule
+    NgChartsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

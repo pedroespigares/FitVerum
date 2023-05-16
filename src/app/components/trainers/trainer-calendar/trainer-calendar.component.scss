@@ -3,7 +3,10 @@
 
 /// Estilos del contenido de la vista de calendario
 .content{
-  height: 100vh;
+  @include response(desktop){
+    height: calc(100vh - 112px);
+  }
+  height: 110vh;
 }
 
 ::ng-deep span.cal-day-number {

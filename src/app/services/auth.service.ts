@@ -257,6 +257,7 @@ export class AuthService {
         email: this.userEmail,
         trainerID: null,
         timestamp: Date.now(),
+        thirdParty: this.thirdPartyLogin,
       });
     } else {
       return;

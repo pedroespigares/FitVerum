@@ -30,10 +30,14 @@
       text-align: center;
       margin-bottom: 1rem;
       animation: focus-in-expand 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      @include response(lg){
+        font-size: getFontSize(landing-text-title);
+      }
       @include response(xl){
         text-align: left;
+        font-size: calc(getFontSize(landing-text-title) - 1.4rem);
       }
-      @include response(lg){
+      @include response(desktop){
         font-size: getFontSize(landing-text-title);
       }
     }
@@ -61,6 +65,12 @@
         text-align: left;
       }
       @include response(lg){
+        font-size: getFontSize(landing-text-title);
+      }
+      @include response(xl){
+        font-size: calc(getFontSize(landing-text-title) - 1.4rem);
+      }
+      @include response(desktop){
         font-size: getFontSize(landing-text-title);
       }
     }

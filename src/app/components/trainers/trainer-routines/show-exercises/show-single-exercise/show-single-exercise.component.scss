@@ -7,10 +7,13 @@
 
 /// Estilos para la vista de mostrar un solo ejercicio
 .content {
-  @include response(md){
+  @include response(xl){
+    height: calc(100vh - 90px);
+  }
+  @include response(desktop){
     height: calc(100vh - 112px);
   }
-  height: 135vh;
+  height: 175vh;
   width: 100%;
   background-color: var(--background-color);
   padding: 0 2rem;

@@ -24,11 +24,13 @@ export class MessageComponent implements OnInit, OnDestroy {
     } else if(this.message.isTrainer){
       this.database.getTrainerData(this.message.userID).then((userData) => {
         this.userData = userData;
+        this.userData.isAdmin = false;
         this.loading = false;
       });
     } else if(!this.message.isAdmin && !this.message.isTrainer){
       this.database.getUserData(this.message.userID).then((userData) => {
         this.userData = userData;
+        this.userData.isAdmin = false;
         this.loading = false;
       });
     }

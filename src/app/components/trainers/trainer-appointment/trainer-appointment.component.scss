@@ -3,14 +3,16 @@
 
 /// Estilos del contenido de la vista de citas de entrenador
 .content{
+  height: 200vh;
+  @include response(md){
+    height: 125vh;
+  }
   @include response(lg){
+    height: 110vh;
+  }
+  @include response(desktop){
     height: calc(100vh - 112px);
   }
-
-  @include response(md){
-    height: 175vh;
-  }
-  height: 200vh;
 }
 
 /// Estilos de las migas de pan
@@ -218,7 +220,10 @@
         }
 
         &-input {
-          @include input();
+          @include input($width: 14em);
+          &-time{
+            @include input($width: 6em)
+          }
           &-color{
             grid-area: 1 / 2 / 2 / 3;
             width: 100%;

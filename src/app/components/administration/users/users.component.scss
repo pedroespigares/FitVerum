@@ -3,10 +3,16 @@
 
 /// Estilos del contenido de la vista de administración de usuarios
 .content{
-  @include response(md){
+  height: auto;
+  @include response(xs){
+    padding-bottom: 14rem;
+  }
+  @include response(xl){
+    padding-bottom: 20rem;
+  }
+  @include response(desktop){
     height: calc(100vh - 112px);
   }
-  height: auto;
 }
 
 /// Estilos de la cabecera de la vista

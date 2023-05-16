@@ -30,6 +30,6 @@ export class ShowSingleExerciseComponent implements OnInit{
   }
 
   backToExercises(): void {
-    this.router.navigate(['/administration/Exercises']);
+    this.router.navigate([`/trainer/routines/show/${this.routineID}`]);
   }
 }

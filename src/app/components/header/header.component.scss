@@ -86,13 +86,20 @@ img{
   grid-row: 1 / 2;
 
   @include response(xl) {
+    @include flex(
+      $direction: row,
+      $justify: center,
+      $align: center,
+      $gap: 0.5rem
+    );
+
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+    padding-left: 6.5rem;
   }
 
-  padding: 1rem;
-
-  @include response(xl) {
+  @include response(desktop){
+    padding-left: 1rem;
     @include flex(
       $direction: row,
       $justify: center,
@@ -100,6 +107,8 @@ img{
       $gap: 3rem
     );
   }
+
+  padding: 1rem;
 
   @include flex(
     $direction: column,
@@ -166,9 +175,6 @@ nav.open ul.header-nav-list {
   left: 0;
 }
 
-#header-wave.open{
-  left: 0;
-}
 
 .open-gear {
   animation: rotate-center 0.5s ease-in-out both;

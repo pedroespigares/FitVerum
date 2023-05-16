@@ -89,7 +89,7 @@
           <h2 class="appointment-container-info-date-container-title">{{"TRAINERS.APPOINTMENT.FROM" | translate}}</h2>
           <h2 class="appointment-container-info-date-container-title-focus">{{this.date | date: 'HH:mm'}}</h2>
           <h2 class="appointment-container-info-date-container-title">{{"TRAINERS.APPOINTMENT.TO" | translate}}</h2>
-            <input class="appointment-container-info-date-container-input" type="time" name="to_hour" [(ngModel)]="end_time" max="22:00" min="08:00"/>
+            <input class="appointment-container-info-date-container-input-time" type="time" name="to_hour" [(ngModel)]="end_time" max="22:00" min="08:00"/>
           <h2 class="appointment-container-info-date-container-title">{{"TRAINERS.APPOINTMENT.APPOINTMENT-COLOR" | translate}}</h2>
             <input class="appointment-container-info-date-container-input-color" name="color" type="color" [(ngModel)]="color" />
         </form>
