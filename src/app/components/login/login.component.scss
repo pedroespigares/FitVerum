@@ -162,7 +162,7 @@
         text-align: center;
         font-family: $font-family-text;
         font-weight: getFontWeight(bold);
-        color: #e74c3c;
+        color: getColor(red);
         width: 50%;
       }
 
@@ -171,7 +171,7 @@
         text-align: center;
         font-family: $font-family-text;
         font-weight: getFontWeight(bold);
-        color: #e74c3c;
+        color: getColor(red);
       }
     }
 

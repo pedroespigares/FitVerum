@@ -421,10 +421,43 @@
 @mixin deleteInCard() {
   color: white;
   background-color: #e74c3c;
+  background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
   border: none;
   flex-grow: 1;
   font-size: getFontSize(xl);
   border-bottom-left-radius: 1rem;
+  transition: $transition;
+  padding: 1rem 3rem 1rem 3rem;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+/// Mixin para el botón de contacto en las cards
+/// @example
+/// .contact{
+///   @include contactInCard();
+/// }
+///
+@mixin contactInCard() {
+  color: var(--text-color);
+  background-color: getColor(green);
+  background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
+  border: none;
+  flex-grow: 1;
+  font-size: getFontSize(lg);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   transition: $transition;
   padding: 1rem 3rem 1rem 3rem;
   text-decoration: none;
@@ -442,7 +475,12 @@
 ///
 @mixin editInCard() {
   color: white;
-  background-color: #f1c40f;
+  background-color: getColor(yellow);
+  background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
   border: none;
   flex-grow: 1;
   font-size: getFontSize(xl);
@@ -463,7 +501,12 @@
 ///
 @mixin showInCard() {
   color: white;
-  background-color: #27ae60;
+  background-color: getColor(green);
+  background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
   border: none;
   flex-grow: 1;
   font-size: getFontSize(xl);
@@ -649,7 +692,7 @@
     }
 
     &-update {
-      @include normal_button(#f1c40f);
+      @include normal_button(getColor(yellow));
     }
   }
 

@@ -167,7 +167,7 @@
         font-size: getFontSize(xl);
       }
       font-size: getFontSize(lg);
-      color: #e74c3c;
+      color: getColor(red);
       margin: 1rem;
       transition: $transition;
       cursor: pointer;

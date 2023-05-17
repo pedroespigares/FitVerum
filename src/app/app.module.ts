@@ -60,6 +60,8 @@ import { MessageComponent } from './components/forum/message/message.component';
 import { ShowDietComponent } from './components/trainers/trainer-diets/show-diet/show-diet.component';
 import { EditEntryComponent } from './components/users/user-entry/edit-entry/edit-entry.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { SeeTrainersComponent } from './components/users/see-trainers/see-trainers.component';
+import { SeeTrainersCardComponent } from './components/users/see-trainers/see-trainers-card/see-trainers-card.component';
 
 
 @NgModule({
@@ -110,6 +112,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     MessageComponent,
     ShowDietComponent,
     EditEntryComponent,
+    SeeTrainersComponent,
+    SeeTrainersCardComponent,
   ],
   imports: [
     BrowserModule,

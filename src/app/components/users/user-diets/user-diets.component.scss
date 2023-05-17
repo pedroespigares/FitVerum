@@ -4,7 +4,7 @@
 /// Estilos para la vista de dietas de usuario
 .content{
   @include response(md){
-    height: calc(100vh - 112px);
+    min-height: calc(100vh - 112px);
   }
   height: auto;
 }
@@ -60,8 +60,4 @@
 
 .loader{
     @include loader(40vh);
-}
-
-.breadcrumbs{
-  @include breadcrumbs(5rem);
 }

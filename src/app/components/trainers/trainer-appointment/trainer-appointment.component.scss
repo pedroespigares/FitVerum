@@ -322,6 +322,6 @@
   font-size: getFontSize(md);
   font-family: $font-family-title;
   font-weight: getFontWeight(bold);
-  color: #e74c3c;
+  color: getColor(red);
   text-align: center;
 }

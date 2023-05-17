@@ -171,7 +171,7 @@
         text-align: center;
         font-family: $font-family-text;
         font-weight: getFontWeight(bold);
-        color: #e74c3c;
+        color: getColor(red);
         width: 50%;
         margin: 0;
         &-under{
@@ -179,7 +179,7 @@
           font-family: $font-family-text;
           color: var(--cuaternary-color);
           &-error{
-            color: #e74c3c;
+            color: getColor(red);
             font-size: getFontSize(xxs);
           }
         }
@@ -190,7 +190,7 @@
         text-align: center;
         font-family: $font-family-text;
         font-weight: getFontWeight(bold);
-        color: #e74c3c;
+        color: getColor(red);
       }
     }
 

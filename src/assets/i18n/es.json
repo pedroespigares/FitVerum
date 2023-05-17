@@ -10,6 +10,7 @@
       "CLIENTS": "Clientes",
       "ROUTINES": "Rutinas",
       "DIETS": "Dietas",
+      "TRAINERS": "Entrenadores",
       "FORUM": "Foro",
       "USERS": "Usuarios",
       "MACHINES": "Máquinas",
@@ -107,7 +108,7 @@
     "MACHINES": {
       "MACHINES": "Máquinas",
       "TITLE": "Administración de Máquinas y Ejercicios",
-      "ADD-BUTTON": "Añadir Máquina or Ejercicio",
+      "ADD-BUTTON": "Añadir Máquina o Ejercicio",
       "NO-MACHINES": "No hay máquinas o ejercicios",
       "ADDED-TOAST": "¡Máquina añadida con éxito!",
       "DELETED-TOAST": "¡Máquina borrada con éxito!",
@@ -279,6 +280,11 @@
       "LC-DESCRIPTION": "descripción",
       "AT": "El",
       "UPDATE": "Actualizar"
+    },
+    "CONTACT": {
+      "BUTTON": "Contactar",
+      "AVAILABLE-TRAINERS": "Entrenadores disponibles",
+      "NO-TRAINERS": "No hay ningún entrenador"
     }
   },
   "MODIFICATIONS": {

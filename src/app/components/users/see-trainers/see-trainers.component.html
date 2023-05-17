@@ -1,0 +1,8 @@
+<main class="content">
+  <div *ngIf="loading" class="loader"></div>
+  <h1 class="trainers-title">{{"USERS.CONTACT.AVAILABLE-TRAINERS" | translate}}</h1>
+  <h2 class="trainers-title-no-trainers" *ngIf="!trainers.length && !loading">{{"USERS.CONTACT.NO-TRAINERS" | translate}}</h2>
+  <div class="trainers-container">
+    <app-see-trainers-card *ngFor="let singleTrainer of trainers" [trainer]="singleTrainer"></app-see-trainers-card>
+  </div>
+  </main>

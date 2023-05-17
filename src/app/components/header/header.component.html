@@ -23,6 +23,7 @@
             <li *ngIf="this.auth.isLogged && !this.auth.isAdmin && !this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/user/calendar">{{"HEADER.NAVBAR.ACTIVITIES" | translate}}</a></li>
             <li *ngIf="this.auth.isLogged && !this.auth.isAdmin && !this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/user/routines">{{"HEADER.NAVBAR.MY-ROUTINES" | translate}}</a></li>
             <li *ngIf="this.auth.isLogged && !this.auth.isAdmin && !this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/user/diets">{{"HEADER.NAVBAR.MY-DIETS" | translate}}</a></li>
+            <li *ngIf="this.auth.isLogged && !this.auth.isAdmin && !this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/trainers">{{"HEADER.NAVBAR.TRAINERS" | translate}}</a></li>
             <li *ngIf="this.auth.isLogged && this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/trainer/calendar">{{"HEADER.NAVBAR.MANAGEMENT" | translate}}</a></li>
             <li *ngIf="this.auth.isLogged && this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/trainer/clients">{{"HEADER.NAVBAR.CLIENTS" | translate}}</a></li>
             <li *ngIf="this.auth.isLogged && this.auth.isTrainer" class="header-nav-item"><a class="header-nav-link" routerLink="/trainer/routines">{{"HEADER.NAVBAR.ROUTINES" | translate}}</a></li>

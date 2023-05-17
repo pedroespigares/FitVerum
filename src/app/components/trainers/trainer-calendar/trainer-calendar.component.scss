@@ -59,7 +59,7 @@
 }
 
 ::ng-deep .cal-week-view .cal-header.cal-weekend span {
-  color: #e74c3c;
+  color: getColor(red);
 }
 
 ::ng-deep .cal-time {
@@ -69,7 +69,7 @@
 }
 
 ::ng-deep .cal-event-title {
-  color: var(--text-color);
+  color: getColor(text);
   font-family: $font-family-title !important;
   font-size: 1.75rem !important;
 }

@@ -69,7 +69,7 @@
     }
     &-btn{
       @include button($size: md, $border-radius: 1rem, $focus: true);
-      background-color: #e74c3c;
+      background-color: getColor(red);
       border: none;
       color: white;
       transition: $transition;
@@ -178,7 +178,7 @@
   font-family: $font-family-text;
   color: white;
   margin-top: 5rem !important;
-  background-color: #e74c3c;
+  background-color: getColor(red);
   border-radius: 10rem;
   width: 20%;
   text-align: center;
