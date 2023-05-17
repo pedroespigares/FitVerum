@@ -45,6 +45,9 @@ export class UserModificationComponent implements OnInit {
   displayNameChanged: boolean = false;
   passwordChanged: boolean = false;
 
+  maxSize: number = 3145728;
+  fileTooBig: boolean = false;
+
   userFromNativeAuth: any = getAuth();
 
   constructor(private database: DatabaseService, public auth: AuthService) {
@@ -96,6 +99,10 @@ export class UserModificationComponent implements OnInit {
 
   uploadFile(event: any) {
     const file = event.target.files[0];
+    if (file.size > this.maxSize) {
+      this.fileTooBig = true;
+      return;
+    }
     const storageRef = ref(this.storage, `${this.basePath}/${file.name}`);
     uploadBytes(storageRef, file).then(() => {
       this.uploaded = true;

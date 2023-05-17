@@ -73,7 +73,7 @@
     }
     &-btn{
       @include button($size: md, $border-radius: 1rem, $focus: true);
-      background-color: getColor(red);
+      background-color: #e74c3c;
       border: none;
       color: white;
       transition: $transition;
@@ -197,11 +197,25 @@
   font-family: $font-family-text;
   color: white;
   margin-top: 5rem !important;
-  background-color: green;
+  background-color: getColor(green);
   border-radius: 10rem;
   width: 20%;
   text-align: center;
   margin: 0 auto;
+}
+
+.info-under{
+  font-size: getFontSize(xxs);
+  font-family: $font-family-text;
+  color: var(--cuaternary-color);
+  align-self: flex-start;
+  justify-self: flex-start;
+  &-error{
+    align-self: flex-start;
+    justify-self: flex-start;
+    color: #e74c3c;
+    font-size: getFontSize(xxs);
+  }
 }
 
 .loader{
