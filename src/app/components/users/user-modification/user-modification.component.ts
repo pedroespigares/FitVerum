@@ -99,7 +99,7 @@ export class UserModificationComponent implements OnInit {
 
   uploadFile(event: any) {
     const file = event.target.files[0];
-    if (file.size > this.maxSize) {
+    if (file.size > this.maxSize || file.type.split('/')[0] !== 'image') {
       this.fileTooBig = true;
       return;
     }

@@ -127,10 +127,10 @@
   @include response(xl) {
     font-size: getFontSize(lg);
   }
-  font-size: getFontSize(md);
+  font-size: getFontSize(sm);
   font-family: $font-family-title;
   font-weight: getFontWeight(bold);
-  color: var(--primary-color);
+  color: var(--cuaternary-color);
   text-align: center;
   margin-bottom: 1rem;
 }

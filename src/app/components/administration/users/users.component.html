@@ -6,7 +6,7 @@
     <h2 class="users-trainers-container-users-title">{{"ADMINISTRATION.USERS.USERS" | translate}}</h2>
     <div class="users-trainers-container-users-container">
       <table class="users-trainers-container-users-container-table">
-        <tr *ngFor="let user of users | slice : (page - 1) * pageSize : page * pageSize">
+        <tr *ngFor="let user of users | slice : (page - 1) * pageSize : page * pageSize" placement="right" ngbTooltip="Convert normal user into trainer">
           <td>
             <img
               *ngIf="user.photoURL != null"
@@ -33,7 +33,7 @@
             </button>
           </td>
           <td (click)="convertUserToTrainer(user.userID)">
-            <button class="users-trainers-container-users-container-table-user-button" placement="right" ngbTooltip="Convert normal user into trainer" tooltipClass="user-tooltip">
+            <button class="users-trainers-container-users-container-table-user-button">
               <i class="fa-solid fa-plus"></i>
             </button>
           </td>
@@ -59,9 +59,9 @@
     <h2 class="users-trainers-container-trainers-title">{{"ADMINISTRATION.USERS.TRAINERS" | translate}}</h2>
     <div class="users-trainers-container-trainers-container">
       <table class="users-trainers-container-trainers-container-table">
-        <tr *ngFor="let trainer of trainers | slice : (page_2 - 1) * pageSize_2 : page_2 * pageSize_2">
+        <tr *ngFor="let trainer of trainers | slice : (page_2 - 1) * pageSize_2 : page_2 * pageSize_2" placement="left" ngbTooltip="Convert trainer into normal user">
           <td>
-            <button (click)="convertTrainerToUser(trainer.trainerID)" class="users-trainers-container-trainers-container-table-trainer-button-left" placement="left" ngbTooltip="Convert trainer into normal user" tooltipClass="user-tooltip">
+            <button (click)="convertTrainerToUser(trainer.trainerID)" class="users-trainers-container-trainers-container-table-trainer-button-left">
               <i class="fa-solid fa-minus"></i>
             </button>
           </td>

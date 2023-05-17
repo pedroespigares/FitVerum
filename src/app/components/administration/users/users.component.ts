@@ -48,6 +48,7 @@ export class UsersComponent {
     let confirm = window.confirm('Are you sure you want to delete this user?');
     if (confirm) {
       this.database.delete('users', id);
+      this.database.deleteUserData(id, false);
     } else {
       return;
     }
@@ -59,6 +60,7 @@ export class UsersComponent {
     );
     if (confirm) {
       this.database.delete('trainers', id);
+      this.database.deleteUserData(id, true);
     } else {
       return;
     }

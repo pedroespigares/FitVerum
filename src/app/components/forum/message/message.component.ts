@@ -23,12 +23,28 @@ export class MessageComponent implements OnInit, OnDestroy {
       this.loading = false;
     } else if(this.message.isTrainer){
       this.database.getTrainerData(this.message.userID).then((userData) => {
+        if(userData == null){
+          this.userData = {
+            displayName: 'Deleted User',
+            isAdmin: false,
+          }
+          this.loading = false;
+          return;
+        }
         this.userData = userData;
         this.userData.isAdmin = false;
         this.loading = false;
       });
     } else if(!this.message.isAdmin && !this.message.isTrainer){
       this.database.getUserData(this.message.userID).then((userData) => {
+        if(userData == null){
+          this.userData = {
+            displayName: 'Deleted User',
+            isAdmin: false,
+          }
+          this.loading = false;
+          return;
+        }
         this.userData = userData;
         this.userData.isAdmin = false;
         this.loading = false;

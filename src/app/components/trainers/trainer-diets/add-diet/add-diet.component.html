@@ -25,8 +25,8 @@
                     <img *ngIf="uploaded" class="add-diet-form-fieldset-label-file-img-uploaded" [src]="photoURL">
                 </label>
                 <input class="add-diet-form-fieldset-input-file" type="file" id="dietImage" name="dietImage" accept="image/*" (change)="uploadFile($event)">
-                <p *ngIf="!fileTooBig" class="info-under">3 MB Max</p>
-                <p *ngIf="fileTooBig" class="info-under-error">3 MB Max</p>
+                <p *ngIf="!fileTooBig" class="info-under">3 MB Max | JPG or PNG</p>
+                <p *ngIf="fileTooBig" class="info-under-error">3 MB Max | JPG or PNG</p>
             </fieldset>
             <button *ngIf="!uploaded" class="add-diet-form-button-disabled" disabled>{{"TRAINERS.DIETS.ADD-FORM.BUTTON" | translate}}</button>
             <button type="submit" *ngIf="uploaded" class="add-diet-form-button">{{"TRAINERS.DIETS.ADD-FORM.BUTTON" | translate}}</button>

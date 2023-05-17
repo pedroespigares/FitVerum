@@ -27,8 +27,8 @@
                   <img *ngIf="uploaded" class="add-routine-form-fieldset-label-file-img-uploaded" [src]="photoURL">
               </label>
               <input class="add-routine-form-fieldset-input-file" type="file" id="routineImage" name="routineImage" accept="image/*" (change)="uploadFile($event)">
-              <p *ngIf="!fileTooBig" class="info-under">3 MB Max</p>
-              <p *ngIf="fileTooBig" class="info-under-error">3 MB Max</p>
+              <p *ngIf="!fileTooBig" class="info-under">3 MB Max | JPG or PNG</p>
+              <p *ngIf="fileTooBig" class="info-under-error">3 MB Max | JPG or PNG</p>
           </fieldset>
           <button *ngIf="!uploaded" class="add-routine-form-button-disabled" disabled>{{"TRAINERS.ROUTINES.ADD-FORM.BUTTON" | translate}}</button>
           <button type="submit" *ngIf="uploaded" class="add-routine-form-button">{{"TRAINERS.ROUTINES.ADD-FORM.BUTTON" | translate}}</button>

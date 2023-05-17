@@ -348,7 +348,7 @@
             color: var(--primary-color);
             cursor: pointer;
             &amp;:hover {
-              color: getColor(red);
+              color: #e74c3c;
             }
             border: none;
             background-color: var(--background-color);
@@ -2108,7 +2108,7 @@
       margin-top: 5rem;
       &amp;-icon{
         margin-left: 1rem;
-        color: getColor(red);
+        color: #e74c3c;
         transition: $transition;
         &amp;:hover{
           cursor: pointer;
@@ -2160,10 +2160,10 @@
   }
 }</code>" data-collapsed=".trainer-diets-container { ... }"><code>.trainer-diets-container { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Estilo del contedor de las dietas</p></div></section><section class="main__item container item" id="undefined-css-.content"><h3 class="item__heading"><a class="item__name" href="#css-.content">.content</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.content {
   @include response(md){
-    height: 120vh;
+    min-height: 120vh;
   }
   @include response(xl){
-    height: 110vh;
+    min-height: 110vh;
   }
   height: auto;
 }</code>" data-collapsed=".content { ... }"><code>.content { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Estilos del contenido de la vista modificar entrenador</p></div></section><section class="main__item container item" id="undefined-css-.title"><h3 class="item__heading"><a class="item__name" href="#css-.title">.title</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.title {
@@ -2337,7 +2337,7 @@
   font-family: $font-family-text;
   color: white;
   margin-top: 5rem !important;
-  background-color: green;
+  background-color: getColor(green);
   border-radius: 10rem;
   width: 20%;
   text-align: center;
@@ -2709,7 +2709,7 @@
       margin-top: 5rem;
       &amp;-icon{
         margin-left: 1rem;
-        color: getColor(red);
+        color: #e74c3c;
         transition: $transition;
         &amp;:hover{
           cursor: pointer;
@@ -2770,7 +2770,7 @@
   font-size: getFontSize(md);
   font-family: $font-family-title;
   font-weight: getFontWeight(bold);
-  color: getColor(red);
+  color: #e74c3c;
   margin-bottom: 2rem;
   text-align: center;
 }</code>" data-collapsed=".error-message { ... }"><code>.error-message { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Estilos de mensaje de error</p></div></section><section class="main__item container item" id="undefined-css-.content"><h3 class="item__heading"><a class="item__name" href="#css-.content">.content</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.content {
@@ -3018,9 +3018,7 @@
     }
   }
 }</code>" data-collapsed=".trainer { ... }"><code>.trainer { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Estilos para el card de los entrenadores (para que los usuarios puedan verlos)</p></div></section><section class="main__item container item" id="undefined-css-.content"><h3 class="item__heading"><a class="item__name" href="#css-.content">.content</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.content {
-  // @include response(md){
-  //   height: auto;
-  // }
+  padding-bottom: 1rem;
   height: auto;
 }</code>" data-collapsed=".content { ... }"><code>.content { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Estilos para la vista de dietas de usuario</p></div></section><section class="main__item container item" id="undefined-css-.trainers-title"><h3 class="item__heading"><a class="item__name" href="#css-.trainers-title">.trainers-title</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.trainers-title {
   @include view_header();
@@ -4405,9 +4403,10 @@
   border: none;
   @include response(xl) {
     font-size: getFontSize(xl);
+    height: 6.5rem;
   }
   font-size: getFontSize(md);
-  height: 6.5rem;
+  height: 5rem;
   border-radius: 0.5rem;
   transition: $transition;
   padding: 1rem 3rem 1rem 3rem;
@@ -4461,7 +4460,7 @@
     @include response(xl) {
       @include button(lg, true, $border-radius: 0.5rem, $heigth: 6.5rem);
     }
-    @include button(md, true, $border-radius: 0.5rem, $heigth: 6.5rem);
+    @include button(md, true, $border-radius: 0.5rem, $heigth: 5rem);
 
     &amp;-delete {
       @include normal_button();

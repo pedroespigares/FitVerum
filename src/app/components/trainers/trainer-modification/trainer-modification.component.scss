@@ -5,10 +5,10 @@
 /// Estilos del contenido de la vista modificar entrenador
 .content{
   @include response(md){
-    height: 120vh;
+    min-height: 120vh;
   }
   @include response(xl){
-    height: 110vh;
+    min-height: 110vh;
   }
   height: auto;
 }
@@ -73,7 +73,7 @@
     }
     &-btn{
       @include button($size: md, $border-radius: 1rem, $focus: true);
-      background-color: #e74c3c;
+      background-color: getColor(red);
       border: none;
       color: white;
       transition: $transition;
@@ -208,11 +208,9 @@
   font-size: getFontSize(xxs);
   font-family: $font-family-text;
   color: var(--cuaternary-color);
-  align-self: flex-start;
-  justify-self: flex-start;
+  margin-top: -9rem;
   &-error{
-    align-self: flex-start;
-    justify-self: flex-start;
+    margin-top: -9rem;
     color: #e74c3c;
     font-size: getFontSize(xxs);
   }

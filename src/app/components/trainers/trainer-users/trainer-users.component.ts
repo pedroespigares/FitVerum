@@ -1,7 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { AuthService } from 'src/app/services/auth.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-trainer-users',

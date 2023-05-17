@@ -31,8 +31,8 @@
             <img *ngIf="uploaded" class="change-data-img-uploaded-img" [src]="uploadedPhotoURL">
         </label>
         <input class="change-data-img-input" type="file" id="Profile picture" name="Profile picture" accept="image/*" (change)="uploadFile($event)">
-        <p *ngIf="!fileTooBig" class="info-under">3 MB Max</p>
-        <p *ngIf="fileTooBig" class="info-under-error">3 MB Max</p>
+        <p *ngIf="!fileTooBig" class="info-under">3 MB Max | JPG or PNG</p>
+        <p *ngIf="fileTooBig" class="info-under-error">3 MB Max | JPG or PNG</p>
         <button *ngIf="!loading" class="change-data-btn" (click)="changeData()">{{"MODIFICATIONS.CHANGE-DATA" | translate}}</button>
     </form>
 

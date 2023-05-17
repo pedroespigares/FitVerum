@@ -615,9 +615,10 @@
   border: none;
   @include response(xl) {
     font-size: getFontSize(xl);
+    height: 6.5rem;
   }
   font-size: getFontSize(md);
-  height: 6.5rem;
+  height: 5rem;
   border-radius: 0.5rem;
   transition: $transition;
   padding: 1rem 3rem 1rem 3rem;
@@ -685,7 +686,7 @@
     @include response(xl) {
       @include button(lg, true, $border-radius: 0.5rem, $heigth: 6.5rem);
     }
-    @include button(md, true, $border-radius: 0.5rem, $heigth: 6.5rem);
+    @include button(md, true, $border-radius: 0.5rem, $heigth: 5rem);
 
     &-delete {
       @include normal_button();
