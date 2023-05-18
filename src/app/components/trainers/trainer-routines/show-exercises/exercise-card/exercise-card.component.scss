@@ -47,3 +47,31 @@
     }
   }
 }
+
+.modal {
+  // TODO: Editar borders
+  @include modal();
+}
+
+.fa-x{
+  color: var(--primary-color);
+  font-size: getFontSize(xl);
+  transition: $transition;
+  padding-right: 1rem;
+  cursor: pointer;
+  &:hover{
+    color: var(--secondary-color);
+  }
+}
+
+::ng-deep .modal-content {
+  background-color: var(--background-color) !important;
+}
+
+::ng-deep .modal-header {
+  border-bottom: none;
+}
+
+::ng-deep .modal-footer {
+  border-top: none;
+}
