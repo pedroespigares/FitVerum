@@ -1,7 +1,7 @@
 <img class="machine-img" [src]="machine.photoURL"alt="Routine Image"/>
 <h2 class="machine-title">{{ machine.name }}</h2>
 <div class="machine-actions">
-  <button class="machine-actions-button-delete" (click)="deleteMachine(machine.id, machine.photoURL)">
+  <button class="machine-actions-button-delete" (click)="open(machine)">
     <i class="fa-solid fa-trash"></i>
   </button>
   <button class="machine-actions-button-edit" routerLink="/administration/machines/edit/{{ machine.id }}">
@@ -11,3 +11,23 @@
     <i class="fa-solid fa-circle-info"></i>
   </button>
 </div>
+
+<ng-template #modalContent let-close="close">
+  <div class="modal-header">
+    <h5 class="modal-title">{{"MODALS.TITLE" | translate}}</h5>
+    <i class="fa-solid fa-x" (click)="close()"></i>
+  </div>
+  <div class="modal-body">
+    <div>
+      <p class="modal-body-title-text">{{"MODALS.DELETE-MACHINE" | translate}}</p>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="modal-button-delete" (click)="deleteMachine(modalData?.machine?.id, modalData?.machine?.photoURL)">
+      {{"MODALS.DELETE" | translate}}
+    </button>
+    <button type="button" class="modal-button" (click)="close()">
+      {{"MODALS.CANCEL" | translate}}
+    </button>
+  </div>
+</ng-template>

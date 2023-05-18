@@ -30,7 +30,10 @@
 
   &-text{
     color: var(--text-color);
-    font-size: getFontSize(lg);
+    @include response(xl){
+      font-size: getFontSize(lg);
+    }
+    font-size: getFontSize(md);
     line-height: 5rem;
     text-align: justify;
     font-family: $font-family-text;

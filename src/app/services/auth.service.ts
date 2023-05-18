@@ -75,7 +75,6 @@ export class AuthService {
           this.userEmail = user.email;
           this.userID = user.uid;
           this.userPhoto = user.photoURL;
-          // this.loaded = true;
           this.checkUserRol().then(() => {
             this.getUserPhoto();
             this.getLoginMethod();

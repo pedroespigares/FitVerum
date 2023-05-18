@@ -11,6 +11,7 @@
           [(ngModel)]="writtenMessage"
           placeholder="Write your message here..."
           (keydown)="onKeyDown($event)"
+          maxlength="500"
           required
         ></textarea>
       <button type="submit" class="forum-form-button" (click)="onSubmit()">{{"FORUM.SUBMIT" | translate}}</button>

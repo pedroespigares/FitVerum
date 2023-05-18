@@ -33,7 +33,7 @@ export class ForumComponent implements OnInit, OnDestroy{
   }
 
   onKeyDown(event: any) {
-    if (event.key === "Enter" && this.writtenMessage != '') {
+    if (event.key === "Enter" && this.writtenMessage != '' && event.shiftKey === false) {
       if(this.auth.isAdmin){
         this.database.uploadForumMessage(this.writtenMessage, new Date().getTime(), true, false, null, null);
         this.writtenMessage = '';
@@ -41,7 +41,6 @@ export class ForumComponent implements OnInit, OnDestroy{
         this.database.uploadForumMessage(this.writtenMessage, new Date().getTime(), false, this.auth.isTrainer, null, this.auth.userID);
         this.writtenMessage = '';
       }
-
     }
   }
 

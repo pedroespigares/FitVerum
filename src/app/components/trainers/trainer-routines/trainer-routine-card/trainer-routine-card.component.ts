@@ -1,6 +1,7 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewChild, TemplateRef } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { ref, getStorage, deleteObject} from '@angular/fire/storage';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-trainer-routine-card',
@@ -8,12 +9,16 @@ import { ref, getStorage, deleteObject} from '@angular/fire/storage';
   styleUrls: ['./trainer-routine-card.component.scss']
 })
 export class TrainerRoutineCardComponent {
+  @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
   storage: any;
+  modalData: {
+    routine: any;
+  };
 
   @Input() routine: any;
   @Output() deleteRoutineEvent = new EventEmitter();
 
-  constructor(private database: DatabaseService) {
+  constructor(private database: DatabaseService, private modalService: NgbModal) {
     this.storage = getStorage();
   }
 
@@ -24,14 +29,10 @@ export class TrainerRoutineCardComponent {
    * @returns
    */
   deleteRoutine(id: string, photoURL: string): void {
-    let confirmDelete = confirm('Are you sure you want to delete this routine?');
-    if (confirmDelete){
-      this.database.delete('routines', id);
-      this.deletePhotoFromStorage(photoURL);
-      this.deleteRoutineEvent.emit();
-    } else {
-      return;
-    }
+    this.database.delete('routines', id);
+    this.deletePhotoFromStorage(photoURL);
+    this.deleteRoutineEvent.emit();
+    this.modalService.dismissAll();
   }
 
   /**
@@ -39,9 +40,13 @@ export class TrainerRoutineCardComponent {
    * @param photoURL
    * @returns
    * */
-
   deletePhotoFromStorage(photoURL: string): void {
     const photoRef = ref(this.storage, photoURL);
     deleteObject(photoRef);
   }
+
+  open(routine: any) {
+		this.modalData = { routine };
+    this.modalService.open(this.modalContent, { size: 'md', centered: true, keyboard: true});
+	}
 }

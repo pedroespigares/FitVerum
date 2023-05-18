@@ -2,7 +2,7 @@
 @import "../../../../scss/variables.scss";
 
 .content{
-  @include response(md){
+  @include response(sm){
     min-height: 120vh;
   }
   @include response(xl){
@@ -218,4 +218,33 @@
   @include view_header(2rem);
   color: var(--cuaternary-color);
   margin-top: 5rem;
+}
+
+
+.modal {
+  // TODO: Editar borders
+  @include modal();
+}
+
+.fa-x{
+  color: var(--primary-color);
+  font-size: getFontSize(xl);
+  transition: $transition;
+  padding-right: 1rem;
+  cursor: pointer;
+  &:hover{
+    color: var(--secondary-color);
+  }
+}
+
+::ng-deep .modal-content {
+  background-color: var(--background-color) !important;
+}
+
+::ng-deep .modal-header {
+  border-bottom: none;
+}
+
+::ng-deep .modal-footer {
+  border-top: none;
 }

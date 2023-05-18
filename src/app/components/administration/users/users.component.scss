@@ -114,7 +114,7 @@
             color: var(--primary-color);
             cursor: pointer;
             &:hover {
-              color: #e74c3c;
+              color: getColor(red);
             }
             border: none;
             background-color: var(--background-color);

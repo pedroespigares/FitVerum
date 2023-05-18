@@ -1,0 +1,54 @@
+@import "../../../../scss/mixin.scss";
+@import "../../../../scss/variables.scss";
+
+/// Estilos del contenido de la vista de sobre nosotros
+.content{
+  height: 150vh;
+  @include response(sm){
+    height: 100vh;
+  }
+  @include response(xl){
+    height: calc(100vh - 112px)
+  }
+}
+
+/// Estilo del título
+.title{
+  @include view_header(5rem);
+  padding-bottom: 5rem;
+}
+
+::ng-deep .accordion{
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+::ng-deep .accordion-item{
+  color: var(--text-color);
+  background-color: var(--background-color);
+  @include response(xl){
+    font-size: getFontSize(md);
+  }
+  font-size: getFontSize(sm);
+}
+
+::ng-deep .accordion-button{
+  color: white;
+  background-color: var(--primary-color);
+  @include response(xl){
+    font-size: getFontSize(lg);
+  }
+  font-size: getFontSize(md);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+a{
+  color: var(--primary-color);
+  font-size: getFontSize(md);
+  font-family: $font-family-text;
+  text-decoration: none;
+  &:hover{
+    text-decoration: underline;
+  }
+}

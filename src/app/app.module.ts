@@ -62,6 +62,8 @@ import { EditEntryComponent } from './components/users/user-entry/edit-entry/edi
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { SeeTrainersComponent } from './components/users/see-trainers/see-trainers.component';
 import { SeeTrainersCardComponent } from './components/users/see-trainers/see-trainers-card/see-trainers-card.component';
+import { FaqComponent } from './components/static/faq/faq.component';
+import { LegalComponent } from './components/static/legal/legal.component';
 
 
 @NgModule({
@@ -114,6 +116,8 @@ import { SeeTrainersCardComponent } from './components/users/see-trainers/see-tr
     EditEntryComponent,
     SeeTrainersComponent,
     SeeTrainersCardComponent,
+    FaqComponent,
+    LegalComponent,
   ],
   imports: [
     BrowserModule,

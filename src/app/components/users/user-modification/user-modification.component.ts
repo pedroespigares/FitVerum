@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef  } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { AuthService } from 'src/app/services/auth.service';
 import {
@@ -8,6 +8,7 @@ import {
   getDownloadURL,
 } from '@angular/fire/storage';
 import { getAuth } from '@angular/fire/auth';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-user-modification',
@@ -15,7 +16,7 @@ import { getAuth } from '@angular/fire/auth';
   styleUrls: ['./user-modification.component.scss']
 })
 export class UserModificationComponent implements OnInit {
-
+  @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
   storage: any;
   basePath: string = 'users';
 
@@ -50,7 +51,7 @@ export class UserModificationComponent implements OnInit {
 
   userFromNativeAuth: any = getAuth();
 
-  constructor(private database: DatabaseService, public auth: AuthService) {
+  constructor(private database: DatabaseService, public auth: AuthService, private modalService: NgbModal) {
     this.storage = getStorage();
   }
 
@@ -149,13 +150,15 @@ export class UserModificationComponent implements OnInit {
   }
 
   deleteUser() {
-    let confirmation = confirm('Are you sure you want to delete your account?');
-    if (confirmation) {
-        this.database.deleteUserWithUserID(this.auth.userID);
-        this.database.deleteUserData(this.auth.userID, false);
-        this.auth.deleteAccount(this.userFromNativeAuth.currentUser).then(() => {
-          this.auth.signOut();
-      });
-    }
+    this.database.deleteUserWithUserID(this.auth.userID);
+    this.database.deleteUserData(this.auth.userID, false);
+    this.auth.deleteAccount(this.userFromNativeAuth.currentUser).then(() => {
+      this.auth.signOut();
+    });
+    this.modalService.dismissAll();
   }
+
+  open() {
+    this.modalService.open(this.modalContent, { size: 'md', centered: true, keyboard: true});
+	}
 }

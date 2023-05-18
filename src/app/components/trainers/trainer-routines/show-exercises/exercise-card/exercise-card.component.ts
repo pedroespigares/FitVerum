@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, ViewChild, TemplateRef } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
-import { ref, getStorage, deleteObject} from '@angular/fire/storage';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-exercise-card',
@@ -8,15 +8,14 @@ import { ref, getStorage, deleteObject} from '@angular/fire/storage';
   styleUrls: ['./exercise-card.component.scss']
 })
 export class ExerciseCardComponent implements OnInit{
-  storage: any;
-
+  @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
   @Input() exercise: any;
-
+  modalData: {
+    exercise: any;
+  };
   machinePhotoURL: string;
 
-  constructor(private database: DatabaseService) {
-    this.storage = getStorage();
-  }
+  constructor(private database: DatabaseService, private modalService: NgbModal) {}
 
   ngOnInit(): void {
     this.database.getMachinePhoto(this.exercise.machineID).then((photoURL) => {
@@ -30,24 +29,12 @@ export class ExerciseCardComponent implements OnInit{
    * @param photoURL
    * @returns
    */
-  deleteExercise(id: string, photoURL: string): void {
-    let confirmDelete = confirm('Are you sure you want to delete this machine?');
-    if (confirmDelete){
-      this.database.delete('exercises', id);
-      this.deletePhotoFromStorage(photoURL);
-    } else {
-      return;
-    }
+  deleteExercise(id: string): void {
+    this.database.delete('exercises', id);
   }
 
-  /**
-   * Borrar foto de la máquina de Firebase Storage
-   * @param photoURL
-   * @returns
-   * */
-
-  deletePhotoFromStorage(photoURL: string): void {
-    const photoRef = ref(this.storage, photoURL);
-    deleteObject(photoRef);
-  }
+  open(exercise: any) {
+		this.modalData = { exercise };
+    this.modalService.open(this.modalContent, { size: 'md', centered: true, keyboard: true});
+	}
 }

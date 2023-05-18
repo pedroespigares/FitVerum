@@ -12,7 +12,7 @@
             <p class="trainer-info-container-membership">{{"MODIFICATIONS.MEMBER-SINCE" | translate}}{{membership | date: 'longDate'}}</p>
         </div>
         <div *ngIf="!loading" class="trainer-info-container">
-          <button class="trainer-info-container-btn" (click)="deleteTrainer()">{{"MODIFICATIONS.DELETE-ACCOUNT" | translate}}</button>
+          <button class="trainer-info-container-btn" (click)="open()">{{"MODIFICATIONS.DELETE-ACCOUNT" | translate}}</button>
         </div>
     </div>
     <h2 *ngIf="!loading && !this.auth.thirdPartyLogin" class="change-data-title">{{"MODIFICATIONS.CHANGE-TRAINER-DATA" | translate}}</h2>
@@ -41,3 +41,23 @@
     <p *ngIf="success" class="success-message">{{successMessage}}</p>
     <h3 *ngIf="!loading && this.auth.thirdPartyLogin" class="thirdPartyLoginMessage">{{"MODIFICATIONS.3RD-PARTY" | translate}}</h3>
 </main>
+
+<ng-template #modalContent let-close="close">
+  <div class="modal-header">
+    <h5 class="modal-title">{{"MODALS.TITLE" | translate}}</h5>
+    <i class="fa-solid fa-x" (click)="close()"></i>
+  </div>
+  <div class="modal-body">
+    <div>
+      <p class="modal-body-title-text">{{"MODALS.DELETE-ACCOUNT" | translate}}</p>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="modal-button-delete" (click)="deleteTrainer()">
+      {{"MODALS.DELETE" | translate}}
+    </button>
+    <button type="button" class="modal-button" (click)="close()">
+      {{"MODALS.CANCEL" | translate}}
+    </button>
+  </div>
+</ng-template>

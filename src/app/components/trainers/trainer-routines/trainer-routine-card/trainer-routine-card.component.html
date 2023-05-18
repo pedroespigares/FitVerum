@@ -1,7 +1,7 @@
 <img class="routine-img" [src]="routine.photoURL"alt="Routine Image"/>
 <h2 class="routine-title">{{ routine.title }}</h2>
 <div class="routine-actions">
-  <button class="routine-actions-button-delete" (click)="deleteRoutine(routine.id, routine.photoURL)">
+  <button class="routine-actions-button-delete" (click)="open(routine)">
     <i class="fa-solid fa-trash"></i>
   </button>
   <button class="routine-actions-button-edit" routerLink="/trainer/routines/edit/{{ routine.id }}">
@@ -11,3 +11,23 @@
     <i class="fa-solid fa-circle-info"></i>
   </button>
 </div>
+
+<ng-template #modalContent let-close="close">
+  <div class="modal-header">
+    <h5 class="modal-title">{{"MODALS.TITLE" | translate}}</h5>
+    <i class="fa-solid fa-x" (click)="close()"></i>
+  </div>
+  <div class="modal-body">
+    <div>
+      <p class="modal-body-title-text">{{"MODALS.DELETE-ROUTINE" | translate}}</p>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="modal-button-delete" (click)="deleteRoutine(modalData?.routine?.id, modalData?.routine?.photoURL)">
+      {{"MODALS.CANCEL" | translate}}
+    </button>
+    <button type="button" class="modal-button" (click)="close()">
+      {{"MODALS.DELETE" | translate}}
+    </button>
+  </div>
+</ng-template>

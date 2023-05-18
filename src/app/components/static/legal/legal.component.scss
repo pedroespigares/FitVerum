@@ -1,0 +1,68 @@
+@import "../../../../scss/mixin.scss";
+@import "../../../../scss/variables.scss";
+
+/// Estilos del contenido de la vista de sobre nosotros
+.content{
+  height: auto;
+  @include response(xs){
+    padding-bottom: 10rem;
+  }
+  @include response(lg){
+    padding-bottom: 10rem;
+  }
+  @include response(xl){
+    padding-bottom: 17.15rem;
+  }
+}
+
+/// Estilo del título
+.title{
+  @include view_header(5rem);
+  padding-bottom: 10rem;
+}
+
+.term-container{
+  padding-left: 20rem;
+  padding-right: 20rem;
+  padding-bottom: 5rem;
+  &-title{
+    @include response(xl){
+      font-size: getFontSize(xl);
+    }
+    font-weight: getFontWeight(bold);
+    font-size: getFontSize(lg);
+    color: var(--primary-color);
+    font-family: $font-family-title;
+    padding-bottom: 2rem;
+  }
+  &-subtitle{
+    @include response(xl){
+      font-size: getFontSize(lg);
+    }
+    font-weight: getFontWeight(semi-bold);
+    font-size: getFontSize(md);
+    color: var(--cuaternary-color);
+    font-family: $font-family-title;
+    padding-bottom: 2rem;
+  }
+  &-content{
+    @include response(xl){
+      font-size: getFontSize(md);
+    }
+    font-size: getFontSize(sm);
+    color: var(--text-color);
+    font-family: $font-family-text;
+    padding-bottom: 2rem;
+    &-final-text{
+      @include response(xl){
+        font-size: getFontSize(md);
+      }
+      font-size: getFontSize(sm);
+      color: var(--text-color);
+      font-family: $font-family-text;
+      padding-top: 7rem;
+      padding-left: 20rem;
+    padding-right: 20rem;
+    }
+  }
+}

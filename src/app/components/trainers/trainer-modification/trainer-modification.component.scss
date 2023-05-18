@@ -4,7 +4,7 @@
 
 /// Estilos del contenido de la vista modificar entrenador
 .content{
-  @include response(md){
+  @include response(sm){
     min-height: 120vh;
   }
   @include response(xl){
@@ -211,7 +211,7 @@
   margin-top: -9rem;
   &-error{
     margin-top: -9rem;
-    color: #e74c3c;
+    color: getColor(red);
     font-size: getFontSize(xxs);
   }
 }
@@ -226,4 +226,33 @@
   @include view_header(2rem);
   color: var(--cuaternary-color);
   margin-top: 5rem;
+}
+
+.modal {
+  // TODO: Editar borders
+  @include modal();
+}
+
+.fa-x{
+  color: var(--primary-color);
+  font-size: getFontSize(xl);
+  transition: $transition;
+  padding-right: 1rem;
+  cursor: pointer;
+  &:hover{
+    color: var(--secondary-color);
+  }
+}
+
+::ng-deep .modal-content {
+  background-color: var(--background-color) !important;
+  box-shadow: 0px 0px 30px 0px  var(--box-shadow-thin) !important;
+}
+
+::ng-deep .modal-header {
+  border-bottom: none;
+}
+
+::ng-deep .modal-footer {
+  border-top: none;
 }

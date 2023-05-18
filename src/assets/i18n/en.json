@@ -299,5 +299,50 @@
   "FORUM": {
     "TITLE": "Forum",
     "SUBMIT": "Submit"
+  },
+  "FAQ":{
+    "Q1": "What is FitVerum?",
+    "A1": "FitVerum is a web application that allows you to create and manage your own training routines with a personal trainer.",
+    "Q2": "How can I became a trainer in FitVerum?",
+    "A2-1": "To be one of our trainers, just send us an email to this ",
+    "A2-2":". You will be contacted as soon as possible. You will be asked to provide some information about you and your experience as a trainer.",
+    "Q3": "How do I contact with a trainer?",
+    "A3": "You can contact with a trainer by clicking on the 'Contact' button in the trainer's card o trainers section.",
+    "Q4": "A trainer put me as a client without permission. What should I do?",
+    "A4": "In this case, you should contact us as soon as possible. We will take care of the situation. In FitVerum, we take the privacy of our users very seriously."
+  },
+  "LEGAL-TERMS":{
+    "TITLE": "Legal Terms",
+    "T-1-TITLE": "1. Introduction",
+    "T-1-CONTENT": "Welcome to our platform! These Terms of Service govern your use of our website, mobile application, and related services. By accessing or using the FitVerum, you agree to be bound by these Terms. Please read them carefully before using FitVerum.",
+    "T-2-TITLE": "1. User Eligibility",
+    "T-2.1-TITLE": "2.1 Age Requirement",
+    "T-2.1-CONTENT": "You must be at least 16 years old to use FitVerum. By agreeing to these Terms, you represent and warrant to us that: (a) you are at least 16 years old; (b) you have not previously been suspended or removed from FitVerum; and (c) your registration and your use of FitVerum is in compliance with any and all applicable laws and regulations.",
+    "T-2.2-TITLE": "2.2 Account Registration",
+    "T-2.2-CONTENT": "To access certain features of FitVerum, you may be required to create an account. You agree to provide accurate and complete information during the registration process and to keep your account information updated. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.",
+    "T-3-TITLE": "3. User Responsibilities",
+    "T-3.1-TITLE": "3.1 Compliance with Laws",
+    "T-3.1-CONTENT": "You are solely responsible for ensuring that your use of FitVerum complies with all laws, rules and regulations applicable to you. If the applicable law in the country in which you reside requires that you must be older than 16 to receive certain Fitness Services, then the minimum age is the legally required one. If you are a minor, you may wish to consult your parents about what portions of FitVerum are appropriate for you. The right to access FitVerum is revoked where these Terms or use of FitVerum is prohibited or to the extent offering, sale or provision of the Fitness Services conflicts with any applicable law, rule or regulation. Further, FitVerum is offered only for your use, and not for the use or benefit of any third party.",
+    "T-4-TITLE": "4. Intellectual Property",
+    "T-4.1-TITLE": "4.1 Ownership",
+    "T-4.1-CONTENT": "FitVerum and its entire contents, features, and functionality (including but not limited to all information, software, text, displays, images, video, and audio, and the design, selection, and arrangement thereof) are owned by FitVerum, its licensors, or other providers of such material and are protected by international copyright.",
+    "T-4.2-TITLE": "4.2 User Content",
+    "T-4.2-CONTENT": "FitVerum may allow you to create, post, share, upload, or submit content, including but not limited to text, graphics, photos, software, music, videos, or audio (collectively, “User Content”). You hereby grant FitVerum a perpetual, irrevocable, nonexclusive, worldwide, royalty-free, fully-paid up, transferable license, with the right to sublicense through multiple tiers, to reproduce, distribute, publicly display, publicly perform, transmit, modify, edit, create derivative works of, and otherwise use the User Content in connection with the operation of the Fitness Services, the promotion, advertising or marketing of the Fitness Services, and the operation of FitVerum's business.",
+    "T-5-TITLE": "5. Limitation of Liability",
+    "T-5.1-TITLE": "5.1 Disclaimer",
+    "T-5.1-CONTENT": "FitVerum does not guarantee the accuracy of any User Content or fitness information provided on FitVerum. You acknowledge and agree that you are responsible for your own health and wellbeing, and you should always consult with your physician or other healthcare professional before starting any new exercise program, including programs offered on or through FitVerum. You acknowledge that FitVerum is not responsible for any injuries or damages you may sustain as a result of your use of, or reliance on, any User Content or fitness information provided on FitVerum.",
+    "T-5.2-TITLE": "5.2 Limitation of Liability",
+    "T-5.2-CONTENT": "In no event will FitVerum, its affiliates, or their licensors, service providers, employees, agents, officers, or directors be liable for damages of any kind, under any legal theory, arising out of or in connection with your use, or inability to use, FitVerum, any websites linked to it, any content on FitVerum or such other websites, including any direct, indirect, special, incidental, consequential, or punitive damages, including but not limited to, personal injury, pain and suffering, emotional distress, loss of revenue, loss of profits, loss of business or anticipated savings, loss of use, loss of goodwill, loss of data, and whether caused by tort (including negligence), breach of contract, or otherwise, even if foreseeable.",
+    "FINAL-TEXT": "Please note that the above legal terms and FAQs are for illustrative purposes only and may not cover all the necessary legal provisions. It is recommended to consult with a qualified attorney or legal professional to ensure your legal terms are comprehensive and tailored to your specific circumstances."
+  },
+  "MODALS":{
+    "TITLE": "Delete Confirmation",
+    "CANCEL": "Cancel",
+    "DELETE": "Delete",
+    "DELETE-ROUTINE": "Are you sure you want to delete this routine?",
+    "DELETE-DIET": "Are you sure you want to delete this diet?",
+    "DELETE-EXERCISE": "Are you sure you want to delete this exercise?",
+    "DELETE-MACHINE": "Are you sure you want to delete this machine?",
+    "DELETE-ACCOUNT": "Are you sure you want to delete your account?"
   }
 }

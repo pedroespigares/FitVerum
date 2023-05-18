@@ -1,7 +1,7 @@
 <img class="exercise-img" [src]="  machinePhotoURL"alt="Exercise Image"/>
 <h2 class="exercise-title">{{ exercise.title }}</h2>
 <div class="exercise-actions">
-  <button class="exercise-actions-button-delete" (click)="deleteExercise(exercise.id, exercise.photoURL)">
+  <button class="exercise-actions-button-delete" (click)="open(exercise)">
     <i class="fa-solid fa-trash"></i>
   </button>
   <button class="exercise-actions-button-edit" routerLink="/trainer/exercises/edit/{{ exercise.id }}">
@@ -11,3 +11,23 @@
     <i class="fa-solid fa-circle-info"></i>
   </button>
 </div>
+
+<ng-template #modalContent let-close="close">
+  <div class="modal-header">
+    <h5 class="modal-title">{{"MODALS.TITLE" | translate}}</h5>
+    <i class="fa-solid fa-x" (click)="close()"></i>
+  </div>
+  <div class="modal-body">
+    <div>
+      <p class="modal-body-title-text">{{"MODALS.DELETE-EXERCISE" | translate}}</p>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="modal-button-delete" (click)="deleteExercise(modalData?.exercise?.id)">
+      {{"MODALS.DELETE" | translate}}
+    </button>
+    <button type="button" class="modal-button" (click)="close()">
+      {{"MODALS.CANCEL" | translate}}
+    </button>
+  </div>
+</ng-template>

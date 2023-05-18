@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { AuthService } from 'src/app/services/auth.service';
 import {
@@ -8,6 +8,7 @@ import {
   getDownloadURL,
 } from '@angular/fire/storage';
 import { getAuth } from '@angular/fire/auth';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-trainer-modification',
@@ -15,6 +16,7 @@ import { getAuth } from '@angular/fire/auth';
   styleUrls: ['./trainer-modification.component.scss']
 })
 export class TrainerModificationComponent implements OnInit {
+  @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
   trainer: any;
   loading = true;
   membership: Date;
@@ -51,7 +53,7 @@ export class TrainerModificationComponent implements OnInit {
   userFromNativeAuth: any = getAuth();
 
 
-  constructor(private database: DatabaseService, public auth: AuthService) {
+  constructor(private database: DatabaseService, public auth: AuthService, private modalService: NgbModal) {
     this.storage = getStorage();
   }
 
@@ -147,14 +149,15 @@ export class TrainerModificationComponent implements OnInit {
   }
 
   deleteTrainer() {
-    let confirmation = confirm('Are you sure you want to delete your account?');
-    if (confirmation) {
-      this.auth.deleteAccount(this.userFromNativeAuth.currentUser).then(() => {
-        this.database.deleteTrainerWithUserID(this.auth.userID);
-        this.auth.signOut();
-      }).catch((error) => {
-        console.log(error);
-      });
-    }
+    this.database.deleteTrainerWithUserID(this.auth.userID);
+    this.database.deleteUserData(this.auth.userID, true);
+    this.auth.deleteAccount(this.userFromNativeAuth.currentUser).then(() => {
+          this.auth.signOut();
+    });
+    this.modalService.dismissAll();
   }
+
+  open() {
+    this.modalService.open(this.modalContent, { size: 'md', centered: true, keyboard: true});
+	}
 }

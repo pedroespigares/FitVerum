@@ -300,5 +300,50 @@
   "FORUM": {
     "TITLE": "Foro",
     "SUBMIT": "Enviar"
+  },
+  "FAQ":{
+    "Q1": "¿Qué es FitVerum?",
+    "A1": "FitVerum es una aplicación web que te permite llevar un control de tu actividad física y de tu alimentación. Además, te permite contactar con entrenadores personales para que te ayuden a conseguir tus objetivos.",
+    "Q2": "¿Cómo puedo ser entrenador?",
+    "A2-1": "Para ser entrenador, debes enviar un correo electrónico a este ",
+    "A2-2":". En el correo electrónico debes incluir tu nombre completo, tu DNI y una foto de tu título de entrenador personal.",
+    "Q3": "¿Cómo puedo contactar con un entrenador?",
+    "A3": "Para contactar con un entrenador, debes ir a la sección de entrenadores y seleccionar el entrenador con el que quieras contactar.",
+    "Q4": "Un entrenador me ha puesto como cliente suyo sin mi consentimiento. ¿Qué puedo hacer?",
+    "A4": "Si un entrenador te ha puesto como cliente suyo sin tu consentimiento, puedes ponerte en contacto con nosotros a través de nuestro correo electrónico. Nosotros nos encargaremos de solucionar el problema."
+  },
+  "LEGAL-TERMS":{
+    "TITLE": "Términos Legales",
+    "T-1-TITLE": "1. Introducción",
+    "T-1-CONTENT": "Bienvenido a nuestra plataforma Estos Términos de Servicio rigen el uso de nuestro sitio web, aplicación móvil y servicios relacionados. Al acceder o utilizar FitVerum, aceptas quedar vinculado por estos Términos. Por favor, léalos atentamente antes de utilizar FitVerum.",
+    "T-2-TITLE": "1. Elegibilidad",
+    "T-2.1-TITLE": "2.1 Edad",
+    "T-2.1-CONTENT": "Debes tener al menos 16 años para utilizar FitVerum. Al aceptar estos Términos, nos declaras y garantizas que: (a) tienes al menos 16 años de edad; (b) no has sido suspendido ni eliminado anteriormente de FitVerum; y (c) tu registro y tu uso de FitVerum cumplen todas y cada una de las leyes y normativas aplicables.",
+    "T-2.2-TITLE": "2.2 Registro y Cuentas",
+    "T-2.2-CONTENT": "Para acceder a determinadas funciones de FitVerum, es posible que deba crear una cuenta. Usted se compromete a proporcionar información precisa y completa durante el proceso de registro y a mantener actualizada la información de su cuenta. Usted es responsable de mantener la confidencialidad de las credenciales de su cuenta y de todas las actividades que ocurran bajo su cuenta.",
+    "T-3-TITLE": "3. Responsabilidades del Usuario",
+    "T-3.1-TITLE": "3.1 Cumplimiento de la Ley",
+    "T-3.1-CONTENT": "Usted es el único responsable de garantizar que su uso de FitVerum cumple con todas las leyes, normas y reglamentos aplicables a usted. Si la ley aplicable en el país en el que resides requiere que seas mayor de 16 años para recibir ciertos Servicios de FitVerum, entonces la edad mínima será la legalmente requerida. Si eres menor de edad, puedes consultar con tus padres qué partes de FitVerum son apropiadas para ti. El derecho a acceder a FitVerum queda revocado cuando estas Condiciones o el uso de FitVerum estén prohibidos o en la medida en que la oferta, venta o prestación de los Servicios de fitness entre en conflicto con cualquier ley, norma o reglamento aplicable. Además, FitVerum se ofrece únicamente para su uso, y no para el uso o beneficio de terceros.",
+    "T-4-TITLE": "4. Propiedad Intelectual",
+    "T-4.1-TITLE": "4.1 Propiedad de FitVerum",
+    "T-4.1-CONTENT": "FitVerum y todo su contenido, características y funcionalidad (incluyendo, entre otros, toda la información, software, texto, pantallas, imágenes, vídeo y audio, así como el diseño, selección y disposición de los mismos) son propiedad de FitVerum, sus licenciantes u otros proveedores de dicho material y están protegidos por derechos de autor internacionales.",
+    "T-4.2-TITLE": "4.2 Contenido del Usuario",
+    "T-4.2-CONTENT": "FitVerum puede permitirte crear, publicar, compartir, cargar o enviar contenido, incluyendo pero no limitado a texto, gráficos, fotos, software, música, vídeos o audio (colectivamente, 'Contenido de Usuario'). Por la presente, concedes a FitVerum una licencia perpetua, irrevocable, no exclusiva, mundial, libre de regalías, totalmente pagada y transferible, con derecho a sublicenciar a través de múltiples niveles, para reproducir, distribuir, mostrar públicamente, ejecutar públicamente, transmitir, modificar, editar, crear trabajos derivados y utilizar de otro modo el Contenido del usuario en relación con el funcionamiento de los Servicios de fitness, la promoción, publicidad o comercialización de los Servicios de fitness y el funcionamiento del negocio de FitVerum.",
+    "T-5-TITLE": "5. Limitación de responsabilidad",
+    "T-5.1-TITLE": "5.1 Descargo de responsabilidad",
+    "T-5.1-CONTENT": "FitVerum no garantiza la exactitud de cualquier Contenido de Usuario o información de fitness proporcionada en FitVerum. Reconoces y aceptas que eres responsable de tu propia salud y bienestar, y siempre debes consultar con tu médico u otro profesional de la salud antes de comenzar cualquier nuevo programa de ejercicios, incluyendo los programas ofrecidos en o a través de FitVerum. Reconoces que FitVerum no es responsable de ninguna lesión o daño que puedas sufrir como resultado de tu uso o confianza en cualquier Contenido de Usuario o información de fitness proporcionada en FitVerum.",
+    "T-5.2-TITLE": "5.2 Limitación de responsabilidad",
+    "T-5.2-CONTENT": "En ningún caso FitVerum, sus afiliados, o sus licenciatarios, proveedores de servicios, empleados, agentes, funcionarios o directores serán responsables por daños de ningún tipo, bajo ninguna teoría legal, que surja de o en conexión con su uso, o la imposibilidad de usar, FitVerum, cualquier sitio web vinculado a ella, cualquier contenido en FitVerum o tales otros sitios web, incluyendo cualquier daño directo, indirecto, daños especiales, incidentales, consecuentes o punitivos, incluyendo pero no limitado a, lesiones personales, dolor y sufrimiento, angustia emocional, pérdida de ingresos, pérdida de beneficios, pérdida de negocio o ahorros previstos, pérdida de uso, pérdida de fondo de comercio, pérdida de datos, y ya sea causada por agravio (incluyendo negligencia), incumplimiento de contrato, o de otra manera, incluso si es previsible.",
+    "FINAL-TEXT": "Tenga en cuenta que los términos legales y las preguntas más frecuentes anteriores son meramente ilustrativos y pueden no abarcar todas las disposiciones legales necesarias. Se recomienda consultar con un abogado o profesional del derecho cualificado para asegurarse de que sus términos legales son exhaustivos y se adaptan a sus circunstancias específicas."
+  },
+  "MODALS":{
+    "TITLE": "Confirmación de borrado",
+    "CANCEL": "Cancelar",
+    "DELETE": "Borrar",
+    "DELETE-ROUTINE": "¿Estás seguro de que quieres borrar esta rutina?",
+    "DELETE-DIET": "¿Estás seguro de que quieres borrar esta dieta?",
+    "DELETE-EXERCISE": "¿Estás seguro de que quieres borrar este ejercicio?",
+    "DELETE-MACHINE": "¿Estás seguro de que quieres borrar esta máquina?",
+    "DELETE-ACCOUNT": "¿Estás seguro de que quieres borrar tu cuenta?"
   }
 }

@@ -69,6 +69,18 @@
           transition: $transition;
         }
       }
+
+      tr.selected{
+        box-shadow: 0 0.5rem 1rem getColor(green);
+        border-radius: 1rem;
+        cursor: pointer;
+        transition: $transition;
+        &:hover {
+          transform: translateY(-0.5rem);
+          box-shadow: 0 1rem 2rem getColor(green);
+          transition: $transition;
+        }
+      }
       &-client {
         &-img {
           @include response(xl){
@@ -109,7 +121,7 @@
       margin-top: 5rem;
       &-icon{
         margin-left: 1rem;
-        color: #e74c3c;
+        color: getColor(red);
         transition: $transition;
         &:hover{
           cursor: pointer;
@@ -188,7 +200,7 @@
   font-size: getFontSize(md);
   font-family: $font-family-title;
   font-weight: getFontWeight(bold);
-  color: #e74c3c;
+  color: getColor(red);
   margin-bottom: 2rem;
   text-align: center;
 }

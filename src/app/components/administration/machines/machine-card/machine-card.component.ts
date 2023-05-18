@@ -1,6 +1,7 @@
-import { Component, Input, EventEmitter, Output } from '@angular/core';
+import { Component, Input, EventEmitter, Output, ViewChild, TemplateRef } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { ref, getStorage, deleteObject} from '@angular/fire/storage';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-machine-card',
@@ -8,13 +9,17 @@ import { ref, getStorage, deleteObject} from '@angular/fire/storage';
   styleUrls: ['./machine-card.component.scss']
 })
 export class MachineCardComponent {
-
+  @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
   storage: any;
 
   @Input() machine: any;
   @Output() deleteMachineEvent = new EventEmitter();
 
-  constructor(private database: DatabaseService) {
+  modalData: {
+    machine: any;
+  };
+
+  constructor(private database: DatabaseService, private modalService: NgbModal) {
     this.storage = getStorage();
   }
 
@@ -25,14 +30,10 @@ export class MachineCardComponent {
    * @returns
    */
   deleteMachine(id: string, photoURL: string): void {
-    let confirmDelete = confirm('Are you sure you want to delete this machine?');
-    if (confirmDelete){
-      this.database.delete('machines', id);
-      this.deletePhotoFromStorage(photoURL);
-      this.deleteMachineEvent.emit();
-    } else {
-      return;
-    }
+    this.database.delete('machines', id);
+    this.deletePhotoFromStorage(photoURL);
+    this.deleteMachineEvent.emit();
+    this.modalService.dismissAll();
   }
 
   /**
@@ -45,4 +46,9 @@ export class MachineCardComponent {
     const photoRef = ref(this.storage, photoURL);
     deleteObject(photoRef);
   }
+
+  open(machine: any) {
+		this.modalData = { machine };
+    this.modalService.open(this.modalContent, { size: 'md', centered: true, keyboard: true});
+	}
 }

@@ -38,6 +38,8 @@ import { ShowDietComponent } from './components/trainers/trainer-diets/show-diet
 import { ForumComponent } from './components/forum/forum.component';
 import { EditEntryComponent } from './components/users/user-entry/edit-entry/edit-entry.component';
 import { SeeTrainersComponent } from './components/users/see-trainers/see-trainers.component';
+import { FaqComponent } from './components/static/faq/faq.component';
+import { LegalComponent } from './components/static/legal/legal.component';
 import { AuthGuard } from './services/guards/auth.guard';
 import { AdminGuard } from './services/guards/admin.guard';
 import { TrainerGuard } from './services/guards/trainer.guard';
@@ -46,6 +48,8 @@ import { NotloggedGuard } from './services/guards/notlogged.guard';
 const routes: Routes = [
   { path: '', component: LandingComponent},
   { path: 'about-us', component: AboutUsComponent},
+  { path: 'faq', component: FaqComponent},
+  { path: 'legal', component: LegalComponent},
   { path: 'login', component: LoginComponent, canActivate: [NotloggedGuard]},
   { path: 'register', component: RegisterComponent, canActivate: [NotloggedGuard]},
   { path: 'forum', component: ForumComponent},

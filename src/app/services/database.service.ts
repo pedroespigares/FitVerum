@@ -381,12 +381,8 @@ export class DatabaseService {
     const userRef = doc(this.database, 'users', userID);
     getDoc(userRef).then((doc) => {
       if (doc.exists()) {
-        setDoc(userRef, {
-          userID: doc.data()['userID'],
-          displayName: doc.data()['displayName'],
-          photoURL: doc.data()['photoURL'],
+        updateDoc(userRef, {
           trainerID: trainerID,
-          timestamp: doc.data()['timestamp'],
         });
       }
     });
@@ -400,12 +396,8 @@ export class DatabaseService {
     const userRef = doc(this.database, 'users', userID);
     getDoc(userRef).then((doc) => {
       if (doc.exists()) {
-        setDoc(userRef, {
-          userID: doc.data()['userID'],
-          displayName: doc.data()['displayName'],
-          photoURL: doc.data()['photoURL'],
+        updateDoc(userRef, {
           trainerID: null,
-          timestamp: doc.data()['timestamp'],
         });
       }
     });
@@ -842,8 +834,8 @@ export class DatabaseService {
 
   /**
    * Borrar todos los datos de un usuario o entrenador
-   * @param userID 
-   * @param isTrainer 
+   * @param userID
+   * @param isTrainer
    */
   deleteUserData(userID: string, isTrainer: boolean){
     this.deleteDietsWithUserID(userID, isTrainer);

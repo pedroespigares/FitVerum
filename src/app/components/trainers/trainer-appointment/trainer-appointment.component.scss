@@ -63,6 +63,18 @@
           transition: $transition;
         }
       }
+
+      tr.selected{
+        box-shadow: 0 0.5rem 1rem getColor(green);
+        border-radius: 1rem;
+        cursor: pointer;
+        transition: $transition;
+        &:hover {
+          transform: translateY(-0.5rem);
+          box-shadow: 0 1rem 2rem getColor(green);
+          transition: $transition;
+        }
+      }
       &-client {
         &-img {
           @include response(xl){
