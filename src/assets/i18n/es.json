@@ -345,5 +345,6 @@
     "DELETE-EXERCISE": "¿Estás seguro de que quieres borrar este ejercicio?",
     "DELETE-MACHINE": "¿Estás seguro de que quieres borrar esta máquina?",
     "DELETE-ACCOUNT": "¿Estás seguro de que quieres borrar tu cuenta?"
-  }
+  },
+  "EVOLUTION": "evolución"
 }
