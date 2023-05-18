@@ -52,8 +52,8 @@ export class UserEvolutionComponent implements OnInit{
       {
         data: this.series,
         label: 'Series',
-        backgroundColor: 'getColor(red)',
-        borderColor: 'getColor(red)',
+        backgroundColor: '#e74c3c',
+        borderColor: '#e74c3c',
         pointBackgroundColor: '#839192',
         pointBorderColor: '#839192',
         pointHoverBackgroundColor: '#839192',
