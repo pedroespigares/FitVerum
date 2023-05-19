@@ -29,7 +29,7 @@ export class SimpleExerciseCardComponent implements OnInit{
 
   goToUserEntry() {
     if(!this.goToEntry){
-      this.router.navigateByUrl(`user/exercises/${this.exercise.id}`);
+      this.router.navigateByUrl(`user/exercises/${this.exercise.id}/user`);
       return;
     };
     let date = this.route.snapshot.paramMap.get('date');

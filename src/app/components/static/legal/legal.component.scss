@@ -22,9 +22,13 @@
 }
 
 .term-container{
-  padding-left: 20rem;
-  padding-right: 20rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
   padding-bottom: 5rem;
+  @include response(xl){
+    padding-left: 20rem;
+    padding-right: 20rem;
+  }
   &-title{
     @include response(xl){
       font-size: getFontSize(xl);
@@ -61,8 +65,13 @@
       color: var(--text-color);
       font-family: $font-family-text;
       padding-top: 7rem;
-      padding-left: 20rem;
-    padding-right: 20rem;
+      padding-left: 4rem;
+      padding-right: 4rem;
+      padding-bottom: 5rem;
+      @include response(xl){
+        padding-left: 20rem;
+        padding-right: 20rem;
+      }
     }
   }
 }

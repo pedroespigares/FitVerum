@@ -48,7 +48,6 @@
 }
 
 .modal {
-  // TODO: Editar borders
   @include modal();
 }
 
@@ -63,8 +62,9 @@
   }
 }
 
-::ng-deep .modal-content {
+ ::ng-deep .modal-content {
   background-color: var(--background-color) !important;
+  box-shadow: 0px 0px 30px 0px  var(--box-shadow-thin) !important;
 }
 
 ::ng-deep .modal-header {

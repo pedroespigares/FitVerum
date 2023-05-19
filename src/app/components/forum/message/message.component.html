@@ -15,7 +15,7 @@
     <p class="message-container-content-text">{{message.message}}</p>
   </div>
   <div class="message-container-icon-container">
-    <i class="fa-solid fa-trash message-container-icon-container-icon" (click)="deleteMessage(message.id)"></i>
+    <i class="fa-solid fa-trash message-container-icon-container-icon" (click)="open(message)"></i>
   </div>
 </div>
 
@@ -37,7 +37,7 @@
     <p class="message-container-admin-with-delete-content-text">{{message.message}}</p>
   </div>
   <div class="message-container-icon-container">
-    <i class="fa-solid fa-trash message-container-icon-container-icon" (click)="deleteMessage(message.id)"></i>
+    <i class="fa-solid fa-trash message-container-icon-container-icon" (click)="open(message)"></i>
   </div>
 </div>
 
@@ -77,3 +77,23 @@
     <p class="message-container-admin-content-text">{{message.message}}</p>
   </div>
 </div>
+
+<ng-template #modalContent let-close="close">
+  <div class="modal-header">
+    <h5 class="modal-title">{{"MODALS.TITLE" | translate}}</h5>
+    <i class="fa-solid fa-x" (click)="close()"></i>
+  </div>
+  <div class="modal-body">
+    <div>
+      <p class="modal-body-title-text">{{"MODALS.DELETE-MESSAGE" | translate}}</p>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="modal-button-delete" (click)="deleteMessage(modalData?.message?.id)">
+      {{"MODALS.DELETE" | translate}}
+    </button>
+    <button type="button" class="modal-button" (click)="close()">
+      {{"MODALS.CANCEL" | translate}}
+    </button>
+  </div>
+</ng-template>

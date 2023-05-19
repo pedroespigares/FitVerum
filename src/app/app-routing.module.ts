@@ -58,7 +58,7 @@ const routes: Routes = [
   { path: 'user/diets/:id', component: ShowDietComponent, canActivate: [AuthGuard]},
   { path: 'user/routines', component: UserRoutinesSimpleComponent, canActivate: [AuthGuard]},
   { path: 'user/routines/:routineID', component: UserRoutineExercisesSimpleComponent, canActivate: [AuthGuard]},
-  { path: 'user/exercises/:id', component: ShowSingleExerciseComponent, canActivate: [AuthGuard]},
+  { path: 'user/exercises/:id/:isUser', component: ShowSingleExerciseComponent, canActivate: [AuthGuard]},
   { path: 'user/calendar', component: UserCalendarComponent, canActivate: [AuthGuard]},
   { path: 'user/calendar/:date', component: UserRoutinesComponent, canActivate: [AuthGuard]},
   { path: 'user/calendar/:date/:routineID', component: UserRoutineExercisesComponent, canActivate: [AuthGuard]},
@@ -85,7 +85,7 @@ const routes: Routes = [
   { path: 'trainer/routines/add/:userID', component: AddRoutineComponent, canActivate: [TrainerGuard]},
   { path: 'trainer/routines/add/:routineID/exercise', component: AddExerciceComponent, canActivate: [TrainerGuard]},
   { path: 'trainer/exercises/edit/:id', component: EditExerciseComponent, canActivate: [TrainerGuard]},
-  { path: 'trainer/exercises/show/:id', component: ShowSingleExerciseComponent, canActivate: [TrainerGuard]},
+  { path: 'trainer/exercises/show/:id/:isUser', component: ShowSingleExerciseComponent, canActivate: [TrainerGuard]},
   { path: 'error/404-not-found', component: NotFoundComponent},
   { path: 'error/403-forbidden', component: ForbiddenComponent},
   { path: '**', redirectTo: '/error/404-not-found'}

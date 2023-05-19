@@ -30,13 +30,14 @@
 
   &-text{
     color: var(--text-color);
+    font-size: getFontSize(sm);
+    line-height: 5rem;
+    text-align: left;
+    font-family: $font-family-text;
     @include response(xl){
       font-size: getFontSize(lg);
+      text-align: justify;
     }
-    font-size: getFontSize(md);
-    line-height: 5rem;
-    text-align: justify;
-    font-family: $font-family-text;
   }
 }
 

@@ -4,6 +4,8 @@
 
 /// Estilos del mensaje individual del foro
 .message-container{
+  width: 95%;
+  word-break: break-all;
   @include flex($direction: column, $justify: flex-start, $align: flex-start, $gap: 2rem);
   &-with-delete{
     display: grid;
@@ -12,11 +14,12 @@
     box-shadow: 0 0.5rem 1rem var(--box-shadow-thin);
     margin: 5rem;
     border-radius: 1rem;
+    width: 95%;
+    word-break: break-all;
   }
   box-shadow: 0 0.5rem 1rem var(--box-shadow-thin);
   margin: 5rem;
   border-radius: 1rem;
-  overflow-x: hidden;
 
 
   &-admin{
@@ -28,6 +31,8 @@
       margin: 5rem;
       border-radius: 1rem;
       background-color: var(--tertiary-color);
+      width: 95%;
+      word-break: break-all;
 
       &-header-info-name-text{
         color: white;
@@ -36,11 +41,13 @@
           font-size: getFontSize(md);
           }
         font-size: getFontSize(xxs);
+        font-family: $font-family-title;
       }
       &-header-info-date{
         margin: 0;
         font-size: getFontSize(xxs);
         color: white;
+        font-family: $font-family-title;
       }
 
       &-content-text{
@@ -52,6 +59,7 @@
         color: white;
         padding: 0 2.5rem;
         padding-bottom: 2rem;
+        font-family: $font-family-text;
       }
     }
     @include flex($direction: column, $justify: flex-start, $align: flex-start, $gap: 3rem);
@@ -59,6 +67,8 @@
     margin: 5rem;
     border-radius: 1rem;
     background-color: var(--tertiary-color);
+    width: 95%;
+    word-break: break-all;
     &-header-info-name-text{
       color: white;
       margin: 0;
@@ -66,11 +76,13 @@
         font-size: getFontSize(md);
         }
       font-size: getFontSize(xxs);
+      font-family: $font-family-title;
     }
     &-header-info-date{
       margin: 0;
       font-size: getFontSize(xxs);
       color: white;
+      font-family: $font-family-title;
     }
 
     &-content-text{
@@ -82,6 +94,7 @@
       color: white;
       padding: 0 2.5rem;
       padding-bottom: 2rem;
+      font-family: $font-family-text;
     }
   }
 
@@ -123,6 +136,7 @@
           }
           font-size: getFontSize(xxs);
           color: var(--text-color);
+          font-family: $font-family-title;
         }
         &-icon{
           &-star{
@@ -147,6 +161,7 @@
         margin: 0;
         font-size: getFontSize(xxs);
         color: var(--text-color);
+        font-family: $font-family-title;
       }
     }
   }
@@ -159,6 +174,7 @@
     color: var(--text-color);
     padding: 0 2rem;
     padding-bottom: 2rem;
+    font-family: $font-family-text;
   }
   &-icon-container{
     grid-area: 1 / 2 / 3 / 3;
@@ -179,4 +195,32 @@
       }
     }
   }
+}
+
+.modal {
+  @include modal();
+}
+
+.fa-x{
+  color: var(--primary-color);
+  font-size: getFontSize(xl);
+  transition: $transition;
+  padding-right: 1rem;
+  cursor: pointer;
+  &:hover{
+    color: var(--secondary-color);
+  }
+}
+
+ ::ng-deep .modal-content {
+  background-color: var(--background-color) !important;
+  box-shadow: 0px 0px 30px 0px  var(--box-shadow-thin) !important;
+}
+
+::ng-deep .modal-header {
+  border-bottom: none;
+}
+
+::ng-deep .modal-footer {
+  border-top: none;
 }

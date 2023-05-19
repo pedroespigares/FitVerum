@@ -125,10 +125,10 @@
         "DESCRIPTION": "Machine/Exercise Description",
         "IMAGEN": "Machine/Exercise Image",
         "BUTTON": "Actualizar"
+      },
+      "SHOW-MACHINE": {
+        "TITLE": "Información de Máquina/Ejercicio"
       }
-    },
-    "SHOW-MACHINE": {
-      "TITLE": "Información de Máquina/Ejercicio"
     }
   },
 
@@ -344,7 +344,8 @@
     "DELETE-DIET": "¿Estás seguro de que quieres borrar esta dieta?",
     "DELETE-EXERCISE": "¿Estás seguro de que quieres borrar este ejercicio?",
     "DELETE-MACHINE": "¿Estás seguro de que quieres borrar esta máquina?",
-    "DELETE-ACCOUNT": "¿Estás seguro de que quieres borrar tu cuenta?"
+    "DELETE-ACCOUNT": "¿Estás seguro de que quieres borrar tu cuenta?",
+    "DELETE-MESSAGE": "¿Estás seguro de que quieres borrar este mensaje?"
   },
   "EVOLUTION": "evolución"
 }

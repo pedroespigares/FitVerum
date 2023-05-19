@@ -3,7 +3,9 @@
 
 /// Estilos para la vista de dietas de usuario
 .content{
-    padding-bottom: 1rem;
+  @include response(md){
+    min-height: calc(100vh - 112px);
+  }
   height: auto;
 }
 

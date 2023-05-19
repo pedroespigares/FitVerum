@@ -343,7 +343,8 @@
     "DELETE-DIET": "Are you sure you want to delete this diet?",
     "DELETE-EXERCISE": "Are you sure you want to delete this exercise?",
     "DELETE-MACHINE": "Are you sure you want to delete this machine?",
-    "DELETE-ACCOUNT": "Are you sure you want to delete your account?"
+    "DELETE-ACCOUNT": "Are you sure you want to delete your account?",
+    "DELETE-MESSAGE": "Are you sure you want to delete this message?"
   },
   "EVOLUTION": "evolution"
 }

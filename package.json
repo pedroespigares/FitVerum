@@ -1,6 +1,10 @@
 {
   "name": "fit-verum",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": {
+    "name": "Pedro Espigares Asenjo",
+    "email": "pedro_espigares@outlook.com"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -32,7 +36,6 @@
     "@ngx-translate/http-loader": "^7.0.0",
     "@popperjs/core": "^2.11.7",
     "angular-calendar": "^0.31.0",
-    "aos": "^3.0.0-beta.6",
     "bootstrap": "^5.2.3",
     "chart.js": "^3.9.1",
     "chartjs-plugin-annotation": "^2.2.1",

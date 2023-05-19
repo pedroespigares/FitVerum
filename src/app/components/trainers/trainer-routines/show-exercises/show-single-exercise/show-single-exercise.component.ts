@@ -13,23 +13,27 @@ export class ShowSingleExerciseComponent implements OnInit{
   loading = true;
   routineID: string;
   photo: string;
+  isUser: boolean = this.route.snapshot.paramMap.get('isUser') == 'user' ? true : false;
   constructor(private route: ActivatedRoute, private database: DatabaseService, private router: Router) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.database.getByID(id, "exercises").then((exercise) => {
       this.exercise = exercise;
-      this.database.getRoutineByExercise(id).then((routine) => {
-        this.routineID = routine.id;
+      this.routineID = this.exercise.routineID;
         this.database.getMachinePhoto(this.exercise.machineID).then((photo) => {
           this.photo = photo;
           this.loading = false;
-        });
+
       });
     });
   }
 
   backToExercises(): void {
-    this.router.navigate([`/trainer/routines/show/${this.routineID}`]);
+    if(this.isUser){
+      this.router.navigate([`/user/routines/${this.routineID}`]);
+    } else{
+      this.router.navigate([`/trainer/routines/show/${this.routineID}`]);
+    }
   }
 }

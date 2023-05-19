@@ -1,6 +1,7 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy, ViewChild, TemplateRef } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-message',
@@ -8,11 +9,16 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./message.component.scss']
 })
 export class MessageComponent implements OnInit, OnDestroy {
+  @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
   @Input() message: any;
   userData: any = null;
   loading: boolean = true;
 
-  constructor(private database: DatabaseService, public auth: AuthService) {}
+  modalData: {
+    message: any;
+  };
+
+  constructor(private database: DatabaseService, public auth: AuthService, private modalService: NgbModal) {}
 
   ngOnInit(): void {
     if(this.message.isAdmin){
@@ -53,11 +59,14 @@ export class MessageComponent implements OnInit, OnDestroy {
   }
 
   deleteMessage(id: string){
-    let confirmDelete = confirm('Are you sure you want to delete this message?');
-    if(confirmDelete){
-      this.database.deleteForumMessage(id);
-    }
+    this.database.deleteForumMessage(id);
+    this.modalService.dismissAll();
   }
+
+  open(message: any) {
+		this.modalData = { message };
+    this.modalService.open(this.modalContent, { size: 'md', centered: true, keyboard: true});
+	}
 
   ngOnDestroy(): void {
     this.userData = null;
