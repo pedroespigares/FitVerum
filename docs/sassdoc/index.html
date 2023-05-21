@@ -674,6 +674,7 @@
   box-shadow: 0 0.5rem 1rem var(--box-shadow-thin);
   margin: 5rem;
   border-radius: 1rem;
+  overflow-x: hidden;
 
 
   &amp;-admin{
@@ -1144,16 +1145,16 @@
         font-size: getFontSize(xxs);
         text-align: center;
         font-family: $font-family-text;
-        font-weight: getFontWeight(bold);
+        font-weight: getFontWeight(semi-bold);
         color: getColor(red);
         width: 50%;
       }
 
       &amp;-credentials {
-        font-size: getFontSize(sm);
+        font-size: getFontSize(xs);
         text-align: center;
         font-family: $font-family-text;
-        font-weight: getFontWeight(bold);
+        font-weight: getFontWeight(semi-bold);
         color: getColor(red);
       }
     }
@@ -1251,6 +1252,13 @@
   cursor: pointer;
   &amp;:hover{
     color: var(--primary-color);
+  }
+  &amp;-check{
+    font-size: getFontSize(md);
+    font-family: $font-family-text;
+    font-weight: getFontWeight(thin);
+    display: block;
+    color: getColor(green);
   }
 }</code>" data-collapsed=".forgot-password { ... }"><code>.forgot-password { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Estilos para el mensaje de olvidé mi contraseña</p></div></section><section class="main__item container item" id="undefined-css-.content"><h3 class="item__heading"><a class="item__name" href="#css-.content">.content</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.content {
   @include flex($direction: column, $justify: flex-start, $align: center, $gap: 0);
@@ -2783,6 +2791,7 @@
   &amp;-info {
     grid-area: 1 / 2 / 2 / 3;
     height: 100%;
+    width: 100%;
 
     &amp;-title {
       @include response(lg){
@@ -4048,7 +4057,7 @@
       width: 100%;
       height: 100%;
       top: 0.01rem;
-      padding-top: 9rem;
+      padding-top: 15.5rem;
       left: -200%;
       right: 0.01rem;
       text-align: center;

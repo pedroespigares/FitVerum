@@ -424,11 +424,18 @@ export class DatabaseService {
    * @param id - ID del usuario
    * @param displayName - Nombre a actualizar
    */
-  updateDisplayName(id: string, displayName: string) {
+  updateDisplayName(id: string, displayName: string, isTrainer: boolean = false) {
     const userRef = doc(this.database, 'users', id);
-    updateDoc(userRef, {
-      displayName: displayName,
-    });
+    const trainerRef = doc(this.database, 'trainers', id);
+    if(isTrainer){
+      updateDoc(trainerRef, {
+        displayName: displayName,
+      });
+    } else{
+      updateDoc(userRef, {
+        displayName: displayName,
+      });
+    }
   }
 
   /**
@@ -436,11 +443,18 @@ export class DatabaseService {
    * @param id - ID del usuario
    * @param photoURL - URL de la foto a actualizar
    */
-  updatePhotoURL(id: string, photoURL: string) {
+  updatePhotoURL(id: string, photoURL: string, isTrainer: boolean = false) {
     const userRef = doc(this.database, 'users', id);
-    updateDoc(userRef, {
-      photoURL: photoURL,
-    });
+    const trainerRef = doc(this.database, 'trainers', id);
+    if(isTrainer){
+      updateDoc(trainerRef, {
+        photoURL: photoURL,
+      });
+    } else{
+      updateDoc(userRef, {
+        photoURL: photoURL,
+      });
+    }
   }
 
 
@@ -449,11 +463,18 @@ export class DatabaseService {
    * @param id - ID del usuario
    * @param email - Email a actualizar
    */
-  updateEmail(id: string, email: string) {
+  updateEmail(id: string, email: string, isTrainer: boolean = false) {
     const userRef = doc(this.database, 'users', id);
-    updateDoc(userRef, {
-      email: email,
-    });
+    const trainerRef = doc(this.database, 'trainers', id);
+    if(isTrainer){
+      updateDoc(trainerRef, {
+        email: email,
+      });
+    } else{
+      updateDoc(userRef, {
+        email: email,
+      });
+    }
   }
 
   /**
