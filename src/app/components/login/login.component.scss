@@ -161,16 +161,16 @@
         font-size: getFontSize(xxs);
         text-align: center;
         font-family: $font-family-text;
-        font-weight: getFontWeight(bold);
+        font-weight: getFontWeight(semi-bold);
         color: getColor(red);
         width: 50%;
       }
 
       &-credentials {
-        font-size: getFontSize(sm);
+        font-size: getFontSize(xs);
         text-align: center;
         font-family: $font-family-text;
-        font-weight: getFontWeight(bold);
+        font-weight: getFontWeight(semi-bold);
         color: getColor(red);
       }
     }
@@ -271,6 +271,13 @@
   cursor: pointer;
   &:hover{
     color: var(--primary-color);
+  }
+  &-check{
+    font-size: getFontSize(md);
+    font-family: $font-family-text;
+    font-weight: getFontWeight(thin);
+    display: block;
+    color: getColor(green);
   }
 }
 

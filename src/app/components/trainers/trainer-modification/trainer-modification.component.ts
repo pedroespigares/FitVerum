@@ -9,6 +9,7 @@ import {
 } from '@angular/fire/storage';
 import { getAuth } from '@angular/fire/auth';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-trainer-modification',
@@ -81,6 +82,7 @@ export class TrainerModificationComponent implements OnInit {
     if (this.newPassword == this.confirmNewPassword) {
       if(this.passwordCorrect) {
         this.auth.updatePassword(this.newPassword);
+        this.auth.signOut();
         this.success = true;
       }
     } else {
@@ -89,12 +91,14 @@ export class TrainerModificationComponent implements OnInit {
   }
 
   changeEmail() {
+    this.database.updateEmail(this.id, this.newEmail, true);
     this.auth.updateEmail(this.newEmail);
-    this.database.updateEmail(this.id, this.newEmail);
+    this.auth.signOut();
   }
 
   changeDisplayName() {
-    this.database.updateDisplayName(this.id, this.newDisplayName);
+    this.database.updateDisplayName(this.id, this.newDisplayName, true);
+    this.auth.signOut();
   }
 
   uploadFile(event: any) {
@@ -116,7 +120,7 @@ export class TrainerModificationComponent implements OnInit {
   // FIXME: Cierra sesión al cambiar el email ¿debería?
   changeData(){
     if(this.uploadedPhotoURL != null){
-      this.database.updatePhotoURL(this.id, this.uploadedPhotoURL);
+      this.database.updatePhotoURL(this.id, this.uploadedPhotoURL, true);
       this.passwordChanged = true;
     }
 
