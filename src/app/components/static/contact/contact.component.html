@@ -1,0 +1,64 @@
+<main class="content">
+    <h2 class="contact-title">{{"CONTACT.TITLE" | translate}}</h2>
+  <section class="contact">
+    <form class="contact-container" id="contact-form" (ngSubmit)="sendEmail()">
+      <div class="contact-container-item">
+        <input
+          class="contact-container-item-input"
+          type="text"
+          name="name"
+          placeholder="Name"
+          required
+          [(ngModel)]="name"
+        />
+      </div>
+
+      <div class="contact-container-item">
+        <input
+          class="contact-container-item-input"
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+          [(ngModel)]="email"
+        />
+      </div>
+
+      <div class="contact-container-item">
+        <input
+          class="contact-container-item-input"
+          type="text"
+          name="subject"
+          placeholder="Subject"
+          required
+          [(ngModel)]="subject"
+        />
+      </div>
+      <div class="contact-container-item">
+        <textarea
+          class="contact-container-item-input"
+          name="message"
+          cols="30"
+          rows="5"
+          placeholder="Message"
+          [(ngModel)]="message"
+        ></textarea>
+      </div>
+      <div *ngIf="name == '' || email == '' || subject == '' || message == ''" class="contact-container-item">
+        <button class="contact-container-item-button-disabled" disabled>{{"CONTACT.SEND" | translate}}</button>
+      </div>
+      <div *ngIf="name != '' && email != '' && subject != '' && message != ''" class="contact-container-item">
+        <button class="contact-container-item-button">{{"CONTACT.SEND" | translate}}</button>
+      </div>
+      <p *ngIf="!emailSent" class="messages-success">{{"CONTACT.SUCCESS" | translate}}</p>
+      <p *ngIf="error" class="messages-error">{{"CONTACT.ERROR" | translate}} {{errorMessage}}</p>	
+    </form>
+    <div class="contact-img-container">
+      <img
+        class="contact-img-container-img"
+        src="../../../../assets/images/contact.svg"
+        alt="Contact illustration"
+      />
+    </div>
+  </section>
+</main>

@@ -1,0 +1,91 @@
+@import "../../../../scss/mixin.scss";
+@import "../../../../scss/variables.scss";
+
+.content {
+  height: 100vh;
+  @include response(sm) {
+    height: 90vh;
+  }
+  @include response(desktop) {
+    height: calc(100vh - 112px);
+  }
+}
+
+// Estilos del contenido de la vista de contacto
+.contact {
+  @include response(xl) {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    align-items: start;
+  }
+  @include flex(column, center, center, 4rem);
+
+  &-title {
+    @include view_header(5rem);
+    margin-bottom: 10rem;
+  }
+
+  &-container {
+    grid-area: 1 / 1 / 1 / 2;
+    @include flex(column, center, center, 4rem);
+
+    &-item {
+      @include flex(column, center, center, 4rem);
+      width: 100%;
+
+      &-input {
+        @include input(sm);
+        @include response(md) {
+          @include input(xl);
+        }
+      }
+
+      &-button {
+        @include response(md) {
+          @include button(xl, $focus: true);
+        }
+        @include button(sm, $focus: true);
+        &-disabled {
+          @include response(md) {
+            @include button(xl, $focus: true, $disabled: true);
+          }
+          @include button(sm, $focus: true, $disabled: true);
+        }
+      }
+    }
+  }
+
+  &-img-container {
+    @include response(xl) {
+      grid-area: 1 / 2 / 1 / 3;
+      @include flex(row, center, flex-start);
+
+      &-img {
+        width: 75%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    display: none;
+  }
+}
+
+.messages {
+  &-error {
+    font-size: getFontSize(xs);
+    text-align: center;
+    font-family: $font-family-text;
+    font-weight: getFontWeight(semi-bold);
+    color: getColor(red);
+  }
+  &-success{
+    font-size: getFontSize(xs);
+    text-align: center;
+    font-family: $font-family-text;
+    font-weight: getFontWeight(semi-bold);
+    color: getColor(green);
+  }
+}

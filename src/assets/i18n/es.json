@@ -305,7 +305,7 @@
     "Q1": "¿Qué es FitVerum?",
     "A1": "FitVerum es una aplicación web que te permite llevar un control de tu actividad física y de tu alimentación. Además, te permite contactar con entrenadores personales para que te ayuden a conseguir tus objetivos.",
     "Q2": "¿Cómo puedo ser entrenador?",
-    "A2-1": "Para ser entrenador, debes enviar un correo electrónico a este ",
+    "A2-1": "Para ser entrenador, debes rellenar el formulario de la siguiente página: ",
     "A2-2":". En el correo electrónico debes incluir tu nombre completo, tu DNI y una foto de tu título de entrenador personal.",
     "Q3": "¿Cómo puedo contactar con un entrenador?",
     "A3": "Para contactar con un entrenador, debes ir a la sección de entrenadores y seleccionar el entrenador con el que quieras contactar.",
@@ -347,5 +347,11 @@
     "DELETE-ACCOUNT": "¿Estás seguro de que quieres borrar tu cuenta?",
     "DELETE-MESSAGE": "¿Estás seguro de que quieres borrar este mensaje?"
   },
-  "EVOLUTION": "evolución"
+  "EVOLUTION": "evolución",
+  "CONTACT": {
+    "SEND": "Enviar",
+    "SUCCESS": "Mensaje enviado correctamente",
+    "ERROR": "Error al enviar el mensaje",
+    "TITLE": "Contacta con nosotros"
+  }
 }

@@ -345,8 +345,8 @@
   @include response(xl) {
     font-size: getFontSize($size);
     width: calc($width - 0.25em);
-
   }
+  
   font-size: calc(getFontSize($size) - 0.5rem);
   font-family: $font-family-text;
   font-weight: getFontWeight(normal);

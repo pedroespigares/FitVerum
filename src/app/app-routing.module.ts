@@ -40,6 +40,7 @@ import { EditEntryComponent } from './components/users/user-entry/edit-entry/edi
 import { SeeTrainersComponent } from './components/users/see-trainers/see-trainers.component';
 import { FaqComponent } from './components/static/faq/faq.component';
 import { LegalComponent } from './components/static/legal/legal.component';
+import { ContactComponent } from './components/static/contact/contact.component';
 import { AuthGuard } from './services/guards/auth.guard';
 import { AdminGuard } from './services/guards/admin.guard';
 import { TrainerGuard } from './services/guards/trainer.guard';
@@ -50,6 +51,7 @@ const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent},
   { path: 'faq', component: FaqComponent},
   { path: 'legal', component: LegalComponent},
+  { path: 'contact', component: ContactComponent},
   { path: 'login', component: LoginComponent, canActivate: [NotloggedGuard]},
   { path: 'register', component: RegisterComponent, canActivate: [NotloggedGuard]},
   { path: 'forum', component: ForumComponent},

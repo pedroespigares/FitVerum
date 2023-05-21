@@ -64,6 +64,7 @@ import { SeeTrainersComponent } from './components/users/see-trainers/see-traine
 import { SeeTrainersCardComponent } from './components/users/see-trainers/see-trainers-card/see-trainers-card.component';
 import { FaqComponent } from './components/static/faq/faq.component';
 import { LegalComponent } from './components/static/legal/legal.component';
+import { ContactComponent } from './components/static/contact/contact.component';
 
 
 @NgModule({
@@ -118,6 +119,7 @@ import { LegalComponent } from './components/static/legal/legal.component';
     SeeTrainersCardComponent,
     FaqComponent,
     LegalComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
