@@ -3,9 +3,6 @@
 
 .content {
   height: 100vh;
-  @include response(sm) {
-    height: 90vh;
-  }
   @include response(desktop) {
     height: calc(100vh - 112px);
   }
@@ -14,10 +11,11 @@
 // Estilos del contenido de la vista de contacto
 .contact {
   @include response(xl) {
-    width: 100vw;
+    width: 98vw;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
+    gap: 0px;
     align-items: start;
   }
   @include flex(column, center, center, 4rem);
@@ -60,7 +58,7 @@
   &-img-container {
     @include response(xl) {
       grid-area: 1 / 2 / 1 / 3;
-      @include flex(row, center, flex-start);
+      @include flex(row, flex-start, flex-start);
 
       &-img {
         width: 75%;

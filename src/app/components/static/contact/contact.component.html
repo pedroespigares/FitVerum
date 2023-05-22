@@ -41,17 +41,18 @@
           cols="30"
           rows="5"
           placeholder="Message"
+          maxlength="500"
           [(ngModel)]="message"
         ></textarea>
       </div>
-      <div *ngIf="name == '' || email == '' || subject == '' || message == ''" class="contact-container-item">
+      <div *ngIf="name == '' || email == '' || subject == '' || message == '' || cannotSend" class="contact-container-item">
         <button class="contact-container-item-button-disabled" disabled>{{"CONTACT.SEND" | translate}}</button>
       </div>
-      <div *ngIf="name != '' && email != '' && subject != '' && message != ''" class="contact-container-item">
+      <div *ngIf="name != '' && email != '' && subject != '' && message != '' && !cannotSend" class="contact-container-item">
         <button class="contact-container-item-button">{{"CONTACT.SEND" | translate}}</button>
       </div>
-      <p *ngIf="!emailSent" class="messages-success">{{"CONTACT.SUCCESS" | translate}}</p>
-      <p *ngIf="error" class="messages-error">{{"CONTACT.ERROR" | translate}} {{errorMessage}}</p>	
+      <p *ngIf="emailSent" class="messages-success">{{"CONTACT.SUCCESS" | translate}}</p>
+      <p *ngIf="error || errorMessage != ''" class="messages-error">{{"CONTACT.ERROR" | translate}} - {{errorMessage}}</p>
     </form>
     <div class="contact-img-container">
       <img

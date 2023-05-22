@@ -12,7 +12,6 @@ export class LoginComponent implements OnInit {
   isEmpty :boolean = false;
   emailEmpty :boolean = false;
   showingPassword :boolean = false;
-  forgottenPSW :boolean = false;
   constructor(public auth: AuthService) { }
 
   /*
@@ -79,11 +78,7 @@ export class LoginComponent implements OnInit {
 
     this.auth.sendPasswordResetEmail(this.email)
     this.emailEmpty = false;
-
-    if(this.auth.userChecked){
-      this.forgottenPSW = true;
-      this.auth.failedError = '';
-    }
+    this.auth.failedError = '';
   }
   /*
   * Limpiar el error de inicio de sesión

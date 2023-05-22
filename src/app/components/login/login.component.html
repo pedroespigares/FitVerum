@@ -25,8 +25,8 @@
                     <i *ngIf="showingPassword" class="fa-solid fa-eye-slash login-form-fieldset-input-container-icon-close" (click)="showPassword()"></i>
                 </div>
             </fieldset>
-            <p class="forgot-password" *ngIf="!forgottenPSW" (click)="forgotPassword()">{{"LOGIN.FORGOT-PASSWORD" | translate}}</p>
-            <p class="forgot-password-check" *ngIf="forgottenPSW">{{"LOGIN.CHECK-EMAIL" | translate}}</p>
+            <p class="forgot-password" *ngIf="!this.auth.userChecked" (click)="forgotPassword()">{{"LOGIN.FORGOT-PASSWORD" | translate}}</p>
+            <p class="forgot-password-check" *ngIf="this.auth.userChecked">{{"LOGIN.CHECK-EMAIL" | translate}}</p>
             <p class="login-form-fieldset-credentials">{{this.auth.failedError}}</p>
             <p *ngIf="isEmpty" class="login-form-fieldset-credentials">{{"LOGIN.ERROR-EMPTY" | translate}}</p>
             <p *ngIf="emailEmpty" class="login-form-fieldset-credentials">{{"LOGIN.VALID-FORMAT" | translate}}</p>
