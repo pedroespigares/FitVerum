@@ -719,14 +719,13 @@ export class DatabaseService {
     });
   }
 
-  uploadForumMessage(message: string, date: number, isAdmin: boolean, isTrainer: boolean, photoURL: string, userID: string){
+  uploadForumMessage(message: string, date: number, isAdmin: boolean, isTrainer: boolean, userID: string){
     const forumRef = collection(this.database, 'forumMessages');
     setDoc(doc(forumRef), {
       message: message,
       date: date,
       isAdmin: isAdmin,
       isTrainer: isTrainer,
-      photoURL: photoURL,
       userID: userID,
     });
   }

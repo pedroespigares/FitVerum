@@ -23,10 +23,10 @@ export class ForumComponent implements OnInit, OnDestroy{
 
   onSubmit(): void {
     if(this.auth.isAdmin){
-      this.database.uploadForumMessage(this.writtenMessage, new Date().getTime(), true, false, null, null);
+      this.database.uploadForumMessage(this.writtenMessage, new Date().getTime(), true, false, null);
       this.writtenMessage = '';
     } else{
-      this.database.uploadForumMessage(this.writtenMessage, new Date().getTime(), false, this.auth.isTrainer, null, this.auth.userID);
+      this.database.uploadForumMessage(this.writtenMessage, new Date().getTime(), false, this.auth.isTrainer, this.auth.userID);
       this.writtenMessage = '';
     }
 
@@ -35,10 +35,10 @@ export class ForumComponent implements OnInit, OnDestroy{
   onKeyDown(event: any) {
     if (event.key === "Enter" && this.writtenMessage != '' && event.shiftKey === false) {
       if(this.auth.isAdmin){
-        this.database.uploadForumMessage(this.writtenMessage, new Date().getTime(), true, false, null, null);
+        this.database.uploadForumMessage(this.writtenMessage, new Date().getTime(), true, false, null);
         this.writtenMessage = '';
       } else{
-        this.database.uploadForumMessage(this.writtenMessage, new Date().getTime(), false, this.auth.isTrainer, null, this.auth.userID);
+        this.database.uploadForumMessage(this.writtenMessage, new Date().getTime(), false, this.auth.isTrainer, this.auth.userID);
         this.writtenMessage = '';
       }
     }
