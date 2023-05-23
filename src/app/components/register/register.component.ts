@@ -7,6 +7,9 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  /**
+   * Variables para el registro
+   */
   username :string = '';
   email :string = '';
   password :string = '';
@@ -18,16 +21,14 @@ export class RegisterComponent implements OnInit {
 
   /**
   * Comprobamos si el usuario está logueado
-  * @returns void
-  * */
+  */
   ngOnInit(){
     this.auth.checkAuthState();
   }
 
   /**
   * Comprobar si la contraseña cumple los requisitos
-  * */
-
+  */
   checkPassword(){
     let regularExpression = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$");
     if(regularExpression.test(this.password)){
@@ -39,9 +40,7 @@ export class RegisterComponent implements OnInit {
 
   /**
   * Registrar con email y contraseña
-  * @returns void
-  * */
-
+  */
   async normalRegister(){
     if(this.username == '' || this.email == '' || this.password == ''){
       this.isEmpty = true;
@@ -55,7 +54,6 @@ export class RegisterComponent implements OnInit {
 
   /**
    * Registrar con Google
-   * @returns void
    */
   googleRegister(){
     this.auth.googleLogin();
@@ -64,8 +62,7 @@ export class RegisterComponent implements OnInit {
 
   /**
    * Evento para registrar con la tecla Enter
-   * */
-
+   */
   onKeyDown(event:any) {
     if (event.key === "Enter") {
       this.normalRegister();
@@ -74,11 +71,14 @@ export class RegisterComponent implements OnInit {
 
   /**
    * Mostrar u ocultar la contraseña
-   * */
+   */
   showPassword(){
     this.showingPassword = !this.showingPassword;
   }
 
+  /**
+   * Registrar con Twitter
+  */
   twitterLogin(){
     this.auth.twitterLogin();
   }

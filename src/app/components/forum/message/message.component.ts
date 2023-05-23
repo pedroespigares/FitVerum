@@ -20,6 +20,9 @@ export class MessageComponent implements OnInit, OnDestroy {
 
   constructor(private database: DatabaseService, public auth: AuthService, private modalService: NgbModal) {}
 
+  /**
+   * Obtiene los datos del usuario que ha escrito el mensaje y dependiendo de su rol se le asigna unos datos u otros
+   */
   ngOnInit(): void {
     if(this.message.isAdmin){
       this.userData = {

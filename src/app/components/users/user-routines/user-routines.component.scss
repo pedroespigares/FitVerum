@@ -5,7 +5,7 @@
   @include response(md){
     min-height: calc(100vh - 112px);
   }
-  height: auto;
+  min-height: 100vh;
 }
 
 .routines-title{

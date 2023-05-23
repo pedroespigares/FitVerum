@@ -1,0 +1,413 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>FitVerumDocs</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">FitVerumDocs</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  FooterComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/footer/footer.component.ts</code>
+</p>
+
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-footer</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./footer.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./footer.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-footer&#x27;,
+  templateUrl: &#x27;./footer.component.html&#x27;,
+  styleUrls: [&#x27;./footer.component.scss&#x27;]
+})
+export class FooterComponent {
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;footer class&#x3D;&quot;footer&quot;&gt;
+    &lt;div class&#x3D;&quot;footer-column&quot;&gt;
+      &lt;h2 class&#x3D;&quot;footer-title&quot;&gt;{{&quot;FOOTER.HELP&quot; | translate}}&lt;/h2&gt;
+      &lt;ul class&#x3D;&quot;footer-list&quot;&gt;
+        &lt;li&gt;&lt;a class&#x3D;&quot;footer-link&quot; routerLink&#x3D;&quot;/contact&quot;&gt;{{&quot;FOOTER.CONTACT&quot; | translate}}&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class&#x3D;&quot;footer-link&quot; routerLink&#x3D;&quot;/faq&quot;&gt;{{&quot;FOOTER.FAQ&quot; | translate}}&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class&#x3D;&quot;footer-link&quot; routerLink&#x3D;&quot;/forum&quot;&gt;{{&quot;FOOTER.FORUM&quot; | translate}}&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class&#x3D;&quot;footer-link&quot; routerLink&#x3D;&quot;/contact&quot;&gt;{{&quot;FOOTER.SUGGESTIONS&quot; | translate}}&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;footer-column&quot;&gt;
+      &lt;h2 class&#x3D;&quot;footer-title&quot;&gt;{{&quot;FOOTER.ABOUT-US&quot; | translate}}&lt;/h2&gt;
+      &lt;ul class&#x3D;&quot;footer-list&quot;&gt;
+        &lt;li&gt;&lt;a class&#x3D;&quot;footer-link&quot; routerLink&#x3D;&quot;/about-us&quot;&gt;{{&quot;FOOTER.WHO-WE-ARE&quot; | translate}}&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class&#x3D;&quot;footer-link&quot; routerLink&#x3D;&quot;/faq&quot;&gt;{{&quot;FOOTER.WORK-WITH-US&quot; | translate}}&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class&#x3D;&quot;footer-link&quot; routerLink&#x3D;&quot;/legal&quot;&gt;{{&quot;FOOTER.PRIVACY-POLICY&quot; | translate}}&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class&#x3D;&quot;footer-link&quot; routerLink&#x3D;&quot;/legal&quot;&gt;{{&quot;FOOTER.TERMS-OF-USE&quot; | translate}}&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;footer-column&quot;&gt;
+      &lt;h2 class&#x3D;&quot;footer-title&quot;&gt;{{&quot;FOOTER.LEGAL&quot; | translate}}&lt;/h2&gt;
+      &lt;ul class&#x3D;&quot;footer-list&quot;&gt;
+        &lt;li&gt;&lt;a class&#x3D;&quot;footer-link&quot; routerLink&#x3D;&quot;/legal&quot;&gt;{{&quot;FOOTER.COOKIES-POLICY&quot; | translate}}&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class&#x3D;&quot;footer-link&quot; routerLink&#x3D;&quot;/legal&quot;&gt;{{&quot;FOOTER.PRIVACY-POLICY&quot; | translate}}&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class&#x3D;&quot;footer-link&quot; routerLink&#x3D;&quot;/legal&quot;&gt;{{&quot;FOOTER.TERMS-OF-USE&quot; | translate}}&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class&#x3D;&quot;footer-link&quot; routerLink&#x3D;&quot;/legal&quot;&gt;{{&quot;FOOTER.LEGAL-TERMS&quot; | translate}}&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;footer-column&quot;&gt;
+      &lt;h2 class&#x3D;&quot;footer-title&quot;&gt;{{&quot;FOOTER.COMPANY-INFORMATION&quot; | translate}}&lt;/h2&gt;
+      &lt;ul class&#x3D;&quot;footer-list&quot;&gt;
+        &lt;li class&#x3D;&quot;footer-list-row&quot;&gt;
+          &lt;i class&#x3D;&quot;fa-solid fa-location-dot footer-icon&quot;&gt;&lt;/i&gt;&lt;p class&#x3D;&quot;footer-link-row&quot;&gt;Avenida Barcelona Nº7 Granada&lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li class&#x3D;&quot;footer-list-row&quot;&gt;
+          &lt;i class&#x3D;&quot;fa-solid fa-phone footer-icon&quot;&gt;&lt;/i&gt;&lt;p class&#x3D;&quot;footer-link-row&quot;&gt;+34 675 876 902&lt;/p&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;footer-column&quot;&gt;
+      &lt;h2 class&#x3D;&quot;footer-title&quot;&gt;{{&quot;FOOTER.FOLLOW-US&quot; | translate}}&lt;/h2&gt;
+      &lt;ul class&#x3D;&quot;footer-row footer-list&quot;&gt;
+        &lt;li&gt;
+          &lt;a href&#x3D;&quot;https://www.instagram.com/fitverum&quot; target&#x3D;&quot;_blank&quot;&gt;&lt;i class&#x3D;&quot;fab fa-instagram footer-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;a href&#x3D;&quot;https://www.facebook.com/fitverum&quot; target&#x3D;&quot;_blank&quot;&gt;&lt;i class&#x3D;&quot;fab fa-facebook-f footer-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;a href&#x3D;&quot;https://twitter.com/fitverum&quot; target&#x3D;&quot;_blank&quot;&gt;&lt;i class&#x3D;&quot;fab fa-twitter footer-icon&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./footer.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &quot;../../../scss/mixin.scss&quot;;
+@import &quot;../../../scss/variables.scss&quot;;
+
+/// Estilos del footer
+.footer{
+    grid-column:  1 / -1;
+    grid-row: 3;
+    @include response(xl){
+        @include flex($direction: column, $justify: center, $align: flex-start, $gap: 5rem);
+    }
+
+    @include flex($direction: column, $gap: 2rem);
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    background-color: var(--background-color);
+
+    &amp;-title{
+        @include response(lg){
+            font-size: getFontSize(xl);
+        }
+        font-size: getFontSize(lg);
+        font-weight: getFontWeight(bold);
+        font-family: $font-family-title;
+        color: var(--primary-color);
+        padding-bottom: 2rem;
+        padding-top: 2rem;
+        @include response(xl){
+            padding-left: 5rem;
+            text-align: left;
+        }
+        text-align: center;
+    }
+
+    &amp;-link{
+        @include response(lg){
+            font-size: getFontSize(md);
+        }
+        font-size: getFontSize(sm);
+        font-weight: getFontWeight(normal);
+        font-family: $font-family-text;
+        color: var(--cuaternary-color);
+        padding-bottom: 2rem;
+        text-decoration: none;
+        transition: $transition;
+
+        &amp;:hover{
+            cursor: pointer;
+            color: var(--primary-color);
+            transition: $transition;
+        }
+
+        &amp;-row{
+            @include response(lg){
+                font-size: getFontSize(md);
+            }
+            font-size: getFontSize(sm);
+            font-weight: getFontWeight(normal);
+            color: var(--cuaternary-color);
+            margin: 0;
+        }
+    }
+
+    &amp;-icon{
+        @include response(lg){
+            font-size: getFontSize(xl);
+        }
+        font-size: getFontSize(lg);
+        color: var(--cuaternary-color);
+        transition: $transition;
+
+        &amp;:hover{
+            cursor: pointer;
+            color: var(--primary-color);
+            transition: $transition;
+        }
+    }
+
+    &amp;-list{
+        list-style: none;
+        @include response(xl){
+            padding-left: 5rem;
+        }
+
+        &amp;-row{
+            @include flex($direction: row, $justify: flex-start, $align: center, $gap: 2rem);
+            padding-bottom: 3rem;
+        }
+    }
+
+    @include response(xl){
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: 1fr;
+    }
+
+    &amp;-row{
+        @include flex($direction: row, $justify: flex-start, $align: center, $gap: 2rem);
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><footer class="footer">    <div class="footer-column">      <h2 class="footer-title">{{"FOOTER.HELP" | translate}}</h2>      <ul class="footer-list">        <li><a class="footer-link" routerLink="/contact">{{"FOOTER.CONTACT" | translate}}</a></li>        <li><a class="footer-link" routerLink="/faq">{{"FOOTER.FAQ" | translate}}</a></li>        <li><a class="footer-link" routerLink="/forum">{{"FOOTER.FORUM" | translate}}</a></li>        <li><a class="footer-link" routerLink="/contact">{{"FOOTER.SUGGESTIONS" | translate}}</a></li>      </ul>    </div>    <div class="footer-column">      <h2 class="footer-title">{{"FOOTER.ABOUT-US" | translate}}</h2>      <ul class="footer-list">        <li><a class="footer-link" routerLink="/about-us">{{"FOOTER.WHO-WE-ARE" | translate}}</a></li>        <li><a class="footer-link" routerLink="/faq">{{"FOOTER.WORK-WITH-US" | translate}}</a></li>        <li><a class="footer-link" routerLink="/legal">{{"FOOTER.PRIVACY-POLICY" | translate}}</a></li>        <li><a class="footer-link" routerLink="/legal">{{"FOOTER.TERMS-OF-USE" | translate}}</a></li>      </ul>    </div>    <div class="footer-column">      <h2 class="footer-title">{{"FOOTER.LEGAL" | translate}}</h2>      <ul class="footer-list">        <li><a class="footer-link" routerLink="/legal">{{"FOOTER.COOKIES-POLICY" | translate}}</a></li>        <li><a class="footer-link" routerLink="/legal">{{"FOOTER.PRIVACY-POLICY" | translate}}</a></li>        <li><a class="footer-link" routerLink="/legal">{{"FOOTER.TERMS-OF-USE" | translate}}</a></li>        <li><a class="footer-link" routerLink="/legal">{{"FOOTER.LEGAL-TERMS" | translate}}</a></li>      </ul>    </div>    <div class="footer-column">      <h2 class="footer-title">{{"FOOTER.COMPANY-INFORMATION" | translate}}</h2>      <ul class="footer-list">        <li class="footer-list-row">          <i class="fa-solid fa-location-dot footer-icon"></i><p class="footer-link-row">Avenida Barcelona Nº7 Granada</p>        </li>        <li class="footer-list-row">          <i class="fa-solid fa-phone footer-icon"></i><p class="footer-link-row">+34 675 876 902</p>        </li>      </ul>    </div>    <div class="footer-column">      <h2 class="footer-title">{{"FOOTER.FOLLOW-US" | translate}}</h2>      <ul class="footer-row footer-list">        <li>          <a href="https://www.instagram.com/fitverum" target="_blank"><i class="fab fa-instagram footer-icon"></i></a>        </li>        <li>          <a href="https://www.facebook.com/fitverum" target="_blank"><i class="fab fa-facebook-f footer-icon"></i></a>        </li>        <li>          <a href="https://twitter.com/fitverum" target="_blank"><i class="fab fa-twitter footer-icon"></i></a>        </li>      </ul>    </div>  </footer></div>'
+    var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AddDietComponent', 'selector': 'app-add-diet'},{'name': 'AddExerciceComponent', 'selector': 'app-add-exercice'},{'name': 'AddMachineComponent', 'selector': 'app-add-machine'},{'name': 'AddRoutineComponent', 'selector': 'app-add-routine'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'EditDietComponent', 'selector': 'app-edit-diet'},{'name': 'EditEntryComponent', 'selector': 'app-edit-entry'},{'name': 'EditExerciseComponent', 'selector': 'app-edit-exercise'},{'name': 'EditRoutineComponent', 'selector': 'app-edit-routine'},{'name': 'ExerciseCardComponent', 'selector': 'app-exercise-card'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForbiddenComponent', 'selector': 'app-forbidden'},{'name': 'ForumComponent', 'selector': 'app-forum'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LegalComponent', 'selector': 'app-legal'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MachineCardComponent', 'selector': 'app-machine-card'},{'name': 'MachinesComponent', 'selector': 'app-machines'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SeeTrainersCardComponent', 'selector': 'app-see-trainers-card'},{'name': 'SeeTrainersComponent', 'selector': 'app-see-trainers'},{'name': 'ShowDietComponent', 'selector': 'app-show-diet'},{'name': 'ShowExercisesComponent', 'selector': 'app-show-exercises'},{'name': 'ShowMachineComponent', 'selector': 'app-show-machine'},{'name': 'ShowSingleExerciseComponent', 'selector': 'app-show-single-exercise'},{'name': 'SimpleExerciseCardComponent', 'selector': 'app-simple-exercise-card'},{'name': 'TrainerAppointmentComponent', 'selector': 'app-trainer-appointment'},{'name': 'TrainerCalendarComponent', 'selector': 'app-trainer-calendar'},{'name': 'TrainerDietCardComponent', 'selector': 'app-trainer-diet-card'},{'name': 'TrainerDietsComponent', 'selector': 'app-trainer-diets'},{'name': 'TrainerModificationComponent', 'selector': 'app-trainer-modification'},{'name': 'TrainerRoutineCardComponent', 'selector': 'app-trainer-routine-card'},{'name': 'TrainerRoutinesComponent', 'selector': 'app-trainer-routines'},{'name': 'TrainerUsersComponent', 'selector': 'app-trainer-users'},{'name': 'UpdateMachineComponent', 'selector': 'app-update-machine'},{'name': 'UserCalendarComponent', 'selector': 'app-user-calendar'},{'name': 'UserDietsComponent', 'selector': 'app-user-diets'},{'name': 'UserEntryComponent', 'selector': 'app-user-entry'},{'name': 'UserEvolutionComponent', 'selector': 'app-user-evolution'},{'name': 'UserModificationComponent', 'selector': 'app-user-modification'},{'name': 'UserRoutineExercisesComponent', 'selector': 'app-user-routine-exercises'},{'name': 'UserRoutineExercisesSimpleComponent', 'selector': 'app-user-routine-exercises-simple'},{'name': 'UserRoutinesComponent', 'selector': 'app-user-routines'},{'name': 'UserRoutinesSimpleComponent', 'selector': 'app-user-routines-simple'},{'name': 'UsersComponent', 'selector': 'app-users'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'FooterComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'FooterComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

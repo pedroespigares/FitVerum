@@ -12,10 +12,16 @@
     grid-template-columns: 1fr 0.1fr;
     grid-template-rows: 1fr;
     box-shadow: 0 0.5rem 1rem var(--box-shadow-thin);
-    margin: 5rem;
     border-radius: 1rem;
     width: 95%;
     word-break: break-all;
+    @include response(md){
+      margin: 5rem;
+    }
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    margin-left: 1rem;
+    border-radius: 1rem;
   }
   box-shadow: 0 0.5rem 1rem var(--box-shadow-thin);
   @include response(md){

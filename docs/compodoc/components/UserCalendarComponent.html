@@ -1,0 +1,1815 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>FitVerumDocs</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">FitVerumDocs</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  UserCalendarComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/users/user-calendar/user-calendar.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-user-calendar</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./user-calendar.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./user-calendar.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#calendarTitle" >calendarTitle</a>
+                            </li>
+                            <li>
+                                <a href="#clickedDate" >clickedDate</a>
+                            </li>
+                            <li>
+                                <a href="#events$" >events$</a>
+                            </li>
+                            <li>
+                                <a href="#modalContent" >modalContent</a>
+                            </li>
+                            <li>
+                                <a href="#modalData" >modalData</a>
+                            </li>
+                            <li>
+                                <a href="#modalDataDate" >modalDataDate</a>
+                            </li>
+                            <li>
+                                <a href="#refresh" >refresh</a>
+                            </li>
+                            <li>
+                                <a href="#showAddToast" >showAddToast</a>
+                            </li>
+                            <li>
+                                <a href="#showDeleteToast" >showDeleteToast</a>
+                            </li>
+                            <li>
+                                <a href="#showUpdatedToast" >showUpdatedToast</a>
+                            </li>
+                            <li>
+                                <a href="#view" >view</a>
+                            </li>
+                            <li>
+                                <a href="#viewDate" >viewDate</a>
+                            </li>
+                            <li>
+                                <a href="#weekendDays" >weekendDays</a>
+                            </li>
+                            <li>
+                                <a href="#weekStartsOn" >weekStartsOn</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#deleteEvent" >deleteEvent</a>
+                            </li>
+                            <li>
+                                <a href="#eventTimesChanged" >eventTimesChanged</a>
+                            </li>
+                            <li>
+                                <a href="#fetchEntries" >fetchEntries</a>
+                            </li>
+                            <li>
+                                <a href="#goToUpdate" >goToUpdate</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#open" >open</a>
+                            </li>
+                            <li>
+                                <a href="#openEvolution" >openEvolution</a>
+                            </li>
+                            <li>
+                                <a href="#routeToRoutines" >routeToRoutines</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, auth: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, database: <a href="../injectables/DatabaseService.html" target="_self">DatabaseService</a>, modalService: NgbModal, toast: <a href="../injectables/ToastsService.html" target="_self">ToastsService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/components/users/user-calendar/user-calendar.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>auth</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>database</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DatabaseService.html" target="_self" >DatabaseService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>modalService</td>
+                                                  
+                                                        <td>
+                                                                    <code>NgbModal</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toast</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ToastsService.html" target="_self" >ToastsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteEvent"></a>
+                    <span class="name">
+                        <span ><b>deleteEvent</b></span>
+                        <a href="#deleteEvent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteEvent(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">src/app/components/users/user-calendar/user-calendar.component.ts:97</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Eliminar una entrada</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>ID de la entrada</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eventTimesChanged"></a>
+                    <span class="name">
+                        <span ><b>eventTimesChanged</b></span>
+                        <a href="#eventTimesChanged"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>eventTimesChanged(undefined: CalendarEventTimesChangedEvent)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/components/users/user-calendar/user-calendar.component.ts:65</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Método que detecta el cambio de fecha de una entrada</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                            <code>CalendarEventTimesChangedEvent</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchEntries"></a>
+                    <span class="name">
+                        <span ><b>fetchEntries</b></span>
+                        <a href="#fetchEntries"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>fetchEntries()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="54"
+                            class="link-to-prism">src/app/components/users/user-calendar/user-calendar.component.ts:54</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Obtener las entradas del usuario</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goToUpdate"></a>
+                    <span class="name">
+                        <span ><b>goToUpdate</b></span>
+                        <a href="#goToUpdate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goToUpdate(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="106"
+                            class="link-to-prism">src/app/components/users/user-calendar/user-calendar.component.ts:106</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="111"
+                            class="link-to-prism">src/app/components/users/user-calendar/user-calendar.component.ts:111</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/components/users/user-calendar/user-calendar.component.ts:34</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="open"></a>
+                    <span class="name">
+                        <span ><b>open</b></span>
+                        <a href="#open"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>open(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/app/components/users/user-calendar/user-calendar.component.ts:78</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openEvolution"></a>
+                    <span class="name">
+                        <span ><b>openEvolution</b></span>
+                        <a href="#openEvolution"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openEvolution(eventID: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="88"
+                            class="link-to-prism">src/app/components/users/user-calendar/user-calendar.component.ts:88</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Ir a la página de evolución de un ejercicio</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>eventID</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>ID del evento</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="routeToRoutines"></a>
+                    <span class="name">
+                        <span ><b>routeToRoutines</b></span>
+                        <a href="#routeToRoutines"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>routeToRoutines(date: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/components/users/user-calendar/user-calendar.component.ts:58</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>date</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="calendarTitle"></a>
+                    <span class="name">
+                        <span ><b>calendarTitle</b></span>
+                        <a href="#calendarTitle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/components/users/user-calendar/user-calendar.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clickedDate"></a>
+                    <span class="name">
+                        <span ><b>clickedDate</b></span>
+                        <a href="#clickedDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/components/users/user-calendar/user-calendar.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="events$"></a>
+                    <span class="name">
+                        <span ><b>events$</b></span>
+                        <a href="#events$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;CalendarEvent[]&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/components/users/user-calendar/user-calendar.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modalContent"></a>
+                    <span class="name">
+                        <span ><b>modalContent</b></span>
+                        <a href="#modalContent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>TemplateRef&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;modalContent&#x27;, {static: true})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/users/user-calendar/user-calendar.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modalData"></a>
+                    <span class="name">
+                        <span ><b>modalData</b></span>
+                        <a href="#modalData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/users/user-calendar/user-calendar.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modalDataDate"></a>
+                    <span class="name">
+                        <span ><b>modalDataDate</b></span>
+                        <a href="#modalDataDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/users/user-calendar/user-calendar.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="refresh"></a>
+                    <span class="name">
+                        <span ><b>refresh</b></span>
+                        <a href="#refresh"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;void&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/components/users/user-calendar/user-calendar.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showAddToast"></a>
+                    <span class="name">
+                        <span ><b>showAddToast</b></span>
+                        <a href="#showAddToast"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.toast.entryAdded</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/components/users/user-calendar/user-calendar.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showDeleteToast"></a>
+                    <span class="name">
+                        <span ><b>showDeleteToast</b></span>
+                        <a href="#showDeleteToast"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/components/users/user-calendar/user-calendar.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showUpdatedToast"></a>
+                    <span class="name">
+                        <span ><b>showUpdatedToast</b></span>
+                        <a href="#showUpdatedToast"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.toast.entryUpdated</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/components/users/user-calendar/user-calendar.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="view"></a>
+                    <span class="name">
+                        <span ><b>view</b></span>
+                        <a href="#view"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>CalendarView</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>CalendarView.Month</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/users/user-calendar/user-calendar.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="viewDate"></a>
+                    <span class="name">
+                        <span ><b>viewDate</b></span>
+                        <a href="#viewDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Date()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/users/user-calendar/user-calendar.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="weekendDays"></a>
+                    <span class="name">
+                        <span ><b>weekendDays</b></span>
+                        <a href="#weekendDays"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[DAYS_OF_WEEK.SATURDAY, DAYS_OF_WEEK.SUNDAY]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/components/users/user-calendar/user-calendar.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="weekStartsOn"></a>
+                    <span class="name">
+                        <span ><b>weekStartsOn</b></span>
+                        <a href="#weekStartsOn"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>DAYS_OF_WEEK.MONDAY</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/components/users/user-calendar/user-calendar.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild, TemplateRef, OnDestroy } from &#x27;@angular/core&#x27;;
+import { CalendarEvent, CalendarView, DAYS_OF_WEEK, CalendarEventTimesChangedEvent } from &#x27;angular-calendar&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { AuthService } from &#x27;src/app/services/auth.service&#x27;;
+import { DatabaseService } from &#x27;src/app/services/database.service&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { Subject } from &#x27;rxjs&#x27;;
+import { ToastsService } from &#x27;src/app/services/toasts.service&#x27;;
+import { NgbModal } from &#x27;@ng-bootstrap/ng-bootstrap&#x27;;
+
+@Component({
+  selector: &#x27;app-user-calendar&#x27;,
+  templateUrl: &#x27;./user-calendar.component.html&#x27;,
+  styleUrls: [&#x27;./user-calendar.component.scss&#x27;]
+})
+export class UserCalendarComponent implements OnInit, OnDestroy {
+  @ViewChild(&#x27;modalContent&#x27;, { static: true }) modalContent: TemplateRef&lt;any&gt;;
+  view: CalendarView &#x3D; CalendarView.Month;
+
+  viewDate: Date &#x3D; new Date();
+
+  modalData: {
+    event: any;
+  };
+
+  modalDataDate: Date;
+
+  showAddToast: boolean &#x3D; this.toast.entryAdded;
+  showDeleteToast: boolean &#x3D; false;
+  showUpdatedToast: boolean &#x3D; this.toast.entryUpdated;
+
+  constructor(private router: Router, private auth: AuthService, private database: DatabaseService, private modalService: NgbModal, private toast: ToastsService) {}
+
+  ngOnInit() {
+    this.fetchEntries();
+  }
+
+
+  events$: Observable&lt;CalendarEvent&lt;{ userID: string }&gt;[]&gt;;
+
+  clickedDate: Date;
+
+  calendarTitle: string;
+
+  weekStartsOn: number &#x3D; DAYS_OF_WEEK.MONDAY;
+
+  weekendDays: number[] &#x3D; [DAYS_OF_WEEK.SATURDAY, DAYS_OF_WEEK.SUNDAY];
+
+  refresh &#x3D; new Subject&lt;void&gt;();
+
+  /**
+   * Obtener las entradas del usuario
+   */
+  fetchEntries(): void{
+    this.events$ &#x3D; this.database.getUserEntries(this.auth.userID);
+  }
+
+  routeToRoutines(date: Date){
+    this.router.navigateByUrl(&#x60;/user/calendar/${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}&#x60;);
+  }
+
+  /**
+   * Método que detecta el cambio de fecha de una entrada
+   */
+  eventTimesChanged({
+    event,
+    newStart,
+  }: CalendarEventTimesChangedEvent): void {
+    event.start &#x3D; newStart;
+    this.refresh.next();
+    if(typeof newStart &#x3D;&#x3D;&#x3D; &#x27;number&#x27;){
+      this.database.updateUserEntryDate(event.id.toString(), newStart);
+    } else{
+      this.database.updateUserEntryDate(event.id.toString(), newStart.getTime());
+    }
+  }
+
+  open(event: any) {
+		this.modalData &#x3D; { event };
+    this.modalDataDate &#x3D; new Date(event.start);
+    this.modalService.open(this.modalContent, { size: &#x27;lg&#x27;, centered: true, keyboard: true, windowClass: &#x27;custom-modal&#x27;});
+	}
+
+  /**
+   * Ir a la página de evolución de un ejercicio
+   * @param eventID - ID del evento
+   */
+  openEvolution(eventID: any) {
+    this.modalService.dismissAll();
+    this.router.navigateByUrl(&#x60;/user/evolution/${eventID}&#x60;);
+  }
+
+  /**
+   * Eliminar una entrada
+   * @param id - ID de la entrada
+   */
+  deleteEvent(id: string) {
+    let confirm &#x3D; window.confirm(&#x27;Are you sure you want to delete this entry?&#x27;);
+    if(!confirm){ return; }
+    this.database.delete(&#x27;userEntry&#x27;, id);
+    this.modalService.dismissAll();
+    this.refresh.next();
+    this.showDeleteToast &#x3D; true;
+  }
+
+  goToUpdate(id: string) {
+    this.modalService.dismissAll();
+    this.router.navigateByUrl(&#x60;/user/edit-entry/${id}&#x60;);
+  }
+
+  ngOnDestroy(): void {
+    this.toast.entryAdded &#x3D; false;
+    this.showDeleteToast &#x3D; false;
+    this.toast.entryUpdated &#x3D; false;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;main class&#x3D;&quot;content&quot;&gt;
+  &lt;div class&#x3D;&quot;toast-container&quot;&gt;
+    &lt;ngb-toast *ngIf&#x3D;&quot;showAddToast&quot; [autohide]&#x3D;&quot;true&quot; (hidden)&#x3D;&quot;showAddToast&#x3D;false&quot;&gt;
+      &lt;ng-template ngbToastHeader&gt;
+        &lt;div class&#x3D;&quot;me-auto&quot;&gt;
+          &lt;img src&#x3D;&quot;../../../../assets/images/FitVerumLogo.png&quot; width&#x3D;&quot;40&quot; height&#x3D;&quot;40&quot;/&gt;
+          &lt;strong class&#x3D;&quot;mx-1&quot;&gt;FitVerum&lt;/strong&gt;
+        &lt;/div&gt;
+      &lt;/ng-template&gt;
+      {{&quot;USERS.ACTIVITIES.ADDED-TOAST&quot; | translate}}
+    &lt;/ngb-toast&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;toast-container&quot;&gt;
+    &lt;ngb-toast *ngIf&#x3D;&quot;showDeleteToast&quot; [autohide]&#x3D;&quot;true&quot; (hidden)&#x3D;&quot;showDeleteToast&#x3D;false&quot;&gt;
+      &lt;ng-template ngbToastHeader&gt;
+        &lt;div class&#x3D;&quot;me-auto&quot;&gt;
+          &lt;img src&#x3D;&quot;../../../../assets/images/FitVerumLogo.png&quot; width&#x3D;&quot;40&quot; height&#x3D;&quot;40&quot;/&gt;
+          &lt;strong class&#x3D;&quot;mx-1&quot;&gt;FitVerum&lt;/strong&gt;
+        &lt;/div&gt;
+      &lt;/ng-template&gt;
+      {{&quot;USERS.ACTIVITIES.DELETED-TOAST&quot; | translate}}
+    &lt;/ngb-toast&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;toast-container&quot;&gt;
+    &lt;ngb-toast *ngIf&#x3D;&quot;showUpdatedToast&quot; [autohide]&#x3D;&quot;true&quot; (hidden)&#x3D;&quot;showDeleteToast&#x3D;false&quot;&gt;
+      &lt;ng-template ngbToastHeader&gt;
+        &lt;div class&#x3D;&quot;me-auto&quot;&gt;
+          &lt;img src&#x3D;&quot;../../../../assets/images/FitVerumLogo.png&quot; width&#x3D;&quot;40&quot; height&#x3D;&quot;40&quot;/&gt;
+          &lt;strong class&#x3D;&quot;mx-1&quot;&gt;FitVerum&lt;/strong&gt;
+        &lt;/div&gt;
+      &lt;/ng-template&gt;
+      {{&quot;USERS.ACTIVITIES.EDITED-TOAST&quot; | translate}}
+    &lt;/ngb-toast&gt;
+  &lt;/div&gt;
+&lt;div class&#x3D;&quot;calendar-controls&quot;&gt;
+    &lt;button class&#x3D;&quot;calendar-controls-button&quot;
+    mwlCalendarPreviousView
+    [(viewDate)]&#x3D;&quot;viewDate&quot;
+    [view]&#x3D;&quot;view&quot;&gt;
+    {{&quot;USERS.ACTIVITIES.PREVIOUS&quot; | translate}}
+    &lt;/button&gt;
+
+    &lt;h3 class&#x3D;&quot;calendar-controls-month&quot;&gt;{{ viewDate | calendarDate:(view + &#x27;ViewTitle&#x27;) }}&lt;/h3&gt;
+
+    &lt;button class&#x3D;&quot;calendar-controls-button&quot;
+    mwlCalendarNextView
+    [(viewDate)]&#x3D;&quot;viewDate&quot;
+    [view]&#x3D;&quot;view&quot;&gt;
+    {{&quot;USERS.ACTIVITIES.NEXT&quot; | translate}}
+    &lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div *ngIf&#x3D;&quot;events$ | async; let events&quot;&gt;
+  &lt;div [ngSwitch]&#x3D;&quot;view&quot;&gt;
+      &lt;mwl-calendar-month-view
+        *ngSwitchCase&#x3D;&quot;&#x27;month&#x27;&quot;
+        [viewDate]&#x3D;&quot;viewDate&quot;
+        [events]&#x3D;&quot;events&quot;
+        [weekStartsOn]&#x3D;&quot;weekStartsOn&quot;
+        [weekendDays]&#x3D;&quot;weekendDays&quot;
+        (eventClicked)&#x3D;&quot;open($event.event)&quot;
+        (eventTimesChanged)&#x3D;&quot;eventTimesChanged($event)&quot;
+        (dayClicked)&#x3D;&quot;routeToRoutines($event.day.date)&quot;
+      &gt;
+      &lt;/mwl-calendar-month-view&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;ng-template #modalContent let-close&#x3D;&quot;close&quot;&gt;
+  &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+    &lt;h5 class&#x3D;&quot;modal-title&quot;&gt;{{&quot;USERS.ACTIVITIES.EVENT-INFORMATION&quot; | translate}}&lt;/h5&gt;
+    &lt;i class&#x3D;&quot;fa-solid fa-x&quot; (click)&#x3D;&quot;close()&quot;&gt;&lt;/i&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+    &lt;div&gt;
+      &lt;h6 class&#x3D;&quot;modal-body-title&quot;&gt;{{&quot;USERS.ACTIVITIES.EVENT-TITLE&quot; | translate}}&lt;/h6&gt;
+      &lt;p class&#x3D;&quot;modal-body-title-text&quot;&gt;{{ modalData?.event?.title }}&lt;/p&gt;
+      &lt;p class&#x3D;&quot;modal-body-title-date&quot;&gt;{{ modalDataDate | date: &#x27;longDate&#x27;}}&lt;/p&gt;
+      &lt;h6 class&#x3D;&quot;modal-body-content-title&quot;&gt;{{&quot;USERS.ACTIVITIES.STATS&quot; | translate}}&lt;/h6&gt;
+      &lt;p class&#x3D;&quot;modal-body-content-text&quot;&gt;Series: &lt;span class&#x3D;&quot;modal-data-text&quot;&gt;{{ modalData?.event?.series }}&lt;/span&gt; - Reps: &lt;span class&#x3D;&quot;modal-data-text&quot;&gt;{{ modalData?.event?.repetitions }}&lt;/span&gt; - {{&quot;USERS.ACTIVITIES.WEIGHT&quot; | translate}}: &lt;span class&#x3D;&quot;modal-data-text&quot;&gt;{{ modalData?.event?.kg }} kg&lt;/span&gt;&lt;/p&gt;
+      &lt;h6 *ngIf&#x3D;&quot;modalData?.event?.comment !&#x3D; &#x27;&#x27;&quot; class&#x3D;&quot;modal-body-content-title&quot;&gt;{{&quot;USERS.ACTIVITIES.COMMENTS&quot; | translate}}&lt;/h6&gt;
+      &lt;p *ngIf&#x3D;&quot;modalData?.event?.comment !&#x3D; &#x27;&#x27;&quot; class&#x3D;&quot;modal-body-content-text&quot;&gt;{{ modalData?.event?.comment}}&lt;/p&gt;
+      &lt;p *ngIf&#x3D;&quot;modalData?.event?.comment &#x3D;&#x3D;&#x3D; null&quot; class&#x3D;&quot;no-comment-message&quot;&gt;{{&quot;USERS.ACTIVITIES.NO-COMMENTS&quot; | translate}}&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;modal-button-delete&quot; (click)&#x3D;&quot;deleteEvent(modalData?.event?.id)&quot;&gt;
+      &lt;i class&#x3D;&quot;fa-solid fa-trash&quot;&gt;&lt;/i&gt;
+    &lt;/button&gt;
+    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;modal-button-update&quot; (click)&#x3D;&quot;goToUpdate(modalData?.event?.id)&quot;&gt;
+      &lt;i class&#x3D;&quot;fa-solid fa-pen-to-square&quot;&gt;&lt;/i&gt;
+    &lt;/button&gt;
+    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;modal-button&quot; (click)&#x3D;&quot;openEvolution(modalData?.event?.exerciseID)&quot;&gt;
+      {{&quot;USERS.ACTIVITIES.SEE-EVOLUTION&quot; | translate}}
+    &lt;/button&gt;
+    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;modal-button&quot; (click)&#x3D;&quot;close()&quot;&gt;
+      {{&quot;USERS.ACTIVITIES.BACK&quot; | translate}}
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/ng-template&gt;
+&lt;/main&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./user-calendar.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &quot;../../../../scss/mixin.scss&quot;;
+@import &quot;../../../../scss/variables.scss&quot;;
+
+/// Estilos para la vista de calendario de usuario
+.content{
+  @include response(md){
+    height: calc(100vh - 112px);
+  }
+  height: 100vh;
+}
+
+::ng-deep .cal-cell-row {
+  &amp;:hover{
+    background-color: var(--grey) !important;
+  }
+}
+
+::ng-deep .cal-events{
+  background-color: var(--grey) !important;
+}
+
+::ng-deep .cal-month-view .cal-event {
+  width: 15px !important;
+  height: 15px !important;
+}
+
+::ng-deep span.cal-day-number {
+  color: var(--primary-color);
+  font-family: $font-family-title !important;
+  @include response(xl){
+    font-size: 5rem !important;
+  }
+  font-size: getFontSize(md) !important;
+  opacity: 1 !important;
+}
+
+::ng-deep .cal-month-view {
+  background-color: var(--background-color);
+  padding-left: 5rem !important;
+  padding-right: 5rem !important;
+}
+
+::ng-deep .cal-month-view .cal-day-cell{
+  min-height: 15rem;
+}
+
+::ng-deep .cal-cell-top, .cal-month-view, .cal-events{
+  cursor: pointer;
+  transition: $transition;
+  &amp;:hover {
+    .cal-day-number {
+      cursor: pointer;
+      color: var(--primary-color);
+      scale: 1.3;
+      transition: $transition;
+      opacity: 1;
+      color: var(--background-color);
+    }
+    color: var(--background-color);
+    background-color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  &amp;:active {
+    background-color: var(--secondary-color);
+    scale: 1;
+  }
+}
+
+::ng-deep .cal-past,
+::ng-deep .cal-future,
+::ng-deep .cal-today {
+  color: var(--text-color);
+  font-family: $font-family-title !important;
+  font-size: getFontSize(lg) !important;
+  &amp;:hover{
+    background-color: var(--background-color) !important;
+  }
+}
+
+/// Estilos de los botones de control del calendario
+.calendar-controls {
+  margin-bottom: 10rem !important;
+  margin-bottom: 5rem !important;
+  @include response(md){
+    @include flex(
+      $direction: row,
+      $justify: center,
+      $align: center,
+      $gap: 20rem
+    );
+  }
+
+  @include flex(
+    $direction: column,
+    $justify: center,
+    $align: center,
+    $gap: 7rem
+  );
+
+  padding: 2rem;
+  &amp;-month {
+    font-size: getFontSize(xxl);
+    font-family: $font-family-title;
+    font-weight: getFontWeight(bold);
+    transition: $transition;
+    color: var(--primary-color);
+  }
+
+  &amp;-button {
+    @include response(xl){
+      @include button(xl, true, 20rem);
+    }
+    @include button(md, true, 20rem);
+  }
+}
+
+
+/// Estilos para el modal de consulta de evento
+.modal {
+  @include modal();
+}
+
+/// Estilos para el mensaje de no hay comentarios
+.no-comment-message{
+  @include response(xl) {
+    font-size: getFontSize(md);
+  }
+  font-size: getFontSize(sm);
+  font-family: $font-family-title;
+  font-weight: getFontWeight(bold);
+  color: var(--cuaternary-color);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+
+/// Estilos para el botón de cerrar modal
+.fa-x{
+  color: var(--primary-color);
+  font-size: getFontSize(xl);
+  transition: $transition;
+  padding-right: 1rem;
+  cursor: pointer;
+  &amp;:hover{
+    color: var(--secondary-color);
+  }
+}
+
+ ::ng-deep .modal-content {
+  background-color: var(--background-color) !important;
+  box-shadow: 0px 0px 30px 0px  var(--box-shadow-thin) !important;
+}
+
+/// Estilos para el título del modal
+.modal-data-text{
+  font-family: $font-family-title;
+  font-weight: getFontWeight(bold);
+  color: var(--text-color);
+}
+
+/// Estilos para el texto del modal
+.modal-body-content-text{
+  background-color: var(--background-color);
+  margin-bottom: 3rem;
+}
+
+@include toast(-15rem, true);
+
+@include response(xl){
+  @include toast(-21rem);
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><main class="content">  <div class="toast-container">    <ngb-toast *ngIf="showAddToast" [autohide]="true" (hidden)="showAddToast=false">      <ng-template ngbToastHeader>        <div class="me-auto">          <img src="../../../../assets/images/FitVerumLogo.png" width="40" height="40"/>          <strong class="mx-1">FitVerum</strong>        </div>      </ng-template>      {{"USERS.ACTIVITIES.ADDED-TOAST" | translate}}    </ngb-toast>  </div>  <div class="toast-container">    <ngb-toast *ngIf="showDeleteToast" [autohide]="true" (hidden)="showDeleteToast=false">      <ng-template ngbToastHeader>        <div class="me-auto">          <img src="../../../../assets/images/FitVerumLogo.png" width="40" height="40"/>          <strong class="mx-1">FitVerum</strong>        </div>      </ng-template>      {{"USERS.ACTIVITIES.DELETED-TOAST" | translate}}    </ngb-toast>  </div>  <div class="toast-container">    <ngb-toast *ngIf="showUpdatedToast" [autohide]="true" (hidden)="showDeleteToast=false">      <ng-template ngbToastHeader>        <div class="me-auto">          <img src="../../../../assets/images/FitVerumLogo.png" width="40" height="40"/>          <strong class="mx-1">FitVerum</strong>        </div>      </ng-template>      {{"USERS.ACTIVITIES.EDITED-TOAST" | translate}}    </ngb-toast>  </div><div class="calendar-controls">    <button class="calendar-controls-button"    mwlCalendarPreviousView    [(viewDate)]="viewDate"    [view]="view">    {{"USERS.ACTIVITIES.PREVIOUS" | translate}}    </button>    <h3 class="calendar-controls-month">{{ viewDate | calendarDate:(view + \'ViewTitle\') }}</h3>    <button class="calendar-controls-button"    mwlCalendarNextView    [(viewDate)]="viewDate"    [view]="view">    {{"USERS.ACTIVITIES.NEXT" | translate}}    </button></div><div *ngIf="events$ | async; let events">  <div [ngSwitch]="view">      <mwl-calendar-month-view        *ngSwitchCase="\'month\'"        [viewDate]="viewDate"        [events]="events"        [weekStartsOn]="weekStartsOn"        [weekendDays]="weekendDays"        (eventClicked)="open($event.event)"        (eventTimesChanged)="eventTimesChanged($event)"        (dayClicked)="routeToRoutines($event.day.date)"      >      </mwl-calendar-month-view>  </div></div><ng-template #modalContent let-close="close">  <div class="modal-header">    <h5 class="modal-title">{{"USERS.ACTIVITIES.EVENT-INFORMATION" | translate}}</h5>    <i class="fa-solid fa-x" (click)="close()"></i>  </div>  <div class="modal-body">    <div>      <h6 class="modal-body-title">{{"USERS.ACTIVITIES.EVENT-TITLE" | translate}}</h6>      <p class="modal-body-title-text">{{ modalData?.event?.title }}</p>      <p class="modal-body-title-date">{{ modalDataDate | date: \'longDate\'}}</p>      <h6 class="modal-body-content-title">{{"USERS.ACTIVITIES.STATS" | translate}}</h6>      <p class="modal-body-content-text">Series: <span class="modal-data-text">{{ modalData?.event?.series }}</span> - Reps: <span class="modal-data-text">{{ modalData?.event?.repetitions }}</span> - {{"USERS.ACTIVITIES.WEIGHT" | translate}}: <span class="modal-data-text">{{ modalData?.event?.kg }} kg</span></p>      <h6 *ngIf="modalData?.event?.comment != \'\'" class="modal-body-content-title">{{"USERS.ACTIVITIES.COMMENTS" | translate}}</h6>      <p *ngIf="modalData?.event?.comment != \'\'" class="modal-body-content-text">{{ modalData?.event?.comment}}</p>      <p *ngIf="modalData?.event?.comment === null" class="no-comment-message">{{"USERS.ACTIVITIES.NO-COMMENTS" | translate}}</p>    </div>  </div>  <div class="modal-footer">    <button type="button" class="modal-button-delete" (click)="deleteEvent(modalData?.event?.id)">      <i class="fa-solid fa-trash"></i>    </button>    <button type="button" class="modal-button-update" (click)="goToUpdate(modalData?.event?.id)">      <i class="fa-solid fa-pen-to-square"></i>    </button>    <button type="button" class="modal-button" (click)="openEvolution(modalData?.event?.exerciseID)">      {{"USERS.ACTIVITIES.SEE-EVOLUTION" | translate}}    </button>    <button type="button" class="modal-button" (click)="close()">      {{"USERS.ACTIVITIES.BACK" | translate}}    </button>  </div></ng-template></main></div>'
+    var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AddDietComponent', 'selector': 'app-add-diet'},{'name': 'AddExerciceComponent', 'selector': 'app-add-exercice'},{'name': 'AddMachineComponent', 'selector': 'app-add-machine'},{'name': 'AddRoutineComponent', 'selector': 'app-add-routine'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'EditDietComponent', 'selector': 'app-edit-diet'},{'name': 'EditEntryComponent', 'selector': 'app-edit-entry'},{'name': 'EditExerciseComponent', 'selector': 'app-edit-exercise'},{'name': 'EditRoutineComponent', 'selector': 'app-edit-routine'},{'name': 'ExerciseCardComponent', 'selector': 'app-exercise-card'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForbiddenComponent', 'selector': 'app-forbidden'},{'name': 'ForumComponent', 'selector': 'app-forum'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LegalComponent', 'selector': 'app-legal'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MachineCardComponent', 'selector': 'app-machine-card'},{'name': 'MachinesComponent', 'selector': 'app-machines'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SeeTrainersCardComponent', 'selector': 'app-see-trainers-card'},{'name': 'SeeTrainersComponent', 'selector': 'app-see-trainers'},{'name': 'ShowDietComponent', 'selector': 'app-show-diet'},{'name': 'ShowExercisesComponent', 'selector': 'app-show-exercises'},{'name': 'ShowMachineComponent', 'selector': 'app-show-machine'},{'name': 'ShowSingleExerciseComponent', 'selector': 'app-show-single-exercise'},{'name': 'SimpleExerciseCardComponent', 'selector': 'app-simple-exercise-card'},{'name': 'TrainerAppointmentComponent', 'selector': 'app-trainer-appointment'},{'name': 'TrainerCalendarComponent', 'selector': 'app-trainer-calendar'},{'name': 'TrainerDietCardComponent', 'selector': 'app-trainer-diet-card'},{'name': 'TrainerDietsComponent', 'selector': 'app-trainer-diets'},{'name': 'TrainerModificationComponent', 'selector': 'app-trainer-modification'},{'name': 'TrainerRoutineCardComponent', 'selector': 'app-trainer-routine-card'},{'name': 'TrainerRoutinesComponent', 'selector': 'app-trainer-routines'},{'name': 'TrainerUsersComponent', 'selector': 'app-trainer-users'},{'name': 'UpdateMachineComponent', 'selector': 'app-update-machine'},{'name': 'UserCalendarComponent', 'selector': 'app-user-calendar'},{'name': 'UserDietsComponent', 'selector': 'app-user-diets'},{'name': 'UserEntryComponent', 'selector': 'app-user-entry'},{'name': 'UserEvolutionComponent', 'selector': 'app-user-evolution'},{'name': 'UserModificationComponent', 'selector': 'app-user-modification'},{'name': 'UserRoutineExercisesComponent', 'selector': 'app-user-routine-exercises'},{'name': 'UserRoutineExercisesSimpleComponent', 'selector': 'app-user-routine-exercises-simple'},{'name': 'UserRoutinesComponent', 'selector': 'app-user-routines'},{'name': 'UserRoutinesSimpleComponent', 'selector': 'app-user-routines-simple'},{'name': 'UsersComponent', 'selector': 'app-users'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'UserCalendarComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'UserCalendarComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

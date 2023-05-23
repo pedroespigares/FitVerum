@@ -13,6 +13,9 @@ export class TrainerDietCardComponent {
   storage: any;
   @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
 
+  /**
+   * Datos de la dieta a mostrar en el modal
+   */
   modalData: {
     diet: any;
   };
@@ -23,7 +26,7 @@ export class TrainerDietCardComponent {
   }
 
   /**
-   * Borrar máquina de la base de datos
+   * Borrar dieta de la base de datos
    * @param id
    * @param photoURL
    * @returns
@@ -35,7 +38,7 @@ export class TrainerDietCardComponent {
   }
 
   /**
-   * Borrar foto de la máquina de Firebase Storage
+   * Borrar foto de la dieta de Firebase Storage
    * @param photoURL
    * @returns
    * */
@@ -45,6 +48,10 @@ export class TrainerDietCardComponent {
     deleteObject(photoRef);
   }
 
+  /**
+   * Abrir modal con los datos de la dieta
+   * @param diet
+   */
   open(diet: any) {
 		this.modalData = { diet };
     this.modalService.open(this.modalContent, { size: 'md', centered: true, keyboard: true});

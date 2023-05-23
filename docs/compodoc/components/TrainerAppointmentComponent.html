@@ -1,0 +1,1568 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>FitVerumDocs</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">FitVerumDocs</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  TrainerAppointmentComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/trainers/trainer-appointment/trainer-appointment.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-trainer-appointment</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./trainer-appointment.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./trainer-appointment.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#clients" >clients</a>
+                            </li>
+                            <li>
+                                <a href="#color" >color</a>
+                            </li>
+                            <li>
+                                <a href="#date" >date</a>
+                            </li>
+                            <li>
+                                <a href="#description" >description</a>
+                            </li>
+                            <li>
+                                <a href="#end_time" >end_time</a>
+                            </li>
+                            <li>
+                                <a href="#errorMessage" >errorMessage</a>
+                            </li>
+                            <li>
+                                <a href="#page" >page</a>
+                            </li>
+                            <li>
+                                <a href="#pageSize" >pageSize</a>
+                            </li>
+                            <li>
+                                <a href="#selectedClient" >selectedClient</a>
+                            </li>
+                            <li>
+                                <a href="#title" >title</a>
+                            </li>
+                            <li>
+                                <a href="#trainerID" >trainerID</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#createAppointment" >createAppointment</a>
+                            </li>
+                            <li>
+                                <a href="#deselectClient" >deselectClient</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#selectClient" >selectClient</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(database: <a href="../injectables/DatabaseService.html" target="_self">DatabaseService</a>, activatedRoute: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, auth: <a href="../injectables/AuthService.html" target="_self">AuthService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/components/trainers/trainer-appointment/trainer-appointment.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>database</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DatabaseService.html" target="_self" >DatabaseService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>activatedRoute</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>auth</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createAppointment"></a>
+                    <span class="name">
+                        <span ><b>createAppointment</b></span>
+                        <a href="#createAppointment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createAppointment()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">src/app/components/trainers/trainer-appointment/trainer-appointment.component.ts:80</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Crear cita
+Comprueba que la hora de finalización sea posterior a la de inicio y que la hora de finalización sea entre las 8:00 y las 22:00
+Si se cumplen las condiciones, crea la cita
+Si no, muestra un mensaje de error</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deselectClient"></a>
+                    <span class="name">
+                        <span ><b>deselectClient</b></span>
+                        <a href="#deselectClient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deselectClient()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/components/trainers/trainer-appointment/trainer-appointment.component.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Desseleccionar cliente</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">src/app/components/trainers/trainer-appointment/trainer-appointment.component.ts:45</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Obtener los clientes del entrenador</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectClient"></a>
+                    <span class="name">
+                        <span ><b>selectClient</b></span>
+                        <a href="#selectClient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>selectClient(client: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/components/trainers/trainer-appointment/trainer-appointment.component.ts:58</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Seleccionar cliente</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>client</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clients"></a>
+                    <span class="name">
+                        <span ><b>clients</b></span>
+                        <a href="#clients"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/trainers/trainer-appointment/trainer-appointment.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Array de clientes del entrenador</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="color"></a>
+                    <span class="name">
+                        <span ><b>color</b></span>
+                        <a href="#color"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;#aeafe3&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/components/trainers/trainer-appointment/trainer-appointment.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="date"></a>
+                    <span class="name">
+                        <span ><b>date</b></span>
+                        <a href="#date"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>undefined</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/components/trainers/trainer-appointment/trainer-appointment.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Datos de configuración de la cita</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="description"></a>
+                    <span class="name">
+                        <span ><b>description</b></span>
+                        <a href="#description"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/components/trainers/trainer-appointment/trainer-appointment.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="end_time"></a>
+                    <span class="name">
+                        <span ><b>end_time</b></span>
+                        <a href="#end_time"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>undefined</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/components/trainers/trainer-appointment/trainer-appointment.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="errorMessage"></a>
+                    <span class="name">
+                        <span ><b>errorMessage</b></span>
+                        <a href="#errorMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/components/trainers/trainer-appointment/trainer-appointment.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="page"></a>
+                    <span class="name">
+                        <span ><b>page</b></span>
+                        <a href="#page"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>1</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/trainers/trainer-appointment/trainer-appointment.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Paginación</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pageSize"></a>
+                    <span class="name">
+                        <span ><b>pageSize</b></span>
+                        <a href="#pageSize"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>5</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/components/trainers/trainer-appointment/trainer-appointment.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedClient"></a>
+                    <span class="name">
+                        <span ><b>selectedClient</b></span>
+                        <a href="#selectedClient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/trainers/trainer-appointment/trainer-appointment.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Cliente seleccionado</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="title"></a>
+                    <span class="name">
+                        <span ><b>title</b></span>
+                        <a href="#title"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>undefined</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/components/trainers/trainer-appointment/trainer-appointment.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="trainerID"></a>
+                    <span class="name">
+                        <span ><b>trainerID</b></span>
+                        <a href="#trainerID"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.auth.userID</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/components/trainers/trainer-appointment/trainer-appointment.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component,OnInit } from &#x27;@angular/core&#x27;;
+import { DatabaseService } from &#x27;src/app/services/database.service&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { AuthService } from &#x27;src/app/services/auth.service&#x27;;
+
+@Component({
+  selector: &#x27;app-trainer-appointment&#x27;,
+  templateUrl: &#x27;./trainer-appointment.component.html&#x27;,
+  styleUrls: [&#x27;./trainer-appointment.component.scss&#x27;]
+})
+export class TrainerAppointmentComponent implements OnInit {
+  /**
+   * Array de clientes del entrenador
+   */
+  clients: any[] &#x3D; [];
+  /**
+   * Paginación
+   */
+  page &#x3D; 1;
+  pageSize &#x3D; 5;
+
+  /**
+   * Cliente seleccionado
+   */
+  selectedClient: any &#x3D; null;
+
+  /**
+   * Datos de configuración de la cita
+   */
+  date: Date &#x3D; undefined;
+  end_time: number &#x3D; undefined;
+  color: string &#x3D; &quot;#aeafe3&quot;;
+  title: string &#x3D; undefined;
+  description: string &#x3D; &#x27;&#x27;;
+
+  errorMessage: string &#x3D; &#x27;&#x27;;
+
+  trainerID: string &#x3D; this.auth.userID;
+  constructor(private database: DatabaseService, private activatedRoute: ActivatedRoute, private router: Router, private auth: AuthService) {}
+
+  /**
+   * Obtener los clientes del entrenador
+   */
+  ngOnInit() {
+    let date &#x3D; this.activatedRoute.snapshot.paramMap.get(&#x27;date&#x27;);
+    this.date &#x3D; new Date(parseInt(date));
+
+    this.database.getTrainerClients(this.trainerID).subscribe((data) &#x3D;&gt; {
+      this.clients &#x3D; data;
+    });
+  }
+
+  /**
+   * Seleccionar cliente
+   * @param client
+   */
+  selectClient(client: any) {
+    if(this.selectedClient &#x3D;&#x3D; null){
+      this.selectedClient &#x3D; client;
+    } else{
+      this.deselectClient();
+      this.selectedClient &#x3D; client;
+    }
+  }
+
+  /**
+   * Desseleccionar cliente
+   */
+  deselectClient() :void {
+    this.selectedClient &#x3D; null;
+  }
+
+  /**
+   * Crear cita
+   * Comprueba que la hora de finalización sea posterior a la de inicio y que la hora de finalización sea entre las 8:00 y las 22:00
+   * Si se cumplen las condiciones, crea la cita
+   * Si no, muestra un mensaje de error
+   */
+  createAppointment() :void {
+    let to_date &#x3D; new Date(&#x60;${this.date.getFullYear()}-${this.date.getMonth() + 1}-${this.date.getDate()} ${this.end_time}&#x60;);
+    let from_date_timestamp &#x3D; this.date.getTime();
+    let to_date_timestamp &#x3D; to_date.getTime();
+    let parsedEndTime &#x3D; parseInt(this.end_time.toString().split(&#x27;:&#x27;)[0]);
+    let parsedEndTimeMinutes &#x3D; parseInt(this.end_time.toString().split(&#x27;:&#x27;)[1]);
+
+    if(to_date_timestamp &lt; from_date_timestamp) {
+      this.errorMessage &#x3D; &#x27;End time must be after start time&#x27;;
+      return;
+    }
+
+    if(parsedEndTime &gt; 22 &amp;&amp; parsedEndTimeMinutes &gt;&#x3D; 0 || parsedEndTime &lt; 8) {
+      this.errorMessage &#x3D; &#x27;End time must be between 8:00 and 22:00&#x27;;
+      return;
+    }
+
+    this.database.createAppointment(this.selectedClient.userID, this.selectedClient.trainerID, from_date_timestamp, to_date_timestamp, this.color, &#x60;${this.selectedClient.displayName} - ${this.title}&#x60;, this.description);
+    this.selectedClient &#x3D; null;
+    this.router.navigateByUrl(&#x60;/trainer/calendar&#x60;);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;main class&#x3D;&quot;content&quot;&gt;
+  &lt;div class&#x3D;&quot;breadcrumbs&quot;&gt;
+    &lt;a class&#x3D;&quot;breadcrumbs-item&quot; routerLink&#x3D;&quot;/trainer/calendar&quot;&gt;{{&quot;TRAINERS.APPOINTMENT.MANAGEMENT&quot; | translate}}&lt;/a&gt;
+    &lt;p class&#x3D;&quot;breadcrumbs-item&quot;&gt; &gt; &lt;/p&gt;
+    &lt;p class&#x3D;&quot;breadcrumbs-item&quot;&gt;{{&quot;TRAINERS.APPOINTMENT.NEW-APPOINTMENT&quot; | translate}}&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;appointment-container&quot;&gt;
+    &lt;div class&#x3D;&quot;appointment-container-clients&quot;&gt;
+      &lt;h1 class&#x3D;&quot;appointment-container-clients-title&quot;&gt;{{&quot;TRAINERS.APPOINTMENT.CLIENTS&quot; | translate}}&lt;/h1&gt;
+      &lt;table class&#x3D;&quot;appointment-container-clients-table&quot;&gt;
+        &lt;ng-container *ngFor&#x3D;&quot;let client of clients | slice : (page - 1) * pageSize : page * pageSize&quot; &gt;
+          &lt;tr
+            *ngIf&#x3D;&quot;selectedClient &#x3D;&#x3D; null || selectedClient !&#x3D; client&quot; (click)&#x3D;&quot;selectClient(client)&quot;&gt;
+            &lt;td&gt;
+              &lt;img
+                *ngIf&#x3D;&quot;client.photoURL !&#x3D; null&quot;
+                referrerpolicy&#x3D;&quot;no-referrer&quot;
+                class&#x3D;&quot;appointment-container-clients-table-client-img&quot;
+                [src]&#x3D;&quot;client.photoURL&quot;
+                alt&#x3D;&quot;Client Image&quot;
+              /&gt;
+              &lt;img
+                *ngIf&#x3D;&quot;client.photoURL &#x3D;&#x3D; null&quot;
+                class&#x3D;&quot;appointment-container-clients-table-client-img&quot;
+                src&#x3D;&quot;https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt&#x3D;media&amp;token&#x3D;938b94bc-1a96-4cfd-9cec-7c97da53e3ce&quot;
+                alt&#x3D;&quot;Client Image&quot;
+              /&gt;
+            &lt;/td&gt;
+            &lt;td class&#x3D;&quot;appointment-container-clients-table-client-name&quot;&gt;
+              {{ client.displayName }}
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;button class&#x3D;&quot;appointment-container-clients-table-client-button&quot; (click)&#x3D;&quot;selectClient(client)&quot;&gt;
+                &lt;i class&#x3D;&quot;fa-solid fa-hand-pointer&quot;&gt;&lt;/i&gt;
+              &lt;/button&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr
+            class&#x3D;&quot;selected&quot; *ngIf&#x3D;&quot;selectedClient &#x3D;&#x3D; client&quot; (click)&#x3D;&quot;selectClient(client)&quot;&gt;
+            &lt;td&gt;
+              &lt;img
+                *ngIf&#x3D;&quot;client.photoURL !&#x3D; null&quot;
+                referrerpolicy&#x3D;&quot;no-referrer&quot;
+                class&#x3D;&quot;appointment-container-clients-table-client-img&quot;
+                [src]&#x3D;&quot;client.photoURL&quot;
+                alt&#x3D;&quot;Client Image&quot;
+              /&gt;
+              &lt;img
+                *ngIf&#x3D;&quot;client.photoURL &#x3D;&#x3D; null&quot;
+                class&#x3D;&quot;appointment-container-clients-table-client-img&quot;
+                src&#x3D;&quot;https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt&#x3D;media&amp;token&#x3D;938b94bc-1a96-4cfd-9cec-7c97da53e3ce&quot;
+                alt&#x3D;&quot;Client Image&quot;
+              /&gt;
+            &lt;/td&gt;
+            &lt;td class&#x3D;&quot;appointment-container-clients-table-client-name&quot;&gt;
+              {{ client.displayName }}
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;button class&#x3D;&quot;appointment-container-clients-table-client-button&quot; (click)&#x3D;&quot;selectClient(client)&quot;&gt;
+                &lt;i class&#x3D;&quot;fa-solid fa-hand-pointer&quot;&gt;&lt;/i&gt;
+              &lt;/button&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/ng-container&gt;
+      &lt;/table&gt;
+      &lt;p *ngIf&#x3D;&quot;this.clients.length &#x3D;&#x3D; 0 &amp;&amp; selectedClient &#x3D;&#x3D; null&quot; class&#x3D;&quot;no-clients-message&quot;&gt;
+        {{&quot;TRAINERS.APPOINTMENT.NO-CLIENTS&quot; | translate}}
+      &lt;/p&gt;
+      &lt;div class&#x3D;&quot;pagination&quot;&gt;
+        &lt;ngb-pagination
+          [collectionSize]&#x3D;&quot;this.clients.length&quot;
+          *ngIf&#x3D;&quot;this.clients.length &gt; 5&quot;
+          [pageSize]&#x3D;&quot;pageSize&quot;
+          [directionLinks]&#x3D;&quot;false&quot;
+          [(page)]&#x3D;&quot;page&quot;
+          class&#x3D;&quot;w-100&quot;
+        &gt;
+        &lt;/ngb-pagination&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+
+    &lt;div class&#x3D;&quot;appointment-container-info&quot;&gt;
+        &lt;h1 class&#x3D;&quot;appointment-container-info-title&quot;&gt;{{&quot;TRAINERS.APPOINTMENT.APPOINTMENT-INFORMATION&quot; | translate}}&lt;/h1&gt;
+        &lt;div class&#x3D;&quot;appointment-container-info-selected-client&quot;&gt;
+          &lt;h2 *ngIf&#x3D;&quot;selectedClient !&#x3D; null &quot; class&#x3D;&quot;appointment-container-info-selected-client-title&quot;&gt;{{&quot;TRAINERS.APPOINTMENT.SELECTED-CLIENT&quot; | translate}}&lt;/h2&gt;
+          &lt;h2 *ngIf&#x3D;&quot;selectedClient &#x3D;&#x3D; null &quot; class&#x3D;&quot;appointment-container-info-selected-client-title&quot;&gt;{{&quot;TRAINERS.APPOINTMENT.NO-CLIENT-SELECTED&quot; | translate}}&lt;/h2&gt;
+          &lt;div *ngIf&#x3D;&quot;selectedClient !&#x3D; null&quot; class&#x3D;&quot;appointment-container-info-selected-client-container&quot;&gt;
+            &lt;img
+              *ngIf&#x3D;&quot;selectedClient.photoURL !&#x3D; null&quot;
+              referrerpolicy&#x3D;&quot;no-referrer&quot;
+              class&#x3D;&quot;appointment-container-info-selected-client-container-img&quot;
+              [src]&#x3D;&quot;selectedClient.photoURL&quot;
+              alt&#x3D;&quot;Client Image&quot;
+            /&gt;
+            &lt;img
+              *ngIf&#x3D;&quot;selectedClient.photoURL &#x3D;&#x3D; null&quot;
+              class&#x3D;&quot;appointment-container-info-selected-client-container-img&quot;
+              src&#x3D;&quot;https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt&#x3D;media&amp;token&#x3D;938b94bc-1a96-4cfd-9cec-7c97da53e3ce&quot;
+              alt&#x3D;&quot;Client Image&quot;
+            /&gt;
+            &lt;h3 class&#x3D;&quot;appointment-container-info-selected-client-container-name&quot;&gt;
+              {{ selectedClient.displayName }}
+            &lt;/h3&gt;
+            &lt;button class&#x3D;&quot;appointment-container-info-selected-client-container-button&quot; (click)&#x3D;&quot;deselectClient()&quot;&gt;
+              &lt;i class&#x3D;&quot;fa-solid fa-circle-xmark&quot;&gt;&lt;/i&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div *ngIf&#x3D;&quot;selectedClient !&#x3D; null&quot; class&#x3D;&quot;appointment-container-info-date&quot;&gt;
+        &lt;form class&#x3D;&quot;appointment-container-info-date-container&quot;&gt;
+          &lt;h2 class&#x3D;&quot;appointment-container-info-date-container-title&quot;&gt;{{&quot;TRAINERS.APPOINTMENT.TITLE&quot; | translate}}&lt;/h2&gt;
+            &lt;input class&#x3D;&quot;appointment-container-info-date-container-input&quot; name&#x3D;&quot;text&quot; type&#x3D;&quot;text&quot; [(ngModel)]&#x3D;&quot;title&quot; /&gt;
+          &lt;h2 class&#x3D;&quot;appointment-container-info-date-container-title&quot;&gt;{{&quot;TRAINERS.APPOINTMENT.DATE&quot; | translate}}&lt;/h2&gt;
+          &lt;h2 class&#x3D;&quot;appointment-container-info-date-container-title-focus&quot;&gt;{{this.date | date: &#x27;longDate&#x27;}}&lt;/h2&gt;
+          &lt;h2 class&#x3D;&quot;appointment-container-info-date-container-title&quot;&gt;{{&quot;TRAINERS.APPOINTMENT.FROM&quot; | translate}}&lt;/h2&gt;
+          &lt;h2 class&#x3D;&quot;appointment-container-info-date-container-title-focus&quot;&gt;{{this.date | date: &#x27;HH:mm&#x27;}}&lt;/h2&gt;
+          &lt;h2 class&#x3D;&quot;appointment-container-info-date-container-title&quot;&gt;{{&quot;TRAINERS.APPOINTMENT.TO&quot; | translate}}&lt;/h2&gt;
+            &lt;input class&#x3D;&quot;appointment-container-info-date-container-input-time&quot; type&#x3D;&quot;time&quot; name&#x3D;&quot;to_hour&quot; [(ngModel)]&#x3D;&quot;end_time&quot; max&#x3D;&quot;22:00&quot; min&#x3D;&quot;08:00&quot;/&gt;
+          &lt;h2 class&#x3D;&quot;appointment-container-info-date-container-title&quot;&gt;{{&quot;TRAINERS.APPOINTMENT.APPOINTMENT-COLOR&quot; | translate}}&lt;/h2&gt;
+            &lt;input class&#x3D;&quot;appointment-container-info-date-container-input-color&quot; name&#x3D;&quot;color&quot; type&#x3D;&quot;color&quot; [(ngModel)]&#x3D;&quot;color&quot; /&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+
+      &lt;div *ngIf&#x3D;&quot;selectedClient !&#x3D; null&quot; class&#x3D;&quot;appointment-textarea-container&quot;&gt;
+        &lt;h2 *ngIf&#x3D;&quot;selectedClient !&#x3D; null&quot; class&#x3D;&quot;appointment-textarea-container-title&quot;&gt;{{&quot;TRAINERS.APPOINTMENT.DESCRIPTION&quot; | translate}}&lt;/h2&gt;
+        &lt;textarea *ngIf&#x3D;&quot;selectedClient !&#x3D; null&quot; class&#x3D;&quot;appointment-textarea-container-input&quot; [(ngModel)]&#x3D;&quot;description&quot;&gt;&lt;/textarea&gt;
+      &lt;/div&gt;
+      &lt;p class&#x3D;&quot;error-message&quot; *ngIf&#x3D;&quot;errorMessage !&#x3D; &#x27;&#x27;&quot;&gt;{{errorMessage}}&lt;/p&gt;
+      &lt;button *ngIf&#x3D;&quot;selectedClient !&#x3D; null &amp;&amp; date !&#x3D; undefined &amp;&amp; end_time !&#x3D; undefined &amp;&amp; title !&#x3D; undefined&quot; class&#x3D;&quot;appointment-container-info-button&quot; (click)&#x3D;&quot;createAppointment()&quot;&gt;
+        &lt;i class&#x3D;&quot;fa-solid fa-plus&quot;&gt;&lt;/i&gt;
+        {{&quot;TRAINERS.APPOINTMENT.BUTTON&quot; | translate}}
+      &lt;/button&gt;
+      &lt;button *ngIf&#x3D;&quot;date &#x3D;&#x3D; undefined || end_time &#x3D;&#x3D; undefined || title &#x3D;&#x3D; undefined&quot; class&#x3D;&quot;appointment-container-info-button-disabled&quot; (click)&#x3D;&quot;createAppointment()&quot;&gt;
+        &lt;i class&#x3D;&quot;fa-solid fa-plus&quot;&gt;&lt;/i&gt;
+        {{&quot;TRAINERS.APPOINTMENT.BUTTON&quot; | translate}}
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./trainer-appointment.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &quot;../../../../scss/mixin.scss&quot;;
+@import &quot;../../../../scss/variables.scss&quot;;
+
+/// Estilos del contenido de la vista de citas de entrenador
+.content{
+  height: 200vh;
+  @include response(md){
+    height: 125vh;
+  }
+  @include response(lg){
+    height: 110vh;
+  }
+  @include response(desktop){
+    height: calc(100vh - 112px);
+  }
+}
+
+/// Estilos de las migas de pan
+.breadcrumbs{
+  @include breadcrumbs();
+}
+
+/// Estilos del contendor de las citas
+.appointment-container {
+  @include response(xl){
+    display: grid;
+    grid-template-columns: 0.25fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  @include flex(
+    $direction: column,
+    $justify: center,
+    $align: center,
+  );
+
+  &amp;-clients {
+    @include response(xl){
+      border-right: 1px solid var(--tertiary-color);
+      height: calc(100vh - 126.797px - 10rem);
+    }
+    margin-top: 5rem;
+    grid-area: 1 / 1 / 2 / 2;
+    &amp;-title {
+      @include view_header(4rem);
+      margin-bottom: 2rem;
+    }
+    &amp;-table {
+      width: 100%;
+      border-collapse: separate;
+      @include response(xl) {
+        border-spacing: 3rem;
+      }
+      border-spacing: 2rem;
+      tr {
+        box-shadow: 0 0.5rem 1rem var(--box-shadow-thin);
+        border-radius: 1rem;
+        cursor: pointer;
+        transition: $transition;
+        &amp;:hover {
+          transform: translateY(-0.5rem);
+          box-shadow: 0 1rem 2rem var(--box-shadow-thin);
+          transition: $transition;
+        }
+      }
+
+      tr.selected{
+        box-shadow: 0 0.5rem 1rem getColor(green);
+        border-radius: 1rem;
+        cursor: pointer;
+        transition: $transition;
+        &amp;:hover {
+          transform: translateY(-0.5rem);
+          box-shadow: 0 1rem 2rem getColor(green);
+          transition: $transition;
+        }
+      }
+      &amp;-client {
+        &amp;-img {
+          @include response(xl){
+            width: 7.5rem;
+            height: 7.5rem;
+          }
+          width: 5.5rem;
+          height: 5.5rem;
+          border-radius: 50%;
+          border: 2px solid white;
+          object-fit: cover;
+          margin: 1rem;
+        }
+        &amp;-name {
+          @include response(xl) {
+            font-size: getFontSize(xl);
+          }
+          font-size: getFontSize(md);
+          font-family: $font-family-title;
+          font-weight: getFontWeight(bold);
+          color: var(--text-color);
+        }
+        &amp;-button {
+          @include user_button();
+        }
+      }
+    }
+  }
+
+  &amp;-info {
+    grid-area: 1 / 2 / 2 / 3;
+    height: 100%;
+    @include flex(
+      $direction: column,
+      $justify: flex-start,
+      $align: center,
+      $gap: 3rem
+    );
+
+    &amp;-title {
+      @include view_header(4rem);
+      margin-top: 5rem;
+    }
+
+    &amp;-selected-client {
+      margin-top: 5rem;
+      @include response(xl){
+        @include flex(
+          $direction: row,
+          $justify: center,
+          $align: center,
+          $gap: 5rem
+        );
+      }
+      @include flex(
+        $direction: column,
+        $justify: center,
+        $align: center,
+        $gap: 2rem
+      );
+      &amp;-title {
+        @include response(xl) {
+          font-size: 2.5rem;
+        }
+        flex: 1;
+        font-size: calc(2.5rem / 1.5);
+        font-family: $font-family-title;
+        font-weight: getFontWeight(bold);
+        color: var(--text-color);
+        text-align: center;
+        margin-bottom: 0;
+      }
+
+      &amp;-container {
+        @include flex(
+          $direction: row,
+          $justify: center,
+          $align: center,
+          $gap: 3rem
+        );
+        box-shadow: 0 0.5rem 1rem var(--box-shadow-thin);
+        border-radius: 1rem;
+        &amp;-img {
+          @include response(xl){
+            width: 7.5rem;
+            height: 7.5rem;
+          }
+          width: 5.5rem;
+          height: 5.5rem;
+          border-radius: 50%;
+          object-fit: cover;
+          margin: 1rem;
+        }
+
+        &amp;-name {
+          @include response(xl) {
+            font-size: getFontSize(xl);
+          }
+          font-size: getFontSize(md);
+          font-family: $font-family-text;
+          color: var(--text-color);
+        }
+
+        &amp;-button {
+          @include user_button($padding: 2.5rem);
+        }
+      }
+    }
+
+    &amp;-date {
+      margin-top: 10rem;
+      @include flex(
+        $direction: row,
+        $justify: center,
+        $align: center,
+        $gap: 5rem
+      );
+
+      &amp;-container {
+        @include response(xl){
+          @include flex(
+            $direction: row,
+            $justify: center,
+            $align: center,
+            $gap: 3rem
+          );
+        }
+        @include flex(
+          $direction: column,
+          $justify: center,
+          $align: center,
+          $gap: 3rem
+        );
+        &amp;-title {
+          @include response(xl) {
+            font-size: 2.5rem;
+          }
+          font-size: calc(2.5rem / 1.5);
+          font-family: $font-family-title;
+          font-weight: getFontWeight(bold);
+          color: var(--text-color);
+          text-align: center;
+
+          &amp;-focus{
+            @include response(xl) {
+              font-size: 2.5rem;
+            }
+            font-size: calc(2.5rem / 1.5);
+            font-family: $font-family-title;
+            font-weight: getFontWeight(bold);
+            color: var(--text-color);
+            text-align: center;
+            color: var(--primary-color);
+          }
+        }
+
+        &amp;-input {
+          @include input($width: 14em);
+          &amp;-time{
+            @include input($width: 6em)
+          }
+          &amp;-color{
+            grid-area: 1 / 2 / 2 / 3;
+            width: 100%;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 5rem;
+            height: 5rem;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            &amp;::-webkit-color-swatch {
+              border-radius: 15px;
+              border: none;
+            }
+            &amp;::-moz-color-swatch {
+              border-radius: 15px;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+
+    &amp;-button {
+      @include response(xl) {
+        margin-top: 15rem;
+        @include button($size: xl, $focus: true);
+      }
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+      @include button($size: md, $focus: true);
+
+
+      &amp;-disabled{
+        @include response(xl) {
+          margin-top: 15rem;
+          @include button($size: xl, $disabled: true);
+        }
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        @include button($size: md, $disabled: true);
+      }
+    }
+  }
+}
+
+.appointment-textarea-container{
+  @include flex(
+    $direction: row,
+    $justify: center,
+    $align: center,
+    $gap: 5rem
+  );
+  &amp;-title{
+    @include response(xl) {
+      font-size: 3rem;
+    }
+    font-size: calc(3rem - 1.5rem);
+    font-family: $font-family-title;
+    font-weight: getFontWeight(bold);
+    color: var(--text-color);
+    text-align: center;
+  }
+
+  &amp;-input{
+    @include input(md);
+    resize: both;
+  }
+}
+
+::ng-deep .pagination {
+  margin-top: 1rem;
+  justify-content: center;
+  // Al venir de un componente de terceros, no se puede usar el @include ni las variables de sass propias
+  --bs-pagination-color: var(--text-color);
+  --bs-pagination-hover-color: var(--primary-color);
+  --bs-pagination-active-bg: #6a69dc;
+  --bs-pagination-active-border-color: #6a69dc;
+  --bs-pagination-font-size: 2rem;
+  --bs-pagination-padding-x: 1.5rem;
+  --bs-pagination-padding-y: 0.75rem;
+  --bs-pagination-focus-box-shadow: none;
+}
+
+.no-clients-message {
+  font-size: 2rem;
+  font-family: $font-family-title;
+  font-weight: getFontWeight(bold);
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.error-message{
+  font-size: getFontSize(md);
+  font-family: $font-family-title;
+  font-weight: getFontWeight(bold);
+  color: getColor(red);
+  text-align: center;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><main class="content">  <div class="breadcrumbs">    <a class="breadcrumbs-item" routerLink="/trainer/calendar">{{"TRAINERS.APPOINTMENT.MANAGEMENT" | translate}}</a>    <p class="breadcrumbs-item"> > </p>    <p class="breadcrumbs-item">{{"TRAINERS.APPOINTMENT.NEW-APPOINTMENT" | translate}}</p>  </div>  <div class="appointment-container">    <div class="appointment-container-clients">      <h1 class="appointment-container-clients-title">{{"TRAINERS.APPOINTMENT.CLIENTS" | translate}}</h1>      <table class="appointment-container-clients-table">        <ng-container *ngFor="let client of clients | slice : (page - 1) * pageSize : page * pageSize" >          <tr            *ngIf="selectedClient == null || selectedClient != client" (click)="selectClient(client)">            <td>              <img                *ngIf="client.photoURL != null"                referrerpolicy="no-referrer"                class="appointment-container-clients-table-client-img"                [src]="client.photoURL"                alt="Client Image"              />              <img                *ngIf="client.photoURL == null"                class="appointment-container-clients-table-client-img"                src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=938b94bc-1a96-4cfd-9cec-7c97da53e3ce"                alt="Client Image"              />            </td>            <td class="appointment-container-clients-table-client-name">              {{ client.displayName }}            </td>            <td>              <button class="appointment-container-clients-table-client-button" (click)="selectClient(client)">                <i class="fa-solid fa-hand-pointer"></i>              </button>            </td>          </tr>          <tr            class="selected" *ngIf="selectedClient == client" (click)="selectClient(client)">            <td>              <img                *ngIf="client.photoURL != null"                referrerpolicy="no-referrer"                class="appointment-container-clients-table-client-img"                [src]="client.photoURL"                alt="Client Image"              />              <img                *ngIf="client.photoURL == null"                class="appointment-container-clients-table-client-img"                src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=938b94bc-1a96-4cfd-9cec-7c97da53e3ce"                alt="Client Image"              />            </td>            <td class="appointment-container-clients-table-client-name">              {{ client.displayName }}            </td>            <td>              <button class="appointment-container-clients-table-client-button" (click)="selectClient(client)">                <i class="fa-solid fa-hand-pointer"></i>              </button>            </td>          </tr>        </ng-container>      </table>      <p *ngIf="this.clients.length == 0 && selectedClient == null" class="no-clients-message">        {{"TRAINERS.APPOINTMENT.NO-CLIENTS" | translate}}      </p>      <div class="pagination">        <ngb-pagination          [collectionSize]="this.clients.length"          *ngIf="this.clients.length > 5"          [pageSize]="pageSize"          [directionLinks]="false"          [(page)]="page"          class="w-100"        >        </ngb-pagination>      </div>    </div>    <div class="appointment-container-info">        <h1 class="appointment-container-info-title">{{"TRAINERS.APPOINTMENT.APPOINTMENT-INFORMATION" | translate}}</h1>        <div class="appointment-container-info-selected-client">          <h2 *ngIf="selectedClient != null " class="appointment-container-info-selected-client-title">{{"TRAINERS.APPOINTMENT.SELECTED-CLIENT" | translate}}</h2>          <h2 *ngIf="selectedClient == null " class="appointment-container-info-selected-client-title">{{"TRAINERS.APPOINTMENT.NO-CLIENT-SELECTED" | translate}}</h2>          <div *ngIf="selectedClient != null" class="appointment-container-info-selected-client-container">            <img              *ngIf="selectedClient.photoURL != null"              referrerpolicy="no-referrer"              class="appointment-container-info-selected-client-container-img"              [src]="selectedClient.photoURL"              alt="Client Image"            />            <img              *ngIf="selectedClient.photoURL == null"              class="appointment-container-info-selected-client-container-img"              src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=938b94bc-1a96-4cfd-9cec-7c97da53e3ce"              alt="Client Image"            />            <h3 class="appointment-container-info-selected-client-container-name">              {{ selectedClient.displayName }}            </h3>            <button class="appointment-container-info-selected-client-container-button" (click)="deselectClient()">              <i class="fa-solid fa-circle-xmark"></i>            </button>        </div>      </div>      <div *ngIf="selectedClient != null" class="appointment-container-info-date">        <form class="appointment-container-info-date-container">          <h2 class="appointment-container-info-date-container-title">{{"TRAINERS.APPOINTMENT.TITLE" | translate}}</h2>            <input class="appointment-container-info-date-container-input" name="text" type="text" [(ngModel)]="title" />          <h2 class="appointment-container-info-date-container-title">{{"TRAINERS.APPOINTMENT.DATE" | translate}}</h2>          <h2 class="appointment-container-info-date-container-title-focus">{{this.date | date: \'longDate\'}}</h2>          <h2 class="appointment-container-info-date-container-title">{{"TRAINERS.APPOINTMENT.FROM" | translate}}</h2>          <h2 class="appointment-container-info-date-container-title-focus">{{this.date | date: \'HH:mm\'}}</h2>          <h2 class="appointment-container-info-date-container-title">{{"TRAINERS.APPOINTMENT.TO" | translate}}</h2>            <input class="appointment-container-info-date-container-input-time" type="time" name="to_hour" [(ngModel)]="end_time" max="22:00" min="08:00"/>          <h2 class="appointment-container-info-date-container-title">{{"TRAINERS.APPOINTMENT.APPOINTMENT-COLOR" | translate}}</h2>            <input class="appointment-container-info-date-container-input-color" name="color" type="color" [(ngModel)]="color" />        </form>      </div>      <div *ngIf="selectedClient != null" class="appointment-textarea-container">        <h2 *ngIf="selectedClient != null" class="appointment-textarea-container-title">{{"TRAINERS.APPOINTMENT.DESCRIPTION" | translate}}</h2>        <textarea *ngIf="selectedClient != null" class="appointment-textarea-container-input" [(ngModel)]="description"></textarea>      </div>      <p class="error-message" *ngIf="errorMessage != \'\'">{{errorMessage}}</p>      <button *ngIf="selectedClient != null && date != undefined && end_time != undefined && title != undefined" class="appointment-container-info-button" (click)="createAppointment()">        <i class="fa-solid fa-plus"></i>        {{"TRAINERS.APPOINTMENT.BUTTON" | translate}}      </button>      <button *ngIf="date == undefined || end_time == undefined || title == undefined" class="appointment-container-info-button-disabled" (click)="createAppointment()">        <i class="fa-solid fa-plus"></i>        {{"TRAINERS.APPOINTMENT.BUTTON" | translate}}      </button>    </div>  </div></main></div>'
+    var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AddDietComponent', 'selector': 'app-add-diet'},{'name': 'AddExerciceComponent', 'selector': 'app-add-exercice'},{'name': 'AddMachineComponent', 'selector': 'app-add-machine'},{'name': 'AddRoutineComponent', 'selector': 'app-add-routine'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'EditDietComponent', 'selector': 'app-edit-diet'},{'name': 'EditEntryComponent', 'selector': 'app-edit-entry'},{'name': 'EditExerciseComponent', 'selector': 'app-edit-exercise'},{'name': 'EditRoutineComponent', 'selector': 'app-edit-routine'},{'name': 'ExerciseCardComponent', 'selector': 'app-exercise-card'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForbiddenComponent', 'selector': 'app-forbidden'},{'name': 'ForumComponent', 'selector': 'app-forum'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LegalComponent', 'selector': 'app-legal'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MachineCardComponent', 'selector': 'app-machine-card'},{'name': 'MachinesComponent', 'selector': 'app-machines'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SeeTrainersCardComponent', 'selector': 'app-see-trainers-card'},{'name': 'SeeTrainersComponent', 'selector': 'app-see-trainers'},{'name': 'ShowDietComponent', 'selector': 'app-show-diet'},{'name': 'ShowExercisesComponent', 'selector': 'app-show-exercises'},{'name': 'ShowMachineComponent', 'selector': 'app-show-machine'},{'name': 'ShowSingleExerciseComponent', 'selector': 'app-show-single-exercise'},{'name': 'SimpleExerciseCardComponent', 'selector': 'app-simple-exercise-card'},{'name': 'TrainerAppointmentComponent', 'selector': 'app-trainer-appointment'},{'name': 'TrainerCalendarComponent', 'selector': 'app-trainer-calendar'},{'name': 'TrainerDietCardComponent', 'selector': 'app-trainer-diet-card'},{'name': 'TrainerDietsComponent', 'selector': 'app-trainer-diets'},{'name': 'TrainerModificationComponent', 'selector': 'app-trainer-modification'},{'name': 'TrainerRoutineCardComponent', 'selector': 'app-trainer-routine-card'},{'name': 'TrainerRoutinesComponent', 'selector': 'app-trainer-routines'},{'name': 'TrainerUsersComponent', 'selector': 'app-trainer-users'},{'name': 'UpdateMachineComponent', 'selector': 'app-update-machine'},{'name': 'UserCalendarComponent', 'selector': 'app-user-calendar'},{'name': 'UserDietsComponent', 'selector': 'app-user-diets'},{'name': 'UserEntryComponent', 'selector': 'app-user-entry'},{'name': 'UserEvolutionComponent', 'selector': 'app-user-evolution'},{'name': 'UserModificationComponent', 'selector': 'app-user-modification'},{'name': 'UserRoutineExercisesComponent', 'selector': 'app-user-routine-exercises'},{'name': 'UserRoutineExercisesSimpleComponent', 'selector': 'app-user-routine-exercises-simple'},{'name': 'UserRoutinesComponent', 'selector': 'app-user-routines'},{'name': 'UserRoutinesSimpleComponent', 'selector': 'app-user-routines-simple'},{'name': 'UsersComponent', 'selector': 'app-users'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'TrainerAppointmentComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TrainerAppointmentComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

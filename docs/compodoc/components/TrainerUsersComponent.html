@@ -1,0 +1,1214 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>FitVerumDocs</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">FitVerumDocs</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  TrainerUsersComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/trainers/trainer-users/trainer-users.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-trainer-users</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./trainer-users.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./trainer-users.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#clients" >clients</a>
+                            </li>
+                            <li>
+                                <a href="#clientsLoading" >clientsLoading</a>
+                            </li>
+                            <li>
+                                <a href="#page" >page</a>
+                            </li>
+                            <li>
+                                <a href="#page_2" >page_2</a>
+                            </li>
+                            <li>
+                                <a href="#pageSize" >pageSize</a>
+                            </li>
+                            <li>
+                                <a href="#pageSize_2" >pageSize_2</a>
+                            </li>
+                            <li>
+                                <a href="#trainerID" >trainerID</a>
+                            </li>
+                            <li>
+                                <a href="#users" >users</a>
+                            </li>
+                            <li>
+                                <a href="#usersWithoutTrainerLoading" >usersWithoutTrainerLoading</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#subscribeClient" >subscribeClient</a>
+                            </li>
+                            <li>
+                                <a href="#unsubscribeClient" >unsubscribeClient</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(database: <a href="../injectables/DatabaseService.html" target="_self">DatabaseService</a>, auth: <a href="../injectables/AuthService.html" target="_self">AuthService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/trainers/trainer-users/trainer-users.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>database</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DatabaseService.html" target="_self" >DatabaseService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>auth</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">src/app/components/trainers/trainer-users/trainer-users.component.ts:26</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="subscribeClient"></a>
+                    <span class="name">
+                        <span ><b>subscribeClient</b></span>
+                        <a href="#subscribeClient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>subscribeClient(userID: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/components/trainers/trainer-users/trainer-users.component.ts:43</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Convertir un usuario en cliente</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>userID</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="unsubscribeClient"></a>
+                    <span class="name">
+                        <span ><b>unsubscribeClient</b></span>
+                        <a href="#unsubscribeClient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>unsubscribeClient(clientID: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/components/trainers/trainer-users/trainer-users.component.ts:51</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Quitar usuario de la lista de clientes</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>clientID</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clients"></a>
+                    <span class="name">
+                        <span ><b>clients</b></span>
+                        <a href="#clients"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/trainers/trainer-users/trainer-users.component.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clientsLoading"></a>
+                    <span class="name">
+                        <span ><b>clientsLoading</b></span>
+                        <a href="#clientsLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/trainers/trainer-users/trainer-users.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="page"></a>
+                    <span class="name">
+                        <span ><b>page</b></span>
+                        <a href="#page"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>1</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/trainers/trainer-users/trainer-users.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="page_2"></a>
+                    <span class="name">
+                        <span ><b>page_2</b></span>
+                        <a href="#page_2"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>1</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/trainers/trainer-users/trainer-users.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pageSize"></a>
+                    <span class="name">
+                        <span ><b>pageSize</b></span>
+                        <a href="#pageSize"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>4</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/trainers/trainer-users/trainer-users.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pageSize_2"></a>
+                    <span class="name">
+                        <span ><b>pageSize_2</b></span>
+                        <a href="#pageSize_2"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>4</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/trainers/trainer-users/trainer-users.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="trainerID"></a>
+                    <span class="name">
+                        <span ><b>trainerID</b></span>
+                        <a href="#trainerID"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.auth.userID</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/trainers/trainer-users/trainer-users.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="users"></a>
+                    <span class="name">
+                        <span ><b>users</b></span>
+                        <a href="#users"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/trainers/trainer-users/trainer-users.component.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usersWithoutTrainerLoading"></a>
+                    <span class="name">
+                        <span ><b>usersWithoutTrainerLoading</b></span>
+                        <a href="#usersWithoutTrainerLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/trainers/trainer-users/trainer-users.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component,OnInit } from &#x27;@angular/core&#x27;;
+import { DatabaseService } from &#x27;src/app/services/database.service&#x27;;
+import { AuthService } from &#x27;src/app/services/auth.service&#x27;;
+
+@Component({
+  selector: &#x27;app-trainer-users&#x27;,
+  templateUrl: &#x27;./trainer-users.component.html&#x27;,
+  styleUrls: [&#x27;./trainer-users.component.scss&#x27;]
+})
+export class TrainerUsersComponent implements OnInit {
+  users: any[] &#x3D; [];
+  clients: any[] &#x3D; [];
+  page &#x3D; 1;
+  pageSize &#x3D; 4;
+
+  page_2 &#x3D; 1;
+  pageSize_2 &#x3D; 4;
+
+  usersWithoutTrainerLoading &#x3D; true;
+  clientsLoading &#x3D; true;
+
+  trainerID: string &#x3D; this.auth.userID;
+
+  constructor(private database: DatabaseService, private auth: AuthService) {}
+
+  ngOnInit() {
+
+    this.database.getUsersWithoutTrainer().subscribe((data) &#x3D;&gt; {
+      this.users &#x3D; data;
+      this.usersWithoutTrainerLoading &#x3D; false;
+    });
+
+    this.database.getTrainerClients(this.trainerID).subscribe((data) &#x3D;&gt; {
+      this.clients &#x3D; data;
+      this.clientsLoading &#x3D; false;
+    });
+  }
+
+  /**
+   * Convertir un usuario en cliente
+   * @param userID
+   */
+  subscribeClient(userID: string) {
+    this.database.subscribeClient(userID, this.trainerID);
+  }
+
+  /**
+   * Quitar usuario de la lista de clientes
+   * @param clientID
+   */
+  unsubscribeClient(clientID: string) {
+    this.database.unsubscribeClient(clientID);
+    this.database.deleteRoutinesWithUserID(clientID, false);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;main class&#x3D;&quot;content&quot;&gt;
+  &lt;div *ngIf&#x3D;&quot;usersWithoutTrainerLoading &amp;&amp; clientsLoading&quot; class&#x3D;&quot;loader&quot;&gt;&lt;/div&gt;
+  &lt;h1 class&#x3D;&quot;trainers-clients-header&quot;&gt;{{&quot;TRAINERS.CLIENTS.TITLE&quot; | translate}}&lt;/h1&gt;
+  &lt;div *ngIf&#x3D;&quot;!usersWithoutTrainerLoading &amp;&amp; !clientsLoading&quot; class&#x3D;&quot;trainers-clients-container&quot;&gt;
+    &lt;div class&#x3D;&quot;trainers-clients-container-users-border&quot;&gt;
+      &lt;h2 class&#x3D;&quot;trainers-clients-container-users-title&quot;&gt;{{&quot;TRAINERS.CLIENTS.AVAILABLE-USERS&quot; | translate}}&lt;/h2&gt;
+      &lt;div class&#x3D;&quot;trainers-clients-container-users-container&quot;&gt;
+        &lt;table class&#x3D;&quot;trainers-clients-container-users-container-table&quot;&gt;
+          &lt;tr *ngFor&#x3D;&quot;let user of users | slice : (page - 1) * pageSize : page * pageSize&quot; (click)&#x3D;&quot;subscribeClient(user.userID)&quot; placement&#x3D;&quot;right&quot; ngbTooltip&#x3D;&quot;Subscribe Client&quot;&gt;
+            &lt;td&gt;
+              &lt;img
+                *ngIf&#x3D;&quot;user.photoURL !&#x3D; null&quot;
+                referrerpolicy&#x3D;&quot;no-referrer&quot;
+                class&#x3D;&quot;trainers-clients-container-users-container-table-user-img&quot;
+                [src]&#x3D;&quot;user.photoURL&quot;
+                alt&#x3D;&quot;User Image&quot;
+              /&gt;
+              &lt;img
+                *ngIf&#x3D;&quot;user.photoURL &#x3D;&#x3D; null&quot;
+                class&#x3D;&quot;trainers-clients-container-users-container-table-user-img&quot;
+                src&#x3D;&quot;https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt&#x3D;media&amp;token&#x3D;938b94bc-1a96-4cfd-9cec-7c97da53e3ce&quot;
+                alt&#x3D;&quot;User Image&quot;
+              /&gt;
+            &lt;/td&gt;
+            &lt;td class&#x3D;&quot;trainers-clients-container-users-container-table-user-name&quot;&gt;
+              {{ user.displayName }}
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;button class&#x3D;&quot;trainers-clients-container-users-container-table-user-button&quot;&gt;
+                &lt;i class&#x3D;&quot;fa-solid fa-plus&quot;&gt;&lt;/i&gt;
+              &lt;/button&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/table&gt;
+      &lt;/div&gt;
+      &lt;p *ngIf&#x3D;&quot;this.users.length &#x3D;&#x3D; 0&quot; class&#x3D;&quot;no-users-message&quot;&gt;{{&quot;TRAINERS.CLIENTS.NO-USERS&quot; | translate}}&lt;/p&gt;
+      &lt;div class&#x3D;&quot;pagination&quot;&gt;
+        &lt;ngb-pagination
+          *ngIf&#x3D;&quot;this.users.length &gt; 4&quot;
+          [collectionSize]&#x3D;&quot;this.users.length&quot;
+          [pageSize]&#x3D;&quot;pageSize&quot;
+          [directionLinks]&#x3D;&quot;false&quot;
+          [(page)]&#x3D;&quot;page&quot;
+          class&#x3D;&quot;w-100&quot;
+        &gt;
+        &lt;/ngb-pagination&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+
+    &lt;div class&#x3D;&quot;trainers-clients-container-users&quot;&gt;
+      &lt;h2 class&#x3D;&quot;trainers-clients-container-clients-title&quot;&gt;{{&quot;TRAINERS.CLIENTS.CLIENTS&quot; | translate}}&lt;/h2&gt;
+      &lt;div class&#x3D;&quot;trainers-clients-container-clients-container&quot;&gt;
+        &lt;table class&#x3D;&quot;trainers-clients-container-clients-container-table&quot;&gt;
+          &lt;tr *ngFor&#x3D;&quot;let client of clients | slice : (page_2 - 1) * pageSize_2 : page_2 * pageSize_2&quot; (click)&#x3D;&quot;unsubscribeClient(client.userID)&quot; placement&#x3D;&quot;left&quot; ngbTooltip&#x3D;&quot;Unsubscribe Client&quot; [animation]&#x3D;&quot;true&quot;&gt;
+            &lt;td&gt;
+              &lt;button class&#x3D;&quot;trainers-clients-container-clients-container-table-client-button-left&quot;&gt;
+                &lt;i class&#x3D;&quot;fa-solid fa-minus&quot;&gt;&lt;/i&gt;
+              &lt;/button&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;img
+                *ngIf&#x3D;&quot;client.photoURL !&#x3D; null&quot;
+                referrerpolicy&#x3D;&quot;no-referrer&quot;
+                class&#x3D;&quot;trainers-clients-container-clients-container-table-client-button-left-img&quot;
+                [src]&#x3D;&quot;client.photoURL&quot;
+                alt&#x3D;&quot;User Image&quot;
+              /&gt;
+              &lt;img
+                *ngIf&#x3D;&quot;client.photoURL &#x3D;&#x3D; null&quot;
+                class&#x3D;&quot;trainers-clients-container-clients-container-table-client-button-left-img&quot;
+                src&#x3D;&quot;https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt&#x3D;media&amp;token&#x3D;938b94bc-1a96-4cfd-9cec-7c97da53e3ce&quot;
+                alt&#x3D;&quot;User Image&quot;
+              /&gt;
+            &lt;/td&gt;
+            &lt;td class&#x3D;&quot;trainers-clients-container-clients-container-table-client-button-left-name&quot;&gt;
+              {{ client.displayName }}
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/table&gt;
+      &lt;/div&gt;
+      &lt;p *ngIf&#x3D;&quot;this.clients.length &#x3D;&#x3D; 0&quot; class&#x3D;&quot;no-clients-message&quot;&gt;{{&quot;TRAINERS.CLIENTS.NO-CLIENTS&quot; | translate}}&lt;/p&gt;
+      &lt;div class&#x3D;&quot;pagination&quot;&gt;
+        &lt;ngb-pagination
+        *ngIf&#x3D;&quot;this.clients.length &gt; 4&quot;
+          [collectionSize]&#x3D;&quot;this.clients.length&quot;
+          [pageSize]&#x3D;&quot;pageSize_2&quot;
+          [directionLinks]&#x3D;&quot;false&quot;
+          [(page)]&#x3D;&quot;page_2&quot;
+          class&#x3D;&quot;w-100&quot;
+        &gt;
+        &lt;/ngb-pagination&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./trainer-users.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &quot;../../../../scss/mixin.scss&quot;;
+@import &quot;../../../../scss/variables.scss&quot;;
+
+/// Estlos para la vista de clientes de entrenador
+.content{
+  height: auto;
+  @include response(xs){
+    padding-bottom: 14rem;
+  }
+  @include response(xl){
+    padding-bottom: 20rem;
+  }
+  @include response(desktop){
+    height: calc(100vh - 112px);
+  }
+}
+
+/// Estilos del título de la vista
+.trainers-clients-header {
+  padding-top: 5rem;
+  @include view_header();
+}
+
+/// Estilos del contenedor de los clientes
+.trainers-clients-container {
+  @include response(lg) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+  }
+  @include flex($direction: column, $justify: center, $align: center);
+
+  &amp;-users {
+    @include flex($direction: column, $justify: flex-start, $align: center);
+    height: 100%;
+    width: 100%;
+  }
+
+  &amp;-users-border{
+    margin-top: 7rem;
+    @include response(lg) {
+      border-right: 2px solid var(--tertiary-color);
+    }
+    @include flex($direction: column, $justify: flex-start, $align: center);
+    height: 100%;
+    width: 100%;
+  }
+  &amp;-users,
+  &amp;-clients {
+    margin-top: 7rem;
+    &amp;-title {
+      @include view_header(3rem);
+      margin-bottom: 2rem;
+    }
+    &amp;-container {
+      @include flex($direction: row, $justify: center, $align: center);
+      &amp;-table {
+       @include response(lg){
+          width: 45%;
+        }
+        width: 85%;
+        border-collapse: separate;
+        table-layout: fixed;
+        @include response(xl) {
+          border-spacing: 3rem;
+        }
+        border-spacing: 2rem;
+        tr {
+          box-shadow: 0 0.5rem 1rem var(--box-shadow-thin);
+          border-radius: 1rem;
+          cursor: pointer;
+          width: 100%;
+          transition: $transition;
+          @include flex($direction: row, $justify: flex-start, $align: center);
+          &amp;:hover {
+            transform: translateY(-0.5rem);
+            box-shadow: 0 1rem 2rem var(--box-shadow-thin);
+            transition: $transition;
+          }
+          margin-bottom: 3rem;
+          overflow: hidden;
+        }
+        &amp;-user, &amp;-client {
+          &amp;-img {
+            @include response(xl) {
+              width: 7.5rem;
+              height: 7.5rem;
+              margin: 1rem;
+            }
+            width: 5.5rem;
+            height: 5.5rem;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0.5rem;
+          }
+          &amp;-name {
+            @include response(xl) {
+              font-size: getFontSize(xl);
+            }
+            font-size: getFontSize(md);
+            font-family: $font-family-title;
+            font-weight: getFontWeight(bold);
+            color: var(--text-color);
+            width: 50%;
+            padding-left: 2rem;
+            flex: 1;
+          }
+          &amp;-button {
+            width: 100%;
+            height: 10rem;
+            border-top-right-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            background-image: linear-gradient(
+              180deg,
+              rgba(255, 255, 255, 0.1),
+              rgba(255, 255, 255, 0)
+            );
+            @include response(xl) {
+              font-size: getFontSize(xl);
+            }
+            font-size: getFontSize(lg);
+            transition: $transition;
+            padding: 1rem 1rem 1rem 1rem;
+            text-decoration: none;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            &amp;-left {
+              width: 100%;
+              height: 10rem;
+              border-top-left-radius: 1rem;
+              border-bottom-left-radius: 1rem;
+              border-top-right-radius: 0;
+              border-bottom-right-radius: 0;
+              background-image: linear-gradient(
+                180deg,
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0)
+              );
+              font-size: getFontSize(xl);
+              transition: $transition;
+              padding: 1rem 1rem 1rem 1rem;
+              text-decoration: none;
+              background-color: var(--primary-color);
+              color: white;
+              border: none;
+
+
+              &amp;-name{
+                @include response(xl) {
+                  font-size: getFontSize(xl);
+                }
+                font-size: getFontSize(md);
+                font-family: $font-family-title;
+                font-weight: getFontWeight(bold);
+                color: var(--text-color);
+                padding-right: 2rem;
+                padding-left: 2rem;
+                flex: 1;
+              }
+
+              &amp;-img {
+                @include response(xl) {
+                  width: 7.5rem;
+                  height: 7.5rem;
+                  margin: 1rem;
+                  margin-left: 2rem;
+                }
+                width: 5.5rem;
+                height: 5.5rem;
+                border-radius: 50%;
+                object-fit: cover;
+                margin: 0.5rem;
+                margin-left: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  ::ng-deep .pagination {
+    margin-top: 1rem;
+    justify-content: center;
+    // Al venir de un componente de terceros, no se puede usar el @include ni las variables de sass propias
+    --bs-pagination-color: var(--text-color);
+    --bs-pagination-hover-color: var(--primary-color);
+    --bs-pagination-active-bg: #6a69dc;
+    --bs-pagination-active-border-color: var(--text-color);
+    --bs-pagination-font-size: 2rem;
+    --bs-pagination-padding-x: 1.5rem;
+    --bs-pagination-padding-y: 0.75rem;
+    --bs-pagination-focus-box-shadow: none;
+    --bs-pagination-bg: var(--background-color);
+  }
+
+  /// Estilos de los mensajes de no hay usuarios o clientes
+  .no-clients-message,
+  .no-users-message {
+    font-size: 2rem;
+    font-family: $font-family-title;
+    font-weight: getFontWeight(bold);
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+}
+
+.loader {
+  @include loader(40vh, 38vw);
+}
+
+::ng-deep .tooltip {
+  @include response(xl) {
+    font-size: getFontSize(xs);
+  }
+  font-size: getFontSize(xxs);
+  opacity: 1 !important;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><main class="content">  <div *ngIf="usersWithoutTrainerLoading && clientsLoading" class="loader"></div>  <h1 class="trainers-clients-header">{{"TRAINERS.CLIENTS.TITLE" | translate}}</h1>  <div *ngIf="!usersWithoutTrainerLoading && !clientsLoading" class="trainers-clients-container">    <div class="trainers-clients-container-users-border">      <h2 class="trainers-clients-container-users-title">{{"TRAINERS.CLIENTS.AVAILABLE-USERS" | translate}}</h2>      <div class="trainers-clients-container-users-container">        <table class="trainers-clients-container-users-container-table">          <tr *ngFor="let user of users | slice : (page - 1) * pageSize : page * pageSize" (click)="subscribeClient(user.userID)" placement="right" ngbTooltip="Subscribe Client">            <td>              <img                *ngIf="user.photoURL != null"                referrerpolicy="no-referrer"                class="trainers-clients-container-users-container-table-user-img"                [src]="user.photoURL"                alt="User Image"              />              <img                *ngIf="user.photoURL == null"                class="trainers-clients-container-users-container-table-user-img"                src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=938b94bc-1a96-4cfd-9cec-7c97da53e3ce"                alt="User Image"              />            </td>            <td class="trainers-clients-container-users-container-table-user-name">              {{ user.displayName }}            </td>            <td>              <button class="trainers-clients-container-users-container-table-user-button">                <i class="fa-solid fa-plus"></i>              </button>            </td>          </tr>        </table>      </div>      <p *ngIf="this.users.length == 0" class="no-users-message">{{"TRAINERS.CLIENTS.NO-USERS" | translate}}</p>      <div class="pagination">        <ngb-pagination          *ngIf="this.users.length > 4"          [collectionSize]="this.users.length"          [pageSize]="pageSize"          [directionLinks]="false"          [(page)]="page"          class="w-100"        >        </ngb-pagination>      </div>    </div>    <div class="trainers-clients-container-users">      <h2 class="trainers-clients-container-clients-title">{{"TRAINERS.CLIENTS.CLIENTS" | translate}}</h2>      <div class="trainers-clients-container-clients-container">        <table class="trainers-clients-container-clients-container-table">          <tr *ngFor="let client of clients | slice : (page_2 - 1) * pageSize_2 : page_2 * pageSize_2" (click)="unsubscribeClient(client.userID)" placement="left" ngbTooltip="Unsubscribe Client" [animation]="true">            <td>              <button class="trainers-clients-container-clients-container-table-client-button-left">                <i class="fa-solid fa-minus"></i>              </button>            </td>            <td>              <img                *ngIf="client.photoURL != null"                referrerpolicy="no-referrer"                class="trainers-clients-container-clients-container-table-client-button-left-img"                [src]="client.photoURL"                alt="User Image"              />              <img                *ngIf="client.photoURL == null"                class="trainers-clients-container-clients-container-table-client-button-left-img"                src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=938b94bc-1a96-4cfd-9cec-7c97da53e3ce"                alt="User Image"              />            </td>            <td class="trainers-clients-container-clients-container-table-client-button-left-name">              {{ client.displayName }}            </td>          </tr>        </table>      </div>      <p *ngIf="this.clients.length == 0" class="no-clients-message">{{"TRAINERS.CLIENTS.NO-CLIENTS" | translate}}</p>      <div class="pagination">        <ngb-pagination        *ngIf="this.clients.length > 4"          [collectionSize]="this.clients.length"          [pageSize]="pageSize_2"          [directionLinks]="false"          [(page)]="page_2"          class="w-100"        >        </ngb-pagination>      </div>    </div>  </div></main></div>'
+    var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AddDietComponent', 'selector': 'app-add-diet'},{'name': 'AddExerciceComponent', 'selector': 'app-add-exercice'},{'name': 'AddMachineComponent', 'selector': 'app-add-machine'},{'name': 'AddRoutineComponent', 'selector': 'app-add-routine'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'EditDietComponent', 'selector': 'app-edit-diet'},{'name': 'EditEntryComponent', 'selector': 'app-edit-entry'},{'name': 'EditExerciseComponent', 'selector': 'app-edit-exercise'},{'name': 'EditRoutineComponent', 'selector': 'app-edit-routine'},{'name': 'ExerciseCardComponent', 'selector': 'app-exercise-card'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForbiddenComponent', 'selector': 'app-forbidden'},{'name': 'ForumComponent', 'selector': 'app-forum'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LegalComponent', 'selector': 'app-legal'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MachineCardComponent', 'selector': 'app-machine-card'},{'name': 'MachinesComponent', 'selector': 'app-machines'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SeeTrainersCardComponent', 'selector': 'app-see-trainers-card'},{'name': 'SeeTrainersComponent', 'selector': 'app-see-trainers'},{'name': 'ShowDietComponent', 'selector': 'app-show-diet'},{'name': 'ShowExercisesComponent', 'selector': 'app-show-exercises'},{'name': 'ShowMachineComponent', 'selector': 'app-show-machine'},{'name': 'ShowSingleExerciseComponent', 'selector': 'app-show-single-exercise'},{'name': 'SimpleExerciseCardComponent', 'selector': 'app-simple-exercise-card'},{'name': 'TrainerAppointmentComponent', 'selector': 'app-trainer-appointment'},{'name': 'TrainerCalendarComponent', 'selector': 'app-trainer-calendar'},{'name': 'TrainerDietCardComponent', 'selector': 'app-trainer-diet-card'},{'name': 'TrainerDietsComponent', 'selector': 'app-trainer-diets'},{'name': 'TrainerModificationComponent', 'selector': 'app-trainer-modification'},{'name': 'TrainerRoutineCardComponent', 'selector': 'app-trainer-routine-card'},{'name': 'TrainerRoutinesComponent', 'selector': 'app-trainer-routines'},{'name': 'TrainerUsersComponent', 'selector': 'app-trainer-users'},{'name': 'UpdateMachineComponent', 'selector': 'app-update-machine'},{'name': 'UserCalendarComponent', 'selector': 'app-user-calendar'},{'name': 'UserDietsComponent', 'selector': 'app-user-diets'},{'name': 'UserEntryComponent', 'selector': 'app-user-entry'},{'name': 'UserEvolutionComponent', 'selector': 'app-user-evolution'},{'name': 'UserModificationComponent', 'selector': 'app-user-modification'},{'name': 'UserRoutineExercisesComponent', 'selector': 'app-user-routine-exercises'},{'name': 'UserRoutineExercisesSimpleComponent', 'selector': 'app-user-routine-exercises-simple'},{'name': 'UserRoutinesComponent', 'selector': 'app-user-routines'},{'name': 'UserRoutinesSimpleComponent', 'selector': 'app-user-routines-simple'},{'name': 'UsersComponent', 'selector': 'app-users'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'TrainerUsersComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TrainerUsersComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

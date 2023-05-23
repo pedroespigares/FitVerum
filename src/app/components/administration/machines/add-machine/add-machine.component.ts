@@ -15,16 +15,34 @@ import { ToastsService } from 'src/app/services/toasts.service';
   styleUrls: ['./add-machine.component.scss']
 })
 export class AddMachineComponent {
+  /**
+   * Ruta de la carpeta en Firebase Storage donde se subirán las imágenes
+   */
+
   basePath: string = 'machines';
+
+  /**
+   * Datos de la máquina a añadir
+   */
   name: string = '';
   description: string = '';
-  uploaded: boolean = false;
   photoURL: string = '';
+
+  /**
+   * Variables para el control de la subida de la imagen
+   */
+  uploaded: boolean = false;
   storage: any;
   uploadMessage: string = 'Choose Image';
   maxSize: number = 3145728;
   fileTooBig: boolean = false;
 
+  /**
+   *
+   * @param database - Servicio de base de datos
+   * @param router - Servicio de rutas
+   * @param toasts - Servicio de toasts
+   */
   constructor(private database: DatabaseService, private router: Router, private toasts: ToastsService) {
     this.storage = getStorage();
     this.toasts.machineAdded = false;
@@ -50,6 +68,9 @@ export class AddMachineComponent {
     });
   }
 
+  /**
+   * Añadir máquina a la base de datos
+   */
   addMachine(){
     this.database.addMachine(this.name, this.description, this.photoURL);
     this.toasts.machineAdded = true;

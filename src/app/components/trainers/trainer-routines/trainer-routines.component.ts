@@ -10,14 +10,32 @@ import { ToastsService } from 'src/app/services/toasts.service';
 })
 export class TrainerRoutinesComponent implements OnInit, OnDestroy {
 
+  /**
+   * Array de clientes
+   */
   clients: any[] = [];
+
+  /**
+   * Array de rutinas
+   */
   routines: any[] = [];
+
+  /**
+   * Paginación
+   */
   page = 1;
   pageSize = 5;
+
+  /**
+   * Cliente seleccionado
+   */
   selectedClient: any = null;
 
   loadingRoutines = true;
 
+  /**
+   * Mostrar toast
+   */
   showAddToast: boolean = this.toasts.routineAdded;
   showDeleteToast: boolean = false;
 
@@ -25,12 +43,19 @@ export class TrainerRoutinesComponent implements OnInit, OnDestroy {
 
   trainerID = this.auth.userID
 
+  /**
+   * Obtener los clientes del entrenador
+   */
   ngOnInit() {
     this.database.getTrainerClients(this.trainerID).subscribe((data) => {
       this.clients = data;
     });
   }
 
+  /**
+   * Seleccionar cliente y obtener sus rutinas
+   * @param client
+   */
   selectClient(client: any) {
     if(this.selectedClient == null){
       this.selectedClient = client;
@@ -42,15 +67,25 @@ export class TrainerRoutinesComponent implements OnInit, OnDestroy {
     }
   }
 
+  /**
+   * Deseleccionar cliente
+   */
   deselectClient() {
     this.selectedClient = null;
     this.routines = [];
   }
 
+  /**
+   * Mostrar toast de rutina borrada
+   */
   handleDeleteRoutine(): void{
     this.showDeleteToast = true;
   }
 
+  /**
+   * Obtener las rutinas del cliente
+   * @param client
+   */
   getRoutines(client: any) {
     this.database.getRoutines(client.id).subscribe((data) => {
       this.routines = data;
@@ -58,6 +93,9 @@ export class TrainerRoutinesComponent implements OnInit, OnDestroy {
     });
   }
 
+  /**
+   * Eliminar toast de rutina añadida
+   */
   ngOnDestroy(): void {
     this.toasts.routineAdded = false;
   }

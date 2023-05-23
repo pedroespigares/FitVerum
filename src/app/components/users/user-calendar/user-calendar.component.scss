@@ -170,8 +170,8 @@
   margin-bottom: 3rem;
 }
 
-@include toast(-20rem, true);
+@include toast(-15rem, true);
 
 @include response(xl){
-  @include toast(-20rem);
+  @include toast(-21rem);
 }

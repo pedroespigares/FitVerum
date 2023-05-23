@@ -57,6 +57,9 @@ export class TrainerCalendarComponent implements OnInit{
 
   trainerID: string = this.auth.userID
 
+  /**
+   * Configuración del calendario
+   */
   ngOnInit() {
     const CALENDAR_RESPONSIVE = {
       small: {
@@ -93,7 +96,9 @@ export class TrainerCalendarComponent implements OnInit{
       this.fetchAppointments(this.trainerID);
   }
 
-  // Evento que maneja tanto el cambio por drag and drop como el cambio de flecha por reescalado
+  /**
+   * Método que detecta el cambio de de los eventos en el calendario
+   */
   eventTimesChanged({
     event,
     newStart,
@@ -109,6 +114,10 @@ export class TrainerCalendarComponent implements OnInit{
     }
   }
 
+  /**
+   * Llevar al usuario a la vista de sus rutinas con la fecha seleccionada
+   * @param date Fecha seleccionada
+   */
   routeToAppointments(date: Date) {
     let timestamp = date.getTime();
     this.router.navigateByUrl(
@@ -116,10 +125,18 @@ export class TrainerCalendarComponent implements OnInit{
     );
   }
 
+  /**
+   * Traer las citas del entrenador y meterlas en un array de eventos para el calendario
+   * @param trainerID ID del entrenador
+   */
   fetchAppointments(trainerID: string){
     this.events$ = this.database.getAppointmentsOfTrainer(trainerID);
   }
 
+  /**
+   * Abrir modal para eliminar evento
+   * @param event - Evento del calendario
+   */
   open(event: any) {
 		this.modalData = { event };
     this.modalDataStart = new Date(event.start);
@@ -127,13 +144,12 @@ export class TrainerCalendarComponent implements OnInit{
     this.modalService.open(this.modalContent, { size: 'lg', centered: true, keyboard: true});
 	}
 
+  /**
+   * Eliminar evento
+   * @param eventID - ID del evento
+   */
   deleteEvent(eventID: string){
-    let confirm = window.confirm('Are you sure you want to delete this appointment?');
-    if(confirm){
-      this.database.delete('trainerEntry', eventID);
-      this.modalService.dismissAll();
-    } else{
-      return;
-    }
+    this.database.delete('trainerEntry', eventID);
+    this.modalService.dismissAll();
   }
 }

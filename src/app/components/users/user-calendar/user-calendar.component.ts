@@ -48,6 +48,9 @@ export class UserCalendarComponent implements OnInit, OnDestroy {
 
   refresh = new Subject<void>();
 
+  /**
+   * Obtener las entradas del usuario
+   */
   fetchEntries(): void{
     this.events$ = this.database.getUserEntries(this.auth.userID);
   }
@@ -56,6 +59,9 @@ export class UserCalendarComponent implements OnInit, OnDestroy {
     this.router.navigateByUrl(`/user/calendar/${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`);
   }
 
+  /**
+   * Método que detecta el cambio de fecha de una entrada
+   */
   eventTimesChanged({
     event,
     newStart,
@@ -75,12 +81,19 @@ export class UserCalendarComponent implements OnInit, OnDestroy {
     this.modalService.open(this.modalContent, { size: 'lg', centered: true, keyboard: true, windowClass: 'custom-modal'});
 	}
 
+  /**
+   * Ir a la página de evolución de un ejercicio
+   * @param eventID - ID del evento
+   */
   openEvolution(eventID: any) {
     this.modalService.dismissAll();
     this.router.navigateByUrl(`/user/evolution/${eventID}`);
   }
 
-
+  /**
+   * Eliminar una entrada
+   * @param id - ID de la entrada
+   */
   deleteEvent(id: string) {
     let confirm = window.confirm('Are you sure you want to delete this entry?');
     if(!confirm){ return; }

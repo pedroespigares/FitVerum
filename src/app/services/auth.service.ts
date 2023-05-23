@@ -88,11 +88,12 @@ export class AuthService {
       });
     });
   }
+
   /**
    * Registrar con email y contraseña
-   * @param email
-   * @param password
-   * @param username
+   * @param email - Email
+   * @param password - Contraseña
+   * @param username - Nombre de usuario
    */
   register(email: string, password: string, username: string) {
     createUserWithEmailAndPassword(this.auth, email, password)
@@ -120,8 +121,8 @@ export class AuthService {
 
   /**
    * Loguear con email y contraseña
-   * @param email
-   * @param password
+   * @param email - Email del usuario
+   * @param password - Contraseña del usuario
    */
   normalLogin(email: string, password: string) {
     signInWithEmailAndPassword(this.auth, email, password)
@@ -161,6 +162,7 @@ export class AuthService {
         this.router.navigate(['/']);
       })
       .catch((error) => {
+        this.failedError = error.message;
         this.isLogged = false;
         this.userID = '';
       });
@@ -180,13 +182,14 @@ export class AuthService {
         this.router.navigate(['/']);
     })
     .catch((error) => {
+      this.failedError = error.message;
       this.isLogged = false;
       this.userID = '';
     });
   }
 
   /**
-   * Cerar sesión
+   * Cerrar sesión. Vuelve a poner todas las variables a su estado inicial
    */
   signOut() {
     this.auth.signOut();
@@ -232,7 +235,6 @@ export class AuthService {
   async checkUserRol() {
     if (this.userID == adminID) {
       this.isAdmin = true;
-      // this.checked = true;
       return;
     }
 
@@ -240,7 +242,6 @@ export class AuthService {
     const trainerSnap = await getDoc(trainerRef);
     if (trainerSnap.exists()) {
       this.isTrainer = true;
-      // this.checked = true;
       return;
     }
   }
@@ -288,7 +289,7 @@ export class AuthService {
   }
 
   /**
-   * Obtener si un usuario se logeo con una cuenta de terceros
+   * Obtener si un usuario inició sesión con una cuenta de terceros (Google o Twitter)
    * Cambiar el valor de la variable 3rdPartyLogin
    */
   getLoginMethod() {
@@ -308,8 +309,8 @@ export class AuthService {
   }
 
   /**
-   * Actualizar la contraseña del usuario
-   * @param password
+   * Actualizar la contraseña del usuario. El usuario debe haber iniciado sesión recientemente
+   * @param password - Nueva contraseña
    */
   updatePassword(password: string) {
     updatePassword(this.auth.currentUser, password)
@@ -325,7 +326,7 @@ export class AuthService {
 
   /**
    * Actualizar el email del usuario
-   * @param email
+   * @param email - Nuevo email
    */
   updateEmail(email: string) {
     updateEmail(this.auth.currentUser, email)
@@ -340,8 +341,8 @@ export class AuthService {
   }
 
   /**
-   * Borrar la cuenta del usuario
-   * @param authUser
+   * Borrar la cuenta del usuario de la autenticación y de
+   * @param authUser - Objeto firebase auth del usuario autenticado
    */
   async deleteAccount(authUser: any) {
     await deleteUser(authUser).then(() => {

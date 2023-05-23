@@ -17,11 +17,26 @@ import {
 })
 export class EditDietComponent {
 
+  /**
+   * Ruta del storage de Firebase
+   */
   basePath = 'diets';
+
+  /**
+   * Dieta a editar
+   */
   diet: any;
+
+  /**
+   * Datos de la dieta
+   */
   name: string;
   description: string;
   newImage: string;
+
+  /**
+   * Gestión de la imagen
+   */
   uploadMessage: string = 'Choose Image';
   dietUploaded: boolean = false;
   uploaded: boolean = false;
@@ -37,6 +52,9 @@ export class EditDietComponent {
     this.storage = getStorage();
   }
 
+  /**
+   * Obtener la dieta a editar
+   */
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.database.getByID(id, "diets").then((diet) => {

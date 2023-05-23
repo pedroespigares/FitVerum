@@ -6,6 +6,7 @@ export const environment = {
     apiKey: 'AIzaSyAFIo2t8itMGtzefGxyAKofwWRscqzeal0',
     authDomain: 'fitverum.firebaseapp.com',
     messagingSenderId: '205309217282',
-  },}
+  }
+}
 
 export const adminID = 'zmJG5qTQO0hA5KuJWbbWyLogkQg1';

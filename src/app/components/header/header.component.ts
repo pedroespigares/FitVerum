@@ -13,6 +13,9 @@ export class HeaderComponent implements OnInit {
   language: string = localStorage.getItem('language');
 
   constructor(public auth: AuthService, public database: DatabaseService, public translate: TranslateService) {
+    /**
+     * Definimos los idiomas disponibles
+     */
     translate.addLangs(['es', 'en']);
     if(this.language == null) {
       translate.use('en');
@@ -37,6 +40,10 @@ export class HeaderComponent implements OnInit {
     this.auth.signOut();
   }
 
+  /**
+   * Cambiar el idioma de la aplicación
+   * @param $event
+   */
   changeLanguage($event: any) {
     this.translate.use($event.target.value);
     localStorage.setItem('language', $event.target.value);

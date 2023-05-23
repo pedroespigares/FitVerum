@@ -9,10 +9,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./show-machine.component.scss']
 })
 export class ShowMachineComponent implements OnInit {
+  /**
+   * Máquina a mostrar
+   */
   machine: any;
+
+  /**
+   * Variable para mostrar el spinner de carga
+   */
   loading = true;
+
   constructor(private route: ActivatedRoute, private database: DatabaseService, private router: Router) { }
 
+  /**
+   * Obtener la máquina a mostrar
+   */
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.database.getByID(id, "machines").then((machine) => {
@@ -21,6 +32,9 @@ export class ShowMachineComponent implements OnInit {
     });
   }
 
+  /**
+   * Volver a la lista de máquinas
+   */
   backToMachines(): void {
     this.router.navigate(['/administration/machines']);
   }

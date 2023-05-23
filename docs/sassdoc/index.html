@@ -82,7 +82,7 @@
   @include response(md){
     min-height: calc(100vh - 112px);
   }
-  height: auto;
+  min-height: 100vh;
 }</code>" data-collapsed=".content { ... }"><code>.content { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Estilos de la vista máquinas</p></div></section><section class="main__item container item" id="undefined-css-.machines-administration-header"><h3 class="item__heading"><a class="item__name" href="#css-.machines-administration-header">.machines-administration-header</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.machines-administration-header {
   @include view_header();
   padding-top: 5rem;
@@ -666,10 +666,16 @@
     grid-template-columns: 1fr 0.1fr;
     grid-template-rows: 1fr;
     box-shadow: 0 0.5rem 1rem var(--box-shadow-thin);
-    margin: 5rem;
     border-radius: 1rem;
     width: 95%;
     word-break: break-all;
+    @include response(md){
+      margin: 5rem;
+    }
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    margin-left: 1rem;
+    border-radius: 1rem;
   }
   box-shadow: 0 0.5rem 1rem var(--box-shadow-thin);
   @include response(md){
@@ -3123,7 +3129,7 @@
   @include response(md){
     min-height: calc(100vh - 112px);
   }
-  height: auto;
+  min-height: 100vh;
 }</code>" data-collapsed=".content { ... }"><code>.content { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Estilos para la vista de dietas de usuario</p></div></section><section class="main__item container item" id="undefined-css-.trainers-title"><h3 class="item__heading"><a class="item__name" href="#css-.trainers-title">.trainers-title</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.trainers-title {
   @include view_header();
     &amp;-no-trainers{
@@ -3305,7 +3311,7 @@
   @include response(md){
     min-height: calc(100vh - 112px);
   }
-  height: auto;
+  min-height: 100vh;
 }</code>" data-collapsed=".content { ... }"><code>.content { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Estilos para la vista de dietas de usuario</p></div></section><section class="main__item container item" id="undefined-css-.diets-title"><h3 class="item__heading"><a class="item__name" href="#css-.diets-title">.diets-title</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.diets-title {
   @include view_header();
     &amp;-no-diets{
@@ -3789,7 +3795,7 @@
       }
       @include response(xl){
         text-align: left;
-        font-size: calc(getFontSize(landing-text-title) - 1.4rem);
+        font-size: calc(getFontSize(landing-text-title) - 1rem);
       }
       @include response(desktop){
         font-size: getFontSize(landing-text-title);

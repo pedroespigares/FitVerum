@@ -1,0 +1,2193 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>FitVerumDocs</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">FitVerumDocs</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li >AuthService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/services/auth.service.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#auth" >auth</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#database" >database</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#failedError" >failedError</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#isAdmin" >isAdmin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#isLogged" >isLogged</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#isTrainer" >isTrainer</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#router" >router</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#thirdPartyLogin" >thirdPartyLogin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#userChecked" >userChecked</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#userEmail" >userEmail</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#userExists" >userExists</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#userID" >userID</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#userModificationError" >userModificationError</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#username" >username</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#userPhoto" >userPhoto</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#checkAuthState" >checkAuthState</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#checkAuthStateAsync" >checkAuthStateAsync</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#checkIfTrainerExists" >checkIfTrainerExists</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#checkIfUserExists" >checkIfUserExists</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#checkUserRol" >checkUserRol</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createUser" >createUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteAccount" >deleteAccount</a>
+                            </li>
+                            <li>
+                                <a href="#getLoginMethod" >getLoginMethod</a>
+                            </li>
+                            <li>
+                                <a href="#getUserPhoto" >getUserPhoto</a>
+                            </li>
+                            <li>
+                                <a href="#googleLogin" >googleLogin</a>
+                            </li>
+                            <li>
+                                <a href="#normalLogin" >normalLogin</a>
+                            </li>
+                            <li>
+                                <a href="#register" >register</a>
+                            </li>
+                            <li>
+                                <a href="#sendPasswordResetEmail" >sendPasswordResetEmail</a>
+                            </li>
+                            <li>
+                                <a href="#signOut" >signOut</a>
+                            </li>
+                            <li>
+                                <a href="#twitterLogin" >twitterLogin</a>
+                            </li>
+                            <li>
+                                <a href="#updateEmail" >updateEmail</a>
+                            </li>
+                            <li>
+                                <a href="#updatePassword" >updatePassword</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(auth: Auth, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, database: Firestore)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/services/auth.service.ts:39</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>auth</td>
+                                                  
+                                                        <td>
+                                                                    <code>Auth</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>database</td>
+                                                  
+                                                        <td>
+                                                                    <code>Firestore</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkAuthState"></a>
+                    <span class="name">
+                        <span ><b>checkAuthState</b></span>
+                        <a href="#checkAuthState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>checkAuthState()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/services/auth.service.ts:50</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Comprobar si el usuario está logueado</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkAuthStateAsync"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>checkAuthStateAsync</b></span>
+                        <a href="#checkAuthStateAsync"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkAuthStateAsync()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/services/auth.service.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Comprobar si el usuario es administrador o entrenador preparado para el guard</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkIfTrainerExists"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>checkIfTrainerExists</b></span>
+                        <a href="#checkIfTrainerExists"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkIfTrainerExists()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="225"
+                            class="link-to-prism">src/app/services/auth.service.ts:225</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Comprobar si el usuario existe en la base de datos como entrenador</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>boolean</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkIfUserExists"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>checkIfUserExists</b></span>
+                        <a href="#checkIfUserExists"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkIfUserExists()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="215"
+                            class="link-to-prism">src/app/services/auth.service.ts:215</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Comprobar si el usuario existe en la base de datos</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>unknown</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>boolean</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkUserRol"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>checkUserRol</b></span>
+                        <a href="#checkUserRol"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkUserRol()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="235"
+                            class="link-to-prism">src/app/services/auth.service.ts:235</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Comprobar si el usuario es administrador o entrenador o usuario normal
+Cambiar el valor de las variables isAdmin y isTrainer</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createUser"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>createUser</b></span>
+                        <a href="#createUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createUser()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="252"
+                            class="link-to-prism">src/app/services/auth.service.ts:252</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Crear usuario en la base de datos si no existe ya en la tabla de usuarios o entrenadores</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteAccount"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>deleteAccount</b></span>
+                        <a href="#deleteAccount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteAccount(authUser: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="347"
+                            class="link-to-prism">src/app/services/auth.service.ts:347</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Borrar la cuenta del usuario de la autenticación y de</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>authUser</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>Objeto firebase auth del usuario autenticado</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getLoginMethod"></a>
+                    <span class="name">
+                        <span ><b>getLoginMethod</b></span>
+                        <a href="#getLoginMethod"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getLoginMethod()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="295"
+                            class="link-to-prism">src/app/services/auth.service.ts:295</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Obtener si un usuario inició sesión con una cuenta de terceros (Google o Twitter)
+Cambiar el valor de la variable 3rdPartyLogin</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUserPhoto"></a>
+                    <span class="name">
+                        <span ><b>getUserPhoto</b></span>
+                        <a href="#getUserPhoto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUserPhoto()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="275"
+                            class="link-to-prism">src/app/services/auth.service.ts:275</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Obtener la foto de perfil del usuario
+Cambiar el valor de la variable userPhoto</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="googleLogin"></a>
+                    <span class="name">
+                        <span ><b>googleLogin</b></span>
+                        <a href="#googleLogin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>googleLogin()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="151"
+                            class="link-to-prism">src/app/services/auth.service.ts:151</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Loguear con Google</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="normalLogin"></a>
+                    <span class="name">
+                        <span ><b>normalLogin</b></span>
+                        <a href="#normalLogin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>normalLogin(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="127"
+                            class="link-to-prism">src/app/services/auth.service.ts:127</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Loguear con email y contraseña</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>email</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>Email del usuario</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>password</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>Contraseña del usuario</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="register"></a>
+                    <span class="name">
+                        <span ><b>register</b></span>
+                        <a href="#register"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>register(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, username: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="98"
+                            class="link-to-prism">src/app/services/auth.service.ts:98</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Registrar con email y contraseña</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>email</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>Email</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>password</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>Contraseña</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>username</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>Nombre de usuario</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendPasswordResetEmail"></a>
+                    <span class="name">
+                        <span ><b>sendPasswordResetEmail</b></span>
+                        <a href="#sendPasswordResetEmail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sendPasswordResetEmail(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="361"
+                            class="link-to-prism">src/app/services/auth.service.ts:361</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Enviar email para restablecer la contraseña</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>email</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="signOut"></a>
+                    <span class="name">
+                        <span ><b>signOut</b></span>
+                        <a href="#signOut"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>signOut()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="194"
+                            class="link-to-prism">src/app/services/auth.service.ts:194</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Cerrar sesión. Vuelve a poner todas las variables a su estado inicial</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="twitterLogin"></a>
+                    <span class="name">
+                        <span ><b>twitterLogin</b></span>
+                        <a href="#twitterLogin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>twitterLogin()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="171"
+                            class="link-to-prism">src/app/services/auth.service.ts:171</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateEmail"></a>
+                    <span class="name">
+                        <span ><b>updateEmail</b></span>
+                        <a href="#updateEmail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateEmail(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="331"
+                            class="link-to-prism">src/app/services/auth.service.ts:331</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Actualizar el email del usuario</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>email</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>Nuevo email</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updatePassword"></a>
+                    <span class="name">
+                        <span ><b>updatePassword</b></span>
+                        <a href="#updatePassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updatePassword(password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="315"
+                            class="link-to-prism">src/app/services/auth.service.ts:315</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Actualizar la contraseña del usuario. El usuario debe haber iniciado sesión recientemente</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>password</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>Nueva contraseña</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="auth"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>auth</b></span>
+                        <a href="#auth"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Auth</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/services/auth.service.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="database"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>database</b></span>
+                        <a href="#database"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Firestore</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/services/auth.service.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="failedError"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>failedError</b></span>
+                        <a href="#failedError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/services/auth.service.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isAdmin"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>isAdmin</b></span>
+                        <a href="#isAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/services/auth.service.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLogged"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>isLogged</b></span>
+                        <a href="#isLogged"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/services/auth.service.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isTrainer"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>isTrainer</b></span>
+                        <a href="#isTrainer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/services/auth.service.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="router"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>router</b></span>
+                        <a href="#router"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/services/auth.service.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="thirdPartyLogin"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>thirdPartyLogin</b></span>
+                        <a href="#thirdPartyLogin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/services/auth.service.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userChecked"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>userChecked</b></span>
+                        <a href="#userChecked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/services/auth.service.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userEmail"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>userEmail</b></span>
+                        <a href="#userEmail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/services/auth.service.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userExists"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>userExists</b></span>
+                        <a href="#userExists"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/services/auth.service.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userID"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>userID</b></span>
+                        <a href="#userID"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/services/auth.service.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userModificationError"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>userModificationError</b></span>
+                        <a href="#userModificationError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/services/auth.service.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="username"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>username</b></span>
+                        <a href="#username"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/services/auth.service.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userPhoto"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>userPhoto</b></span>
+                        <a href="#userPhoto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/services/auth.service.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import {
+  Auth,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+  TwitterAuthProvider,
+  createUserWithEmailAndPassword,
+  updatePassword,
+  sendPasswordResetEmail,
+  updateEmail,
+  deleteUser
+} from &#x27;@angular/fire/auth&#x27;;
+import {
+  Firestore,
+  setDoc,
+  doc,
+  getDoc,
+} from &#x27;@angular/fire/firestore&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { adminID } from &#x27;src/environments/environment&#x27;;
+
+@Injectable({
+  providedIn: &#x27;root&#x27;,
+})
+export class AuthService {
+  public isLogged: boolean &#x3D; false;
+  public userID: string &#x3D; &#x27;&#x27;;
+  public userEmail: string &#x3D; &#x27;&#x27;;
+  public userPhoto: string &#x3D; null;
+  public username: string &#x3D; &#x27;&#x27;;
+  public failedError: string &#x3D; &#x27;&#x27;;
+  public isTrainer: boolean &#x3D; false;
+  public isAdmin: boolean &#x3D; false;
+  public userExists: boolean &#x3D; false;
+  public userChecked: boolean &#x3D; false;
+  public thirdPartyLogin: boolean &#x3D; false;
+  public userModificationError: string &#x3D; &#x27;&#x27;;
+
+  constructor(
+    public auth: Auth,
+    public router: Router,
+    public database: Firestore
+  ) {}
+
+  /**
+   * Comprobar si el usuario está logueado
+   */
+  checkAuthState() {
+    onAuthStateChanged(this.auth, (user) &#x3D;&gt; {
+      if (user) {
+        this.isLogged &#x3D; true;
+        this.userEmail &#x3D; user.email;
+        this.userID &#x3D; user.uid;
+        this.userPhoto &#x3D; user.photoURL;
+        this.checkUserRol();
+        this.getUserPhoto();
+        this.getLoginMethod();
+      } else {
+        this.isLogged &#x3D; false;
+        this.userID &#x3D; &#x27;&#x27;;
+      }
+    });
+  }
+
+  /**
+   * Comprobar si el usuario es administrador o entrenador preparado para el guard
+   */
+  async checkAuthStateAsync() {
+    return new Promise((resolve, reject) &#x3D;&gt; {
+      onAuthStateChanged(this.auth, (user) &#x3D;&gt; {
+        if (user) {
+          this.isLogged &#x3D; true;
+          this.userEmail &#x3D; user.email;
+          this.userID &#x3D; user.uid;
+          this.userPhoto &#x3D; user.photoURL;
+          this.checkUserRol().then(() &#x3D;&gt; {
+            this.getUserPhoto();
+            this.getLoginMethod();
+            resolve(true);
+          });
+        } else {
+          this.isLogged &#x3D; false;
+          this.userID &#x3D; &#x27;&#x27;;
+          resolve(false);
+        }
+      });
+    });
+  }
+
+  /**
+   * Registrar con email y contraseña
+   * @param email - Email
+   * @param password - Contraseña
+   * @param username - Nombre de usuario
+   */
+  register(email: string, password: string, username: string) {
+    createUserWithEmailAndPassword(this.auth, email, password)
+      .then((userCredential) &#x3D;&gt; {
+        this.isLogged &#x3D; true;
+        this.userID &#x3D; userCredential.user.uid;
+        this.userEmail &#x3D; userCredential.user.email;
+        this.username &#x3D; username;
+        this.createUser();
+        this.checkUserRol();
+        this.router.navigate([&#x27;/&#x27;]);
+      })
+      .catch((error) &#x3D;&gt; {
+        this.isLogged &#x3D; false;
+        this.userID &#x3D; &#x27;&#x27;;
+        if(error.message &#x3D;&#x3D; &#x27;Firebase: Error (auth/email-already-in-use).&#x27;){
+          this.failedError &#x3D; &#x27;This email is already in use&#x27;;
+        } else if (error.message &#x3D;&#x3D; &#x27;Firebase: Error (auth/invalid-email).&#x27;){
+          this.failedError &#x3D; &#x27;Invalid email&#x27;;
+        } else if (error.message &#x3D;&#x3D; &#x27;Firebase: Error (auth/weak-password).&#x27;){
+          this.failedError &#x3D; &#x27;Weak password&#x27;;
+        }
+      });
+  }
+
+  /**
+   * Loguear con email y contraseña
+   * @param email - Email del usuario
+   * @param password - Contraseña del usuario
+   */
+  normalLogin(email: string, password: string) {
+    signInWithEmailAndPassword(this.auth, email, password)
+      .then((userCredential) &#x3D;&gt; {
+        this.isLogged &#x3D; true;
+        this.userID &#x3D; userCredential.user.uid;
+        this.userEmail &#x3D; userCredential.user.email;
+        this.getUserPhoto();
+        this.checkUserRol();
+        this.router.navigate([&#x27;/&#x27;]);
+      })
+      .catch((error) &#x3D;&gt; {
+        this.isLogged &#x3D; false;
+        this.userID &#x3D; &#x27;&#x27;;
+        if(error.message &#x3D;&#x3D; &#x27;Firebase: Error (auth/user-not-found).&#x27;){
+          this.failedError &#x3D; &#x27;This user does not exist&#x27;;
+        } else if (error.message &#x3D;&#x3D; &#x27;Firebase: Error (auth/wrong-password).&#x27;){
+          this.failedError &#x3D; &#x27;Wrong password&#x27;;
+        }
+      });
+  }
+
+  /**
+   * Loguear con Google
+   */
+  googleLogin() {
+    signInWithPopup(this.auth, new GoogleAuthProvider())
+      .then((userCredential) &#x3D;&gt; {
+        this.isLogged &#x3D; true;
+        this.userID &#x3D; userCredential.user.uid;
+        this.userEmail &#x3D; userCredential.user.email;
+        this.userPhoto &#x3D; userCredential.user.photoURL;
+        this.username &#x3D; userCredential.user.displayName;
+        this.thirdPartyLogin &#x3D; true;
+        this.createUser();
+        this.checkUserRol();
+        this.router.navigate([&#x27;/&#x27;]);
+      })
+      .catch((error) &#x3D;&gt; {
+        this.failedError &#x3D; error.message;
+        this.isLogged &#x3D; false;
+        this.userID &#x3D; &#x27;&#x27;;
+      });
+  }
+
+  twitterLogin(){
+    signInWithPopup(this.auth, new TwitterAuthProvider())
+    .then((userCredential) &#x3D;&gt; {
+        this.isLogged &#x3D; true;
+        this.userID &#x3D; userCredential.user.uid;
+        this.userEmail &#x3D; userCredential.user.email;
+        this.userPhoto &#x3D; userCredential.user.photoURL;
+        this.username &#x3D; userCredential.user.displayName;
+        this.thirdPartyLogin &#x3D; true;
+        this.createUser();
+        this.checkUserRol();
+        this.router.navigate([&#x27;/&#x27;]);
+    })
+    .catch((error) &#x3D;&gt; {
+      this.failedError &#x3D; error.message;
+      this.isLogged &#x3D; false;
+      this.userID &#x3D; &#x27;&#x27;;
+    });
+  }
+
+  /**
+   * Cerrar sesión. Vuelve a poner todas las variables a su estado inicial
+   */
+  signOut() {
+    this.auth.signOut();
+    this.isLogged &#x3D; false;
+    this.userID &#x3D; &#x27;&#x27;;
+    this.router.navigate([&#x27;/&#x27;]);
+    this.isAdmin &#x3D; false;
+    this.isTrainer &#x3D; false;
+    this.userEmail &#x3D; &#x27;&#x27;;
+    this.userPhoto &#x3D; null;
+    this.username &#x3D; &#x27;&#x27;;
+    this.failedError &#x3D; &#x27;&#x27;;
+    this.userExists &#x3D; false;
+    this.userChecked &#x3D; false;
+    this.thirdPartyLogin &#x3D; false;
+  }
+
+
+  /**
+   * Comprobar si el usuario existe en la base de datos
+   * @returns boolean
+   */
+  async checkIfUserExists() {
+    const docRef &#x3D; doc(this.database, &#x27;users&#x27;, this.userID);
+    const docSnap &#x3D; await getDoc(docRef);
+    return docSnap.exists();
+  }
+
+  /**
+   * Comprobar si el usuario existe en la base de datos como entrenador
+   * @returns boolean
+   */
+  async checkIfTrainerExists() {
+    const docRef &#x3D; doc(this.database, &#x27;trainers&#x27;, this.userID);
+    const docSnap &#x3D; await getDoc(docRef);
+    return docSnap.exists();
+  }
+
+  /**
+   * Comprobar si el usuario es administrador o entrenador o usuario normal
+   * Cambiar el valor de las variables isAdmin y isTrainer
+   */
+  async checkUserRol() {
+    if (this.userID &#x3D;&#x3D; adminID) {
+      this.isAdmin &#x3D; true;
+      return;
+    }
+
+    const trainerRef &#x3D; doc(this.database, &#x27;trainers&#x27;, this.userID);
+    const trainerSnap &#x3D; await getDoc(trainerRef);
+    if (trainerSnap.exists()) {
+      this.isTrainer &#x3D; true;
+      return;
+    }
+  }
+
+  /**
+   * Crear usuario en la base de datos si no existe ya en la tabla de usuarios o entrenadores
+   */
+  async createUser() {
+    let userExists: any &#x3D; await this.checkIfUserExists();
+    let trainerExists: any &#x3D; await this.checkIfTrainerExists();
+
+    if (!userExists &amp;&amp; !trainerExists) {
+      await setDoc(doc(this.database, &#x27;users&#x27;, this.userID), {
+        userID: this.userID,
+        displayName: this.username,
+        photoURL: this.userPhoto,
+        email: this.userEmail,
+        trainerID: null,
+        timestamp: Date.now(),
+        thirdParty: this.thirdPartyLogin,
+      });
+    } else {
+      return;
+    }
+  }
+
+  /**
+   * Obtener la foto de perfil del usuario
+   * Cambiar el valor de la variable userPhoto
+   */
+  getUserPhoto() {
+    const userRef &#x3D; doc(this.database, &#x27;users&#x27;, this.userID);
+    const trainerRef &#x3D; doc(this.database, &#x27;trainers&#x27;, this.userID);
+    getDoc(userRef).then((doc) &#x3D;&gt; {
+      if (doc.exists()) {
+        this.userPhoto &#x3D; doc.data()[&#x27;photoURL&#x27;];
+      } else{
+        getDoc(trainerRef).then((doc) &#x3D;&gt; {
+          if (doc.exists()) {
+            this.userPhoto &#x3D; doc.data()[&#x27;photoURL&#x27;];
+          }
+        });
+      }
+    });
+  }
+
+  /**
+   * Obtener si un usuario inició sesión con una cuenta de terceros (Google o Twitter)
+   * Cambiar el valor de la variable 3rdPartyLogin
+   */
+  getLoginMethod() {
+    const userRef &#x3D; doc(this.database, &#x27;users&#x27;, this.userID);
+    const trainerRef &#x3D; doc(this.database, &#x27;trainers&#x27;, this.userID);
+    getDoc(userRef).then((doc) &#x3D;&gt; {
+      if (doc.exists()) {
+        this.thirdPartyLogin &#x3D; doc.data()[&#x27;thirdParty&#x27;];
+      } else{
+        getDoc(trainerRef).then((doc) &#x3D;&gt; {
+          if (doc.exists()) {
+            this.thirdPartyLogin &#x3D; doc.data()[&#x27;thirdParty&#x27;];
+          }
+        });
+      }
+    });
+  }
+
+  /**
+   * Actualizar la contraseña del usuario. El usuario debe haber iniciado sesión recientemente
+   * @param password - Nueva contraseña
+   */
+  updatePassword(password: string) {
+    updatePassword(this.auth.currentUser, password)
+      .then(() &#x3D;&gt; {
+        this.userModificationError &#x3D; &#x27;&#x27;;
+      })
+      .catch((error) &#x3D;&gt; {
+        if(error.code &#x3D;&#x3D; &#x27;auth/requires-recent-login&#x27;){
+          this.userModificationError &#x3D; &#x27;You need to reauthenticate to delete your account&#x27;;
+        }
+      });
+  }
+
+  /**
+   * Actualizar el email del usuario
+   * @param email - Nuevo email
+   */
+  updateEmail(email: string) {
+    updateEmail(this.auth.currentUser, email)
+      .then(() &#x3D;&gt; {
+        this.userModificationError &#x3D; &#x27;&#x27;;
+      })
+      .catch((error) &#x3D;&gt; {
+        if(error.code &#x3D;&#x3D; &#x27;auth/requires-recent-login&#x27;){
+          this.userModificationError &#x3D; &#x27;You need to reauthenticate to delete your account&#x27;;
+        }
+      });
+  }
+
+  /**
+   * Borrar la cuenta del usuario de la autenticación y de
+   * @param authUser - Objeto firebase auth del usuario autenticado
+   */
+  async deleteAccount(authUser: any) {
+    await deleteUser(authUser).then(() &#x3D;&gt; {
+      this.userModificationError &#x3D; &#x27;&#x27;;
+    }).catch((error) &#x3D;&gt; {
+      if(error.code &#x3D;&#x3D; &#x27;auth/requires-recent-login&#x27;){
+        this.userModificationError &#x3D; &#x27;You need to reauthenticate to delete your account&#x27;;
+      }
+    });
+  }
+
+  /**
+   * Enviar email para restablecer la contraseña
+   * @param email
+   */
+  sendPasswordResetEmail(email: string) {
+    sendPasswordResetEmail(this.auth, email)
+      .then(() &#x3D;&gt; {
+        this.userChecked &#x3D; true;
+      })
+      .catch((error) &#x3D;&gt; {
+        this.userChecked &#x3D; false;
+        if(error.code &#x3D;&#x3D; &#x27;auth/user-not-found&#x27;){
+          this.failedError &#x3D; &#x27;There is no user record corresponding to this email&#x27;;
+        }
+      });
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'AuthService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

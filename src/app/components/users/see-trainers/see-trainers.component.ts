@@ -1,7 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
-import { AuthService } from 'src/app/services/auth.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-see-trainers',
@@ -12,7 +10,7 @@ export class SeeTrainersComponent implements OnInit, OnDestroy{
   trainers: any[] = [];
   loading: boolean = true;
 
-  constructor(private database: DatabaseService, private auth: AuthService, private router: Router) {}
+  constructor(private database: DatabaseService) {}
 
   ngOnInit() {
     this.database.getTrainers().subscribe((data) => {

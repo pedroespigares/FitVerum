@@ -10,10 +10,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./show-diet.component.scss']
 })
 export class ShowDietComponent implements OnInit{
+  /**
+   * Dieta a mostrar
+   */
   diet: any;
+
+  /**
+   * Variable para mostrar el spinner de carga
+   */
   loading = true;
   constructor(private route: ActivatedRoute, private database: DatabaseService, private router: Router, public auth: AuthService) { }
 
+  /**
+   * Obtener la dieta a mostrar
+   */
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.database.getByID(id, "diets").then((diet) => {

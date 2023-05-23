@@ -17,11 +17,22 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./add-diet.component.scss']
 })
 export class AddDietComponent {
+  /**
+   * Ruta del storage de Firebase
+   */
   basePath: string = 'diets';
+
+  /**
+   * Datos de la dieta
+   */
   name: string = '';
   description: string = '';
-  uploaded: boolean = false;
   photoURL: string = '';
+
+  /**
+   * Gestión de la imagen
+   */
+  uploaded: boolean = false;
   storage: any;
   uploadMessage: string = 'Choose Image';
   userID: string = this.route.snapshot.paramMap.get('userID');
@@ -59,6 +70,9 @@ export class AddDietComponent {
     });
   }
 
+  /**
+   * Añadir dieta a la base de datos
+   */
   addDiet(){
     this.database.addDiet(this.name, this.description, this.photoURL, this.auth.userID, this.userID );
     this.toasts.machineAdded = true;

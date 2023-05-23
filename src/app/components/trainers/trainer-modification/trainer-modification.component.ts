@@ -18,10 +18,17 @@ import { Router } from '@angular/router';
 })
 export class TrainerModificationComponent implements OnInit {
   @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
+
+  /**
+   * Entrenador a mostrar
+   */
   trainer: any;
   loading = true;
   membership: Date;
 
+  /**
+   * Gestión de storage
+   */
   storage: any;
   basePath: string = 'users';
 
@@ -60,6 +67,9 @@ export class TrainerModificationComponent implements OnInit {
 
   id: string = this.auth.userID
 
+  /**
+   * Obtiene los datos del entrenador
+   */
   ngOnInit(): void {
     this.database.getTrainerData(this.id).then((data) => {
       this.trainer = data;
@@ -69,6 +79,12 @@ export class TrainerModificationComponent implements OnInit {
   }
 
 
+  /**
+   * Cambia la contraseña del usuario si cumple la expresión regular y es igual a la confirmación de la nueva contraseña
+   * Si no cumple la expresión regular se muestra un mensaje de error
+   * Si no coincide la nueva contraseña con la confirmación se muestra un mensaje de error
+   * Si todo va bien se cambia la contraseña y se cierra sesión
+   */
   changePassword() {
     let regularExpression = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$");
 
@@ -77,6 +93,7 @@ export class TrainerModificationComponent implements OnInit {
     }else{
       this.passwordCorrect = false;
       this.errorMessage = 'Password must be between 8 and 32 characters and contain at least one uppercase letter, one lowercase letter, one number and one special character';
+      return;
     }
 
     if (this.newPassword == this.confirmNewPassword) {
@@ -87,20 +104,31 @@ export class TrainerModificationComponent implements OnInit {
       }
     } else {
       this.errorMessage = 'Passwords do not match';
+      return;
     }
   }
 
+  /**
+   * Cambia el email del usuario y cierra sesión
+   */
   changeEmail() {
     this.database.updateEmail(this.id, this.newEmail, true);
     this.auth.updateEmail(this.newEmail);
     this.auth.signOut();
   }
 
+  /**
+   * Cambia el nombre del usuario y cierra sesión
+   */
   changeDisplayName() {
     this.database.updateDisplayName(this.id, this.newDisplayName, true);
     this.auth.signOut();
   }
 
+  /**
+   * Sube la imagen al storage de firebase y obtiene la url de la imagen
+   * @param event
+   */
   uploadFile(event: any) {
     const file = event.target.files[0];
     if (file.size > this.maxSize || file.type.split('/')[0] !== 'image') {
@@ -117,7 +145,9 @@ export class TrainerModificationComponent implements OnInit {
     });
   }
 
-  // FIXME: Cierra sesión al cambiar el email ¿debería?
+  /**
+   * Cambia los datos del usuario que se hayan modificado
+   */
   changeData(){
     if(this.uploadedPhotoURL != null){
       this.database.updatePhotoURL(this.id, this.uploadedPhotoURL, true);
@@ -134,7 +164,7 @@ export class TrainerModificationComponent implements OnInit {
       this.displayNameChanged = true;
     }
 
-    if(this.newPassword != null){
+    if(this.newPassword != null && this.confirmNewPassword != null){
       this.changePassword();
       this.passwordChanged = true;
     }
@@ -152,6 +182,9 @@ export class TrainerModificationComponent implements OnInit {
     }
   }
 
+  /**
+   * Elimina el usuario de la base de datos y de la autenticación
+   */
   deleteTrainer() {
     this.database.deleteTrainerWithUserID(this.auth.userID);
     this.database.deleteUserData(this.auth.userID, true);
@@ -161,6 +194,9 @@ export class TrainerModificationComponent implements OnInit {
     this.modalService.dismissAll();
   }
 
+  /**
+   * Abre el modal de confirmación de eliminación de usuario
+   */
   open() {
     this.modalService.open(this.modalContent, { size: 'md', centered: true, keyboard: true});
 	}

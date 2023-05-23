@@ -61,6 +61,9 @@ export class UserEntryComponent implements OnInit{
     });
   }
 
+  /**
+   * Si el usuario ha introducido todos los valores, se guarda la entrada en la base de datos.
+   */
   saveEntry(): void{
     if(this.series != null || this.repetitions != null || this.weight != null){
       this.database.createUserEntry(this.auth.userID, this.date.getTime(), this.weight, this.repetitions, this.series, this.color, this.exercise.title, this.exerciseID, this.comments);

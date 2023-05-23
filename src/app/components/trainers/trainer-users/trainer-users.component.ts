@@ -36,10 +36,18 @@ export class TrainerUsersComponent implements OnInit {
     });
   }
 
-  subscribeClient(clientID: string) {
-    this.database.subscribeClient(clientID, this.trainerID);
+  /**
+   * Convertir un usuario en cliente
+   * @param userID
+   */
+  subscribeClient(userID: string) {
+    this.database.subscribeClient(userID, this.trainerID);
   }
 
+  /**
+   * Quitar usuario de la lista de clientes
+   * @param clientID
+   */
   unsubscribeClient(clientID: string) {
     this.database.unsubscribeClient(clientID);
     this.database.deleteRoutinesWithUserID(clientID, false);

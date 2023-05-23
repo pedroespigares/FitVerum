@@ -48,7 +48,8 @@ export class DatabaseService {
 
   /**
    * Obtener la foto de perfil del usuario
-   * Cambiar el valor de la variable userPhoto
+   * @param userID - ID del usuario
+   * @return - URL de la foto de perfil
    */
   async getUserPhoto(userID: string) {
     const userRef = doc(this.database, 'users', userID);
@@ -91,9 +92,9 @@ export class DatabaseService {
   }
 
   /**
-   * Obtener los datos de un usuario
+   * Obtener el id del documento de un usuario según el userID
    * @param userID - ID del usuario
-   * @returns - Datos del usuario
+   * @returns - ID del documento del usuario
    */
   async getUserDocumentID(userID: string) {
     const userRef = collection(this.database, 'users');
@@ -108,9 +109,9 @@ export class DatabaseService {
   }
 
   /**
-   * Obtener los datos de un usuario
-   * @param userID - ID del usuario
-   * @returns - Datos del usuario
+   * Obtener el id del documento de un entrenador según el trainerID
+   * @param trainerID - ID del entrenador
+   * @returns - ID del documento del entrenador
    */
   async getTrainerDocumentID(trainerID: string) {
     const trainerRef = collection(this.database, 'trainers');
@@ -160,7 +161,7 @@ export class DatabaseService {
 
   /**
    * Obtener los clientes de un entrenador
-   * @param trainerID
+   * @param trainerID - ID del entrenador
    * @returns - Observable con los clientes del entrenador
    */
   getTrainerClients(trainerID: string): Observable<any[]> {
@@ -228,7 +229,7 @@ export class DatabaseService {
    * Obtener las entradas de un usuario en un ejercicio
    * @param userID - ID del usuario
    * @param exerciseID - ID del ejercicio
-   * @returns - Array con las entradas del usuario en el ejercicio
+   * @returns - Array con las entradas del usuario en el ejercicio con los datos necesarios para la gráfica
    */
   async getDataFromUserEntry(userID: string, exerciseID: string){
     const entryRef = collection(this.database, 'userEntry');
@@ -244,7 +245,7 @@ export class DatabaseService {
   /**
    * Obtener la foto de una máquina (los ejercicios no tienen foto, utilizamos la de la máquina que corresponda)
    * @param id - ID de la máquina
-   * @returns
+   * @returns - URL de la foto de la máquina
    */
   async getMachinePhoto(id: string){
     const machineRef = doc(this.database, 'machines', id);
@@ -254,8 +255,8 @@ export class DatabaseService {
 
 /**
  * Obtener un elemento por su ID y colección
- * @param id
- * @param collection
+ * @param id - ID del elemento
+ * @param collection - Colección del elemento
  * @returns
  */
   async getByID(id: string, collection: string) {
@@ -300,7 +301,7 @@ export class DatabaseService {
   /**
    * Obtener las entradas de un usuario
    * @param userID - ID del usuario
-   * @returns - Observable con las citas
+   * @returns - Observable con las entradas
    */
   getUserEntries(userID: string): Observable<any[]> {
     const entriesRef = collection(this.database, 'userEntry');
@@ -309,9 +310,9 @@ export class DatabaseService {
   }
 
   /**
-   * Obtener la rutina relacionada a un ejercicio
-   * @param exerciseID
-   * @returns
+   * Obtener el ID de la rutina relacionada a un ejercicio
+   * @param exerciseID - ID del ejercicio
+   * @returns - ID de la rutina
    */
   async getRoutineByExercise(exerciseID: string){
     const exerciseRef = doc(this.database, 'exercises', exerciseID);
@@ -389,7 +390,7 @@ export class DatabaseService {
   }
 
   /**
-   * Quita a un usuario de la lista de clientes de un entrenador
+   * Quitar a un usuario de la lista de clientes de un entrenador
    * @param userID - ID del usuario
    */
   unsubscribeClient(userID: string) {
@@ -553,6 +554,19 @@ export class DatabaseService {
     });
   }
 
+  /**
+   * Actualizar los datos de una entrada de usuario
+   * @param id - ID de la entrada
+   * @param userID - ID del usuario
+   * @param start - Fecha de la entrada
+   * @param kg - Peso
+   * @param repetitions - Repeticiones
+   * @param series - Series
+   * @param color - Color
+   * @param title - Título
+   * @param exerciseID - ID del ejercicio
+   * @param comment - Comentario
+   */
   updateUserEntry(id:string, userID: string, start: number, kg: number, repetitions: number, series: number, color: string, title: string, exerciseID: string,comment:string = null){
     const userEntryRef = doc(this.database, 'userEntry', id);
     updateDoc(userEntryRef, {
@@ -574,9 +588,9 @@ export class DatabaseService {
 
   /**
    * Actualizar una rutina
-   * @param id
-   * @param title
-   * @param photoURL
+   * @param id - ID de la rutina
+   * @param title - Título de la rutina
+   * @param photoURL - URL de la foto de la rutina
    */
   updateRoutine(id: string, title: string, photoURL: string){
     const routineRef = doc(this.database, 'routines', id);
@@ -689,8 +703,8 @@ export class DatabaseService {
 
   /**
    * Crear una rutina
-   * @param title
-   * @param photoURL
+   * @param title - Titulo de la rutina
+   * @param photoURL - URL de la foto de la rutina
    */
   addRoutine(title: string, photoURL: string, userID: string, trainerID: string){
     const routinesRef = collection(this.database, 'routines');
@@ -704,10 +718,10 @@ export class DatabaseService {
 
   /**
    * Crear un ejercicio
-   * @param title
-   * @param description
-   * @param machineID
-   * @param routineID
+   * @param title - Titulo del ejercicio
+   * @param description - Descripción del ejercicio
+   * @param machineID - ID de la máquina
+   * @param routineID - ID de la rutina
    */
   addExercise(title: string, description: string, machineID: string, routineID: string){
     const exercisesRef = collection(this.database, 'exercises');

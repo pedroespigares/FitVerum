@@ -35,7 +35,7 @@
       }
       @include response(xl){
         text-align: left;
-        font-size: calc(getFontSize(landing-text-title) - 1.4rem);
+        font-size: calc(getFontSize(landing-text-title) - 1rem);
       }
       @include response(desktop){
         font-size: getFontSize(landing-text-title);

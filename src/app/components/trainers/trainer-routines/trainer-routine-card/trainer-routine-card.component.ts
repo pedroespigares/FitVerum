@@ -11,6 +11,9 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class TrainerRoutineCardComponent {
   @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
   storage: any;
+  /**
+   * Datos de la rutina a mostrar en el modal
+   */
   modalData: {
     routine: any;
   };
@@ -23,7 +26,7 @@ export class TrainerRoutineCardComponent {
   }
 
   /**
-   * Borrar máquina de la base de datos
+   * Borrar rutina de la base de datos
    * @param id
    * @param photoURL
    * @returns
@@ -36,7 +39,7 @@ export class TrainerRoutineCardComponent {
   }
 
   /**
-   * Borrar foto de la máquina de Firebase Storage
+   * Borrar foto de la rutina de Firebase Storage
    * @param photoURL
    * @returns
    * */
@@ -45,6 +48,10 @@ export class TrainerRoutineCardComponent {
     deleteObject(photoRef);
   }
 
+  /**
+   * Abrir modal con los datos de la rutina
+   * @param routine
+   */
   open(routine: any) {
 		this.modalData = { routine };
     this.modalService.open(this.modalContent, { size: 'md', centered: true, keyboard: true});

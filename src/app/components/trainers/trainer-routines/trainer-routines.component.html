@@ -1,6 +1,6 @@
 <main class="content">
   <div class="toast-container">
-    <ngb-toast *ngIf="showAddToast" [autohide]="true" (hidden)="showAddToast=false">
+    <ngb-toast *ngIf="!showAddToast" [autohide]="true" (hidden)="showAddToast=false">
       <ng-template ngbToastHeader>
         <div class="me-auto">
           <img src="../../../../../assets/images/FitVerumLogo.png" width="40" height="40"/>

@@ -1,0 +1,1617 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>FitVerumDocs</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">FitVerumDocs</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  EditEntryComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/users/user-entry/edit-entry/edit-entry.component.ts</code>
+</p>
+
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-edit-entry</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./edit-entry.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./edit-entry.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#color" >color</a>
+                            </li>
+                            <li>
+                                <a href="#comments" >comments</a>
+                            </li>
+                            <li>
+                                <a href="#data" >data</a>
+                            </li>
+                            <li>
+                                <a href="#date" >date</a>
+                            </li>
+                            <li>
+                                <a href="#dateFormatted" >dateFormatted</a>
+                            </li>
+                            <li>
+                                <a href="#dateObject" >dateObject</a>
+                            </li>
+                            <li>
+                                <a href="#entryID" >entryID</a>
+                            </li>
+                            <li>
+                                <a href="#exercise" >exercise</a>
+                            </li>
+                            <li>
+                                <a href="#exerciseID" >exerciseID</a>
+                            </li>
+                            <li>
+                                <a href="#loading" >loading</a>
+                            </li>
+                            <li>
+                                <a href="#machineID" >machineID</a>
+                            </li>
+                            <li>
+                                <a href="#modalContent" >modalContent</a>
+                            </li>
+                            <li>
+                                <a href="#modalData" >modalData</a>
+                            </li>
+                            <li>
+                                <a href="#photoURL" >photoURL</a>
+                            </li>
+                            <li>
+                                <a href="#repetitions" >repetitions</a>
+                            </li>
+                            <li>
+                                <a href="#routineID" >routineID</a>
+                            </li>
+                            <li>
+                                <a href="#routineName" >routineName</a>
+                            </li>
+                            <li>
+                                <a href="#series" >series</a>
+                            </li>
+                            <li>
+                                <a href="#weight" >weight</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#openCanvas" >openCanvas</a>
+                            </li>
+                            <li>
+                                <a href="#openEvolution" >openEvolution</a>
+                            </li>
+                            <li>
+                                <a href="#updateEntry" >updateEntry</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(database: <a href="../injectables/DatabaseService.html" target="_self">DatabaseService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, auth: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, offcanvasService: NgbOffcanvas, toasts: <a href="../injectables/ToastsService.html" target="_self">ToastsService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/components/users/user-entry/edit-entry/edit-entry.component.ts:44</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>database</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DatabaseService.html" target="_self" >DatabaseService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>auth</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>offcanvasService</td>
+                                                  
+                                                        <td>
+                                                                    <code>NgbOffcanvas</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toasts</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ToastsService.html" target="_self" >ToastsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="54"
+                            class="link-to-prism">src/app/components/users/user-entry/edit-entry/edit-entry.component.ts:54</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openCanvas"></a>
+                    <span class="name">
+                        <span ><b>openCanvas</b></span>
+                        <a href="#openCanvas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openCanvas(content: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="93"
+                            class="link-to-prism">src/app/components/users/user-entry/edit-entry/edit-entry.component.ts:93</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>content</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openEvolution"></a>
+                    <span class="name">
+                        <span ><b>openEvolution</b></span>
+                        <a href="#openEvolution"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openEvolution(eventID: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">src/app/components/users/user-entry/edit-entry/edit-entry.component.ts:97</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>eventID</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateEntry"></a>
+                    <span class="name">
+                        <span ><b>updateEntry</b></span>
+                        <a href="#updateEntry"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateEntry()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="85"
+                            class="link-to-prism">src/app/components/users/user-entry/edit-entry/edit-entry.component.ts:85</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="color"></a>
+                    <span class="name">
+                        <span ><b>color</b></span>
+                        <a href="#color"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/components/users/user-entry/edit-entry/edit-entry.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="comments"></a>
+                    <span class="name">
+                        <span ><b>comments</b></span>
+                        <a href="#comments"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/components/users/user-entry/edit-entry/edit-entry.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="data"></a>
+                    <span class="name">
+                        <span ><b>data</b></span>
+                        <a href="#data"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/users/user-entry/edit-entry/edit-entry.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="date"></a>
+                    <span class="name">
+                        <span ><b>date</b></span>
+                        <a href="#date"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/components/users/user-entry/edit-entry/edit-entry.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dateFormatted"></a>
+                    <span class="name">
+                        <span ><b>dateFormatted</b></span>
+                        <a href="#dateFormatted"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;${this.dateObject.getFullYear()}-${this.dateObject.getMonth() + 1}-${this.dateObject.getDate()}&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/components/users/user-entry/edit-entry/edit-entry.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dateObject"></a>
+                    <span class="name">
+                        <span ><b>dateObject</b></span>
+                        <a href="#dateObject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Date(this.date)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/components/users/user-entry/edit-entry/edit-entry.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="entryID"></a>
+                    <span class="name">
+                        <span ><b>entryID</b></span>
+                        <a href="#entryID"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.route.snapshot.paramMap.get(&#x27;id&#x27;)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/users/user-entry/edit-entry/edit-entry.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="exercise"></a>
+                    <span class="name">
+                        <span ><b>exercise</b></span>
+                        <a href="#exercise"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/users/user-entry/edit-entry/edit-entry.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="exerciseID"></a>
+                    <span class="name">
+                        <span ><b>exerciseID</b></span>
+                        <a href="#exerciseID"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/users/user-entry/edit-entry/edit-entry.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loading"></a>
+                    <span class="name">
+                        <span ><b>loading</b></span>
+                        <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/users/user-entry/edit-entry/edit-entry.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="machineID"></a>
+                    <span class="name">
+                        <span ><b>machineID</b></span>
+                        <a href="#machineID"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/users/user-entry/edit-entry/edit-entry.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modalContent"></a>
+                    <span class="name">
+                        <span ><b>modalContent</b></span>
+                        <a href="#modalContent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>TemplateRef&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;modalContent&#x27;, {static: true})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/users/user-entry/edit-entry/edit-entry.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modalData"></a>
+                    <span class="name">
+                        <span ><b>modalData</b></span>
+                        <a href="#modalData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/components/users/user-entry/edit-entry/edit-entry.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="photoURL"></a>
+                    <span class="name">
+                        <span ><b>photoURL</b></span>
+                        <a href="#photoURL"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/users/user-entry/edit-entry/edit-entry.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="repetitions"></a>
+                    <span class="name">
+                        <span ><b>repetitions</b></span>
+                        <a href="#repetitions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/components/users/user-entry/edit-entry/edit-entry.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="routineID"></a>
+                    <span class="name">
+                        <span ><b>routineID</b></span>
+                        <a href="#routineID"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/components/users/user-entry/edit-entry/edit-entry.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="routineName"></a>
+                    <span class="name">
+                        <span ><b>routineName</b></span>
+                        <a href="#routineName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/components/users/user-entry/edit-entry/edit-entry.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="series"></a>
+                    <span class="name">
+                        <span ><b>series</b></span>
+                        <a href="#series"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/components/users/user-entry/edit-entry/edit-entry.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="weight"></a>
+                    <span class="name">
+                        <span ><b>weight</b></span>
+                        <a href="#weight"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/components/users/user-entry/edit-entry/edit-entry.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild, TemplateRef } from &#x27;@angular/core&#x27;;
+import { DatabaseService } from &#x27;src/app/services/database.service&#x27;;
+import { Router, ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { AuthService } from &#x27;src/app/services/auth.service&#x27;;
+import { ToastsService } from &#x27;src/app/services/toasts.service&#x27;;
+import { NgbOffcanvas} from &#x27;@ng-bootstrap/ng-bootstrap&#x27;;
+
+@Component({
+  selector: &#x27;app-edit-entry&#x27;,
+  templateUrl: &#x27;./edit-entry.component.html&#x27;,
+  styleUrls: [&#x27;./edit-entry.component.scss&#x27;]
+})
+export class EditEntryComponent {
+  @ViewChild(&#x27;modalContent&#x27;, { static: true }) modalContent: TemplateRef&lt;any&gt;;
+
+  entryID: string &#x3D; this.route.snapshot.paramMap.get(&#x27;id&#x27;);
+  data: any &#x3D; null;
+  exerciseID: string;
+  photoURL: string;
+
+
+  machineID: string;
+  loading: boolean &#x3D; true;
+
+  exercise: any;
+
+  series: number &#x3D; null;
+  repetitions: number &#x3D; null;
+  weight: number &#x3D; null;
+  date: number &#x3D; null;
+
+  dateObject: Date &#x3D; new Date(this.date);
+  dateFormatted: string &#x3D; &#x60;${this.dateObject.getFullYear()}-${this.dateObject.getMonth() + 1}-${this.dateObject.getDate()}&#x60;
+
+
+  color: string &#x3D; null;
+  comments: string &#x3D; null;
+
+  routineID: string;
+  routineName: string;
+
+  modalData: {
+    event: any;
+  };
+
+  constructor(
+    private database: DatabaseService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private auth: AuthService,
+    private offcanvasService: NgbOffcanvas,
+    private toasts: ToastsService) { }
+
+  ngOnInit(): void {
+    console.log(this.entryID);
+    this.database.getByID(this.entryID, &quot;userEntry&quot;).then((userEntry) &#x3D;&gt; {
+      this.data &#x3D; userEntry;
+      this.series &#x3D; this.data.series;
+      this.repetitions &#x3D; this.data.repetitions;
+      this.weight &#x3D; this.data.kg;
+      this.date &#x3D; this.data.start;
+      this.color &#x3D; this.data.color.primary;
+      this.comments &#x3D; this.data.comment;
+      this.exerciseID &#x3D; this.data.exerciseID;
+
+      this.database.getByID(this.exerciseID, &quot;exercises&quot;).then((exercise) &#x3D;&gt; {
+        this.exercise &#x3D; exercise;
+
+        this.database.getMachinePhoto(this.exercise.machineID).then((photoURL) &#x3D;&gt; {
+        this.photoURL &#x3D; photoURL;
+
+        this.database.getRoutineByExercise(this.data.exerciseID).then((routineID) &#x3D;&gt; {
+          this.routineID &#x3D; routineID;
+
+          this.database.getRoutineTitle(routineID).then((title) &#x3D;&gt; {
+            this.routineName &#x3D; title;
+            this.loading &#x3D; false;
+            });
+          });
+        });
+      });
+    });
+  }
+
+  updateEntry(): void{
+    if(this.series !&#x3D; null || this.repetitions !&#x3D; null || this.weight !&#x3D; null){
+      this.database.updateUserEntry(this.entryID, this.auth.userID, this.data.start, this.weight, this.repetitions, this.series, this.color, this.exercise.title, this.exerciseID, this.comments);
+      this.toasts.entryUpdated &#x3D; true;
+      this.router.navigate([&quot;/user/calendar&quot;]);
+    }
+  }
+
+  openCanvas(content:any){
+      this.offcanvasService.open(content, { ariaLabelledBy: &#x27;description&#x27; })
+  }
+
+  openEvolution(eventID: any) {
+    this.router.navigateByUrl(&#x60;/user/evolution/${eventID}&#x60;);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;main class&#x3D;&quot;content&quot;&gt;
+  &lt;h1 class&#x3D;&quot;exercise-title&quot; *ngIf&#x3D;&quot;!loading&quot;&gt;&lt;span class&#x3D;&quot;exercise-title-span&quot;&gt;{{exercise.title}}&lt;/span&gt; {{&quot;USERS.ENTRY.ENTRY&quot; | translate}}&lt;/h1&gt;
+  &lt;div *ngIf&#x3D;&quot;!loading&quot; class&#x3D;&quot;breadcrumbs&quot;&gt;
+    &lt;a class&#x3D;&quot;breadcrumbs-item&quot; routerLink&#x3D;&quot;/user/calendar&quot;&gt;{{&quot;USERS.ENTRY.CALENDAR&quot; | translate}}&lt;/a&gt;
+    &lt;p class&#x3D;&quot;breadcrumbs-item&quot;&gt; &gt; &lt;/p&gt;
+    &lt;a class&#x3D;&quot;breadcrumbs-item&quot; routerLink&#x3D;&quot;/user/calendar/{{dateFormatted}}&quot;&gt;{{&quot;USERS.ENTRY.ROUTINES&quot; | translate}}&lt;/a&gt;
+    &lt;p class&#x3D;&quot;breadcrumbs-item&quot;&gt; &gt; &lt;/p&gt;
+    &lt;a class&#x3D;&quot;breadcrumbs-item&quot; routerLink&#x3D;&quot;/user/calendar/{{date}}&quot;&gt;{{routineName}}&lt;/a&gt;
+    &lt;p class&#x3D;&quot;breadcrumbs-item&quot;&gt; &gt; &lt;/p&gt;
+    &lt;a class&#x3D;&quot;breadcrumbs-item&quot;&gt;{{exercise.title}}&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div *ngIf&#x3D;&quot;loading&quot; class&#x3D;&quot;loader&quot;&gt;&lt;/div&gt;
+  &lt;div class&#x3D;&quot;entry-container&quot;&gt;
+    &lt;div class&#x3D;&quot;entry-container-left&quot;&gt;
+      &lt;img *ngIf&#x3D;&quot;!loading&quot; src&#x3D;&quot;{{photoURL}}&quot; alt&#x3D;&quot;Exercise image&quot; class&#x3D;&quot;entry-container-left-img&quot;&gt;
+      &lt;div *ngIf&#x3D;&quot;!loading&quot; class&#x3D;&quot;entry-container-left-buttons&quot;&gt;
+        &lt;button class&#x3D;&quot;entry-container-left-buttons-button&quot; (click)&#x3D;&quot;openCanvas(content)&quot;&gt;{{&quot;USERS.ENTRY.DESCRIPTION&quot; | translate}}&lt;/button&gt;
+        &lt;button class&#x3D;&quot;entry-container-left-buttons-button&quot; (click)&#x3D;&quot;openEvolution(exerciseID)&quot;&gt;{{&quot;USERS.ENTRY.EVOLUTION&quot; | translate}}&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div *ngIf&#x3D;&quot;!loading&quot; class&#x3D;&quot;entry-container-right&quot;&gt;
+        &lt;h2 class&#x3D;&quot;entry-container-right-title&quot;&gt;{{&quot;USERS.ENTRY.AT&quot; | translate}} &lt;span class&#x3D;&quot;entry-container-right-title-date&quot;&gt;{{date | date: &quot;longDate&quot;}}&lt;/span&gt;&lt;/h2&gt;
+        &lt;form class&#x3D;&quot;entry-container-right-form&quot; (ngSubmit)&#x3D;&quot;updateEntry()&quot;&gt;
+          &lt;div class&#x3D;&quot;entry-container-right-form-group&quot;&gt;
+            &lt;label class&#x3D;&quot;entry-container-right-form-group-label&quot;&gt;{{&quot;USERS.ENTRY.I-MADE&quot; | translate}}&lt;/label&gt;
+            &lt;input class&#x3D;&quot;entry-container-right-form-group-input&quot; name&#x3D;&quot;series&quot; type&#x3D;&quot;number&quot; placeholder&#x3D;&quot;XXX&quot; min&#x3D;&quot;0&quot; [(ngModel)]&#x3D;&quot;series&quot;&gt;
+            &lt;label class&#x3D;&quot;entry-container-right-form-group-label-2&quot;&gt;series&lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;entry-container-right-form-group&quot;&gt;
+            &lt;label class&#x3D;&quot;entry-container-right-form-group-label&quot;&gt;{{&quot;USERS.ENTRY.WITH&quot; | translate}}&lt;/label&gt;
+            &lt;input class&#x3D;&quot;entry-container-right-form-group-input&quot; name&#x3D;&quot;repetitions&quot; type&#x3D;&quot;number&quot; placeholder&#x3D;&quot;XXX&quot; min&#x3D;&quot;0&quot; [(ngModel)]&#x3D;&quot;repetitions&quot;&gt;
+            &lt;label class&#x3D;&quot;entry-container-right-form-group-label-2&quot;&gt;{{&quot;USERS.ENTRY.REPETITIONS&quot; | translate}}&lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;entry-container-right-form-group&quot;&gt;
+            &lt;label class&#x3D;&quot;entry-container-right-form-group-label&quot;&gt;{{&quot;USERS.ENTRY.WITH&quot; | translate}}&lt;/label&gt;
+            &lt;input class&#x3D;&quot;entry-container-right-form-group-input&quot; name&#x3D;&quot;weight&quot; type&#x3D;&quot;number&quot; placeholder&#x3D;&quot;XXX&quot; min&#x3D;&quot;0&quot; [(ngModel)]&#x3D;&quot;weight&quot;&gt;
+            &lt;label class&#x3D;&quot;entry-container-right-form-group-label-2&quot;&gt;KG&lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;entry-container-right-form-group&quot;&gt;
+            &lt;label class&#x3D;&quot;entry-container-right-form-group-label&quot;&gt;color&lt;/label&gt;
+            &lt;input class&#x3D;&quot;entry-container-right-form-group-input-color&quot; name&#x3D;&quot;color&quot; type&#x3D;&quot;color&quot; [(ngModel)]&#x3D;&quot;color&quot;&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;entry-container-right-form-group&quot;&gt;
+            &lt;label class&#x3D;&quot;entry-container-right-form-group-label&quot;&gt;{{&quot;USERS.ENTRY.COMMENTS&quot; | translate}}&lt;/label&gt;
+            &lt;textarea class&#x3D;&quot;entry-container-right-form-group-textarea&quot; name&#x3D;&quot;comments&quot; placeholder&#x3D;&quot;Notes&quot; [(ngModel)]&#x3D;&quot;comments&quot;&gt;&lt;/textarea&gt;
+          &lt;/div&gt;
+          &lt;button *ngIf&#x3D;&quot;weight !&#x3D; null &amp;&amp; series !&#x3D; null &amp;&amp; repetitions !&#x3D; null&quot; class&#x3D;&quot;entry-container-right-form-button&quot; type&#x3D;&quot;submit&quot;&gt;{{&quot;USERS.ENTRY.UPDATE&quot; | translate}}&lt;/button&gt;
+          &lt;button *ngIf&#x3D;&quot;weight &#x3D;&#x3D; null || series &#x3D;&#x3D; null || repetitions &#x3D;&#x3D; null&quot; class&#x3D;&quot;entry-container-right-form-button-disabled&quot; type&#x3D;&quot;submit&quot; disabled&gt;{{&quot;USERS.ENTRY.UPDATE&quot; | translate}}&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+
+  &lt;ng-template #content let-offcanvas&gt;
+    &lt;div class&#x3D;&quot;offcanvas-header&quot;&gt;
+      &lt;h4 class&#x3D;&quot;offcanvas-title fs-1&quot; id&#x3D;&quot;description&quot;&gt;{{exercise.title}} {{&quot;USERS.ENTRY.LC-DESCRIPTION&quot; | translate}}&lt;/h4&gt;
+      &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn-close&quot; aria-label&#x3D;&quot;Close&quot; (click)&#x3D;&quot;offcanvas.dismiss(&#x27;Cross click&#x27;)&quot;&gt;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;offcanvas-body fs-3&quot;&gt;
+      &lt;p&gt;{{exercise.description}}&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/ng-template&gt;
+&lt;/main&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./edit-entry.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &quot;../../../../../scss/mixin.scss&quot;;
+@import &quot;../../../../../scss/variables.scss&quot;;
+
+.content{
+  @include response(md){
+    height: calc(100vh - 112px);
+  }
+  height: 175vh;
+}
+
+.exercise-title {
+  @include view_header();
+  &amp;-no-exercise {
+    @include view_header(3rem);
+    color: var(--text-color);
+  }
+
+  &amp;-span {
+    color: var(--text-color);
+  }
+}
+
+.entry-container {
+  @include response(lg){
+    display: grid;
+    grid-template-columns: 0.80fr 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+    padding-top: 3rem;
+    height: calc(100vh - 112px - 100px - 24px);
+  }
+
+  @include flex($direction: column, $justify: center, $align: center, $gap: 10rem);
+  height: 100vh;
+  width: 100%;
+  padding-top: 30rem;
+
+  &amp;-left {
+    grid-area: 1 / 1 / 2 / 2;
+    height: 100%;
+    @include flex($direction: column, $justify: center, $align: center);
+
+    &amp;-img {
+      @include response(lg){
+        width: 65%;
+        border-radius: 1rem;
+      }
+      width: 50%;
+      border-radius: 1rem;
+    }
+
+    &amp;-buttons {
+      margin-top: 2rem;
+      @include response(lg){
+        @include flex(
+          $direction: row,
+          $justify: center,
+          $align: center,
+          $gap: 2rem
+        );
+      }
+      @include flex(
+        $direction: column,
+        $justify: center,
+        $align: center,
+        $gap: 2rem
+      );
+      &amp;-button {
+        @include response(lg){
+          @include button(lg, true, $width: 20rem);
+        }
+        @include button(md, true, $width: 20rem);
+      }
+    }
+  }
+
+  &amp;-right {
+    grid-area: 1 / 2 / 2 / 3;
+    width: 100%;
+    height: 100%;
+    @include flex(
+      $direction: column,
+      $justify: flex-start,
+      $align: center,
+      $gap: 2rem
+    );
+
+    &amp;-title{
+      @include view_header(5rem);
+      color: var(--text-color);
+      margin-bottom: 5rem;
+      &amp;-date{
+        color: var(--primary-color);
+        font-weight: getFontWeight(normal);
+      }
+    }
+
+    &amp;-form {
+      @include flex(
+        $direction: column,
+        $justify: center,
+        $align: center,
+        $gap: 2rem
+      );
+
+      &amp;-group {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        place-items: center;
+        width: 100%;
+
+        &amp;-input {
+          grid-area: 1 / 2 / 2 / 3;
+          @include response(md){
+            width: 100% !important;
+          }
+          width: 50% !important;
+          @include input();
+          &amp;-color{
+            @include response(md){
+              width: 100% !important;
+            }
+            width: 50% !important;
+            grid-area: 1 / 2 / 2 / 3;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            &amp;::-webkit-color-swatch {
+              border-radius: 0.5rem;
+              border: none;
+            }
+            &amp;::-moz-color-swatch {
+              border-radius: 0.5rem;
+              border: none;
+            }
+          }
+        }
+
+        &amp;-textarea {
+          @include response(md){
+            width: 100% !important;
+          }
+          width: 70% !important;
+          @include input();
+          resize: both !important;
+        }
+        &amp;-label {
+          @include response(md){
+            width: 100%;
+          }
+          width: 50% !important;
+          grid-area: 1 / 1 / 2 / 2;
+          @include label();
+          padding-bottom: 0;
+          text-align: center;
+          color: var(--text-color);
+
+          &amp;-2 {
+            @include response(md){
+              width: 100%;
+            }
+            width: 50% !important;
+            @include label();
+            grid-area: 1 / 3 / 2 / 4;
+            padding-bottom: 0;
+            text-align: center;
+          }
+        }
+      }
+      &amp;-button {
+        margin-top: 5rem;
+        @include button(lg, true, $width: 20rem);
+        @include response(md){
+          margin-bottom: 0;
+        }
+        margin-bottom: 2rem;
+
+        &amp;-disabled{
+          margin-top: 5rem;
+          @include button(lg, false, $disabled: true, $width: 20rem);
+          @include response(md){
+            margin-bottom: 0;
+          }
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+}
+
+.offcanvas-title{
+  text-align: center !important;
+  color: var(--primary-color);
+}
+
+.breadcrumbs{
+  @include response(lg){
+    @include breadcrumbs(5rem);
+  }
+  @include breadcrumbs(1.5rem);
+}
+
+.loader{
+  @include loader(50%, 38%);
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><main class="content">  <h1 class="exercise-title" *ngIf="!loading"><span class="exercise-title-span">{{exercise.title}}</span> {{"USERS.ENTRY.ENTRY" | translate}}</h1>  <div *ngIf="!loading" class="breadcrumbs">    <a class="breadcrumbs-item" routerLink="/user/calendar">{{"USERS.ENTRY.CALENDAR" | translate}}</a>    <p class="breadcrumbs-item"> > </p>    <a class="breadcrumbs-item" routerLink="/user/calendar/{{dateFormatted}}">{{"USERS.ENTRY.ROUTINES" | translate}}</a>    <p class="breadcrumbs-item"> > </p>    <a class="breadcrumbs-item" routerLink="/user/calendar/{{date}}">{{routineName}}</a>    <p class="breadcrumbs-item"> > </p>    <a class="breadcrumbs-item">{{exercise.title}}</a>  </div>  <div *ngIf="loading" class="loader"></div>  <div class="entry-container">    <div class="entry-container-left">      <img *ngIf="!loading" src="{{photoURL}}" alt="Exercise image" class="entry-container-left-img">      <div *ngIf="!loading" class="entry-container-left-buttons">        <button class="entry-container-left-buttons-button" (click)="openCanvas(content)">{{"USERS.ENTRY.DESCRIPTION" | translate}}</button>        <button class="entry-container-left-buttons-button" (click)="openEvolution(exerciseID)">{{"USERS.ENTRY.EVOLUTION" | translate}}</button>      </div>    </div>    <div *ngIf="!loading" class="entry-container-right">        <h2 class="entry-container-right-title">{{"USERS.ENTRY.AT" | translate}} <span class="entry-container-right-title-date">{{date | date: "longDate"}}</span></h2>        <form class="entry-container-right-form" (ngSubmit)="updateEntry()">          <div class="entry-container-right-form-group">            <label class="entry-container-right-form-group-label">{{"USERS.ENTRY.I-MADE" | translate}}</label>            <input class="entry-container-right-form-group-input" name="series" type="number" placeholder="XXX" min="0" [(ngModel)]="series">            <label class="entry-container-right-form-group-label-2">series</label>          </div>          <div class="entry-container-right-form-group">            <label class="entry-container-right-form-group-label">{{"USERS.ENTRY.WITH" | translate}}</label>            <input class="entry-container-right-form-group-input" name="repetitions" type="number" placeholder="XXX" min="0" [(ngModel)]="repetitions">            <label class="entry-container-right-form-group-label-2">{{"USERS.ENTRY.REPETITIONS" | translate}}</label>          </div>          <div class="entry-container-right-form-group">            <label class="entry-container-right-form-group-label">{{"USERS.ENTRY.WITH" | translate}}</label>            <input class="entry-container-right-form-group-input" name="weight" type="number" placeholder="XXX" min="0" [(ngModel)]="weight">            <label class="entry-container-right-form-group-label-2">KG</label>          </div>          <div class="entry-container-right-form-group">            <label class="entry-container-right-form-group-label">color</label>            <input class="entry-container-right-form-group-input-color" name="color" type="color" [(ngModel)]="color">          </div>          <div class="entry-container-right-form-group">            <label class="entry-container-right-form-group-label">{{"USERS.ENTRY.COMMENTS" | translate}}</label>            <textarea class="entry-container-right-form-group-textarea" name="comments" placeholder="Notes" [(ngModel)]="comments"></textarea>          </div>          <button *ngIf="weight != null && series != null && repetitions != null" class="entry-container-right-form-button" type="submit">{{"USERS.ENTRY.UPDATE" | translate}}</button>          <button *ngIf="weight == null || series == null || repetitions == null" class="entry-container-right-form-button-disabled" type="submit" disabled>{{"USERS.ENTRY.UPDATE" | translate}}</button>        </form>    </div>  </div>  <ng-template #content let-offcanvas>    <div class="offcanvas-header">      <h4 class="offcanvas-title fs-1" id="description">{{exercise.title}} {{"USERS.ENTRY.LC-DESCRIPTION" | translate}}</h4>      <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss(\'Cross click\')"></button>    </div>    <div class="offcanvas-body fs-3">      <p>{{exercise.description}}</p>    </div>  </ng-template></main></div>'
+    var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AddDietComponent', 'selector': 'app-add-diet'},{'name': 'AddExerciceComponent', 'selector': 'app-add-exercice'},{'name': 'AddMachineComponent', 'selector': 'app-add-machine'},{'name': 'AddRoutineComponent', 'selector': 'app-add-routine'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'EditDietComponent', 'selector': 'app-edit-diet'},{'name': 'EditEntryComponent', 'selector': 'app-edit-entry'},{'name': 'EditExerciseComponent', 'selector': 'app-edit-exercise'},{'name': 'EditRoutineComponent', 'selector': 'app-edit-routine'},{'name': 'ExerciseCardComponent', 'selector': 'app-exercise-card'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForbiddenComponent', 'selector': 'app-forbidden'},{'name': 'ForumComponent', 'selector': 'app-forum'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LegalComponent', 'selector': 'app-legal'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MachineCardComponent', 'selector': 'app-machine-card'},{'name': 'MachinesComponent', 'selector': 'app-machines'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SeeTrainersCardComponent', 'selector': 'app-see-trainers-card'},{'name': 'SeeTrainersComponent', 'selector': 'app-see-trainers'},{'name': 'ShowDietComponent', 'selector': 'app-show-diet'},{'name': 'ShowExercisesComponent', 'selector': 'app-show-exercises'},{'name': 'ShowMachineComponent', 'selector': 'app-show-machine'},{'name': 'ShowSingleExerciseComponent', 'selector': 'app-show-single-exercise'},{'name': 'SimpleExerciseCardComponent', 'selector': 'app-simple-exercise-card'},{'name': 'TrainerAppointmentComponent', 'selector': 'app-trainer-appointment'},{'name': 'TrainerCalendarComponent', 'selector': 'app-trainer-calendar'},{'name': 'TrainerDietCardComponent', 'selector': 'app-trainer-diet-card'},{'name': 'TrainerDietsComponent', 'selector': 'app-trainer-diets'},{'name': 'TrainerModificationComponent', 'selector': 'app-trainer-modification'},{'name': 'TrainerRoutineCardComponent', 'selector': 'app-trainer-routine-card'},{'name': 'TrainerRoutinesComponent', 'selector': 'app-trainer-routines'},{'name': 'TrainerUsersComponent', 'selector': 'app-trainer-users'},{'name': 'UpdateMachineComponent', 'selector': 'app-update-machine'},{'name': 'UserCalendarComponent', 'selector': 'app-user-calendar'},{'name': 'UserDietsComponent', 'selector': 'app-user-diets'},{'name': 'UserEntryComponent', 'selector': 'app-user-entry'},{'name': 'UserEvolutionComponent', 'selector': 'app-user-evolution'},{'name': 'UserModificationComponent', 'selector': 'app-user-modification'},{'name': 'UserRoutineExercisesComponent', 'selector': 'app-user-routine-exercises'},{'name': 'UserRoutineExercisesSimpleComponent', 'selector': 'app-user-routine-exercises-simple'},{'name': 'UserRoutinesComponent', 'selector': 'app-user-routines'},{'name': 'UserRoutinesSimpleComponent', 'selector': 'app-user-routines-simple'},{'name': 'UsersComponent', 'selector': 'app-users'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'EditEntryComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'EditEntryComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
