@@ -11,9 +11,9 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class AddExerciceComponent implements OnInit{
 
-  title: string;
-  description: string;
-  machineID: string;
+  title: string = '';
+  description: string = '';
+  machineID: string = '';
   loading: boolean = true;
   routineName: string;
   routineLoaded: boolean = false;

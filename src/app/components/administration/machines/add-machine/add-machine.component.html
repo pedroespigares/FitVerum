@@ -33,8 +33,8 @@
             <p *ngIf="!fileTooBig" class="info-under">3 MB Max | JPG or PNG</p>
             <p *ngIf="fileTooBig" class="info-under-error">3 MB Max | JPG or PNG</p>
         </fieldset>
-        <button *ngIf="!uploaded" class="add-machine-form-button-disabled" disabled>{{"ADMINISTRATION.MACHINES.ADD-MACHINE-FORM.BUTTON" | translate}}</button>
-        <button type="submit" *ngIf="uploaded" class="add-machine-form-button">{{"ADMINISTRATION.MACHINES.ADD-MACHINE-FORM.BUTTON" | translate}}</button>
+        <button *ngIf="!uploaded || name.trim() == '' || description.trim() == ''" class="add-machine-form-button-disabled" disabled>{{"ADMINISTRATION.MACHINES.ADD-MACHINE-FORM.BUTTON" | translate}}</button>
+        <button type="submit" *ngIf="uploaded && name.trim() != '' && description.trim() != ''" class="add-machine-form-button">{{"ADMINISTRATION.MACHINES.ADD-MACHINE-FORM.BUTTON" | translate}}</button>
     </form>
 </div>
 <div class="waves"></div>

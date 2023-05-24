@@ -353,5 +353,12 @@
     "SUCCESS": "Mensaje enviado correctamente",
     "ERROR": "Error al enviar el mensaje",
     "TITLE": "Contacta con nosotros"
+  },
+  "ERRORS": {
+    "404": "404 No encontrado",
+    "404-MESSAGE": "Esta página no existe",
+    "403": "403 Prohibido",
+    "403-MESSAGE": "No tienes permiso para acceder a esta página",
+    "GO-HOME": "Volver a inicio"
   }
 }

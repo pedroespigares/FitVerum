@@ -3355,10 +3355,13 @@
         }
     }
 }</code>" data-collapsed=".diets-container { ... }"><code>.diets-container { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Estilos del contenedor de las dietas</p></div></section><section class="main__item container item" id="undefined-css-.content"><h3 class="item__heading"><a class="item__name" href="#css-.content">.content</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.content {
+  height: 175vh;
   @include response(md){
+    height: calc(110vh);
+  }
+  @include response(desktop){
     height: calc(100vh - 112px);
   }
-  height: 175vh;
 }</code>" data-collapsed=".content { ... }"><code>.content { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Estilos para la vista de editar ejercicio</p></div></section><section class="main__item container item" id="undefined-css-.exercise-title"><h3 class="item__heading"><a class="item__name" href="#css-.exercise-title">.exercise-title</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.exercise-title {
   @include view_header();
   &amp;-no-exercise {
@@ -3376,7 +3379,7 @@
     grid-template-rows: 1fr;
     place-items: center;
     padding-top: 3rem;
-    height: calc(100vh - 112px - 100px - 24px);
+    height: calc(100vh - 112px - 100px - 30px);
   }
 
   @include flex($direction: column, $justify: center, $align: center, $gap: 10rem);

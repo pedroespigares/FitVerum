@@ -32,7 +32,8 @@
               <option *ngFor="let machine of machines" [ngValue]="machine.id">{{machine.name}}</option>
           </select>
         </fieldset>
-        <button type="submit" class="add-exercise-form-button">{{"TRAINERS.ROUTINES.EXERCISES.ADD.BUTTON" | translate}}</button>
+        <button *ngIf="title.trim() == '' || description.trim() == '' || machineID.trim() == ''" type="submit" class="add-exercise-form-button-disabled" disabled>{{"TRAINERS.ROUTINES.EXERCISES.ADD.BUTTON" | translate}}</button>
+        <button *ngIf="title.trim() != '' && description.trim() !='' && machineID.trim() != ''" type="submit" class="add-exercise-form-button">{{"TRAINERS.ROUTINES.EXERCISES.ADD.BUTTON" | translate}}</button>
     </form>
 </div>
 <div class="waves"></div>

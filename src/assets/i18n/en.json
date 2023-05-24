@@ -352,5 +352,12 @@
     "SUCCESS": "Message sent successfully!",
     "ERROR": "An error has occurred. Please try again later.",
     "TITLE": "Contact Us"
+  },
+  "ERRORS": {
+    "404": "404 Not Found",
+    "404-MESSAGE": "This page doesn't exists",
+    "403": "403 Forbidden",
+    "403-MESSAGE": "You don't have permission to access this page",
+    "GO-HOME": "Go Home"
   }
 }
