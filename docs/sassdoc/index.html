@@ -444,7 +444,7 @@
   @include response(md){
     height: calc(100vh - 112px);
   }
-  height: 50vh;
+  height: 70vh;
 }</code>" data-collapsed=".content { ... }"><code>.content { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Estilos del contenido de la vista de error 403</p></div></section><section class="main__item container item" id="undefined-css-.forbidden-container"><h3 class="item__heading"><a class="item__name" href="#css-.forbidden-container">.forbidden-container</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.forbidden-container {
   @include flex($direction: column, $justify: flex-start, $align: center);
   padding-top: 10rem;
@@ -480,7 +480,7 @@
   @include response(md){
     height: calc(100vh - 112px);
   }
-  height: 50vh;
+  height: 70vh;
 }</code>" data-collapsed=".content { ... }"><code>.content { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Estilos del contenido de la vista de 404</p></div></section><section class="main__item container item" id="undefined-css-.not-found-container"><h3 class="item__heading"><a class="item__name" href="#css-.not-found-container">.not-found-container</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.not-found-container {
   @include flex($direction: column, $justify: flex-start, $align: center);
   padding-top: 10rem;
@@ -1231,7 +1231,7 @@
       @include response(desktop) {
         @include button(md, false, $heigth: 6rem);
       }
-      @include button(sm, false);
+      @include button(sm, false, $heigth: 6rem);
       &amp;-img {
         width: 4rem;
       }
@@ -1526,7 +1526,7 @@
       @include response(desktop) {
         @include button(md, false, $heigth: 7rem);
       }
-      @include button(sm, false, $heigth: 5rem);
+      @include button(sm, false, $heigth: 6rem);
       &amp;-img {
         width: 4rem;
       }
@@ -1598,7 +1598,7 @@
   @include view_header(5rem);
   padding-bottom: 10rem;
 }</code>" data-collapsed=".title { ... }"><code>.title { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Estilo del título</p></div></section><section class="main__item container item" id="undefined-css-.content"><h3 class="item__heading"><a class="item__name" href="#css-.content">.content</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.content {
-  height: 200vh;
+  height: 230vh;
   @include response(md){
     height: 125vh;
   }
@@ -3467,7 +3467,7 @@
           @include response(md){
             width: 100% !important;
           }
-          width: 50% !important;
+          width: 70% !important;
           @include input();
           &amp;-color{
             @include response(md){
@@ -3515,12 +3515,15 @@
           &amp;-2 {
             @include response(md){
               width: 100%;
+              justify-self: center;
+              text-align: center;
             }
             width: 50% !important;
             @include label();
+            justify-self: flex-start;
             grid-area: 1 / 3 / 2 / 4;
             padding-bottom: 0;
-            text-align: center;
+            text-align: left;
           }
         }
       }

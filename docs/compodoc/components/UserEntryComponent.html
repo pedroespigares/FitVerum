@@ -1158,10 +1158,13 @@ export class UserEntryComponent implements OnInit{
 
 /// Estilos para la vista de editar ejercicio
 .content{
+  height: 175vh;
   @include response(md){
+    height: calc(110vh);
+  }
+  @include response(desktop){
     height: calc(100vh - 112px);
   }
-  height: 175vh;
 }
 
 /// Estilos para el titulo de la vista
@@ -1185,7 +1188,7 @@ export class UserEntryComponent implements OnInit{
     grid-template-rows: 1fr;
     place-items: center;
     padding-top: 3rem;
-    height: calc(100vh - 112px - 100px - 24px);
+    height: calc(100vh - 112px - 100px - 30px);
   }
 
   @include flex($direction: column, $justify: center, $align: center, $gap: 10rem);

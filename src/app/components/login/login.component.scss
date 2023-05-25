@@ -237,7 +237,7 @@
       @include response(desktop) {
         @include button(md, false, $heigth: 6rem);
       }
-      @include button(sm, false);
+      @include button(sm, false, $heigth: 6rem);
       &-img {
         width: 4rem;
       }

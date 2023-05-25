@@ -3,7 +3,7 @@
 
 /// Estilos del contenido de la vista de citas de entrenador
 .content{
-  height: 200vh;
+  height: 230vh;
   @include response(md){
     height: 125vh;
   }

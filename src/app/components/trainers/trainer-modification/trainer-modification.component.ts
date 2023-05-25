@@ -6,6 +6,7 @@ import {
   ref,
   uploadBytes,
   getDownloadURL,
+  deleteObject,
 } from '@angular/fire/storage';
 import { getAuth } from '@angular/fire/auth';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -151,6 +152,8 @@ export class TrainerModificationComponent implements OnInit {
   changeData(){
     if(this.uploadedPhotoURL != null){
       this.database.updatePhotoURL(this.id, this.uploadedPhotoURL, true);
+      let storageRef = ref(this.storage, this.trainer.photoURL);
+      deleteObject(storageRef);
       this.passwordChanged = true;
     }
 
