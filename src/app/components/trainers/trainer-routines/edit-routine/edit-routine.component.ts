@@ -88,6 +88,6 @@ export class EditRoutineComponent implements OnInit {
       this.database.updateRoutine(id, this.title, this.newPhotoURL);
       this.deletePhotoFromStorage(this.previousPhotoURL);
     }
-    this.router.navigate(['/administration/machines']);
+    this.router.navigate(['/trainer/routines']);
   }
 }

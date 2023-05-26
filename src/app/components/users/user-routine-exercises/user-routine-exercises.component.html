@@ -1,5 +1,5 @@
 <main class="content">
-  <h1 class="exercise-title"><span class="exercise-title-span" *ngIf="!loadingTitle">{{routineName}}</span> {{"USERS.ROUTINES.EXERCISES" | translate}}</h1>
+  <h1 *ngIf="!loadingRoutines" class="exercise-title"><span class="exercise-title-span" *ngIf="!loadingTitle">{{routineName}}</span> {{"USERS.ROUTINES.EXERCISES" | translate}}</h1>
   <div *ngIf="!loadingRoutines" class="breadcrumbs">
     <a class="breadcrumbs-item" routerLink="/user/calendar">{{"USERS.ROUTINES.CALENDAR" | translate}}</a>
     <p class="breadcrumbs-item"> > </p>

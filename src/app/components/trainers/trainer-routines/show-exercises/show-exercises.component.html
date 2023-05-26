@@ -1,6 +1,6 @@
 <main class="content">
     <div *ngIf="loading" class="loader"></div>
-    <h1 class="exercises-header">{{"TRAINERS.ROUTINES.SHOW-BREADCUMBS.EXERCISES-OF" | translate}} <span class="exercises-header-routine-name">{{routineName}}</span> {{"TRAINERS.ROUTINES.SHOW-BREADCUMBS.ROUTINE" | translate}}</h1>
+    <h1 ngIf="!loading"class="exercises-header">{{"TRAINERS.ROUTINES.SHOW-BREADCUMBS.EXERCISES-OF" | translate}} <span class="exercises-header-routine-name">{{routineName}}</span> {{"TRAINERS.ROUTINES.SHOW-BREADCUMBS.ROUTINE" | translate}}</h1>
     <div *ngIf="!loading" class="breadcrumbs">
         <a class="breadcrumbs-item" routerLink="/trainer/routines">{{"TRAINERS.ROUTINES.SHOW-BREADCUMBS.ROUTINES" | translate}}</a>
         <p class="breadcrumbs-item"> > </p>
@@ -8,10 +8,10 @@
         <p class="breadcrumbs-item"> > </p>
         <p class="breadcrumbs-item">{{"TRAINERS.ROUTINES.SHOW-BREADCUMBS.EXERCISES" | translate}}</p>
     </div>
-    <div class="exercises-actions">
+    <div *ngIf="!loading" class="exercises-actions">
         <button class="exercises-actions-button" routerLink="/trainer/routines/add/{{routineID}}/exercise">{{"TRAINERS.ROUTINES.SHOW-BREADCUMBS.ADD-EXERCISE" | translate}}</button>
     </div>
-    <h2 *ngIf="exercises.length == 0" class="exercises-header-no-exercises">{{"TRAINERS.ROUTINES.SHOW-BREADCUMBS.NO-EXERCISES" | translate}}</h2>
+    <h2 *ngIf="exercises.length == 0 && !loading" class="exercises-header-no-exercises">{{"TRAINERS.ROUTINES.SHOW-BREADCUMBS.NO-EXERCISES" | translate}}</h2>
     <div class="exercises">
         <div class="exercises-machine" *ngFor="let exercise of exercises">
             <app-exercise-card [exercise]="exercise"></app-exercise-card>

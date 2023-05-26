@@ -95,7 +95,7 @@
       <div class="trainer-diets-container-info-container-actions">
         <button *ngIf="selectedClient != null" class="trainer-diets-container-info-container-actions-button" routerLink="/trainer/diets/add/{{selectedClient.id}}">{{"TRAINERS.DIETS.BUTTON" | translate}}</button>
       </div>
-      <h2 *ngIf="diets.length == 0 && selectedClient != null" class="trainer-diets-container-info-no-diets">{{"TRAINERS.DIETS.NO-DIETS" | translate}}</h2>
+      <h2 *ngIf="diets.length == 0 && selectedClient != null && !loadingDiets" class="trainer-diets-container-info-no-diets">{{"TRAINERS.DIETS.NO-DIETS" | translate}}</h2>
       <div class="trainer-diets-container-info-container">
         <div class="trainer-diets-container-info-container-routine" *ngFor="let singleDiet of diets">
           <app-trainer-diet-card [diet]="singleDiet"></app-trainer-diet-card>
