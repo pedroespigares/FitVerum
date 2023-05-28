@@ -268,15 +268,15 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="58"
-                            class="link-to-prism">src/app/components/administration/users/users.component.ts:58</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/app/components/administration/users/users.component.ts:59</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Conviernte un entrenador en usuario</p>
+                    <div class="io-description"><p>Convierte un entrenador en usuario</p>
 </div>
 
                     <div class="io-description">
@@ -410,8 +410,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="85"
-                            class="link-to-prism">src/app/components/administration/users/users.component.ts:85</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="87"
+                            class="link-to-prism">src/app/components/administration/users/users.component.ts:87</a></div>
                 </td>
             </tr>
 
@@ -481,8 +481,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="71"
-                            class="link-to-prism">src/app/components/administration/users/users.component.ts:71</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="73"
+                            class="link-to-prism">src/app/components/administration/users/users.component.ts:73</a></div>
                 </td>
             </tr>
 
@@ -886,14 +886,16 @@ export class UsersComponent {
    */
   convertUserToTrainer(id: string) {
     this.database.convertUserToTrainer(id);
+    this.database.updateMessagesOfTrainerAtChange(id);
   }
 
   /**
-   * Conviernte un entrenador en usuario
+   * Convierte un entrenador en usuario
    * @param id
    */
   convertTrainerToUser(id: string) {
     this.database.convertTrainerToUser(id);
+    this.database.updateMessagesOfUserAtChange(id);
   }
 
   // La idea de los delete también era que el usuario se eliminara también de la autenticación de firebase,

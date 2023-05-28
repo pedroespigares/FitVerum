@@ -49,14 +49,16 @@ export class UsersComponent {
    */
   convertUserToTrainer(id: string) {
     this.database.convertUserToTrainer(id);
+    this.database.updateMessagesOfTrainerAtChange(id);
   }
 
   /**
-   * Conviernte un entrenador en usuario
+   * Convierte un entrenador en usuario
    * @param id
    */
   convertTrainerToUser(id: string) {
     this.database.convertTrainerToUser(id);
+    this.database.updateMessagesOfUserAtChange(id);
   }
 
   // La idea de los delete también era que el usuario se eliminara también de la autenticación de firebase,

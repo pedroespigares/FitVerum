@@ -599,6 +599,40 @@ export class DatabaseService {
       photoURL: photoURL,
     });
   }
+
+  /**
+   * Convertir los mensajes de un usuario en mensajes de entrenador
+   * @param id - ID del usuario
+   */
+  updateMessagesOfTrainerAtChange(id: string){
+    const messageRefs = collection(this.database, 'forumMessages');
+    const q = query(messageRefs, where('userID', '==', id));
+    const querySnapshot = getDocs(q);
+    querySnapshot.then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        updateDoc(doc.ref, {
+          isTrainer: true,
+        });
+      });
+    });
+  }
+
+  /**
+   * Convertir los mensajes de un entrenador en mensajes de usuario
+   * @param id 
+   */
+  updateMessagesOfUserAtChange(id: string){
+    const messageRefs = collection(this.database, 'forumMessages');
+    const q = query(messageRefs, where('userID', '==', id));
+    const querySnapshot = getDocs(q);
+    querySnapshot.then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        updateDoc(doc.ref, {
+          isTrainer: false,
+        });
+      });
+    });
+  }
 // --------------------------------------------------------------------------------------------
 
 
@@ -733,6 +767,14 @@ export class DatabaseService {
     });
   }
 
+  /**
+   * Subir un mensaje al foro
+   * @param message - Mensaje
+   * @param date - Fecha
+   * @param isAdmin - Es administrador
+   * @param isTrainer - Es entrenador
+   * @param userID - ID de usuario
+   **/
   uploadForumMessage(message: string, date: number, isAdmin: boolean, isTrainer: boolean, userID: string){
     const forumRef = collection(this.database, 'forumMessages');
     setDoc(doc(forumRef), {
