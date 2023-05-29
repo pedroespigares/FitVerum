@@ -39,8 +39,13 @@ export class ContactComponent implements OnDestroy{
       return;
     }
     emailjs.sendForm("service_cj8elnr", "template_qpxqf8n", "#contact-form", "c2I8uIaHDDPg57Fj5").then(() => {
-      this.emailSent = true;
-      this.cannotSend = true;
+      emailjs.sendForm("service_cj8elnr", "template_yh6fbpz", "#contact-form", "c2I8uIaHDDPg57Fj5").then(() =>{
+        this.emailSent = true;
+        this.cannotSend = true;
+      }).catch((error) => {
+        this.error = true;
+        this.errorMessage = error;
+      });
     }).catch((error) => {
       this.error = true;
       this.errorMessage = error;

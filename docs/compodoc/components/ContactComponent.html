@@ -235,8 +235,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="50"
-                            class="link-to-prism">src/app/components/static/contact/contact.component.ts:50</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">src/app/components/static/contact/contact.component.ts:55</a></div>
                 </td>
             </tr>
 
@@ -592,8 +592,13 @@ export class ContactComponent implements OnDestroy{
       return;
     }
     emailjs.sendForm(&quot;service_cj8elnr&quot;, &quot;template_qpxqf8n&quot;, &quot;#contact-form&quot;, &quot;c2I8uIaHDDPg57Fj5&quot;).then(() &#x3D;&gt; {
-      this.emailSent &#x3D; true;
-      this.cannotSend &#x3D; true;
+      emailjs.sendForm(&quot;service_cj8elnr&quot;, &quot;template_yh6fbpz&quot;, &quot;#contact-form&quot;, &quot;c2I8uIaHDDPg57Fj5&quot;).then(() &#x3D;&gt;{
+        this.emailSent &#x3D; true;
+        this.cannotSend &#x3D; true;
+      }).catch((error) &#x3D;&gt; {
+        this.error &#x3D; true;
+        this.errorMessage &#x3D; error;
+      });
     }).catch((error) &#x3D;&gt; {
       this.error &#x3D; true;
       this.errorMessage &#x3D; error;
