@@ -1,6 +1,6 @@
 <main class="content">
     <div *ngIf="loading" class="loader"></div>
-    <h1 ngIf="!loading"class="exercises-header">{{"TRAINERS.ROUTINES.SHOW-BREADCUMBS.EXERCISES-OF" | translate}} <span class="exercises-header-routine-name">{{routineName}}</span> {{"TRAINERS.ROUTINES.SHOW-BREADCUMBS.ROUTINE" | translate}}</h1>
+    <h1 *ngIf="!loading" class="exercises-header">{{"TRAINERS.ROUTINES.SHOW-BREADCUMBS.EXERCISES-OF" | translate}} <span class="exercises-header-routine-name">{{routineName}}</span> {{"TRAINERS.ROUTINES.SHOW-BREADCUMBS.ROUTINE" | translate}}</h1>
     <div *ngIf="!loading" class="breadcrumbs">
         <a class="breadcrumbs-item" routerLink="/trainer/routines">{{"TRAINERS.ROUTINES.SHOW-BREADCUMBS.ROUTINES" | translate}}</a>
         <p class="breadcrumbs-item"> > </p>

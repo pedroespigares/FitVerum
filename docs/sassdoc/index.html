@@ -1673,7 +1673,6 @@
           width: 5.5rem;
           height: 5.5rem;
           border-radius: 50%;
-          border: 2px solid white;
           object-fit: cover;
           margin: 1rem;
         }
@@ -4315,7 +4314,7 @@
     font-size: getFontSize($size);
     width: calc($width - 0.25em);
   }
-  
+
   font-size: calc(getFontSize($size) - 0.5rem);
   font-family: $font-family-text;
   font-weight: getFontWeight(normal);
@@ -4391,7 +4390,7 @@
  }" data-collapsed="@mixin deleteInCard() { ... }"><code>@mixin deleteInCard() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Mixin para el botón de eliminar en las cards</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.delete{
   @include deleteInCard();
 }</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#colors-function-getColor"><code>getColor</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#sizes-function-getFontSize"><code>getFontSize</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#undefined-variable-transition"><code>transition</code></a></li></ul></section><section class="main__item container item" id="undefined-mixin-contactInCard"><h3 class="item__heading"><a class="item__name" href="#mixin-contactInCard">contactInCard</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin contactInCard() { 
-  color: var(--text-color);
+  color: white;
   background-color: getColor(green);
   background-image: linear-gradient(
       180deg,

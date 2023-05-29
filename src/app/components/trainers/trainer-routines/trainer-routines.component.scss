@@ -173,11 +173,12 @@
   --bs-pagination-color: var(--text-color);
   --bs-pagination-hover-color: var(--primary-color);
   --bs-pagination-active-bg: #6a69dc;
-  --bs-pagination-active-border-color: #6a69dc;
+  --bs-pagination-active-border-color: var(--text-color);
   --bs-pagination-font-size: 2rem;
   --bs-pagination-padding-x: 1.5rem;
   --bs-pagination-padding-y: 0.75rem;
   --bs-pagination-focus-box-shadow: none;
+  --bs-pagination-bg: var(--background-color);
 }
 
 /// Estilos del mensaje de no hay clientes
