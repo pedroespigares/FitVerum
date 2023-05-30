@@ -176,25 +176,15 @@
 .error-message {
   @include view_header(2rem);
   font-family: $font-family-text;
-  color: white;
-  margin-top: 5rem !important;
-  background-color: getColor(red);
-  border-radius: 10rem;
-  width: 20%;
+  color: getColor(red);
   text-align: center;
-  margin: 0 auto;
 }
 
 .success-message {
   @include view_header(2rem);
   font-family: $font-family-text;
-  color: white;
-  margin-top: 5rem !important;
-  background-color: getColor(green);
-  border-radius: 10rem;
-  width: 20%;
+  color: getColor(green);
   text-align: center;
-  margin: 0 auto;
 }
 
 .loader{

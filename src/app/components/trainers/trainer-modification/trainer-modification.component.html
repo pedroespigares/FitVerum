@@ -33,12 +33,11 @@
         <input class="change-data-img-input" type="file" id="Profile picture" name="Profile picture" accept="image/*" (change)="uploadFile($event)">
         <p *ngIf="!fileTooBig" class="info-under">3 MB Max | JPG or PNG</p>
         <p *ngIf="fileTooBig" class="info-under-error">3 MB Max | JPG or PNG</p>
+        <p *ngIf="errorMessage != ''" class="error-message">{{errorMessage}}</p>
+        <p *ngIf="this.auth.userModificationError != ''" class="error-message">{{this.auth.userModificationError}}</p>
+        <p *ngIf="success" class="success-message">{{successMessage}}</p>
         <button *ngIf="!loading" class="change-data-btn" (click)="changeData()">{{"MODIFICATIONS.CHANGE-DATA" | translate}}</button>
     </form>
-
-    <p *ngIf="errorMessage != ''" class="error-message">{{errorMessage}}</p>
-    <p *ngIf="this.auth.userModificationError != ''" class="error-message">{{this.auth.userModificationError}}</p>
-    <p *ngIf="success" class="success-message">{{successMessage}}</p>
     <h3 *ngIf="!loading && this.auth.thirdPartyLogin" class="thirdPartyLoginMessage">{{"MODIFICATIONS.3RD-PARTY" | translate}}</h3>
 </main>
 

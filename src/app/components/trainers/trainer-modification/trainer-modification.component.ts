@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef, OnDestroy } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { AuthService } from 'src/app/services/auth.service';
 import {
@@ -10,14 +10,13 @@ import {
 } from '@angular/fire/storage';
 import { getAuth } from '@angular/fire/auth';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-trainer-modification',
   templateUrl: './trainer-modification.component.html',
   styleUrls: ['./trainer-modification.component.scss']
 })
-export class TrainerModificationComponent implements OnInit {
+export class TrainerModificationComponent implements OnInit, OnDestroy {
   @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
 
   /**
@@ -113,9 +112,16 @@ export class TrainerModificationComponent implements OnInit {
    * Cambia el email del usuario y cierra sesión
    */
   changeEmail() {
-    this.database.updateEmail(this.id, this.newEmail, true);
-    this.auth.updateEmail(this.newEmail);
-    this.auth.signOut();
+    let regularExpression = new RegExp("^/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/");
+    if(!regularExpression.test(this.newEmail)){
+      this.errorMessage = 'Invalid email';
+      return;
+    } else {
+      this.errorMessage = '';
+      this.auth.updateEmail(this.newEmail);
+      this.database.updateEmail(this.id, this.newEmail);
+      this.auth.signOut();
+    }
   }
 
   /**
@@ -154,7 +160,7 @@ export class TrainerModificationComponent implements OnInit {
       this.database.updatePhotoURL(this.id, this.uploadedPhotoURL, true);
       let storageRef = ref(this.storage, this.trainer.photoURL);
       deleteObject(storageRef);
-      this.passwordChanged = true;
+      this.photoChanged = true;
     }
 
     if(this.newEmail != null){
@@ -203,4 +209,14 @@ export class TrainerModificationComponent implements OnInit {
   open() {
     this.modalService.open(this.modalContent, { size: 'md', centered: true, keyboard: true});
 	}
+
+  /**
+   * Borra la imagen de Firebase Storage si se ha subido pero no se ha guardado
+   */
+  ngOnDestroy(): void {
+    if(this.uploaded && !this.photoChanged){
+      const storageRef = ref(this.storage, this.uploadedPhotoURL);
+      deleteObject(storageRef);
+    }
+  }
 }

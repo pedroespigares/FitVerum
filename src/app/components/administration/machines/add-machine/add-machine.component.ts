@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import {
   getStorage,
   ref,
   uploadBytes,
   getDownloadURL,
+  deleteObject,
 } from '@angular/fire/storage';
 import { DatabaseService } from 'src/app/services/database.service';
 import { Router } from '@angular/router';
@@ -14,7 +15,7 @@ import { ToastsService } from 'src/app/services/toasts.service';
   templateUrl: './add-machine.component.html',
   styleUrls: ['./add-machine.component.scss']
 })
-export class AddMachineComponent {
+export class AddMachineComponent implements OnDestroy{
   /**
    * Ruta de la carpeta en Firebase Storage donde se subirán las imágenes
    */
@@ -32,6 +33,7 @@ export class AddMachineComponent {
    * Variables para el control de la subida de la imagen
    */
   uploaded: boolean = false;
+  saved: boolean = false;
   storage: any;
   uploadMessage: string = 'Choose Image';
   maxSize: number = 3145728;
@@ -74,6 +76,17 @@ export class AddMachineComponent {
   addMachine(){
     this.database.addMachine(this.name, this.description, this.photoURL);
     this.toasts.machineAdded = true;
+    this.saved = true;
     this.router.navigate(['/administration/machines']);
+  }
+
+  /**
+   * Borra la imagen de Firebase Storage si se ha subido pero no se ha guardado
+   */
+  ngOnDestroy(): void {
+    if(this.uploaded && !this.saved){
+      const storageRef = ref(this.storage, this.photoURL);
+      deleteObject(storageRef);
+    }
   }
 }

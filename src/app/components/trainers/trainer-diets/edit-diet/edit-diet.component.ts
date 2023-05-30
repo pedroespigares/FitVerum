@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DatabaseService } from 'src/app/services/database.service';
 import { Router } from '@angular/router';
@@ -15,7 +15,7 @@ import {
   templateUrl: './edit-diet.component.html',
   styleUrls: ['./edit-diet.component.scss']
 })
-export class EditDietComponent {
+export class EditDietComponent implements OnInit, OnDestroy{
 
   /**
    * Ruta del storage de Firebase
@@ -40,6 +40,7 @@ export class EditDietComponent {
   uploadMessage: string = 'Choose Image';
   dietUploaded: boolean = false;
   uploaded: boolean = false;
+  updated: boolean = false;
   previousPhotoURL: string;
   newPhotoURL: string = null;
   storage: any;
@@ -104,10 +105,22 @@ export class EditDietComponent {
     const id = this.route.snapshot.paramMap.get('id');
     if(this.newPhotoURL == null) {
       this.database.updateDiet(id, this.name, this.description, this.previousPhotoURL);
+      this.updated = true;
     } else {
       this.database.updateDiet(id, this.name, this.description, this.newPhotoURL);
       this.deletePhotoFromStorage(this.previousPhotoURL);
+      this.updated = true;
     }
     this.router.navigate(['/trainer/diets']);
+  }
+
+  /**
+   * Borra la imagen de Firebase Storage si se ha subido pero no se ha guardado
+   */
+  ngOnDestroy(): void {
+    if(this.uploaded && !this.updated){
+      const storageRef = ref(this.storage, this.newPhotoURL);
+      deleteObject(storageRef);
+    }
   }
 }

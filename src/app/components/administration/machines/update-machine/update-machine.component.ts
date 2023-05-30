@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DatabaseService } from 'src/app/services/database.service';
 import { Router } from '@angular/router';
@@ -15,7 +15,7 @@ import {
   templateUrl: './update-machine.component.html',
   styleUrls: ['./update-machine.component.scss']
 })
-export class UpdateMachineComponent implements OnInit {
+export class UpdateMachineComponent implements OnInit, OnDestroy {
 
   basePath = 'machines';
   machine: any;
@@ -25,6 +25,7 @@ export class UpdateMachineComponent implements OnInit {
   uploadMessage: string = 'Choose Image';
   machineUploaded: boolean = false;
   uploaded: boolean = false;
+  updated: boolean = false;
   previousPhotoURL: string;
   newPhotoURL: string = null;
   storage: any;
@@ -86,11 +87,22 @@ export class UpdateMachineComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     if(this.newPhotoURL == null) {
       this.database.updateMachine(id, this.name, this.description, this.previousPhotoURL);
+      this.updated = true;
     } else {
       this.database.updateMachine(id, this.name, this.description, this.newPhotoURL);
       this.deletePhotoFromStorage(this.previousPhotoURL);
+      this.updated = true;
     }
     this.router.navigate(['/administration/machines']);
   }
 
+  /**
+   * Borra la imagen de Firebase Storage si se ha subido pero no se ha guardado
+   */
+  ngOnDestroy(): void {
+    if(this.uploaded && !this.updated){
+      const storageRef = ref(this.storage, this.newPhotoURL);
+      deleteObject(storageRef);
+    }
+  }
 }

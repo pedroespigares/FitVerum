@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, TemplateRef  } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef, OnDestroy } from '@angular/core';
 import { DatabaseService } from 'src/app/services/database.service';
 import { AuthService } from 'src/app/services/auth.service';
 import {
@@ -16,7 +16,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './user-modification.component.html',
   styleUrls: ['./user-modification.component.scss']
 })
-export class UserModificationComponent implements OnInit {
+export class UserModificationComponent implements OnInit, OnDestroy {
   @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
   storage: any;
   basePath: string = 'users';
@@ -103,9 +103,16 @@ export class UserModificationComponent implements OnInit {
    * Se actualiza el email del usuario en la base de datos y en la autenticación y se cierra la sesión.
    */
   changeEmail() {
-    this.auth.updateEmail(this.newEmail);
-    this.database.updateEmail(this.id, this.newEmail);
-    this.auth.signOut();
+    let regularExpression = new RegExp("^/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/");
+    if(!regularExpression.test(this.newEmail)){
+      this.errorMessage = 'Invalid email';
+      return;
+    } else {
+      this.errorMessage = '';
+      this.auth.updateEmail(this.newEmail);
+      this.database.updateEmail(this.id, this.newEmail);
+      this.auth.signOut();
+    }
   }
 
   /**
@@ -146,7 +153,7 @@ export class UserModificationComponent implements OnInit {
       this.database.updatePhotoURL(this.id, this.uploadedPhotoURL);
       let storageRef = ref(this.storage, this.user.photoURL);
       deleteObject(storageRef);
-      this.passwordChanged = true;
+      this.photoChanged = true;
     }
 
     if(this.newEmail != null){
@@ -193,4 +200,14 @@ export class UserModificationComponent implements OnInit {
   open() {
     this.modalService.open(this.modalContent, { size: 'md', centered: true, keyboard: true});
 	}
+
+  /**
+   * Borra la imagen de Firebase Storage si se ha subido pero no se ha guardado
+   */
+  ngOnDestroy(): void {
+    if(this.uploaded && !this.photoChanged){
+      const storageRef = ref(this.storage, this.uploadedPhotoURL);
+      deleteObject(storageRef);
+    }
+  }
 }

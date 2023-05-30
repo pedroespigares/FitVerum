@@ -4,6 +4,7 @@ import {
   ref,
   uploadBytes,
   getDownloadURL,
+  deleteObject,
 } from '@angular/fire/storage';
 import { DatabaseService } from 'src/app/services/database.service';
 import { Router } from '@angular/router';
@@ -22,6 +23,7 @@ export class AddRoutineComponent {
   uploaded: boolean = false;
   photoURL: string = '';
   storage: any;
+  saved: boolean = false;
   uploadMessage: string = 'Choose Image';
   userID: string;
   maxSize: number = 3145728;
@@ -62,6 +64,17 @@ export class AddRoutineComponent {
   addRoutine(){
     this.database.addRoutine(this.title, this.photoURL, this.userID, this.auth.userID);
     this.toasts.routineAdded = true;
+    this.saved = true;
     this.router.navigate(['/trainer/routines']);
+  }
+
+  /**
+   * Borra la imagen de Firebase Storage si se ha subido pero no se ha guardado
+   */
+  ngOnDestroy(): void {
+    if(this.uploaded && !this.saved){
+      const storageRef = ref(this.storage, this.photoURL);
+      deleteObject(storageRef);
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DatabaseService } from 'src/app/services/database.service';
 import { Router } from '@angular/router';
@@ -15,7 +15,7 @@ import {
   templateUrl: './edit-routine.component.html',
   styleUrls: ['./edit-routine.component.scss']
 })
-export class EditRoutineComponent implements OnInit {
+export class EditRoutineComponent implements OnInit, OnDestroy {
 
   basePath = 'routines';
   routine: any;
@@ -24,6 +24,7 @@ export class EditRoutineComponent implements OnInit {
   uploadMessage: string = 'Choose Image';
   routineUploaded: boolean = false;
   uploaded: boolean = false;
+  updated: boolean = false;
   previousPhotoURL: string;
   newPhotoURL: string = null;
   storage: any;
@@ -84,10 +85,22 @@ export class EditRoutineComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     if(this.newPhotoURL == null) {
       this.database.updateRoutine(id, this.title, this.previousPhotoURL);
+      this.updated = true;
     } else {
       this.database.updateRoutine(id, this.title, this.newPhotoURL);
       this.deletePhotoFromStorage(this.previousPhotoURL);
+      this.updated = true;
     }
     this.router.navigate(['/trainer/routines']);
+  }
+
+  /**
+   * Borra la imagen de Firebase Storage si se ha subido pero no se ha guardado
+   */
+  ngOnDestroy(): void {
+    if(this.uploaded && !this.updated){
+      const storageRef = ref(this.storage, this.newPhotoURL);
+      deleteObject(storageRef);
+    }
   }
 }

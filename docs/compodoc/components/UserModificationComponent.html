@@ -75,6 +75,7 @@
     </p>
     <p class="comment">
                     <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
     </p>
 
 
@@ -246,6 +247,9 @@
                                 <a href="#deleteUser" >deleteUser</a>
                             </li>
                             <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
                             </li>
                             <li>
@@ -368,8 +372,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="144"
-                            class="link-to-prism">src/app/components/users/user-modification/user-modification.component.ts:144</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="151"
+                            class="link-to-prism">src/app/components/users/user-modification/user-modification.component.ts:151</a></div>
                 </td>
             </tr>
 
@@ -407,8 +411,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="114"
-                            class="link-to-prism">src/app/components/users/user-modification/user-modification.component.ts:114</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="121"
+                            class="link-to-prism">src/app/components/users/user-modification/user-modification.component.ts:121</a></div>
                 </td>
             </tr>
 
@@ -564,8 +568,8 @@ Si no cumple con la expresión regular, se muestra un mensaje de error.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="184"
-                            class="link-to-prism">src/app/components/users/user-modification/user-modification.component.ts:184</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="191"
+                            class="link-to-prism">src/app/components/users/user-modification/user-modification.component.ts:191</a></div>
                 </td>
             </tr>
 
@@ -574,6 +578,45 @@ Si no cumple con la expresión regular, se muestra un mensaje de error.</p>
                 <td class="col-md-4">
                     <div class="io-description"><p>Elimina la cuenta del usuario de la base de datos y de la autenticación.
 Se cierra la sesión.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="207"
+                            class="link-to-prism">src/app/components/users/user-modification/user-modification.component.ts:207</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Borra la imagen de Firebase Storage si se ha subido pero no se ha guardado</p>
 </div>
 
                     <div class="io-description">
@@ -641,8 +684,8 @@ Se cierra la sesión.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="193"
-                            class="link-to-prism">src/app/components/users/user-modification/user-modification.component.ts:193</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="200"
+                            class="link-to-prism">src/app/components/users/user-modification/user-modification.component.ts:200</a></div>
                 </td>
             </tr>
 
@@ -678,8 +721,8 @@ Se cierra la sesión.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="125"
-                            class="link-to-prism">src/app/components/users/user-modification/user-modification.component.ts:125</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="132"
+                            class="link-to-prism">src/app/components/users/user-modification/user-modification.component.ts:132</a></div>
                 </td>
             </tr>
 
@@ -1554,7 +1597,7 @@ Si la imagen se sube correctamente, se muestra un mensaje de éxito y se obtiene
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild, TemplateRef  } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild, TemplateRef, OnDestroy } from &#x27;@angular/core&#x27;;
 import { DatabaseService } from &#x27;src/app/services/database.service&#x27;;
 import { AuthService } from &#x27;src/app/services/auth.service&#x27;;
 import {
@@ -1572,7 +1615,7 @@ import { NgbModal } from &#x27;@ng-bootstrap/ng-bootstrap&#x27;;
   templateUrl: &#x27;./user-modification.component.html&#x27;,
   styleUrls: [&#x27;./user-modification.component.scss&#x27;]
 })
-export class UserModificationComponent implements OnInit {
+export class UserModificationComponent implements OnInit, OnDestroy {
   @ViewChild(&#x27;modalContent&#x27;, { static: true }) modalContent: TemplateRef&lt;any&gt;;
   storage: any;
   basePath: string &#x3D; &#x27;users&#x27;;
@@ -1659,9 +1702,16 @@ export class UserModificationComponent implements OnInit {
    * Se actualiza el email del usuario en la base de datos y en la autenticación y se cierra la sesión.
    */
   changeEmail() {
-    this.auth.updateEmail(this.newEmail);
-    this.database.updateEmail(this.id, this.newEmail);
-    this.auth.signOut();
+    let regularExpression &#x3D; new RegExp(&quot;^/^[a-zA-Z0-9.!#$%&amp;&#x27;*+/&#x3D;?^_&#x60;{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/&quot;);
+    if(!regularExpression.test(this.newEmail)){
+      this.errorMessage &#x3D; &#x27;Invalid email&#x27;;
+      return;
+    } else {
+      this.errorMessage &#x3D; &#x27;&#x27;;
+      this.auth.updateEmail(this.newEmail);
+      this.database.updateEmail(this.id, this.newEmail);
+      this.auth.signOut();
+    }
   }
 
   /**
@@ -1702,7 +1752,7 @@ export class UserModificationComponent implements OnInit {
       this.database.updatePhotoURL(this.id, this.uploadedPhotoURL);
       let storageRef &#x3D; ref(this.storage, this.user.photoURL);
       deleteObject(storageRef);
-      this.passwordChanged &#x3D; true;
+      this.photoChanged &#x3D; true;
     }
 
     if(this.newEmail !&#x3D; null){
@@ -1749,6 +1799,16 @@ export class UserModificationComponent implements OnInit {
   open() {
     this.modalService.open(this.modalContent, { size: &#x27;md&#x27;, centered: true, keyboard: true});
 	}
+
+  /**
+   * Borra la imagen de Firebase Storage si se ha subido pero no se ha guardado
+   */
+  ngOnDestroy(): void {
+    if(this.uploaded &amp;&amp; !this.photoChanged){
+      const storageRef &#x3D; ref(this.storage, this.uploadedPhotoURL);
+      deleteObject(storageRef);
+    }
+  }
 }
 </code></pre>
     </div>
@@ -1789,12 +1849,11 @@ export class UserModificationComponent implements OnInit {
         &lt;input class&#x3D;&quot;change-data-img-input&quot; type&#x3D;&quot;file&quot; id&#x3D;&quot;Profile picture&quot; name&#x3D;&quot;Profile picture&quot; accept&#x3D;&quot;image/*&quot; (change)&#x3D;&quot;uploadFile($event)&quot;&gt;
         &lt;p *ngIf&#x3D;&quot;!fileTooBig&quot; class&#x3D;&quot;info-under&quot;&gt;3 MB Max | JPG or PNG&lt;/p&gt;
         &lt;p *ngIf&#x3D;&quot;fileTooBig&quot; class&#x3D;&quot;info-under-error&quot;&gt;3 MB Max | JPG or PNG&lt;/p&gt;
+        &lt;p *ngIf&#x3D;&quot;errorMessage !&#x3D; &#x27;&#x27;&quot; class&#x3D;&quot;error-message&quot;&gt;{{errorMessage}}&lt;/p&gt;
+        &lt;p *ngIf&#x3D;&quot;this.auth.userModificationError !&#x3D; &#x27;&#x27;&quot; class&#x3D;&quot;error-message&quot;&gt;{{this.auth.userModificationError}}&lt;/p&gt;
+        &lt;p *ngIf&#x3D;&quot;success&quot; class&#x3D;&quot;success-message&quot;&gt;{{successMessage}}&lt;/p&gt;
         &lt;button *ngIf&#x3D;&quot;!loading&quot; class&#x3D;&quot;change-data-btn&quot; (click)&#x3D;&quot;changeData()&quot;&gt;{{&quot;MODIFICATIONS.CHANGE-DATA&quot; | translate}}&lt;/button&gt;
     &lt;/form&gt;
-
-    &lt;p *ngIf&#x3D;&quot;errorMessage !&#x3D; &#x27;&#x27;&quot; class&#x3D;&quot;error-message&quot;&gt;{{errorMessage}}&lt;/p&gt;
-    &lt;p *ngIf&#x3D;&quot;this.auth.userModificationError !&#x3D; &#x27;&#x27;&quot; class&#x3D;&quot;error-message&quot;&gt;{{this.auth.userModificationError}}&lt;/p&gt;
-    &lt;p *ngIf&#x3D;&quot;success&quot; class&#x3D;&quot;success-message&quot;&gt;{{successMessage}}&lt;/p&gt;
     &lt;h3 *ngIf&#x3D;&quot;!loading &amp;&amp; this.auth.thirdPartyLogin&quot; class&#x3D;&quot;thirdPartyLoginMessage&quot;&gt;{{&quot;MODIFICATIONS.3RD-PARTY&quot; | translate}}&lt;/h3&gt;
 &lt;/main&gt;
 
@@ -2003,25 +2062,15 @@ export class UserModificationComponent implements OnInit {
 .error-message {
   @include view_header(2rem);
   font-family: $font-family-text;
-  color: white;
-  margin-top: 5rem !important;
-  background-color: getColor(red);
-  border-radius: 10rem;
-  width: 20%;
+  color: getColor(red);
   text-align: center;
-  margin: 0 auto;
 }
 
 .success-message {
   @include view_header(2rem);
   font-family: $font-family-text;
-  color: white;
-  margin-top: 5rem !important;
-  background-color: getColor(green);
-  border-radius: 10rem;
-  width: 20%;
+  color: getColor(green);
   text-align: center;
-  margin: 0 auto;
 }
 
 .loader{
@@ -2103,7 +2152,7 @@ export class UserModificationComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><main class="content">    <div *ngIf="loading" class="loader"></div>    <h1 class="title">{{"MODIFICATIONS.USER-INFO" | translate}}</h1>    <div class="user-info">        <div *ngIf="!loading" class="user-info-img-container">            <img *ngIf="user.photoURL != null" class="user-info-img-container-img" [src]="user.photoURL" alt="User Image">            <img *ngIf="user.photoURL == null" class="user-info-img-container-img" src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=938b94bc-1a96-4cfd-9cec-7c97da53e3ce" alt="User Image">        </div>        <div *ngIf="!loading" class="user-info-container">            <h1 class="user-info-container-name">{{user.displayName}}</h1>            <p class="user-info-container-email">{{user.email}}</p>            <p class="user-info-container-membership">{{"MODIFICATIONS.MEMBER-SINCE" | translate}}{{membership | date: \'longDate\'}}</p>        </div>        <div *ngIf="!loading" class="user-info-container">          <button class="user-info-container-btn" (click)="open()">{{"MODIFICATIONS.DELETE-ACCOUNT" | translate}}</button>        </div>    </div>    <h2 *ngIf="!loading && !this.auth.thirdPartyLogin" class="change-data-title">{{"MODIFICATIONS.CHANGE-USER-DATA" | translate}}</h2>    <form *ngIf="!loading && !this.auth.thirdPartyLogin" class="change-data">        <div class="change-data-password">            <input type="password" class="change-data-password-input" placeholder="New Password" name="newPassword" [(ngModel)]="newPassword" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$">            <input type="password" class="change-data-password-input" placeholder="Confirm New Password" name="confirmNewPassword" [(ngModel)]="confirmNewPassword" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$">        </div>        <div class="change-data-name">            <input type="email" class="change-data-name-input" placeholder="New Email" name="newEmail" [(ngModel)]="newEmail">            <input type="text" class="change-data-name-input" placeholder="New Display Name" name="newDisplayName" [(ngModel)]="newDisplayName">        </div>        <label for="Profile picture" class="change-data-img">            <label class="change-data-img-label" for="Profile picture">{{uploadMessage}}</label>            <img *ngIf="!uploaded" class="change-data-img-add-img" src="../../../../../assets/images/add.png">            <img *ngIf="uploaded" class="change-data-img-uploaded-img" [src]="uploadedPhotoURL">        </label>        <input class="change-data-img-input" type="file" id="Profile picture" name="Profile picture" accept="image/*" (change)="uploadFile($event)">        <p *ngIf="!fileTooBig" class="info-under">3 MB Max | JPG or PNG</p>        <p *ngIf="fileTooBig" class="info-under-error">3 MB Max | JPG or PNG</p>        <button *ngIf="!loading" class="change-data-btn" (click)="changeData()">{{"MODIFICATIONS.CHANGE-DATA" | translate}}</button>    </form>    <p *ngIf="errorMessage != \'\'" class="error-message">{{errorMessage}}</p>    <p *ngIf="this.auth.userModificationError != \'\'" class="error-message">{{this.auth.userModificationError}}</p>    <p *ngIf="success" class="success-message">{{successMessage}}</p>    <h3 *ngIf="!loading && this.auth.thirdPartyLogin" class="thirdPartyLoginMessage">{{"MODIFICATIONS.3RD-PARTY" | translate}}</h3></main><ng-template #modalContent let-close="close">  <div class="modal-header">    <h5 class="modal-title">{{"MODALS.TITLE" | translate}}</h5>    <i class="fa-solid fa-x" (click)="close()"></i>  </div>  <div class="modal-body">    <div>      <p class="modal-body-title-text">{{"MODALS.DELETE-ACCOUNT" | translate}}</p>    </div>  </div>  <div class="modal-footer">    <button type="button" class="modal-button-delete" (click)="deleteUser()">      {{"MODALS.DELETE" | translate}}    </button>    <button type="button" class="modal-button" (click)="close()">      {{"MODALS.CANCEL" | translate}}    </button>  </div></ng-template></div>'
+        var COMPONENT_TEMPLATE = '<div><main class="content">    <div *ngIf="loading" class="loader"></div>    <h1 class="title">{{"MODIFICATIONS.USER-INFO" | translate}}</h1>    <div class="user-info">        <div *ngIf="!loading" class="user-info-img-container">            <img *ngIf="user.photoURL != null" class="user-info-img-container-img" [src]="user.photoURL" alt="User Image">            <img *ngIf="user.photoURL == null" class="user-info-img-container-img" src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=938b94bc-1a96-4cfd-9cec-7c97da53e3ce" alt="User Image">        </div>        <div *ngIf="!loading" class="user-info-container">            <h1 class="user-info-container-name">{{user.displayName}}</h1>            <p class="user-info-container-email">{{user.email}}</p>            <p class="user-info-container-membership">{{"MODIFICATIONS.MEMBER-SINCE" | translate}}{{membership | date: \'longDate\'}}</p>        </div>        <div *ngIf="!loading" class="user-info-container">          <button class="user-info-container-btn" (click)="open()">{{"MODIFICATIONS.DELETE-ACCOUNT" | translate}}</button>        </div>    </div>    <h2 *ngIf="!loading && !this.auth.thirdPartyLogin" class="change-data-title">{{"MODIFICATIONS.CHANGE-USER-DATA" | translate}}</h2>    <form *ngIf="!loading && !this.auth.thirdPartyLogin" class="change-data">        <div class="change-data-password">            <input type="password" class="change-data-password-input" placeholder="New Password" name="newPassword" [(ngModel)]="newPassword" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$">            <input type="password" class="change-data-password-input" placeholder="Confirm New Password" name="confirmNewPassword" [(ngModel)]="confirmNewPassword" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$">        </div>        <div class="change-data-name">            <input type="email" class="change-data-name-input" placeholder="New Email" name="newEmail" [(ngModel)]="newEmail">            <input type="text" class="change-data-name-input" placeholder="New Display Name" name="newDisplayName" [(ngModel)]="newDisplayName">        </div>        <label for="Profile picture" class="change-data-img">            <label class="change-data-img-label" for="Profile picture">{{uploadMessage}}</label>            <img *ngIf="!uploaded" class="change-data-img-add-img" src="../../../../../assets/images/add.png">            <img *ngIf="uploaded" class="change-data-img-uploaded-img" [src]="uploadedPhotoURL">        </label>        <input class="change-data-img-input" type="file" id="Profile picture" name="Profile picture" accept="image/*" (change)="uploadFile($event)">        <p *ngIf="!fileTooBig" class="info-under">3 MB Max | JPG or PNG</p>        <p *ngIf="fileTooBig" class="info-under-error">3 MB Max | JPG or PNG</p>        <p *ngIf="errorMessage != \'\'" class="error-message">{{errorMessage}}</p>        <p *ngIf="this.auth.userModificationError != \'\'" class="error-message">{{this.auth.userModificationError}}</p>        <p *ngIf="success" class="success-message">{{successMessage}}</p>        <button *ngIf="!loading" class="change-data-btn" (click)="changeData()">{{"MODIFICATIONS.CHANGE-DATA" | translate}}</button>    </form>    <h3 *ngIf="!loading && this.auth.thirdPartyLogin" class="thirdPartyLoginMessage">{{"MODIFICATIONS.3RD-PARTY" | translate}}</h3></main><ng-template #modalContent let-close="close">  <div class="modal-header">    <h5 class="modal-title">{{"MODALS.TITLE" | translate}}</h5>    <i class="fa-solid fa-x" (click)="close()"></i>  </div>  <div class="modal-body">    <div>      <p class="modal-body-title-text">{{"MODALS.DELETE-ACCOUNT" | translate}}</p>    </div>  </div>  <div class="modal-footer">    <button type="button" class="modal-button-delete" (click)="deleteUser()">      {{"MODALS.DELETE" | translate}}    </button>    <button type="button" class="modal-button" (click)="close()">      {{"MODALS.CANCEL" | translate}}    </button>  </div></ng-template></div>'
     var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AddDietComponent', 'selector': 'app-add-diet'},{'name': 'AddExerciceComponent', 'selector': 'app-add-exercice'},{'name': 'AddMachineComponent', 'selector': 'app-add-machine'},{'name': 'AddRoutineComponent', 'selector': 'app-add-routine'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'EditDietComponent', 'selector': 'app-edit-diet'},{'name': 'EditEntryComponent', 'selector': 'app-edit-entry'},{'name': 'EditExerciseComponent', 'selector': 'app-edit-exercise'},{'name': 'EditRoutineComponent', 'selector': 'app-edit-routine'},{'name': 'ExerciseCardComponent', 'selector': 'app-exercise-card'},{'name': 'FaqComponent', 'selector': 'app-faq'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForbiddenComponent', 'selector': 'app-forbidden'},{'name': 'ForumComponent', 'selector': 'app-forum'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LandingComponent', 'selector': 'app-landing'},{'name': 'LegalComponent', 'selector': 'app-legal'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MachineCardComponent', 'selector': 'app-machine-card'},{'name': 'MachinesComponent', 'selector': 'app-machines'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SeeTrainersCardComponent', 'selector': 'app-see-trainers-card'},{'name': 'SeeTrainersComponent', 'selector': 'app-see-trainers'},{'name': 'ShowDietComponent', 'selector': 'app-show-diet'},{'name': 'ShowExercisesComponent', 'selector': 'app-show-exercises'},{'name': 'ShowMachineComponent', 'selector': 'app-show-machine'},{'name': 'ShowSingleExerciseComponent', 'selector': 'app-show-single-exercise'},{'name': 'SimpleExerciseCardComponent', 'selector': 'app-simple-exercise-card'},{'name': 'TrainerAppointmentComponent', 'selector': 'app-trainer-appointment'},{'name': 'TrainerCalendarComponent', 'selector': 'app-trainer-calendar'},{'name': 'TrainerDietCardComponent', 'selector': 'app-trainer-diet-card'},{'name': 'TrainerDietsComponent', 'selector': 'app-trainer-diets'},{'name': 'TrainerModificationComponent', 'selector': 'app-trainer-modification'},{'name': 'TrainerRoutineCardComponent', 'selector': 'app-trainer-routine-card'},{'name': 'TrainerRoutinesComponent', 'selector': 'app-trainer-routines'},{'name': 'TrainerUsersComponent', 'selector': 'app-trainer-users'},{'name': 'UpdateMachineComponent', 'selector': 'app-update-machine'},{'name': 'UserCalendarComponent', 'selector': 'app-user-calendar'},{'name': 'UserDietsComponent', 'selector': 'app-user-diets'},{'name': 'UserEntryComponent', 'selector': 'app-user-entry'},{'name': 'UserEvolutionComponent', 'selector': 'app-user-evolution'},{'name': 'UserModificationComponent', 'selector': 'app-user-modification'},{'name': 'UserRoutineExercisesComponent', 'selector': 'app-user-routine-exercises'},{'name': 'UserRoutineExercisesSimpleComponent', 'selector': 'app-user-routine-exercises-simple'},{'name': 'UserRoutinesComponent', 'selector': 'app-user-routines'},{'name': 'UserRoutinesSimpleComponent', 'selector': 'app-user-routines-simple'},{'name': 'UsersComponent', 'selector': 'app-users'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'UserModificationComponent'};
