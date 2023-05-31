@@ -284,7 +284,8 @@
     "CONTACT": {
       "BUTTON": "Contactar",
       "AVAILABLE-TRAINERS": "Entrenadores disponibles",
-      "NO-TRAINERS": "No hay ningún entrenador"
+      "NO-TRAINERS": "No hay ningún entrenador",
+      "ACTUAL-TRAINER": "Entrenador actual"
     }
   },
   "MODIFICATIONS": {

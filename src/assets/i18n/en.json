@@ -283,7 +283,8 @@
     "CONTACT": {
       "BUTTON": "Contact",
       "AVAILABLE-TRAINERS": "Available Trainers",
-      "NO-TRAINERS": "There are not any trainer"
+      "NO-TRAINERS": "There are not any trainer",
+      "ACTUAL-TRAINER": "Actual Trainer"
     }
   },
   "MODIFICATIONS": {

@@ -2,8 +2,10 @@
 <img class="trainer-img" *ngIf="trainer.photoURL == null" referrerpolicy="no-referrer" src="https://firebasestorage.googleapis.com/v0/b/fitverum.appspot.com/o/default-user.png?alt=media&token=938b94bc-1a96-4cfd-9cec-7c97da53e3ce" alt="Trainer Image"/>
 <h2 class="trainer-title">{{ trainer.displayName }}</h2>
 <div class="trainer-actions">
-  <a [href]="this.mailto" class="trainer-actions-button-contact">
+  <a *ngIf="trainer.trainerID != trainerIDOfActualUser" [href]="this.mailto" class="trainer-actions-button-contact">
     {{"USERS.CONTACT.BUTTON" | translate}}
   </a>
-</div>
-
+  <p *ngIf="trainer.trainerID == trainerIDOfActualUser" class="trainer-actions-actual-trainer">
+    {{"USERS.CONTACT.ACTUAL-TRAINER" | translate}}
+  </p>
+</div>F

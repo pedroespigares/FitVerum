@@ -3,7 +3,6 @@
 
 /// Estilos para el card de los entrenadores (para que los usuarios puedan verlos)
 .trainer {
-  @include card(false);
   &-img {
     width: 100%;
     height: 25rem;
@@ -35,6 +34,11 @@
 
     &-button-contact {
       @include contactInCard();
+      text-align: center;
+    }
+
+    &-actual-trainer{
+      @include actualTrainerInCard();
       text-align: center;
     }
   }

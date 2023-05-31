@@ -469,6 +469,30 @@
   }
 }
 
+/// Mixin para el indicador de entrenador activo
+/// @example
+/// .contact{
+///   @include actualTrainerInCard();
+/// }
+///
+@mixin actualTrainerInCard() {
+  color: white;
+  background-color: getColor(red);
+  background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
+  border: none;
+  font-family: $font-family-title;
+  flex-grow: 1;
+  font-size: getFontSize(lg);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: 1rem 3rem 1rem 3rem;
+  text-decoration: none;
+}
+
 /// Mixin para el botón de editar en las cards
 /// @example
 /// .edit{

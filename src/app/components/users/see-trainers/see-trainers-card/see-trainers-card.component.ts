@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class SeeTrainersCardComponent {
   @Input() trainer: any;
+  @Input() trainerIDOfActualUser: string;
   email: string;
   mailto: string;
 
