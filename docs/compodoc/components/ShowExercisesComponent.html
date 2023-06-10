@@ -512,9 +512,9 @@ export class ShowExercisesComponent implements OnInit{
 /// Estilos para la vista de mostrar ejercicios
 .content{
   @include response(md){
-    height: calc(100vh - 112px);
+    min-height: calc(100vh - 112px);
   }
-  height: auto;
+  min-height: 100vh;
 }
 
 /// Estilos para la cabecera de la vista de mostrar ejercicios

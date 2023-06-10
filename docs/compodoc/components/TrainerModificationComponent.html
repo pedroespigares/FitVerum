@@ -528,8 +528,8 @@ Si todo va bien se cambia la contraseña y se cierra sesión</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="197"
-                            class="link-to-prism">src/app/components/trainers/trainer-modification/trainer-modification.component.ts:197</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="199"
+                            class="link-to-prism">src/app/components/trainers/trainer-modification/trainer-modification.component.ts:199</a></div>
                 </td>
             </tr>
 
@@ -567,8 +567,8 @@ Si todo va bien se cambia la contraseña y se cierra sesión</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="216"
-                            class="link-to-prism">src/app/components/trainers/trainer-modification/trainer-modification.component.ts:216</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="218"
+                            class="link-to-prism">src/app/components/trainers/trainer-modification/trainer-modification.component.ts:218</a></div>
                 </td>
             </tr>
 
@@ -645,8 +645,8 @@ Si todo va bien se cambia la contraseña y se cierra sesión</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="209"
-                            class="link-to-prism">src/app/components/trainers/trainer-modification/trainer-modification.component.ts:209</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="211"
+                            class="link-to-prism">src/app/components/trainers/trainer-modification/trainer-modification.component.ts:211</a></div>
                 </td>
             </tr>
 
@@ -1725,8 +1725,10 @@ export class TrainerModificationComponent implements OnInit, OnDestroy {
   changeData(){
     if(this.uploadedPhotoURL !&#x3D; null){
       this.database.updatePhotoURL(this.id, this.uploadedPhotoURL, true);
-      let storageRef &#x3D; ref(this.storage, this.trainer.photoURL);
-      deleteObject(storageRef);
+      if(this.trainer.photoURL !&#x3D; null){
+        let storageRef &#x3D; ref(this.storage, this.trainer.photoURL);
+        deleteObject(storageRef);
+      }
       this.photoChanged &#x3D; true;
     }
 

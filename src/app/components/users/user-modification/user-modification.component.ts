@@ -151,8 +151,10 @@ export class UserModificationComponent implements OnInit, OnDestroy {
   changeData(){
     if(this.uploadedPhotoURL != null){
       this.database.updatePhotoURL(this.id, this.uploadedPhotoURL);
-      let storageRef = ref(this.storage, this.user.photoURL);
-      deleteObject(storageRef);
+      if(this.user.photoURL != null){
+        let storageRef = ref(this.storage, this.user.photoURL);
+        deleteObject(storageRef);
+      }
       this.photoChanged = true;
     }
 

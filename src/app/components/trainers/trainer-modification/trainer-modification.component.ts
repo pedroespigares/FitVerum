@@ -158,8 +158,10 @@ export class TrainerModificationComponent implements OnInit, OnDestroy {
   changeData(){
     if(this.uploadedPhotoURL != null){
       this.database.updatePhotoURL(this.id, this.uploadedPhotoURL, true);
-      let storageRef = ref(this.storage, this.trainer.photoURL);
-      deleteObject(storageRef);
+      if(this.trainer.photoURL != null){
+        let storageRef = ref(this.storage, this.trainer.photoURL);
+        deleteObject(storageRef);
+      }
       this.photoChanged = true;
     }
 

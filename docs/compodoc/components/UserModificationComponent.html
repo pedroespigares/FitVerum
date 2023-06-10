@@ -568,8 +568,8 @@ Si no cumple con la expresión regular, se muestra un mensaje de error.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="191"
-                            class="link-to-prism">src/app/components/users/user-modification/user-modification.component.ts:191</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="193"
+                            class="link-to-prism">src/app/components/users/user-modification/user-modification.component.ts:193</a></div>
                 </td>
             </tr>
 
@@ -608,8 +608,8 @@ Se cierra la sesión.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="207"
-                            class="link-to-prism">src/app/components/users/user-modification/user-modification.component.ts:207</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="209"
+                            class="link-to-prism">src/app/components/users/user-modification/user-modification.component.ts:209</a></div>
                 </td>
             </tr>
 
@@ -684,8 +684,8 @@ Se cierra la sesión.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="200"
-                            class="link-to-prism">src/app/components/users/user-modification/user-modification.component.ts:200</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="202"
+                            class="link-to-prism">src/app/components/users/user-modification/user-modification.component.ts:202</a></div>
                 </td>
             </tr>
 
@@ -1750,8 +1750,10 @@ export class UserModificationComponent implements OnInit, OnDestroy {
   changeData(){
     if(this.uploadedPhotoURL !&#x3D; null){
       this.database.updatePhotoURL(this.id, this.uploadedPhotoURL);
-      let storageRef &#x3D; ref(this.storage, this.user.photoURL);
-      deleteObject(storageRef);
+      if(this.user.photoURL !&#x3D; null){
+        let storageRef &#x3D; ref(this.storage, this.user.photoURL);
+        deleteObject(storageRef);
+      }
       this.photoChanged &#x3D; true;
     }
 
