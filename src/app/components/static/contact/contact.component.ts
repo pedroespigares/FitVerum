@@ -12,6 +12,7 @@ export class ContactComponent implements OnDestroy{
   subject: string = '';
   message: string = '';
   emailSent: boolean = false;
+  sending: boolean = false;
   error: boolean = false;
   errorMessage: string = '';
   cannotSend: boolean = false;
@@ -23,6 +24,7 @@ export class ContactComponent implements OnDestroy{
    * Enviar email mediante emailjs
    */
   sendEmail() {
+    this.sending = true;
     let trimmedName = this.name.trim();
     let trimmedEmail = this.email.trim();
     let trimmedSubject = this.subject.trim();
@@ -41,6 +43,7 @@ export class ContactComponent implements OnDestroy{
     emailjs.sendForm("service_cj8elnr", "template_qpxqf8n", "#contact-form", "c2I8uIaHDDPg57Fj5").then(() => {
       emailjs.sendForm("service_cj8elnr", "template_yh6fbpz", "#contact-form", "c2I8uIaHDDPg57Fj5").then(() =>{
         this.emailSent = true;
+        this.sending = false;
         this.cannotSend = true;
       }).catch((error) => {
         this.error = true;

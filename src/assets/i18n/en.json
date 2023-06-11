@@ -352,7 +352,8 @@
     "SEND": "Send",
     "SUCCESS": "Message sent successfully!",
     "ERROR": "An error has occurred. Please try again later.",
-    "TITLE": "Contact Us"
+    "TITLE": "Contact Us",
+    "SENDING": "Sending message..."
   },
   "ERRORS": {
     "404": "404 Not Found",

@@ -631,8 +631,15 @@ export class ShowSingleExerciseComponent implements OnInit{
                 <pre class="line-numbers"><code class="language-scss">@import &quot;../../../../../../scss/mixin.scss&quot;;
 @import &quot;../../../../../../scss/variables.scss&quot;;
 
+a{
+  cursor: pointer;
+}
+
 .breadcrumbs {
-  @include breadcrumbs($margin-left: 5rem);
+  @include response(xl) {
+    @include breadcrumbs($margin-left: 7rem);
+  }
+  @include breadcrumbs($margin-left: 0rem);
 }
 
 /// Estilos para la vista de mostrar un solo ejercicio

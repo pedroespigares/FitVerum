@@ -482,7 +482,10 @@ export class ShowMachineComponent implements OnInit {
 
 /// Estilos para las migas de pan
 .breadcrumbs {
-  @include breadcrumbs($margin-left: 5rem);
+  @include response(xl) {
+    @include breadcrumbs($margin-left: 5rem);
+  }
+  @include breadcrumbs($margin-left: 0rem);
 }
 
 /// Estilos del contenido de la vista de mostrar máquina
@@ -501,9 +504,6 @@ export class ShowMachineComponent implements OnInit {
 
 /// Estilos de la vista de mostrar máquina
 .show-machine {
-  @include response(sm) {
-    margin-top: 25rem;
-  }
   @include response(xl) {
     display: grid;
     grid-template-columns: 0.75fr 1fr;
@@ -519,6 +519,8 @@ export class ShowMachineComponent implements OnInit {
   );
   height: 80vh;
   width: 100%;
+  margin-top: -5rem;
+
 
   &amp;-img-container {
     grid-area: 1 / 1 / 2 / 2;

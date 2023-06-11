@@ -353,7 +353,8 @@
     "SEND": "Enviar",
     "SUCCESS": "Mensaje enviado correctamente",
     "ERROR": "Error al enviar el mensaje",
-    "TITLE": "Contacta con nosotros"
+    "TITLE": "Contacta con nosotros",
+    "SENDING": "Enviando mensaje..."
   },
   "ERRORS": {
     "404": "404 No encontrado",
