@@ -1,8 +1,15 @@
 @import "../../../../../../scss/mixin.scss";
 @import "../../../../../../scss/variables.scss";
 
+a{
+  cursor: pointer;
+}
+
 .breadcrumbs {
-  @include breadcrumbs($margin-left: 5rem);
+  @include response(xl) {
+    @include breadcrumbs($margin-left: 7rem);
+  }
+  @include breadcrumbs($margin-left: 0rem);
 }
 
 /// Estilos para la vista de mostrar un solo ejercicio
