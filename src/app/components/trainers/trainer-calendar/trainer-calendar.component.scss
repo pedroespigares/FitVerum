@@ -77,9 +77,15 @@
 ::ng-deep .cal-event-title {
   color: getColor(text);
   font-family: $font-family-title !important;
-  font-size: 2.75rem !important;
-  text-align: center !important;
-  font-weight: getFontWeight(bold);
+  font-size: 1.75rem !important;
+  width: 100% !important;
+}
+
+::ng-deep mwl-calendar-event-title{
+  color: getColor(text);
+  font-family: $font-family-title !important;
+  font-size: 1.75rem !important;
+  width: 100% !important;
 }
 
 ::ng-deep .cal-current-time-marker {
