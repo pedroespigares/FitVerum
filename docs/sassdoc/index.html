@@ -1945,9 +1945,6 @@
     padding: 0 5rem;
   }
 }</code>" data-collapsed=".content { ... }"><code>.content { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Estilos del contenido de la vista de mostrar dieta</p></div></section><section class="main__item container item" id="undefined-css-.show-diet"><h3 class="item__heading"><a class="item__name" href="#css-.show-diet">.show-diet</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>.show-diet {
-  @include response(sm) {
-    margin-top: 25rem;
-  }
   @include response(xl) {
     display: grid;
     grid-template-columns: 0.75fr 1fr;
@@ -1955,6 +1952,7 @@
     margin-top: 0;
   }
 
+  margin-top: 15rem;
   @include flex(
     $direction: column,
     $justify: center,

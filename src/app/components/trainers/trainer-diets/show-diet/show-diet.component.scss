@@ -21,9 +21,6 @@
 
 /// Estilos del contenedor de mostrar dieta
 .show-diet {
-  @include response(sm) {
-    margin-top: 25rem;
-  }
   @include response(xl) {
     display: grid;
     grid-template-columns: 0.75fr 1fr;
@@ -31,6 +28,7 @@
     margin-top: 0;
   }
 
+  margin-top: 15rem;
   @include flex(
     $direction: column,
     $justify: center,
